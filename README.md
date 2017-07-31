@@ -1,7 +1,7 @@
 RHDP Front-end Documentation
 =============================
 
-[Headings](#)
+[Typography](#)
 
 [Buttons](https://redhat-developer.github.io/rhdp-frontend/patterns/buttons)
 
