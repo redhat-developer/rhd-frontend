@@ -1,6 +1,13 @@
-RHDP Front-end Documentation
-=============================
+# RHDP Front-end Documentation
 
-[Headings](#)
+## Patterns
+
+[Typography](https://redhat-developer.github.io/rhdp-frontend/patterns/typography)
+
 [Buttons](https://redhat-developer.github.io/rhdp-frontend/patterns/buttons)
+
 [Alerts](#)
+
+## Components
+
+[Search](#)
