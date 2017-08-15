@@ -4,7 +4,7 @@
 
 [Typography](https://redhat-developer.github.io/rhdp-frontend/patterns/typography)
 
-[Buttons](https://redhat-developer.github.io/rhdp-frontend/patterns/buttons)
+[Buttons and CTAs](https://redhat-developer.github.io/rhdp-frontend/patterns/buttons/buttons.md)
 
 [Alerts](#)
 
