@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on RHDP Documentation</title>
-    <link>http://example.org/</link>
-    <description>Recent content in Home on RHDP Documentation</description>
+    <title>Patterns on RHDP Documentation</title>
+    <link>http://example.org/patterns/</link>
+    <description>Recent content in Patterns on RHDP Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Aug 2017 10:56:11 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 03 Aug 2017 15:06:55 -0400</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://example.org/patterns/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -135,15 +135,6 @@
       
       <guid>http://example.org/patterns/design/typography/</guid>
       <description> Typography Headings  H1 &amp;lt;h1&amp;gt;Heading 1&amp;lt;/h1&amp;gt; H2 &amp;lt;h2&amp;gt;Heading 2&amp;lt;/h2&amp;gt; H3 &amp;lt;h3&amp;gt;Heading 3&amp;lt;/h3&amp;gt; H4 &amp;lt;h4&amp;gt;Heading 4&amp;lt;/h4&amp;gt;  </description>
-    </item>
-    
-    <item>
-      <title>header</title>
-      <link>http://example.org/_header/</link>
-      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
-      
-      <guid>http://example.org/_header/</guid>
-      <description></description>
     </item>
     
   </channel>

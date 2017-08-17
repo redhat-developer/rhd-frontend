@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Content on RHDP Documentation</title>
+    <link>http://example.org/tags/content/</link>
+    <description>Recent content in Content on RHDP Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Aug 2017 15:04:51 -0400</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/content/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Notifications</title>
+      <link>http://example.org/patterns/content/notifications/</link>
+      <pubDate>Thu, 03 Aug 2017 15:04:51 -0400</pubDate>
+      
+      <guid>http://example.org/patterns/content/notifications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Style</title>
+      <link>http://example.org/patterns/content/style/</link>
+      <pubDate>Thu, 03 Aug 2017 15:04:33 -0400</pubDate>
+      
+      <guid>http://example.org/patterns/content/style/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
