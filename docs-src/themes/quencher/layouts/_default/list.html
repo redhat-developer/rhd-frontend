@@ -1,0 +1,13 @@
+{{ partial "header.html" . }}
+
+{{ .Content }}
+
+{{if not .Content }}
+    <ul>
+	{{ range $index, .Pages }}
+	   {{ .Render "li" }}
+	{{ end }}
+    </ul>
+{{end}}
+
+{{ partial "footer.html" . }}
