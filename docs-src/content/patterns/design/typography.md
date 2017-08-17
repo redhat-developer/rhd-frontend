@@ -10,7 +10,7 @@ Typography
 
 Headings
 --------
-* H1 ```<h1>Heading 1</h1>```
-* H2 ```<h2>Heading 2</h2>```
-* H3 ```<h3>Heading 3</h3>```
-* H4 ```<h4>Heading 4</h4>```
+* H1 {{< code >}}<h1>Heading 1</h1>{{< /code >}}
+* H2 {{< code >}}<h2>Heading 2</h2>{{< /code >}}
+* H3 {{< code >}}<h3>Heading 3</h3>{{< /code >}}
+* H4 {{< code >}}<h4>Heading 4</h4>{{< /code >}}
