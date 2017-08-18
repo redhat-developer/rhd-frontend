@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Navigation on RHDP Documentation</title>
+    <link>http://example.org/tags/navigation/</link>
+    <description>Recent content in Navigation on RHDP Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Aug 2017 14:58:26 -0400</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/navigation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Universal Footer</title>
+      <link>http://example.org/patterns/navigation/uni-footer/</link>
+      <pubDate>Thu, 03 Aug 2017 14:58:26 -0400</pubDate>
+      
+      <guid>http://example.org/patterns/navigation/uni-footer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logo</title>
+      <link>http://example.org/patterns/navigation/logo/</link>
+      <pubDate>Thu, 03 Aug 2017 14:58:04 -0400</pubDate>
+      
+      <guid>http://example.org/patterns/navigation/logo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

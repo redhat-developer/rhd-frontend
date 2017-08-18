@@ -1,10 +1,12 @@
 # RHDP Front-end Documentation
 
+[Live Documentation Site](https://redhat-developer.github.io/rhdp-frontend/)
+
 ## Patterns
 
 [Typography](https://redhat-developer.github.io/rhdp-frontend/patterns/typography)
 
-[Buttons](https://redhat-developer.github.io/rhdp-frontend/patterns/buttons)
+[Buttons and CTAs](https://redhat-developer.github.io/rhdp-frontend/patterns/btn-cta/)
 
 [Alerts](#)
 
