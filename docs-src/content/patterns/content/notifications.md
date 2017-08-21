@@ -5,3 +5,6 @@ draft: true
 tags: ["content"]
 ---
 
+# Alerts
+
+{{< code >}}<div class="alert alert-info">Foo</div>{{< /code >}}

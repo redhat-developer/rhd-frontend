@@ -1,7 +1,7 @@
-+++
-title= "{{ title }}"
-date= {{ .Date }}
-type="component"
-description = ""
-draft= true
-+++
+---
+title: "{{ title }}"
+date: {{ .Date }}
+type: "component"
+description: ""
+draft: true
+---

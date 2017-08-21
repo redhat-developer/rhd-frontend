@@ -8,7 +8,7 @@ draft: true
 
 ## Patterns
 
-[Typography](patterns/typography/)
+[Typography](patterns/design/typography/)
 
 [Buttons and CTAs](patterns/btn-cta/)
 

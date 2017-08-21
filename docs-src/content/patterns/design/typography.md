@@ -5,9 +5,6 @@ draft: true
 tags: ["design"]
 ---
 
-Typography
-===========
-
 Headings
 --------
 * H1 {{< code >}}<h1>Heading 1</h1>{{< /code >}}
