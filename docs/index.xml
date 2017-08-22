@@ -53,7 +53,8 @@
       <pubDate>Thu, 03 Aug 2017 15:04:51 -0400</pubDate>
       
       <guid>http://example.org/patterns/content/notifications/</guid>
-      <description> Alerts &amp;lt;div class=&amp;#34;alert alert-info&amp;#34;&amp;gt;Foo&amp;lt;/div&amp;gt; Sample: Foo  </description>
+      <description>Alerts Information &amp;lt;div class=&amp;#34;alert-box alert-info&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;icon&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;alert-content&amp;#34;&amp;gt; &amp;lt;strong&amp;gt;Info:&amp;lt;/strong&amp;gt;&amp;lt;p&amp;gt;Lorem ipsum dolor sit amet, per id case aliquam expetenda.&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  Sample:  Info:Lorem ipsum dolor sit amet, per id case aliquam expetenda.
+   Success &amp;lt;div class=&amp;#34;alert-box alert-success&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;icon&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;alert-content&amp;#34;&amp;gt; &amp;lt;strong&amp;gt;Success:&amp;lt;/strong&amp;gt;&amp;lt;p&amp;gt;Lorem ipsum dolor sit amet, per id case aliquam expetenda.&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  Sample:  Success:Lorem ipsum dolor sit amet, per id case aliquam expetenda.</description>
     </item>
     
     <item>
