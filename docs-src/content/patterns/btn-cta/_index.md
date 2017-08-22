@@ -27,7 +27,7 @@ Black | {{< code >}}<a href="#" class="button medium-cta black">Some action</a>{
 Blue | {{< code >}}<a href="#" class="button medium-cta blue">Some action</a>{{< /code >}}
 
 # Light CTAs
- | 
+Style | Sample
 ----- | ------
 Default | {{< code >}}<a href="#" class="light-cta">Some action</a>{{< /code >}}
 White | {{< code >}}<a href="#" class="light-cta white">Some action</a>{{< /code >}}

@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>TS - TypeScript</title>
+      <link>http://example.org/patterns/code/ts/</link>
+      <pubDate>Fri, 18 Aug 2017 15:15:45 -0400</pubDate>
+      
+      <guid>http://example.org/patterns/code/ts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>HTML - Hypertext Markup Language</title>
       <link>http://example.org/patterns/code/html/</link>
       <pubDate>Thu, 03 Aug 2017 15:06:55 -0400</pubDate>
@@ -44,7 +53,7 @@
       <pubDate>Thu, 03 Aug 2017 15:04:51 -0400</pubDate>
       
       <guid>http://example.org/patterns/content/notifications/</guid>
-      <description></description>
+      <description> Alerts &amp;lt;div class=&amp;#34;alert alert-info&amp;#34;&amp;gt;Foo&amp;lt;/div&amp;gt; Sample: Foo  </description>
     </item>
     
     <item>
@@ -134,7 +143,7 @@
       <pubDate>Thu, 03 Aug 2017 10:56:11 -0400</pubDate>
       
       <guid>http://example.org/patterns/design/typography/</guid>
-      <description> Typography Headings  H1 &amp;lt;h1&amp;gt;Heading 1&amp;lt;/h1&amp;gt; Sample: Heading 1   H2 &amp;lt;h2&amp;gt;Heading 2&amp;lt;/h2&amp;gt; Sample: Heading 2   H3 &amp;lt;h3&amp;gt;Heading 3&amp;lt;/h3&amp;gt; Sample: Heading 3   H4 &amp;lt;h4&amp;gt;Heading 4&amp;lt;/h4&amp;gt; Sample: Heading 4    </description>
+      <description> Headings  H1 &amp;lt;h1&amp;gt;Heading 1&amp;lt;/h1&amp;gt; Sample: Heading 1   H2 &amp;lt;h2&amp;gt;Heading 2&amp;lt;/h2&amp;gt; Sample: Heading 2   H3 &amp;lt;h3&amp;gt;Heading 3&amp;lt;/h3&amp;gt; Sample: Heading 3   H4 &amp;lt;h4&amp;gt;Heading 4&amp;lt;/h4&amp;gt; Sample: Heading 4    </description>
     </item>
     
   </channel>

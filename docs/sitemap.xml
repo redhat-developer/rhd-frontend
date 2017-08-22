@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://example.org/patterns/code/ts/</loc>
+    <lastmod>2017-08-18T15:15:45-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/patterns/code/html/</loc>
     <lastmod>2017-08-03T15:06:55-04:00</lastmod>
   </url>
@@ -20,6 +25,11 @@
   <url>
     <loc>http://example.org/patterns/a11y/</loc>
     <lastmod>2017-08-03T15:05:58-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/patterns/interactive/</loc>
+    <lastmod>2017-08-03T15:05:26-04:00</lastmod>
   </url>
   
   <url>
@@ -104,7 +114,7 @@
   
   <url>
     <loc>http://example.org/tags/code/</loc>
-    <lastmod>2017-08-03T15:06:55-04:00</lastmod>
+    <lastmod>2017-08-18T15:15:45-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -134,13 +144,13 @@
   
   <url>
     <loc>http://example.org/patterns/</loc>
-    <lastmod>2017-08-03T15:06:55-04:00</lastmod>
+    <lastmod>2017-08-18T15:15:45-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://example.org/tags/</loc>
-    <lastmod>2017-08-03T15:06:55-04:00</lastmod>
+    <lastmod>2017-08-18T15:15:45-04:00</lastmod>
     <priority>0</priority>
   </url>
   
