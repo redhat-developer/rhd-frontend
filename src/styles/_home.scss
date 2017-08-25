@@ -1,0 +1,334 @@
+// NEW HOMEPAGE STYLES
+.home .wrapper {
+  padding-bottom: 0;
+}
+
+.homepage-main {
+  color: $white;
+  background-image: url("https://static.jboss.org/images/rhd/hero/RHDev_homehero_desktop_adveap7cheatsheet_19jul2017.png");
+  background-position: center center;
+  height: 310px;
+  background-repeat: repeat-x;
+  background-color: #0068ba;
+  & > .row {
+    @include flexbox;
+    @include align-items(center);
+    @include flex-wrap(wrap);
+  }
+  .homepage-cta {
+    padding: 0 21% 0 21%;
+    padding-top: 40px;
+    color: $white;
+    text-align: center;
+    margin: 0 auto;
+    h2 {
+      font-size: 2em;
+      color: inherit;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    p {
+      color: inherit;
+      font-weight: 400;
+      font-size: 20px;
+    }
+    a.button.external-link:after{
+      display: none;
+    }
+    a.button.heavy-cta.white {
+      color: $blue;
+    }
+  }
+  img {
+    height: 205px;
+  }
+}
+
+.spotlights-wrap {
+  background: black cdn("../images/design/dotted_line-darkgrey.svg") left no-repeat;
+}
+
+.spotlights-container {
+  background-position: -200px 0;
+  background-size: 1500px;
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.spotlight-item {
+  width: calc(20%);
+  padding: 0 12px;
+  border-right: 1px solid $dark-grey;
+  color: white;
+  img {
+    padding-bottom: 10px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  &:hover, &:focus, &:active {
+    span {
+      color: $white;
+    }
+  }
+  &:last-child {
+    border-right: 0;
+  }
+  .cut-image {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .cut-image::before {
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-left: 10px solid white;
+    border-top: 10px solid white;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+  .cut-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 0;
+    width: 0;
+    border-left: 15px solid transparent;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid white;
+    border-right: 15px solid white;
+  }
+}
+
+ul.homepage-resources {
+  list-style: none;
+  margin: 0;
+  &.loading {
+    background:cdn("../images/icons/ajax-loader.gif") center 80px no-repeat;
+    min-height:250px;
+  }
+  li {
+    @include flexbox;
+    @include align-items(flex-start);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed $grey;
+    &:last-child {
+      border-bottom: none;
+    }
+    img {
+      width: 150px;
+      margin-right: 10px;
+    }
+    i {
+      font-size: 35px;
+      margin-right: 10px;
+      color: $dark-grey;
+      position: relative;
+      top: -5px;
+    }
+    p.description {
+      font-family: inherit;
+      font-weight: normal;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+      text-rendering: optimizeLegibility;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      max-height: 50px;
+      overflow: hidden;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+
+    }
+  }
+  a.title {
+    display: block;
+    line-height: 1.5;
+    text-overflow: ellipsis;
+    font-weight: bold;
+  }
+  .author {
+    margin: 0;
+  }
+
+  .date {
+    display: block;
+    color: black;
+    margin-right: 20px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  &.homepage-resources-latest {
+    li {
+      border-bottom: 0;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.featured-and-latest {
+  padding: 30px 0;
+  h4 {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  h3 {
+    margin-bottom: 10px;
+  }
+}
+
+.inverse {
+  background: $grey-8 cdn('../images/design/join-now-bg.png') right center no-repeat;
+  padding: 25px 0;
+  h2, h3, h4, h5, h6, a, p {
+    color: $white;
+  }
+  a.button {
+    display: block;
+    margin: 0 auto;
+    max-width: 260px;
+  }
+  .inverse-spotlights {
+    text-align: center;
+    .large-8 {
+      padding: 20px !important;
+      margin: 15px !important;
+      background-color: $grey-2;
+      width: 30%;
+    }
+    i, h6 {
+      color: $grey-7;
+    }
+  }
+  .banner-icons {
+    color: $white;
+    text-align: center;
+    margin: 1em 0 2em 0;
+    img {
+      display: block;
+      margin: 1em auto 0 auto;
+      max-width: 250px;
+    }
+  }
+}
+
+.home-join-img img {
+  margin: 2em auto;
+}
+
+.home-jointext {
+  a.button {
+    max-width: 400px;
+    margin-bottom: 3em;
+  }
+  p {
+    font-size: 1.1em;
+    line-height: 1.3;
+  }
+  .inline-icon {
+    display: inline;
+    max-width: 30px;
+    margin-right: 5px;
+  }
+}
+
+// NEW MOBILE HOMEPAGE STYLES
+@include tablet-landscape-and-down {
+  .homepage-main {
+    background-image: url("https://static.jboss.org/images/rhd/hero/RHDev_homehero_tablet_adveap7cheatsheet_19jul2017.png");
+    background-size: cover;
+    background-position: top left;
+    min-height: 400px;
+    .homepage-cta {
+      h2 {
+        font-size: 1.7em;
+      }
+      a.button {
+        display: inline-block;
+      }
+    }
+  }
+  span.type-icon {
+    display: none !important;
+  }
+  .spotlight-item {
+    width: calc(33.333% - 16px);
+    margin: 8px;
+  }
+}
+
+@include tablet-portrait-and-down {
+  a.title {
+    max-width: 100%;
+  }
+  .inverse-spotlights .large-8 {
+    width: 90% !important;
+    padding: 2em !important;
+  }
+  .homepage-main {
+    img.desktop {
+      display: none;
+    }
+    img.mobile {
+      display: block;
+      max-height: 300px;
+    }
+    .homepage-cta {
+      padding: 3em 1em 0 1em;
+      p {
+        font-size: 18px;
+      }
+      h2 {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+@include mobile-landscape-and-down {
+  .homepage-main {
+    background-image: url("https://static.jboss.org/images/rhd/hero/RHDev_homehero_mobile_adveap7cheatsheet_19jul2017.png");
+    min-height: 480px;
+  }
+  .spotlights-container {
+    flex-direction: column;
+  }
+  .spotlight-item {
+    width: calc(100% - 16px);
+    margin: 8px;
+    .cut-image::before, .cut-image::after {
+      display: none;
+    }
+  }
+}
+
+.drupal-header {
+  z-index: 100;
+  width: 300px;
+  padding: 20px;
+  position: fixed;
+  transition: all 0.4s;
+  transform: translateX(-100%);
+  &.open {
+    transform: translateX(0);
+    background: #000;
+  }
+
+  .tab {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: black;
+    color: white;
+    padding: 30px;
+    transform: rotate(90deg) translateY(-100%)
+  }
+}
+

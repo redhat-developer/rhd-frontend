@@ -1,5 +1,0 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "RHDP Documentation"
-theme = "quencher"
-publishDir = "../docs"
