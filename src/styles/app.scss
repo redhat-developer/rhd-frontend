@@ -1,48 +1,18 @@
-// out: app.css
 @import "settings";
+
+// Foundation Dependencies
+$white         : #FFFFFF !default;
+$screen: "only screen" !default;
+$small-up: $screen !default;
+$large-range: (64.063em, 90em) !default;
+$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})" !default;
+$input-border-color: scale-color($white, $lightness: -20%) !default;
+
 @import "normalize";
 
 @import "custom-font-icons";
 @import "fonts/fonts";
 @import "colours";
-@import "foundation/components/global"; // *always required
-$include-html-global-classes: false; // fix for our version of ruby - https://github.com/zurb/foundation/issues/5989
-@import "foundation/components/grid";
-
-@import "foundation/components/visibility";
-@import "foundation/components/block-grid";
-@import "foundation/components/type";
-@import "foundation/components/buttons";
-@import "foundation/components/forms"; // *requires components/buttons 
-
-@import "foundation/components/button-groups"; // *requires components/buttons
-// @import "foundation/components/dropdown-buttons"; // *requires components/buttons
-// @import "foundation/components/split-buttons"; // *requires components/buttons
-@import "foundation/components/flex-video";
-@import "foundation/components/top-bar";  // *requires components/grid
-// @import "foundation/components/orbit";
-@import "foundation/components/reveal";
-// @import "foundation/components/joyride";
-@import "foundation/components/alert-boxes";
-@import "foundation/components/breadcrumbs";
-// @import "foundation/components/keystrokes";
-// @import "foundation/components/labels";
-@import "foundation/components/inline-lists";
-@import "foundation/components/pagination";
-@import "foundation/components/panels";
-// @import "foundation/components/pricing-tables";
-// @import "foundation/components/progress-bars";
-@import "foundation/components/side-nav";
-@import "foundation/components/sub-nav";
-@import "foundation/components/switches";
-// @import "foundation/components/magellan";
-@import "foundation/components/tables";
-// @import "foundation/components/thumbs";
-@import "foundation/components/tooltips";
-@import "foundation/components/dropdown";
-@import "foundation/components/tabs";
-
-@import "foundation/components/accordion";
 
 // Import only the compass modules we need
 // @import "compass/css3/box-shadow";
@@ -99,7 +69,7 @@ $include-html-global-classes: false; // fix for our version of ruby - https://gi
 @import "about";
 @import "articles";
 @import "msbuild";
-@import "font-awesome";
+@import "fontawesome/font-awesome";
 @import "devoxxfrance";
 @import "gids";
 @import "stackoverflow";
@@ -116,6 +86,10 @@ $include-html-global-classes: false; // fix for our version of ruby - https://gi
 @import "searchapp";
 @import "devnation-live";
 @import "middleware";
+@import "thank-you";
+@import "keycloak-pages";
+@import "learning-paths";
+@import "assembly";
 
 
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; } * html .clearfix             { zoom: 1; } /* IE6 */ *:first-child+html .clearfix { zoom: 1; } /* IE7 */
@@ -139,6 +113,18 @@ $include-html-global-classes: false; // fix for our version of ruby - https://gi
       &:last-child {
         padding-right: 0;
       }
+    }
+  }
+  &.full-width{
+    width: 100%;
+    max-width: 100%!important; //might be needded depending on your settings
+    &>.column:first-child,
+    &>.columns:first-child{
+        padding-left: 0;
+    }
+    &>.column:last-child,
+    &>.columns:last-child{
+        padding-right: 0;
     }
   }
 }
@@ -167,10 +153,25 @@ a {
     outline-width: 1px;
     outline-color: color($link);
   }
+  &[href$=".pdf"]:after,
+  &.pdf:after {
+    content: "\f1c1";
+    font-family: FontAwesome;
+    margin-left: 4px;
+  }
+
+  &.img-link {
+    &[href$=".pdf"]:after,
+    &.pdf:after { display: none; }
+  }
 }
 
 p a:hover {
   border-bottom: 1px solid #DCDCDC;
+}
+
+p a.external-link:after {
+  display: none;
 }
 
 .link-sm a {
@@ -283,6 +284,12 @@ button, .button {
     display: none;
   }
 }
+
+a.button[href$=".pdf"]:after,
+a.heavy-cta[href$=".pdf"]:after,
+a.medium-cta[href$=".pdf"]:after,
+.heavy-cta a[href$=".pdf"]:after,
+.madium-cta a[href$=".pdf"]:after{ display: none; }
 
 a.light-cta{
   color: $link;
@@ -861,6 +868,40 @@ body.mobile {
   border-left:4px solid $red;
   color: white;
   margin-bottom: 15px;
+}
+
+.related-product-card,
+.related-content-card {
+  background-color: $white;
+  padding: 20px;
+  border: 2px solid $grey-3;
+  font-size: .9rem;
+  height: auto;
+  margin: 15px 0;
+  position: relative;
+  h6 {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $grey-5;
+  }
+  span {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: 600;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    max-height: 65px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    @include tablet-landscape-and-down {
+      max-height: 95px;
+      -webkit-line-clamp: 3;
+    }
+  }
+  p { margin-bottom: 0; }
 }
 
 .quick-start-buttons {
@@ -1486,11 +1527,7 @@ form.login {
 
 // Planet
 .planet-avatar {
-  @include block-grid(
-    $per-row: 6,
-    $spacing: 4px,
-    $base-style: true
-  );
+  
 }
 
 .recent-posts-list {
@@ -2325,3 +2362,91 @@ section {
     }
   }
 }
+
+a#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+  background-color: #333;
+  background-color: rgba(0,0,0,0.8);
+  width: 44px;
+  height: 44px;
+  font-size: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 13px;
+  text-decoration: none;
+  z-index: 1;
+  opacity: 0.8;
+  display: none;
+  &:before {
+    font-family: 'FontAwesome';
+    content: '\f0aa';
+  }
+  &:focus, &:active, &:hover {
+    outline: none;
+    opacity: 1;
+  }
+}
+
+.content-type-label {
+  text-transform: uppercase;
+  color: $grey-6;
+  margin: 1em 0 0 0;
+}
+
+.page-info-bar {
+  border-top: 1px solid $grey-5;
+  border-bottom: 1px solid $grey-5;
+  padding: 7px 0;
+  margin: 1.5em 1em 2.5em 1em;
+  ul {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    li {
+      width: auto;
+      margin: 2px 0;
+      padding: 0 0 0 1em;
+      display: inline-block;
+      &:first-child { padding-left: 0; }
+    }
+  }
+}
+
+.share-sm {
+ margin-top: 2px;
+ .a2a_button_google_plusone {
+   height: 24px;
+ }
+}
+
+@include tablet-landscape-and-down {
+  .page-info-bar{
+      .share-sm {
+        float: none !important;
+        margin-top: 5px;
+        ul li:not(:first-child) { padding-left: 1em; }
+      }
+      ul li {
+        display: block;
+        padding-left: 0;
+      }
+  }
+}
+
+.show-more-text {
+  overflow: hidden;
+  max-height: 75px;
+  &.open { max-height: 100% !important; }
+}
+.show-more{
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  span { display: block; }
+  span.less { display: none; }
+}
+

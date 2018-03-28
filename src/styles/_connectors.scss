@@ -39,8 +39,6 @@
 }
 
 ul.featured-connectors-results {
-  @extend .medium-block-grid-2;
-  @extend .large-block-grid-3;
   & > li {
     display: inline;
     height: auto;

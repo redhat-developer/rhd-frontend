@@ -4,13 +4,13 @@
         "target": "es5",
         "noImplicitAny": false,
         "sourceMap": false,
+        "allowJs": false,
         "lib":[
           "dom", "es5", "es6"
         ],
-        "outFile": "dist/js/all.min.js",
-        "outDir": "dist/js"
+        "outFile": "rhd.min.js"
     },
     "include": [
-        "src/scripts/**/*.ts"
+        "src/scripts/**/*"
     ]
 }
