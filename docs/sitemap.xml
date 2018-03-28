@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://redhat-developer.github.io/rhdp-frontend/patterns/layout/home/</loc>
+    <lastmod>2017-10-04T08:06:49-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://redhat-developer.github.io/rhdp-frontend/components/devnationlive/</loc>
     <lastmod>2017-08-23T22:56:52-04:00</lastmod>
   </url>
@@ -122,6 +127,12 @@
   </url>
   
   <url>
+    <loc>https://redhat-developer.github.io/rhdp-frontend/tags/</loc>
+    <lastmod>2017-10-04T08:06:49-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://redhat-developer.github.io/rhdp-frontend/tags/code/</loc>
     <lastmod>2017-08-18T15:15:45-04:00</lastmod>
     <priority>0</priority>
@@ -159,7 +170,7 @@
   
   <url>
     <loc>https://redhat-developer.github.io/rhdp-frontend/patterns/</loc>
-    <lastmod>2017-08-18T15:15:45-04:00</lastmod>
+    <lastmod>2017-10-04T08:06:49-04:00</lastmod>
     <priority>0</priority>
   </url>
   

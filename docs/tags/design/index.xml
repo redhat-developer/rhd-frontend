@@ -83,6 +83,13 @@
 &lt;/div&gt;
 
 &lt;/li&gt;
+&lt;li&gt;H5 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;h5&amp;gt;Heading 5&amp;lt;/h5&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;code-sample&#34;&gt;
+    &lt;strong&gt;Sample:&lt;/strong&gt;
+    &lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;/div&gt;
+
+&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

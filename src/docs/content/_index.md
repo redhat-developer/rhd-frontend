@@ -6,6 +6,7 @@ draft: true
 
 # RHDP Documentation
 
+
 ## Patterns
 
 [Typography](patterns/design/typography/)
@@ -17,6 +18,11 @@ draft: true
 ## Components
 
 [Search](#)
+
+## Code
+
+[SASS](styling)
+[JavaScript](scripting)
 
 
 ## Helpful Links

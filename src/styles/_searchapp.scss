@@ -1,7 +1,7 @@
 rhdp-search-app {
     display: flex;
     flex-flow: column;
-    font-family: "Overpass","Open Sans",Helvetica,sans-serif;
+    font-family: "overpass","Open Sans",Helvetica,sans-serif;
     .hide { display: none; }
     .show { display: block; }
     .mobile { display: none; }
@@ -56,6 +56,16 @@ rhdp-search-box {
         width: 100%;
     }
 
+    input.user-search::-webkit-search-cancel-button{
+        position:relative;
+        -webkit-appearance: none;
+        height: 20px;
+        width: 20px;
+        background-image: url('https://static.jboss.org/rhd/images/icons/fa_times_icon.svg');
+        opacity: 1;
+        pointer-events: auto;
+    }
+
     button {
         text-transform: uppercase;
         background: #c00;
@@ -83,12 +93,17 @@ rhdp-search-box {
     }
 }
 
-rhdp-search-result-count {
+rhdp-search-result-count, rhdp-search-empty-query {
     font-weight: 600;
     font-size: 1.2em;
     display: block;
     margin-bottom: 1em;
-    
+
+    p {
+        margin-top: 1em;
+        font-size: 18px;
+    }
+
     @media only screen and (max-width: 768px) {
         border-bottom: 1px solid $grey-3;
     }
@@ -128,8 +143,8 @@ rhdp-search-sort-page {
         align-self: flex-end; 
         position: absolute; 
         top: -4.5em;
-        right: 1em;
         border-bottom: none;
+        margin-left: 180px;
 
         top: -4.6em;
 
@@ -146,6 +161,8 @@ rhdp-search-sort-page {
             padding: 8px 0;
             color:$blue;
             font-size: 16px;
+            position: relative;
+            top: -4px;
 
             &:hover, &:focus {
                 background-color: $blue;
@@ -170,6 +187,8 @@ rhdp-search-sort-page {
     @media only screen and (max-width: 365px) {
         position: relative;
         left: 0; top: 0;
+        margin-left: 0px;
+
     }
 }
 
@@ -213,6 +232,15 @@ rhdp-search-filters {
         display: flex;
         flex-direction: row;
         margin-bottom: 1em;
+        .inline {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .clearFilters {
+            font-size: 16px;
+        }
+
     }
     .active-type strong {
         flex: 0 1 auto; 
@@ -257,7 +285,7 @@ rhdp-search-filters {
         flex-start; 
         float: left;
         border: none;
-        margin: 0 0 1em 0; 
+        margin: 0 0 1.3em 0; 
 
         .title { flex: 0 0 40px; order: 1; vertical-align: middle; }
         .showBtn {
@@ -294,10 +322,17 @@ rhdp-search-filters {
                 -webkit-overflow-scrolling: touch;
             }
             .active-type a {
-                display: block;
+                display: inline;
                 clear: left;
-                font-size: 14px;
+                font-size: 16px;
+                position: relative;
+                top: 5px;
+                vertical-align: top;
             }
+        }
+        .activeFilters {
+            display: inline-block;
+            max-width: 100%;
         }
 
         &[type="modal"] {
@@ -347,7 +382,7 @@ rhdp-search-filters {
                 border: 1px solid $blue;
                 line-height: 1.44;
                 background-color: $white;
-                padding: 8px 35px;
+                padding: 8px 20px;
                 color:$blue;
                 text-transform: uppercase;
                 margin-right: 1em;
@@ -361,7 +396,7 @@ rhdp-search-filters {
                 text-transform: uppercase;
                 background: $red;
                 font-weight: 600;
-                padding: 10px 45px;
+                padding: 10px 25px;
                 transition: background .2s ease-in 0s;
                 color: $white;
             }
@@ -377,9 +412,9 @@ rhdp-search-results {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-
+    div.moreBtn, p.end-of-results { text-align: center; }
     a.moreBtn {
-        display: inline-block;
+        display: block;
         border: 1px solid $blue;
         line-height: 1.44;
         background-color: $white;
@@ -388,10 +423,15 @@ rhdp-search-results {
         text-transform: uppercase;
         margin: 0 auto;
         font-weight: 600;
+        max-width: 165px;
         &:hover, &:focus {
             background-color: $blue;
             color: $white;
         }
+    }
+    .end-of-results {
+        text-align: center;
+        color: $grey-5;
     }
 
     @media only screen and (max-width: 768px) {
@@ -400,12 +440,17 @@ rhdp-search-results {
 }
 
 rhdp-search-result {
-    font-family: "Overpass","Open Sans",Helvetica,sans-serif;
+    font-family: "overpass","Open Sans",Helvetica,sans-serif;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid $grey-3;
+    display: flex;
+    flex-direction: row;
 
     .subscription-required {
         &:before {
             content: '';
-            background: url('http://static.jboss.org/rhd/images/icons/subscription-required.svg') no-repeat;
+            background: url('https://static.jboss.org/rhd/images/icons/subscription-required.svg') no-repeat;
             background-size:cover;
             position:absolute;
             margin-top: 5px;
@@ -417,29 +462,28 @@ rhdp-search-result {
         }
 
     }
-    .result {
-        margin-bottom: 25px;
-    }
 
-    .result.result-search {
-        border-bottom: 1px solid $grey-3;
-    }
+    div:first-child { flex: 1 1 auto; }
 
     h4 {
         font-weight: 600;
         font-style: normal;
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.4;
         color: #06c;
         cursor: pointer;
         margin: 0;
-        font-family: "Overpass","Open Sans",Helvetica,sans-serif;
+        font-family: "overpass","Open Sans",Helvetica,sans-serif;
     }
 
     p { margin: 0; 
         color: #424242;
-        font-family: "Overpass","Open Sans",Helvetica,sans-serif; 
+        font-family: "overpass","Open Sans",Helvetica,sans-serif;
         }
+    .result-info span{
+        font-size: .9rem;
+        color: $grey-6;
+    }
 
     .caps {
         text-transform: uppercase;
@@ -453,6 +497,10 @@ rhdp-search-result {
         text-overflow: ellipsis;
         max-height: 45px;
         margin-bottom: 25px;
+    }
+    .thumb { 
+        flex: 0 0 130px; 
+        margin-left: 1em;
     }
     .hlt { font-weight: 600; }
 }
@@ -511,7 +559,7 @@ rhdp-search-filter-group {
 }
 
 rhdp-search-filter-item {
-    font-family: "Overpass","Open Sans",Helvetica,sans-serif;
+    font-family: "overpass","Open Sans",Helvetica,sans-serif;
     span { display: none; }
     .text {
     flex: 1 6 auto;
@@ -564,7 +612,7 @@ rhdp-search-filter-item {
     #toggle { display: none; }
 
     &:last-child .inline {
-        margin-right: 0;
+        margin-right: 30px;
     }
 
     @media only screen and (max-width: 768px) {
