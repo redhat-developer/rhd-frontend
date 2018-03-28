@@ -1,5 +1,5 @@
 {
-  "name": "rhdp-frontend",
+  "name": "rhd-frontend",
   "version": "1.0.0",
   "description": "Front-end assets and documentation for Red Hat Developer site",
   "main": "index.js",
