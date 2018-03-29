@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Components on RHDP Front-end Code and Documentation</title>
-    <link>https://redhat-developer.github.io/rhdp-frontend/components/index.xml</link>
+    <link>https://redhat-developer.github.io/rhd-frontend/components/index.xml</link>
     <description>Recent content in Components on RHDP Front-end Code and Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 23 Aug 2017 22:56:52 -0400</lastBuildDate>
-    <atom:link href="https://redhat-developer.github.io/rhdp-frontend/components/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://redhat-developer.github.io/rhd-frontend/components/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Devnationlive</title>
-      <link>https://redhat-developer.github.io/rhdp-frontend/components/devnationlive/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/devnationlive/</link>
       <pubDate>Wed, 23 Aug 2017 22:56:52 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhdp-frontend/components/devnationlive/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/devnationlive/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;devnation-live-app src=&amp;#34;../../json/devnationlive.json&amp;#34;&amp;gt;&amp;lt;/devnation-live-app&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;code-sample&#34;&gt;
     &lt;strong&gt;Sample:&lt;/strong&gt;
@@ -27,10 +27,10 @@
     
     <item>
       <title>Onebox</title>
-      <link>https://redhat-developer.github.io/rhdp-frontend/components/onebox/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/onebox/</link>
       <pubDate>Wed, 23 Aug 2017 22:56:37 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhdp-frontend/components/onebox/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/onebox/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;rhdp-search-onebox url=&amp;#34;../../json/onebox.json&amp;#34; term=&amp;#34;fuse&amp;#34;&amp;gt;&amp;lt;/rhdp-search-onebox&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;code-sample&#34;&gt;
     &lt;strong&gt;Sample:&lt;/strong&gt;
@@ -43,10 +43,10 @@
     
     <item>
       <title>Search</title>
-      <link>https://redhat-developer.github.io/rhdp-frontend/components/search/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/search/</link>
       <pubDate>Wed, 23 Aug 2017 22:25:45 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhdp-frontend/components/search/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/search/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;rhdp-search-app url=&amp;#34;https://dcp2.jboss.org/v2/rest/search/developer_materials&amp;#34;&amp;gt;&amp;lt;/rhdp-search-app&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;code-sample&#34;&gt;
     &lt;strong&gt;Sample:&lt;/strong&gt;

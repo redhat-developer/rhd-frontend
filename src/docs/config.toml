@@ -1,4 +1,4 @@
-baseURL = "https://redhat-developer.github.io/rhdp-frontend/"
+baseURL = "https://redhat-developer.github.io/rhd-frontend/"
 languageCode = "en-us"
 title = "RHDP Front-end Code and Documentation"
 theme = "quencher"

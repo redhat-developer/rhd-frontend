@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Content on RHDP Front-end Code and Documentation</title>
-    <link>https://redhat-developer.github.io/rhdp-frontend/tags/content/index.xml</link>
+    <link>https://redhat-developer.github.io/rhd-frontend/tags/content/index.xml</link>
     <description>Recent content in Content on RHDP Front-end Code and Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://redhat-developer.github.io/rhdp-frontend/tags/content/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://redhat-developer.github.io/rhd-frontend/tags/content/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Notifications</title>
-      <link>https://redhat-developer.github.io/rhdp-frontend/patterns/content/notifications/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/content/notifications/</link>
       <pubDate>Thu, 03 Aug 2017 15:04:51 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhdp-frontend/patterns/content/notifications/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/content/notifications/</guid>
       <description>
 
 &lt;h1 id=&#34;alerts&#34;&gt;Alerts&lt;/h1&gt;
@@ -146,10 +146,10 @@
     
     <item>
       <title>Style</title>
-      <link>https://redhat-developer.github.io/rhdp-frontend/patterns/content/style/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/content/style/</link>
       <pubDate>Thu, 03 Aug 2017 15:04:33 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhdp-frontend/patterns/content/style/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/content/style/</guid>
       <description></description>
     </item>
     
