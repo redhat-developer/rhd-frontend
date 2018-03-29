@@ -6,8 +6,7 @@
   "scripts": {
     "start": "hugo serve -D -w -s src/docs",
     "lint": "npm run eslint",
-    "test": "karma start _tests/unit/config/karma.conf.js",
-    "test:docker": "karma start config/karma.conf.js",
+    "test": "karma start src/tests/config/karma.conf.js",
     "scripts": "tsc && cpx *.min.js src/docs/static/js",
     "serve": "npm run docs && browser-sync start -c browser-sync.config.js",
     "docs": "hugo -D -s src/docs && npm run docs:front",

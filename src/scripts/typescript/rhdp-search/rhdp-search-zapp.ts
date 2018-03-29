@@ -1,8 +1,17 @@
+// import {RHDPSearchURL} from './rhdp-search-url';
+// import {RHDPSearchQuery} from './rhdp-search-query';
+// import {RHDPSearchBox} from './rhdp-search-box';
+// import {RHDPSearchResultCount} from './rhdp-search-result-count';
+// import {RHDPSearchFilters} from './rhdp-search-filters';
+// import {RHDPSearchOneBox} from './rhdp-search-onebox';
+// import {RHDPSearchResults} from './rhdp-search-results';
+// import {RHDPSearchSortPage} from './rhdp-search-sort-page';
+
 class RHDPSearchApp extends HTMLElement {
     constructor() {
         super();
-        this.toggleModal = this.toggleModal.bind(this);
-        this.updateFacets = this.updateFacets.bind(this);
+        //this.toggleModal = this.toggleModal.bind(this);
+        //this.updateFacets = this.updateFacets.bind(this);
     }
 
     _name = 'Search';
@@ -30,6 +39,7 @@ class RHDPSearchApp extends HTMLElement {
     }
 
     template = `<div class="row">
+    <span class="search-outage-msg"></span>
     <div class="large-24 medium-24 small-24 columns searchpage-middle">
         <div class="row">
             <div class="large-24 medium-24 small-24 columns">
@@ -38,10 +48,11 @@ class RHDPSearchApp extends HTMLElement {
         </div>
         <div class="row">
             <div class="large-6 medium-8 small-24 columns"></div>
-            <div class="large-18 medium-16 small-24 columns"</div>
+            <div class="large-18 medium-16 small-24 columns"></div>
         </div>
     </div></div>`;
 
+    urlEle = new RHDPSearchURL();
     query = new RHDPSearchQuery();
     box = new RHDPSearchBox();
     count = new RHDPSearchResultCount();
@@ -77,10 +88,10 @@ class RHDPSearchApp extends HTMLElement {
                 name:'PRODUCT', 
                 key: 'product', 
                 items: [
-                {key: 'dotnet-product', name: '.NET Runtime for Red Hat Enterprise Linux', value: ['dotnet']},
+                {key: 'dotnet', name: '.NET Runtime for Red Hat Enterprise Linux', value: ['dotnet']},
                 {key: 'amq', name: 'JBoss A-MQ', value: ['amq']},
                 {key: 'bpmsuite', name: 'JBoss BPM Suite', value: ['bpmsuite']},
-                {key: 'brms', name: 'JBoss BRMS', value: ['brms']},
+                {key: 'brms', name: 'Red Hat Decision Manager', value: ['brms']},
                 {key: 'datagrid', name: 'JBoss Data Grid', value: ['datagrid']},
                 {key: 'datavirt', name: 'JBoss Data Virtualization', value: ['datavirt']},
                 {key: 'devstudio', name: 'JBoss Developer Studio', value: ['devstudio']},
@@ -102,7 +113,7 @@ class RHDPSearchApp extends HTMLElement {
                 {key: 'dotnet', name: '.NET', value: ['dotnet','.net','visual studio','c#']},
                 {key: 'containers', name: 'Containers', value: ['atomic','cdk','containers']},
                 {key: 'devops', name: 'DevOps', value: ['DevOps','CI','CD','Continuous Delivery']},
-                {key: 'enterprise-java', name: 'Enterprise Java', value: ['ActiveMQ','AMQP','apache camel','Arquillian','Camel','CDI','CEP','CXF','datagrid','devstudio','Drools','Eclipse','fabric8','Forge','fuse','Hawkular','Hawtio','Hibernate','Hibernate ORM','Infinispan','iPaas','java ee','JavaEE','JBDS','JBoss','JBoss BPM Suite','JBoss BRMS','JBoss Data Grid','jboss eap','JBoss EAP','']},
+                {key: 'enterprise-java', name: 'Enterprise Java', value: ['ActiveMQ','AMQP','apache camel','Arquillian','Camel','CDI','CEP','CXF','datagrid','devstudio','Drools','Eclipse','fabric8','Forge','fuse','Hawkular','Hawtio','Hibernate','Hibernate ORM','Infinispan','iPaas','java ee','JavaEE','JBDS','JBoss','JBoss BPM Suite','Red Hat Decision Manager','JBoss Data Grid','jboss eap','JBoss EAP','']},
                 {key: 'iot', name: 'Internet of Things', value: ['IoT','Internet of Things']},
                 {key: 'microservices', name: 'Microservices', value: ['Microservices',' WildFly Swarm']},
                 {key: 'mobile', name: 'Mobile', value: ['Mobile','Red Hat Mobile','RHMAP','Cordova','FeedHenry']},
@@ -133,27 +144,7 @@ class RHDPSearchApp extends HTMLElement {
         this.querySelector('.large-18').appendChild(this.sort);
         this.querySelector('.large-18').appendChild(this.onebox);
         this.querySelector('.large-18').appendChild(this.results);
-
-        this.addEventListener('update-term', this.doSearch);
-        this.addEventListener('search-complete', this.setResults);
-        this.addEventListener('load-more', this.loadMore)
-        this.addEventListener('sort-change', this.updateSort);
-        document.addEventListener('toggle-modal', this.toggleModal);
-        document.addEventListener('facetChange', this.updateFacets);
-
-        /* To Do
-          Set text and term from querystring "q" value if present
-        */
-        var loc = window.location.href.split('?'),
-            term = loc.length > 1 ? loc[1].split('=')[1] : '';
-        if (term.length > 0) {
-            term = term.replace(/\+/g, '%20');
-            term = decodeURIComponent(term);
-            this.box.term = term;
-            this.onebox.term = term;
-            this.count.term = term;
-            this.query.search(this.box.term);
-        }
+        document.body.appendChild(this.urlEle);
     }
 
     static get observedAttributes() { 
@@ -162,30 +153,6 @@ class RHDPSearchApp extends HTMLElement {
 
     attributeChangedCallback(name, oldVal, newVal) {
         this[name] = newVal;
-    }
-
-    doSearch(e) {
-        this.count.term = e.detail ? e.detail.term : this.query.term;
-        this.onebox.term = e.detail ? e.detail.term : this.query.term;
-        this.query.from = 0;
-        this.results.last = 0;
-        this.query.search(e.detail ? e.detail.term : this.query.term);
-    }
-
-    loadMore(e) {
-        this.query.from = e.detail.from;
-        this.query.search(this.query.term);
-    }
-
-    setResults(e) {
-        if(this.query.from === 0) {
-            this.results.results = e.detail.results;
-        } else {
-            this.results.more = e.detail.results;
-        }
-        
-        this.count.count = e.detail.results.hits.total;
-        this.results.classList.remove('loading');
     }
 
     toggleModal(e) {
@@ -197,38 +164,7 @@ class RHDPSearchApp extends HTMLElement {
         this.query.from = 0;
         this.results.last = 0;
         this.count.term = this.box.term;
-        this.query.search(this.box.term);
-    }
-
-    updateFacets(e) {
-        var facet = e.detail.facet.cloneNode(true),
-            len = this.filterObj.facets.length;
-        facet.bubble = false;
-        facet.active = e.detail.facet.active;
-        this.modal.setActive(facet, false);
-        this.filters.setActive(facet, false);
-        for(let i=0; i < len; i++) {
-            var itemLen = this.filterObj.facets[i].items.length;
-            for(let j=0; j < itemLen; j++) {
-                if(this.filterObj.facets[i].items[j].key === facet.key) {
-                    this.filterObj.facets[i].items[j]['active'] = facet.active;
-                }
-            }
-        }
-
-        if (facet.active) {
-            facet.inline = true;
-            this.active.addActive(facet);
-        } else {
-            this.active.filters = this.filterObj;
-            this.active.updateActiveFacets();
-        }
-
-        this.query.filters = this.filterObj;
-        this.query.from = 0;
-        this.results.last = 0;
-        this.count.term = this.box.term;
-        this.onebox.term = this.box.term;
-        this.query.search(this.box.term);
     }
 }
+
+customElements.define('rhdp-search-app', RHDPSearchApp);

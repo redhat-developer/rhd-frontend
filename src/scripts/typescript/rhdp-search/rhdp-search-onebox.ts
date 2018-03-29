@@ -73,10 +73,14 @@ class RHDPSearchOneBox extends HTMLElement {
     constructor() {
         super();
 
+        this._termChange = this._termChange.bind(this);
     }
 
     connectedCallback() {
         this.getData();
+
+        top.addEventListener('term-change', this._termChange);
+        top.addEventListener('params-ready', this._termChange);
     }
 
     static get observedAttributes() { 
@@ -85,6 +89,14 @@ class RHDPSearchOneBox extends HTMLElement {
 
     attributeChangedCallback(name, oldVal, newVal) {
         this[name] = newVal;
+    }
+
+    _termChange(e) {
+        if (e.detail && e.detail.term && e.detail.term.length > 0) {
+            this.term = e.detail.term;
+        } else {
+            this.term = '';
+        }
     }
 
     getData() {
@@ -125,3 +137,5 @@ class RHDPSearchOneBox extends HTMLElement {
         return icons[name];
     }
 }
+
+customElements.define('rhdp-search-onebox', RHDPSearchOneBox);
