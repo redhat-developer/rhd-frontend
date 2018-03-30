@@ -1,6 +1,6 @@
 {
   "name": "rhd-frontend",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Front-end assets and documentation for Red Hat Developer site",
   "main": "index.js",
   "scripts": {
