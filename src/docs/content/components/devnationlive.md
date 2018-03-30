@@ -5,4 +5,4 @@ description: ""
 draft: true
 ---
 
-{{< code >}}<devnation-live-app src="../../json/devnationlive.json"></devnation-live-app>{{< /code >}}
+{{< code >}}<devnation-live-app src="/json/devnationlive.json"></devnation-live-app>{{< /code >}}
