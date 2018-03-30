@@ -7,7 +7,7 @@ draft: true
 # Buttons
 Style | Sample
 ----- | -------
-Default | {{< code >}}<a href="#" class="button">Button</a>{{< /code >}}
+Default | {{<code>}}<a href="#" class="button">Button</a>{{</code>}}
 Form Submit | {{< code >}}<input type="submit" class="button" value="Submit">{{< /code >}}
 
 # Heavy CTAs

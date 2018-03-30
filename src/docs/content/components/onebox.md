@@ -5,4 +5,4 @@ description: ""
 draft: true
 ---
 
-{{< code >}}<rhdp-search-onebox url="../../json/onebox.json" term="fuse"></rhdp-search-onebox>{{< /code >}}
+{{< code >}}<rhdp-search-onebox url="/rhd-frontend/json/onebox.json" term="fuse"></rhdp-search-onebox>{{< /code >}}

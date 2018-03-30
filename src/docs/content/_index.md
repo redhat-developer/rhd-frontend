@@ -17,7 +17,7 @@ draft: true
 
 ## Components
 
-[Search](#)
+{{<fa "fas fa-user"/>}}[Search](#)
 
 ## Code
 
