@@ -19,14 +19,16 @@
     <script defer src="/js/fontawesome-all.js"></script>
 
   </head>
-  <body>
-    {{ partial "header.html" }}
+  <body data-rhd-grid="normal">
+    {{ partial "header.html" . }}
+    <main role="main">
     {{ block "main" . }}
       <!-- The part of the page that begins to differ between templates -->
     {{ end }}
+    </main>
     {{ block "footer" . }}
     <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
     {{ end }}
-    {{ partial "footer.html" }}
+    {{ partial "footer.html" . }}
   </body>
 </html>

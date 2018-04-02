@@ -19,16 +19,76 @@ Background – RHD Front-end Code and Documentation
     <script defer src="https://redhat-developer.github.io/rhd-frontend/js/fontawesome-all.js"></script>
 
   </head>
-  <body>
+  <body data-rhd-grid="normal">
+    <header role="banner">
+    <div class="rh-universal-header">
+        <img class="rh-header-logo" alt="Red Hat Logo" src="https://redhat-developer.github.io/rhd-frontend/img/rh-logo.png">
+        <nav class="rh-nav-universal" aria-label="Red Hat Global Navigation">
+            <ul>
+                <li><a href="#">Customer Portal</a></li>
+                <li><a href="#">Developer</a></li>
+                <li><a href="#">OpenShift</a></li>
+                <li><a href="#">OpenShift.io</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Store</a></li>
+                <li class="rh-universal-login"><a href="#"><i class="fas fa-user"></i>Log In</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="rhd-header">
+        <img class="rhd-header-logo" alt="Red Hat Developer Logo" src="https://redhat-developer.github.io/rhd-frontend/img/rhd-logo.png">
+        <nav class="rhd-nav-fixed" aria-label="Static Main Navigation" role="navigation">
+            <ul>
+                <li>One</li>
+                <li>Two</li>
+                <li>Three</li>
+                <li>Four</li>
+                <li class="rhd-nav-search"><i class="fas fa-search"></i></li>
+            </ul>
+        </nav>
+        <nav class="rhd-nav-dynamic" aria-label="Topic Navigation" role="navigation">
+            <ul>
+                
+                <li><a href="https://redhat-developer.github.io/rhd-frontend/tags/code">code</a></li>
+                
+                <li><a href="https://redhat-developer.github.io/rhd-frontend/tags/component">component</a></li>
+                
+                <li><a href="https://redhat-developer.github.io/rhd-frontend/tags/content">content</a></li>
+                
+                <li><a href="https://redhat-developer.github.io/rhd-frontend/tags/design">design</a></li>
+                
+                <li><a href="https://redhat-developer.github.io/rhd-frontend/tags/layout">layout</a></li>
+                
+                <li><a href="https://redhat-developer.github.io/rhd-frontend/tags/misc">misc</a></li>
+                
+                <li><a href="https://redhat-developer.github.io/rhd-frontend/tags/navigation">navigation</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+    <main role="main">
     
-    
-<h1>Background</h1>
+<h1>Single Template Background</h1>
 
 
+    </main>
     
     
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/prism.min.js"></script>
+    <footer>
+    <div class="rhd-footer">
+        <nav aria-label="Secondary Navigation" role="navigation"></nav>
+        <div class="rhd-footer-sidebar"></div>
+    </div>
+    <div class="rh-universal-footer">
+        <img class="rh-footer-logo" alt="Red Hat Logo" src="https://redhat-developer.github.io/rhd-frontend/img/rhd-logo.png">
+        <div class="rh-footer-contentinfo" role="contentinfo">&copy;2018</div>
+        <img class="rh-summit-footer-logo" alt="Red Hat Summit Logo" src="https://redhat-developer.github.io/rhd-frontend/img/summit-logo.png">
+    </div>
+</footer>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/prism.min.js"></script>
 <script src="https://redhat-developer.github.io/rhd-frontend/js/rhd.min.js"></script>
 
   </body>

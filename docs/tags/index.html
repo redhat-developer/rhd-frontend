@@ -19,8 +19,16 @@
     <script defer src="https://redhat-developer.github.io/rhd-frontend/js/fontawesome-all.js"></script>
 
   </head>
-  <body>
-    
+  <body data-rhd-grid="normal">
+    <header role="banner">
+    <div class="rh-universal-header"></div>
+    <div class="rhd-header">
+        <img class="rhd-header-logo" src="https://redhat-developer.github.io/rhd-frontend/img/rhd-logo.png">
+        <nav class="rhd-nav-fixed" aria-label="Static Main Navigation" role="navigation"></nav>
+        <nav class="rhd-nav-dynamic" aria-label="Topic Navigation" role="navigation"></nav>
+    </div>
+</header>
+    <main role="main">
     
 <main>
     <article>
@@ -40,10 +48,23 @@
     </ul>
 </main>
 
+    </main>
     
     
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/prism.min.js"></script>
+    <footer>
+    <div class="rhd-footer">
+        <nav aria-label="Secondary Navigation" role="navigation"></nav>
+        <div class="rhd-footer-sidebar"></div>
+    </div>
+    <div class="rh-universal-footer">
+        <img class="rh-footer-logo" src="https://redhat-developer.github.io/rhd-frontend/img/rhd-logo.png">
+        <div role="contentinfo"></div>
+        <img class="rh-summit-footer-logo" src="https://redhat-developer.github.io/rhd-frontend/img/summit-logo.png">
+    </div>
+</footer>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/prism.min.js"></script>
 <script src="https://redhat-developer.github.io/rhd-frontend/js/rhd.min.js"></script>
 
   </body>
