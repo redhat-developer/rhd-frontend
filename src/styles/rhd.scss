@@ -261,31 +261,35 @@ button, .button {
   margin-left: 0 !important;
   margin-right: 0 !important;
 
-  &:hover, &:focus {
-    background-color: darken( $red, 12% );
-  }
+  &:hover, &:focus { background-color: $dark-red; }
+  &:active { background-color: $darker-red; }
+
   &.heavy-cta {
     font-weight: bold;
     &.white {
-      background:$white;
-      color:$red;
-      &:hover, &:focus {
-        background-color: darken( $white, 6% );
-      }
+      background-color: $white;
+      color: $red;
+      &:hover, &:focus { background-color: $grey-2; }
+      &:active { background-color: $white; }
     }
     &.black {
-      background:$black;
+      background-color:$black;
       color:$white;
     }
     &.blue {
-      background:$blue;
+      background-color:$blue;
       color:$white;
-      &:hover, &:focus {
-        background-color: darken( $blue, 6% );
-      }
+      &:hover, &:focus { background-color: $dark-blue; }
+      &:active { background-color: $darker-blue; }
     }
-
+    &.gray {
+      background-color: $grey-5;
+      color:$white;
+      &:hover, &:focus { background-color: $grey-6; }
+      &:active { background-color: $grey-7; }
+    }
   }
+
   &.medium-cta {
     border: 1px solid $red;
     line-height: 1.44;
@@ -296,12 +300,32 @@ button, .button {
       background-color: $red;
       color: $white;
     }
+    &:active {
+        background-color: $dark-red;
+        color: $white;
+    }
     &.white {
       border-color:$white;
       color:$white;
       &:hover, &:focus {
+        background-color: $grey-2;
+        color: $grey-8;
+      }
+      &:active {
         background-color: $white;
-        color: $red;
+        color: $grey-8;
+      }
+    }
+    &.gray {
+      border-color: #72767B;
+      color:$grey-5;
+      &:hover, &:focus {
+        background-color: $grey-6;
+        color: $white;
+      }
+      &:active {
+        background-color: $grey-7;
+        color: $white;
       }
     }
     &.black {
@@ -319,34 +343,16 @@ button, .button {
         background-color: $blue;
         color: $white;
       }
+      &:active {
+        background-color: $dark-blue;
+        color: $white;
+      }
     }
   }
-  &.large {
-    padding: 0.6em 0.9em;
-  }
-  &.long {
-    padding: .6em 5em;
-  }
-  & + button, & + .button {
-    margin-left: 20px;
-  }
-  &.inverse {
-    background:white;
-    color:$red;
-  }
-  &.clear {
-    padding-left:0;
-    padding-right: 0;
-    background: transparent;
-    border: 0;
-    i {
-      margin-right:2px;
-      margin-left: 2px;
-    }
-  }
-  &.external-link:after {
-    display: none;
-  }
+  &.large { padding: 0.6em 0.9em; }
+  &.long { padding: .6em 5em; }
+  & + button, & + .button { margin-left: 20px; }
+  &.external-link:after { display: none; }
 }
 
 a.button[href$=".pdf"]:after,
@@ -362,20 +368,18 @@ a.light-cta{
     padding-left:2px;
     content: "\25B8";
   }
-  &:hover, &:focus {
-    color: $linkhover;
-  }
+  &:hover, &:focus { color: $linkhover; }
   &.black {
     color: $black;
-    &:hover, &:focus {
-      color: $link;
-    }
+    &:hover, &:focus { color: $link; }
   }
   &.white {
     color: $white;
-    &:hover, &:focus {
-      color: $linkhover-dark-background;
-    }
+    &:hover, &:focus { color: $grey-4; }
+  }
+  &.gray {
+    color: $grey-6;
+    &:hover, &:focus { color: $black; }
   }
   &.external-link:after {
     vertical-align: baseline;
