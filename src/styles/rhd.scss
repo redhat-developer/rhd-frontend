@@ -1,5 +1,6 @@
 @import "fonts/fonts";
 @import "colors";
+@import "alerts";
 
 * {
   box-sizing: border-box;
@@ -249,6 +250,7 @@ small a,
 
 button, .button {
   background: $red;
+  color: $white;
   text-transform: uppercase;
   text-decoration: none;
   border:0;
@@ -261,8 +263,14 @@ button, .button {
   margin-left: 0 !important;
   margin-right: 0 !important;
 
-  &:hover, &:focus { background-color: $dark-red; }
-  &:active { background-color: $darker-red; }
+  &:hover, &:focus {
+    background-color: $dark-red;
+    color: $white;
+  }
+  &:active {
+    background-color: $darker-red;
+    color: $white;
+  }
 
   &.heavy-cta {
     font-weight: bold;
