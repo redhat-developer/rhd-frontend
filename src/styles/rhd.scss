@@ -1,6 +1,9 @@
 @import "fonts/fonts";
 @import "colors";
 @import "alerts";
+@import "foundation/global";
+@import "foundation/grid";
+@import "foundation/functions";
 
 * {
   box-sizing: border-box;
