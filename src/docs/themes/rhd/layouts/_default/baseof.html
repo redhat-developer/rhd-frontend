@@ -16,11 +16,11 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.1/custom-elements-es5-adapter.js"></script>
     <!--! do not remove -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.1/webcomponents-lite.js"></script>  
-    <script defer src="/js/fontawesome-all.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
   </head>
   <body>
     {{ partial "header.html" . }}
-    <main role="main">
+    <main role="main" data-rhd-grid="normal">
     {{ block "main" . }}
       <!-- The part of the page that begins to differ between templates -->
     {{ end }}
