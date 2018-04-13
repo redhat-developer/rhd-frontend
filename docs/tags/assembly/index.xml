@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assembly on RHD Front-end Code and Documentation</title>
+    <link>https://redhat-developer.github.io/rhd-frontend/tags/assembly/index.xml</link>
+    <description>Recent content in Assembly on RHD Front-end Code and Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://redhat-developer.github.io/rhd-frontend/tags/assembly/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Featured Products</title>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/assembly/featured_products/</link>
+      <pubDate>Fri, 13 Apr 2018 00:18:55 -0400</pubDate>
+      
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/assembly/featured_products/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;
+&amp;lt;section data-quickedit-entity-id=&amp;#34;assembly/29&amp;#34; id=&amp;#34;assembly-field-sections-29&amp;#34; class=&amp;#34;assembly assembly-type-featured_products&amp;#34; data-quickedit-entity-instance-id=&amp;#34;0&amp;#34;&amp;gt;
+  &amp;lt;h2 data-quickedit-field-id=&amp;#34;assembly/29/field_title/en/default&amp;#34; class=&amp;#34;field field--name-field-title field--type-string field--label-hidden field__item&amp;#34;&amp;gt;Featured Products&amp;lt;/h2&amp;gt;
+
+  &amp;lt;article data-quickedit-entity-id=&amp;#34;node/33805&amp;#34; role=&amp;#34;article&amp;#34; class=&amp;#34;contextual-region node node--type-product node--view-mode-featured-tile&amp;#34; about=&amp;#34;/node/33805&amp;#34; data-quickedit-entity-instance-id=&amp;#34;0&amp;#34;&amp;gt;
+    &amp;lt;h2&amp;gt;
+      &amp;lt;a href=&amp;#34;/node/33805&amp;#34; rel=&amp;#34;bookmark&amp;#34;&amp;gt;&amp;lt;span data-quickedit-field-id=&amp;#34;node/33805/title/en/featured_tile&amp;#34; class=&amp;#34;field field--name-title field--type-string field--label-hidden quickedit-field&amp;#34;&amp;gt;Red Hat OpenShift Container Platform&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+    &amp;lt;/h2&amp;gt;
+    &amp;lt;div class=&amp;#34;node__content&amp;#34;&amp;gt;
+      &amp;lt;div class=&amp;#34;description field field--name-field-short-description field--type-string-long field--label-hidden field__items quickedit-field&amp;#34; data-quickedit-field-id=&amp;#34;node/33805/field_short_description/en/featured_tile&amp;#34;&amp;gt;
+        An open, hybrid Platform-as-a-Service (PaaS) to quickly develop, host, scale, and deliver apps in the cloud.
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/article&amp;gt;
+
+  &amp;lt;article data-quickedit-entity-id=&amp;#34;node/47235&amp;#34; role=&amp;#34;article&amp;#34; class=&amp;#34;contextual-region node node--type-product node--view-mode-featured-tile&amp;#34; about=&amp;#34;/node/47235&amp;#34; data-quickedit-entity-instance-id=&amp;#34;0&amp;#34;&amp;gt;
+    &amp;lt;h2&amp;gt;
+      &amp;lt;a href=&amp;#34;/node/47235&amp;#34; rel=&amp;#34;bookmark&amp;#34;&amp;gt;&amp;lt;span data-quickedit-field-id=&amp;#34;node/47235/title/en/featured_tile&amp;#34; class=&amp;#34;field field--name-title field--type-string field--label-hidden quickedit-field&amp;#34;&amp;gt;Red Hat OpenShift Application Runtimes&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+    &amp;lt;/h2&amp;gt;
+    &amp;lt;div class=&amp;#34;node__content&amp;#34;&amp;gt;
+      &amp;lt;div class=&amp;#34;description field field--name-field-short-description field--type-string-long field--label-hidden field__items quickedit-field&amp;#34; data-quickedit-field-id=&amp;#34;node/47235/field_short_description/en/featured_tile&amp;#34;&amp;gt;
+        Cloud native application runtimes optimized for OpenShift.
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/article&amp;gt;
+
+  &amp;lt;article data-quickedit-entity-id=&amp;#34;node/33765&amp;#34; role=&amp;#34;article&amp;#34; class=&amp;#34;contextual-region node node--type-product node--view-mode-featured-tile&amp;#34; about=&amp;#34;/products/devsuite&amp;#34; data-quickedit-entity-instance-id=&amp;#34;0&amp;#34;&amp;gt;
+    &amp;lt;h2&amp;gt;
+      &amp;lt;a href=&amp;#34;/products/devsuite&amp;#34; rel=&amp;#34;bookmark&amp;#34;&amp;gt;&amp;lt;span data-quickedit-field-id=&amp;#34;node/33765/title/en/featured_tile&amp;#34; class=&amp;#34;field field--name-title field--type-string field--label-hidden quickedit-field&amp;#34;&amp;gt;Red Hat Development Suite&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+    &amp;lt;/h2&amp;gt;
+    &amp;lt;div class=&amp;#34;node__content&amp;#34;&amp;gt;
+      &amp;lt;div class=&amp;#34;description field field--name-field-short-description field--type-string-long field--label-hidden field__items quickedit-field&amp;#34; data-quickedit-field-id=&amp;#34;node/33765/field_short_description/en/featured_tile&amp;#34;&amp;gt;
+        A curated, integrated set of desktop tools especially suited for developing Linux container-based microservices.
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/article&amp;gt;
+&amp;lt;/section&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;code-sample&#34;&gt;
+    &lt;strong&gt;Sample:&lt;/strong&gt;
+    
+&lt;section data-quickedit-entity-id=&#34;assembly/29&#34; id=&#34;assembly-field-sections-29&#34; class=&#34;assembly assembly-type-featured_products&#34; data-quickedit-entity-instance-id=&#34;0&#34;&gt;
+  &lt;h2 data-quickedit-field-id=&#34;assembly/29/field_title/en/default&#34; class=&#34;field field--name-field-title field--type-string field--label-hidden field__item&#34;&gt;Featured Products&lt;/h2&gt;
+
+  &lt;article data-quickedit-entity-id=&#34;node/33805&#34; role=&#34;article&#34; class=&#34;contextual-region node node--type-product node--view-mode-featured-tile&#34; about=&#34;/node/33805&#34; data-quickedit-entity-instance-id=&#34;0&#34;&gt;
+    &lt;h2&gt;
+      &lt;a href=&#34;https://redhat-developer.github.io/rhd-frontend/node/33805&#34; rel=&#34;bookmark&#34;&gt;&lt;span data-quickedit-field-id=&#34;node/33805/title/en/featured_tile&#34; class=&#34;field field--name-title field--type-string field--label-hidden quickedit-field&#34;&gt;Red Hat OpenShift Container Platform&lt;/span&gt;&lt;/a&gt;
+    &lt;/h2&gt;
+    &lt;div class=&#34;node__content&#34;&gt;
+      &lt;div class=&#34;description field field--name-field-short-description field--type-string-long field--label-hidden field__items quickedit-field&#34; data-quickedit-field-id=&#34;node/33805/field_short_description/en/featured_tile&#34;&gt;
+        An open, hybrid Platform-as-a-Service (PaaS) to quickly develop, host, scale, and deliver apps in the cloud.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+
+  &lt;article data-quickedit-entity-id=&#34;node/47235&#34; role=&#34;article&#34; class=&#34;contextual-region node node--type-product node--view-mode-featured-tile&#34; about=&#34;/node/47235&#34; data-quickedit-entity-instance-id=&#34;0&#34;&gt;
+    &lt;h2&gt;
+      &lt;a href=&#34;https://redhat-developer.github.io/rhd-frontend/node/47235&#34; rel=&#34;bookmark&#34;&gt;&lt;span data-quickedit-field-id=&#34;node/47235/title/en/featured_tile&#34; class=&#34;field field--name-title field--type-string field--label-hidden quickedit-field&#34;&gt;Red Hat OpenShift Application Runtimes&lt;/span&gt;&lt;/a&gt;
+    &lt;/h2&gt;
+    &lt;div class=&#34;node__content&#34;&gt;
+      &lt;div class=&#34;description field field--name-field-short-description field--type-string-long field--label-hidden field__items quickedit-field&#34; data-quickedit-field-id=&#34;node/47235/field_short_description/en/featured_tile&#34;&gt;
+        Cloud native application runtimes optimized for OpenShift.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+
+  &lt;article data-quickedit-entity-id=&#34;node/33765&#34; role=&#34;article&#34; class=&#34;contextual-region node node--type-product node--view-mode-featured-tile&#34; about=&#34;/products/devsuite&#34; data-quickedit-entity-instance-id=&#34;0&#34;&gt;
+    &lt;h2&gt;
+      &lt;a href=&#34;https://redhat-developer.github.io/rhd-frontend/products/devsuite&#34; rel=&#34;bookmark&#34;&gt;&lt;span data-quickedit-field-id=&#34;node/33765/title/en/featured_tile&#34; class=&#34;field field--name-title field--type-string field--label-hidden quickedit-field&#34;&gt;Red Hat Development Suite&lt;/span&gt;&lt;/a&gt;
+    &lt;/h2&gt;
+    &lt;div class=&#34;node__content&#34;&gt;
+      &lt;div class=&#34;description field field--name-field-short-description field--type-string-long field--label-hidden field__items quickedit-field&#34; data-quickedit-field-id=&#34;node/33765/field_short_description/en/featured_tile&#34;&gt;
+        A curated, integrated set of desktop tools especially suited for developing Linux container-based microservices.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/section&gt;
+
+&lt;/div&gt;
+
+
+</description>
+    </item>
+    
+  </channel>
+</rss>
