@@ -13,8 +13,10 @@ button, .button {
   margin-left: 0 !important;
   margin-right: 0 !important;
   text-align: center;
+  color: $white;
 
   &:hover, &:focus {
+    color: $white;
     background-color: darken( $red, 12% );
   }
   &.heavy-cta {
