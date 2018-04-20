@@ -4,17 +4,17 @@ export default class DPCategory extends RHElement {
     template = el => {
         const tpl = document.createElement("template");
         tpl.innerHTML = `
-            <style>
-                :host { text-align: center; }
-                section { display: none; width: 100%; }
-                img { height: 150px; width: 150px; }
-            </style>
-            ${el.image ? `<img src="${el.image}">` : `<img src="">`}
-            <h4>${ el.name }</h4>
-            <section>
-            <slot></slot>
-            </section>
-            `;
+<style>
+:host { 
+    text-align: center; 
+    grid-column: span 1; 
+}
+:host img { height: 150px; width: 150px; }
+</style>
+${el.image ? `<img src="${el.image}">` : `<img src="">`}
+<h4>${ el.name }</h4>
+<slot></slot>
+`;
         return tpl;
     }
 

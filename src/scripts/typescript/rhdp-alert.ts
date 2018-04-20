@@ -18,6 +18,8 @@ export default class RHDPAlert extends RHElement {
             font-size: 1em;
             background-color: ${el.background};
             border-color: ${el.border};
+            line-height: 24px;
+            vertical-align: middle;
         }
 
         h3, strong {

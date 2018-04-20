@@ -6,6 +6,7 @@ export default class DPCategoryItemList extends RHElement {
         tpl.innerHTML = `
             <style>
             :host {
+                display: none;
                 grid-column: span 4;
             }
 
@@ -22,7 +23,7 @@ export default class DPCategoryItemList extends RHElement {
 
             div:after, div:before {
                 bottom: 100%;
-                left: ${el.index > 1 ? ((2*el.index)-1) * 12.5 : 12.5}%;
+                left: ${el.index%4 > 0 ? ((2*(el.index%4))-1) * 12.5 : 7 * 12.5}%;
                 border: solid transparent;
                 content: " ";
                 height: 0;

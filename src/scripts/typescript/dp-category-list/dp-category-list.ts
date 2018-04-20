@@ -4,17 +4,23 @@ export default class DPCategoryList extends RHElement {
     template = el => {
         const tpl = document.createElement("template");
         tpl.innerHTML = `
-            <style>
-                :host {
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    justify-items: center;
-                    position: relative;
-                    background-color: #F9F9F9;
-                }
-            </style>
-            <slot></slot>
-            `;
+<style>
+    :host {
+        justify-items: center;
+        position: relative;
+        background-color: #F9F9F9;
+        padding: 30px 0;
+    }
+    section {
+        grid-column: 2 / span 12;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+</style>
+<section data-rhd-pos="span12">
+<slot></slot>
+</section>
+`;
         return tpl;
     }
     constructor() {
@@ -25,16 +31,19 @@ export default class DPCategoryList extends RHElement {
     connectedCallback() {
         super.render(this.template(this));
 
+        this.setAttribute('data-rhd-grid', 'normal');
+
         this.addEventListener('dp-category-selected', e => {
             let section = this.querySelector(':scope > dp-category-item-list');
             if (section) { section.remove(); }
 
             let detail = e['detail'];
-            let len = this.querySelectorAll('dp-category').length;
+            let len = this.querySelectorAll(':scope > dp-category').length;
             let idx = 1 + (Math.ceil(detail.index / 4) * 4) || len;
             let list = detail.list || null;
             let rowEle = this.querySelector(`dp-category:nth-child(${idx})`);
             list.index = detail.index || 1;
+            list.style.display = 'block';
             if (idx <= len) {
                 this.insertBefore(list, rowEle);
             } else {

@@ -83,7 +83,7 @@ System.register("rhdp-alert", ["rhelement"], function (exports_2, context_2) {
                     var _this = _super.call(this, 'rhdp-alert') || this;
                     _this.template = function (el) {
                         var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n        <style>\n        :host {\n            color: #363636 !important;\n            display: flex;\n            flex-direction: " + (el.size !== 'xl' ? 'row' : 'column') + ";\n            border-width: 1px;\n            border-style: solid;\n            padding: 10px 20px;\n            margin: 1.5em auto;\n            font-size: 1em;\n            background-color: " + el.background + ";\n            border-color: " + el.border + ";\n        }\n\n        h3, strong {\n            margin-bottom: 0;\n            display: inline\n        }\n\n        strong { margin-right: .5em; }\n          \n        img {\n            flex: 0 0 1.5em;\n            height: 1.5em;\n            display: block;\n            position: relative;\n            margin-right: 10px;\n            " + (el.size !== 'xl' ? '' : "\n            display: inline;\n            float: left;\n            margin-left: 1em;\n            ") + "\n        }\n        \n        a.close {\n            top: 1em;\n            margin-right: 5px;\n            background-repeat: no-repeat;\n            height: 24px;\n            width: 24px;\n            color: #3b6e90;\n        }\n        \n        </style>\n        <img src=\"" + el.icon + "\">\n        " + (el.size === 'xl' ? '<h3>' : '') + "\n        " + (el.heading ? "<strong>" + el.heading + "</strong>" : '') + "\n        " + (el.size === 'xl' ? '</h3>' : '') + "\n        <slot></slot>\n        " + (el.size === 'xl' ? "<a class=\"close\"><i class=\"fas fa-times\"</a>" : '');
+                        tpl.innerHTML = "\n        <style>\n        :host {\n            color: #363636 !important;\n            display: flex;\n            flex-direction: " + (el.size !== 'xl' ? 'row' : 'column') + ";\n            border-width: 1px;\n            border-style: solid;\n            padding: 10px 20px;\n            margin: 1.5em auto;\n            font-size: 1em;\n            background-color: " + el.background + ";\n            border-color: " + el.border + ";\n            line-height: 24px;\n            vertical-align: middle;\n        }\n\n        h3, strong {\n            margin-bottom: 0;\n            display: inline\n        }\n\n        strong { margin-right: .5em; }\n          \n        img {\n            flex: 0 0 1.5em;\n            height: 1.5em;\n            display: block;\n            position: relative;\n            margin-right: 10px;\n            " + (el.size !== 'xl' ? '' : "\n            display: inline;\n            float: left;\n            margin-left: 1em;\n            ") + "\n        }\n        \n        a.close {\n            top: 1em;\n            margin-right: 5px;\n            background-repeat: no-repeat;\n            height: 24px;\n            width: 24px;\n            color: #3b6e90;\n        }\n        \n        </style>\n        <img src=\"" + el.icon + "\">\n        " + (el.size === 'xl' ? '<h3>' : '') + "\n        " + (el.heading ? "<strong>" + el.heading + "</strong>" : '') + "\n        " + (el.size === 'xl' ? '</h3>' : '') + "\n        <slot></slot>\n        " + (el.size === 'xl' ? "<a class=\"close\"><i class=\"fas fa-times\"</a>" : '');
                         return tpl;
                     };
                     _this._type = 'info';
@@ -245,7 +245,7 @@ System.register("dp-category-list/dp-category-list", ["rhelement"], function (ex
                     var _this = _super.call(this, 'dp-category-list') || this;
                     _this.template = function (el) {
                         var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n            <style>\n                :host {\n                    display: grid;\n                    grid-template-columns: repeat(4, 1fr);\n                    justify-items: center;\n                    position: relative;\n                }\n            </style>\n            <slot></slot>\n            ";
+                        tpl.innerHTML = "\n<style>\n    :host {\n        justify-items: center;\n        position: relative;\n        background-color: #F9F9F9;\n        padding: 30px 0;\n    }\n    section {\n        grid-column: 2 / span 12;\n        display: grid;\n        grid-template-columns: repeat(4, 1fr);\n    }\n</style>\n<section data-rhd-pos=\"span12\">\n<slot></slot>\n</section>\n";
                         return tpl;
                     };
                     return _this;
@@ -253,17 +253,19 @@ System.register("dp-category-list/dp-category-list", ["rhelement"], function (ex
                 DPCategoryList.prototype.connectedCallback = function () {
                     var _this = this;
                     _super.prototype.render.call(this, this.template(this));
+                    this.setAttribute('data-rhd-grid', 'normal');
                     this.addEventListener('dp-category-selected', function (e) {
                         var section = _this.querySelector(':scope > dp-category-item-list');
                         if (section) {
                             section.remove();
                         }
                         var detail = e['detail'];
-                        var len = _this.querySelectorAll('dp-category').length;
+                        var len = _this.querySelectorAll(':scope > dp-category').length;
                         var idx = 1 + (Math.ceil(detail.index / 4) * 4) || len;
                         var list = detail.list || null;
                         var rowEle = _this.querySelector("dp-category:nth-child(" + idx + ")");
                         list.index = detail.index || 1;
+                        list.style.display = 'block';
                         if (idx <= len) {
                             _this.insertBefore(list, rowEle);
                         }
@@ -312,7 +314,7 @@ System.register("dp-category-list/dp-category", ["rhelement"], function (exports
                     var _this = _super.call(this, 'dp-category-list') || this;
                     _this.template = function (el) {
                         var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n            <style>\n                :host { text-align: center; }\n                section { display: none; width: 100%; }\n                img { height: 150px; width: 150px; }\n            </style>\n            " + (el.image ? "<img src=\"" + el.image + "\">" : "<img src=\"\">") + "\n            <h4>" + el.name + "</h4>\n            <section>\n            <slot></slot>\n            </section>\n            ";
+                        tpl.innerHTML = "\n<style>\n:host { \n    text-align: center;  \n}\n:host img { height: 150px; width: 150px; }\n</style>\n" + (el.image ? "<img src=\"" + el.image + "\">" : "<img src=\"\">") + "\n<h4>" + el.name + "</h4>\n<slot></slot>\n";
                         return tpl;
                     };
                     _this._visible = false;
@@ -407,7 +409,7 @@ System.register("dp-category-list/dp-category-item-list", ["rhelement"], functio
                     var _this = _super.call(this, 'dp-category-item-list') || this;
                     _this.template = function (el) {
                         var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n            <style>\n            :host {\n                grid-column: span 4;\n            }\n\n            div {\n                display: grid;\n                grid-template-columns: repeat(3, 1fr);\n                grid-gap: 30px;\n                position: relative;\n                border: 1px solid #CCCCCC;\n                background-color: #FFFFFF;\n                padding: 30px;\n                margin-bottom: 30px;\n            }\n\n            div:after, div:before {\n                bottom: 100%;\n                left: " + (el.index > 1 ? ((2 * el.index) - 1) * 12.5 : 12.5) + "%;\n                border: solid transparent;\n                content: \" \";\n                height: 0;\n                width: 0;\n                position: absolute;\n                pointer-events: none;\n            }\n            \n            div:after {\n                border-bottom-color: #FFFFFF;\n                border-width: 15px;\n                margin-left: -15px;\n            }\n            div:before {\n                border-bottom-color: #CCCCCC;\n                border-width: 16px;\n                margin-left: -16px;\n            }\n            </style>\n            <div>\n            <slot></slot>\n            </div>\n            ";
+                        tpl.innerHTML = "\n            <style>\n            :host {\n                display: none;\n                grid-column: span 4;\n            }\n\n            div {\n                display: grid;\n                grid-template-columns: repeat(3, 1fr);\n                grid-gap: 30px;\n                position: relative;\n                border: 1px solid #CCCCCC;\n                background-color: #FFFFFF;\n                padding: 30px;\n                margin-bottom: 30px;\n            }\n\n            div:after, div:before {\n                bottom: 100%;\n                left: " + (el.index % 4 > 0 ? ((2 * (el.index % 4)) - 1) * 12.5 : 7 * 12.5) + "%;\n                border: solid transparent;\n                content: \" \";\n                height: 0;\n                width: 0;\n                position: absolute;\n                pointer-events: none;\n            }\n            \n            div:after {\n                border-bottom-color: #FFFFFF;\n                border-width: 15px;\n                margin-left: -15px;\n            }\n            div:before {\n                border-bottom-color: #CCCCCC;\n                border-width: 16px;\n                margin-left: -16px;\n            }\n            </style>\n            <div>\n            <slot></slot>\n            </div>\n            ";
                         return tpl;
                     };
                     _this._index = 1;
