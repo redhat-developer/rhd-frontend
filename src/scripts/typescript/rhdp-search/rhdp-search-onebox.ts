@@ -1,4 +1,59 @@
-class RHDPSearchOneBox extends HTMLElement {
+import RHElement from '../rhelement';
+
+export default class RHDPSearchOneBox extends RHElement {
+    template = el => {
+        const tpl = document.createElement("template");
+        tpl.innerHTML = `
+        <style>
+        :host {
+            grid-column: 5 / span 9;
+        }
+        div {
+            display: block;
+            border: 1px solid var(--rhd-grey-3);
+            padding: 25px;
+        }
+    
+        p { margin-bottom: 20px; }
+        a.button { margin-bottom: 0; }
+    
+        ul.slots {
+            display: inline;
+        }
+        li {
+            display: inline;
+            list-style-type: none;
+            padding-right: 20px;
+        }
+        a { 
+            position: relative;
+            padding-left: 3em;
+        }
+        a:hover, a:focus {
+            text-decoration: underline;
+        }
+                svg {
+                    fill: var(--rhd-link-hover);
+                }
+
+        svg {
+            max-width: 2.7em;
+            margin-right: 5px;
+            fill: var(--rhd-blue);
+            position: absolute;
+            left: 0;
+        }
+        </style>
+<div>
+    ${el.feature.heading && el.feature.heading.url && el.feature.heading.text ? `<h4><a href="${el.feature.heading.url}">${el.feature.heading.text}</a></h4>` : ''}
+    ${el.feature.details ? `<p>${el.feature.details}</p>` : ''}
+    ${el.feature.button && el.feature.button.url && el.feature.button.text ? `<a href="${el.feature.button.url}?onebox=${el.feature.id}" class="button medium-cta blue">${el.feature.button.text}</a>` : ''}
+    ${el.feature.slots && el.feature.slots.length > 0 ? `<ul class="slots">
+        ${el.feature.slots.map(slot =>  this.slotTemplate`${slot}${el.feature.id}`).join('')}
+    </ul>` : ''}
+</div>`;
+        return tpl;
+    }
     _term = '';
     _url = '../rhdp-apps/onebox/onebox.json';
     _data;
@@ -44,7 +99,12 @@ class RHDPSearchOneBox extends HTMLElement {
     set feature(val) {
         if (this._feature === val) return;
         this._feature = val;
-        this.innerHTML = this.feature ? this.template`${this.feature}` : '';
+        //this.innerHTML = this.feature ? this.template`${this.feature}` : '';
+        if (this._feature) {
+            super.render(this.template(this));
+        } else {
+            this.innerHTML = '';
+        }
     }
 
     get mock() {
@@ -59,19 +119,11 @@ class RHDPSearchOneBox extends HTMLElement {
         return `${slot && slot.url && slot.text ? `<li><a href="${slot.url}?onebox=${id}">${this.getIcon(slot.icon)}${slot.text}</a></li>` : ''}`;
     }
 
-    template = (strings, feature) => {
-        return `<div>
-            ${feature.heading && feature.heading.url && feature.heading.text ? `<h4><a href="${feature.heading.url}">${feature.heading.text}</a></h4>` : ''}
-            ${feature.details ? `<p>${feature.details}</p>` : ''}
-            ${feature.button && feature.button.url && feature.button.text ? `<a href="${feature.button.url}?onebox=${feature.id}" class="button medium-cta blue">${feature.button.text}</a>` : ''}
-            ${feature.slots && feature.slots.length > 0 ? `<ul class="slots">
-                ${feature.slots.map(slot =>  this.slotTemplate`${slot}${feature.id}`).join('')}
-            </ul>` : ''}
-        </div>`;
-    };
-
-    constructor() {
-        super();
+    constructor(url?: string) {
+        super('rhdp-search-onebox');
+        if (url) {
+            this.url = url;
+        }
 
         this._termChange = this._termChange.bind(this);
     }

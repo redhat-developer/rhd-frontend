@@ -1,15 +1,46 @@
-// import {RHDPSearchURL} from './rhdp-search-url';
-// import {RHDPSearchQuery} from './rhdp-search-query';
-// import {RHDPSearchBox} from './rhdp-search-box';
-// import {RHDPSearchResultCount} from './rhdp-search-result-count';
-// import {RHDPSearchFilters} from './rhdp-search-filters';
-// import {RHDPSearchOneBox} from './rhdp-search-onebox';
-// import {RHDPSearchResults} from './rhdp-search-results';
-// import {RHDPSearchSortPage} from './rhdp-search-sort-page';
+import RHElement from '../rhelement';
+import RHDPSearchURL from './rhdp-search-url';
+import RHDPSearchQuery from './rhdp-search-query';
+import RHDPSearchBox from './rhdp-search-box';
+import RHDPSearchResultCount from './rhdp-search-result-count';
+import RHDPSearchFilters from './rhdp-search-filters';
+import RHDPSearchOneBox from './rhdp-search-onebox';
+import RHDPSearchResults from './rhdp-search-results';
+import RHDPSearchSortPage from './rhdp-search-sort-page';
 
-class RHDPSearchApp extends HTMLElement {
+export default class RHDPSearchApp extends RHElement {
+    template = el => {
+        const tpl = document.createElement("template");
+        tpl.innerHTML = `
+        <style>
+
+    :host { 
+        display: flex;
+        flex-flow: column;
+        font-family: "overpass","Open Sans",Helvetica,sans-serif;
+        margin-bottom: 30px;
+    }
+
+    .hide { display: none; }
+    
+    .show { display: block; }
+    
+    .mobile { display: none; }
+
+    h1 { grid-column: 2 / span 12; }
+
+    .loading {
+        background:url("https://developers.redhat.com/images/icons/ajax-loader.gif") center 80px no-repeat;
+        min-height:250px;
+    }
+        </style>
+    <span class="search-outage-msg"></span>
+    <h1>${el.name}</h1>
+    `;
+        return tpl;
+    }
     constructor() {
-        super();
+        super('rhdp-search-app');
         //this.toggleModal = this.toggleModal.bind(this);
         //this.updateFacets = this.updateFacets.bind(this);
     }
@@ -38,20 +69,6 @@ class RHDPSearchApp extends HTMLElement {
         this.setAttribute('url', this.url);
     }
 
-    template = `<div class="row">
-    <span class="search-outage-msg"></span>
-    <div class="large-24 medium-24 small-24 columns searchpage-middle">
-        <div class="row">
-            <div class="large-24 medium-24 small-24 columns">
-                <h2>${this.name}</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-6 medium-8 small-24 columns"></div>
-            <div class="large-18 medium-16 small-24 columns"></div>
-        </div>
-    </div></div>`;
-
     urlEle = new RHDPSearchURL();
     query = new RHDPSearchQuery();
     box = new RHDPSearchBox();
@@ -59,14 +76,14 @@ class RHDPSearchApp extends HTMLElement {
     filters = new RHDPSearchFilters();
     active = new RHDPSearchFilters();
     modal = new RHDPSearchFilters();
-    onebox = new RHDPSearchOneBox();
+    onebox = new RHDPSearchOneBox('/rhd-frontend/json/onebox.json');
     results = new RHDPSearchResults();
     sort = new RHDPSearchSortPage();
 
     filterObj = {
         term:'', 
         facets: [
-            { name: 'CONTENT TYPE', key: 'sys_type', items: [
+            { name: 'CONTENT TYPE', key: 'type', items: [
                 {key: 'apidocs', name: 'APIs and Docs', value: ['rht_website', 'rht_apidocs'], type: ['apidocs']},
                 {key: 'archetype', name: 'Archetype', value: ['jbossdeveloper_archetype'], type: ['jbossdeveloper_archetype']},
                 {key: 'article', name: 'Article', value: ['article', 'solution'], type: ['rhd_knowledgebase_article', 'rht_knowledgebase_solution']},
@@ -86,7 +103,7 @@ class RHDPSearchApp extends HTMLElement {
             },
             {
                 name:'PRODUCT', 
-                key: 'product', 
+                key: 'project', 
                 items: [
                 {key: 'dotnet', name: '.NET Runtime for Red Hat Enterprise Linux', value: ['dotnet']},
                 {key: 'amq', name: 'JBoss A-MQ', value: ['amq']},
@@ -124,8 +141,8 @@ class RHDPSearchApp extends HTMLElement {
     };
 
     connectedCallback() {
-        this.innerHTML = this.template;
-
+        super.render(this.template(this));
+        this.setAttribute('data-rhd-grid','normal');
         this.active.setAttribute('type', 'active');
         this.active.title = 'Active Filters:';
         this.modal.setAttribute('type', 'modal');
@@ -135,16 +152,16 @@ class RHDPSearchApp extends HTMLElement {
         this.query.filters = this.filterObj;
         
         //document.querySelector('.wrapper').appendChild(this.modal);
-        document.body.appendChild(this.modal);
-        this.querySelector('.row .large-24 .row .large-24').appendChild(this.query);
-        this.querySelector('.row .large-24 .row .large-24').appendChild(this.box);
-        this.querySelector('.large-6').appendChild(this.filters);
-        this.querySelector('.large-18').appendChild(this.active);
-        this.querySelector('.large-18').appendChild(this.count);
-        this.querySelector('.large-18').appendChild(this.sort);
-        this.querySelector('.large-18').appendChild(this.onebox);
-        this.querySelector('.large-18').appendChild(this.results);
-        document.body.appendChild(this.urlEle);
+        this.shadowRoot.appendChild(this.box);
+        this.shadowRoot.appendChild(this.filters);
+        this.shadowRoot.appendChild(this.active);
+        this.shadowRoot.appendChild(this.count);
+        this.shadowRoot.appendChild(this.sort);
+        this.shadowRoot.appendChild(this.onebox);
+        this.shadowRoot.appendChild(this.results);
+        top.document.body.appendChild(this.modal);
+        top.document.body.appendChild(this.urlEle);
+        this.shadowRoot.appendChild(this.query);
     }
 
     static get observedAttributes() { 

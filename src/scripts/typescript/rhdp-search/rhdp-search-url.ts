@@ -1,4 +1,6 @@
-class RHDPSearchURL extends HTMLElement {
+import RHElement from '../rhelement';
+
+export default class RHDPSearchURL extends RHElement {
     _uri = new URL(window.location.href); // https://developers.redhat.com/search/?q=term+term1+term2&f=a+b+c&s=sort&r=100
     _term = this.uri.searchParams.get('t');
     _filters = this._setFilters(this.uri.searchParams.getAll('f'));
@@ -69,7 +71,7 @@ class RHDPSearchURL extends HTMLElement {
     //history.pushState({}, `Red Hat Developer Program Search: ${this.term}`, `?q=${decodeURIComponent(this.term).replace(' ', '+')}`);
 
     constructor() {
-        super();
+        super('rhdp-search-url');
 
         this._changeAttr = this._changeAttr.bind(this);
         this._popState = this._popState.bind(this);
@@ -107,15 +109,17 @@ class RHDPSearchURL extends HTMLElement {
     }
 
     _paramsReady() {
-        this.dispatchEvent(new CustomEvent('params-ready', {
+        let evt = {
             detail: { 
                 term: this.term,
                 filters: this.filters,
                 sort: this.sort,
                 qty: this.qty
             }, 
-            bubbles: true 
-        }));
+            bubbles: true,
+            composed: true
+        }
+        this.dispatchEvent(new CustomEvent('params-ready', evt));
     }
 
     _setFilters(filtersQS) {

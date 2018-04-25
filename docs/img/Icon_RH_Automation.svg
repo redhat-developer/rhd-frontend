@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="150"
+   height="150"
+   viewBox="0 0 150 150"
+   version="1.1"
+   id="svg953"
+   sodipodi:docname="Icon_RH_Automation.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata957">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>product-group-automation</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="726"
+     inkscape:window-height="480"
+     id="namedview955"
+     showgrid="false"
+     inkscape:zoom="1.2502642"
+     inkscape:cx="99.486475"
+     inkscape:cy="33"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg953" />
+  <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title936">product-group-automation</title>
+  <desc
+     id="desc938">Created with Sketch.</desc>
+  <defs
+     id="defs940" />
+  <g
+     id="Pattern-Artboards"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
+     transform="matrix(2.1234267,0,0,2.1234267,1.0713831e-6,9.85384)">
+    <g
+       id="Icons"
+       transform="translate(-32,-1273)"
+       style="stroke:#000000">
+      <g
+         id="product-group-automation"
+         transform="rotate(180,51,669.5)">
+        <ellipse
+           id="Oval-4"
+           cx="7.3943663"
+           cy="10.5"
+           rx="7.3943663"
+           ry="7.5"
+           style="stroke-width:2" />
+        <path
+           d="m 2.4647887,16.5 29.5774643,40"
+           id="Line-3"
+           inkscape:connector-curvature="0"
+           style="stroke-width:2;stroke-linecap:square" />
+        <path
+           d="m 14.295775,6.5 39.436619,35"
+           id="Line-4"
+           inkscape:connector-curvature="0"
+           style="stroke-width:2;stroke-linecap:square" />
+        <ellipse
+           id="Oval"
+           cx="53.732395"
+           cy="16.5"
+           rx="14.267606"
+           ry="14.5"
+           style="stroke-width:4" />
+        <ellipse
+           id="Oval-2"
+           cx="44.366196"
+           cy="51"
+           rx="7.8873239"
+           ry="8"
+           style="stroke-width:2" />
+        <ellipse
+           id="Oval-3"
+           cx="44.366196"
+           cy="51"
+           rx="12.816901"
+           ry="13"
+           style="stroke-width:3" />
+        <path
+           d="M 38.450704,17 36.478873,51"
+           id="Line"
+           inkscape:connector-curvature="0"
+           style="stroke-width:2;stroke-linecap:square" />
+        <path
+           d="M 67.042253,24 52.253521,53"
+           id="Line-2"
+           inkscape:connector-curvature="0"
+           style="stroke-width:2;stroke-linecap:square" />
+      </g>
+    </g>
+  </g>
+</svg>

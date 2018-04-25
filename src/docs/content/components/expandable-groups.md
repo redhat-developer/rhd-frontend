@@ -7,193 +7,199 @@ tags: ["component"]
 ---
 
 {{< code >}}
-<dp-category-list id="aa69de0dd3269887cf8900368c0b7bcf08a9b91c95abce89bec14462ed7f22c8">
-  <dp-category name="Application Automation" image="">
-  <dp-category-item-list>
-        <dp-category-item>
-        <dp-product-short-teaser name="Red Hat Decision Manager" link="/products/red-hat-decision-manager" download-link="/products/red-hat-decision-manager/download">
+<dp-category-list id="dp-category-list>
+  <dp-category name="Application Automation" image="/rhd-frontend/img/Icon_RH_Automation.svg" id="dp-category-list">
+  <dp-category-item-list id="dp-category-item-list">
+        <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat Decision Manager" link="/products/red-hat-decision-manager" download-link="/products/red-hat-decision-manager/download" id="dp-product-short-teaser">
     A programming platform to easily capture and maintain rules for business changes, without impacting static applications.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="Red Hat JBoss BPM Suite" link="/products/bpmsuite" download-link="/products/bpmsuite/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat JBoss BPM Suite" link="/products/bpmsuite" download-link="/products/bpmsuite/download" id="dp-product-short-teaser">
     A platform that combines business rules and process management (BPM), and complex event processing.
 </dp-product-short-teaser>
 
     </dp-category-item>
 
   </dp-category-item-list>
-</dp-category><dp-category name="Application Integration" image="">
-  <dp-category-item-list>
-        <dp-category-item>
-        <dp-product-short-teaser name="Red Hat AMQ" link="/products/amq" download-link="/products/amq/download">
+</dp-category><dp-category name="Application Integration" image="/rhd-frontend/img/Icon_RH_Object_Gear-Group_RGB_Flat.svg" id="dp-category-list">
+  <dp-category-item-list id="dp-category-item-list">
+        <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat AMQ" link="/products/amq" download-link="/products/amq/download" id="dp-product-short-teaser">
     A small-footprint, performant, robust messaging platform that enables real-time app, device, and service integration.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="Red Hat JBoss Data Virtualization" link="/products/datavirt" download-link="/products/datavirt/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat JBoss Data Virtualization" link="/products/datavirt" download-link="/products/datavirt/download" id="dp-product-short-teaser">
     A tool that brings operational and analytical insight from data dispersed in various business units, apps, and technologies.
 </dp-product-short-teaser>
 
     </dp-category-item>
 
   </dp-category-item-list>
-</dp-category><dp-category name="Application Runtimes" image="">
-  <dp-category-item-list>
-        <dp-category-item>
-        <dp-product-short-teaser name="Red Hat JBoss Enterprise Application Platform" link="/products/eap" download-link="/products/eap/download">
+</dp-category><dp-category name="Application Runtimes" image="/rhd-frontend/img/Icon_RH_Transportation_Speedometer_RGB_Flat.svg" id="dp-category-list">
+  <dp-category-item-list id="dp-category-item-list">
+        <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat JBoss Enterprise Application Platform" link="/products/eap" download-link="/products/eap/download" id="dp-product-short-teaser">
     An innovative, modular, cloud-ready application platform that addresses management, automation and developer productivity.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="Red Hat JBoss Data Grid" link="/products/datagrid" download-link="/products/datagrid/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat JBoss Data Grid" link="/products/datagrid" download-link="/products/datagrid/download" id="dp-product-short-teaser">
     An in-memory data grid to accelerate performance that is fast, distributed, scalable, and independent from the data tier.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="Red Hat JBoss Web Server" link="/products/webserver" download-link="/products/webserver/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat JBoss Web Server" link="/products/webserver" download-link="/products/webserver/download" id="dp-product-short-teaser">
     A web server that combines market-leading open source technologies with enterprise capabilities to provide a single solution for large-scale websites and light-weight Java web applications.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="Red Hat OpenShift Application Runtimes" link="/products/rhoar" download-link="/products/rhoar/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat OpenShift Application Runtimes" link="/products/rhoar" download-link="/products/rhoar/download" id="dp-product-short-teaser">
     Cloud native application runtimes optimized for OpenShift.
 </dp-product-short-teaser>
 
     </dp-category-item>
 
   </dp-category-item-list>
-</dp-category><dp-category name="Cloud" image="">
-  <dp-category-item-list>
-        <dp-category-item>
-        <dp-product-short-teaser name="Red Hat OpenShift Container Platform" link="/products/openshift" download-link="/products/openshift/download">
+</dp-category><dp-category name="Cloud" image="/rhd-frontend/img/Icon_RH_Cloud_Standard_RGB_Flat.svg" id="dp-category-list">
+  <dp-category-item-list id="dp-category-item-list">
+        <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat OpenShift Container Platform" link="/products/openshift" download-link="/products/openshift/download" id="dp-product-short-teaser">
     An open, hybrid Platform-as-a-Service (PaaS) to quickly develop, host, scale, and deliver apps in the cloud.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="OpenShift.io" link="/products/openshiftio" download-link="/products/openshiftio/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="OpenShift.io" link="/products/openshiftio" download-link="/products/openshiftio/download" id="dp-product-short-teaser">
     OpenShift.io is an open online development environment for planning, creating and deploying hybrid cloud services.
 </dp-product-short-teaser>
 
     </dp-category-item>
 
   </dp-category-item-list>
-</dp-category><dp-category name="Developer Tools" image="">
-  <dp-category-item-list>
-        <dp-category-item>
-        <dp-product-short-teaser name="Red Hat Development Suite" link="/products/devsuite" download-link="/products/devsuite/download">
+</dp-category><dp-category name="Developer Tools" image="/rhd-frontend/img/Icon_RH_Software_Command_RGB_Black.svg" id="dp-category-list">
+  <dp-category-item-list id="dp-category-item-list">
+        <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat Development Suite" link="/products/devsuite" download-link="/products/devsuite/download" id="dp-product-short-teaser">
     A curated, integrated set of desktop tools especially suited for developing Linux container-based microservices.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="Red Hat JBoss Developer Studio" link="/products/devstudio" download-link="/products/devstudio/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat Container Development Kit" link="/products/cdk" download-link="/products/cdk/download" id="dp-product-short-teaser">
+    Red Hat Container Development Kit provides Red Hat OpenShift Container Platform running on Red Hat Enterprise Linux to help you develop container-based applications quickly. 
+</dp-product-short-teaser>
+
+    </dp-category-item>
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat JBoss Developer Studio" link="/products/devstudio" download-link="/products/devstudio/download" id="dp-product-short-teaser">
     An Eclipse-based IDE to create apps for web, mobile, transactional enterprise, and SOA-based integration apps/services.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="Red Hat OpenShift Container Platform" link="/products/openshift" download-link="/products/openshift/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat OpenShift Container Platform" link="/products/openshift" download-link="/products/openshift/download" id="dp-product-short-teaser">
     An open, hybrid Platform-as-a-Service (PaaS) to quickly develop, host, scale, and deliver apps in the cloud.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="Red Hat Application Migration Toolkit" link="/products/rhamt" download-link="/products/rhamt/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat Application Migration Toolkit" link="/products/rhamt" download-link="/products/rhamt/download" id="dp-product-short-teaser">
     An assembly of open source tools that enables large-scale application migrations and modernizations.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="OpenShift.io" link="/products/openshiftio" download-link="/products/openshiftio/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="OpenShift.io" link="/products/openshiftio" download-link="/products/openshiftio/download" id="dp-product-short-teaser">
     OpenShift.io is an open online development environment for planning, creating and deploying hybrid cloud services.
 </dp-product-short-teaser>
 
     </dp-category-item>
 
   </dp-category-item-list>
-</dp-category><dp-category name="DevOps" image="">
-  <dp-category-item-list>
-        <dp-category-item>
-        <dp-product-short-teaser name="Red Hat OpenShift Container Platform" link="/products/openshift" download-link="/products/openshift/download">
+</dp-category><dp-category name="DevOps" image="/rhd-frontend/img/Icon_RH_Miscellanious_DevOps_RGB_Black.svg" id="dp-category-list">
+  <dp-category-item-list id="dp-category-item-list">
+        <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat OpenShift Container Platform" link="/products/openshift" download-link="/products/openshift/download" id="dp-product-short-teaser">
     An open, hybrid Platform-as-a-Service (PaaS) to quickly develop, host, scale, and deliver apps in the cloud.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="OpenShift.io" link="/products/openshiftio" download-link="/products/openshiftio/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="OpenShift.io" link="/products/openshiftio" download-link="/products/openshiftio/download" id="dp-product-short-teaser">
     OpenShift.io is an open online development environment for planning, creating and deploying hybrid cloud services.
 </dp-product-short-teaser>
 
     </dp-category-item>
 
   </dp-category-item-list>
-</dp-category><dp-category name="Languages and Compilers" image="">
-  <dp-category-item-list>
-        <dp-category-item>
-        <dp-product-short-teaser name=".NET Core 2.0" link="/products/dotnet" download-link="/products/dotnet/download">
+</dp-category><dp-category name="Languages and Compilers" image="/rhd-frontend/img/Icon_RH_Software_Code_RGB_Flat.svg" id="dp-category-list">
+  <dp-category-item-list id="dp-category-item-list">
+        <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name=".NET Core 2.0" link="/products/dotnet" download-link="/products/dotnet/download" id="dp-product-short-teaser">
     Build and run cross-platform .NET applications on the world’s number one Enterprise-ready Linux Distribution, Red Hat Enterprise Linux.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="OpenJDK" link="/products/openjdk" download-link="/products/openjdk/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="OpenJDK" link="/products/openjdk" download-link="/products/openjdk/download" id="dp-product-short-teaser">
     OpenJDK 8 (Open Java Development Kit) is a free and open source implementation of the Java Platform, Standard Edition (Java SE). 
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="Red Hat Developer Toolset" link="/products/developertoolset" download-link="/products/developertoolset/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat Developer Toolset" link="/products/developertoolset" download-link="/products/developertoolset/download" id="dp-product-short-teaser">
     Get the latest stable versions of GCC (C, C++, Fortran), Eclipse, GDB, SystemTap, and essential development tools.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="Compilers: Clang/LLVM, Go, Rust" link="/products/clang-llvm-go-rust" download-link="/products/clang-llvm-go-rust/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Compilers: Clang/LLVM, Go, Rust" link="/products/clang-llvm-go-rust" download-link="/products/clang-llvm-go-rust/download" id="dp-product-short-teaser">
     Important new Clang/LLVM, Go, Rust compilers for Red Hat Enterprise Linux 7.
 </dp-product-short-teaser>
 
     </dp-category-item>
 
   </dp-category-item-list>
-</dp-category><dp-category name="Linux Platforms" image="">
-  <dp-category-item-list>
-        <dp-category-item>
-        <dp-product-short-teaser name="Red Hat OpenShift Container Platform" link="/products/openshift" download-link="/products/openshift/download">
+</dp-category><dp-category name="Linux Platforms" image="/rhd-frontend/img/Icon_RH_Misc_Network-Technical_RGB_Flat.svg" id="dp-category-list">
+  <dp-category-item-list id="dp-category-item-list">
+        <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat OpenShift Container Platform" link="/products/openshift" download-link="/products/openshift/download" id="dp-product-short-teaser">
     An open, hybrid Platform-as-a-Service (PaaS) to quickly develop, host, scale, and deliver apps in the cloud.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="Red Hat Software Collections" link="/products/softwarecollections" download-link="/products/softwarecollections/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat Software Collections" link="/products/softwarecollections" download-link="/products/softwarecollections/download" id="dp-product-short-teaser">
     The latest, stable updates of development technologies for Red Hat Enterprise Linux.
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="Red Hat Enterprise Linux" link="/products/rhel" download-link="/products/rhel/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat Enterprise Linux" link="/products/rhel" download-link="/products/rhel/download" id="dp-product-short-teaser">
     A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud
 </dp-product-short-teaser>
 
     </dp-category-item>
-    <dp-category-item>
-        <dp-product-short-teaser name="Red Hat Enterprise Linux for SAP Solutions" link="/products/sap" download-link="/products/sap/download">
+    <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat Enterprise Linux for SAP Solutions" link="/products/sap" download-link="/products/sap/download" id="dp-product-short-teaser">
     Access all of the special bits you need for SAP development on Red Hat Enterprise Linux.
 </dp-product-short-teaser>
 
     </dp-category-item>
 
   </dp-category-item-list>
-</dp-category><dp-category name="Mobile Application Development" image="">
-  <dp-category-item-list>
-        <dp-category-item>
-        <dp-product-short-teaser name="Red Hat Mobile Application Platform" link="/products/mobileplatform" download-link="/products/mobileplatform/download">
+</dp-category><dp-category name="Mobile Application Development" image="/rhd-frontend/img/Icon_RH_Software_Application-Mobile_RGB_Flat.svg" id="dp-category-list">
+  <dp-category-item-list id="dp-category-item-list">
+        <dp-category-item id="dp-category-item">
+        <dp-product-short-teaser name="Red Hat Mobile Application Platform" link="/products/mobileplatform" download-link="/products/mobileplatform/download" id="dp-product-short-teaser">
     A development and deployment platform for creating mobile apps in an agile and flexible manner.
 </dp-product-short-teaser>
 

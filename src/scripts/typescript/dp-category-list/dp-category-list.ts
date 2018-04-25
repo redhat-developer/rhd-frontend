@@ -6,18 +6,21 @@ export default class DPCategoryList extends RHElement {
         tpl.innerHTML = `
 <style>
     :host {
-        justify-items: center;
         position: relative;
         background-color: #F9F9F9;
         padding: 30px 0;
+        display: block;
     }
     section {
-        grid-column: 2 / span 12;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+        margin: 0 auto;
+        width: 1200px;
+        justify-items: center;
     }
 </style>
-<section data-rhd-pos="span12">
+<section data-rhd-grid="quad">
 <slot></slot>
 </section>
 `;
@@ -31,7 +34,7 @@ export default class DPCategoryList extends RHElement {
     connectedCallback() {
         super.render(this.template(this));
 
-        this.setAttribute('data-rhd-grid', 'normal');
+        //this.setAttribute('data-rhd-grid', 'quad');
 
         this.addEventListener('dp-category-selected', e => {
             let section = this.querySelector(':scope > dp-category-item-list');
@@ -70,16 +73,3 @@ export default class DPCategoryList extends RHElement {
 }
 
 window.customElements.define('dp-category-list', DPCategoryList);
-
-/*
-1 1 5
-2 1 5
-3 1 5
-4 1 5
-5 2 9
-6 2 9
-7 2 9
-8 2 9
-9 3 
-10 3
-*/

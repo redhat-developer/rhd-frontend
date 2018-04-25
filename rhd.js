@@ -8,6 +8,41 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
@@ -245,7 +280,7 @@ System.register("dp-category-list/dp-category-list", ["rhelement"], function (ex
                     var _this = _super.call(this, 'dp-category-list') || this;
                     _this.template = function (el) {
                         var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n<style>\n    :host {\n        justify-items: center;\n        position: relative;\n        background-color: #F9F9F9;\n        padding: 30px 0;\n    }\n    section {\n        grid-column: 2 / span 12;\n        display: grid;\n        grid-template-columns: repeat(4, 1fr);\n    }\n</style>\n<section data-rhd-pos=\"span12\">\n<slot></slot>\n</section>\n";
+                        tpl.innerHTML = "\n<style>\n    :host {\n        position: relative;\n        background-color: #F9F9F9;\n        padding: 30px 0;\n        display: block;\n    }\n    section {\n        display: grid;\n        grid-template-columns: repeat(4, 1fr);\n        grid-gap: 30px;\n        margin: 0 auto;\n        width: 1200px;\n        justify-items: center;\n    }\n</style>\n<section data-rhd-grid=\"quad\">\n<slot></slot>\n</section>\n";
                         return tpl;
                     };
                     return _this;
@@ -253,7 +288,6 @@ System.register("dp-category-list/dp-category-list", ["rhelement"], function (ex
                 DPCategoryList.prototype.connectedCallback = function () {
                     var _this = this;
                     _super.prototype.render.call(this, this.template(this));
-                    this.setAttribute('data-rhd-grid', 'normal');
                     this.addEventListener('dp-category-selected', function (e) {
                         var section = _this.querySelector(':scope > dp-category-item-list');
                         if (section) {
@@ -314,7 +348,7 @@ System.register("dp-category-list/dp-category", ["rhelement"], function (exports
                     var _this = _super.call(this, 'dp-category-list') || this;
                     _this.template = function (el) {
                         var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n<style>\n:host { \n    text-align: center; \n    grid-column: span 1; \n}\n:host img { height: 150px; width: 150px; }\n</style>\n" + (el.image ? "<img src=\"" + el.image + "\">" : "<img src=\"\">") + "\n<h4>" + el.name + "</h4>\n<slot></slot>\n";
+                        tpl.innerHTML = "\n<style>\n:host { \n    text-align: center; \n}\n:host img, :host svg { height: 150px; width: 150px; }\n\n:host(:hover), :host([visible]) {\n    color: var(--rhd-blue);\n    fill: var(--rhd-blue);\n}\n</style>\n" + (el.image && el.image.indexOf('svg') < 0 ? "<img src=\"" + el.image + "\">" : el.image) + "\n<h4>" + el.name + "</h4>\n<slot></slot>\n";
                         return tpl;
                     };
                     _this._visible = false;
@@ -336,7 +370,12 @@ System.register("dp-category-list/dp-category", ["rhelement"], function (exports
                     set: function (val) {
                         if (this._image === val)
                             return;
-                        this._image = val;
+                        if (!val.match(/\.svg$/)) {
+                            this._image = val;
+                        }
+                        else {
+                            this._getSVG(val);
+                        }
                     },
                     enumerable: true,
                     configurable: true
@@ -347,10 +386,21 @@ System.register("dp-category-list/dp-category", ["rhelement"], function (exports
                         if (this._visible === val)
                             return;
                         this._visible = val;
-                        this.dispatchEvent(new CustomEvent(this._visible ? 'dp-category-selected' : 'dp-category-deselected', {
+                        if (this._visible) {
+                            this.setAttribute('visible', '');
+                        }
+                        else {
+                            this.removeAttribute('visible');
+                        }
+                        var evt = {
+                            detail: {
+                                index: this._getIndex(this),
+                                list: this.querySelector('dp-category-item-list').cloneNode(true)
+                            },
                             bubbles: true,
-                            detail: { index: this._getIndex(this), list: this.querySelector('dp-category-item-list').cloneNode(true) }
-                        }));
+                            composed: true
+                        };
+                        this.dispatchEvent(new CustomEvent(this._visible ? 'dp-category-selected' : 'dp-category-deselected', evt));
                     },
                     enumerable: true,
                     configurable: true
@@ -363,19 +413,26 @@ System.register("dp-category-list/dp-category", ["rhelement"], function (exports
                         _this.visible = !_this.visible;
                         return false;
                     });
+                    top.addEventListener('dp-category-selected', function (e) {
+                        if (e['detail'] && e['detail'].index && e['detail'].index == _this._getIndex(_this)) {
+                            _this.visible = false;
+                        }
+                    });
                 };
                 Object.defineProperty(DPCategory, "observedAttributes", {
                     get: function () {
-                        return ['name', 'image'];
+                        return ['name', 'image', 'visible'];
                     },
                     enumerable: true,
                     configurable: true
                 });
                 DPCategory.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
+                    if (name === 'visible') {
+                        newVal = newVal === "" || newVal ? true : false;
+                    }
                     this[name] = newVal;
                 };
                 DPCategory.prototype._showList = function () {
-                    console.log('category clicked');
                     this.visible = !this.visible;
                 };
                 DPCategory.prototype._getIndex = function (node) {
@@ -384,6 +441,24 @@ System.register("dp-category-list/dp-category", ["rhelement"], function (exports
                         ++i;
                     }
                     return i;
+                };
+                DPCategory.prototype._getSVG = function (path) {
+                    return __awaiter(this, void 0, void 0, function () {
+                        var resp, svg;
+                        return __generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4, fetch(path)];
+                                case 1:
+                                    resp = _a.sent();
+                                    return [4, resp.text()];
+                                case 2:
+                                    svg = _a.sent();
+                                    this.image = svg.substring(svg.indexOf('<svg'));
+                                    _super.prototype.render.call(this, this.template(this));
+                                    return [2];
+                            }
+                        });
+                    });
                 };
                 return DPCategory;
             }(rhelement_3.default));
@@ -573,10 +648,2217 @@ System.register("dp-category-list/dp-product-short-teaser", ["rhelement"], funct
         }
     };
 });
-System.register("rhd-app", ["rhdp-alert", "dp-category-list/dp-category-list", "dp-category-list/dp-category", "dp-category-list/dp-category-item-list", "dp-category-list/dp-category-item", "dp-category-list/dp-product-short-teaser"], function (exports_8, context_8) {
+System.register("rhdp-search/rhdp-search-url", ["rhelement"], function (exports_8, context_8) {
     "use strict";
     var __moduleName = context_8 && context_8.id;
-    var rhdp_alert_1, dp_category_list_1, dp_category_1, dp_category_item_list_1, dp_category_item_1, dp_product_short_teaser_1, RHDApp;
+    var rhelement_7, RHDPSearchURL;
+    return {
+        setters: [
+            function (rhelement_7_1) {
+                rhelement_7 = rhelement_7_1;
+            }
+        ],
+        execute: function () {
+            RHDPSearchURL = (function (_super) {
+                __extends(RHDPSearchURL, _super);
+                function RHDPSearchURL() {
+                    var _this = _super.call(this, 'rhdp-search-url') || this;
+                    _this._uri = new URL(window.location.href);
+                    _this._term = _this.uri.searchParams.get('t');
+                    _this._filters = _this._setFilters(_this.uri.searchParams.getAll('f'));
+                    _this._sort = _this.uri.searchParams.get('s') || 'relevance';
+                    _this._qty = _this.uri.searchParams.get('r');
+                    _this._init = true;
+                    _this._changeAttr = _this._changeAttr.bind(_this);
+                    _this._popState = _this._popState.bind(_this);
+                    return _this;
+                }
+                Object.defineProperty(RHDPSearchURL.prototype, "uri", {
+                    get: function () {
+                        return this._uri;
+                    },
+                    set: function (val) {
+                        if (this._uri === val)
+                            return;
+                        this._uri = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchURL.prototype, "term", {
+                    get: function () {
+                        return this._term;
+                    },
+                    set: function (val) {
+                        if (this._term === val)
+                            return;
+                        this._term = val;
+                        this.uri.searchParams.set('t', this._term);
+                        this.setAttribute('term', this.term);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchURL.prototype, "filters", {
+                    get: function () {
+                        return this._filters;
+                    },
+                    set: function (val) {
+                        var _this = this;
+                        this._filters = val;
+                        this.uri.searchParams.delete('f');
+                        Object.keys(this._filters).forEach(function (group) {
+                            _this.uri.searchParams.append('f', group + "~" + _this._filters[group].join(' '));
+                        });
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchURL.prototype, "sort", {
+                    get: function () {
+                        return this._sort;
+                    },
+                    set: function (val) {
+                        if (this._sort === val)
+                            return;
+                        this._sort = val;
+                        this.uri.searchParams.set('s', this._sort);
+                        this.setAttribute('sort', this._sort);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchURL.prototype, "qty", {
+                    get: function () {
+                        return this._qty;
+                    },
+                    set: function (val) {
+                        if (this._qty === val)
+                            return;
+                        this._qty = val;
+                        this.setAttribute('qty', this._sort);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchURL.prototype, "init", {
+                    get: function () {
+                        return this._init;
+                    },
+                    set: function (val) {
+                        if (this._init === val)
+                            return;
+                        this._init = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchURL.prototype.connectedCallback = function () {
+                    top.addEventListener('search-complete', this._changeAttr);
+                    top.addEventListener('clear-filters', this._changeAttr);
+                    top.window.addEventListener('popstate', this._popState);
+                    this._paramsReady();
+                };
+                Object.defineProperty(RHDPSearchURL, "observedAttributes", {
+                    get: function () {
+                        return ['sort', 'term', 'qty'];
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchURL.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
+                    this[name] = newVal;
+                };
+                RHDPSearchURL.prototype._popState = function (e) {
+                    this.uri = new URL(document.location.href);
+                    this.term = this.uri.searchParams.get('t') || null;
+                    this.filters = this._setFilters(this.uri.searchParams.getAll('f'));
+                    this.sort = this.uri.searchParams.get('s');
+                    this.qty = this.uri.searchParams.get('r');
+                    this._paramsReady();
+                };
+                RHDPSearchURL.prototype._paramsReady = function () {
+                    var evt = {
+                        detail: {
+                            term: this.term,
+                            filters: this.filters,
+                            sort: this.sort,
+                            qty: this.qty
+                        },
+                        bubbles: true,
+                        composed: true
+                    };
+                    this.dispatchEvent(new CustomEvent('params-ready', evt));
+                };
+                RHDPSearchURL.prototype._setFilters = function (filtersQS) {
+                    var filters = {};
+                    filtersQS.forEach(function (filter) {
+                        var kv = filter.split('~'), k = kv[0], v = kv[1].split(' ');
+                        filters[k] = v;
+                    });
+                    return filters;
+                };
+                RHDPSearchURL.prototype._changeAttr = function (e) {
+                    switch (e.type) {
+                        case 'clear-filters':
+                            this.uri.searchParams.delete('f');
+                            this.filters = {};
+                            break;
+                        case 'load-more':
+                            break;
+                        case 'search-complete':
+                            if (e.detail && typeof e.detail.term !== 'undefined' && e.detail.term.length > 0) {
+                                this.term = e.detail.term;
+                            }
+                            else {
+                                this.term = '';
+                                this.uri.searchParams.delete('t');
+                            }
+                            if (e.detail && e.detail.filters) {
+                                this.filters = e.detail.filters;
+                            }
+                            if (e.detail && typeof e.detail.sort !== 'undefined') {
+                                this.sort = e.detail.sort;
+                            }
+                    }
+                    if (e.detail && typeof e.detail.invalid === 'undefined') {
+                        history.pushState({}, "RHDP Search: " + (this.term ? this.term : ''), "" + this.uri.pathname + this.uri.search);
+                    }
+                    else {
+                        this.term = '';
+                        this.filters = {};
+                        this.sort = 'relevance';
+                        this.uri.searchParams.delete('t');
+                        this.uri.searchParams.delete('f');
+                        this.uri.searchParams.delete('s');
+                        history.replaceState({}, 'RHDP Search Error', "" + this.uri.pathname + this.uri.search);
+                    }
+                };
+                return RHDPSearchURL;
+            }(rhelement_7.default));
+            exports_8("default", RHDPSearchURL);
+            customElements.define('rhdp-search-url', RHDPSearchURL);
+        }
+    };
+});
+System.register("rhdp-search/rhdp-search-filter-item", ["rhelement"], function (exports_9, context_9) {
+    "use strict";
+    var __moduleName = context_9 && context_9.id;
+    var rhelement_8, RHDPSearchFilterItem;
+    return {
+        setters: [
+            function (rhelement_8_1) {
+                rhelement_8 = rhelement_8_1;
+            }
+        ],
+        execute: function () {
+            RHDPSearchFilterItem = (function (_super) {
+                __extends(RHDPSearchFilterItem, _super);
+                function RHDPSearchFilterItem() {
+                    var _this = _super.call(this, 'rhdp-search-filter-item') || this;
+                    _this.template = function (el) {
+                        var tpl = document.createElement("template");
+                        var checked = el.active ? 'checked' : '';
+                        tpl.innerHTML = "<div class=\"list\"><span>" + el.name + "</span><input type=\"checkbox\" " + checked + " id=\"filter-item-" + el.key + "\" value=\"" + el.key + "\"><label for=\"filter-item-" + el.key + "\">" + el.name + "</label></div>";
+                        return tpl;
+                    };
+                    _this.inlineTemplate = function (el) {
+                        var tpl = document.createElement("template");
+                        tpl.innerHTML = el.active ? "<div class=\"inline\">" + el.name + " <i class=\"fa fa-times clearItem\" aria-hidden=\"true\"></i></div>" : '';
+                        return tpl;
+                    };
+                    _this._active = false;
+                    _this._inline = false;
+                    _this._bubble = true;
+                    _this._bounce = false;
+                    _this._checkParams = _this._checkParams.bind(_this);
+                    _this._clearFilters = _this._clearFilters.bind(_this);
+                    _this._checkChange = _this._checkChange.bind(_this);
+                    _this._updateFacet = _this._updateFacet.bind(_this);
+                    return _this;
+                }
+                Object.defineProperty(RHDPSearchFilterItem.prototype, "name", {
+                    get: function () {
+                        return this._name;
+                    },
+                    set: function (val) {
+                        if (this._name === val)
+                            return;
+                        this._name = val;
+                        this.setAttribute('name', this._name);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilterItem.prototype, "key", {
+                    get: function () {
+                        return this._key;
+                    },
+                    set: function (val) {
+                        if (this._key === val)
+                            return;
+                        this._key = val;
+                        this.className = "filter-item-" + this._key;
+                        this.setAttribute('key', this._key);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilterItem.prototype, "group", {
+                    get: function () {
+                        return this._group;
+                    },
+                    set: function (val) {
+                        if (this._group === val)
+                            return;
+                        this._group = val;
+                        this.setAttribute('group', this._group);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilterItem.prototype, "inline", {
+                    get: function () {
+                        return this._inline;
+                    },
+                    set: function (val) {
+                        if (this._inline === val)
+                            return;
+                        this._inline = val;
+                        if (!this._inline) {
+                            _super.prototype.render.call(this, this.template(this));
+                        }
+                        else {
+                            _super.prototype.render.call(this, this.inlineTemplate(this));
+                        }
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilterItem.prototype, "bubble", {
+                    get: function () {
+                        return this._bubble;
+                    },
+                    set: function (val) {
+                        if (this._bubble === val)
+                            return;
+                        this._bubble = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilterItem.prototype, "bounce", {
+                    get: function () {
+                        return this._bounce;
+                    },
+                    set: function (val) {
+                        if (this._bounce === val)
+                            return;
+                        this._bounce = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilterItem.prototype, "active", {
+                    get: function () {
+                        return this._active;
+                    },
+                    set: function (val) {
+                        if (typeof val === 'string') {
+                            val = true;
+                        }
+                        if (val === null) {
+                            val = false;
+                        }
+                        if (this._active === val) {
+                            return;
+                        }
+                        else {
+                            this._active = val;
+                            var chkbox = this.shadowRoot.querySelector('input');
+                            if (this._active) {
+                                this.setAttribute('active', '');
+                            }
+                            else {
+                                this.removeAttribute('active');
+                            }
+                            if (chkbox) {
+                                chkbox.checked = this._active;
+                            }
+                            if (this.inline) {
+                                if (this._active) {
+                                    _super.prototype.render.call(this, this.inlineTemplate(this));
+                                }
+                                else {
+                                    this.innerHTML = '';
+                                }
+                            }
+                            var evt = { detail: { facet: this }, bubbles: this.bubble, composed: true };
+                            this.dispatchEvent(new CustomEvent('filter-item-change', evt));
+                            this.bubble = true;
+                        }
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilterItem.prototype, "value", {
+                    get: function () {
+                        return this._value;
+                    },
+                    set: function (val) {
+                        if (this._value === val)
+                            return;
+                        this._value = val;
+                        this.setAttribute('value', this.value);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchFilterItem.prototype.connectedCallback = function () {
+                    if (!this.inline) {
+                        _super.prototype.render.call(this, this.template(this));
+                        this.shadowRoot.addEventListener('change', this._updateFacet);
+                    }
+                    else {
+                        _super.prototype.render.call(this, this.inlineTemplate(this));
+                        this.shadowRoot.addEventListener('click', this._updateFacet);
+                    }
+                    top.addEventListener('filter-item-change', this._checkChange);
+                    top.addEventListener('params-ready', this._checkParams);
+                    top.addEventListener('clear-filters', this._clearFilters);
+                };
+                Object.defineProperty(RHDPSearchFilterItem, "observedAttributes", {
+                    get: function () {
+                        return ['name', 'active', 'value', 'inline', 'key', 'group'];
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchFilterItem.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
+                    this[name] = newVal;
+                };
+                RHDPSearchFilterItem.prototype._updateFacet = function (e) {
+                    this.bounce = true;
+                    if (this.inline) {
+                        if (e.target['className'].indexOf('clearItem') >= 0) {
+                            this.active = !this.active;
+                        }
+                    }
+                    else {
+                        this.active = !this.active;
+                    }
+                };
+                RHDPSearchFilterItem.prototype._checkParams = function (e) {
+                    var _this = this;
+                    var chk = false;
+                    if (e.detail && e.detail.filters) {
+                        Object.keys(e.detail.filters).forEach(function (group) {
+                            e.detail.filters[group].forEach(function (facet) {
+                                if (group === _this.group) {
+                                    if (facet === _this.key) {
+                                        chk = true;
+                                        _this.bubble = false;
+                                        _this.active = true;
+                                        var evt = { detail: { facet: _this }, bubbles: _this.bubble, composed: true };
+                                        _this.dispatchEvent(new CustomEvent('filter-item-init', evt));
+                                    }
+                                }
+                            });
+                        });
+                    }
+                    if (!chk) {
+                        this.bubble = false;
+                        this.active = false;
+                    }
+                };
+                RHDPSearchFilterItem.prototype._checkChange = function (e) {
+                    if (e.detail && e.detail.facet) {
+                        if (!this.bounce) {
+                            if (this.group === e.detail.facet.group && this.key === e.detail.facet.key) {
+                                this.bubble = false;
+                                this.active = e.detail.facet.active;
+                            }
+                        }
+                        this.bubble = true;
+                        this.bounce = false;
+                    }
+                };
+                RHDPSearchFilterItem.prototype._clearFilters = function (e) {
+                    this.bubble = false;
+                    this.bounce = false;
+                    this.active = false;
+                };
+                return RHDPSearchFilterItem;
+            }(rhelement_8.default));
+            exports_9("default", RHDPSearchFilterItem);
+            customElements.define('rhdp-search-filter-item', RHDPSearchFilterItem);
+        }
+    };
+});
+System.register("rhdp-search/rhdp-search-query", ["rhelement"], function (exports_10, context_10) {
+    "use strict";
+    var __moduleName = context_10 && context_10.id;
+    var rhelement_9, RHDPSearchQuery;
+    return {
+        setters: [
+            function (rhelement_9_1) {
+                rhelement_9 = rhelement_9_1;
+            }
+        ],
+        execute: function () {
+            RHDPSearchQuery = (function (_super) {
+                __extends(RHDPSearchQuery, _super);
+                function RHDPSearchQuery() {
+                    var _this = _super.call(this, 'rhdp-search-query') || this;
+                    _this._limit = 10;
+                    _this._from = 0;
+                    _this._sort = 'relevance';
+                    _this._valid = true;
+                    _this.urlTemplate = function (strings, url, term, from, limit, sort, types, tags, sys_types) {
+                        var order = '';
+                        if (sort === 'most-recent') {
+                            order = '&newFirst=true';
+                        }
+                        return url + "?tags_or_logic=true&filter_out_excluded=true&from=" + from + order + "&query=" + term + "&query_highlight=true&size" + limit + "=true" + types + tags + sys_types;
+                    };
+                    _this._changeAttr = _this._changeAttr.bind(_this);
+                    return _this;
+                }
+                Object.defineProperty(RHDPSearchQuery.prototype, "filters", {
+                    get: function () {
+                        return this._filters;
+                    },
+                    set: function (val) {
+                        if (this._filters === val)
+                            return;
+                        this._filters = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchQuery.prototype, "activeFilters", {
+                    get: function () {
+                        return this._activeFilters;
+                    },
+                    set: function (val) {
+                        if (this._activeFilters === val)
+                            return;
+                        this._activeFilters = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchQuery.prototype, "from", {
+                    get: function () {
+                        return this._from;
+                    },
+                    set: function (val) {
+                        if (this._from === val)
+                            return;
+                        this._from = val;
+                        this.setAttribute('from', val.toString());
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchQuery.prototype, "limit", {
+                    get: function () {
+                        return this._limit;
+                    },
+                    set: function (val) {
+                        if (this._limit === val)
+                            return;
+                        this._limit = val;
+                        this.setAttribute('limit', val.toString());
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchQuery.prototype, "sort", {
+                    get: function () {
+                        return this._sort;
+                    },
+                    set: function (val) {
+                        if (this._sort === val)
+                            return;
+                        this._sort = val;
+                        this.setAttribute('sort', val);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchQuery.prototype, "results", {
+                    get: function () {
+                        return this._results;
+                    },
+                    set: function (val) {
+                        if (this._results === val)
+                            return;
+                        this._results = val;
+                        this.from = this.results && this.results.hits && typeof this.results.hits.hits !== 'undefined' ? this.from + this.results.hits.hits.length : 0;
+                        var evt = {
+                            detail: {
+                                term: this.term,
+                                filters: this.activeFilters,
+                                sort: this.sort,
+                                limit: this.limit,
+                                from: this.from,
+                                results: this.results,
+                            },
+                            bubbles: true,
+                            composed: true
+                        };
+                        this.dispatchEvent(new CustomEvent('search-complete', evt));
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchQuery.prototype, "term", {
+                    get: function () {
+                        return this._term;
+                    },
+                    set: function (val) {
+                        if (this._term === val)
+                            return;
+                        this._term = val;
+                        this.setAttribute('term', val.toString());
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchQuery.prototype, "url", {
+                    get: function () {
+                        return this._url;
+                    },
+                    set: function (val) {
+                        if (this._url === val)
+                            return;
+                        this._url = val;
+                        this.setAttribute('url', val.toString());
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchQuery.prototype, "valid", {
+                    get: function () {
+                        return this._valid;
+                    },
+                    set: function (val) {
+                        if (this._valid === val)
+                            return;
+                        this._valid = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchQuery.prototype.filterString = function (facets) {
+                    var len = facets.length, filterArr = [];
+                    for (var i = 0; i < len; i++) {
+                        for (var j = 0; j < facets[i].items.length; j++) {
+                            if (facets[i].items[j].active) {
+                                var idx = 0;
+                                while (idx < facets[i].items[j].value.length) {
+                                    filterArr.push(facets[i].items[j].value[idx]);
+                                    idx = idx + 1;
+                                }
+                            }
+                        }
+                    }
+                    return filterArr.join(', ');
+                };
+                RHDPSearchQuery.prototype.connectedCallback = function () {
+                    top.addEventListener('params-ready', this._changeAttr);
+                    top.addEventListener('term-change', this._changeAttr);
+                    top.addEventListener('filter-item-change', this._changeAttr);
+                    top.addEventListener('sort-change', this._changeAttr);
+                    top.addEventListener('clear-filters', this._changeAttr);
+                    top.addEventListener('load-more', this._changeAttr);
+                };
+                Object.defineProperty(RHDPSearchQuery, "observedAttributes", {
+                    get: function () {
+                        return ['term', 'sort', 'limit', 'results', 'url'];
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchQuery.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
+                    this[name] = newVal;
+                };
+                RHDPSearchQuery.prototype._setFilters = function (item) {
+                    var _this = this;
+                    var add = item.active;
+                    if (add) {
+                        this.activeFilters[item.group] = this.activeFilters[item.group] || [];
+                        this.activeFilters[item.group].push(item.key);
+                    }
+                    else {
+                        Object.keys(this.activeFilters).forEach(function (group) {
+                            if (group === item.group) {
+                                var idx = _this.activeFilters[group].indexOf(item.key);
+                                if (idx >= 0) {
+                                    _this.activeFilters[group].splice(idx, 1);
+                                    if (_this.activeFilters[group].length === 0) {
+                                        delete _this.activeFilters[group];
+                                    }
+                                }
+                            }
+                        });
+                    }
+                };
+                RHDPSearchQuery.prototype._changeAttr = function (e) {
+                    console.log(e);
+                    switch (e.type) {
+                        case 'term-change':
+                            if (e.detail && e.detail.term && e.detail.term.length > 0) {
+                                this.term = e.detail.term;
+                            }
+                            else {
+                                this.term = '';
+                            }
+                            this.from = 0;
+                            this.search();
+                            break;
+                        case 'filter-item-change':
+                            if (e.detail && e.detail.facet) {
+                                this._setFilters(e.detail.facet);
+                            }
+                            this.from = 0;
+                            this.search();
+                            break;
+                        case 'sort-change':
+                            if (e.detail && e.detail.sort) {
+                                this.sort = e.detail.sort;
+                            }
+                            this.from = 0;
+                            this.search();
+                            break;
+                        case 'load-more':
+                            this.search();
+                            break;
+                        case 'clear-filters':
+                            this.activeFilters = {};
+                            this.search();
+                            break;
+                        case 'params-ready':
+                            if (e.detail && e.detail.term) {
+                                this.term = e.detail.term;
+                            }
+                            if (e.detail && e.detail.sort) {
+                                this.sort = e.detail.sort;
+                            }
+                            if (e.detail && e.detail.filters) {
+                                this.activeFilters = e.detail.filters;
+                            }
+                            this.from = 0;
+                            if (Object.keys(e.detail.filters).length > 0 || e.detail.term !== null || e.detail.sort !== null || e.detail.qty !== null) {
+                                this.search();
+                            }
+                            break;
+                    }
+                };
+                RHDPSearchQuery.prototype.search = function () {
+                    var _this = this;
+                    var evt = { bubbles: true, composed: true };
+                    this.dispatchEvent(new CustomEvent('search-start', evt));
+                    if ((this.activeFilters && Object.keys(this.activeFilters).length > 0) || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined')) {
+                        var qURL_1 = new URL(this.url);
+                        qURL_1.searchParams.set('tags_or_logic', 'true');
+                        qURL_1.searchParams.set('filter_out_excluded', 'true');
+                        qURL_1.searchParams.set('from', this.from.toString());
+                        if (this.sort === 'most-recent') {
+                            qURL_1.searchParams.set('newFirst', 'true');
+                        }
+                        qURL_1.searchParams.set('query', this.term || '');
+                        qURL_1.searchParams.set('query_highlight', 'true');
+                        qURL_1.searchParams.set('size' + this.limit.toString(), 'true');
+                        if (this.activeFilters) {
+                            Object.keys(this.activeFilters).forEach(function (filtergroup) {
+                                _this.filters.facets.forEach(function (group) {
+                                    if (group.key === filtergroup) {
+                                        group.items.forEach(function (facet) {
+                                            if (_this.activeFilters[group.key].indexOf(facet.key) >= 0) {
+                                                facet.value.forEach(function (fval) {
+                                                    qURL_1.searchParams.append(group.key, fval);
+                                                });
+                                            }
+                                        });
+                                    }
+                                });
+                            });
+                        }
+                        fetch(qURL_1.toString())
+                            .then(function (resp) { return resp.json(); })
+                            .then(function (data) {
+                            _this.results = data;
+                        });
+                    }
+                    else {
+                        var evt_1 = { detail: { invalid: true }, bubbles: true, composed: true };
+                        this.dispatchEvent(new CustomEvent('search-complete', evt_1));
+                    }
+                };
+                return RHDPSearchQuery;
+            }(rhelement_9.default));
+            exports_10("default", RHDPSearchQuery);
+            customElements.define('rhdp-search-query', RHDPSearchQuery);
+        }
+    };
+});
+System.register("rhdp-search/rhdp-search-box", ["rhelement"], function (exports_11, context_11) {
+    "use strict";
+    var __moduleName = context_11 && context_11.id;
+    var rhelement_10, RHDPSearchBox;
+    return {
+        setters: [
+            function (rhelement_10_1) {
+                rhelement_10 = rhelement_10_1;
+            }
+        ],
+        execute: function () {
+            RHDPSearchBox = (function (_super) {
+                __extends(RHDPSearchBox, _super);
+                function RHDPSearchBox() {
+                    var _this = _super.call(this, 'rhdp-search-box') || this;
+                    _this.template = function (el) {
+                        var tpl = document.createElement("template");
+                        tpl.innerHTML = "\n        <style>\n            :host {\n                grid-column: 2 / span 12;\n            }\n\n            form.search-bar { \n                box-sizing: border-box;\n                color: rgb(66,66,66);\n                cursor: auto;\n                display: flex;\n                flex-direction: row;\n                font-size: 16px;\n                line-height: 24px;\n                position: relative; \n                margin: 0;\n                width: 100%;\n            }\n        \n            form.search-bar div {\n                flex: 1 1 100%;\n            }\n            \n            input.user-search {\n                background-color: white;\n                border-bottom-color: rgb(204,204,204);\n                border-bottom-style: solid;\n                border-left-color: rgb(204,204,204);\n                border-left-style: solid;\n                border-right-color: rgb(204,204,204);\n                border-right-style: solid;\n                box-sizing: border-box;\n                font-size: 16px;\n                font-weight: 600;\n                height: 40px;\n                text-align: start;\n                padding: 8px;\n                transition-property: box-shadow, border-color;\n                transition-delay: 0s, 0s;\n                transition-duration: 0.45s, 0.45s;\n                transition-timing-function: ease, ease-in-out;\n                user-select: text;\n                width: 100%;\n            }\n        \n            input.user-search::-webkit-search-cancel-button{\n                position:relative;\n                -webkit-appearance: none;\n                height: 20px;\n                width: 20px;\n                background-image: url('https://static.jboss.org/rhd/images/icons/fa_times_icon.svg');\n                opacity: 1;\n            \u2002\u2002\u2002\u2002pointer-events: auto;\n            }\n        \n            button {\n                text-transform: uppercase;\n                background: #c00;\n                text-decoration: none;\n                border: 0;\n                height: 40px;\n                font-weight: 600;\n                font-size: 16px;\n                padding: 9px 30px;\n                transition: background .2s ease-in 0s;\n                line-height: 1.2em;\n                cursor: pointer;\n                position: relative;\n                text-align: center;\n                color: #fff;\n            }\n        \n            button i.fa.fa-search { display:none; }\n        \n            @media only screen and (max-width: 768px) {\n                :host {\n                    margin-bottom: .5em;\n                }\n                button { display: block; padding: 9px 20px; }\n                button i.fa.fa-search { display: inline-block; font-size: 18px; }\n                button span { display: none; }\n            }\n        </style>\n<form class=\"search-bar\" role=\"search\">\n    <div class=\"input-cont\">\n        <input value=\"" + el.term + "\" class=\"user-success user-search\" type=\"search\" id=\"query\" placeholder=\"Enter your search term\">\n    </div>\n    <button id=\"search-btn\"><span>SEARCH</span><i class='fa fa-search' aria-hidden='true'></i></button>\n</form>";
+                        return tpl;
+                    };
+                    _this._term = '';
+                    _this.name = 'Search Box';
+                    _this._checkTerm = _this._checkTerm.bind(_this);
+                    return _this;
+                }
+                Object.defineProperty(RHDPSearchBox.prototype, "term", {
+                    get: function () {
+                        return this._term;
+                    },
+                    set: function (val) {
+                        if (this._term === val)
+                            return;
+                        this._term = decodeURI(val);
+                        this.shadowRoot.querySelector('input').setAttribute('value', this.term);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchBox.prototype.connectedCallback = function () {
+                    var _this = this;
+                    _super.prototype.render.call(this, this.template(this));
+                    this.setAttribute('data-rhd-col', 'span12');
+                    top.addEventListener('params-ready', this._checkTerm);
+                    top.addEventListener('term-change', this._checkTerm);
+                    this.shadowRoot.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        _this._termChange();
+                        return false;
+                    });
+                    this.shadowRoot.querySelector('#search-btn').addEventListener('click', function (e) {
+                    });
+                };
+                Object.defineProperty(RHDPSearchBox, "observedAttributes", {
+                    get: function () {
+                        return ['term'];
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchBox.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
+                    this[name] = newVal;
+                };
+                RHDPSearchBox.prototype._checkTerm = function (e) {
+                    if (e.detail && e.detail.term) {
+                        this.term = e.detail.term;
+                    }
+                };
+                RHDPSearchBox.prototype._termChange = function () {
+                    this.term = this.shadowRoot.querySelector('input').value;
+                    var evt = {
+                        detail: {
+                            term: this.term
+                        },
+                        bubbles: true,
+                        composed: true
+                    };
+                    this.dispatchEvent(new CustomEvent('term-change', evt));
+                };
+                return RHDPSearchBox;
+            }(rhelement_10.default));
+            exports_11("default", RHDPSearchBox);
+            window.customElements.define('rhdp-search-box', RHDPSearchBox);
+        }
+    };
+});
+System.register("rhdp-search/rhdp-search-result-count", ["rhelement"], function (exports_12, context_12) {
+    "use strict";
+    var __moduleName = context_12 && context_12.id;
+    var rhelement_11, RHDPSearchResultCount;
+    return {
+        setters: [
+            function (rhelement_11_1) {
+                rhelement_11 = rhelement_11_1;
+            }
+        ],
+        execute: function () {
+            RHDPSearchResultCount = (function (_super) {
+                __extends(RHDPSearchResultCount, _super);
+                function RHDPSearchResultCount() {
+                    var _this = _super.call(this, 'rhdp-search-result-count') || this;
+                    _this.template = function (el) {
+                        var tpl = document.createElement("template");
+                        tpl.innerHTML = "\n        <style>\n        :host {\n            grid-column: 5 / span 9;\n            font-weight: 600;\n            font-size: 1.2em;\n            display: block;\n        }\n\n        @media only screen and (max-width: 768px) {\n            :host { border-bottom: 1px solid var(--rhd-grey-3; }\n        }\n        </style>\n        " + el.count + " results found for " + el.term.replace('<', '&lt;').replace('>', '&gt;');
+                        return tpl;
+                    };
+                    _this._count = 0;
+                    _this._term = '';
+                    _this._loading = true;
+                    _this._setText = _this._setText.bind(_this);
+                    return _this;
+                }
+                Object.defineProperty(RHDPSearchResultCount.prototype, "count", {
+                    get: function () {
+                        return this._count;
+                    },
+                    set: function (val) {
+                        if (this._count === val)
+                            return;
+                        this._count = val;
+                        this.setAttribute('count', val.toString());
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResultCount.prototype, "term", {
+                    get: function () {
+                        return this._term;
+                    },
+                    set: function (val) {
+                        val = decodeURI(val).replace('<', '&lt;').replace('>', '&gt;');
+                        if (this._term === val)
+                            return;
+                        this._term = val;
+                        this.setAttribute('term', val);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResultCount.prototype, "loading", {
+                    get: function () {
+                        return this._loading;
+                    },
+                    set: function (val) {
+                        if (this._loading === val)
+                            return;
+                        this._loading = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchResultCount.prototype.connectedCallback = function () {
+                    var _this = this;
+                    _super.prototype.render.call(this, this.template(this));
+                    top.addEventListener('params-ready', this._setText);
+                    top.addEventListener('search-start', function (e) { _this.loading = true; _this._setText(e); });
+                    top.addEventListener('search-complete', function (e) { _this.loading = false; _this._setText(e); });
+                };
+                Object.defineProperty(RHDPSearchResultCount, "observedAttributes", {
+                    get: function () {
+                        return ['count', 'term'];
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchResultCount.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
+                    this[name] = newVal;
+                    _super.prototype.render.call(this, this.template(this));
+                };
+                RHDPSearchResultCount.prototype._setText = function (e) {
+                    if (e.detail) {
+                        if (typeof e.detail.invalid === 'undefined') {
+                            if (e.detail.term && e.detail.term.length > 0) {
+                                this.term = e.detail.term;
+                            }
+                            else {
+                                this.term = '';
+                            }
+                            if (e.detail.results && e.detail.results.hits && e.detail.results.hits.total) {
+                                this.count = e.detail.results.hits.total;
+                            }
+                            else {
+                                this.count = 0;
+                            }
+                            if (!this.loading) {
+                                _super.prototype.render.call(this, this.template(this));
+                            }
+                        }
+                        else {
+                            this.term = '';
+                            this.count = 0;
+                            this.shadowRoot.innerHTML = '';
+                        }
+                    }
+                    else {
+                        this.term = '';
+                        this.count = 0;
+                        this.shadowRoot.innerHTML = '';
+                    }
+                };
+                return RHDPSearchResultCount;
+            }(rhelement_11.default));
+            exports_12("default", RHDPSearchResultCount);
+            customElements.define('rhdp-search-result-count', RHDPSearchResultCount);
+        }
+    };
+});
+System.register("rhdp-search/rhdp-search-filter-group", ["rhelement"], function (exports_13, context_13) {
+    "use strict";
+    var __moduleName = context_13 && context_13.id;
+    var rhelement_12, RHDPSearchFilterGroup;
+    return {
+        setters: [
+            function (rhelement_12_1) {
+                rhelement_12 = rhelement_12_1;
+            }
+        ],
+        execute: function () {
+            RHDPSearchFilterGroup = (function (_super) {
+                __extends(RHDPSearchFilterGroup, _super);
+                function RHDPSearchFilterGroup() {
+                    var _this = _super.call(this, 'rhdp-search-filter-group') || this;
+                    _this.template = function (el) {
+                        var tpl = document.createElement("template");
+                        tpl.innerHTML = "\n        <style>\n            .secondary {\n                display: none;\n            }\n        </style>\n<h6 class=\"showFilters heading\"><span class=\"group-name\">" + el.name + "</span><span class=\"toggle\"><i class='fa fa-chevron-right' aria-hidden='true'></i></span></h6>\n<div class=\"group\">\n    <div class=\"primary\">\n        " + el.items.map(function (item, index) { return "" + (index < 5 ? item.outerHTML : ''); }).join('') + "\n    </div>\n    <div class=\"secondary\">\n        " + el.items.map(function (item, index) { return "" + (index > 5 ? item.outerHTML : ''); }).join('') + "\n    </div>\n    " + (el.items.length > 5 ? el.moreBtn.outerHTML : '') + "\n</div>";
+                        return tpl;
+                    };
+                    _this._items = [];
+                    _this._toggle = false;
+                    _this._more = false;
+                    _this.moreBtn = document.createElement('a');
+                    _this.moreBtn.setAttribute('href', '#');
+                    _this.moreBtn.className = 'more';
+                    _this.moreBtn.innerText = 'Show More';
+                    return _this;
+                }
+                Object.defineProperty(RHDPSearchFilterGroup.prototype, "key", {
+                    get: function () {
+                        return this._key;
+                    },
+                    set: function (val) {
+                        if (this._key === val)
+                            return;
+                        this._key = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilterGroup.prototype, "name", {
+                    get: function () {
+                        return this._name;
+                    },
+                    set: function (val) {
+                        if (this._name === val)
+                            return;
+                        this._name = val;
+                        if (this.shadowRoot.querySelector('.group-name')) {
+                            this.shadowRoot.querySelector('.group-name').innerHTML = this._name;
+                        }
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilterGroup.prototype, "items", {
+                    get: function () {
+                        return this._items;
+                    },
+                    set: function (val) {
+                        if (this._items === val)
+                            return;
+                        this._items = val;
+                        if (this._items.length > 5) {
+                            if (!this.shadowRoot.querySelector('.more')) {
+                                this.shadowRoot.appendChild(this.moreBtn);
+                            }
+                        }
+                        else {
+                            if (this.shadowRoot.querySelector('.more')) {
+                                this.shadowRoot.removeChild(this.shadowRoot.lastChild);
+                            }
+                        }
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilterGroup.prototype, "toggle", {
+                    get: function () {
+                        return this._toggle;
+                    },
+                    set: function (val) {
+                        if (this._toggle === val)
+                            return;
+                        this._toggle = val;
+                        this.shadowRoot.querySelector('.group').className = this.toggle ? 'group' : 'group hide';
+                        this.shadowRoot.querySelector('.toggle').className = this.toggle ? 'toggle expand' : 'toggle';
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilterGroup.prototype, "more", {
+                    get: function () {
+                        return this._more;
+                    },
+                    set: function (val) {
+                        if (this._more === val)
+                            return;
+                        this._more = val;
+                        this.shadowRoot.querySelector('.more')['innerText'] = this.more ? 'Show Less' : 'Show More';
+                        this.shadowRoot.querySelector('.secondary')['style'].display = this.more ? 'block' : 'none';
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchFilterGroup.prototype.connectedCallback = function () {
+                    var _this = this;
+                    _super.prototype.render.call(this, this.template(this));
+                    this.shadowRoot.querySelector('h6').addEventListener('click', function (e) {
+                        e.preventDefault();
+                        _this.toggle = !_this.toggle;
+                    });
+                    this.shadowRoot.querySelector('.group').addEventListener('click', function (e) {
+                        if (e.target['className'].indexOf('more') > -1) {
+                            e.preventDefault();
+                            _this.more = !_this.more;
+                        }
+                    });
+                    this.toggle = true;
+                };
+                Object.defineProperty(RHDPSearchFilterGroup, "observedAttributes", {
+                    get: function () {
+                        return ['name', 'key', 'toggle', 'items', 'more'];
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchFilterGroup.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
+                    this[name] = newVal;
+                };
+                return RHDPSearchFilterGroup;
+            }(rhelement_12.default));
+            exports_13("default", RHDPSearchFilterGroup);
+            customElements.define('rhdp-search-filter-group', RHDPSearchFilterGroup);
+        }
+    };
+});
+System.register("rhdp-search/rhdp-search-filters", ["rhelement", "rhdp-search/rhdp-search-filter-group", "rhdp-search/rhdp-search-filter-item"], function (exports_14, context_14) {
+    "use strict";
+    var __moduleName = context_14 && context_14.id;
+    var rhelement_13, rhdp_search_filter_group_1, rhdp_search_filter_item_1, RHDPSearchFilters;
+    return {
+        setters: [
+            function (rhelement_13_1) {
+                rhelement_13 = rhelement_13_1;
+            },
+            function (rhdp_search_filter_group_1_1) {
+                rhdp_search_filter_group_1 = rhdp_search_filter_group_1_1;
+            },
+            function (rhdp_search_filter_item_1_1) {
+                rhdp_search_filter_item_1 = rhdp_search_filter_item_1_1;
+            }
+        ],
+        execute: function () {
+            RHDPSearchFilters = (function (_super) {
+                __extends(RHDPSearchFilters, _super);
+                function RHDPSearchFilters() {
+                    var _this = _super.call(this, 'rhdp-search-filter') || this;
+                    _this.template = function (el) {
+                        var tpl = document.createElement("template");
+                        tpl.innerHTML = "\n        <style>\n            :host {\n                grid-column: span 3;\n                grid-row: span 5;\n            }\n            .title {\n                background: #e6e7e8; \n                color: #000;\n                text-transform: uppercase;\n                padding: .5em 1em;\n                font-weight: 600;\n            }\n            .cancel { display: none; }\n            .showBtn { \n                display: none;\n                background: #ccc;\n                text-decoration: none;\n                border: 0;\n                height: 40px;\n                font-weight: 600;\n                font-size: 16px;\n                padding: 9px 40px;\n                transition: background .2s ease-in 0s;\n                line-height: 1.2em;\n                cursor: pointer;\n                position: relative;\n                text-align: center;\n                color: #333; \n                width: 100%;\n                }\n            .groups {\n                background-color: #f9f9f9;\n                padding-bottom: 30px;\n            }\n            .active-type {\n                display: flex;\n                flex-direction: row;\n                margin-bottom: 1em;\n                .inline {\n                    font-size: 16px;\n                    font-weight: 600;\n                }\n\n                .clearFilters {\n                    font-size: 16px;\n                }\n\n            }\n            .active-type strong {\n                flex: 0 1 auto; \n                order: 1; \n                font-weight: 600;\n                font-size: 1.2em;\n                margin: 0.3em .7em 0 0;\n                white-space: nowrap;\n            }\n            .active-type div { flex: 1 1 auto; order: 2; list-style: none; }\n            .active-type a {\n                flex: 0 1 auto;\n                order: 3;\n                text-decoration: none;\n                color: #0066CC;\n                margin-top: .3em;\n                font-weight: 100;\n                font-size: 14px;\n                white-space: nowrap;\n                &:hover, &:active, &:focus { color: #004080; }\n            }\n\n            #footer { display: none; }\n\n            @media only screen and (max-width: 768px) {\n                :host {\n                    flex: none; \n                    align-self: \n                    flex-start; \n                    float: left;\n                    border: none;\n                    margin: 0 0 1.3em 0; \n                }\n\n                .control {\n                    display: flex;\n                    flex-direction: column;\n                    width: 100%;\n                    height: 100%;\n                    padding-top: 51px;\n                    background: rgba(0,0,0,.5);\n                    border: none;\n                    z-index: 99;\n                    right: 100%;\n                    position: absolute;\n                    top: 100px;\n                }\n                .title { flex: 0 0 40px; order: 1; vertical-align: middle; }\n                .showBtn {\n                    display: block;\n                    width: 150px;\n                    height: auto;\n                    border: 1px solid var(--rhd-blue);\n                    line-height: 1.44;\n                    background-color: transparent;\n                    padding: 8px 0;\n                    color: var(--rhd-blue);\n                }\n\n                .showBtn:hover, .showBtn:focus {\n                        background-color: var(--rhd-blue);\n                        color: var(--rhd-white);\n                }\n            }\n\n        </style>\n<a class=\"showBtn\">Show Filters</a>\n<div class=\"control\" id=\"control\">\n    <div class=\"title\">" + el.title + "</div>\n    <div class=\"groups\">\n    </div>\n</div>";
+                        return tpl;
+                    };
+                    _this.modalTemplate = function (el) {
+                        var tpl = document.createElement("template");
+                        tpl.innerHTML = "\n        <style>\n            :host {\n                display: none;\n            }\n        </style>\n<div class=\"cover\" id=\"cover\">\n    <div class=\"title\">" + el.title + " <a href=\"#\" class=\"cancel\" id=\"cancel\">Close</a></div>\n    <div class=\"groups\">\n    </div>\n    <div class=\"footer\">\n    <a href=\"#\" class=\"clearFilters\">Clear Filters</a> \n    <a href=\"#\" class=\"applyFilters\">Apply</a>\n    </div>\n</div>";
+                        return tpl;
+                    };
+                    _this.activeTemplate = function (el) {
+                        var tpl = document.createElement("template");
+                        tpl.innerHTML = "\n        <style>\n            :host {\n                grid-column: 5 / span 9;\n            }\n        </style>\n<div class=\"active-type\">\n    <strong>" + el.title + "</strong>\n    <div class=\"activeFilters\"></div>\n    <a href=\"#\" class=\"clearFilters\">Clear Filters</a>\n</div>";
+                        return tpl;
+                    };
+                    _this._type = '';
+                    _this._title = 'Filter By';
+                    _this._toggle = false;
+                    _this._toggleModal = _this._toggleModal.bind(_this);
+                    _this._clearFilters = _this._clearFilters.bind(_this);
+                    _this._addFilters = _this._addFilters.bind(_this);
+                    _this._checkActive = _this._checkActive.bind(_this);
+                    return _this;
+                }
+                Object.defineProperty(RHDPSearchFilters.prototype, "type", {
+                    get: function () {
+                        return this._type;
+                    },
+                    set: function (val) {
+                        if (this._type === val)
+                            return;
+                        this._type = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilters.prototype, "title", {
+                    get: function () {
+                        return this._title;
+                    },
+                    set: function (val) {
+                        if (this._title === val)
+                            return;
+                        this._title = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilters.prototype, "filters", {
+                    get: function () {
+                        return this._filters;
+                    },
+                    set: function (val) {
+                        if (this._filters === val)
+                            return;
+                        this._filters = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilters.prototype, "toggle", {
+                    get: function () {
+                        return this._toggle;
+                    },
+                    set: function (val) {
+                        if (this._toggle === val)
+                            return;
+                        this._toggle = val;
+                        if (this._toggle) {
+                            this.shadowRoot.querySelector('.cover').className = 'cover modal';
+                            window.scrollTo(0, 0);
+                            document.body.style.overflow = 'hidden';
+                            this.style.height = window.innerHeight + 'px';
+                        }
+                        else {
+                            this.shadowRoot.querySelector('.cover').className = 'cover';
+                            document.body.style.overflow = 'auto';
+                        }
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchFilters.prototype.connectedCallback = function () {
+                    var _this = this;
+                    if (this.type === 'active') {
+                        _super.prototype.render.call(this, this.activeTemplate(this));
+                        this.setAttribute('data-rhd-col', '5span9');
+                        top.addEventListener('filter-item-change', this._checkActive);
+                        top.addEventListener('filter-item-init', this._checkActive);
+                        top.addEventListener('search-complete', this._checkActive);
+                        top.addEventListener('params-ready', this._checkActive);
+                        top.addEventListener('clear-filters', this._clearFilters);
+                        this._addFilters();
+                    }
+                    else if (this.type === 'modal') {
+                        _super.prototype.render.call(this, this.modalTemplate(this));
+                        this.addGroups();
+                    }
+                    else {
+                        _super.prototype.render.call(this, this.template(this));
+                        this.setAttribute('data-rhd-col', 'span3');
+                        this.setAttribute('data-rhd-row', 'span5');
+                        this.addGroups();
+                    }
+                    this.shadowRoot.addEventListener('click', function (e) {
+                        var evt = { bubbles: true, composed: true };
+                        switch (e.target['className']) {
+                            case 'showBtn':
+                            case 'cancel':
+                            case 'applyFilters':
+                                e.preventDefault();
+                                _this.dispatchEvent(new CustomEvent('toggle-modal', evt));
+                                break;
+                            case 'clearFilters':
+                                e.preventDefault();
+                                _this.dispatchEvent(new CustomEvent('clear-filters', evt));
+                                break;
+                            case 'more':
+                                e.preventDefault();
+                                break;
+                        }
+                    });
+                    top.addEventListener('toggle-modal', this._toggleModal);
+                };
+                Object.defineProperty(RHDPSearchFilters, "observedAttributes", {
+                    get: function () {
+                        return ['type', 'title', 'toggle'];
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchFilters.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
+                    this[name] = newVal;
+                };
+                RHDPSearchFilters.prototype.addGroups = function () {
+                    var groups = this.filters.facets, len = groups.length;
+                    for (var i = 0; i < len; i++) {
+                        var group = new rhdp_search_filter_group_1.default(), groupInfo = groups[i], gLen = groupInfo.items.length;
+                        for (var j = 0; j < gLen; j++) {
+                            var item = new rhdp_search_filter_item_1.default();
+                            item.name = groupInfo.items[j].name;
+                            item.value = groupInfo.items[j].value;
+                            item.active = groupInfo.items[j].active;
+                            item.key = groupInfo.items[j].key;
+                            item.group = groupInfo.key;
+                            group.items.push(item);
+                        }
+                        group.key = groupInfo.key;
+                        group.name = groupInfo.name;
+                        this.shadowRoot.querySelector('.groups').appendChild(group);
+                    }
+                };
+                RHDPSearchFilters.prototype._checkActive = function (e) {
+                    if (e.detail) {
+                        if (e.detail.facet) {
+                            this.style.display = e.detail.facet.active ? 'block' : this.style.display;
+                        }
+                        else {
+                            var chk = this.shadowRoot.querySelectorAll('rhdp-search-filter-item[active]');
+                            if (chk.length > 0) {
+                                this.style.display = 'block';
+                            }
+                            else {
+                                this.style.display = 'none';
+                            }
+                        }
+                    }
+                };
+                RHDPSearchFilters.prototype._initActive = function (e, group_key, item) {
+                    if (e.detail && e.detail.filters) {
+                        Object.keys(e.detail.filters).forEach(function (group) {
+                            e.detail.filters[group].forEach(function (facet) {
+                                if (group === group_key) {
+                                    if (facet === item.key) {
+                                        return true;
+                                    }
+                                }
+                            });
+                        });
+                    }
+                    return false;
+                };
+                RHDPSearchFilters.prototype._addFilters = function () {
+                    var groups = this.filters.facets;
+                    for (var i = 0; i < groups.length; i++) {
+                        var items = groups[i].items;
+                        for (var j = 0; j < items.length; j++) {
+                            var item = new rhdp_search_filter_item_1.default();
+                            item.name = items[j].name;
+                            item.value = items[j].value;
+                            item.inline = true;
+                            item.bubble = false;
+                            item.key = items[j].key;
+                            item.group = groups[i].key;
+                            this.shadowRoot.querySelector('.activeFilters').appendChild(item);
+                        }
+                    }
+                };
+                RHDPSearchFilters.prototype._toggleModal = function (e) {
+                    if (this.type === 'modal') {
+                        this.toggle = !this.toggle;
+                    }
+                };
+                RHDPSearchFilters.prototype.applyFilters = function () {
+                    var evt = {
+                        bubbles: true,
+                        composed: true
+                    };
+                    this.dispatchEvent(new CustomEvent('apply-filters', evt));
+                };
+                RHDPSearchFilters.prototype._clearFilters = function (e) {
+                    this.style.display = 'none';
+                };
+                return RHDPSearchFilters;
+            }(rhelement_13.default));
+            exports_14("default", RHDPSearchFilters);
+            customElements.define('rhdp-search-filters', RHDPSearchFilters);
+        }
+    };
+});
+System.register("rhdp-search/rhdp-search-onebox", ["rhelement"], function (exports_15, context_15) {
+    "use strict";
+    var __moduleName = context_15 && context_15.id;
+    var rhelement_14, RHDPSearchOneBox, templateObject_1;
+    return {
+        setters: [
+            function (rhelement_14_1) {
+                rhelement_14 = rhelement_14_1;
+            }
+        ],
+        execute: function () {
+            RHDPSearchOneBox = (function (_super) {
+                __extends(RHDPSearchOneBox, _super);
+                function RHDPSearchOneBox(url) {
+                    var _this = _super.call(this, 'rhdp-search-onebox') || this;
+                    _this.template = function (el) {
+                        var tpl = document.createElement("template");
+                        tpl.innerHTML = "\n        <style>\n        :host {\n            grid-column: 5 / span 9;\n        }\n        div {\n            display: block;\n            border: 1px solid var(--rhd-grey-3);\n            padding: 25px;\n        }\n    \n        p { margin-bottom: 20px; }\n        a.button { margin-bottom: 0; }\n    \n        ul.slots {\n            display: inline;\n        }\n        li {\n            display: inline;\n            list-style-type: none;\n            padding-right: 20px;\n        }\n        a { \n            position: relative;\n            padding-left: 3em;\n        }\n        a:hover, a:focus {\n            text-decoration: underline;\n        }\n                svg {\n                    fill: var(--rhd-link-hover);\n                }\n\n        svg {\n            max-width: 2.7em;\n            margin-right: 5px;\n            fill: var(--rhd-blue);\n            position: absolute;\n            left: 0;\n        }\n        </style>\n<div>\n    " + (el.feature.heading && el.feature.heading.url && el.feature.heading.text ? "<h4><a href=\"" + el.feature.heading.url + "\">" + el.feature.heading.text + "</a></h4>" : '') + "\n    " + (el.feature.details ? "<p>" + el.feature.details + "</p>" : '') + "\n    " + (el.feature.button && el.feature.button.url && el.feature.button.text ? "<a href=\"" + el.feature.button.url + "?onebox=" + el.feature.id + "\" class=\"button medium-cta blue\">" + el.feature.button.text + "</a>" : '') + "\n    " + (el.feature.slots && el.feature.slots.length > 0 ? "<ul class=\"slots\">\n        " + el.feature.slots.map(function (slot) { return _this.slotTemplate(templateObject_1 || (templateObject_1 = __makeTemplateObject(["", "", ""], ["", "", ""])), slot, el.feature.id); }).join('') + "\n    </ul>" : '') + "\n</div>";
+                        return tpl;
+                    };
+                    _this._term = '';
+                    _this._url = '../rhdp-apps/onebox/onebox.json';
+                    _this._mock = false;
+                    _this.slotTemplate = function (strings, slot, id) {
+                        return "" + (slot && slot.url && slot.text ? "<li><a href=\"" + slot.url + "?onebox=" + id + "\">" + _this.getIcon(slot.icon) + slot.text + "</a></li>" : '');
+                    };
+                    if (url) {
+                        _this.url = url;
+                    }
+                    _this._termChange = _this._termChange.bind(_this);
+                    return _this;
+                }
+                Object.defineProperty(RHDPSearchOneBox.prototype, "term", {
+                    get: function () {
+                        if ((this._term === null) || (this._term === '')) {
+                            return this._term;
+                        }
+                        else {
+                            return this._term.replace(/(<([^>]+)>)/ig, '');
+                        }
+                    },
+                    set: function (val) {
+                        if (this._term === val)
+                            return;
+                        this._term = val;
+                        this.setAttribute('term', this._term);
+                        this.feature = this.getFeature();
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchOneBox.prototype, "url", {
+                    get: function () {
+                        return this._url;
+                    },
+                    set: function (val) {
+                        if (this._url === val)
+                            return;
+                        this._url = val;
+                        this.setAttribute('url', this._url);
+                        this.getData();
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchOneBox.prototype, "data", {
+                    get: function () {
+                        return this._data;
+                    },
+                    set: function (val) {
+                        if (this._data === val)
+                            return;
+                        this._data = val;
+                        this.feature = this.getFeature();
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchOneBox.prototype, "feature", {
+                    get: function () {
+                        return this._feature;
+                    },
+                    set: function (val) {
+                        if (this._feature === val)
+                            return;
+                        this._feature = val;
+                        if (this._feature) {
+                            _super.prototype.render.call(this, this.template(this));
+                        }
+                        else {
+                            this.innerHTML = '';
+                        }
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchOneBox.prototype, "mock", {
+                    get: function () {
+                        return this._mock;
+                    },
+                    set: function (val) {
+                        if (this._mock === val)
+                            return;
+                        this._mock = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchOneBox.prototype.connectedCallback = function () {
+                    this.getData();
+                    top.addEventListener('term-change', this._termChange);
+                    top.addEventListener('params-ready', this._termChange);
+                };
+                Object.defineProperty(RHDPSearchOneBox, "observedAttributes", {
+                    get: function () {
+                        return ['term', 'url', 'mock'];
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchOneBox.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
+                    this[name] = newVal;
+                };
+                RHDPSearchOneBox.prototype._termChange = function (e) {
+                    if (e.detail && e.detail.term && e.detail.term.length > 0) {
+                        this.term = e.detail.term;
+                    }
+                    else {
+                        this.term = '';
+                    }
+                };
+                RHDPSearchOneBox.prototype.getData = function () {
+                    var _this = this;
+                    if (this.mock || this.data) {
+                        return this.data;
+                    }
+                    else {
+                        var fInit = {
+                            method: 'GET',
+                            headers: new Headers(),
+                            mode: 'cors',
+                            cache: 'default'
+                        };
+                        fetch(this.url, fInit)
+                            .then(function (resp) { return resp.json(); })
+                            .then(function (data) {
+                            _this.data = data;
+                        });
+                    }
+                };
+                RHDPSearchOneBox.prototype.getFeature = function () {
+                    var len = this.data && this.data['features'] ? this.data['features'].length : 0, f;
+                    for (var i = 0; i < len; i++) {
+                        if (this.data['features'][i].match.indexOf(this.term.toLowerCase()) >= 0) {
+                            f = this.data['features'][i];
+                        }
+                    }
+                    return f;
+                };
+                RHDPSearchOneBox.prototype.getIcon = function (name) {
+                    var icons = {
+                        icon_help: '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><title>icon_help</title><path d="M20.15,2C27.779,2,33.0651,5.2419,33.0651,12.1723A8.6318,8.6318,0,0,1,28.0266,20.4c-4.1859,1.9935-5.2333,3.14-5.3836,6.0819H15.81c0-4.736,1.3966-7.6775,7.0319-10.2718,2.4928-1.1469,3.24-1.9447,3.24-3.7393,0-2.2939-1.693-3.64-5.9317-3.64-3.792,0-6.4838,1.7945-8.729,4.1879L6.9349,7.7835A17.8438,17.8438,0,0,1,20.15,2M19.253,29.5248a4.2376,4.2376,0,1,1-4.2386,4.2366,4.2986,4.2986,0,0,1,4.2386-4.2366M20.15,1A18.8975,18.8975,0,0,0,6.211,7.0936a1,1,0,0,0-.0354,1.3406L10.6619,13.67a1,1,0,0,0,.7369.3491l.0225,0a1,1,0,0,0,.7293-.3158c2.5121-2.6779,4.9793-3.8721,8-3.8721,4.9317,0,4.9317,1.85,4.9317,2.64,0,1.167-.2291,1.7134-2.6579,2.8308-6.34,2.9189-7.6139,6.442-7.6139,11.18a1,1,0,0,0,1,1h6.833a1,1,0,0,0,.9987-.949c.121-2.3688.7339-3.2866,4.8148-5.23a9.61,9.61,0,0,0,5.6085-9.13C34.0651,5.0722,28.9933,1,20.15,1ZM19.253,28.5248a5.2376,5.2376,0,1,0,5.2386,5.2366,5.3078,5.3078,0,0,0-5.2386-5.2366Z"/></svg>',
+                        icon_helloworld: '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.0005 38.0015"><title>icon_helloworld</title><path d="M14.0642,7.3037a.1761.1761,0,0,0-.1724-.0852l-3.5192.3888a.1775.1775,0,0,0-.14.0974.1751.1751,0,0,0,.0083.1709l.5161.853A14.6794,14.6794,0,0,0,6.9885,13.42a.5192.5192,0,0,0,.2284.6984.5112.5112,0,0,0,.2345.0563.519.519,0,0,0,.4639-.2847,13.6444,13.6444,0,0,1,3.3873-4.2595l.4622.7639a.1749.1749,0,0,0,.1471.0874.1822.1822,0,0,0,.1525-.0778L14.0588,7.496a.1788.1788,0,0,0,.0061-.192Z" transform="translate(-1 -1)"/><path d="M26.0891,7.9374a13.6292,13.6292,0,0,1,4.26,3.3871l-.7639.4621a.1747.1747,0,0,0-.0874.1471.182.182,0,0,0,.0778.1525l2.9084,1.9945a.1788.1788,0,0,0,.192.0061l0-.0007a.176.176,0,0,0,.0851-.1724l-.3888-3.5192a.1776.1776,0,0,0-.0974-.14.1751.1751,0,0,0-.1709.0084l-.8532.5162A14.6719,14.6719,0,0,0,26.559,7.0106a.52.52,0,1,0-.47.9268Z" transform="translate(-1 -1)"/><path d="M32.741,25.8826a.5183.5183,0,0,0-.6984.2284A13.64,13.64,0,0,1,28.6552,30.37l-.4623-.764a.1748.1748,0,0,0-.1471-.0874.1822.1822,0,0,0-.1526.0778l-1.9944,2.9084a.1787.1787,0,0,0-.0061.192l.0007,0a.176.176,0,0,0,.1724.0851l3.5192-.3888a.1776.1776,0,0,0,.14-.0974.1752.1752,0,0,0-.0083-.1709l-.5161-.853a14.6829,14.6829,0,0,0,3.7685-4.6916A.5192.5192,0,0,0,32.741,25.8826Z" transform="translate(-1 -1)"/><path d="M4.7816,17.938v.9587h.92v3.7573h1.481V17.197H5.92C5.7643,17.704,5.4836,17.8989,4.7816,17.938Z" transform="translate(-1 -1)"/><path d="M35.244,19.7464a1.1146,1.1146,0,0,0,.7253-1.0679c0-1.1536-.8735-1.5673-2.183-1.5673a3.304,3.304,0,0,0-2.1124.71l.7172.9821a2.1842,2.1842,0,0,1,1.3562-.4674c.538,0,.7562.1558.7562.4441,0,.3588-.1558.46-.6314.46h-.7014v1.177h.7872c.5532,0,.7715.14.7715.5223,0,.3741-.2649.5532-.8963.5532a2.49,2.49,0,0,1-1.5511-.569l-.78.9821a3.4268,3.4268,0,0,0,2.3.8344c1.481,0,2.3931-.5537,2.3931-1.8165A1.1471,1.1471,0,0,0,35.244,19.7464Z" transform="translate(-1 -1)"/><path d="M21.02,6.4467c1.0445-.4837,1.2942-.92,1.2942-1.6373,0-.99-.71-1.5358-2.0657-1.5358a4.1094,4.1094,0,0,0-2.3388.71l.6938,1.1151a2.8789,2.8789,0,0,1,1.6216-.5537c.4365,0,.608.1325.608.3741,0,.2182-.0858.304-.6629.5613a3.3785,3.3785,0,0,0-2.2764,3.3366h4.4593V7.5846H19.508C19.6252,7.2573,19.9292,6.9532,21.02,6.4467Z" transform="translate(-1 -1)"/><path d="M21.5569,30.9144H20.06L17.1215,34.29V35.397h3.0793v.9745h1.3562v-.9354h.7019V34.1576h-.7019ZM20.2008,33.62v.538h-.4055c-.3741,0-.7481.0076-1.0212.0233a9.1978,9.1978,0,0,0,.7172-.7953l.0782-.0934a8.66,8.66,0,0,0,.6547-.85C20.2084,32.7,20.2008,33.3,20.2008,33.62Z" transform="translate(-1 -1)"/><path d="M6.5184,14.6629c-.0662-.0029-.1421-.0045-.2175-.0045a5.3421,5.3421,0,0,0-.1365,10.681c.0543.0023.1168.0031.1794.0031a5.3413,5.3413,0,0,0,.1746-10.68Zm-.1746,9.64c-.0482,0-.0964-.0005-.1452-.0025a4.3027,4.3027,0,0,1,.1022-8.6027q.0911,0,.183.0039a4.3018,4.3018,0,0,1-.14,8.6013Z" transform="translate(-1 -1)"/><path d="M33.8363,14.6629c-.0535-.0023-.1164-.0031-.1786-.0031a5.3413,5.3413,0,0,0-.1751,10.68c.0548.0023.1177.0031.1807.0031a5.3413,5.3413,0,0,0,.173-10.68Zm2.7626,8.4794a4.2718,4.2718,0,0,1-2.9357,1.1607c-.0487,0-.0974-.0005-.1467-.0025a4.3018,4.3018,0,0,1,.1411-8.6013c.0477,0,.0959.0005.1441.0025a4.3022,4.3022,0,0,1,2.7971,7.4406Z" transform="translate(-1 -1)"/><path d="M20.1774,1.0044C20.1115,1.0016,20.0362,1,19.9614,1A5.3428,5.3428,0,0,0,16.1,9.9926a5.3041,5.3041,0,0,0,3.7236,1.6883c.0548.0023.1177.0031.1807.0031a5.3413,5.3413,0,0,0,.1728-10.68ZM22.94,9.4839a4.27,4.27,0,0,1-2.9352,1.1607c-.0487,0-.0974-.0005-.1467-.0025a4.3026,4.3026,0,0,1,.1036-8.6026q.09,0,.1817.0038A4.3018,4.3018,0,0,1,22.94,9.4839Z" transform="translate(-1 -1)"/><path d="M20.1776,28.3214c-.0657-.0029-.1416-.0045-.2171-.0045a5.3423,5.3423,0,0,0-.1371,10.6815c.0535.0023.1164.0031.1786.0031a5.3415,5.3415,0,0,0,.1756-10.68Zm-.1756,9.6407c-.0477,0-.0959-.0005-.1441-.0025a4.3022,4.3022,0,0,1-2.7971-7.4406,4.2219,4.2219,0,0,1,2.9-1.1627c.0606,0,.1216.0013.1826.0039a4.3021,4.3021,0,0,1-.1411,8.6018Z" transform="translate(-1 -1)"/></svg>',
+                        icon_docsandapi: '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve"><g><g><g><path d="M37.5,19.3c0-0.1-0.1-0.2-0.2-0.3l-10.1-6.3l-8.6-9.6c-0.1-0.2-0.4-0.2-0.5,0l-2.7,2.4L13,4c-0.2-0.1-0.5-0.1-0.7,0.2L7,12.7l-3.1,2.7c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.3l0.6,0.7l-1.9,3c-0.1,0.1-0.1,0.2-0.1,0.4c0,0.1,0.1,0.2,0.2,0.3l11.3,7l8.5,9.5c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0,0.2-0.1l2.7-2.3l1.3,0.8c0.1,0.1,0.2,0.1,0.3,0.1c0.2,0,0.3-0.1,0.4-0.2l3.3-5.2l6.3-5.5c0.1-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3l-1.5-1.7l1.7-2.7C37.5,19.6,37.5,19.5,37.5,19.3z M12.9,5.1l1.6,1l-4.9,4.3L12.9,5.1z M3.7,19.8l1.5-2.4l6.6,7.4L3.7,19.8z M27.1,34.3l-0.6-0.4l1.8-1.6L27.1,34.3z M22.8,36.1L14,26.2l0,0l0,0L4.7,15.7L18.3,3.9l9,10.2l0,0l0,0l9.1,10.2L22.8,36.1z M35.1,21.6l-5.5-6.2l6.8,4.2L35.1,21.6z"/><path d="M19.6,12c-0.1-0.2-0.4-0.2-0.5,0l-6.2,5.4c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.3l6,6.7c0.1,0.2,0.4,0.2,0.5,0l1.5-1.3l2.6,2.9c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0,0.2-0.1l4.5-3.9c0.1-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3L19.6,12zM23.7,25.6l-2.6-2.9c-0.1-0.1-0.2-0.1-0.3-0.1c-0.1,0-0.2,0-0.2,0.1l-1.5,1.3l-5.5-6.2l5.7-5l8.3,9.3L23.7,25.6z"/><path d="M30.9,25.2c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0c0.1-0.1,0.1-0.2,0-0.3l-2-2.3c-0.1-0.1-0.2-0.1-0.3,0c-0.1,0.1-0.1,0.2,0,0.3L30.9,25.2z"/><path d="M29.2,21.7c0,0,0.1,0,0.1,0l1.4-1.2c0.1-0.1,0.1-0.2,0-0.3c-0.1-0.1-0.2-0.1-0.3,0l-1.4,1.2c-0.1,0.1-0.1,0.2,0,0.3C29.1,21.7,29.2,21.7,29.2,21.7z"/><path d="M18.7,11.5c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0c0.1-0.1,0.1-0.2,0-0.3L17,9c-0.1-0.1-0.2-0.1-0.3,0c-0.1,0.1-0.1,0.2,0,0.3L18.7,11.5z"/><path d="M12.5,16.8l-2-2.3c-0.1-0.1-0.2-0.1-0.3,0c-0.1,0.1-0.1,0.2,0,0.3l2,2.3c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0C12.6,17,12.6,16.9,12.5,16.8z"/><path d="M20.3,11.7c0,0,0.1,0,0.1,0l1.4-1.2c0.1-0.1,0.1-0.2,0-0.3c-0.1-0.1-0.2-0.1-0.3,0l-1.4,1.2c-0.1,0.1-0.1,0.2,0,0.3C20.1,11.6,20.2,11.7,20.3,11.7z"/><path d="M24.3,27c-0.1-0.1-0.2-0.1-0.3,0c-0.1,0.1-0.1,0.2,0,0.3l2,2.3c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0c0.1-0.1,0.1-0.2,0-0.3L24.3,27z"/><path d="M23,26.7l-1.4,1.2c-0.1,0.1-0.1,0.2,0,0.3c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0l1.4-1.2c0.1-0.1,0.1-0.2,0-0.3C23.2,26.6,23.1,26.6,23,26.7z"/><path d="M18.3,24.9l-1.4,1.2c-0.1,0.1-0.1,0.2,0,0.3c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0l1.4-1.2c0.1-0.1,0.1-0.2,0-0.3C18.5,24.8,18.4,24.8,18.3,24.9z"/><path d="M12.3,18.1l-1.4,1.2c-0.1,0.1-0.1,0.2,0,0.3c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0l1.4-1.2c0.1-0.1,0.1-0.2,0-0.3C12.5,18.1,12.4,18.1,12.3,18.1z"/></g></g></g></svg>'
+                    };
+                    return icons[name];
+                };
+                return RHDPSearchOneBox;
+            }(rhelement_14.default));
+            exports_15("default", RHDPSearchOneBox);
+            customElements.define('rhdp-search-onebox', RHDPSearchOneBox);
+        }
+    };
+});
+System.register("rhdp-search/rhdp-search-result", ["rhelement"], function (exports_16, context_16) {
+    "use strict";
+    var __moduleName = context_16 && context_16.id;
+    var rhelement_15, RHDPSearchResult;
+    return {
+        setters: [
+            function (rhelement_15_1) {
+                rhelement_15 = rhelement_15_1;
+            }
+        ],
+        execute: function () {
+            RHDPSearchResult = (function (_super) {
+                __extends(RHDPSearchResult, _super);
+                function RHDPSearchResult() {
+                    var _this = _super.call(this, 'rhdp-search-result') || this;
+                    _this.template = function (el) {
+                        var tpl = document.createElement("template");
+                        tpl.innerHTML = "\n        <style>\n:host {\n    font-family: \"overpass\",\"Open Sans\",Helvetica,sans-serif;\n    margin-bottom: 25px;\n    padding-bottom: 25px;\n    border-bottom: 1px solid $grey-3;\n    display: flex;\n    flex-direction: row;\n}\n    .subscription-required {\n        &:before {\n            content: '';\n            background: url('https://static.jboss.org/rhd/images/icons/subscription-required.svg') no-repeat;\n            background-size:cover;\n            position:absolute;\n            margin-top: 5px;\n            width: .9em;\n            height: .9em;\n        }\n        .caps {\n            margin-left: 20px;\n        }\n\n    }\n\n    div:first-child { flex: 1 1 auto; }\n\n    h4 {\n        font-weight: 600;\n        font-style: normal;\n        font-size: 20px;\n        line-height: 1.4;\n        color: #06c;\n        cursor: pointer;\n        margin: 0;\n        font-family: \"overpass\",\"Open Sans\",Helvetica,sans-serif;\n    }\n\n    p { margin: 0; \n        color: #424242;\n        font-family: \"overpass\",\"Open Sans\",Helvetica,sans-serif;\n        }\n    .result-info span{\n        font-size: .9rem;\n        color: $grey-6;\n    }\n\n    .caps {\n        text-transform: uppercase;\n        font-size: 16px;\n        font-weight: normal;\n        line-height: 24px;\n        -webkit-font-smoothing: antialiased;\n    }\n    .result-description {\n        overflow: hidden;\n        text-overflow: ellipsis;\n        max-height: 45px;\n        margin-bottom: 25px;\n    }\n    .thumb { \n        flex: 0 0 130px; \n        margin-left: 1em;\n    }\n    .hlt { font-weight: 600; }\n        </style>\n<div>\n    <h4>" + (el.url ? "<a href=\"" + el.url + "\">" + el.title + "</a>" : el.title) + "</h4>\n    <p " + (el.premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"') + ">\n        <span class=\"caps\">" + el.kind + "</span>\n        " + (el.created ? "- <rh-datetime datetime=\"" + el.created + "\" type=\"local\" day=\"numeric\" month=\"long\" year=\"numeric\">" + el.created + "</rh-datetime>" : '') + "\n    </p>\n    <p class=\"result-description\">" + el.description + "</p>\n</div>\n" + (el.thumbnail ? "<div class=\"thumb\"><img src=\"" + el.thumbnail.replace('http:', 'https:') + "\"></div>" : '');
+                        return tpl;
+                    };
+                    _this._url = ['', ''];
+                    return _this;
+                }
+                Object.defineProperty(RHDPSearchResult.prototype, "url", {
+                    get: function () {
+                        return this._url;
+                    },
+                    set: function (val) {
+                        if (this._url === val)
+                            return;
+                        this._url = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResult.prototype, "title", {
+                    get: function () {
+                        return this._title;
+                    },
+                    set: function (val) {
+                        if (this._title === val)
+                            return;
+                        this._title = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResult.prototype, "kind", {
+                    get: function () {
+                        return this._kind;
+                    },
+                    set: function (val) {
+                        if (this._kind === val)
+                            return;
+                        this._kind = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResult.prototype, "created", {
+                    get: function () {
+                        return this._created;
+                    },
+                    set: function (val) {
+                        if (this._created === val)
+                            return;
+                        this._created = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResult.prototype, "description", {
+                    get: function () {
+                        return this._description;
+                    },
+                    set: function (val) {
+                        if (this._description === val)
+                            return;
+                        this._description = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResult.prototype, "premium", {
+                    get: function () {
+                        return this._premium;
+                    },
+                    set: function (val) {
+                        if (this._premium === val)
+                            return;
+                        this._premium = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResult.prototype, "thumbnail", {
+                    get: function () {
+                        return this._thumbnail;
+                    },
+                    set: function (val) {
+                        if (this._thumbnail === val)
+                            return;
+                        this._thumbnail = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResult.prototype, "result", {
+                    get: function () {
+                        return this._result;
+                    },
+                    set: function (val) {
+                        if (this._result === val)
+                            return;
+                        this._result = val;
+                        this.computeTitle(val);
+                        this.computeKind(val);
+                        this.computeCreated(val);
+                        this.computeDescription(val);
+                        this.computeURL(val);
+                        this.computePremium(val);
+                        this.computeThumbnail(val);
+                        this.renderResult();
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchResult.prototype.connectedCallback = function () {
+                };
+                Object.defineProperty(RHDPSearchResult, "observedAttributes", {
+                    get: function () {
+                        return ['result'];
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchResult.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
+                    this[name] = newVal;
+                };
+                RHDPSearchResult.prototype.renderResult = function () {
+                    _super.prototype.render.call(this, this.template(this));
+                };
+                RHDPSearchResult.prototype.computeThumbnail = function (result) {
+                    if (result.fields.thumbnail) {
+                        this.thumbnail = result.fields.thumbnail[0];
+                    }
+                };
+                RHDPSearchResult.prototype.computeTitle = function (result) {
+                    var title = '';
+                    if (result.highlight && result.highlight.sys_title) {
+                        title = result.highlight.sys_title[0];
+                    }
+                    else {
+                        title = result.fields.sys_title[0];
+                    }
+                    this.title = title;
+                };
+                RHDPSearchResult.prototype.computeKind = function (result) {
+                    var kind = result.fields.sys_type || "webpage", map = {
+                        jbossdeveloper_archetype: 'Archetype',
+                        article: 'Article',
+                        blogpost: 'Blog Post',
+                        jbossdeveloper_bom: 'Bom',
+                        book: 'Book',
+                        cheatsheet: 'Cheat Sheet',
+                        demo: 'Demo',
+                        event: 'Event',
+                        forumthread: 'Forum Thread',
+                        jbossdeveloper_example: 'Demo',
+                        quickstart: 'Quickstart',
+                        quickstart_early_access: 'Demo',
+                        solution: 'Article',
+                        stackoverflow_thread: 'Stack Overflow',
+                        video: 'Video',
+                        webpage: 'Web Page',
+                        website: 'Web Page'
+                    };
+                    this.kind = map[kind] || 'Web Page';
+                };
+                RHDPSearchResult.prototype.computeCreated = function (result) {
+                    this.created = result.fields.sys_created && result.fields.sys_created.length > 0 ? result.fields.sys_created[0] : '';
+                };
+                RHDPSearchResult.prototype.computeDescription = function (result) {
+                    var description = '';
+                    if (result.highlight && result.highlight.sys_description) {
+                        description = result.highlight.sys_description[0];
+                    }
+                    else if (result.highlight && result.highlight.sys_content_plaintext) {
+                        description = result.highlight.sys_content_plaintext[0];
+                    }
+                    else if (result.fields && result.fields.sys_description) {
+                        description = result.fields.sys_description[0];
+                    }
+                    else {
+                        description = result.fields.sys_content_plaintext[0];
+                    }
+                    var tempDiv = document.createElement("div");
+                    tempDiv.innerHTML = description;
+                    description = tempDiv.innerText;
+                    this.description = description;
+                };
+                RHDPSearchResult.prototype.computeURL = function (result) {
+                    if (result.fields && result.fields.sys_type === 'book' && result.fields.field_book_url) {
+                        this.url = result.fields.field_book_url;
+                    }
+                    else {
+                        this.url = (result.fields && result.fields.sys_url_view) ? result.fields.sys_url_view : '';
+                    }
+                };
+                RHDPSearchResult.prototype.computePremium = function (result) {
+                    var premium = false;
+                    if (result._type === "rht_knowledgebase_article" || result._type === "rht_knowledgebase_solution") {
+                        premium = true;
+                    }
+                    this.premium = premium;
+                };
+                return RHDPSearchResult;
+            }(rhelement_15.default));
+            exports_16("default", RHDPSearchResult);
+            customElements.define('rhdp-search-result', RHDPSearchResult);
+        }
+    };
+});
+System.register("rhdp-search/rhdp-search-results", ["rhelement", "rhdp-search/rhdp-search-result"], function (exports_17, context_17) {
+    "use strict";
+    var __moduleName = context_17 && context_17.id;
+    var rhelement_16, rhdp_search_result_1, RHDPSearchResults;
+    return {
+        setters: [
+            function (rhelement_16_1) {
+                rhelement_16 = rhelement_16_1;
+            },
+            function (rhdp_search_result_1_1) {
+                rhdp_search_result_1 = rhdp_search_result_1_1;
+            }
+        ],
+        execute: function () {
+            RHDPSearchResults = (function (_super) {
+                __extends(RHDPSearchResults, _super);
+                function RHDPSearchResults() {
+                    var _this = _super.call(this, 'rhdp-search-results') || this;
+                    _this.template = function (el) {
+                        var tpl = document.createElement("template");
+                        tpl.innerHTML = "\n        <style>\n            \n        </style>\n        " + (el.invalid ? "\n        <div class=\"invalidMsg\">\n        <h4>Well, this is awkward. No search term was entered yet, so this page is a little empty right now.</h4>\n        <p>After you enter a search term in the box above, you will see the results displayed here. \n        You can also use the filters to select a content type, product or topic to see some results too. \n        Try it out!</p>\n        </div>" : '');
+                        return tpl;
+                    };
+                    _this._more = false;
+                    _this._last = 0;
+                    _this._valid = true;
+                    _this.invalidMsg = document.createElement('div');
+                    _this.loadMore = document.createElement('div');
+                    _this.endOfResults = document.createElement('div');
+                    _this.loading = document.createElement('div');
+                    _this._renderResults = _this._renderResults.bind(_this);
+                    _this._setLoading = _this._setLoading.bind(_this);
+                    _this._checkValid = _this._checkValid.bind(_this);
+                    _this._clearResults = _this._clearResults.bind(_this);
+                    return _this;
+                }
+                Object.defineProperty(RHDPSearchResults.prototype, "results", {
+                    get: function () {
+                        return this._results;
+                    },
+                    set: function (val) {
+                        if (this._results === val)
+                            return;
+                        this._results = val;
+                        this._renderResults(false);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResults.prototype, "more", {
+                    get: function () {
+                        return this._more;
+                    },
+                    set: function (val) {
+                        if (this._more === val)
+                            return;
+                        this._more = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResults.prototype, "last", {
+                    get: function () {
+                        return this._last;
+                    },
+                    set: function (val) {
+                        if (this._last === val)
+                            return;
+                        this._last = val ? val : 0;
+                        this.setAttribute('last', val.toString());
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResults.prototype, "valid", {
+                    get: function () {
+                        return this._valid;
+                    },
+                    set: function (val) {
+                        if (this._valid === val)
+                            return;
+                        this._valid = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchResults.prototype.connectedCallback = function () {
+                    var _this = this;
+                    _super.prototype.render.call(this, this.template(this));
+                    this.setAttribute('data-rhd-col', '5span9');
+                    this.endOfResults.innerHTML = '<p class="end-of-results">- End of Results -</p>';
+                    this.loadMore.className = 'moreBtn';
+                    this.loadMore.innerHTML = '<a class="moreBtn" href="#">Load More</a>';
+                    this.loading.className = 'loading';
+                    this.loadMore.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        var evt = {
+                            detail: {
+                                from: _this.last
+                            },
+                            bubbles: true,
+                            composed: true
+                        };
+                        _this.dispatchEvent(new CustomEvent('load-more', evt));
+                    });
+                    top.addEventListener('search-complete', this._renderResults);
+                    top.addEventListener('search-start', this._setLoading);
+                    top.addEventListener('params-ready', this._checkValid);
+                    top.window.addEventListener('popstate', this._clearResults);
+                    this.shadowRoot.addEventListener('load-more', function (e) {
+                        _this.more = true;
+                    });
+                };
+                RHDPSearchResults.prototype.addResult = function (result) {
+                    var item = new rhdp_search_result_1.default();
+                    item.result = result;
+                    this.shadowRoot.appendChild(item);
+                };
+                RHDPSearchResults.prototype._setLoading = function (e) {
+                    if (!this.more) {
+                        while (this.shadowRoot.firstChild) {
+                            this.shadowRoot.removeChild(this.shadowRoot.firstChild);
+                        }
+                    }
+                    else {
+                        if (this.shadowRoot.querySelector('.moreBtn')) {
+                            this.shadowRoot.removeChild(this.loadMore);
+                        }
+                        if (this.shadowRoot.querySelector('.invalidMsg')) {
+                            this.shadowRoot.removeChild(this.invalidMsg);
+                        }
+                        this.more = false;
+                    }
+                    this.shadowRoot.appendChild(this.loading);
+                };
+                RHDPSearchResults.prototype._renderResults = function (e) {
+                    if (this.shadowRoot.querySelector('.loading')) {
+                        this.shadowRoot.removeChild(this.loading);
+                    }
+                    if (e.detail && typeof e.detail.results !== 'undefined' && typeof e.detail.invalid === 'undefined') {
+                        this.addResults(e.detail.results);
+                    }
+                    else {
+                        while (this.shadowRoot.firstChild) {
+                            this.shadowRoot.removeChild(this.shadowRoot.firstChild);
+                        }
+                        this.shadowRoot.appendChild(this.invalidMsg);
+                    }
+                    var evt = {
+                        detail: { results: this.results },
+                        bubbles: true,
+                        composed: true
+                    };
+                    this.dispatchEvent(new CustomEvent('results-loaded', evt));
+                };
+                RHDPSearchResults.prototype._clearResults = function (e) {
+                    this.results = undefined;
+                };
+                RHDPSearchResults.prototype._checkValid = function (e) {
+                    var obj = e.detail;
+                    this.valid = Object.keys(obj.filters).length > 0 || (obj.term !== null && obj.term !== '' && typeof obj.term !== 'undefined');
+                    if (!this.valid) {
+                        this.shadowRoot.appendChild(this.invalidMsg);
+                    }
+                    else {
+                        if (this.shadowRoot.querySelector('.invalidMsg')) {
+                            this.shadowRoot.removeChild(this.invalidMsg);
+                        }
+                    }
+                };
+                RHDPSearchResults.prototype.addResults = function (results) {
+                    if (results && results.hits && results.hits.hits) {
+                        var hits = results.hits.hits;
+                        var l = hits.length;
+                        for (var i = 0; i < l; i++) {
+                            this.addResult(hits[i]);
+                        }
+                        this.last = this.last + l;
+                        if (this.last >= results.hits.total) {
+                            this.shadowRoot.appendChild(this.endOfResults);
+                        }
+                        if (l > 0 && this.last < results.hits.total) {
+                            if (this.shadowRoot.querySelector('.end-of-results')) {
+                                this.shadowRoot.removeChild(this.endOfResults);
+                            }
+                            this.shadowRoot.appendChild(this.loadMore);
+                        }
+                        else {
+                            if (this.shadowRoot.querySelector('.moreBtn')) {
+                                this.shadowRoot.removeChild(this.loadMore);
+                            }
+                            this.shadowRoot.appendChild(this.endOfResults);
+                        }
+                    }
+                };
+                return RHDPSearchResults;
+            }(rhelement_16.default));
+            exports_17("default", RHDPSearchResults);
+            customElements.define('rhdp-search-results', RHDPSearchResults);
+        }
+    };
+});
+System.register("rhdp-search/rhdp-search-sort-page", ["rhelement"], function (exports_18, context_18) {
+    "use strict";
+    var __moduleName = context_18 && context_18.id;
+    var rhelement_17, RHDPSearchSortPage;
+    return {
+        setters: [
+            function (rhelement_17_1) {
+                rhelement_17 = rhelement_17_1;
+            }
+        ],
+        execute: function () {
+            RHDPSearchSortPage = (function (_super) {
+                __extends(RHDPSearchSortPage, _super);
+                function RHDPSearchSortPage() {
+                    var _this = _super.call(this, 'rhdp-search-sort-page') || this;
+                    _this.template = function (el) {
+                        var tpl = document.createElement("template");
+                        tpl.innerHTML = "\n        <style>\n        :host {\n            grid-column: 5 / span 9;\n            display: block;\n            padding: 0 0 1em 0;\n            border-bottom: 1px solid var(--rhd-gray-4);\n        }\n            \n        select { \n            width: auto; \n            padding-right: 20px; \n            background: transparent;\n            font-size: 16px;\n            line-height: 1;\n            border: 0;\n            border-radius: 0;\n            padding:7px;\n            margin:0;\n            position: relative;\n            z-index: 2;\n            padding-right: 30px;\n            /* Hacks to style dropdown */\n            -webkit-appearance: none;\n            -moz-appearance: window;\n        }\n        \n        select:focus, select:active {\n            outline:0;\n            border:0;\n            outline: 1px solid white;\n            outline-offset: -2px;\n        }\n    \n        \n        .tight {\n            display: none;\n        }\n\n        .tight .button {\n            background: #ccc;\n            text-decoration: none;\n            border: 0;\n            font-weight: 600;\n            font-size: 16px;\n            padding: 9px 25px;\n            transition: background .2s ease-in 0s;\n            line-height: 1.2em;\n            cursor: pointer;\n            position: relative;\n            text-align: center;\n            color: #333; \n            width: 100%;\n            display: block;\n            width: 150px;\n            margin-right: 2em;\n        }\n    \n        @media only screen and (max-width: 768px) {\n            :host {\n                align-self: flex-end; \n                position: absolute; \n                top: -4.5em;\n                border-bottom: none;\n                margin-left: 180px;\n                top: -4.6em;\n            }\n            span { display: none; }\n            select { \n                width: 150px; \n                text-align: center;\n                text-align-last: center;\n                font-weight: 600;\n                height: auto;\n                border: 1px solid var(--rhd-blue);\n                line-height: 1.44;\n                background-color: transparent;\n                padding: 8px 0;\n                color: var(--rhd-blue);\n                font-size: 16px;\n                position: relative;\n                top: -4px;\n            }\n    \n            select:hover, select:focus {\n                background-color: var(--rhd-blue);\n                color: var(--rhd-white);\n            }\n        \n            .roomy {\n                display: none;\n            }\n            .tight { \n                display: block; \n            }\n            .clear {\n                padding: 0;\n                margin: 0; \n                border: 1px solid white;\n                width: auto;\n                font-weight: bold;\n            }\n        }\n        \n        @media only screen and (max-width: 365px) {\n            :host {\n                position: relative;\n                left: 0; top: 0;\n                margin-left: 0px;\n            }\n        }\n        </style>\n    <span>Sort results by</span>\n    <select>\n        <option value=\"relevance\">Relevance</option>\n        <option value=\"most-recent\">Most Recent</option>\n    </select>";
+                        return tpl;
+                    };
+                    _this._sortChange = _this._sortChange.bind(_this);
+                    return _this;
+                }
+                Object.defineProperty(RHDPSearchSortPage.prototype, "sort", {
+                    get: function () {
+                        return this._sort;
+                    },
+                    set: function (val) {
+                        if (this._sort === val)
+                            return;
+                        this._sort = val;
+                        this.setAttribute('sort', this._sort);
+                        this.shadowRoot.querySelector('select').value = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchSortPage.prototype.connectedCallback = function () {
+                    _super.prototype.render.call(this, this.template(this));
+                    top.addEventListener('params-ready', this._sortChange);
+                    this.shadowRoot.querySelector('select').onchange = this._sortChange;
+                };
+                Object.defineProperty(RHDPSearchSortPage, "observedAttributes", {
+                    get: function () {
+                        return ['sort'];
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchSortPage.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
+                    this[name] = newVal;
+                };
+                RHDPSearchSortPage.prototype._sortChange = function (e) {
+                    if (e.detail && e.detail.sort) {
+                        this.sort = e.detail.sort;
+                    }
+                    else {
+                        if (e.target['options'] && typeof e.target['selectedIndex'] !== 'undefined') {
+                            this.sort = e.target['options'][e.target['selectedIndex']].value;
+                            var evt = {
+                                detail: {
+                                    sort: this.sort
+                                },
+                                bubbles: true,
+                                composed: true
+                            };
+                            this.dispatchEvent(new CustomEvent('sort-change', evt));
+                        }
+                    }
+                };
+                return RHDPSearchSortPage;
+            }(rhelement_17.default));
+            exports_18("default", RHDPSearchSortPage);
+            customElements.define('rhdp-search-sort-page', RHDPSearchSortPage);
+        }
+    };
+});
+System.register("rhdp-search/rhdp-search-zapp", ["rhelement", "rhdp-search/rhdp-search-url", "rhdp-search/rhdp-search-query", "rhdp-search/rhdp-search-box", "rhdp-search/rhdp-search-result-count", "rhdp-search/rhdp-search-filters", "rhdp-search/rhdp-search-onebox", "rhdp-search/rhdp-search-results", "rhdp-search/rhdp-search-sort-page"], function (exports_19, context_19) {
+    "use strict";
+    var __moduleName = context_19 && context_19.id;
+    var rhelement_18, rhdp_search_url_1, rhdp_search_query_1, rhdp_search_box_1, rhdp_search_result_count_1, rhdp_search_filters_1, rhdp_search_onebox_1, rhdp_search_results_1, rhdp_search_sort_page_1, RHDPSearchApp;
+    return {
+        setters: [
+            function (rhelement_18_1) {
+                rhelement_18 = rhelement_18_1;
+            },
+            function (rhdp_search_url_1_1) {
+                rhdp_search_url_1 = rhdp_search_url_1_1;
+            },
+            function (rhdp_search_query_1_1) {
+                rhdp_search_query_1 = rhdp_search_query_1_1;
+            },
+            function (rhdp_search_box_1_1) {
+                rhdp_search_box_1 = rhdp_search_box_1_1;
+            },
+            function (rhdp_search_result_count_1_1) {
+                rhdp_search_result_count_1 = rhdp_search_result_count_1_1;
+            },
+            function (rhdp_search_filters_1_1) {
+                rhdp_search_filters_1 = rhdp_search_filters_1_1;
+            },
+            function (rhdp_search_onebox_1_1) {
+                rhdp_search_onebox_1 = rhdp_search_onebox_1_1;
+            },
+            function (rhdp_search_results_1_1) {
+                rhdp_search_results_1 = rhdp_search_results_1_1;
+            },
+            function (rhdp_search_sort_page_1_1) {
+                rhdp_search_sort_page_1 = rhdp_search_sort_page_1_1;
+            }
+        ],
+        execute: function () {
+            RHDPSearchApp = (function (_super) {
+                __extends(RHDPSearchApp, _super);
+                function RHDPSearchApp() {
+                    var _this = _super.call(this, 'rhdp-search-app') || this;
+                    _this.template = function (el) {
+                        var tpl = document.createElement("template");
+                        tpl.innerHTML = "\n        <style>\n\n    :host { \n        display: flex;\n        flex-flow: column;\n        font-family: \"overpass\",\"Open Sans\",Helvetica,sans-serif;\n        margin-bottom: 30px;\n    }\n\n    .hide { display: none; }\n    \n    .show { display: block; }\n    \n    .mobile { display: none; }\n\n    h1 { grid-column: 2 / span 12; }\n\n    .loading {\n        background:url(\"https://developers.redhat.com/images/icons/ajax-loader.gif\") center 80px no-repeat;\n        min-height:250px;\n    }\n        </style>\n    <span class=\"search-outage-msg\"></span>\n    <h1>" + el.name + "</h1>\n    ";
+                        return tpl;
+                    };
+                    _this._name = 'Search';
+                    _this.urlEle = new rhdp_search_url_1.default();
+                    _this.query = new rhdp_search_query_1.default();
+                    _this.box = new rhdp_search_box_1.default();
+                    _this.count = new rhdp_search_result_count_1.default();
+                    _this.filters = new rhdp_search_filters_1.default();
+                    _this.active = new rhdp_search_filters_1.default();
+                    _this.modal = new rhdp_search_filters_1.default();
+                    _this.onebox = new rhdp_search_onebox_1.default('/rhd-frontend/json/onebox.json');
+                    _this.results = new rhdp_search_results_1.default();
+                    _this.sort = new rhdp_search_sort_page_1.default();
+                    _this.filterObj = {
+                        term: '',
+                        facets: [
+                            { name: 'CONTENT TYPE', key: 'type', items: [
+                                    { key: 'apidocs', name: 'APIs and Docs', value: ['rht_website', 'rht_apidocs'], type: ['apidocs'] },
+                                    { key: 'archetype', name: 'Archetype', value: ['jbossdeveloper_archetype'], type: ['jbossdeveloper_archetype'] },
+                                    { key: 'article', name: 'Article', value: ['article', 'solution'], type: ['rhd_knowledgebase_article', 'rht_knowledgebase_solution'] },
+                                    { key: 'blogpost', name: "Blog Posts", value: ['blogpost'], type: ['jbossorg_blog'] },
+                                    { key: 'book', name: "Book", value: ["book"], type: ["jbossdeveloper_book"] },
+                                    { key: 'bom', name: "BOM", value: ["jbossdeveloper_bom"], type: ['jbossdeveloper_bom'] },
+                                    { key: 'cheatsheet', name: "Cheat Sheet", value: ['cheatsheet'], type: ['jbossdeveloper_cheatsheet'] },
+                                    { key: 'demo', name: 'Demo', value: ['demo'], type: ['jbossdeveloper_demo'] },
+                                    { key: 'event', name: 'Event', value: ['jbossdeveloper_event'], type: ['jbossdeveloper_event'] },
+                                    { key: 'forum', name: 'Forum', value: ['jbossorg_sbs_forum'], type: ['jbossorg_sbs_forum'] },
+                                    { key: 'get-started', name: "Get Started", value: ["jbossdeveloper_example"], type: ['jbossdeveloper_example'] },
+                                    { key: 'quickstart', name: "Quickstart", value: ['quickstart'], type: ['jbossdeveloper_quickstart'] },
+                                    { key: 'stackoverflow', name: 'Stack Overflow', value: ['stackoverflow_thread'], type: ['stackoverflow_question'] },
+                                    { key: 'video', name: "Video", value: ["video"], type: ['jbossdeveloper_vimeo', 'jbossdeveloper_youtube'] },
+                                    { key: 'webpage', name: "Web Page", value: ['webpage'], type: ['rhd_website'] }
+                                ]
+                            },
+                            {
+                                name: 'PRODUCT',
+                                key: 'project',
+                                items: [
+                                    { key: 'dotnet', name: '.NET Runtime for Red Hat Enterprise Linux', value: ['dotnet'] },
+                                    { key: 'amq', name: 'JBoss A-MQ', value: ['amq'] },
+                                    { key: 'bpmsuite', name: 'JBoss BPM Suite', value: ['bpmsuite'] },
+                                    { key: 'brms', name: 'Red Hat Decision Manager', value: ['brms'] },
+                                    { key: 'datagrid', name: 'JBoss Data Grid', value: ['datagrid'] },
+                                    { key: 'datavirt', name: 'JBoss Data Virtualization', value: ['datavirt'] },
+                                    { key: 'devstudio', name: 'JBoss Developer Studio', value: ['devstudio'] },
+                                    { key: 'eap', name: 'JBoss Enterprise Application Platform', value: ['eap'] },
+                                    { key: 'fuse', name: 'JBoss Fuse', value: ['fuse'] },
+                                    { key: 'webserver', name: 'JBoss Web Server', value: ['webserver'] },
+                                    { key: 'openjdk', name: 'OpenJDK', value: ['openjdk'] },
+                                    { key: 'rhamt', name: 'Red Hat Application Migration Toolkit', value: ['rhamt'] },
+                                    { key: 'cdk', name: 'Red Hat Container Development Kit', value: ['cdk'] },
+                                    { key: 'developertoolset', name: 'Red Hat Developer Toolset', value: ['developertoolset'] },
+                                    { key: 'devsuite', name: 'Red Hat Development Suite', value: ['devsuite'] },
+                                    { key: 'rhel', name: 'Red Hat Enterprise Linux', value: ['rhel'] },
+                                    { key: 'mobileplatform', name: 'Red Hat Mobile Application Platform', value: ['mobileplatform'] },
+                                    { key: 'openshift', name: 'Red Hat OpenShift Container Platform', value: ['openshift'] },
+                                    { key: 'softwarecollections', name: 'Red Hat Software Collections', value: ['softwarecollections'] }
+                                ]
+                            },
+                            { name: 'TOPIC', key: 'tag', items: [
+                                    { key: 'dotnet', name: '.NET', value: ['dotnet', '.net', 'visual studio', 'c#'] },
+                                    { key: 'containers', name: 'Containers', value: ['atomic', 'cdk', 'containers'] },
+                                    { key: 'devops', name: 'DevOps', value: ['DevOps', 'CI', 'CD', 'Continuous Delivery'] },
+                                    { key: 'enterprise-java', name: 'Enterprise Java', value: ['ActiveMQ', 'AMQP', 'apache camel', 'Arquillian', 'Camel', 'CDI', 'CEP', 'CXF', 'datagrid', 'devstudio', 'Drools', 'Eclipse', 'fabric8', 'Forge', 'fuse', 'Hawkular', 'Hawtio', 'Hibernate', 'Hibernate ORM', 'Infinispan', 'iPaas', 'java ee', 'JavaEE', 'JBDS', 'JBoss', 'JBoss BPM Suite', 'Red Hat Decision Manager', 'JBoss Data Grid', 'jboss eap', 'JBoss EAP', ''] },
+                                    { key: 'iot', name: 'Internet of Things', value: ['IoT', 'Internet of Things'] },
+                                    { key: 'microservices', name: 'Microservices', value: ['Microservices', ' WildFly Swarm'] },
+                                    { key: 'mobile', name: 'Mobile', value: ['Mobile', 'Red Hat Mobile', 'RHMAP', 'Cordova', 'FeedHenry'] },
+                                    { key: 'web-and-api-development', name: 'Web and API Development', value: ['Web', 'API', 'HTML5', 'REST', 'Camel', 'Node.js', 'RESTEasy', 'JAX-RS', 'Tomcat', 'nginx', 'Rails', 'Drupal', 'PHP', 'Bottle', 'Flask', 'Laravel', 'Dancer', 'Zope', 'TurboGears', 'Sinatra', 'httpd', 'Passenger'] },
+                                ]
+                            }
+                        ]
+                    };
+                    return _this;
+                }
+                Object.defineProperty(RHDPSearchApp.prototype, "name", {
+                    get: function () {
+                        return this._name;
+                    },
+                    set: function (val) {
+                        if (this._name === val)
+                            return;
+                        this._name = val;
+                        this.setAttribute('name', this.name);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchApp.prototype, "url", {
+                    get: function () {
+                        return this._url;
+                    },
+                    set: function (val) {
+                        if (this._url === val)
+                            return;
+                        this._url = val;
+                        this.query.url = this.url;
+                        this.setAttribute('url', this.url);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchApp.prototype.connectedCallback = function () {
+                    _super.prototype.render.call(this, this.template(this));
+                    this.setAttribute('data-rhd-grid', 'normal');
+                    this.active.setAttribute('type', 'active');
+                    this.active.title = 'Active Filters:';
+                    this.modal.setAttribute('type', 'modal');
+                    this.modal.filters = this.filterObj;
+                    this.active.filters = this.filterObj;
+                    this.filters.filters = this.filterObj;
+                    this.query.filters = this.filterObj;
+                    this.shadowRoot.appendChild(this.box);
+                    this.shadowRoot.appendChild(this.filters);
+                    this.shadowRoot.appendChild(this.active);
+                    this.shadowRoot.appendChild(this.count);
+                    this.shadowRoot.appendChild(this.sort);
+                    this.shadowRoot.appendChild(this.onebox);
+                    this.shadowRoot.appendChild(this.results);
+                    top.document.body.appendChild(this.modal);
+                    top.document.body.appendChild(this.urlEle);
+                    this.shadowRoot.appendChild(this.query);
+                };
+                Object.defineProperty(RHDPSearchApp, "observedAttributes", {
+                    get: function () {
+                        return ['url', 'name'];
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                RHDPSearchApp.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
+                    this[name] = newVal;
+                };
+                RHDPSearchApp.prototype.toggleModal = function (e) {
+                    this.modal.toggle = e.detail.toggle;
+                };
+                RHDPSearchApp.prototype.updateSort = function (e) {
+                    this.query.sort = e.detail.sort;
+                    this.query.from = 0;
+                    this.results.last = 0;
+                    this.count.term = this.box.term;
+                };
+                return RHDPSearchApp;
+            }(rhelement_18.default));
+            exports_19("default", RHDPSearchApp);
+            customElements.define('rhdp-search-app', RHDPSearchApp);
+        }
+    };
+});
+System.register("rhd-app", ["rhdp-alert", "dp-category-list/dp-category-list", "dp-category-list/dp-category", "dp-category-list/dp-category-item-list", "dp-category-list/dp-category-item", "dp-category-list/dp-product-short-teaser", "rhdp-search/rhdp-search-zapp"], function (exports_20, context_20) {
+    "use strict";
+    var __moduleName = context_20 && context_20.id;
+    var rhdp_alert_1, dp_category_list_1, dp_category_1, dp_category_item_list_1, dp_category_item_1, dp_product_short_teaser_1, rhdp_search_zapp_1, RHDApp;
     return {
         setters: [
             function (rhdp_alert_1_1) {
@@ -596,6 +2878,9 @@ System.register("rhd-app", ["rhdp-alert", "dp-category-list/dp-category-list", "
             },
             function (dp_product_short_teaser_1_1) {
                 dp_product_short_teaser_1 = dp_product_short_teaser_1_1;
+            },
+            function (rhdp_search_zapp_1_1) {
+                rhdp_search_zapp_1 = rhdp_search_zapp_1_1;
             }
         ],
         execute: function () {
@@ -607,6 +2892,7 @@ System.register("rhd-app", ["rhdp-alert", "dp-category-list/dp-category-list", "
                     this.d = new dp_category_item_list_1.default();
                     this.e = new dp_category_item_1.default();
                     this.f = new dp_product_short_teaser_1.default();
+                    this.g = new rhdp_search_zapp_1.default();
                 }
                 return RHDApp;
             }());
@@ -622,8 +2908,8 @@ var RHDPOSDownload = (function (_super) {
         _this._winURL = "";
         _this.stage_download_url = 'https://developers.stage.redhat.com';
         _this.productDownloads = {
-            "devsuite": { "windowsUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.2.0-GA-installer.exe", "macUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.2.0-GA-bundle-installer-mac.zip", "rhelUrl": "https://developers.redhat.com/products/devsuite/hello-world/#fndtn-rhel" },
-            "cdk": { "windowsUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.2.0-GA-bundle-installer.exe", "macUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.2.0-GA-bundle-installer-mac.zip", "rhelUrl": "https://developers.redhat.com/products/cdk/hello-world/#fndtn-rhel" }
+            "devsuite": { "windowsUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.3.0-GA-installer.exe", "macUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.3.0-GA-bundle-installer-mac.zip", "rhelUrl": "https://developers.redhat.com/products/devsuite/hello-world/#fndtn-rhel" },
+            "cdk": { "windowsUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.3.0-GA-bundle-installer.exe", "macUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.3.0-GA-bundle-installer-mac.zip", "rhelUrl": "https://developers.redhat.com/products/cdk/hello-world/#fndtn-rhel" }
         };
         _this.template = function (strings, product, downloadUrl, platform, version) {
             return "<div class=\"large-8 columns download-link\">\n                    <a class=\"button heavy-cta\" href=\"" + downloadUrl + "\">\n                        <i class=\"fa fa-download\"></i> Download</a>\n                    <div class=\"version-name\">" + product + " " + version + " " + (_this.displayOS ? "for " + platform : '') + "</div>\n                </div>\n                ";
@@ -2871,1911 +5157,3 @@ var RHDPProjects = (function (_super) {
 window.addEventListener('WebComponentsReady', function () {
     customElements.define('rhdp-projects', RHDPProjects);
 });
-var RHDPSearchBox = (function (_super) {
-    __extends(RHDPSearchBox, _super);
-    function RHDPSearchBox() {
-        var _this = _super.call(this) || this;
-        _this._term = '';
-        _this.name = 'Search Box';
-        _this.template = function (strings, name, term) {
-            return "<form class=\"search-bar\" role=\"search\">\n        <div class=\"input-cont\">\n            <input value=\"" + term + "\" class=\"user-success user-search\" type=\"search\" id=\"query\" placeholder=\"Enter your search term\">\n        </div>\n        <button id=\"search-btn\"><span>SEARCH</span><i class='fa fa-search' aria-hidden='true'></i></button>\n        </form>";
-        };
-        _this._checkTerm = _this._checkTerm.bind(_this);
-        return _this;
-    }
-    Object.defineProperty(RHDPSearchBox.prototype, "term", {
-        get: function () {
-            return this._term;
-        },
-        set: function (val) {
-            if (this._term === val)
-                return;
-            this._term = decodeURI(val);
-            this.querySelector('input').setAttribute('value', this.term);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchBox.prototype.connectedCallback = function () {
-        var _this = this;
-        top.addEventListener('params-ready', this._checkTerm);
-        top.addEventListener('term-change', this._checkTerm);
-        this.innerHTML = this.template(__makeTemplateObject(["", "", ""], ["", "", ""]), this.name, this.term);
-        this.addEventListener('submit', function (e) {
-            e.preventDefault();
-            _this._termChange();
-            return false;
-        });
-        this.querySelector('#search-btn').addEventListener('click', function (e) {
-        });
-    };
-    Object.defineProperty(RHDPSearchBox, "observedAttributes", {
-        get: function () {
-            return ['term'];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchBox.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
-        this[name] = newVal;
-    };
-    RHDPSearchBox.prototype._checkTerm = function (e) {
-        if (e.detail && e.detail.term) {
-            this.term = e.detail.term;
-        }
-    };
-    RHDPSearchBox.prototype._termChange = function () {
-        this.term = this.querySelector('input').value;
-        this.dispatchEvent(new CustomEvent('term-change', {
-            detail: {
-                term: this.term
-            },
-            bubbles: true
-        }));
-    };
-    return RHDPSearchBox;
-}(HTMLElement));
-customElements.define('rhdp-search-box', RHDPSearchBox);
-var RHDPSearchFilterGroup = (function (_super) {
-    __extends(RHDPSearchFilterGroup, _super);
-    function RHDPSearchFilterGroup() {
-        var _this = _super.call(this) || this;
-        _this._toggle = false;
-        _this._more = false;
-        _this.template = function (strings, name) {
-            return "<h6 class=\"showFilters heading\"><span class=\"group-name\">" + name + "</span><span class=\"toggle\"><i class='fa fa-chevron-right' aria-hidden='true'></i></span></h6>\n        <div class=\"group hide\">\n            <div class=\"primary\"></div>\n            <div class=\"secondary hide\"></div>\n            <a href=\"#\" class=\"more\">Show More</a>\n        </div>";
-        };
-        _this.innerHTML = _this.template(__makeTemplateObject(["", ""], ["", ""]), _this.name);
-        return _this;
-    }
-    Object.defineProperty(RHDPSearchFilterGroup.prototype, "key", {
-        get: function () {
-            return this._key;
-        },
-        set: function (val) {
-            if (this._key === val)
-                return;
-            this._key = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilterGroup.prototype, "name", {
-        get: function () {
-            return this._name;
-        },
-        set: function (val) {
-            if (this._name === val)
-                return;
-            this._name = val;
-            this.querySelector('.group-name').innerHTML = this._name;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilterGroup.prototype, "items", {
-        get: function () {
-            return this._items;
-        },
-        set: function (val) {
-            if (this._items === val)
-                return;
-            this._items = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilterGroup.prototype, "toggle", {
-        get: function () {
-            return this._toggle;
-        },
-        set: function (val) {
-            if (this._toggle === val)
-                return;
-            this._toggle = val;
-            this.querySelector('.group').className = this.toggle ? 'group' : 'group hide';
-            this.querySelector('.toggle').className = this.toggle ? 'toggle expand' : 'toggle';
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilterGroup.prototype, "more", {
-        get: function () {
-            return this._more;
-        },
-        set: function (val) {
-            if (this._more === val)
-                return;
-            this._more = val;
-            this.querySelector('.more').innerHTML = this.more ? 'Show Less' : 'Show More';
-            this.querySelector('.secondary').className = this.more ? 'secondary' : 'secondary hide';
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchFilterGroup.prototype.connectedCallback = function () {
-        var _this = this;
-        this.querySelector('h6').addEventListener('click', function (e) {
-            e.preventDefault();
-            _this.toggle = !_this.toggle;
-        });
-        this.querySelector('.more').addEventListener('click', function (e) {
-            _this.more = !_this.more;
-        });
-        this.toggle = true;
-    };
-    Object.defineProperty(RHDPSearchFilterGroup, "observedAttributes", {
-        get: function () {
-            return ['name', 'key', 'toggle', 'items', 'more'];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchFilterGroup.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
-        this[name] = newVal;
-    };
-    return RHDPSearchFilterGroup;
-}(HTMLElement));
-customElements.define('rhdp-search-filter-group', RHDPSearchFilterGroup);
-var RHDPSearchFilterItem = (function (_super) {
-    __extends(RHDPSearchFilterItem, _super);
-    function RHDPSearchFilterItem() {
-        var _this = _super.call(this) || this;
-        _this._active = false;
-        _this._inline = false;
-        _this._bubble = true;
-        _this._bounce = false;
-        _this.template = function (strings, name, key, active) {
-            var checked = active ? 'checked' : '';
-            return "<div class=\"list\"><span>" + name + "</span><input type=\"checkbox\" " + checked + " id=\"filter-item-" + key + "\" value=\"" + key + "\"><label for=\"filter-item-" + key + "\">" + name + "</label></div>";
-        };
-        _this.inlineTemplate = function (strings, name, active) {
-            return active ? "<div class=\"inline\">" + name + " <i class=\"fa fa-times clearItem\" aria-hidden=\"true\"></i></div>" : '';
-        };
-        _this._checkParams = _this._checkParams.bind(_this);
-        _this._clearFilters = _this._clearFilters.bind(_this);
-        _this._checkChange = _this._checkChange.bind(_this);
-        _this._updateFacet = _this._updateFacet.bind(_this);
-        return _this;
-    }
-    Object.defineProperty(RHDPSearchFilterItem.prototype, "name", {
-        get: function () {
-            return this._name;
-        },
-        set: function (val) {
-            if (this._name === val)
-                return;
-            this._name = val;
-            this.setAttribute('name', this._name);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilterItem.prototype, "key", {
-        get: function () {
-            return this._key;
-        },
-        set: function (val) {
-            if (this._key === val)
-                return;
-            this._key = val;
-            this.className = "filter-item-" + this._key;
-            this.setAttribute('key', this._key);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilterItem.prototype, "group", {
-        get: function () {
-            return this._group;
-        },
-        set: function (val) {
-            if (this._group === val)
-                return;
-            this._group = val;
-            this.setAttribute('group', this._group);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilterItem.prototype, "active", {
-        get: function () {
-            return this._active;
-        },
-        set: function (val) {
-            if (typeof val === 'string') {
-                val = true;
-            }
-            if (val === null) {
-                val = false;
-            }
-            if (this._active === val) {
-                return;
-            }
-            else {
-                this._active = val;
-                var chkbox = this.querySelector('input');
-                if (this._active) {
-                    this.setAttribute('active', '');
-                }
-                else {
-                    this.removeAttribute('active');
-                }
-                if (chkbox) {
-                    chkbox.checked = this._active;
-                }
-                if (this.inline) {
-                    this.innerHTML = this._active ? this.inlineTemplate(__makeTemplateObject(["", "", ""], ["", "", ""]), this.name, this._active) : '';
-                }
-                this.dispatchEvent(new CustomEvent('filter-item-change', { detail: { facet: this }, bubbles: this.bubble }));
-                this.bubble = true;
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilterItem.prototype, "value", {
-        get: function () {
-            return this._value;
-        },
-        set: function (val) {
-            if (this._value === val)
-                return;
-            this._value = val;
-            this.setAttribute('value', this.value);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilterItem.prototype, "inline", {
-        get: function () {
-            return this._inline;
-        },
-        set: function (val) {
-            if (this._inline === val)
-                return;
-            this._inline = val;
-            this.innerHTML = !this._inline ? this.template(__makeTemplateObject(["", "", "", ""], ["", "", "", ""]), this.name, this.key, this.active) : this.inlineTemplate(__makeTemplateObject(["", "", ""], ["", "", ""]), this.name, this.active);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilterItem.prototype, "bubble", {
-        get: function () {
-            return this._bubble;
-        },
-        set: function (val) {
-            if (this._bubble === val)
-                return;
-            this._bubble = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilterItem.prototype, "bounce", {
-        get: function () {
-            return this._bounce;
-        },
-        set: function (val) {
-            if (this._bounce === val)
-                return;
-            this._bounce = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchFilterItem.prototype.connectedCallback = function () {
-        this.innerHTML = !this.inline ? this.template(__makeTemplateObject(["", "", "", ""], ["", "", "", ""]), this.name, this.key, this.active) : this.inlineTemplate(__makeTemplateObject(["", "", ""], ["", "", ""]), this.name, this.active);
-        if (!this.inline) {
-            this.addEventListener('change', this._updateFacet);
-        }
-        else {
-            this.addEventListener('click', this._updateFacet);
-        }
-        top.addEventListener('filter-item-change', this._checkChange);
-        top.addEventListener('params-ready', this._checkParams);
-        top.addEventListener('clear-filters', this._clearFilters);
-    };
-    Object.defineProperty(RHDPSearchFilterItem, "observedAttributes", {
-        get: function () {
-            return ['name', 'active', 'value', 'inline', 'key', 'group'];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchFilterItem.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
-        this[name] = newVal;
-    };
-    RHDPSearchFilterItem.prototype._updateFacet = function (e) {
-        this.bounce = true;
-        if (this.inline) {
-            if (e.target['className'].indexOf('clearItem') >= 0) {
-                this.active = !this.active;
-            }
-        }
-        else {
-            this.active = !this.active;
-        }
-    };
-    RHDPSearchFilterItem.prototype._checkParams = function (e) {
-        var _this = this;
-        var chk = false;
-        if (e.detail && e.detail.filters) {
-            Object.keys(e.detail.filters).forEach(function (group) {
-                e.detail.filters[group].forEach(function (facet) {
-                    if (group === _this.group) {
-                        if (facet === _this.key) {
-                            chk = true;
-                            _this.bubble = false;
-                            _this.active = true;
-                            _this.dispatchEvent(new CustomEvent('filter-item-init', { detail: { facet: _this }, bubbles: _this.bubble }));
-                        }
-                    }
-                });
-            });
-        }
-        if (!chk) {
-            this.bubble = false;
-            this.active = false;
-        }
-    };
-    RHDPSearchFilterItem.prototype._checkChange = function (e) {
-        if (e.detail && e.detail.facet) {
-            if (!this.bounce) {
-                if (this.group === e.detail.facet.group && this.key === e.detail.facet.key) {
-                    this.bubble = false;
-                    this.active = e.detail.facet.active;
-                }
-            }
-            this.bubble = true;
-            this.bounce = false;
-        }
-    };
-    RHDPSearchFilterItem.prototype._clearFilters = function (e) {
-        this.bubble = false;
-        this.bounce = false;
-        this.active = false;
-    };
-    return RHDPSearchFilterItem;
-}(HTMLElement));
-customElements.define('rhdp-search-filter-item', RHDPSearchFilterItem);
-var RHDPSearchFilters = (function (_super) {
-    __extends(RHDPSearchFilters, _super);
-    function RHDPSearchFilters() {
-        var _this = _super.call(this) || this;
-        _this._type = '';
-        _this._title = 'Filter By';
-        _this._toggle = false;
-        _this.modalTemplate = function (string, title) {
-            return "<div class=\"cover\" id=\"cover\">\n            <div class=\"title\">" + title + " <a href=\"#\" class=\"cancel\" id=\"cancel\">Close</a></div>\n            <div class=\"groups\">\n            </div>\n            <div class=\"footer\">\n            <a href=\"#\" class=\"clearFilters\">Clear Filters</a> \n            <a href=\"#\" class=\"applyFilters\">Apply</a>\n            </div>\n        </div>";
-        };
-        _this.activeTemplate = function (strings, title) {
-            return "<div class=\"active-type\">\n        <strong>" + title + "</strong>\n        <div class=\"activeFilters\"></div>\n        <a href=\"#\" class=\"clearFilters\">Clear Filters</a>\n      </div>";
-        };
-        _this.template = function (strings, title) {
-            return "<a class=\"showBtn\">Show Filters</a>\n        <div class=\"control\" id=\"control\">\n            <div class=\"title\">" + title + "</div>\n            <div class=\"groups\">\n            </div>\n        </div>";
-        };
-        _this._toggleModal = _this._toggleModal.bind(_this);
-        _this._clearFilters = _this._clearFilters.bind(_this);
-        _this._addFilters = _this._addFilters.bind(_this);
-        _this._checkActive = _this._checkActive.bind(_this);
-        return _this;
-    }
-    Object.defineProperty(RHDPSearchFilters.prototype, "type", {
-        get: function () {
-            return this._type;
-        },
-        set: function (val) {
-            if (this._type === val)
-                return;
-            this._type = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilters.prototype, "title", {
-        get: function () {
-            return this._title;
-        },
-        set: function (val) {
-            if (this._title === val)
-                return;
-            this._title = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilters.prototype, "filters", {
-        get: function () {
-            return this._filters;
-        },
-        set: function (val) {
-            if (this._filters === val)
-                return;
-            this._filters = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchFilters.prototype, "toggle", {
-        get: function () {
-            return this._toggle;
-        },
-        set: function (val) {
-            if (this._toggle === val)
-                return;
-            this._toggle = val;
-            if (this._toggle) {
-                this.querySelector('.cover').className = 'cover modal';
-                window.scrollTo(0, 0);
-                document.body.style.overflow = 'hidden';
-                this.style.height = window.innerHeight + 'px';
-            }
-            else {
-                this.querySelector('.cover').className = 'cover';
-                document.body.style.overflow = 'auto';
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchFilters.prototype.connectedCallback = function () {
-        var _this = this;
-        if (this.type === 'active') {
-            this.innerHTML = this.activeTemplate(__makeTemplateObject(["", ""], ["", ""]), this.title);
-            top.addEventListener('filter-item-change', this._checkActive);
-            top.addEventListener('filter-item-init', this._checkActive);
-            top.addEventListener('search-complete', this._checkActive);
-            top.addEventListener('params-ready', this._checkActive);
-            top.addEventListener('clear-filters', this._clearFilters);
-            this._addFilters();
-        }
-        else if (this.type === 'modal') {
-            this.innerHTML = this.modalTemplate(__makeTemplateObject(["", ""], ["", ""]), this.title);
-            this.addGroups();
-        }
-        else {
-            this.innerHTML = this.template(__makeTemplateObject(["", ""], ["", ""]), this.title);
-            this.addGroups();
-        }
-        this.addEventListener('click', function (e) {
-            switch (e.target['className']) {
-                case 'showBtn':
-                case 'cancel':
-                case 'applyFilters':
-                    e.preventDefault();
-                    _this.dispatchEvent(new CustomEvent('toggle-modal', {
-                        bubbles: true
-                    }));
-                    break;
-                case 'clearFilters':
-                    e.preventDefault();
-                    _this.dispatchEvent(new CustomEvent('clear-filters', {
-                        bubbles: true
-                    }));
-                    break;
-                case 'more':
-                    e.preventDefault();
-                    break;
-            }
-        });
-        top.addEventListener('toggle-modal', this._toggleModal);
-    };
-    Object.defineProperty(RHDPSearchFilters, "observedAttributes", {
-        get: function () {
-            return ['type', 'title', 'toggle'];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchFilters.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
-        this[name] = newVal;
-    };
-    RHDPSearchFilters.prototype.addGroups = function () {
-        var groups = this.filters.facets, len = groups.length;
-        for (var i = 0; i < len; i++) {
-            var group = new RHDPSearchFilterGroup(), groupInfo = groups[i], groupNode = group.querySelector('.group'), primaryFilters = group.querySelector('.primary'), secondaryFilters = group.querySelector('.secondary'), len_1 = groupInfo.items ? groupInfo.items.length : 0;
-            if (len_1 <= 5) {
-                groupNode.removeChild(groupNode.lastChild);
-            }
-            for (var j = 0; j < len_1; j++) {
-                var item = new RHDPSearchFilterItem();
-                item.name = groupInfo.items[j].name;
-                item.value = groupInfo.items[j].value;
-                item.active = groupInfo.items[j].active;
-                item.key = groupInfo.items[j].key;
-                item.group = groupInfo.key;
-                if (j < 5) {
-                    primaryFilters.appendChild(item);
-                }
-                else {
-                    secondaryFilters.appendChild(item);
-                }
-            }
-            group.key = groupInfo.key;
-            group.name = groupInfo.name;
-            this.querySelector('.groups').appendChild(group);
-        }
-    };
-    RHDPSearchFilters.prototype._checkActive = function (e) {
-        if (e.detail) {
-            if (e.detail.facet) {
-                this.style.display = e.detail.facet.active ? 'block' : this.style.display;
-            }
-            else {
-                var chk = this.querySelectorAll('rhdp-search-filter-item[active]');
-                if (chk.length > 0) {
-                    this.style.display = 'block';
-                }
-                else {
-                    this.style.display = 'none';
-                }
-            }
-        }
-    };
-    RHDPSearchFilters.prototype._initActive = function (e, group_key, item) {
-        if (e.detail && e.detail.filters) {
-            Object.keys(e.detail.filters).forEach(function (group) {
-                e.detail.filters[group].forEach(function (facet) {
-                    if (group === group_key) {
-                        if (facet === item.key) {
-                            return true;
-                        }
-                    }
-                });
-            });
-        }
-        return false;
-    };
-    RHDPSearchFilters.prototype._addFilters = function () {
-        var groups = this.filters.facets;
-        for (var i = 0; i < groups.length; i++) {
-            var items = groups[i].items;
-            for (var j = 0; j < items.length; j++) {
-                var item = new RHDPSearchFilterItem();
-                item.name = items[j].name;
-                item.value = items[j].value;
-                item.inline = true;
-                item.bubble = false;
-                item.key = items[j].key;
-                item.group = groups[i].key;
-                this.querySelector('.activeFilters').appendChild(item);
-            }
-        }
-    };
-    RHDPSearchFilters.prototype._toggleModal = function (e) {
-        if (this.type === 'modal') {
-            this.toggle = !this.toggle;
-        }
-    };
-    RHDPSearchFilters.prototype.applyFilters = function () {
-        this.dispatchEvent(new CustomEvent('apply-filters', {
-            bubbles: true
-        }));
-    };
-    RHDPSearchFilters.prototype._clearFilters = function (e) {
-        this.style.display = 'none';
-    };
-    return RHDPSearchFilters;
-}(HTMLElement));
-customElements.define('rhdp-search-filters', RHDPSearchFilters);
-var RHDPSearchOneBox = (function (_super) {
-    __extends(RHDPSearchOneBox, _super);
-    function RHDPSearchOneBox() {
-        var _this = _super.call(this) || this;
-        _this._term = '';
-        _this._url = '../rhdp-apps/onebox/onebox.json';
-        _this._mock = false;
-        _this.slotTemplate = function (strings, slot, id) {
-            return "" + (slot && slot.url && slot.text ? "<li><a href=\"" + slot.url + "?onebox=" + id + "\">" + _this.getIcon(slot.icon) + slot.text + "</a></li>" : '');
-        };
-        _this.template = function (strings, feature) {
-            return "<div>\n            " + (feature.heading && feature.heading.url && feature.heading.text ? "<h4><a href=\"" + feature.heading.url + "\">" + feature.heading.text + "</a></h4>" : '') + "\n            " + (feature.details ? "<p>" + feature.details + "</p>" : '') + "\n            " + (feature.button && feature.button.url && feature.button.text ? "<a href=\"" + feature.button.url + "?onebox=" + feature.id + "\" class=\"button medium-cta blue\">" + feature.button.text + "</a>" : '') + "\n            " + (feature.slots && feature.slots.length > 0 ? "<ul class=\"slots\">\n                " + feature.slots.map(function (slot) { return _this.slotTemplate(__makeTemplateObject(["", "", ""], ["", "", ""]), slot, feature.id); }).join('') + "\n            </ul>" : '') + "\n        </div>";
-        };
-        _this._termChange = _this._termChange.bind(_this);
-        return _this;
-    }
-    Object.defineProperty(RHDPSearchOneBox.prototype, "term", {
-        get: function () {
-            if ((this._term === null) || (this._term === '')) {
-                return this._term;
-            }
-            else {
-                return this._term.replace(/(<([^>]+)>)/ig, '');
-            }
-        },
-        set: function (val) {
-            if (this._term === val)
-                return;
-            this._term = val;
-            this.setAttribute('term', this._term);
-            this.feature = this.getFeature();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchOneBox.prototype, "url", {
-        get: function () {
-            return this._url;
-        },
-        set: function (val) {
-            if (this._url === val)
-                return;
-            this._url = val;
-            this.setAttribute('url', this._url);
-            this.getData();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchOneBox.prototype, "data", {
-        get: function () {
-            return this._data;
-        },
-        set: function (val) {
-            if (this._data === val)
-                return;
-            this._data = val;
-            this.feature = this.getFeature();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchOneBox.prototype, "feature", {
-        get: function () {
-            return this._feature;
-        },
-        set: function (val) {
-            if (this._feature === val)
-                return;
-            this._feature = val;
-            this.innerHTML = this.feature ? this.template(__makeTemplateObject(["", ""], ["", ""]), this.feature) : '';
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchOneBox.prototype, "mock", {
-        get: function () {
-            return this._mock;
-        },
-        set: function (val) {
-            if (this._mock === val)
-                return;
-            this._mock = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchOneBox.prototype.connectedCallback = function () {
-        this.getData();
-        top.addEventListener('term-change', this._termChange);
-        top.addEventListener('params-ready', this._termChange);
-    };
-    Object.defineProperty(RHDPSearchOneBox, "observedAttributes", {
-        get: function () {
-            return ['term', 'url', 'mock'];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchOneBox.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
-        this[name] = newVal;
-    };
-    RHDPSearchOneBox.prototype._termChange = function (e) {
-        if (e.detail && e.detail.term && e.detail.term.length > 0) {
-            this.term = e.detail.term;
-        }
-        else {
-            this.term = '';
-        }
-    };
-    RHDPSearchOneBox.prototype.getData = function () {
-        var _this = this;
-        if (this.mock || this.data) {
-            return this.data;
-        }
-        else {
-            var fInit = {
-                method: 'GET',
-                headers: new Headers(),
-                mode: 'cors',
-                cache: 'default'
-            };
-            fetch(this.url, fInit)
-                .then(function (resp) { return resp.json(); })
-                .then(function (data) {
-                _this.data = data;
-            });
-        }
-    };
-    RHDPSearchOneBox.prototype.getFeature = function () {
-        var len = this.data && this.data['features'] ? this.data['features'].length : 0, f;
-        for (var i = 0; i < len; i++) {
-            if (this.data['features'][i].match.indexOf(this.term.toLowerCase()) >= 0) {
-                f = this.data['features'][i];
-            }
-        }
-        return f;
-    };
-    RHDPSearchOneBox.prototype.getIcon = function (name) {
-        var icons = {
-            icon_help: '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><title>icon_help</title><path d="M20.15,2C27.779,2,33.0651,5.2419,33.0651,12.1723A8.6318,8.6318,0,0,1,28.0266,20.4c-4.1859,1.9935-5.2333,3.14-5.3836,6.0819H15.81c0-4.736,1.3966-7.6775,7.0319-10.2718,2.4928-1.1469,3.24-1.9447,3.24-3.7393,0-2.2939-1.693-3.64-5.9317-3.64-3.792,0-6.4838,1.7945-8.729,4.1879L6.9349,7.7835A17.8438,17.8438,0,0,1,20.15,2M19.253,29.5248a4.2376,4.2376,0,1,1-4.2386,4.2366,4.2986,4.2986,0,0,1,4.2386-4.2366M20.15,1A18.8975,18.8975,0,0,0,6.211,7.0936a1,1,0,0,0-.0354,1.3406L10.6619,13.67a1,1,0,0,0,.7369.3491l.0225,0a1,1,0,0,0,.7293-.3158c2.5121-2.6779,4.9793-3.8721,8-3.8721,4.9317,0,4.9317,1.85,4.9317,2.64,0,1.167-.2291,1.7134-2.6579,2.8308-6.34,2.9189-7.6139,6.442-7.6139,11.18a1,1,0,0,0,1,1h6.833a1,1,0,0,0,.9987-.949c.121-2.3688.7339-3.2866,4.8148-5.23a9.61,9.61,0,0,0,5.6085-9.13C34.0651,5.0722,28.9933,1,20.15,1ZM19.253,28.5248a5.2376,5.2376,0,1,0,5.2386,5.2366,5.3078,5.3078,0,0,0-5.2386-5.2366Z"/></svg>',
-            icon_helloworld: '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.0005 38.0015"><title>icon_helloworld</title><path d="M14.0642,7.3037a.1761.1761,0,0,0-.1724-.0852l-3.5192.3888a.1775.1775,0,0,0-.14.0974.1751.1751,0,0,0,.0083.1709l.5161.853A14.6794,14.6794,0,0,0,6.9885,13.42a.5192.5192,0,0,0,.2284.6984.5112.5112,0,0,0,.2345.0563.519.519,0,0,0,.4639-.2847,13.6444,13.6444,0,0,1,3.3873-4.2595l.4622.7639a.1749.1749,0,0,0,.1471.0874.1822.1822,0,0,0,.1525-.0778L14.0588,7.496a.1788.1788,0,0,0,.0061-.192Z" transform="translate(-1 -1)"/><path d="M26.0891,7.9374a13.6292,13.6292,0,0,1,4.26,3.3871l-.7639.4621a.1747.1747,0,0,0-.0874.1471.182.182,0,0,0,.0778.1525l2.9084,1.9945a.1788.1788,0,0,0,.192.0061l0-.0007a.176.176,0,0,0,.0851-.1724l-.3888-3.5192a.1776.1776,0,0,0-.0974-.14.1751.1751,0,0,0-.1709.0084l-.8532.5162A14.6719,14.6719,0,0,0,26.559,7.0106a.52.52,0,1,0-.47.9268Z" transform="translate(-1 -1)"/><path d="M32.741,25.8826a.5183.5183,0,0,0-.6984.2284A13.64,13.64,0,0,1,28.6552,30.37l-.4623-.764a.1748.1748,0,0,0-.1471-.0874.1822.1822,0,0,0-.1526.0778l-1.9944,2.9084a.1787.1787,0,0,0-.0061.192l.0007,0a.176.176,0,0,0,.1724.0851l3.5192-.3888a.1776.1776,0,0,0,.14-.0974.1752.1752,0,0,0-.0083-.1709l-.5161-.853a14.6829,14.6829,0,0,0,3.7685-4.6916A.5192.5192,0,0,0,32.741,25.8826Z" transform="translate(-1 -1)"/><path d="M4.7816,17.938v.9587h.92v3.7573h1.481V17.197H5.92C5.7643,17.704,5.4836,17.8989,4.7816,17.938Z" transform="translate(-1 -1)"/><path d="M35.244,19.7464a1.1146,1.1146,0,0,0,.7253-1.0679c0-1.1536-.8735-1.5673-2.183-1.5673a3.304,3.304,0,0,0-2.1124.71l.7172.9821a2.1842,2.1842,0,0,1,1.3562-.4674c.538,0,.7562.1558.7562.4441,0,.3588-.1558.46-.6314.46h-.7014v1.177h.7872c.5532,0,.7715.14.7715.5223,0,.3741-.2649.5532-.8963.5532a2.49,2.49,0,0,1-1.5511-.569l-.78.9821a3.4268,3.4268,0,0,0,2.3.8344c1.481,0,2.3931-.5537,2.3931-1.8165A1.1471,1.1471,0,0,0,35.244,19.7464Z" transform="translate(-1 -1)"/><path d="M21.02,6.4467c1.0445-.4837,1.2942-.92,1.2942-1.6373,0-.99-.71-1.5358-2.0657-1.5358a4.1094,4.1094,0,0,0-2.3388.71l.6938,1.1151a2.8789,2.8789,0,0,1,1.6216-.5537c.4365,0,.608.1325.608.3741,0,.2182-.0858.304-.6629.5613a3.3785,3.3785,0,0,0-2.2764,3.3366h4.4593V7.5846H19.508C19.6252,7.2573,19.9292,6.9532,21.02,6.4467Z" transform="translate(-1 -1)"/><path d="M21.5569,30.9144H20.06L17.1215,34.29V35.397h3.0793v.9745h1.3562v-.9354h.7019V34.1576h-.7019ZM20.2008,33.62v.538h-.4055c-.3741,0-.7481.0076-1.0212.0233a9.1978,9.1978,0,0,0,.7172-.7953l.0782-.0934a8.66,8.66,0,0,0,.6547-.85C20.2084,32.7,20.2008,33.3,20.2008,33.62Z" transform="translate(-1 -1)"/><path d="M6.5184,14.6629c-.0662-.0029-.1421-.0045-.2175-.0045a5.3421,5.3421,0,0,0-.1365,10.681c.0543.0023.1168.0031.1794.0031a5.3413,5.3413,0,0,0,.1746-10.68Zm-.1746,9.64c-.0482,0-.0964-.0005-.1452-.0025a4.3027,4.3027,0,0,1,.1022-8.6027q.0911,0,.183.0039a4.3018,4.3018,0,0,1-.14,8.6013Z" transform="translate(-1 -1)"/><path d="M33.8363,14.6629c-.0535-.0023-.1164-.0031-.1786-.0031a5.3413,5.3413,0,0,0-.1751,10.68c.0548.0023.1177.0031.1807.0031a5.3413,5.3413,0,0,0,.173-10.68Zm2.7626,8.4794a4.2718,4.2718,0,0,1-2.9357,1.1607c-.0487,0-.0974-.0005-.1467-.0025a4.3018,4.3018,0,0,1,.1411-8.6013c.0477,0,.0959.0005.1441.0025a4.3022,4.3022,0,0,1,2.7971,7.4406Z" transform="translate(-1 -1)"/><path d="M20.1774,1.0044C20.1115,1.0016,20.0362,1,19.9614,1A5.3428,5.3428,0,0,0,16.1,9.9926a5.3041,5.3041,0,0,0,3.7236,1.6883c.0548.0023.1177.0031.1807.0031a5.3413,5.3413,0,0,0,.1728-10.68ZM22.94,9.4839a4.27,4.27,0,0,1-2.9352,1.1607c-.0487,0-.0974-.0005-.1467-.0025a4.3026,4.3026,0,0,1,.1036-8.6026q.09,0,.1817.0038A4.3018,4.3018,0,0,1,22.94,9.4839Z" transform="translate(-1 -1)"/><path d="M20.1776,28.3214c-.0657-.0029-.1416-.0045-.2171-.0045a5.3423,5.3423,0,0,0-.1371,10.6815c.0535.0023.1164.0031.1786.0031a5.3415,5.3415,0,0,0,.1756-10.68Zm-.1756,9.6407c-.0477,0-.0959-.0005-.1441-.0025a4.3022,4.3022,0,0,1-2.7971-7.4406,4.2219,4.2219,0,0,1,2.9-1.1627c.0606,0,.1216.0013.1826.0039a4.3021,4.3021,0,0,1-.1411,8.6018Z" transform="translate(-1 -1)"/></svg>',
-            icon_docsandapi: '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve"><g><g><g><path d="M37.5,19.3c0-0.1-0.1-0.2-0.2-0.3l-10.1-6.3l-8.6-9.6c-0.1-0.2-0.4-0.2-0.5,0l-2.7,2.4L13,4c-0.2-0.1-0.5-0.1-0.7,0.2L7,12.7l-3.1,2.7c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.3l0.6,0.7l-1.9,3c-0.1,0.1-0.1,0.2-0.1,0.4c0,0.1,0.1,0.2,0.2,0.3l11.3,7l8.5,9.5c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0,0.2-0.1l2.7-2.3l1.3,0.8c0.1,0.1,0.2,0.1,0.3,0.1c0.2,0,0.3-0.1,0.4-0.2l3.3-5.2l6.3-5.5c0.1-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3l-1.5-1.7l1.7-2.7C37.5,19.6,37.5,19.5,37.5,19.3z M12.9,5.1l1.6,1l-4.9,4.3L12.9,5.1z M3.7,19.8l1.5-2.4l6.6,7.4L3.7,19.8z M27.1,34.3l-0.6-0.4l1.8-1.6L27.1,34.3z M22.8,36.1L14,26.2l0,0l0,0L4.7,15.7L18.3,3.9l9,10.2l0,0l0,0l9.1,10.2L22.8,36.1z M35.1,21.6l-5.5-6.2l6.8,4.2L35.1,21.6z"/><path d="M19.6,12c-0.1-0.2-0.4-0.2-0.5,0l-6.2,5.4c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.3l6,6.7c0.1,0.2,0.4,0.2,0.5,0l1.5-1.3l2.6,2.9c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0,0.2-0.1l4.5-3.9c0.1-0.1,0.1-0.2,0.1-0.3c0-0.1,0-0.2-0.1-0.3L19.6,12zM23.7,25.6l-2.6-2.9c-0.1-0.1-0.2-0.1-0.3-0.1c-0.1,0-0.2,0-0.2,0.1l-1.5,1.3l-5.5-6.2l5.7-5l8.3,9.3L23.7,25.6z"/><path d="M30.9,25.2c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0c0.1-0.1,0.1-0.2,0-0.3l-2-2.3c-0.1-0.1-0.2-0.1-0.3,0c-0.1,0.1-0.1,0.2,0,0.3L30.9,25.2z"/><path d="M29.2,21.7c0,0,0.1,0,0.1,0l1.4-1.2c0.1-0.1,0.1-0.2,0-0.3c-0.1-0.1-0.2-0.1-0.3,0l-1.4,1.2c-0.1,0.1-0.1,0.2,0,0.3C29.1,21.7,29.2,21.7,29.2,21.7z"/><path d="M18.7,11.5c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0c0.1-0.1,0.1-0.2,0-0.3L17,9c-0.1-0.1-0.2-0.1-0.3,0c-0.1,0.1-0.1,0.2,0,0.3L18.7,11.5z"/><path d="M12.5,16.8l-2-2.3c-0.1-0.1-0.2-0.1-0.3,0c-0.1,0.1-0.1,0.2,0,0.3l2,2.3c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0C12.6,17,12.6,16.9,12.5,16.8z"/><path d="M20.3,11.7c0,0,0.1,0,0.1,0l1.4-1.2c0.1-0.1,0.1-0.2,0-0.3c-0.1-0.1-0.2-0.1-0.3,0l-1.4,1.2c-0.1,0.1-0.1,0.2,0,0.3C20.1,11.6,20.2,11.7,20.3,11.7z"/><path d="M24.3,27c-0.1-0.1-0.2-0.1-0.3,0c-0.1,0.1-0.1,0.2,0,0.3l2,2.3c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0c0.1-0.1,0.1-0.2,0-0.3L24.3,27z"/><path d="M23,26.7l-1.4,1.2c-0.1,0.1-0.1,0.2,0,0.3c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0l1.4-1.2c0.1-0.1,0.1-0.2,0-0.3C23.2,26.6,23.1,26.6,23,26.7z"/><path d="M18.3,24.9l-1.4,1.2c-0.1,0.1-0.1,0.2,0,0.3c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0l1.4-1.2c0.1-0.1,0.1-0.2,0-0.3C18.5,24.8,18.4,24.8,18.3,24.9z"/><path d="M12.3,18.1l-1.4,1.2c-0.1,0.1-0.1,0.2,0,0.3c0,0,0.1,0.1,0.1,0.1c0,0,0.1,0,0.1,0l1.4-1.2c0.1-0.1,0.1-0.2,0-0.3C12.5,18.1,12.4,18.1,12.3,18.1z"/></g></g></g></svg>'
-        };
-        return icons[name];
-    };
-    return RHDPSearchOneBox;
-}(HTMLElement));
-customElements.define('rhdp-search-onebox', RHDPSearchOneBox);
-var RHDPSearchQuery = (function (_super) {
-    __extends(RHDPSearchQuery, _super);
-    function RHDPSearchQuery() {
-        var _this = _super.call(this) || this;
-        _this._limit = 10;
-        _this._from = 0;
-        _this._sort = 'relevance';
-        _this._valid = true;
-        _this.urlTemplate = function (strings, url, term, from, limit, sort, types, tags, sys_types) {
-            var order = '';
-            if (sort === 'most-recent') {
-                order = '&newFirst=true';
-            }
-            return url + "?tags_or_logic=true&filter_out_excluded=true&from=" + from + order + "&query=" + term + "&query_highlight=true&size" + limit + "=true" + types + tags + sys_types;
-        };
-        _this._changeAttr = _this._changeAttr.bind(_this);
-        return _this;
-    }
-    Object.defineProperty(RHDPSearchQuery.prototype, "filters", {
-        get: function () {
-            return this._filters;
-        },
-        set: function (val) {
-            if (this._filters === val)
-                return;
-            this._filters = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchQuery.prototype, "activeFilters", {
-        get: function () {
-            return this._activeFilters;
-        },
-        set: function (val) {
-            if (this._activeFilters === val)
-                return;
-            this._activeFilters = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchQuery.prototype, "from", {
-        get: function () {
-            return this._from;
-        },
-        set: function (val) {
-            if (this._from === val)
-                return;
-            this._from = val;
-            this.setAttribute('from', val.toString());
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchQuery.prototype, "limit", {
-        get: function () {
-            return this._limit;
-        },
-        set: function (val) {
-            if (this._limit === val)
-                return;
-            this._limit = val;
-            this.setAttribute('limit', val.toString());
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchQuery.prototype, "sort", {
-        get: function () {
-            return this._sort;
-        },
-        set: function (val) {
-            if (this._sort === val)
-                return;
-            this._sort = val;
-            this.setAttribute('sort', val);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchQuery.prototype, "results", {
-        get: function () {
-            return this._results;
-        },
-        set: function (val) {
-            if (this._results === val)
-                return;
-            this._results = val;
-            this.from = this.results && this.results.hits && typeof this.results.hits.hits !== 'undefined' ? this.from + this.results.hits.hits.length : 0;
-            this.dispatchEvent(new CustomEvent('search-complete', {
-                detail: {
-                    term: this.term,
-                    filters: this.activeFilters,
-                    sort: this.sort,
-                    limit: this.limit,
-                    from: this.from,
-                    results: this.results,
-                },
-                bubbles: true
-            }));
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchQuery.prototype, "term", {
-        get: function () {
-            return this._term;
-        },
-        set: function (val) {
-            if (this._term === val)
-                return;
-            this._term = val;
-            this.setAttribute('term', val.toString());
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchQuery.prototype, "url", {
-        get: function () {
-            return this._url;
-        },
-        set: function (val) {
-            if (this._url === val)
-                return;
-            this._url = val;
-            this.setAttribute('url', val.toString());
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchQuery.prototype, "valid", {
-        get: function () {
-            return this._valid;
-        },
-        set: function (val) {
-            if (this._valid === val)
-                return;
-            this._valid = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchQuery.prototype.filterString = function (facets) {
-        var len = facets.length, filterArr = [];
-        for (var i = 0; i < len; i++) {
-            for (var j = 0; j < facets[i].items.length; j++) {
-                if (facets[i].items[j].active) {
-                    var idx = 0;
-                    while (idx < facets[i].items[j].value.length) {
-                        filterArr.push(facets[i].items[j].value[idx]);
-                        idx = idx + 1;
-                    }
-                }
-            }
-        }
-        return filterArr.join(', ');
-    };
-    RHDPSearchQuery.prototype.connectedCallback = function () {
-        top.addEventListener('params-ready', this._changeAttr);
-        top.addEventListener('term-change', this._changeAttr);
-        top.addEventListener('filter-item-change', this._changeAttr);
-        top.addEventListener('sort-change', this._changeAttr);
-        top.addEventListener('clear-filters', this._changeAttr);
-        top.addEventListener('load-more', this._changeAttr);
-    };
-    Object.defineProperty(RHDPSearchQuery, "observedAttributes", {
-        get: function () {
-            return ['term', 'sort', 'limit', 'results', 'url'];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchQuery.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
-        this[name] = newVal;
-    };
-    RHDPSearchQuery.prototype._setFilters = function (item) {
-        var _this = this;
-        var add = item.active;
-        if (add) {
-            this.activeFilters[item.group] = this.activeFilters[item.group] || [];
-            this.activeFilters[item.group].push(item.key);
-        }
-        else {
-            Object.keys(this.activeFilters).forEach(function (group) {
-                if (group === item.group) {
-                    var idx = _this.activeFilters[group].indexOf(item.key);
-                    if (idx >= 0) {
-                        _this.activeFilters[group].splice(idx, 1);
-                        if (_this.activeFilters[group].length === 0) {
-                            delete _this.activeFilters[group];
-                        }
-                    }
-                }
-            });
-        }
-    };
-    RHDPSearchQuery.prototype._changeAttr = function (e) {
-        switch (e.type) {
-            case 'term-change':
-                if (e.detail && e.detail.term && e.detail.term.length > 0) {
-                    this.term = e.detail.term;
-                }
-                else {
-                    this.term = '';
-                }
-                this.from = 0;
-                this.search();
-                break;
-            case 'filter-item-change':
-                if (e.detail && e.detail.facet) {
-                    this._setFilters(e.detail.facet);
-                }
-                this.from = 0;
-                this.search();
-                break;
-            case 'sort-change':
-                if (e.detail && e.detail.sort) {
-                    this.sort = e.detail.sort;
-                }
-                this.from = 0;
-                this.search();
-                break;
-            case 'load-more':
-                this.search();
-                break;
-            case 'clear-filters':
-                this.activeFilters = {};
-                this.search();
-                break;
-            case 'params-ready':
-                if (e.detail && e.detail.term) {
-                    this.term = e.detail.term;
-                }
-                if (e.detail && e.detail.sort) {
-                    this.sort = e.detail.sort;
-                }
-                if (e.detail && e.detail.filters) {
-                    this.activeFilters = e.detail.filters;
-                }
-                this.from = 0;
-                if (Object.keys(e.detail.filters).length > 0 || e.detail.term !== null || e.detail.sort !== null || e.detail.qty !== null) {
-                    this.search();
-                }
-                break;
-        }
-    };
-    RHDPSearchQuery.prototype.search = function () {
-        var _this = this;
-        this.dispatchEvent(new CustomEvent('search-start', { bubbles: true }));
-        if (Object.keys(this.activeFilters).length > 0 || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined')) {
-            var qURL_1 = new URL(this.url);
-            qURL_1.searchParams.set('tags_or_logic', 'true');
-            qURL_1.searchParams.set('filter_out_excluded', 'true');
-            qURL_1.searchParams.set('from', this.from.toString());
-            if (this.sort === 'most-recent') {
-                qURL_1.searchParams.set('newFirst', 'true');
-            }
-            qURL_1.searchParams.set('query', this.term || '');
-            qURL_1.searchParams.set('query_highlight', 'true');
-            qURL_1.searchParams.set('size' + this.limit.toString(), 'true');
-            if (this.activeFilters) {
-                Object.keys(this.activeFilters).forEach(function (filtergroup) {
-                    _this.filters.facets.forEach(function (group) {
-                        if (group.key === filtergroup) {
-                            group.items.forEach(function (facet) {
-                                if (_this.activeFilters[group.key].indexOf(facet.key) >= 0) {
-                                    facet.value.forEach(function (fval) {
-                                        qURL_1.searchParams.append(group.key, fval);
-                                    });
-                                }
-                            });
-                        }
-                    });
-                });
-            }
-            fetch(qURL_1.toString())
-                .then(function (resp) { return resp.json(); })
-                .then(function (data) {
-                _this.results = data;
-            });
-        }
-        else {
-            this.dispatchEvent(new CustomEvent('search-complete', { detail: { invalid: true }, bubbles: true }));
-        }
-    };
-    return RHDPSearchQuery;
-}(HTMLElement));
-customElements.define('rhdp-search-query', RHDPSearchQuery);
-var RHDPSearchResultCount = (function (_super) {
-    __extends(RHDPSearchResultCount, _super);
-    function RHDPSearchResultCount() {
-        var _this = _super.call(this) || this;
-        _this._count = 0;
-        _this._term = '';
-        _this._loading = true;
-        _this.template = function (strings, count, term) {
-            return count + " results found for " + term.replace('<', '&lt;').replace('>', '&gt;');
-        };
-        _this._setText = _this._setText.bind(_this);
-        return _this;
-    }
-    Object.defineProperty(RHDPSearchResultCount.prototype, "count", {
-        get: function () {
-            return this._count;
-        },
-        set: function (val) {
-            if (this._count === val)
-                return;
-            this._count = val;
-            this.setAttribute('count', val.toString());
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchResultCount.prototype, "term", {
-        get: function () {
-            return this._term;
-        },
-        set: function (val) {
-            val = decodeURI(val).replace('<', '&lt;').replace('>', '&gt;');
-            if (this._term === val)
-                return;
-            this._term = val;
-            this.setAttribute('term', val);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchResultCount.prototype, "loading", {
-        get: function () {
-            return this._loading;
-        },
-        set: function (val) {
-            if (this._loading === val)
-                return;
-            this._loading = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchResultCount.prototype.connectedCallback = function () {
-        var _this = this;
-        top.addEventListener('params-ready', this._setText);
-        top.addEventListener('search-start', function (e) { _this.loading = true; _this._setText(e); });
-        top.addEventListener('search-complete', function (e) { _this.loading = false; _this._setText(e); });
-    };
-    Object.defineProperty(RHDPSearchResultCount, "observedAttributes", {
-        get: function () {
-            return ['count', 'term'];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchResultCount.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
-        this[name] = newVal;
-        this.innerHTML = this.count + " results found " + (this.term ? "for " + this.term : '');
-    };
-    RHDPSearchResultCount.prototype._setText = function (e) {
-        if (e.detail) {
-            if (typeof e.detail.invalid === 'undefined') {
-                if (e.detail.term && e.detail.term.length > 0) {
-                    this.term = e.detail.term;
-                }
-                else {
-                    this.term = '';
-                }
-                if (e.detail.results && e.detail.results.hits && e.detail.results.hits.total) {
-                    this.count = e.detail.results.hits.total;
-                }
-                else {
-                    this.count = 0;
-                }
-                if (!this.loading) {
-                    this.innerHTML = this.count + " results found " + (this.term ? "for " + this.term : '');
-                }
-            }
-            else {
-                this.term = '';
-                this.count = 0;
-                this.innerHTML = '';
-            }
-        }
-        else {
-            this.term = '';
-            this.count = 0;
-            this.innerHTML = '';
-        }
-    };
-    return RHDPSearchResultCount;
-}(HTMLElement));
-customElements.define('rhdp-search-result-count', RHDPSearchResultCount);
-var RHDPSearchResult = (function (_super) {
-    __extends(RHDPSearchResult, _super);
-    function RHDPSearchResult() {
-        var _this = _super.call(this) || this;
-        _this._url = ['', ''];
-        _this.template = function (strings, url, title, kind, created, description, premium, thumbnail) {
-            return "<div>\n            <h4>" + (url ? "<a href=\"" + url + "\">" + title + "</a>" : title) + "</h4>\n            <p " + (premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"') + ">\n                <span class=\"caps\">" + kind + "</span>\n                " + (created ? "- <rh-datetime datetime=\"" + created + "\" type=\"local\" day=\"numeric\" month=\"long\" year=\"numeric\">" + created + "</rh-datetime>" : '') + "\n            </p>\n            <p class=\"result-description\">" + description + "</p>\n        </div>\n        " + (thumbnail ? "<div class=\"thumb\"><img src=\"" + thumbnail.replace('http:', 'https:') + "\"></div>" : '');
-        };
-        return _this;
-    }
-    Object.defineProperty(RHDPSearchResult.prototype, "url", {
-        get: function () {
-            return this._url;
-        },
-        set: function (val) {
-            if (this._url === val)
-                return;
-            this._url = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchResult.prototype, "title", {
-        get: function () {
-            return this._title;
-        },
-        set: function (val) {
-            if (this._title === val)
-                return;
-            this._title = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchResult.prototype, "kind", {
-        get: function () {
-            return this._kind;
-        },
-        set: function (val) {
-            if (this._kind === val)
-                return;
-            this._kind = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchResult.prototype, "created", {
-        get: function () {
-            return this._created;
-        },
-        set: function (val) {
-            if (this._created === val)
-                return;
-            this._created = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchResult.prototype, "description", {
-        get: function () {
-            return this._description;
-        },
-        set: function (val) {
-            if (this._description === val)
-                return;
-            this._description = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchResult.prototype, "premium", {
-        get: function () {
-            return this._premium;
-        },
-        set: function (val) {
-            if (this._premium === val)
-                return;
-            this._premium = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchResult.prototype, "thumbnail", {
-        get: function () {
-            return this._thumbnail;
-        },
-        set: function (val) {
-            if (this._thumbnail === val)
-                return;
-            this._thumbnail = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchResult.prototype, "result", {
-        get: function () {
-            return this._result;
-        },
-        set: function (val) {
-            if (this._result === val)
-                return;
-            this._result = val;
-            this.computeTitle(val);
-            this.computeKind(val);
-            this.computeCreated(val);
-            this.computeDescription(val);
-            this.computeURL(val);
-            this.computePremium(val);
-            this.computeThumbnail(val);
-            this.renderResult();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchResult.prototype.connectedCallback = function () {
-    };
-    Object.defineProperty(RHDPSearchResult, "observedAttributes", {
-        get: function () {
-            return ['result'];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchResult.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
-        this[name] = newVal;
-    };
-    RHDPSearchResult.prototype.renderResult = function () {
-        this.innerHTML = this.template(__makeTemplateObject(["", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", ""]), this.url, this.title, this.kind, this.created, this.description, this.premium, this.thumbnail);
-    };
-    RHDPSearchResult.prototype.computeThumbnail = function (result) {
-        if (result.fields.thumbnail) {
-            this.thumbnail = result.fields.thumbnail[0];
-        }
-    };
-    RHDPSearchResult.prototype.computeTitle = function (result) {
-        var title = '';
-        if (result.highlight && result.highlight.sys_title) {
-            title = result.highlight.sys_title[0];
-        }
-        else {
-            title = result.fields.sys_title[0];
-        }
-        this.title = title;
-    };
-    RHDPSearchResult.prototype.computeKind = function (result) {
-        var kind = result.fields.sys_type || "webpage", map = {
-            jbossdeveloper_archetype: 'Archetype',
-            article: 'Article',
-            blogpost: 'Blog Post',
-            jbossdeveloper_bom: 'Bom',
-            book: 'Book',
-            cheatsheet: 'Cheat Sheet',
-            demo: 'Demo',
-            event: 'Event',
-            forumthread: 'Forum Thread',
-            jbossdeveloper_example: 'Demo',
-            quickstart: 'Quickstart',
-            quickstart_early_access: 'Demo',
-            solution: 'Article',
-            stackoverflow_thread: 'Stack Overflow',
-            video: 'Video',
-            webpage: 'Web Page',
-            website: 'Web Page'
-        };
-        this.kind = map[kind] || 'Web Page';
-    };
-    RHDPSearchResult.prototype.computeCreated = function (result) {
-        this.created = result.fields.sys_created && result.fields.sys_created.length > 0 ? result.fields.sys_created[0] : '';
-    };
-    RHDPSearchResult.prototype.computeDescription = function (result) {
-        var description = '';
-        if (result.highlight && result.highlight.sys_description) {
-            description = result.highlight.sys_description[0];
-        }
-        else if (result.highlight && result.highlight.sys_content_plaintext) {
-            description = result.highlight.sys_content_plaintext[0];
-        }
-        else if (result.fields && result.fields.sys_description) {
-            description = result.fields.sys_description[0];
-        }
-        else {
-            description = result.fields.sys_content_plaintext[0];
-        }
-        var tempDiv = document.createElement("div");
-        tempDiv.innerHTML = description;
-        description = tempDiv.innerText;
-        this.description = description;
-    };
-    RHDPSearchResult.prototype.computeURL = function (result) {
-        if (result.fields && result.fields.sys_type === 'book' && result.fields.field_book_url) {
-            this.url = result.fields.field_book_url;
-        }
-        else {
-            this.url = (result.fields && result.fields.sys_url_view) ? result.fields.sys_url_view : '';
-        }
-    };
-    RHDPSearchResult.prototype.computePremium = function (result) {
-        var premium = false;
-        if (result._type === "rht_knowledgebase_article" || result._type === "rht_knowledgebase_solution") {
-            premium = true;
-        }
-        this.premium = premium;
-    };
-    return RHDPSearchResult;
-}(HTMLElement));
-customElements.define('rhdp-search-result', RHDPSearchResult);
-var RHDPSearchResults = (function (_super) {
-    __extends(RHDPSearchResults, _super);
-    function RHDPSearchResults() {
-        var _this = _super.call(this) || this;
-        _this._more = false;
-        _this._last = 0;
-        _this._valid = true;
-        _this.invalidMsg = document.createElement('div');
-        _this.loadMore = document.createElement('div');
-        _this.endOfResults = document.createElement('div');
-        _this.loading = document.createElement('div');
-        _this._renderResults = _this._renderResults.bind(_this);
-        _this._setLoading = _this._setLoading.bind(_this);
-        _this._checkValid = _this._checkValid.bind(_this);
-        _this._clearResults = _this._clearResults.bind(_this);
-        return _this;
-    }
-    Object.defineProperty(RHDPSearchResults.prototype, "results", {
-        get: function () {
-            return this._results;
-        },
-        set: function (val) {
-            if (this._results === val)
-                return;
-            this._results = val;
-            this._renderResults(false);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchResults.prototype, "more", {
-        get: function () {
-            return this._more;
-        },
-        set: function (val) {
-            if (this._more === val)
-                return;
-            this._more = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchResults.prototype, "last", {
-        get: function () {
-            return this._last;
-        },
-        set: function (val) {
-            if (this._last === val)
-                return;
-            this._last = val ? val : 0;
-            this.setAttribute('last', val.toString());
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchResults.prototype, "valid", {
-        get: function () {
-            return this._valid;
-        },
-        set: function (val) {
-            if (this._valid === val)
-                return;
-            this._valid = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchResults.prototype.connectedCallback = function () {
-        var _this = this;
-        this.invalidMsg.className = 'invalidMsg';
-        this.invalidMsg.innerHTML = "<h4>Well, this is awkward. No search term was entered yet, so this page is a little empty right now.</h4>\n        <p>After you enter a search term in the box above, you will see the results displayed here. \n        You can also use the filters to select a content type, product or topic to see some results too. Try it out!</p>";
-        this.endOfResults.innerHTML = '<p class="end-of-results">- End of Results -</p>';
-        this.loadMore.className = 'moreBtn';
-        this.loadMore.innerHTML = '<a class="moreBtn" href="#">Load More</a>';
-        this.loading.className = 'loading';
-        this.loadMore.addEventListener('click', function (e) {
-            e.preventDefault();
-            _this.dispatchEvent(new CustomEvent('load-more', {
-                detail: {
-                    from: _this.last
-                },
-                bubbles: true
-            }));
-        });
-        top.addEventListener('search-complete', this._renderResults);
-        top.addEventListener('search-start', this._setLoading);
-        top.addEventListener('params-ready', this._checkValid);
-        top.window.addEventListener('popstate', this._clearResults);
-        this.addEventListener('load-more', function (e) {
-            _this.more = true;
-        });
-    };
-    RHDPSearchResults.prototype.addResult = function (result) {
-        var item = new RHDPSearchResult();
-        item.result = result;
-        this.appendChild(item);
-    };
-    RHDPSearchResults.prototype._setLoading = function (e) {
-        if (!this.more) {
-            while (this.firstChild) {
-                this.removeChild(this.firstChild);
-            }
-        }
-        else {
-            if (this.querySelector('.moreBtn')) {
-                this.removeChild(this.loadMore);
-            }
-            if (this.querySelector('.invalidMsg')) {
-                this.removeChild(this.invalidMsg);
-            }
-            this.more = false;
-        }
-        this.appendChild(this.loading);
-    };
-    RHDPSearchResults.prototype._renderResults = function (e) {
-        if (this.querySelector('.loading')) {
-            this.removeChild(this.loading);
-        }
-        if (e.detail && typeof e.detail.results !== 'undefined' && typeof e.detail.invalid === 'undefined') {
-            this.addResults(e.detail.results);
-        }
-        else {
-            while (this.firstChild) {
-                this.removeChild(this.firstChild);
-            }
-            this.appendChild(this.invalidMsg);
-        }
-        this.dispatchEvent(new CustomEvent('results-loaded', {
-            detail: { results: this.results },
-            bubbles: true
-        }));
-    };
-    RHDPSearchResults.prototype._clearResults = function (e) {
-        this.results = undefined;
-    };
-    RHDPSearchResults.prototype._checkValid = function (e) {
-        var obj = e.detail;
-        this.valid = Object.keys(obj.filters).length > 0 || (obj.term !== null && obj.term !== '' && typeof obj.term !== 'undefined');
-        if (!this.valid) {
-            this.appendChild(this.invalidMsg);
-        }
-        else {
-            if (this.querySelector('.invalidMsg')) {
-                this.removeChild(this.invalidMsg);
-            }
-        }
-    };
-    RHDPSearchResults.prototype.addResults = function (results) {
-        if (results && results.hits && results.hits.hits) {
-            var hits = results.hits.hits;
-            var l = hits.length;
-            for (var i = 0; i < l; i++) {
-                this.addResult(hits[i]);
-            }
-            this.last = this.last + l;
-            if (this.last >= results.hits.total) {
-                this.appendChild(this.endOfResults);
-            }
-            if (l > 0 && this.last < results.hits.total) {
-                if (this.querySelector('.end-of-results')) {
-                    this.removeChild(this.endOfResults);
-                }
-                this.appendChild(this.loadMore);
-            }
-            else {
-                if (this.querySelector('.moreBtn')) {
-                    this.removeChild(this.loadMore);
-                }
-                this.appendChild(this.endOfResults);
-            }
-        }
-    };
-    return RHDPSearchResults;
-}(HTMLElement));
-customElements.define('rhdp-search-results', RHDPSearchResults);
-var RHDPSearchSortPage = (function (_super) {
-    __extends(RHDPSearchSortPage, _super);
-    function RHDPSearchSortPage() {
-        var _this = _super.call(this) || this;
-        _this.template = "<p>\n        <span>Sort results by</span>\n        <select>\n        <option value=\"relevance\">Relevance</option>\n        <option value=\"most-recent\">Most Recent</option>\n        </select>\n        </p>";
-        _this._sortChange = _this._sortChange.bind(_this);
-        return _this;
-    }
-    Object.defineProperty(RHDPSearchSortPage.prototype, "sort", {
-        get: function () {
-            return this._sort;
-        },
-        set: function (val) {
-            if (this._sort === val)
-                return;
-            this._sort = val;
-            this.setAttribute('sort', this._sort);
-            this.querySelector('select').value = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchSortPage.prototype.connectedCallback = function () {
-        this.innerHTML = this.template;
-        top.addEventListener('params-ready', this._sortChange);
-        this.querySelector('select').onchange = this._sortChange;
-    };
-    Object.defineProperty(RHDPSearchSortPage, "observedAttributes", {
-        get: function () {
-            return ['sort'];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchSortPage.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
-        this[name] = newVal;
-    };
-    RHDPSearchSortPage.prototype._sortChange = function (e) {
-        if (e.detail && e.detail.sort) {
-            this.sort = e.detail.sort;
-        }
-        else {
-            if (e.target['options'] && typeof e.target['selectedIndex'] !== 'undefined') {
-                this.sort = e.target['options'][e.target['selectedIndex']].value;
-                this.dispatchEvent(new CustomEvent('sort-change', {
-                    detail: {
-                        sort: this.sort
-                    },
-                    bubbles: true
-                }));
-            }
-        }
-    };
-    return RHDPSearchSortPage;
-}(HTMLElement));
-customElements.define('rhdp-search-sort-page', RHDPSearchSortPage);
-var RHDPSearchURL = (function (_super) {
-    __extends(RHDPSearchURL, _super);
-    function RHDPSearchURL() {
-        var _this = _super.call(this) || this;
-        _this._uri = new URL(window.location.href);
-        _this._term = _this.uri.searchParams.get('t');
-        _this._filters = _this._setFilters(_this.uri.searchParams.getAll('f'));
-        _this._sort = _this.uri.searchParams.get('s') || 'relevance';
-        _this._qty = _this.uri.searchParams.get('r');
-        _this._init = true;
-        _this._changeAttr = _this._changeAttr.bind(_this);
-        _this._popState = _this._popState.bind(_this);
-        return _this;
-    }
-    Object.defineProperty(RHDPSearchURL.prototype, "uri", {
-        get: function () {
-            return this._uri;
-        },
-        set: function (val) {
-            if (this._uri === val)
-                return;
-            this._uri = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchURL.prototype, "term", {
-        get: function () {
-            return this._term;
-        },
-        set: function (val) {
-            if (this._term === val)
-                return;
-            this._term = val;
-            this.uri.searchParams.set('t', this._term);
-            this.setAttribute('term', this.term);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchURL.prototype, "filters", {
-        get: function () {
-            return this._filters;
-        },
-        set: function (val) {
-            var _this = this;
-            this._filters = val;
-            this.uri.searchParams.delete('f');
-            Object.keys(this._filters).forEach(function (group) {
-                _this.uri.searchParams.append('f', group + "~" + _this._filters[group].join(' '));
-            });
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchURL.prototype, "sort", {
-        get: function () {
-            return this._sort;
-        },
-        set: function (val) {
-            if (this._sort === val)
-                return;
-            this._sort = val;
-            this.uri.searchParams.set('s', this._sort);
-            this.setAttribute('sort', this._sort);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchURL.prototype, "qty", {
-        get: function () {
-            return this._qty;
-        },
-        set: function (val) {
-            if (this._qty === val)
-                return;
-            this._qty = val;
-            this.setAttribute('qty', this._sort);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchURL.prototype, "init", {
-        get: function () {
-            return this._init;
-        },
-        set: function (val) {
-            if (this._init === val)
-                return;
-            this._init = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchURL.prototype.connectedCallback = function () {
-        top.addEventListener('search-complete', this._changeAttr);
-        top.addEventListener('clear-filters', this._changeAttr);
-        top.window.addEventListener('popstate', this._popState);
-        this._paramsReady();
-    };
-    Object.defineProperty(RHDPSearchURL, "observedAttributes", {
-        get: function () {
-            return ['sort', 'term', 'qty'];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchURL.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
-        this[name] = newVal;
-    };
-    RHDPSearchURL.prototype._popState = function (e) {
-        this.uri = new URL(document.location.href);
-        this.term = this.uri.searchParams.get('t') || null;
-        this.filters = this._setFilters(this.uri.searchParams.getAll('f'));
-        this.sort = this.uri.searchParams.get('s');
-        this.qty = this.uri.searchParams.get('r');
-        this._paramsReady();
-    };
-    RHDPSearchURL.prototype._paramsReady = function () {
-        this.dispatchEvent(new CustomEvent('params-ready', {
-            detail: {
-                term: this.term,
-                filters: this.filters,
-                sort: this.sort,
-                qty: this.qty
-            },
-            bubbles: true
-        }));
-    };
-    RHDPSearchURL.prototype._setFilters = function (filtersQS) {
-        var filters = {};
-        filtersQS.forEach(function (filter) {
-            var kv = filter.split('~'), k = kv[0], v = kv[1].split(' ');
-            filters[k] = v;
-        });
-        return filters;
-    };
-    RHDPSearchURL.prototype._changeAttr = function (e) {
-        switch (e.type) {
-            case 'clear-filters':
-                this.uri.searchParams.delete('f');
-                this.filters = {};
-                break;
-            case 'load-more':
-                break;
-            case 'search-complete':
-                if (e.detail && typeof e.detail.term !== 'undefined' && e.detail.term.length > 0) {
-                    this.term = e.detail.term;
-                }
-                else {
-                    this.term = '';
-                    this.uri.searchParams.delete('t');
-                }
-                if (e.detail && e.detail.filters) {
-                    this.filters = e.detail.filters;
-                }
-                if (e.detail && typeof e.detail.sort !== 'undefined') {
-                    this.sort = e.detail.sort;
-                }
-        }
-        if (e.detail && typeof e.detail.invalid === 'undefined') {
-            history.pushState({}, "RHDP Search: " + (this.term ? this.term : ''), "" + this.uri.pathname + this.uri.search);
-        }
-        else {
-            this.term = '';
-            this.filters = {};
-            this.sort = 'relevance';
-            this.uri.searchParams.delete('t');
-            this.uri.searchParams.delete('f');
-            this.uri.searchParams.delete('s');
-            history.replaceState({}, 'RHDP Search Error', "" + this.uri.pathname + this.uri.search);
-        }
-    };
-    return RHDPSearchURL;
-}(HTMLElement));
-customElements.define('rhdp-search-url', RHDPSearchURL);
-var RHDPSearchApp = (function (_super) {
-    __extends(RHDPSearchApp, _super);
-    function RHDPSearchApp() {
-        var _this = _super.call(this) || this;
-        _this._name = 'Search';
-        _this.template = "<div class=\"row\">\n    <span class=\"search-outage-msg\"></span>\n    <div class=\"large-24 medium-24 small-24 columns searchpage-middle\">\n        <div class=\"row\">\n            <div class=\"large-24 medium-24 small-24 columns\">\n                <h2>" + _this.name + "</h2>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"large-6 medium-8 small-24 columns\"></div>\n            <div class=\"large-18 medium-16 small-24 columns\"></div>\n        </div>\n    </div></div>";
-        _this.urlEle = new RHDPSearchURL();
-        _this.query = new RHDPSearchQuery();
-        _this.box = new RHDPSearchBox();
-        _this.count = new RHDPSearchResultCount();
-        _this.filters = new RHDPSearchFilters();
-        _this.active = new RHDPSearchFilters();
-        _this.modal = new RHDPSearchFilters();
-        _this.onebox = new RHDPSearchOneBox();
-        _this.results = new RHDPSearchResults();
-        _this.sort = new RHDPSearchSortPage();
-        _this.filterObj = {
-            term: '',
-            facets: [
-                { name: 'CONTENT TYPE', key: 'sys_type', items: [
-                        { key: 'apidocs', name: 'APIs and Docs', value: ['rht_website', 'rht_apidocs'], type: ['apidocs'] },
-                        { key: 'archetype', name: 'Archetype', value: ['jbossdeveloper_archetype'], type: ['jbossdeveloper_archetype'] },
-                        { key: 'article', name: 'Article', value: ['article', 'solution'], type: ['rhd_knowledgebase_article', 'rht_knowledgebase_solution'] },
-                        { key: 'blogpost', name: "Blog Posts", value: ['blogpost'], type: ['jbossorg_blog'] },
-                        { key: 'book', name: "Book", value: ["book"], type: ["jbossdeveloper_book"] },
-                        { key: 'bom', name: "BOM", value: ["jbossdeveloper_bom"], type: ['jbossdeveloper_bom'] },
-                        { key: 'cheatsheet', name: "Cheat Sheet", value: ['cheatsheet'], type: ['jbossdeveloper_cheatsheet'] },
-                        { key: 'demo', name: 'Demo', value: ['demo'], type: ['jbossdeveloper_demo'] },
-                        { key: 'event', name: 'Event', value: ['jbossdeveloper_event'], type: ['jbossdeveloper_event'] },
-                        { key: 'forum', name: 'Forum', value: ['jbossorg_sbs_forum'], type: ['jbossorg_sbs_forum'] },
-                        { key: 'get-started', name: "Get Started", value: ["jbossdeveloper_example"], type: ['jbossdeveloper_example'] },
-                        { key: 'quickstart', name: "Quickstart", value: ['quickstart'], type: ['jbossdeveloper_quickstart'] },
-                        { key: 'stackoverflow', name: 'Stack Overflow', value: ['stackoverflow_thread'], type: ['stackoverflow_question'] },
-                        { key: 'video', name: "Video", value: ["video"], type: ['jbossdeveloper_vimeo', 'jbossdeveloper_youtube'] },
-                        { key: 'webpage', name: "Web Page", value: ['webpage'], type: ['rhd_website'] }
-                    ]
-                },
-                {
-                    name: 'PRODUCT',
-                    key: 'product',
-                    items: [
-                        { key: 'dotnet', name: '.NET Runtime for Red Hat Enterprise Linux', value: ['dotnet'] },
-                        { key: 'amq', name: 'JBoss A-MQ', value: ['amq'] },
-                        { key: 'bpmsuite', name: 'JBoss BPM Suite', value: ['bpmsuite'] },
-                        { key: 'brms', name: 'Red Hat Decision Manager', value: ['brms'] },
-                        { key: 'datagrid', name: 'JBoss Data Grid', value: ['datagrid'] },
-                        { key: 'datavirt', name: 'JBoss Data Virtualization', value: ['datavirt'] },
-                        { key: 'devstudio', name: 'JBoss Developer Studio', value: ['devstudio'] },
-                        { key: 'eap', name: 'JBoss Enterprise Application Platform', value: ['eap'] },
-                        { key: 'fuse', name: 'JBoss Fuse', value: ['fuse'] },
-                        { key: 'webserver', name: 'JBoss Web Server', value: ['webserver'] },
-                        { key: 'openjdk', name: 'OpenJDK', value: ['openjdk'] },
-                        { key: 'rhamt', name: 'Red Hat Application Migration Toolkit', value: ['rhamt'] },
-                        { key: 'cdk', name: 'Red Hat Container Development Kit', value: ['cdk'] },
-                        { key: 'developertoolset', name: 'Red Hat Developer Toolset', value: ['developertoolset'] },
-                        { key: 'devsuite', name: 'Red Hat Development Suite', value: ['devsuite'] },
-                        { key: 'rhel', name: 'Red Hat Enterprise Linux', value: ['rhel'] },
-                        { key: 'mobileplatform', name: 'Red Hat Mobile Application Platform', value: ['mobileplatform'] },
-                        { key: 'openshift', name: 'Red Hat OpenShift Container Platform', value: ['openshift'] },
-                        { key: 'softwarecollections', name: 'Red Hat Software Collections', value: ['softwarecollections'] }
-                    ]
-                },
-                { name: 'TOPIC', key: 'tag', items: [
-                        { key: 'dotnet', name: '.NET', value: ['dotnet', '.net', 'visual studio', 'c#'] },
-                        { key: 'containers', name: 'Containers', value: ['atomic', 'cdk', 'containers'] },
-                        { key: 'devops', name: 'DevOps', value: ['DevOps', 'CI', 'CD', 'Continuous Delivery'] },
-                        { key: 'enterprise-java', name: 'Enterprise Java', value: ['ActiveMQ', 'AMQP', 'apache camel', 'Arquillian', 'Camel', 'CDI', 'CEP', 'CXF', 'datagrid', 'devstudio', 'Drools', 'Eclipse', 'fabric8', 'Forge', 'fuse', 'Hawkular', 'Hawtio', 'Hibernate', 'Hibernate ORM', 'Infinispan', 'iPaas', 'java ee', 'JavaEE', 'JBDS', 'JBoss', 'JBoss BPM Suite', 'Red Hat Decision Manager', 'JBoss Data Grid', 'jboss eap', 'JBoss EAP', ''] },
-                        { key: 'iot', name: 'Internet of Things', value: ['IoT', 'Internet of Things'] },
-                        { key: 'microservices', name: 'Microservices', value: ['Microservices', ' WildFly Swarm'] },
-                        { key: 'mobile', name: 'Mobile', value: ['Mobile', 'Red Hat Mobile', 'RHMAP', 'Cordova', 'FeedHenry'] },
-                        { key: 'web-and-api-development', name: 'Web and API Development', value: ['Web', 'API', 'HTML5', 'REST', 'Camel', 'Node.js', 'RESTEasy', 'JAX-RS', 'Tomcat', 'nginx', 'Rails', 'Drupal', 'PHP', 'Bottle', 'Flask', 'Laravel', 'Dancer', 'Zope', 'TurboGears', 'Sinatra', 'httpd', 'Passenger'] },
-                    ]
-                }
-            ]
-        };
-        return _this;
-    }
-    Object.defineProperty(RHDPSearchApp.prototype, "name", {
-        get: function () {
-            return this._name;
-        },
-        set: function (val) {
-            if (this._name === val)
-                return;
-            this._name = val;
-            this.setAttribute('name', this.name);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(RHDPSearchApp.prototype, "url", {
-        get: function () {
-            return this._url;
-        },
-        set: function (val) {
-            if (this._url === val)
-                return;
-            this._url = val;
-            this.query.url = this.url;
-            this.setAttribute('url', this.url);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchApp.prototype.connectedCallback = function () {
-        this.innerHTML = this.template;
-        this.active.setAttribute('type', 'active');
-        this.active.title = 'Active Filters:';
-        this.modal.setAttribute('type', 'modal');
-        this.modal.filters = this.filterObj;
-        this.active.filters = this.filterObj;
-        this.filters.filters = this.filterObj;
-        this.query.filters = this.filterObj;
-        document.body.appendChild(this.modal);
-        this.querySelector('.row .large-24 .row .large-24').appendChild(this.query);
-        this.querySelector('.row .large-24 .row .large-24').appendChild(this.box);
-        this.querySelector('.large-6').appendChild(this.filters);
-        this.querySelector('.large-18').appendChild(this.active);
-        this.querySelector('.large-18').appendChild(this.count);
-        this.querySelector('.large-18').appendChild(this.sort);
-        this.querySelector('.large-18').appendChild(this.onebox);
-        this.querySelector('.large-18').appendChild(this.results);
-        document.body.appendChild(this.urlEle);
-    };
-    Object.defineProperty(RHDPSearchApp, "observedAttributes", {
-        get: function () {
-            return ['url', 'name'];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    RHDPSearchApp.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
-        this[name] = newVal;
-    };
-    RHDPSearchApp.prototype.toggleModal = function (e) {
-        this.modal.toggle = e.detail.toggle;
-    };
-    RHDPSearchApp.prototype.updateSort = function (e) {
-        this.query.sort = e.detail.sort;
-        this.query.from = 0;
-        this.results.last = 0;
-        this.count.term = this.box.term;
-    };
-    return RHDPSearchApp;
-}(HTMLElement));
-customElements.define('rhdp-search-app', RHDPSearchApp);
