@@ -1,5 +1,3 @@
-'use strict';
-
 app.vjbug = {
   processDate: function () {
     var eventDate = document.getElementById('hiddenDate');
