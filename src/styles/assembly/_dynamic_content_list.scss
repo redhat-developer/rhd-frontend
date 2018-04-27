@@ -22,6 +22,14 @@
     }
   }
 
+  .narrow {
+    .grid {
+      @include tablet-portrait {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
   .content-teaser-list {
     list-style-type: none;
     &>li {
@@ -81,13 +89,14 @@
   }
 
   .related-topics {
-    margin-top: 46px;
     label {
       text-transform: uppercase;
       font-size: 14px;
       letter-spacing: .5px;
       display: block;
       margin-bottom: 15px;
+      font-weight: bold;
+      color: black;
     }
     .content-link-list {
       a {
@@ -106,5 +115,9 @@
       }
 
     }
+  }
+
+  .disqus+.related-topics {
+    margin-top: 46px;
   }
 }
