@@ -1,58 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="150"
-   height="150"
-   viewBox="0 0 150 150"
-   version="1.1"
-   id="svg953"
-   sodipodi:docname="Icon_RH_Automation.svg"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
-  <metadata
-     id="metadata957">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>product-group-automation</dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="726"
-     inkscape:window-height="480"
-     id="namedview955"
-     showgrid="false"
-     inkscape:zoom="1.2502642"
-     inkscape:cx="99.486475"
-     inkscape:cy="33"
-     inkscape:window-x="0"
-     inkscape:window-y="23"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg953" />
-  <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
-  <title
-     id="title936">product-group-automation</title>
-  <desc
-     id="desc938">Created with Sketch.</desc>
-  <defs
-     id="defs940" />
+<svg width="150" height="150" viewBox="0 0 150 150" id="svg953">
   <g
      id="Pattern-Artboards"
      style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"

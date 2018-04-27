@@ -30,6 +30,7 @@
 @import "javaone";
 @import "ticket-monster";
 @import "vjbug";
+@import "searchapp";
 
 
 
@@ -38,15 +39,25 @@
     flex-direction: column;
 
     display: grid;
-    grid-template-columns: [leftgutter] auto repeat(12, [content-start] 70px) [content-end] auto [rightgutter];
+    grid-template-columns: repeat(12, [content-start] 70px) [content-end];
     grid-template-rows: minmax(30px, 1fr) [bottomrow];
     grid-auto-flow: column;
     grid-gap: 30px;
+    margin: 0 auto;
+    width: 1200px;
 }
 
 [data-rhd-grid="quad"] {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+[data-rhd-grid="triple"] {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   margin: 0 auto;
   width: 1200px;

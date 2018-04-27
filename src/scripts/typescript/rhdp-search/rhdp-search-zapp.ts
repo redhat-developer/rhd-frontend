@@ -1,46 +1,15 @@
-import RHElement from '../rhelement';
-import RHDPSearchURL from './rhdp-search-url';
-import RHDPSearchQuery from './rhdp-search-query';
-import RHDPSearchBox from './rhdp-search-box';
-import RHDPSearchResultCount from './rhdp-search-result-count';
-import RHDPSearchFilters from './rhdp-search-filters';
-import RHDPSearchOneBox from './rhdp-search-onebox';
-import RHDPSearchResults from './rhdp-search-results';
-import RHDPSearchSortPage from './rhdp-search-sort-page';
+// import {RHDPSearchURL} from './rhdp-search-url';
+// import {RHDPSearchQuery} from './rhdp-search-query';
+// import {RHDPSearchBox} from './rhdp-search-box';
+// import {RHDPSearchResultCount} from './rhdp-search-result-count';
+// import {RHDPSearchFilters} from './rhdp-search-filters';
+// import {RHDPSearchOneBox} from './rhdp-search-onebox';
+// import {RHDPSearchResults} from './rhdp-search-results';
+// import {RHDPSearchSortPage} from './rhdp-search-sort-page';
 
-export default class RHDPSearchApp extends RHElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
-        <style>
-
-    :host { 
-        display: flex;
-        flex-flow: column;
-        font-family: "overpass","Open Sans",Helvetica,sans-serif;
-        margin-bottom: 30px;
-    }
-
-    .hide { display: none; }
-    
-    .show { display: block; }
-    
-    .mobile { display: none; }
-
-    h1 { grid-column: 2 / span 12; }
-
-    .loading {
-        background:url("https://developers.redhat.com/images/icons/ajax-loader.gif") center 80px no-repeat;
-        min-height:250px;
-    }
-        </style>
-    <span class="search-outage-msg"></span>
-    <h1>${el.name}</h1>
-    `;
-        return tpl;
-    }
+class RHDPSearchApp extends HTMLElement {
     constructor() {
-        super('rhdp-search-app');
+        super();
         //this.toggleModal = this.toggleModal.bind(this);
         //this.updateFacets = this.updateFacets.bind(this);
     }
@@ -69,6 +38,20 @@ export default class RHDPSearchApp extends RHElement {
         this.setAttribute('url', this.url);
     }
 
+    template = `<div class="row">
+    <span class="search-outage-msg"></span>
+    <div class="large-24 medium-24 small-24 columns searchpage-middle">
+        <div class="row">
+            <div class="large-24 medium-24 small-24 columns">
+                <h2>${this.name}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 medium-8 small-24 columns"></div>
+            <div class="large-18 medium-16 small-24 columns"></div>
+        </div>
+    </div></div>`;
+
     urlEle = new RHDPSearchURL();
     query = new RHDPSearchQuery();
     box = new RHDPSearchBox();
@@ -76,7 +59,7 @@ export default class RHDPSearchApp extends RHElement {
     filters = new RHDPSearchFilters();
     active = new RHDPSearchFilters();
     modal = new RHDPSearchFilters();
-    onebox = new RHDPSearchOneBox('/rhd-frontend/json/onebox.json');
+    onebox = new RHDPSearchOneBox();
     results = new RHDPSearchResults();
     sort = new RHDPSearchSortPage();
 
@@ -86,19 +69,19 @@ export default class RHDPSearchApp extends RHElement {
             { name: 'CONTENT TYPE', key: 'type', items: [
                 {key: 'apidocs', name: 'APIs and Docs', value: ['rht_website', 'rht_apidocs'], type: ['apidocs']},
                 {key: 'archetype', name: 'Archetype', value: ['jbossdeveloper_archetype'], type: ['jbossdeveloper_archetype']},
-                {key: 'article', name: 'Article', value: ['article', 'solution'], type: ['rhd_knowledgebase_article', 'rht_knowledgebase_solution']},
-                {key: 'blogpost', name: "Blog Posts", value: ['blogpost'], type: ['jbossorg_blog']},
-                {key: 'book', name: "Book", value: ["book"], type: ["jbossdeveloper_book"]},
+                {key: 'article', name: 'Article', value: ['rht_knowledgebase_article', 'rht_knowledgebase_solution'], type: ['rht_knowledgebase_article', 'rht_knowledgebase_solution']},
+                {key: 'blogpost', name: "Blog Posts", value: ['jbossorg_blog'], type: ['jbossorg_blog']},
+                {key: 'book', name: "Book", value: ["jbossdeveloper_book"], type: ["jbossdeveloper_book"]},
                 {key: 'bom', name: "BOM", value: ["jbossdeveloper_bom"], type: ['jbossdeveloper_bom']},
-                {key: 'cheatsheet', name: "Cheat Sheet", value: ['cheatsheet'], type: ['jbossdeveloper_cheatsheet']},
-                {key: 'demo', name: 'Demo', value: ['demo'], type: ['jbossdeveloper_demo']},
+                {key: 'cheatsheet', name: "Cheat Sheet", value: ['jbossdeveloper_cheatsheet'], type: ['jbossdeveloper_cheatsheet']},
+                {key: 'demo', name: 'Demo', value: ['jbossdeveloper_demo'], type: ['jbossdeveloper_demo']},
                 {key: 'event', name: 'Event', value: ['jbossdeveloper_event'], type: ['jbossdeveloper_event']},
                 {key: 'forum', name: 'Forum', value: ['jbossorg_sbs_forum'], type: ['jbossorg_sbs_forum']},
                 {key: 'get-started', name: "Get Started", value: ["jbossdeveloper_example"], type: ['jbossdeveloper_example'] },
-                {key: 'quickstart', name: "Quickstart", value: ['quickstart'], type: ['jbossdeveloper_quickstart']},
-                {key: 'stackoverflow', name: 'Stack Overflow', value: ['stackoverflow_thread'], type: ['stackoverflow_question']},
-                {key: 'video', name: "Video", value: ["video"], type:['jbossdeveloper_vimeo', 'jbossdeveloper_youtube'] },
-                {key: 'webpage', name: "Web Page", value: ['webpage'], type: ['rhd_website']}
+                {key: 'quickstart', name: "Quickstart", value: ['jbossdeveloper_quickstart'], type: ['jbossdeveloper_quickstart']},
+                {key: 'stackoverflow', name: 'Stack Overflow', value: ['stackoverflow_question'], type: ['stackoverflow_question']},
+                {key: 'video', name: "Video", value: ['jbossdeveloper_vimeo', 'jbossdeveloper_youtube'], type:['jbossdeveloper_vimeo', 'jbossdeveloper_youtube'] },
+                {key: 'webpage', name: "Web Page", value: ['rht_website'], type: ['rht_website']}
                 ] 
             },
             {
@@ -141,8 +124,8 @@ export default class RHDPSearchApp extends RHElement {
     };
 
     connectedCallback() {
-        super.render(this.template(this));
-        this.setAttribute('data-rhd-grid','normal');
+        this.innerHTML = this.template;
+
         this.active.setAttribute('type', 'active');
         this.active.title = 'Active Filters:';
         this.modal.setAttribute('type', 'modal');
@@ -152,16 +135,16 @@ export default class RHDPSearchApp extends RHElement {
         this.query.filters = this.filterObj;
         
         //document.querySelector('.wrapper').appendChild(this.modal);
-        this.shadowRoot.appendChild(this.box);
-        this.shadowRoot.appendChild(this.filters);
-        this.shadowRoot.appendChild(this.active);
-        this.shadowRoot.appendChild(this.count);
-        this.shadowRoot.appendChild(this.sort);
-        this.shadowRoot.appendChild(this.onebox);
-        this.shadowRoot.appendChild(this.results);
-        top.document.body.appendChild(this.modal);
-        top.document.body.appendChild(this.urlEle);
-        this.shadowRoot.appendChild(this.query);
+        document.body.appendChild(this.modal);
+        this.querySelector('.row .large-24 .row .large-24').appendChild(this.query);
+        this.querySelector('.row .large-24 .row .large-24').appendChild(this.box);
+        this.querySelector('.large-6').appendChild(this.filters);
+        this.querySelector('.large-18').appendChild(this.active);
+        this.querySelector('.large-18').appendChild(this.count);
+        this.querySelector('.large-18').appendChild(this.sort);
+        this.querySelector('.large-18').appendChild(this.onebox);
+        this.querySelector('.large-18').appendChild(this.results);
+        document.body.appendChild(this.urlEle);
     }
 
     static get observedAttributes() { 

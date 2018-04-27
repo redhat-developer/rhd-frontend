@@ -1,34 +1,9 @@
-import RHElement from '../rhelement';
-import RHDPSearchFilterItem from './rhdp-search-filter-item';
-
-export default class RHDPSearchFilterGroup extends RHElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
-        <style>
-            .secondary {
-                display: none;
-            }
-        </style>
-<h6 class="showFilters heading"><span class="group-name">${el.name}</span><span class="toggle"><i class='fa fa-chevron-right' aria-hidden='true'></i></span></h6>
-<div class="group">
-    <div class="primary">
-        ${el.items.map((item: RHDPSearchFilterItem, index) => `${index < 5 ? item.outerHTML : ''}`).join('')}
-    </div>
-    <div class="secondary">
-        ${el.items.map((item: RHDPSearchFilterItem, index) => `${index > 5 ? item.outerHTML : ''}`).join('')}
-    </div>
-    ${el.items.length > 5 ? el.moreBtn.outerHTML : ''}
-</div>`;
-        return tpl;
-    }
+class RHDPSearchFilterGroup extends HTMLElement {
     _key;
     _name;
-    _items: RHDPSearchFilterItem[] = [];
+    _items;
     _toggle = false;
     _more = false;
-
-    moreBtn = document.createElement('a');
 
     get key() {
         return this._key;
@@ -44,9 +19,7 @@ export default class RHDPSearchFilterGroup extends RHElement {
     set name(val) {
         if (this._name === val) return;
         this._name = val;
-        if (this.shadowRoot.querySelector('.group-name')) {
-            this.shadowRoot.querySelector('.group-name').innerHTML = this._name;
-        }
+        this.querySelector('.group-name').innerHTML = this._name;
     }
 
     get items() {
@@ -55,15 +28,6 @@ export default class RHDPSearchFilterGroup extends RHElement {
     set items(val) {
         if (this._items === val) return;
         this._items = val;
-        if (this._items.length > 5) {
-            if (!this.shadowRoot.querySelector('.more')) {
-                this.shadowRoot.appendChild(this.moreBtn);
-            }
-        } else {
-            if (this.shadowRoot.querySelector('.more')) {
-                this.shadowRoot.removeChild(this.shadowRoot.lastChild);
-            }
-        }
     }
 
     get toggle() {
@@ -72,8 +36,8 @@ export default class RHDPSearchFilterGroup extends RHElement {
     set toggle(val) {
         if (this._toggle === val) return;
         this._toggle = val;
-        this.shadowRoot.querySelector('.group').className = this.toggle ? 'group' : 'group hide';
-        this.shadowRoot.querySelector('.toggle').className = this.toggle ? 'toggle expand' : 'toggle';
+        this.querySelector('.group').className = this.toggle ? 'group' : 'group hide';
+        this.querySelector('.toggle').className = this.toggle ? 'toggle expand' : 'toggle';
     }
 
     get more() {
@@ -82,29 +46,32 @@ export default class RHDPSearchFilterGroup extends RHElement {
     set more(val) {
         if (this._more === val) return;
         this._more = val;
-        this.shadowRoot.querySelector('.more')['innerText'] = this.more ? 'Show Less' : 'Show More';
-        this.shadowRoot.querySelector('.secondary')['style'].display = this.more ? 'block' : 'none';
+        this.querySelector('.more').innerHTML = this.more ? 'Show Less' : 'Show More';
+        this.querySelector('.secondary').className = this.more ? 'secondary' : 'secondary hide';
     }
 
     constructor() {
-        super('rhdp-search-filter-group');
+        super();
 
-        this.moreBtn.setAttribute('href', '#');
-        this.moreBtn.className = 'more';
-        this.moreBtn.innerText = 'Show More';
+        this.innerHTML = this.template`${this.name}`;
     }
 
+    template = (strings, name) => {
+        return `<h6 class="showFilters heading"><span class="group-name">${name}</span><span class="toggle"><i class='fa fa-chevron-right' aria-hidden='true'></i></span></h6>
+        <div class="group hide">
+            <div class="primary"></div>
+            <div class="secondary hide"></div>
+            <a href="#" class="more">Show More</a>
+        </div>`; 
+    };
+
     connectedCallback() {
-        super.render(this.template(this));
-        this.shadowRoot.querySelector('h6').addEventListener('click', e => {
+        this.querySelector('h6').addEventListener('click', e => {
             e.preventDefault();
             this.toggle = !this.toggle;
         });
-        this.shadowRoot.querySelector('.group').addEventListener('click', e => {
-            if (e.target['className'].indexOf('more') > -1) {
-                e.preventDefault();
-                this.more = !this.more;
-            }            
+        this.querySelector('.more').addEventListener('click', e => {
+            this.more = !this.more;
         });
 
         this.toggle = true;

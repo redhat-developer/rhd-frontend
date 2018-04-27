@@ -1,24 +1,4 @@
-import RHElement from '../rhelement';
-
-export default class RHDPSearchResultCount extends RHElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
-        <style>
-        :host {
-            grid-column: 5 / span 9;
-            font-weight: 600;
-            font-size: 1.2em;
-            display: block;
-        }
-
-        @media only screen and (max-width: 768px) {
-            :host { border-bottom: 1px solid var(--rhd-grey-3; }
-        }
-        </style>
-        ${el.count} results found for ${el.term.replace('<','&lt;').replace('>','&gt;')}`;
-        return tpl;
-    }
+class RHDPSearchResultCount extends HTMLElement {
     _count = 0;
     _term = '';
     _loading = true;
@@ -53,13 +33,16 @@ export default class RHDPSearchResultCount extends RHElement {
     }
 
     constructor() {
-        super('rhdp-search-result-count');
+        super();
 
         this._setText = this._setText.bind(this);
     }
 
+    template = (strings, count, term) => {
+        return `${count} results found for ${term.replace('<','&lt;').replace('>','&gt;')}`; 
+    };
+
     connectedCallback() {
-        super.render(this.template(this));
         top.addEventListener('params-ready', this._setText);
         top.addEventListener('search-start', e => { this.loading = true; this._setText(e); });
         top.addEventListener('search-complete', e => { this.loading = false; this._setText(e); });
@@ -72,7 +55,7 @@ export default class RHDPSearchResultCount extends RHElement {
 
     attributeChangedCallback(name, oldVal, newVal) {
         this[name] = newVal;
-        super.render(this.template(this));
+        this.innerHTML = `${this.count} results found ${this.term ? `for ${this.term}` : ''}`
     }
 
     _setText(e) {
@@ -89,18 +72,17 @@ export default class RHDPSearchResultCount extends RHElement {
                     this.count = 0;
                 }
                 if (!this.loading) {
-                    // this.innerHTML = `${this.count} results found ${this.term ? `for ${this.term}` : ''}`;
-                    super.render(this.template(this));
+                    this.innerHTML = `${this.count} results found ${this.term ? `for ${this.term}` : ''}`;
                 }
             } else { 
                 this.term = '';
                 this.count = 0;
-                this.shadowRoot.innerHTML = '';
+                this.innerHTML = '';
             }
         } else {
             this.term = '';
             this.count = 0;
-            this.shadowRoot.innerHTML = '';
+            this.innerHTML = '';
         }
     }
 }

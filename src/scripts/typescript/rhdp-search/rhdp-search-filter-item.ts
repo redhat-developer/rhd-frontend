@@ -1,19 +1,4 @@
-import RHElement from '../rhelement';
-
-export default class RHDPSearchFilterItem extends RHElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        let checked = el.active ? 'checked' : '';
-        tpl.innerHTML = `<div class="list"><span>${el.name}</span><input type="checkbox" ${checked} id="filter-item-${el.key}" value="${el.key}"><label for="filter-item-${el.key}">${el.name}</label></div>`;
-        return tpl;
-    }
-
-    inlineTemplate = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = el.active ? `<div class="inline">${el.name} <i class="fa fa-times clearItem" aria-hidden="true"></i></div>` : '';
-        return tpl;
-    }
-
+class RHDPSearchFilterItem extends HTMLElement {
     _key;
     _name;
     _active = false;
@@ -50,17 +35,50 @@ export default class RHDPSearchFilterItem extends RHElement {
         this.setAttribute('group', this._group);
     }
 
+    get active() {
+        return this._active;
+    }
+    set active(val) {
+        if(typeof val === 'string') {
+            val = true;
+        } 
+        if ( val === null ) {
+            val = false;
+        }
+        if (this._active === val) {
+            return;
+        } else {
+            this._active = val;
+            let chkbox = this.querySelector('input');
+            if(this._active) { 
+                this.setAttribute('active','');
+            } else { 
+                this.removeAttribute('active'); 
+            }
+            if (chkbox) {
+                chkbox.checked = this._active;
+            }
+            if ( this.inline ) { this.innerHTML = this._active ? this.inlineTemplate`${this.name}${this._active}` : ''; }
+    
+            this.dispatchEvent(new CustomEvent('filter-item-change', {detail: {facet: this}, bubbles: this.bubble}));
+            this.bubble = true;
+        }
+    }
+    get value() {
+        return this._value;
+    }
+    set value(val) {
+        if (this._value === val) return;
+        this._value = val;
+        this.setAttribute('value', this.value);
+    }
     get inline() {
         return this._inline;
     }
     set inline(val) {
         if (this._inline === val) return;
         this._inline = val;
-        if (!this._inline) {
-            super.render(this.template(this));
-        } else {
-            super.render(this.inlineTemplate(this));
-        }
+        this.innerHTML = !this._inline ? this.template`${this.name}${this.key}${this.active}` : this.inlineTemplate`${this.name}${this.active}`;
     }
 
     get bubble() {
@@ -80,53 +98,8 @@ export default class RHDPSearchFilterItem extends RHElement {
         this._bounce = val;
     }
 
-
-    get active() {
-        return this._active;
-    }
-    set active(val) {
-        if(typeof val === 'string') {
-            val = true;
-        } 
-        if ( val === null ) {
-            val = false;
-        }
-        if (this._active === val) {
-            return;
-        } else {
-            this._active = val;
-            let chkbox = this.shadowRoot.querySelector('input');
-            if(this._active) { 
-                this.setAttribute('active','');
-            } else { 
-                this.removeAttribute('active'); 
-            }
-            if (chkbox) {
-                chkbox.checked = this._active;
-            }
-            if ( this.inline ) { 
-                if (this._active) {
-                    super.render(this.inlineTemplate(this));
-                } else {
-                    this.innerHTML = '';
-                }
-            }
-            let evt = {detail: {facet: this}, bubbles: this.bubble, composed: true };
-            this.dispatchEvent(new CustomEvent('filter-item-change', evt));
-            this.bubble = true;
-        }
-    }
-    get value() {
-        return this._value;
-    }
-    set value(val) {
-        if (this._value === val) return;
-        this._value = val;
-        this.setAttribute('value', this.value);
-    }
-
     constructor() {
-        super('rhdp-search-filter-item');
+        super();
 
         this._checkParams = this._checkParams.bind(this);
         this._clearFilters = this._clearFilters.bind(this);
@@ -134,15 +107,21 @@ export default class RHDPSearchFilterItem extends RHElement {
         this._updateFacet = this._updateFacet.bind(this);
     }
 
+    template = (strings, name, key, active) => {
+        var checked = active ? 'checked' : '';
+        return `<div class="list"><span>${name}</span><input type="checkbox" ${checked} id="filter-item-${key}" value="${key}"><label for="filter-item-${key}">${name}</label></div>`; 
+    };
     
+    inlineTemplate = (strings, name, active) => {
+        return active ? `<div class="inline">${name} <i class="fa fa-times clearItem" aria-hidden="true"></i></div>` : '';
+    }
 
     connectedCallback() {
+        this.innerHTML = !this.inline ? this.template`${this.name}${this.key}${this.active}` : this.inlineTemplate`${this.name}${this.active}`;
         if (!this.inline) {
-            super.render(this.template(this));
-            this.shadowRoot.addEventListener('change', this._updateFacet);
+            this.addEventListener('change', this._updateFacet);
         } else {
-            super.render(this.inlineTemplate(this));
-            this.shadowRoot.addEventListener('click', this._updateFacet);
+            this.addEventListener('click', this._updateFacet);
         }
         
         top.addEventListener('filter-item-change', this._checkChange);
@@ -180,8 +159,7 @@ export default class RHDPSearchFilterItem extends RHElement {
                             chk = true;
                             this.bubble = false;
                             this.active = true;
-                            let evt = {detail: {facet: this}, bubbles: this.bubble, composed: true };
-                            this.dispatchEvent(new CustomEvent('filter-item-init', evt));
+                            this.dispatchEvent(new CustomEvent('filter-item-init', {detail: {facet: this}, bubbles: this.bubble}));
                         }
                     }
                 });

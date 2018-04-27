@@ -8,7 +8,7 @@ export default class DPCategory extends RHElement {
 :host { 
     text-align: center; 
 }
-:host img, :host svg { height: 150px; width: 150px; }
+img, svg { height: 150px; width: 150px; }
 
 :host(:hover), :host([visible]) {
     color: var(--rhd-blue);
@@ -44,23 +44,23 @@ ${el.image && el.image.indexOf('svg') < 0 ? `<img src="${el.image}">` : el.image
 
     get visible() { return this._visible; }
     set visible(val) {
+        val = val !== null && val !== false ? true : false;
         if (this._visible === val) return;
         this._visible = val;
+        let evt = {
+            detail: {
+                index: this._getIndex(this)
+            },
+            bubbles: true,
+            composed: true
+        }
+        this.dispatchEvent(new CustomEvent('dp-category-selected', evt));
         if ( this._visible ) {
             this.setAttribute('visible','');
         } else {
             this.removeAttribute('visible');
         }
         // this.shadowRoot.querySelector('section').style.display = this._visible ? 'block' : 'none';
-        let evt = {
-            detail: {
-                index: this._getIndex(this), 
-                list: this.querySelector( 'dp-category-item-list' ).cloneNode(true)
-            },
-            bubbles: true,
-            composed: true
-        }
-        this.dispatchEvent(new CustomEvent(this._visible ? 'dp-category-selected' : 'dp-category-deselected', evt));
     }
 
     constructor() {
@@ -77,11 +77,6 @@ ${el.image && el.image.indexOf('svg') < 0 ? `<img src="${el.image}">` : el.image
             this.visible = !this.visible;
             return false;
         });
-        top.addEventListener('dp-category-selected', e => {
-            if (e['detail'] && e['detail'].index && e['detail'].index == this._getIndex(this)) {
-                this.visible = false;
-            }           
-        })
     }
 
     static get observedAttributes() { 
@@ -89,9 +84,6 @@ ${el.image && el.image.indexOf('svg') < 0 ? `<img src="${el.image}">` : el.image
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
-        if (name === 'visible') {
-            newVal = newVal === "" || newVal ? true : false;
-        }
         this[name] = newVal;
     }
 

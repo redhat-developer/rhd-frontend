@@ -1,86 +1,4 @@
-import RHElement from '../rhelement';
-
-export default class RHDPSearchResult extends RHElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
-        <style>
-:host {
-    font-family: "overpass","Open Sans",Helvetica,sans-serif;
-    margin-bottom: 25px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid $grey-3;
-    display: flex;
-    flex-direction: row;
-}
-    .subscription-required {
-        &:before {
-            content: '';
-            background: url('https://static.jboss.org/rhd/images/icons/subscription-required.svg') no-repeat;
-            background-size:cover;
-            position:absolute;
-            margin-top: 5px;
-            width: .9em;
-            height: .9em;
-        }
-        .caps {
-            margin-left: 20px;
-        }
-
-    }
-
-    div:first-child { flex: 1 1 auto; }
-
-    h4 {
-        font-weight: 600;
-        font-style: normal;
-        font-size: 20px;
-        line-height: 1.4;
-        color: #06c;
-        cursor: pointer;
-        margin: 0;
-        font-family: "overpass","Open Sans",Helvetica,sans-serif;
-    }
-
-    p { margin: 0; 
-        color: #424242;
-        font-family: "overpass","Open Sans",Helvetica,sans-serif;
-        }
-    .result-info span{
-        font-size: .9rem;
-        color: $grey-6;
-    }
-
-    .caps {
-        text-transform: uppercase;
-        font-size: 16px;
-        font-weight: normal;
-        line-height: 24px;
-        -webkit-font-smoothing: antialiased;
-    }
-    .result-description {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-height: 45px;
-        margin-bottom: 25px;
-    }
-    .thumb { 
-        flex: 0 0 130px; 
-        margin-left: 1em;
-    }
-    .hlt { font-weight: 600; }
-        </style>
-<div>
-    <h4>${el.url ? `<a href="${el.url}">${el.title}</a>` : el.title}</h4>
-    <p ${el.premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"'}>
-        <span class="caps">${el.kind}</span>
-        ${el.created ? `- <rh-datetime datetime="${el.created}" type="local" day="numeric" month="long" year="numeric">${el.created}</rh-datetime>` : ''}
-    </p>
-    <p class="result-description">${el.description}</p>
-</div>
-${el.thumbnail ? `<div class="thumb"><img src="${el.thumbnail.replace('http:','https:')}"></div>` : ''}`;
-        return tpl;
-    }
+class RHDPSearchResult extends HTMLElement {
     _result;
     _url = ['',''];
     _title;
@@ -171,8 +89,20 @@ ${el.thumbnail ? `<div class="thumb"><img src="${el.thumbnail.replace('http:','h
     }
 
     constructor() {
-        super('rhdp-search-result');
+        super();
     }
+
+    template = (strings, url, title, kind, created, description, premium, thumbnail) => {
+        return `<div>
+            <h4>${url ? `<a href="${url}">${title}</a>` : title}</h4>
+            <p ${premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"'}>
+                <span class="caps">${kind}</span>
+                ${created ? `- <rh-datetime datetime="${created}" type="local" day="numeric" month="long" year="numeric">${created}</rh-datetime>` : ''}
+            </p>
+            <p class="result-description">${description}</p>
+        </div>
+        ${thumbnail ? `<div class="thumb"><img src="${thumbnail.replace('http:','https:')}"></div>` : ''}`; 
+    };
 
     connectedCallback() {
         
@@ -187,8 +117,7 @@ ${el.thumbnail ? `<div class="thumb"><img src="${el.thumbnail.replace('http:','h
     }
 
     renderResult() {
-        // this.innerHTML = this.template`${this.url}${this.title}${this.kind}${this.created}${this.description}${this.premium}${this.thumbnail}`;
-        super.render(this.template(this));
+        this.innerHTML = this.template`${this.url}${this.title}${this.kind}${this.created}${this.description}${this.premium}${this.thumbnail}`;
     }
 
     computeThumbnail(result) {

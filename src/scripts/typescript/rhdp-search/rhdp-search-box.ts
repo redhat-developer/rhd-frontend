@@ -1,99 +1,4 @@
-import RHElement from '../rhelement';
-
-export default class RHDPSearchBox extends RHElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
-        <style>
-            :host {
-                grid-column: 2 / span 12;
-            }
-
-            form.search-bar { 
-                box-sizing: border-box;
-                color: rgb(66,66,66);
-                cursor: auto;
-                display: flex;
-                flex-direction: row;
-                font-size: 16px;
-                line-height: 24px;
-                position: relative; 
-                margin: 0;
-                width: 100%;
-            }
-        
-            form.search-bar div {
-                flex: 1 1 100%;
-            }
-            
-            input.user-search {
-                background-color: white;
-                border-bottom-color: rgb(204,204,204);
-                border-bottom-style: solid;
-                border-left-color: rgb(204,204,204);
-                border-left-style: solid;
-                border-right-color: rgb(204,204,204);
-                border-right-style: solid;
-                box-sizing: border-box;
-                font-size: 16px;
-                font-weight: 600;
-                height: 40px;
-                text-align: start;
-                padding: 8px;
-                transition-property: box-shadow, border-color;
-                transition-delay: 0s, 0s;
-                transition-duration: 0.45s, 0.45s;
-                transition-timing-function: ease, ease-in-out;
-                user-select: text;
-                width: 100%;
-            }
-        
-            input.user-search::-webkit-search-cancel-button{
-                position:relative;
-                -webkit-appearance: none;
-                height: 20px;
-                width: 20px;
-                background-image: url('https://static.jboss.org/rhd/images/icons/fa_times_icon.svg');
-                opacity: 1;
-                pointer-events: auto;
-            }
-        
-            button {
-                text-transform: uppercase;
-                background: #c00;
-                text-decoration: none;
-                border: 0;
-                height: 40px;
-                font-weight: 600;
-                font-size: 16px;
-                padding: 9px 30px;
-                transition: background .2s ease-in 0s;
-                line-height: 1.2em;
-                cursor: pointer;
-                position: relative;
-                text-align: center;
-                color: #fff;
-            }
-        
-            button i.fa.fa-search { display:none; }
-        
-            @media only screen and (max-width: 768px) {
-                :host {
-                    margin-bottom: .5em;
-                }
-                button { display: block; padding: 9px 20px; }
-                button i.fa.fa-search { display: inline-block; font-size: 18px; }
-                button span { display: none; }
-            }
-        </style>
-<form class="search-bar" role="search">
-    <div class="input-cont">
-        <input value="${el.term}" class="user-success user-search" type="search" id="query" placeholder="Enter your search term">
-    </div>
-    <button id="search-btn"><span>SEARCH</span><i class='fa fa-search' aria-hidden='true'></i></button>
-</form>`;
-        return tpl;
-    }
+class RHDPSearchBox extends HTMLElement {
     _term = '';
 
     get term() {
@@ -102,30 +7,38 @@ export default class RHDPSearchBox extends RHElement {
     set term(val) {
         if (this._term === val) return;
         this._term = decodeURI(val);
-        this.shadowRoot.querySelector('input').setAttribute('value', this.term);
+        this.querySelector('input').setAttribute('value', this.term);
     }
 
     name = 'Search Box';
+    template = (strings, name, term) => {
+        return `<form class="search-bar" role="search">
+        <div class="input-cont">
+            <input value="${term}" class="user-success user-search" type="search" id="query" placeholder="Enter your search term">
+        </div>
+        <button id="search-btn"><span>SEARCH</span><i class='fa fa-search' aria-hidden='true'></i></button>
+        </form>`;
+    };
 
     constructor() {
-        super('rhdp-search-box');
+        super();
         this._checkTerm = this._checkTerm.bind(this);
     }
 
     connectedCallback() {
-        super.render(this.template(this));
-        this.setAttribute('data-rhd-col','span12');
         top.addEventListener('params-ready', this._checkTerm);
         //top.window.addEventListener('popstate', e => { this.term = null; });
         top.addEventListener('term-change', this._checkTerm);
 
-        this.shadowRoot.addEventListener('submit', e => {
+        this.innerHTML = this.template`${this.name}${this.term}`;
+
+        this.addEventListener('submit', e => {
             e.preventDefault();
             this._termChange();
             return false;
         });
 
-        this.shadowRoot.querySelector('#search-btn').addEventListener('click', e => { 
+        this.querySelector('#search-btn').addEventListener('click', e => { 
             
         });
     }
@@ -145,16 +58,14 @@ export default class RHDPSearchBox extends RHElement {
     }
 
     _termChange() {
-        this.term = this.shadowRoot.querySelector('input').value;
-        let evt = {
+        this.term = this.querySelector('input').value;
+        this.dispatchEvent(new CustomEvent('term-change', {
             detail: { 
                 term: this.term
             }, 
-            bubbles: true,
-            composed: true
-        };
-        this.dispatchEvent(new CustomEvent('term-change', evt));
+            bubbles: true
+        }));
     }
 }
 
-window.customElements.define('rhdp-search-box', RHDPSearchBox);
+customElements.define('rhdp-search-box', RHDPSearchBox);
