@@ -47,7 +47,7 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
 };
-System.register("typescript/rhelement", [], function (exports_1, context_1) {
+System.register("@rhelements/rhelement", [], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var RHElement;
@@ -101,7 +101,7 @@ System.register("typescript/rhelement", [], function (exports_1, context_1) {
         }
     };
 });
-System.register("typescript/rhdp-alert", ["typescript/rhelement"], function (exports_2, context_2) {
+System.register("@rhd/rhdp-alert", ["@rhelements/rhelement"], function (exports_2, context_2) {
     "use strict";
     var __moduleName = context_2 && context_2.id;
     var rhelement_1, RHDPAlert;
@@ -263,7 +263,7 @@ System.register("typescript/rhdp-alert", ["typescript/rhelement"], function (exp
         }
     };
 });
-System.register("typescript/dp-category-list/dp-category-item-list", ["typescript/rhelement"], function (exports_3, context_3) {
+System.register("@rhd/dp-category-list/dp-category-item-list", ["@rhelements/rhelement"], function (exports_3, context_3) {
     "use strict";
     var __moduleName = context_3 && context_3.id;
     var rhelement_2, DPCategoryItemList;
@@ -280,10 +280,11 @@ System.register("typescript/dp-category-list/dp-category-item-list", ["typescrip
                     var _this = _super.call(this, 'dp-category-item-list') || this;
                     _this.template = function (el) {
                         var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n            <style>\n            :host {\n                display: none;\n                grid-column: span 4;\n            }\n\n            div {\n                display: grid;\n                grid-template-columns: repeat(3, 1fr);\n                grid-gap: 30px;\n                position: relative;\n                border: 1px solid #CCCCCC;\n                background-color: #FFFFFF;\n                padding: 30px;\n                margin-bottom: 30px;\n            }\n\n            div:after, div:before {\n                bottom: 100%;\n                left: " + (el.index % 4 > 0 ? ((2 * (el.index % 4)) - 1) * 12.5 : 7 * 12.5) + "%;\n                border: solid transparent;\n                content: \" \";\n                height: 0;\n                width: 0;\n                position: absolute;\n                pointer-events: none;\n            }\n            \n            div:after {\n                border-bottom-color: #FFFFFF;\n                border-width: 15px;\n                margin-left: -15px;\n            }\n            div:before {\n                border-bottom-color: #CCCCCC;\n                border-width: 16px;\n                margin-left: -16px;\n            }\n            </style>\n            <div>\n            <slot></slot>\n            </div>\n            ";
+                        tpl.innerHTML = "\n            <style>\n            :host[visible] {\n                display: block;\n            }\n\n            :host {\n                display: none;\n                flex: 1 1 100%;\n                grid-column: span 1;\n                margin-bottom: 30px;\n            }\n\n            div {\n                background: white;\n                display: grid;\n                grid-template-columns: 1fr;\n                grid-gap: 15px;\n                position: relative;\n                padding-top: 15px;\n                padding-right: 15px;\n                padding-left: 15px;\n            }\n\n            @media (min-width: 500px) {\n                :host {\n                    grid-column: span 2;\n                }\n\n                div {\n                    border: 1px solid #CCCCCC;\n                }\n            }\n\n            @media (min-width: 800px) {\n                :host {\n                    grid-column: span 3;\n                }\n\n                div {\n                    grid-template-columns: repeat(2, 1fr);\n                }\n            }\n\n            @media (min-width: 1200px) {\n                :host {\n                    grid-column: span 4;\n                }\n\n                div {\n                    grid-template-columns: repeat(3, 1fr);\n                    grid-gap: 30px;\n                    background-color: #FFFFFF;\n                    padding: 30px;\n                    margin-bottom: 30px;\n                }\n            }\n            </style>\n            <div>\n            <slot></slot>\n            </div>\n            ";
                         return tpl;
                     };
                     _this._index = 1;
+                    _this._visible = false;
                     return _this;
                 }
                 Object.defineProperty(DPCategoryItemList.prototype, "index", {
@@ -299,12 +300,33 @@ System.register("typescript/dp-category-list/dp-category-item-list", ["typescrip
                     enumerable: true,
                     configurable: true
                 });
+                Object.defineProperty(DPCategoryItemList.prototype, "visible", {
+                    get: function () {
+                        return this._visible;
+                    },
+                    set: function (val) {
+                        val = val !== null && val !== false ? true : false;
+                        if (this._visible === val)
+                            return;
+                        this._visible = val;
+                        if (this._visible) {
+                            this.style.display = 'block';
+                            this.setAttribute('visible', '');
+                        }
+                        else {
+                            this.style.display = 'none';
+                            this.removeAttribute('visible');
+                        }
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
                 DPCategoryItemList.prototype.connectedCallback = function () {
                     _super.prototype.render.call(this, this.template(this));
                 };
                 Object.defineProperty(DPCategoryItemList, "observedAttributes", {
                     get: function () {
-                        return ['index'];
+                        return ['index', 'visible'];
                     },
                     enumerable: true,
                     configurable: true
@@ -319,7 +341,7 @@ System.register("typescript/dp-category-list/dp-category-item-list", ["typescrip
         }
     };
 });
-System.register("typescript/dp-category-list/dp-category-list", ["typescript/rhelement"], function (exports_4, context_4) {
+System.register("@rhd/dp-category-list/dp-category-list", ["@rhelements/rhelement"], function (exports_4, context_4) {
     "use strict";
     var __moduleName = context_4 && context_4.id;
     var rhelement_3, DPCategoryList;
@@ -336,7 +358,7 @@ System.register("typescript/dp-category-list/dp-category-list", ["typescript/rhe
                     var _this = _super.call(this, 'dp-category-list') || this;
                     _this.template = function (el) {
                         var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n<style>\n    :host {\n        position: relative;\n        background-color: #F9F9F9;\n        padding: 30px 0;\n        display: block;\n    }\n    section {\n        display: grid;\n        grid-template-columns: repeat(4, 1fr);\n        grid-gap: 30px;\n        margin: 0 auto;\n        width: 1200px;\n        justify-items: center;\n    }\n</style>\n<section data-rhd-grid=\"quad\">\n<slot></slot>\n</section>\n";
+                        tpl.innerHTML = "\n<style>\n    :host {\n        position: relative;\n        background-color: #F9F9F9;\n        padding: 30px 0;\n        display: block;\n    }\n\n    section {\n        display: grid;\n        grid-template-columns: 1fr;\n        grid-template-rows: auto;\n        grid-auto-flow: row;\n        grid-gap: 0;\n        margin: 0;\n        max-width: 500px;\n    }\n\n    @media (min-width: 500px) {\n        section {\n            grid-template-columns: repeat(2, 1fr);\n            grid-column-gap: 15px;\n            margin: 0 15px;\n            max-width: 800px;\n            justify-items: center;\n        }\n    }\n\n    @media (min-width: 800px) {\n        section {\n            grid-template-columns: repeat(3, 1fr);\n            grid-column-gap: 30px;\n            margin: 0 30px;\n            max-width: 1200px;\n            justify-items: center;\n        }\n    }\n\n    @media (min-width: 1200px) {\n        section {\n            grid-template-columns: repeat(4, 1fr);\n            grid-column-gap: 30px;\n            margin: 0 auto;\n            max-width: 1260px;\n            justify-items: center;\n        }\n    }\n</style>\n<section >\n<slot></slot>\n</section>\n";
                         return tpl;
                     };
                     _this.items = [];
@@ -346,35 +368,53 @@ System.register("typescript/dp-category-list/dp-category-list", ["typescript/rhe
                 DPCategoryList.prototype.connectedCallback = function () {
                     var _this = this;
                     _super.prototype.render.call(this, this.template(this));
-                    var li = this.querySelectorAll('dp-category-item-list');
-                    for (var ele in li) {
-                        this.items.push(li[ele]);
-                    }
-                    ;
                     this.addEventListener('dp-category-selected', function (e) {
+                        var w = window.innerWidth;
+                        var cols = 4;
+                        if (w < 500) {
+                            cols = 1;
+                        }
+                        else if (w < 800) {
+                            cols = 2;
+                        }
+                        else if (w < 1200) {
+                            cols = 3;
+                        }
                         var detail = e['detail'];
-                        var len = _this.querySelectorAll('dp-category').length;
-                        var idx = 1 + (Math.ceil(detail.index / 4) * 4) || len;
-                        var list = _this.items[detail.index - 1];
+                        var len = _this.querySelectorAll('dp-category').length + 1;
+                        var calc = 1 + (Math.ceil(detail.index / cols) * cols);
+                        var idx = calc <= len ? calc : len;
+                        var list = _this.querySelector('dp-category-item-list[visible]');
+                        if (list) {
+                            list.removeAttribute('visible');
+                            _this.removeChild(list);
+                        }
                         if (detail.index === _this.active) {
-                            _this.removeChild(_this.items[_this.active - 1]);
+                            var a = _this.querySelector('dp-category[visible]');
+                            if (a) {
+                                a.appendChild(list);
+                            }
                             _this.active = 0;
                         }
                         else {
                             if (_this.active > 0) {
-                                _this.removeChild(_this.items[_this.active - 1]);
+                                var a = _this.querySelector("dp-category:nth-child(" + _this.active + ")");
+                                if (a) {
+                                    a.removeAttribute('visible');
+                                    a.appendChild(list);
+                                }
                                 _this.active = 0;
                             }
-                            var rowEle = _this.querySelector("dp-category:nth-child(" + idx + ")");
                             _this.active = detail.index;
-                            list.index = detail.index || 1;
-                            list['style'].display = 'block';
-                            if (idx <= len) {
+                            list = _this.querySelector("dp-category:nth-child(" + _this.active + ")").querySelector('dp-category-item-list');
+                            if (idx < len) {
+                                var rowEle = _this.querySelector("dp-category:nth-child(" + idx + ")");
                                 _this.insertBefore(list, rowEle);
                             }
                             else {
                                 _this.appendChild(list);
                             }
+                            list.setAttribute('visible', '');
                         }
                     });
                     this.querySelector('dp-category').setAttribute('visible', '');
@@ -389,6 +429,8 @@ System.register("typescript/dp-category-list/dp-category-list", ["typescript/rhe
                 DPCategoryList.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
                     this[name] = newVal;
                 };
+                DPCategoryList.prototype._setVisibleCategories = function (index) {
+                };
                 return DPCategoryList;
             }(rhelement_3.default));
             exports_4("default", DPCategoryList);
@@ -396,7 +438,7 @@ System.register("typescript/dp-category-list/dp-category-list", ["typescript/rhe
         }
     };
 });
-System.register("typescript/dp-category-list/dp-category", ["typescript/rhelement"], function (exports_5, context_5) {
+System.register("@rhd/dp-category-list/dp-category", ["@rhelements/rhelement"], function (exports_5, context_5) {
     "use strict";
     var __moduleName = context_5 && context_5.id;
     var rhelement_4, DPCategory;
@@ -413,10 +455,11 @@ System.register("typescript/dp-category-list/dp-category", ["typescript/rhelemen
                     var _this = _super.call(this, 'dp-category-list') || this;
                     _this.template = function (el) {
                         var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n<style>\n:host { \n    text-align: center; \n}\nimg, svg { height: 150px; width: 150px; }\n\n:host(:hover), :host([visible]) {\n    color: var(--rhd-blue);\n    fill: var(--rhd-blue);\n}\n</style>\n" + (el.image && el.image.indexOf('svg') < 0 ? "<img src=\"" + el.image + "\">" : el.image) + "\n<h4>" + el.name + "</h4>\n<slot></slot>\n";
+                        tpl.innerHTML = "\n<style>\n:host { \n    grid-column: span 1;\n    border-top: 1px solid var(--rhd-blue);\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    padding: 15px;\n    align-items: center;\n    background-color: var(--rhd-white, #ffffff);\n    position: relative;\n    z-index: 1;\n}\n\nimg, svg { \n    flex: 0 0 60px; \n    padding-right: 24px; \n    height: 60px;   \n}\n\nh4 {\n    flex: 1 0 auto;\n    color: #0066CC;\n    font-family: Overpass;\n    font-size: 14px;\n    font-weight: normal;\n    line-height: 21px;\n    margin: 0 0 5px 0;\n}\n\n:host(:hover), :host([visible]) {\n    cursor: pointer;\n    color: var(--rhd-blue);\n    fill: var(--rhd-blue);\n    border-top: 5px solid var(--rhd-blue);\n    border-bottom: 5px solid var(--rhd-blue);\n}\n\n@media (min-width: 500px) {\n    :host, :host(:hover), :host([visible]) {\n        flex-direction: column;\n        text-align: center; \n        border-top: none;\n        border-bottom: none;\n        background-color: transparent;\n        margin-bottom:30px;\n    }\n\n    :host([visible]):after, :host([visible]):before {\n        top: 100%;\n        left: 50%;\n        border: solid transparent;\n        content: \" \";\n        height: 0;\n        width: 0;\n        position: absolute;\n        pointer-events: none;\n    }\n    \n    :host([visible]):before {\n        border-bottom-color: #CCCCCC;\n        border-width: 15px;\n        margin-left: -15px;\n    }\n    :host([visible]):after {\n        border-bottom-color: #FFFFFF;\n        border-width: 16px;\n        margin-left: -16px;\n    }\n    \n\n    img, svg { flex: 0 0 150px; height: 150px; padding-right: 0; padding-bottom: 15px; }\n}\n\n@media (min-width: 800px) {\n    :host {\n        \n    }\n}\n\n@media (min-width: 1200px) {\n    :host {\n        \n    }\n}\n</style>\n" + (el.image && el.image.indexOf('svg') < 0 ? "<img src=\"" + el.image + "\">" : el.image) + "\n<h4>" + el.name + "</h4>\n<slot></slot>\n";
                         return tpl;
                     };
                     _this._visible = false;
+                    _this._index = -1;
                     _this._showList = _this._showList.bind(_this);
                     return _this;
                 }
@@ -470,6 +513,18 @@ System.register("typescript/dp-category-list/dp-category", ["typescript/rhelemen
                     enumerable: true,
                     configurable: true
                 });
+                Object.defineProperty(DPCategory.prototype, "index", {
+                    get: function () {
+                        return this._index;
+                    },
+                    set: function (val) {
+                        if (this._index === val)
+                            return;
+                        this._index = val;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
                 DPCategory.prototype.connectedCallback = function () {
                     var _this = this;
                     _super.prototype.render.call(this, this.template(this));
@@ -493,13 +548,18 @@ System.register("typescript/dp-category-list/dp-category", ["typescript/rhelemen
                     this.visible = !this.visible;
                 };
                 DPCategory.prototype._getIndex = function (node) {
-                    var i = 1;
-                    while (node = node.previousElementSibling) {
-                        if (node.nodeName === 'DP-CATEGORY') {
-                            ++i;
+                    if (this.index < 0) {
+                        var i = 1;
+                        while (node = node.previousElementSibling) {
+                            if (node.nodeName === 'DP-CATEGORY') {
+                                ++i;
+                            }
                         }
+                        return i;
                     }
-                    return i;
+                    else {
+                        return this.index;
+                    }
                 };
                 DPCategory.prototype._getSVG = function (path) {
                     return __awaiter(this, void 0, void 0, function () {
@@ -526,7 +586,7 @@ System.register("typescript/dp-category-list/dp-category", ["typescript/rhelemen
         }
     };
 });
-System.register("typescript/dp-category-list/dp-category-item", ["typescript/rhelement"], function (exports_6, context_6) {
+System.register("@rhd/dp-category-list/dp-category-item", ["@rhelements/rhelement"], function (exports_6, context_6) {
     "use strict";
     var __moduleName = context_6 && context_6.id;
     var rhelement_5, DPCategoryItem;
@@ -568,7 +628,7 @@ System.register("typescript/dp-category-list/dp-category-item", ["typescript/rhe
         }
     };
 });
-System.register("typescript/dp-category-list/dp-product-short-teaser", ["typescript/rhelement"], function (exports_7, context_7) {
+System.register("@rhd/dp-category-list/dp-product-short-teaser", ["@rhelements/rhelement"], function (exports_7, context_7) {
     "use strict";
     var __moduleName = context_7 && context_7.id;
     var rhelement_6, DPProductShortTeaser;
@@ -585,7 +645,7 @@ System.register("typescript/dp-category-list/dp-product-short-teaser", ["typescr
                     var _this = _super.call(this, 'dp-product-short-teaser') || this;
                     _this.template = function (el) {
                         var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n<style>\n    :host { \n        font-family: Overpass;\n        font-size: 14px;\n        line-height: 21px;\n        margin-bottom: 30px;\n        display: flex;\n        flex-direction: column;\n    }\n    h4 { flex: 0 0 24px; }\n    h4 a {\n        color: #0066CC;\n        font-family: Overpass;\n        font-size: 18px;\n        font-weight: bold;\n        line-height: 24px;\n    }\n\n    div {\n        flex: 1 1 auto;\n    }\n\n    a.more {\n        flex: 0 0 21px;\n        display: block;\n        width: auto;\n        color: #0066CC;\n        font-size: 16px;\n        line-height: 25px;\n    }\n</style>\n<h4><a href=\"" + el.link + "\">" + el.name + "</a></h4>\n<div>\n<slot></slot>\n</div>\n<a class=\"more\" href=\"" + el.downloadLink + "\">View all downloads <i class=\"fas fa-caret-right\"></i></a>\n        ";
+                        tpl.innerHTML = "\n<style>\n    :host { \n        font-family: Overpass;\n        font-size: 14px;\n        line-height: 21px;\n        margin-bottom: 30px;\n        display: flex;\n        flex-direction: column;\n        text-align: left;\n    }\n    h4 { \n        flex: 0 0 24px;\n        font-family: Overpass;\n        font-size: 14px;\n        font-weight: bold;\n        line-height: 24px;\n        margin: 0 0 5px 0;\n    }\n    h4 a {\n        color: #0066CC;\n        text-decoration: none;\n    }\n\n    div {\n        flex: 1 1 auto;\n        margin-bottom: 16px;\n        color: #000000;\n    }\n\n    a.more {\n        flex: 0 0 25px;\n        display: block;\n        width: auto;\n        color: #0066CC;\n        font-size: 16px;\n        line-height: 25px;\n    }\n</style>\n<h4><a href=\"" + el.link + "\">" + el.name + "</a></h4>\n<div>\n<slot></slot>\n</div>\n<a class=\"more\" href=\"" + el.downloadLink + "\">View all downloads <i class=\"fas fa-caret-right\"></i></a>\n        ";
                         return tpl;
                     };
                     return _this;
@@ -651,7 +711,7 @@ System.register("typescript/dp-category-list/dp-product-short-teaser", ["typescr
         }
     };
 });
-System.register("typescript/rhd-app", ["typescript/rhdp-alert", "typescript/dp-category-list/dp-category-list", "typescript/dp-category-list/dp-category", "typescript/dp-category-list/dp-category-item-list", "typescript/dp-category-list/dp-category-item", "typescript/dp-category-list/dp-product-short-teaser"], function (exports_8, context_8) {
+System.register("@rhd/rhd-app", ["@rhd/rhdp-alert", "@rhd/dp-category-list/dp-category-list", "@rhd/dp-category-list/dp-category", "@rhd/dp-category-list/dp-category-item-list", "@rhd/dp-category-list/dp-category-item", "@rhd/dp-category-list/dp-product-short-teaser"], function (exports_8, context_8) {
     "use strict";
     var __moduleName = context_8 && context_8.id;
     var rhdp_alert_1, dp_category_list_1, dp_category_1, dp_category_item_list_1, dp_category_item_1, dp_product_short_teaser_1, RHDApp;
@@ -688,6 +748,7 @@ System.register("typescript/rhd-app", ["typescript/rhdp-alert", "typescript/dp-c
                 }
                 return RHDApp;
             }());
+            exports_8("default", RHDApp);
         }
     };
 });
@@ -700,8 +761,8 @@ var RHDPOSDownload = (function (_super) {
         _this._winURL = "";
         _this.stage_download_url = 'https://developers.stage.redhat.com';
         _this.productDownloads = {
-            "devsuite": { "windowsUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.3.0-GA-installer.exe", "macUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.3.0-GA-bundle-installer-mac.zip", "rhelUrl": "https://developers.redhat.com/products/devsuite/hello-world/#fndtn-rhel" },
-            "cdk": { "windowsUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.3.0-GA-bundle-installer.exe", "macUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.3.0-GA-bundle-installer-mac.zip", "rhelUrl": "https://developers.redhat.com/products/cdk/hello-world/#fndtn-rhel" }
+            "devsuite": { "windowsUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.3.0-GA-installer.exe", "macUrl": "https://developers.redhat.com/download-manager/file/devsuite-2.3.0-GA-bundle-installer-mac.dmg", "rhelUrl": "https://developers.redhat.com/products/devsuite/hello-world/#fndtn-rhel" },
+            "cdk": { "windowsUrl": "https://developers.redhat.com/download-manager/file/cdk-3.4.0-2-minishift-windows-amd64.exe", "macUrl": "https://developers.redhat.com/download-manager/file/cdk-3.4.0-2-minishift-darwin-amd64", "rhelUrl": "https://developers.redhat.com/download-manager/file/cdk-3.4.0-2-minishift-linux-amd64" }
         };
         _this.template = function (strings, product, downloadUrl, platform, version) {
             return "<div class=\"large-8 columns download-link\">\n                    <a class=\"button heavy-cta\" href=\"" + downloadUrl + "\">\n                        <i class=\"fa fa-download\"></i> Download</a>\n                    <div class=\"version-name\">" + product + " " + version + " " + (_this.displayOS ? "for " + platform : '') + "</div>\n                </div>\n                ";
@@ -916,8 +977,8 @@ var RHDPThankyou = (function (_super) {
     __extends(RHDPThankyou, _super);
     function RHDPThankyou() {
         var _this = _super.call(this) || this;
-        _this.template = function (strings, name, directLink) {
-            return "<div class=\"row\">\n                    <div class=\"large-24 medium-24 small-24 columns\">\n                        <div class=\"alert-box alert-info\">\n                            <div class=\"icon\"></div>\n                            <div class=\"alert-content\">\n                                <strong>Your download should start automatically.</strong>\n                                <p>If you have any problems with the download, please use the <a id=\"download-link\" href=\"" + directLink + "\">direct link.</a></p>\n                            </div>\n                        </div>\n                \n                        <div class=\"large-24 medium-16 small-24 columns thankyou\">\n                                <h2>Thank you for downloading the:</h2>\n                                <h2>" + name + "</h2>\n                            <iframe src=\"" + directLink + "\"></iframe>\n                        </div>\n                        <div class=\"large-24 medium-16 small-24 columns\">\n                            <div class=\"thankyou-button\">\n                                <a href=\"/\" class=\"button heavy-cta\">Continue\n                                    to Homepage</a>\n                            </div>\n                        </div>\n                \n                    </div>\n                </div>";
+        _this.template = function (strings, name, directLink, recentDownload) {
+            return "<div class=\"row\">\n                    <div class=\"large-24 medium-24 small-24 columns\">\n                        <div class=\"alert-box alert-info\">\n                            <div class=\"icon\"></div>\n                            <div class=\"alert-content\">\n                                <strong>Your download should start automatically.</strong>\n                                <p>If you have any problems with the download, please use the <a id=\"download-link\" href=\"" + directLink + "\">direct link.</a></p>\n                            </div>\n                        </div>\n                \n                        <div class=\"large-24 medium-16 small-24 columns thankyou\">\n                                <h2>Thank you for downloading the:</h2>\n                                <h2>" + name + "</h2>\n                            " + (recentDownload ? '' : "<iframe src=\"" + directLink + "\"></iframe>") + "\n                        </div>\n                        <div class=\"large-24 medium-16 small-24 columns\">\n                            <div class=\"thankyou-button\">\n                                <a href=\"/\" class=\"button heavy-cta\">Continue\n                                    to Homepage</a>\n                            </div>\n                        </div>\n                \n                    </div>\n                </div>";
         };
         return _this;
     }
@@ -960,9 +1021,10 @@ var RHDPThankyou = (function (_super) {
         configurable: true
     });
     RHDPThankyou.prototype.connectedCallback = function () {
+        this._recentDownload = this.checkRecentDownload();
         this.mediaName = this.mediaName ? this.mediaName : this.stripLabelFromMedia(this.getParameterByName('p'));
         this.directLink = this.directLink ? this.directLink : this.getParameterByName('tcDownloadURL');
-        this.innerHTML = this.template(__makeTemplateObject(["", "", ""], ["", "", ""]), this.mediaName, this.directLink);
+        this.innerHTML = this.template(__makeTemplateObject(["", "", "", ""], ["", "", "", ""]), this.mediaName, this.directLink, this._recentDownload);
     };
     Object.defineProperty(RHDPThankyou, "observedAttributes", {
         get: function () {
@@ -989,6 +1051,26 @@ var RHDPThankyou = (function (_super) {
         if (!results[2])
             return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
+    };
+    RHDPThankyou.prototype.checkRecentDownload = function () {
+        var storageExpiration = 30000, storageName = 'media-download-url';
+        if (window.location.href.indexOf('media-download-confirmation') > 0) {
+            if (window.localStorage.getItem(storageName)) {
+                var recentDownload, timeOfRefer, currentTime;
+                recentDownload = JSON.parse(window.localStorage.getItem(storageName));
+                timeOfRefer = recentDownload.hasOwnProperty('timestamp') ? recentDownload['timestamp'] : 0;
+                currentTime = new Date().getTime();
+                if (currentTime - timeOfRefer > storageExpiration) {
+                    window.localStorage.removeItem(storageName);
+                }
+                return true;
+            }
+            else {
+                var referrerDownload = { value: window.location.href, timestamp: new Date().getTime() };
+                localStorage.setItem(storageName, JSON.stringify(referrerDownload));
+                return false;
+            }
+        }
     };
     return RHDPThankyou;
 }(HTMLElement));
@@ -1499,7 +1581,7 @@ var DevNationLiveApp = (function (_super) {
     return DevNationLiveApp;
 }(HTMLElement));
 customElements.define('devnation-live-app', DevNationLiveApp);
-System.register("typescript/dp-stackoverflow/dp-stackoverflow", ["typescript/rhelement"], function (exports_9, context_9) {
+System.register("@rhd/dp-stackoverflow/dp-stackoverflow", ["@rhelements/rhelement"], function (exports_9, context_9) {
     "use strict";
     var __moduleName = context_9 && context_9.id;
     var rhelement_7, DPStackOverflow;
@@ -4747,6 +4829,7 @@ var RHDPSearchApp = (function (_super) {
     function RHDPSearchApp() {
         var _this = _super.call(this) || this;
         _this._name = 'Search';
+        _this._oburl = '../rhdp-apps/onebox/onebox.json';
         _this.template = "<div class=\"row\">\n    <span class=\"search-outage-msg\"></span>\n    <div class=\"large-24 medium-24 small-24 columns searchpage-middle\">\n        <div class=\"row\">\n            <div class=\"large-24 medium-24 small-24 columns\">\n                <h2>" + _this.name + "</h2>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"large-6 medium-8 small-24 columns\"></div>\n            <div class=\"large-18 medium-16 small-24 columns\"></div>\n        </div>\n    </div></div>";
         _this.urlEle = new RHDPSearchURL();
         _this.query = new RHDPSearchQuery();
@@ -4846,6 +4929,18 @@ var RHDPSearchApp = (function (_super) {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(RHDPSearchApp.prototype, "oburl", {
+        get: function () {
+            return this._oburl;
+        },
+        set: function (val) {
+            if (this._oburl === val)
+                return;
+            this._oburl = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
     RHDPSearchApp.prototype.connectedCallback = function () {
         this.innerHTML = this.template;
         this.active.setAttribute('type', 'active');
@@ -4855,6 +4950,7 @@ var RHDPSearchApp = (function (_super) {
         this.active.filters = this.filterObj;
         this.filters.filters = this.filterObj;
         this.query.filters = this.filterObj;
+        this.onebox.url = this.oburl;
         document.body.appendChild(this.modal);
         this.querySelector('.row .large-24 .row .large-24').appendChild(this.query);
         this.querySelector('.row .large-24 .row .large-24').appendChild(this.box);
@@ -4868,7 +4964,7 @@ var RHDPSearchApp = (function (_super) {
     };
     Object.defineProperty(RHDPSearchApp, "observedAttributes", {
         get: function () {
-            return ['url', 'name'];
+            return ['url', 'name', 'oburl'];
         },
         enumerable: true,
         configurable: true
@@ -4888,6 +4984,7 @@ var RHDPSearchApp = (function (_super) {
     return RHDPSearchApp;
 }(HTMLElement));
 customElements.define('rhdp-search-app', RHDPSearchApp);
+var $ = jQuery;
 var app = window.app = {};
 var full_base_url = Drupal.url.toAbsolute(drupalSettings.path.baseUrl);
 app.baseUrl = full_base_url.substring(0, full_base_url.lastIndexOf('/'));
@@ -4981,8 +5078,8 @@ app.products = {
     "migrationtoolkit": { "upstream": null, "stackoverflow": ["rhamt"], "buzz_tags": ["windup", "rhamt"] }
 };
 app.products.downloads = {
-    "devsuite": { "windowsUrl": "/download-manager/file/devsuite-2.3.0-GA-installer.exe", "macUrl": "/download-manager/file/devsuite-2.3.0-GA-bundle-installer-mac.zip", "rhelUrl": "/products/devsuite/hello-world/#fndtn-rhel" },
-    "cdk": { "windowsUrl": "/download-manager/file/devsuite-2.3.0-GA-bundle-installer.exe", "macUrl": "/download-manager/file/devsuite-2.3.0-GA-bundle-installer-mac.zip", "rhelUrl": "/products/cdk/hello-world/#fndtn-rhel" }
+    "devsuite": { "windowsUrl": "/download-manager/file/devsuite-2.3.0-GA-installer.exe", "macUrl": "/download-manager/file/devsuite-2.3.0-GA-bundle-installer-mac.dmg", "rhelUrl": "/products/devsuite/hello-world/#fndtn-rhel" },
+    "cdk": { "windowsUrl": "/download-manager/file/cdk-3.4.0-2-minishift-windows-amd64.exe", "macUrl": "/download-manager/file/cdk-3.4.0-2-minishift-darwin-amd64", "rhelUrl": "/download-manager/file/cdk-3.4.0-2-minishift-linux-amd64" }
 };
 app.mktg_ops = {};
 app.ssoConfig = {};
@@ -5863,20 +5960,20 @@ app.buzz.init();
     };
 });
 var dcp = angular.module('dcp', []);
-dcp.config(function ($provide) {
-    $provide.decorator('$browser', function ($delegate) {
-        var superUrl = $delegate.url;
-        $delegate.url = function (url, replace) {
-            if (url !== undefined) {
-                return superUrl(url.replace(/\%20/g, "+"), replace);
-            }
-            else {
-                return superUrl().replace(/\+/g, "%20");
-            }
-        };
-        return $delegate;
-    });
-});
+dcp.config(['$provide', function ($provide) {
+        $provide.decorator('$browser', function ($delegate) {
+            var superUrl = $delegate.url;
+            $delegate.url = function (url, replace) {
+                if (url !== undefined) {
+                    return superUrl(url.replace(/\%20/g, "+"), replace);
+                }
+                else {
+                    return superUrl().replace(/\+/g, "%20");
+                }
+            };
+            return $delegate;
+        });
+    }]);
 dcp.factory('httpInterceptor', ['$q', '$injector', function ($q, $injector) {
         return {
             request: function (config) {
@@ -5905,66 +6002,66 @@ dcp.factory('httpInterceptor', ['$q', '$injector', function ($q, $injector) {
 dcp.config(['$httpProvider', function ($httpProvider) {
         $httpProvider.interceptors.push('httpInterceptor');
     }]);
-dcp.service('materialService', function ($http, $q) {
-    this.deferred_ = $q.defer();
-    this.getMaterials = function (params) {
-        var params = params || {};
-        var query = {};
-        query.newFirst = true;
-        if (params.project === 'devstudio' && params.sys_type === 'quickstart') {
-            params.project = '';
-        }
-        if (params.query) {
-            query.query = params.query;
-        }
-        if (params.project) {
-            query.project = params.project;
-        }
-        if (params.randomize) {
-            query.randomize = params.randomize;
-        }
-        if (params.size) {
-            query['size' + params.size] = true;
-        }
-        if (params.sys_type &&
-            (($.isArray(params.sys_type) && params.sys_type.length > 0) ||
-                ($.trim(params.sys_type).length > 0))) {
-            query.sys_type = params.sys_type;
-        }
-        if (!params.type) {
-            query.type = ['jbossdeveloper_quickstart', 'jbossdeveloper_demo', 'jbossdeveloper_bom', 'jbossdeveloper_archetype', 'jbossdeveloper_example', 'jbossdeveloper_vimeo', 'jbossdeveloper_youtube', 'jbossdeveloper_book', 'rht_knowledgebase_article', 'rht_knowledgebase_solution', 'jbossorg_blog'];
-        }
-        if (params.publish_date_from) {
-            query.publish_date_from = params.publish_date_from;
-        }
-        if (params.from) {
-            query.from = params.from;
-        }
-        if (true) {
-            this.deferred_.resolve(undefined);
-        }
+dcp.service('materialService', ['$http', '$q', function ($http, $q) {
         this.deferred_ = $q.defer();
-        var promise = this.deferred_.promise;
-        var deferred = this.deferred_;
-        $http.get(app.dcp.url.developer_materials, { params: query, timeout: promise })
-            .success(function (data) {
-            deferred.resolve(data);
-        })
-            .error(function () {
-            $(".panel[ng-hide='data.materials.length']").replaceWith(app.dcp.error_message);
-        });
-        return promise;
-    };
-});
-dcp.factory('dataFlowService', function ($location) {
-    var service = function () {
-        this.processParams = function (params) {
-            var params_ = params || {};
-            $location.path($.param(params_));
+        this.getMaterials = function (params) {
+            var params = params || {};
+            var query = {};
+            query.newFirst = true;
+            if (params.project === 'devstudio' && params.sys_type === 'quickstart') {
+                params.project = '';
+            }
+            if (params.query) {
+                query.query = params.query;
+            }
+            if (params.project) {
+                query.project = params.project;
+            }
+            if (params.randomize) {
+                query.randomize = params.randomize;
+            }
+            if (params.size) {
+                query['size' + params.size] = true;
+            }
+            if (params.sys_type &&
+                (($.isArray(params.sys_type) && params.sys_type.length > 0) ||
+                    ($.trim(params.sys_type).length > 0))) {
+                query.sys_type = params.sys_type;
+            }
+            if (!params.type) {
+                query.type = ['jbossdeveloper_quickstart', 'jbossdeveloper_demo', 'jbossdeveloper_bom', 'jbossdeveloper_archetype', 'jbossdeveloper_example', 'jbossdeveloper_vimeo', 'jbossdeveloper_youtube', 'jbossdeveloper_book', 'rht_knowledgebase_article', 'rht_knowledgebase_solution', 'jbossorg_blog'];
+            }
+            if (params.publish_date_from) {
+                query.publish_date_from = params.publish_date_from;
+            }
+            if (params.from) {
+                query.from = params.from;
+            }
+            if (true) {
+                this.deferred_.resolve(undefined);
+            }
+            this.deferred_ = $q.defer();
+            var promise = this.deferred_.promise;
+            var deferred = this.deferred_;
+            $http.get(app.dcp.url.developer_materials, { params: query, timeout: promise })
+                .success(function (data) {
+                deferred.resolve(data);
+            })
+                .error(function () {
+                $(".panel[ng-hide='data.materials.length']").replaceWith(app.dcp.error_message);
+            });
+            return promise;
         };
-    };
-    return new service();
-});
+    }]);
+dcp.factory('dataFlowService', ['$location', function ($location) {
+        var service = function () {
+            this.processParams = function (params) {
+                var params_ = params || {};
+                $location.path($.param(params_));
+            };
+        };
+        return new service();
+    }]);
 dcp.factory('helper', function () {
     var Helper = function () {
         this.firstIfArray = function (input) {
@@ -8298,7 +8395,6 @@ catch (c) {
 })(jQuery, window, window.document);
 ;
 (function ($, window, document, undefined) {
-    'use strict';
     Foundation.libs.accordion = {
         name: 'accordion',
         version: '5.4.4',
@@ -9644,36 +9740,36 @@ function indexOfObjectValueInArray(arr, key, val) {
     }
     return idx;
 }
-search.service('searchService', function ($http, $q) {
-    this.getSearchResults = function (params) {
-        var deferred = $q.defer();
-        if ((/stack-overflow/.test(window.location.href)) || (/help/.test(window.location.href))) {
-            var isStackOverflow = true;
-        }
-        if (isStackOverflow) {
-            var search = Object.assign(params, {
-                field: ["sys_url_view", "sys_title", "is_answered", "author", "sys_tags", "answers", "sys_created", "view_count", "answer_count", "down_vote_count", "up_vote_count", "sys_content"],
-                query_highlight: true
+search.service('searchService', ['$http', '$q', function ($http, $q) {
+        this.getSearchResults = function (params) {
+            var deferred = $q.defer();
+            if ((/stack-overflow/.test(window.location.href)) || (/help/.test(window.location.href))) {
+                var isStackOverflow = true;
+            }
+            if (isStackOverflow) {
+                var search = Object.assign(params, {
+                    field: ["sys_url_view", "sys_title", "is_answered", "author", "sys_tags", "answers", "sys_created", "view_count", "answer_count", "down_vote_count", "up_vote_count", "sys_content"],
+                    query_highlight: true
+                });
+                var endpoint = app.dcp.url.stackoverflow;
+            }
+            else {
+                var search = Object.assign(params, {
+                    query_highlight: true,
+                    type: ['rht_website', 'jbossdeveloper_quickstart', 'jbossdeveloper_demo', 'jbossdeveloper_bom', 'jbossdeveloper_archetype', 'jbossdeveloper_example', 'jbossdeveloper_vimeo', 'jbossdeveloper_youtube', 'jbossdeveloper_book', 'jbossdeveloper_event', 'rht_knowledgebase_article', 'rht_knowledgebase_solution', 'stackoverflow_question', 'jbossorg_sbs_forum', 'jbossorg_blog', 'rht_apidocs']
+                });
+                var endpoint = app.dcp.url.developer_materials;
+            }
+            $http.get(endpoint, { params: search })
+                .success(function (data) {
+                deferred.resolve(data);
+            })
+                .error(function (err) {
+                throw new Error(err);
             });
-            var endpoint = app.dcp.url.stackoverflow;
-        }
-        else {
-            var search = Object.assign(params, {
-                query_highlight: true,
-                type: ['rht_website', 'jbossdeveloper_quickstart', 'jbossdeveloper_demo', 'jbossdeveloper_bom', 'jbossdeveloper_archetype', 'jbossdeveloper_example', 'jbossdeveloper_vimeo', 'jbossdeveloper_youtube', 'jbossdeveloper_book', 'jbossdeveloper_event', 'rht_knowledgebase_article', 'rht_knowledgebase_solution', 'stackoverflow_question', 'jbossorg_sbs_forum', 'jbossorg_blog', 'rht_apidocs']
-            });
-            var endpoint = app.dcp.url.developer_materials;
-        }
-        $http.get(endpoint, { params: search })
-            .success(function (data) {
-            deferred.resolve(data);
-        })
-            .error(function (err) {
-            throw new Error(err);
-        });
-        return deferred.promise;
-    };
-});
+            return deferred.promise;
+        };
+    }]);
 search.directive('resourceType', function () {
     return {
         restrict: 'A',
@@ -9805,57 +9901,57 @@ search.filter('tagGroup', function () {
         return modifiedTags;
     };
 });
-search.filter('title', function ($sce) {
-    return function (result) {
-        if (result.highlight && result.highlight.sys_title) {
-            return $sce.trustAsHtml(result.highlight.sys_title[0]);
-        }
-        return $sce.trustAsHtml(result.fields.sys_title[0]);
-    };
-});
-search.filter('description', function ($sce, $sanitize) {
-    return function (result) {
-        var description = "";
-        if (result.highlight && result.highlight.sys_content_plaintext) {
-            description = result.highlight.sys_content_plaintext.join('...');
-        }
-        else if (result.highlight && result.highlight.sys_description) {
-            description = result.highlight.sys_description[0];
-        }
-        else if (!result.highlight && result.fields.sys_content_plaintext) {
-            description = result.fields.sys_content_plaintext[0];
-        }
-        else {
-            description = result.fields.sys_description[0];
-        }
-        return description;
-    };
-});
-search.filter('question', function ($sce) {
-    return function (result) {
-        if (result.highlight && result.highlight._source.sys_content_plaintext) {
-            return $sce.trustAsHtml(result.highlight._source.sys_content_plaintext[0].replace(/<[^>]+>/gm, ''));
-        }
-        return $sce.trustAsHtml(result._source.sys_content_plaintext.replace(/<[^>]+>/gm, ''));
-    };
-});
-search.filter('htmlToPlaintext', function ($sce) {
-    return function (result) {
-        return String(result).replace(/<[^>]+>/gm, '');
-    };
-});
-search.filter('author', function ($sce) {
-    return function (result) {
-        var authorName = result._source.author.split('-')[0];
-        return authorName;
-    };
-});
-search.filter('stackDate', function ($sce) {
-    return function (result) {
-        var time = jQuery.timeago(new Date((result._source.sys_created / 1000) * 1000));
-        return time;
-    };
-});
+search.filter('title', ['$sce', function ($sce) {
+        return function (result) {
+            if (result.highlight && result.highlight.sys_title) {
+                return $sce.trustAsHtml(result.highlight.sys_title[0]);
+            }
+            return $sce.trustAsHtml(result.fields.sys_title[0]);
+        };
+    }]);
+search.filter('description', ['$sce', '$sanitize', function ($sce, $sanitize) {
+        return function (result) {
+            var description = "";
+            if (result.highlight && result.highlight.sys_content_plaintext) {
+                description = result.highlight.sys_content_plaintext.join('...');
+            }
+            else if (result.highlight && result.highlight.sys_description) {
+                description = result.highlight.sys_description[0];
+            }
+            else if (!result.highlight && result.fields.sys_content_plaintext) {
+                description = result.fields.sys_content_plaintext[0];
+            }
+            else {
+                description = result.fields.sys_description[0];
+            }
+            return description;
+        };
+    }]);
+search.filter('question', ['$sce', function ($sce) {
+        return function (result) {
+            if (result.highlight && result.highlight._source.sys_content_plaintext) {
+                return $sce.trustAsHtml(result.highlight._source.sys_content_plaintext[0].replace(/<[^>]+>/gm, ''));
+            }
+            return $sce.trustAsHtml(result._source.sys_content_plaintext.replace(/<[^>]+>/gm, ''));
+        };
+    }]);
+search.filter('htmlToPlaintext', ['$sce', function ($sce) {
+        return function (result) {
+            return String(result).replace(/<[^>]+>/gm, '');
+        };
+    }]);
+search.filter('author', ['$sce', function ($sce) {
+        return function (result) {
+            var authorName = result._source.author.split('-')[0];
+            return authorName;
+        };
+    }]);
+search.filter('stackDate', ['$sce', function ($sce) {
+        return function (result) {
+            var time = jQuery.timeago(new Date((result._source.sys_created / 1000) * 1000));
+            return time;
+        };
+    }]);
 search.controller('SearchController', ['$scope', '$window', 'searchService', searchCtrlFunc]);
 function searchCtrlFunc($scope, $window, searchService) {
     var isStackOverflow = ((/stack-overflow/.test(window.location.href)) || (/help/.test(window.location.href)));
@@ -9997,7 +10093,7 @@ function searchCtrlFunc($scope, $window, searchService) {
             history.pushState($scope.params, $scope.params.query, searchPage + '?q=' + $scope.params.query);
         }
         if (isStackOverflow) {
-            if (/help/.test(window.location.href)) {
+            if (window.location.href.indexOf('products') >= 0 && window.location.href.indexOf('help') >= 0) {
                 if ($('#stackOverflowProduct').length) {
                     var product = $('#stackOverflowProduct').data('product');
                 }
@@ -15703,101 +15799,6 @@ $(function () {
         app.latest.fetch();
     }
 });
-dcp.service('searchService', function ($http, $q) {
-    this.getData = function (filter) {
-        var deferred = $q.defer();
-        $http.get(app.dcp.url.events, { params: filter }).success(function (data) {
-            deferred.resolve(data);
-        });
-        return deferred.promise;
-    };
-});
-dcp.service('helpers', function () {
-    this.getKeys = function (obj) {
-        var r = [];
-        for (var k in obj) {
-            if (!obj.hasOwnProperty(k))
-                continue;
-            r.push(Number(k));
-        }
-        return r;
-    };
-    this.recordEvent = function (event, key, store) {
-        if (store && key && event && event.start_date && event.end_date) {
-            store[key] = store[key] || [];
-            store[key].push(event);
-            try {
-                var start = moment(event.start_date);
-                var end = moment(event.end_date);
-                var startMonths = this.getAbsoluteMonths_(start);
-                var endMonths = this.getAbsoluteMonths_(end);
-                var mdiff = endMonths - startMonths;
-                if (mdiff > 0) {
-                    var nmonth_ = key;
-                    for (var i = 0; i < mdiff; i++) {
-                        nmonth_ = moment(nmonth_).add(1, 'month').toDate().getTime();
-                        store[nmonth_] = store[nmonth_] || [];
-                        store[nmonth_].push(event);
-                    }
-                }
-            }
-            catch (ignore) {
-                if (console && console.log) {
-                    console.log(ignore);
-                }
-            }
-        }
-    };
-    this.getAbsoluteMonths_ = function (momentDate) {
-        var months = Number(momentDate.format("MM"));
-        var years = Number(momentDate.format("YYYY"));
-        return months + (years * 12);
-    };
-});
-dcp.controller('eventsController', function ($scope, searchService, helpers) {
-    window.$scope = $scope;
-    $scope.filter = {};
-    $scope.filters = { regions: [], solutions: [], products: [] };
-    $scope.filtersFilled = false;
-    $scope.getEvents = function () {
-        $scope.monthKeys = [];
-        $scope.events = {};
-        searchService.getData($scope.filter).then(function (data) {
-            var i = 0;
-            var item = null;
-            if (!$scope.filtersFilled) {
-                for (i = 0; i < data.aggregations.product_global.product_filter.product.buckets.length; i++) {
-                    item = data.aggregations.product_global.product_filter.product.buckets[i];
-                    $scope.filters.products.push({ text: item.key, value: item.key });
-                }
-                for (i = 0; i < data.aggregations.region_global.region_filter.region.buckets.length; i++) {
-                    item = data.aggregations.region_global.region_filter.region.buckets[i];
-                    $scope.filters.regions.push({ text: item.key, value: item.key });
-                }
-                for (i = 0; i < data.aggregations.solution_global.solution_filter.solution.buckets.length; i++) {
-                    item = data.aggregations.solution_global.solution_filter.solution.buckets[i];
-                    $scope.filters.solutions.push({ text: item.key, value: item.key });
-                }
-                $scope.filtersFilled = true;
-            }
-            var monthStartBuckets_ = data.aggregations.months_by_start_date.buckets;
-            for (i = 0; i < monthStartBuckets_.length; i++) {
-                var bucket = monthStartBuckets_[i];
-                var monthlyEvents_ = bucket.events.hits.hits;
-                for (var e = 0; e < monthlyEvents_.length; e++) {
-                    helpers.recordEvent(monthlyEvents_[e]._source, bucket.key, $scope.events);
-                }
-                $scope.monthKeys = helpers.getKeys($scope.events);
-            }
-        });
-    };
-    $scope.getEvents();
-});
-dcp.filter('moment', function () {
-    return function (dateString, format) {
-        return moment.utc(dateString).format(format);
-    };
-});
 $(document).ready(function () {
     $("input[type='radio']").on("click", function (event) {
         if (($('input[type="radio"][name="Q1"]:checked').attr("value") == "q1a1") && ($('input[type="radio"][name="Q2"]:checked').attr("value") == "q2a1")) {
@@ -15901,11 +15902,11 @@ app.productForums.render = function (materials) {
             '<a href="' + material.fields.sys_url_view[0] + '" class="qtn-title" target="_blank" rel="noopener noreferrer">',
             material.fields.sys_title[0],
             '</a>',
-            '<h5>',
-            '<p>',
+            '</h5>',
+            '<small>',
             '<span class="replies">' + material.fields.replies_count + ' replies</span>',
             '<span class="date right">Last reply on ' + formattedDate + '</span>',
-            '</p>',
+            '</small>',
             '</li>'
         ].join('');
         html.push(item);
@@ -16181,9 +16182,7 @@ jQuery(function () {
 app = window.app || {};
 app.middlewareBlog = {};
 app.middlewareBlog.fetch = function () {
-    console.log("here 2");
     $.getJSON(app.dcp.url.search + '/middlewareblogs?newFirst=true&from=0&size=2', function (data) {
-        console.log("here 3");
         if (data.hits && data.hits.hits) {
             app.middlewareBlog.render(data.hits.hits);
         }
@@ -16246,7 +16245,12 @@ $(function () {
     }
 });
 $(function () {
-    $(".collapsible-section h3").on("click", function () {
+    $(".rhd-menu .menu-item--expanded > a").each(function () {
+        $(this).replaceWith("<h3 class='section-toggle'>" + $(this).text() + "</h3>");
+    });
+});
+$(function () {
+    $(".rhd-menu .menu-item--expanded h3").on("click", function () {
         var windowsize = document.body.clientWidth;
         if (windowsize <= 1170) {
             $(this).parent().toggleClass("collapsed");
@@ -16261,10 +16265,10 @@ function checkWidth() {
     var windowsize = document.body.clientWidth;
     ;
     if (windowsize <= 1170) {
-        $(".collapsible-section").addClass("collapsed");
+        $(".menu-item--expanded").addClass("collapsed");
     }
     else {
-        $(".collapsible-section").removeClass("collapsed");
+        $(".menu-item--expanded").removeClass("collapsed");
     }
 }
 ;
