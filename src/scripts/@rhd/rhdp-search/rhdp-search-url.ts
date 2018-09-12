@@ -1,4 +1,4 @@
-class RHDPSearchURL extends HTMLElement {
+export default class RHDPSearchURL extends HTMLElement {
     _uri = new URL(window.location.href); // https://developers.redhat.com/search/?q=term+term1+term2&f=a+b+c&s=sort&r=100
     _term = this.uri.searchParams.get('t');
     _filters = this._setFilters(this.uri.searchParams.getAll('f'));
@@ -7,7 +7,8 @@ class RHDPSearchURL extends HTMLElement {
     _params;
     _history;
     _init = true;
-
+    
+    
     get uri() {
         return this._uri;
     }
@@ -19,8 +20,17 @@ class RHDPSearchURL extends HTMLElement {
     }
 
     get term() {
-        return this._term;
+        // Hack for IE11 to remove the enfoced %2b encoding of + symbol in url
+        var ua = window.navigator.userAgent; //Check the userAgent property of the window.navigator object
+        var trident = ua.indexOf('Trident/'); //IE 11
+        var isIE = trident > 0;
+        var tmpTerm = this._term;
+        if(isIE){
+            tmpTerm = tmpTerm.replace( "+", " " );
+        }
+        return tmpTerm;
     }
+
     set term(val) {
         if (this._term === val) return;
         this._term = val;

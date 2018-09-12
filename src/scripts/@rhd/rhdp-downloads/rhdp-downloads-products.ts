@@ -1,4 +1,4 @@
-class RHDPDownloadsProducts extends HTMLElement {
+export default class RHDPDownloadsProducts extends HTMLElement {
     private _category;
     _products = {
         "products": [{
@@ -101,15 +101,15 @@ class RHDPDownloadsProducts extends HTMLElement {
             "version": "",
             "learnMoreLink": "/products/red-hat-decision-manager/overview/"
         }, {
-            "productName": "Red Hat JBoss BPM Suite",
+            "productName": "Red Hat Process Automation Manager",
             "groupHeading": "INTEGRATION AND AUTOMATION",
-            "productCode": "bpmsuite",
+            "productCode": "rhpam",
             "featured": false,
             "dataFallbackUrl": "https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=bpm.suite&productChanged=yes",
             "downloadLink": "",
             "description": "A platform that combines business rules and process management (BPM), and complex event processing.",
             "version": "",
-            "learnMoreLink": "/products/bpmsuite/overview/"
+            "learnMoreLink": "/products/rhpam/overview/"
         }, {
             "productName": "Red Hat JBoss Data Virtualization",
             "groupHeading": "INTEGRATION AND AUTOMATION",
@@ -226,3 +226,5 @@ class RHDPDownloadsProducts extends HTMLElement {
 
 
 }
+
+window.customElements.define('rhdp-downloads-products', RHDPDownloadsProducts);

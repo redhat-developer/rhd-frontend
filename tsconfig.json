@@ -10,12 +10,15 @@
         "pretty": true,
         "allowJs": true,
         "baseUrl": "src/scripts",
+        //"rootDirs": ["node_modules", "src/scripts"],
         "lib":[
           "dom", "es5", "es6"
         ],
         "outFile": "rhd.js"
+        //"outDir": "scripts"
     },
     "include": [
+        //"node_modules/@fortawesome/**/*.es.js",
         "src/scripts/@rhelements/rhelement.ts",
         "src/scripts/@rhd/**/*.ts",
         "src/scripts/@rhd/js/init.js",
@@ -39,7 +42,6 @@
         "src/scripts/@rhd/js/foundation/foundation.reveal.js",
         "src/scripts/@rhd/js/foundation/foundation.tooltip.js",
         "src/scripts/@rhd/js/foundation/foundation.dropdown.js",
-        "src/scripts/@rhd/js/foundation/foundation.equalizer.js",
         "src/scripts/@rhd/js/foundation/foundation.accordion.js",
         "src/scripts/@rhd/js/vendor/swipe.js",
         "src/scripts/@rhd/js/mobile.js",
@@ -47,6 +49,8 @@
         "src/scripts/@rhd/js/vendor/jquery.timeago.js",
         "src/scripts/@rhd/js/vendor/jquery.paging.min.js",
         "src/scripts/@rhd/js/vendor/ytembed.js",
+        "src/scripts/@rhd/js/vendor/clamp.js",
+        "src/scripts/@rhd/js/line-clamp-binding.js",
         "src/scripts/@rhd/js/terms-and-conditions.js",
         "src/scripts/@rhd/js/search.js",
         "src/scripts/@rhd/js/os-filter.js",
@@ -90,6 +94,7 @@
         "src/scripts/@rhd/js/middleware-blog.js",
         "src/scripts/@rhd/js/scroll-to-top.js",
         "src/scripts/@rhd/js/footer.js",
+        "src/scripts/@rhd/js/header.js",
         "src/scripts/@rhd/js/vendor/url-polyfill.min.js",
         "src/scripts/@rhd/js/vendor/rh-datetime.min.js",
         "src/scripts/@rhd/js/pdf-links.js",
