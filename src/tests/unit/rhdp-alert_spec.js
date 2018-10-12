@@ -1,14 +1,10 @@
-"use strict";
+
 // Alert component testing
 describe('Alert component', function() {
-    var wc, 
-        heading = 'Test Heading', 
-        txt = 'Test Text';
+    var wc, rdy = false;
     
     beforeEach(function() {
             wc = new RHDPAlert();
-            wc.heading = heading;
-            wc.innerText = txt;
             document.body.appendChild(wc);
     });
 
@@ -17,8 +13,7 @@ describe('Alert component', function() {
     });
 
     it('should have the right structure', function() {
-        expect(wc.innerText).toEqual(txt);
-        expect(wc.shadowRoot.querySelector('strong').innerText).toEqual(heading);
+        expect(wc.querySelectorAll('.alert-box').length).toBe(1);
     });
 
 });

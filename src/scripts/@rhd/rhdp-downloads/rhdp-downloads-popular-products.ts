@@ -1,6 +1,4 @@
-import RHDPDownloadsPopularProduct from '@rhd/rhdp-downloads/rhdp-downloads-popular-product';
-
-export default class RHDPDownloadsPopularProducts extends HTMLElement {
+class RHDPDownloadsPopularProducts extends HTMLElement {
 
     private _productList;
 
@@ -55,5 +53,3 @@ export default class RHDPDownloadsPopularProducts extends HTMLElement {
 
 
 }
-
-window.customElements.define('rhdp-downloads-popular-products', RHDPDownloadsPopularProducts);

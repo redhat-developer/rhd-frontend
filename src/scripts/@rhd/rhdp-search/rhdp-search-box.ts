@@ -1,4 +1,4 @@
-export default class RHDPSearchBox extends HTMLElement {
+class RHDPSearchBox extends HTMLElement {
     _term = '';
 
     get term() {

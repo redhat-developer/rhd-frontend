@@ -1,8 +1,6 @@
 import RHElement from '@rhelements/rhelement';
-// import {library, icon} from '@fortawesome/fontawesome-svg-core';
-// import {fas} from '@fortawesome/free-solid-svg-icons';
-
-// library.add(fas);
+// import fontawesome from '@fortawesome/fontawesome';
+// import * as faTimes from '@fortawesome/fontawesome-pro-solid/faTimes';
 
 export default class RHDPAlert extends RHElement {
     template = el => {
@@ -12,28 +10,24 @@ export default class RHDPAlert extends RHElement {
         :host {
             color: #363636 !important;
             display: flex;
-            flex-direction: row;
-            display: grid;
-            grid-template-columns: 1.5em auto 1fr;
-            grid-template-rows: auto;
-            grid-gap: .5em;
+            flex-direction: ${el.size !== 'xl' ? 'row' : 'column'};
             border-width: 1px;
             border-style: solid;
             padding: 10px 20px;
             margin: 1.5em auto;
             font-size: 1em;
-            background-color: #dcedf8;
-            border-color: #87aac1;
+            background-color: ${el.background};
+            border-color: ${el.border};
             line-height: 24px;
             vertical-align: middle;
         }
 
         h3, strong {
-            margin: 0;
-            display: inline;
+            margin-bottom: 0;
+            display: inline
         }
 
-        p { margin: 0; }
+        strong { margin-right: .5em; }
           
         img {
             flex: 0 0 1.5em;
@@ -41,47 +35,11 @@ export default class RHDPAlert extends RHElement {
             display: block;
             position: relative;
             margin-right: 10px;
-        }
-
-        :host([type="success"]) {
-            background-color: #e9f4e9;
-            border-color: #8db28a;
-        }
-        :host([type="warning"]) {
-            background-color: #fdf2e5;
-            border-color: #deb142;
-        }
-        :host([type="error"]) {
-            background-color: #ffe6e6;
-            border-color: #d8aaab;
-        }
-
-        :host([size="xl"]) {
-            grid-template-columns: 1.5em 1fr 1.5em;
-            grid-template-rows: auto 1fr;
-            flex-direction: column;
-        }
-
-        :host([size="xl"]) img {
-            grid-column: 1;
-            grid-row: 1;
-        }
-
-        :host([size="xl"]) h3, :host([size="xl"]) strong {
-            font-weight: 400;
-            font-size: 27px;
-            grid-column: 2;
-            grid-row: 1;
-        }
-
-        :host([size="xl"]) .close {
-            grid-column: 3;
-            grid-row: 1;
-        }
-
-        :host([size="xl"]) p {
-            grid-column: 2;
-            grid-row: 2;
+            ${el.size !== 'xl' ? '' : `
+            display: inline;
+            float: left;
+            margin-left: 1em;
+            `}
         }
         
         a.close {
@@ -98,20 +56,19 @@ export default class RHDPAlert extends RHElement {
         ${el.size === 'xl' ? '<h3>' : ''}
         ${el.heading ? `<strong>${el.heading}</strong>` : ''}
         ${el.size === 'xl' ? '</h3>' : ''}
-        <p><slot>${el.text}</slot></p>
-        ${el.size === 'xl' ? `<a class="close" href="#"><i class="fas fa-times"></i></a>` : ''}`;
-        // ${icon({prefix: 'fas', iconName: 'times'}).html}
+        <slot></slot>
+        ${el.size === 'xl' ? `<a class="close"><i class="fas fa-times"</a>` : ''}`;
         // ${el.size === 'xl' ? `<a class="close">${fontawesome.icon(faTimes)}</a>` : ''}`;
         return tpl;
     }
     
     _type = 'info';
-    _size : string;
-    _heading : string;
+    _size : String;
+    _heading : String;
     _icon = 'https://static.jboss.org/rhd/images/icons/RHD_alerticon_info.svg';
     _background = '#dcedf8';
     _border = '#87aac1';
-    _text : string;
+    _text : String;
 
     get type() {
         return this._type;
@@ -122,19 +79,26 @@ export default class RHDPAlert extends RHElement {
         switch(this._type) {
             case 'success':
                 this.icon = 'https://static.jboss.org/rhd/images/icons/RHD_alerticon_success.svg';
+                this.background = '#e9f4e9';
+                this.border = '#8db28a';
                 break;
             case 'warning':
                 this.icon = 'https://static.jboss.org/rhd/images/icons/RHD_alerticon_warning.svg';
+                this.background = '#fdf2e5';
+                this.border = '#deb142';
                 break;
             case 'error':
                 this.icon = 'https://static.jboss.org/rhd/images/icons/RHD_alerticon_error.svg';
+                this.background = '#ffe6e6';
+                this.border = '#d8aaab';
                 break;
             case 'info':
             default:
                 this.icon = 'https://static.jboss.org/rhd/images/icons/RHD_alerticon_info.svg';
+                this.background = '#dcedf8';
+                this.border = '#87aac1';
                 break;
         }
-        this.setAttribute('type', this._type);
     }
 
     get size() {
@@ -143,7 +107,6 @@ export default class RHDPAlert extends RHElement {
     set size(val) {
         if (this._size === val) return;
         this._size = val;
-        this.setAttribute('size', this._size)
     }
 
     get heading() {
@@ -170,21 +133,36 @@ export default class RHDPAlert extends RHElement {
         this._icon = val;
     }
 
-    constructor(element: string='rhdp-alert') {
-        super(element);
+    get background() {
+        return this._background;
+    }
+    set background(val) {
+        if (this._background === val) return;
+        this._background = val;
+    }
+
+    get border() {
+        return this._border;
+    }
+    set border(val) {
+        if (this._border === val) return;
+        this._border = val;
+    }
+
+    constructor() {
+        super('rhdp-alert');
+
+        this.text = this.innerHTML;
     }
 
     connectedCallback() {
         super.render(this.template(this));
 
-        const lnk = this.shadowRoot.querySelector('.close');
-        if (lnk) {
-            lnk.addEventListener('click', e => {
-                e.preventDefault();
-                console.log('Close');
+        this.addEventListener('click', e => {
+            if (e.target && e.target['className'] === 'close') {
                 this.innerHTML = '';
-            });
-        }
+            }
+        })
     }
 
     static get observedAttributes() {

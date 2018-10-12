@@ -1,4 +1,4 @@
-export default class RHDPSearchOneBox extends HTMLElement {
+class RHDPSearchOneBox extends HTMLElement {
     _term = '';
     _url = '../rhdp-apps/onebox/onebox.json';
     _data;

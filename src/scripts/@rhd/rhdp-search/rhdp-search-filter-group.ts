@@ -1,4 +1,4 @@
-export default class RHDPSearchFilterGroup extends HTMLElement {
+class RHDPSearchFilterGroup extends HTMLElement {
     _key;
     _name;
     _items;

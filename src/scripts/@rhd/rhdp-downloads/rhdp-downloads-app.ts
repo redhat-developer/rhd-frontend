@@ -1,8 +1,4 @@
-import RHDPDownloadsPopularProducts from '@rhd/rhdp-downloads/rhdp-downloads-popular-products';
-import RHDPDownloadsProducts from '@rhd/rhdp-downloads/rhdp-downloads-products';
-import RHDPDownloadsAll from '@rhd/rhdp-downloads/rhdp-downloads-all';
-
-export default class RHDPDownloadsApp extends HTMLElement {
+class RHDPDownloadsApp extends HTMLElement {
     constructor() {
         super();
     }
@@ -110,5 +106,3 @@ export default class RHDPDownloadsApp extends HTMLElement {
     }
 
 }
-
-window.customElements.define('rhdp-downloads-app', RHDPDownloadsApp);

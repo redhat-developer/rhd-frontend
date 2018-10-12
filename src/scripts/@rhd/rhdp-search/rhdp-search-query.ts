@@ -1,6 +1,6 @@
-import RHDPSearchFilterItem from '@rhd/rhdp-search/rhdp-search-filter-item';
+// import {RHDPSearchFilterItem} from './rhdp-search-filter-item';
 
-export default class RHDPSearchQuery extends HTMLElement {
+class RHDPSearchQuery extends HTMLElement {
     _filters;
     _activeFilters;
     _limit = 10;

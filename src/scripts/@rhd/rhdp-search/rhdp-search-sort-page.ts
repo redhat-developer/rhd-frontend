@@ -1,4 +1,4 @@
-export default class RHDPSearchSortPage extends HTMLElement {
+class RHDPSearchSortPage extends HTMLElement {
     _sort;
 
     get sort() {
