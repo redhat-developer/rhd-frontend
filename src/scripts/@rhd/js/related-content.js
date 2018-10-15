@@ -1,6 +1,25 @@
 /*
   Related Content Component
   Shows up on the 'More Like These' section of video pages
+
+  sys_type:
+  cheatsheet
+  // webpage
+  // event
+  // forumthread
+  // stackoverflow_thread
+  // quickstart
+  //  demo  
+  // jbossdeveloper_bom
+  // jbossdeveloper_archetype
+  // jbossdeveloper_example
+  video
+  book
+  article
+  //solution
+  blogpost
+
+  // excluded
 */
 
 app = window.app || {};
@@ -13,31 +32,32 @@ app.relatedContent.fetch = function() {
   
   var contentCount = $('#video-related-cont').find('.field--name-field-related-content .related-content-card').length;
   contentCount = 4 - contentCount;
-  var tags = ($('#video-related-cont').data('tags') || "")
+  var typeString = '&sys_type=cheatsheet&sys_type=video&sys_type=book&sys_type=article&sys_type=blogpost';
+  var tags = ($('#video-related-cont').data('tags') || "");
+  var tagsString = "";
 
-    try {
-      tags = JSON.parse(tags.replace(/'/g, "\""));
-    } catch (e) {
-      tags = "";
-    }
+  try {
+    tags = JSON.parse(tags.replace(/'/g, "\""));
+  } catch (e) {
+    tags = "";
+  }
 
-    if(tags){
-      var tagsString = "";
-      for (var i = 0; i < tags.length; i++) {
-        if (i > 0) {
-          tags[i] = "&tag=" + tags[i];
-        }
-        tagsString += (tags[i]).toLowerCase();
+  if(tags){   
+    for (var i = 0; i < tags.length; i++) {
+      if (i > 0) {
+        tags[i] = "&tag=" + tags[i];
       }
+      tagsString += (tags[i]).toLowerCase();
     }
-  $.getJSON(app.dcp.url.search + '/developer_materials?tags_or_logic=true&filter_out_excluded=true&size10=true&tag=' + tagsString, function(data){
+  }
+
+  $.getJSON(app.dcp.url.search + '/developer_materials?tags_or_logic=true&filter_out_excluded=true&size10=true&tag=' + tagsString + typeString, function(data){
     if(data.hits && data.hits.hits) {
       data.hits.hits.length = contentCount;
       app.relatedContent.render(data.hits.hits);
     }
   });
-
-}
+};
 
 app.relatedContent.render = function(materials) {
   var html = [];
@@ -95,7 +115,7 @@ app.relatedContent.render = function(materials) {
       var item = [
         '<div class="large-6 columns related-content-card">',
         '<h6>Related ' + material.fields.sys_type + '</h6>',
-        '<h4><span  >' + title + '</span></h4>',
+        '<h4><span class="line-clamp-2">' + title + '</span></h4>',
         '<p class="description">',
         '<a class="light-cta" href="' + material.fields.sys_url_view[0] + '">Read More</a>',
         '</p>',
@@ -108,8 +128,12 @@ app.relatedContent.render = function(materials) {
   });
 
   $('.video-related-content-list').html(html.join(''));
-
-}
+  var $clampItems = $('.video-related-content-list').find(".line-clamp-2");
+  $clampItems.each(function() {
+      var $tmpItem = $(this);
+      $clamp($tmpItem.get(0), {clamp: 2, useNativeClamp: true});      
+  });
+};
 
 $(function() {
   var $videoRelatedContentList = $('.video-related-content-list');

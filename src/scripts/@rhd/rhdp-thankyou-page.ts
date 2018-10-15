@@ -1,4 +1,4 @@
-class RHDPThankyou extends HTMLElement {
+export default class RHDPThankyou extends HTMLElement {
 
     private _url;
     private _mediaName;
@@ -113,6 +113,7 @@ class RHDPThankyou extends HTMLElement {
 
                 if(currentTime-timeOfRefer > storageExpiration){
                     window.localStorage.removeItem(storageName);
+                    return false;
                 }
                 return true;
             }else{
