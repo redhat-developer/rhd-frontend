@@ -1,3 +1,13 @@
-node_modules
 docs
-!src/docs
+favicons
+node_modules
+src
+.eslintignore
+.eslintrc.yml
+.gitignore
+.travis.yml
+browser-sync.config.js
+jsdoc.config.json
+package-lock.json
+postcss.config.js
+tsconfig.json
