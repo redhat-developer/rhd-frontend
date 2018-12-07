@@ -1,6 +1,7 @@
+import PFElement from '../../@pfelements/pfelement.js';
 import RHDPSearchFilterItem from '@rhd/rhdp-search/rhdp-search-filter-item';
 
-export default class RHDPSearchQuery extends HTMLElement {
+export default class RHDPSearchQuery extends PFElement {
     _filters;
     _activeFilters;
     _limit = 10;
@@ -63,7 +64,7 @@ export default class RHDPSearchQuery extends HTMLElement {
         if (this._results === val) return;
         this._results = val;
         this.from = this.results && this.results.hits && typeof this.results.hits.hits !== 'undefined' ? this.from + this.results.hits.hits.length : 0;
-        this.dispatchEvent(new CustomEvent('search-complete', {
+        let evt = {
             detail: { 
                 term: this.term,
                 filters: this.activeFilters,
@@ -72,8 +73,10 @@ export default class RHDPSearchQuery extends HTMLElement {
                 from: this.from,
                 results: this.results,
             }, 
-            bubbles: true 
-        }));
+            bubbles: true,
+            composed: true
+        };
+        this.dispatchEvent(new CustomEvent('search-complete', evt));
     }
 
     get term() {
@@ -130,7 +133,7 @@ export default class RHDPSearchQuery extends HTMLElement {
     };
 
     constructor() {
-        super();
+        super('rhdp-search-query');
 
         this._changeAttr = this._changeAttr.bind(this);
     }
@@ -175,6 +178,7 @@ export default class RHDPSearchQuery extends HTMLElement {
     }
 
     _changeAttr(e) {
+        console.log(e);
         switch (e.type) {
             case 'term-change':
                 if (e.detail && e.detail.term && e.detail.term.length > 0) {
@@ -233,8 +237,9 @@ export default class RHDPSearchQuery extends HTMLElement {
     // }
 
     search() {
-        this.dispatchEvent(new CustomEvent('search-start', { bubbles: true }));
-        if (Object.keys(this.activeFilters).length > 0 || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined')) {
+        let evt = { bubbles: true, composed: true };
+        this.dispatchEvent(new CustomEvent('search-start', evt));
+        if ((this.activeFilters && Object.keys(this.activeFilters).length > 0) || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined')) {
 
             let qURL = new URL(this.url);
             qURL.searchParams.set('tags_or_logic', 'true');
@@ -268,7 +273,8 @@ export default class RHDPSearchQuery extends HTMLElement {
                 this.results = data; 
             });
         } else {
-            this.dispatchEvent(new CustomEvent('search-complete', { detail: { invalid: true }, bubbles: true }));
+            let evt = { detail: { invalid: true }, bubbles: true, composed: true };
+            this.dispatchEvent(new CustomEvent('search-complete', evt));
         }
     }
 }

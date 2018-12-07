@@ -1,7 +1,7 @@
-import RHElement from '@rhelements/rhelement';
+import PFElement from '../../@pfelements/pfelement.js';
 //import fontawesome from '@fortawesome/fontawesome';
 
-export default class DPProductShortTeaser extends RHElement {
+export default class DPProductShortTeaser extends PFElement {
     template = el => {
         const tpl = document.createElement("template");
         tpl.innerHTML = `

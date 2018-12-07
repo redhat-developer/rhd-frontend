@@ -1,6 +1,22 @@
-import RHDPSearchResult from '@rhd/rhdp-search/rhdp-search-result';
+import PFElement from '../../@pfelements/pfelement.js';
+import RHDPSearchResult from './rhdp-search-result';
 
-export default class RHDPSearchResults extends HTMLElement {
+export default class RHDPSearchResults extends PFElement {
+    template = el => {
+        const tpl = document.createElement("template");
+        tpl.innerHTML = `
+        <style>
+            
+        </style>
+        ${el.invalid ? `
+        <div class="invalidMsg">
+        <h4>Well, this is awkward. No search term was entered yet, so this page is a little empty right now.</h4>
+        <p>After you enter a search term in the box above, you will see the results displayed here. 
+        You can also use the filters to select a content type, product or topic to see some results too. 
+        Try it out!</p>
+        </div>` : ''}`;
+        return tpl;
+    }
     _results;
     _more = false;
     _last = 0;
@@ -48,7 +64,7 @@ export default class RHDPSearchResults extends HTMLElement {
     loading = document.createElement('div');
 
     constructor() {
-        super();
+        super('rhdp-search-results');
 
         this._renderResults = this._renderResults.bind(this);
         this._setLoading = this._setLoading.bind(this);
@@ -57,10 +73,12 @@ export default class RHDPSearchResults extends HTMLElement {
     }
 
     connectedCallback() {
-        this.invalidMsg.className = 'invalidMsg';
-        this.invalidMsg.innerHTML = `<h4>Well, this is awkward. No search term was entered yet, so this page is a little empty right now.</h4>
-        <p>After you enter a search term in the box above, you will see the results displayed here. 
-        You can also use the filters to select a content type, product or topic to see some results too. Try it out!</p>`;
+        super.render(this.template(this));
+        this.setAttribute('data-rhd-col', '5span9');
+        // this.invalidMsg.className = 'invalidMsg';
+        // this.invalidMsg.innerHTML = `<h4>Well, this is awkward. No search term was entered yet, so this page is a little empty right now.</h4>
+        // <p>After you enter a search term in the box above, you will see the results displayed here. 
+        // You can also use the filters to select a content type, product or topic to see some results too. Try it out!</p>`;
         this.endOfResults.innerHTML = '<p class="end-of-results">- End of Results -</p>'
         this.loadMore.className = 'moreBtn';
         this.loadMore.innerHTML = '<a class="moreBtn" href="#">Load More</a>';
@@ -68,19 +86,21 @@ export default class RHDPSearchResults extends HTMLElement {
 
         this.loadMore.addEventListener('click', e => {
             e.preventDefault();
-            this.dispatchEvent(new CustomEvent('load-more', {
+            let evt = {
                 detail: {
                     from: this.last
                 },
-                bubbles: true
-            }));
+                bubbles: true,
+                composed: true
+            };
+            this.dispatchEvent(new CustomEvent('load-more', evt));
         });
 
         top.addEventListener('search-complete', this._renderResults);
         top.addEventListener('search-start', this._setLoading);
         top.addEventListener('params-ready', this._checkValid);
         top.window.addEventListener('popstate', this._clearResults);
-        this.addEventListener('load-more', e => { 
+        this.shadowRoot.addEventListener('load-more', e => { 
             this.more = true; 
         });
     }
@@ -88,43 +108,45 @@ export default class RHDPSearchResults extends HTMLElement {
     addResult(result) {
         var item = new RHDPSearchResult();
         item.result = result;
-        this.appendChild(item);
+        this.shadowRoot.appendChild(item);
     }
 
     _setLoading(e) {
         if(!this.more) {
-            while(this.firstChild){
-                this.removeChild(this.firstChild);
+            while(this.shadowRoot.firstChild){
+                this.shadowRoot.removeChild(this.shadowRoot.firstChild);
             }
         } else {
-            if (this.querySelector('.moreBtn')) {
-                this.removeChild(this.loadMore);
+            if (this.shadowRoot.querySelector('.moreBtn')) {
+                this.shadowRoot.removeChild(this.loadMore);
             }
-            if (this.querySelector('.invalidMsg')) {
-                this.removeChild(this.invalidMsg);
+            if (this.shadowRoot.querySelector('.invalidMsg')) {
+                this.shadowRoot.removeChild(this.invalidMsg);
             }
             this.more = false;
         }
-        this.appendChild(this.loading);
+        this.shadowRoot.appendChild(this.loading);
     }
 
     _renderResults(e) {
-        if (this.querySelector('.loading')) {
-            this.removeChild(this.loading);
+        if (this.shadowRoot.querySelector('.loading')) {
+            this.shadowRoot.removeChild(this.loading);
         }
 
         if (e.detail && typeof e.detail.results !== 'undefined' && typeof e.detail.invalid === 'undefined') {
             this.addResults(e.detail.results);
         } else {
-            while(this.firstChild){
-                this.removeChild(this.firstChild);
+            while(this.shadowRoot.firstChild){
+                this.shadowRoot.removeChild(this.shadowRoot.firstChild);
             }
-            this.appendChild(this.invalidMsg);
+            this.shadowRoot.appendChild(this.invalidMsg);
         }
-        this.dispatchEvent(new CustomEvent('results-loaded', { 
+        let evt = { 
             detail: { results: this.results }, 
-            bubbles: true 
-        }));
+            bubbles: true,
+            composed: true
+        };
+        this.dispatchEvent(new CustomEvent('results-loaded', evt));
     }
 
     _clearResults(e) {
@@ -135,10 +157,10 @@ export default class RHDPSearchResults extends HTMLElement {
         let obj = e.detail;
         this.valid = Object.keys(obj.filters).length > 0 || (obj.term !== null && obj.term !== '' && typeof obj.term !== 'undefined');
         if(!this.valid) {
-            this.appendChild(this.invalidMsg);
+            this.shadowRoot.appendChild(this.invalidMsg);
         } else {
-            if (this.querySelector('.invalidMsg')) {
-                this.removeChild(this.invalidMsg);
+            if (this.shadowRoot.querySelector('.invalidMsg')) {
+                this.shadowRoot.removeChild(this.invalidMsg);
             }
         }
     }
@@ -152,18 +174,18 @@ export default class RHDPSearchResults extends HTMLElement {
             }
             this.last = this.last + l;
             if (this.last >= results.hits.total) {
-                this.appendChild(this.endOfResults);
+                this.shadowRoot.appendChild(this.endOfResults);
             }
             if (l > 0 && this.last < results.hits.total) {
-                if (this.querySelector('.end-of-results')) { 
-                    this.removeChild(this.endOfResults);
+                if (this.shadowRoot.querySelector('.end-of-results')) { 
+                    this.shadowRoot.removeChild(this.endOfResults);
                 }
-                this.appendChild(this.loadMore);
+                this.shadowRoot.appendChild(this.loadMore);
             } else {
-                if (this.querySelector('.moreBtn')) { 
-                    this.removeChild(this.loadMore);
+                if (this.shadowRoot.querySelector('.moreBtn')) { 
+                    this.shadowRoot.removeChild(this.loadMore);
                 }
-                this.appendChild(this.endOfResults);
+                this.shadowRoot.appendChild(this.endOfResults);
             }
         }
     }

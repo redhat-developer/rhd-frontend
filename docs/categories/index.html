@@ -18,9 +18,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.2.0/custom-elements-es5-adapter.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.2.0/webcomponents-lite.js"></script>  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.21.3/system-production.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.1/custom-elements-es5-adapter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.1/webcomponents-bundle.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/2.1.1/system.min.js"></script>
   </head>
   <body>
     <div class="rhd-masthead">
@@ -209,13 +209,11 @@
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/prism.min.js"></script>
 
-    
-    <script>
-    SystemJS.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/rhd.min.js").then(function() {
-        System.import('@rhd/rhd-app');
-    })</script>
-    
+<script src="https://redhat-developer.github.io/rhd-frontend/js/rhd.old.min.js"></script>
 
 
+<script src="https://redhat-developer.github.io/rhd-frontend/js/@pfelements/pfelement.min.js"></script>
+
+    
   </body>
 </html>

@@ -11,19 +11,9 @@
 </footer>
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/prism.min.js"></script>
-{{ if .Site.Params.minify }}
-    {{ with "js/rhd.min.js" | absURL }}
-    <script>
-    SystemJS.import("{{ . }}").then(function() {
-        System.import('@rhd/rhd-app');
-    })</script>
-    {{ end }}
-{{ else }}
-    {{ with "js/rhd.js" | absURL }}
-    <script>
-    SystemJS.import("{{ . }}").then(function() {
-        System.import('@rhd/rhd-app');
-    });
-    </script>
-    {{ end }}
+{{ with "js/rhd.old.min.js" | absURL }}
+<script src="{{ . }}"></script>
+{{ end }}
+{{ with "js/@pfelements/pfelement.min.js" | absURL }}
+<script src="{{ . }}"></script>
 {{ end }}

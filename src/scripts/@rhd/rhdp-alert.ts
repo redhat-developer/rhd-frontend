@@ -1,10 +1,10 @@
-import RHElement from '@rhelements/rhelement';
+import PFElement from '../@pfelements/pfelement.js';
 // import {library, icon} from '@fortawesome/fontawesome-svg-core';
 // import {fas} from '@fortawesome/free-solid-svg-icons';
 
 // library.add(fas);
 
-export default class RHDPAlert extends RHElement {
+export default class RHDPAlert extends PFElement {
     template = el => {
         const tpl = document.createElement("template");
         tpl.innerHTML = `
@@ -198,3 +198,4 @@ export default class RHDPAlert extends RHElement {
 }
 
 window.customElements.define('rhdp-alert', RHDPAlert);
+console.log('RHDP Alert script fired');

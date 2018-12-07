@@ -1,2 +1,5 @@
 node_modules
 !vendor
+src/docs/static/*
+src/tests/unit/report
+dist

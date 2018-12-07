@@ -1,6 +1,6 @@
-import RHElement from '@rhelements/rhelement';
+import PFElement from '../../@pfelements/pfelement.js';
 
-export default class DPCategory extends RHElement {
+export default class DPCategory extends PFElement {
     template = (el:DPCategory) => {
         const tpl = document.createElement("template");
         tpl.innerHTML = `

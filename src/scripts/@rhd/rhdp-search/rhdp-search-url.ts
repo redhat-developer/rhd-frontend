@@ -1,4 +1,6 @@
-export default class RHDPSearchURL extends HTMLElement {
+import PFElement from '../../@pfelements/pfelement.js';
+
+export default class RHDPSearchURL extends PFElement {
     _uri = new URL(window.location.href); // https://developers.redhat.com/search/?q=term+term1+term2&f=a+b+c&s=sort&r=100
     _term = this.uri.searchParams.get('t');
     _filters = this._setFilters(this.uri.searchParams.getAll('f'));
@@ -7,8 +9,7 @@ export default class RHDPSearchURL extends HTMLElement {
     _params;
     _history;
     _init = true;
-    
-    
+
     get uri() {
         return this._uri;
     }
@@ -20,17 +21,8 @@ export default class RHDPSearchURL extends HTMLElement {
     }
 
     get term() {
-        // Hack for IE11 to remove the enfoced %2b encoding of + symbol in url
-        var ua = window.navigator.userAgent; //Check the userAgent property of the window.navigator object
-        var trident = ua.indexOf('Trident/'); //IE 11
-        var isIE = trident > 0;
-        var tmpTerm = this._term;
-        if(isIE){
-            tmpTerm = tmpTerm.replace( "+", " " );
-        }
-        return tmpTerm;
+        return this._term;
     }
-
     set term(val) {
         if (this._term === val) return;
         this._term = val;
@@ -79,7 +71,7 @@ export default class RHDPSearchURL extends HTMLElement {
     //history.pushState({}, `Red Hat Developer Program Search: ${this.term}`, `?q=${decodeURIComponent(this.term).replace(' ', '+')}`);
 
     constructor() {
-        super();
+        super('rhdp-search-url');
 
         this._changeAttr = this._changeAttr.bind(this);
         this._popState = this._popState.bind(this);
@@ -117,15 +109,17 @@ export default class RHDPSearchURL extends HTMLElement {
     }
 
     _paramsReady() {
-        this.dispatchEvent(new CustomEvent('params-ready', {
+        let evt = {
             detail: { 
                 term: this.term,
                 filters: this.filters,
                 sort: this.sort,
                 qty: this.qty
             }, 
-            bubbles: true 
-        }));
+            bubbles: true,
+            composed: true
+        }
+        this.dispatchEvent(new CustomEvent('params-ready', evt));
     }
 
     _setFilters(filtersQS) {

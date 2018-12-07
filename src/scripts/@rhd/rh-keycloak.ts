@@ -1,6 +1,6 @@
-import RHElement from '@rhelements/rhelement';
+import PFElement from '../@pfelements/pfelement.js';
 
-export default class RHKeycloak extends RHElement {
+export default class RHKeycloak extends PFElement {
     template = el => {
         const tpl = document.createElement("template");
         tpl.innerHTML = ``;
@@ -36,4 +36,4 @@ export default class RHKeycloak extends RHElement {
     }
 }
 
-window.customElements.define('rhdp-alert', RHKeycloak);
+window.customElements.define('rh-keycloak', RHKeycloak);

@@ -5,3 +5,13 @@
 <h1 data-rhd-grid="normal"><span data-rhd-col="span12">{{ .Title }}</span></h1>
 <section>{{ .Content }}</section>
 {{ end }}
+
+{{ define "scripts"}}
+    {{ range .Param "scripts" }}
+        {{ with . | absURL }}
+            <script>
+            System.import("{{ . }}");
+            </script>
+        {{ end }}
+    {{ end }}
+{{ end }}

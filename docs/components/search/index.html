@@ -18,9 +18,9 @@ Search – RHD Front-end Code and Documentation
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.2.0/custom-elements-es5-adapter.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.2.0/webcomponents-lite.js"></script>  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.21.3/system-production.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.1/custom-elements-es5-adapter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.1/webcomponents-bundle.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/2.1.1/system.min.js"></script>
   </head>
   <body>
     <div class="rhd-masthead">
@@ -182,11 +182,79 @@ Search – RHD Front-end Code and Documentation
 <h1 data-rhd-grid="normal"><span data-rhd-col="span12">Search</span></h1>
 <section><div data-rhd-grid="normal">
 <pre data-rhd-col="span12" style="max-height: 10em;">
-<code class="language-html">&lt;rhdp-search-app url=&#34;https://dcp2.jboss.org/v2/rest/search/developer_materials&#34; oburl=&#34;/rhd-frontend/json/onebox.json&#34;&gt;&lt;/rhdp-search-app&gt;</code>
+<code class="language-html">&lt;rhdp-search-app url=&#34;https://dcp2.jboss.org/v2/rest/search/developer_materials&#34;&gt;
+&lt;rhdp-search-box&gt;&lt;/rhdp-search-box&gt;
+&lt;rhdp-search-filters title=&#34;Filter By&#34;&gt;
+    &lt;rhdp-search-filter-group name=&#34;CONTENT TYPE&#34; key=&#34;type&#34;&gt;
+        &lt;rhdp-search-filter-item slot=&#34;primary&#34; group=&#34;type&#34; key=&#34;apidocs&#34; value=&#34;rht_website,rht_apidocs&#34; type=&#34;apidocs&#34; name=&#34;APIs and Docs&#34;&gt;APIs and Docs&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item slot=&#34;primary&#34; group=&#34;type&#34; key=&#34;archetype&#34; value=&#34;jbossdeveloper_archetype&#34; type=&#34;jbossdeveloper_archetype&#34; name=&#34;Archetype&#34;&gt;Archetype&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item slot=&#34;primary&#34; group=&#34;type&#34; key=&#34;article&#34; value=&#34;article,solution&#34; type=&#34;rhd_knowledgebase_article,rhd_knowledgebase_solution&#34; name=&#34;Article&#34;&gt;Article&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item slot=&#34;primary&#34; group=&#34;type&#34; key=&#34;blogpost&#34; value=&#34;blogpost&#34; type=&#34;jbossorg_blog&#34; name=&#34;Blog Posts&#34;&gt;Blog Posts&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item slot=&#34;primary&#34; group=&#34;type&#34; key=&#34;book&#34; value=&#34;book&#34; type=&#34;jbossorg_book&#34; name=&#34;Book&#34;&gt;Book&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item group=&#34;type&#34; key=&#34;bom&#34; value=&#34;jbossdeveloper_bom&#34; type=&#34;jbossdeveloper_bom&#34; name=&#34;BOM&#34;&gt;BOM&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item group=&#34;type&#34; key=&#34;cheatsheet&#34; value=&#34;cheatsheet&#34; type=&#34;jbossdeveloper_cheatsheet&#34; name=&#34;Cheat Sheet&#34;&gt;Cheat Sheet&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item group=&#34;type&#34; key=&#34;demo&#34; value=&#34;demo&#34; type=&#34;jbossdeveloper_demo&#34; name=&#34;Demo&#34;&gt;Demo&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item group=&#34;type&#34; key=&#34;event&#34; value=&#34;jbossdeveloper_event&#34; type=&#34;jbossdeveloper_event&#34; name=&#34;Event&#34;&gt;Event&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item group=&#34;type&#34; key=&#34;forum&#34; value=&#34;jbossorg_sbs_forum&#34; type=&#34;jbossorg_sbs_forum&#34; name=&#34;Forum&#34;&gt;Forum&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item group=&#34;type&#34; key=&#34;get-started&#34; value=&#34;jbossdeveloper_example&#34; type=&#34;jbossdeveloper_example&#34; name=&#34;Get Started&#34;&gt;Get Started&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item group=&#34;type&#34; key=&#34;quickstart&#34; value=&#34;quickstart&#34; type=&#34;jbossdeveloper_quickstart&#34; name=&#34;Quickstart&#34;&gt;Quickstart&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item group=&#34;type&#34; key=&#34;stackoverflow&#34; value=&#34;stackoverflow_thread&#34; type=&#34;stackoverflow_question&#34; name=&#34;Stack Overflow&#34;&gt;Stack Overflow&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item group=&#34;type&#34; key=&#34;video&#34; value=&#34;video&#34; type=&#34;jbossdeveloper_vimeo,jbossdeveloper_youtube&#34; name=&#34;Video&#34;&gt;Video&lt;/rhdp-search-filter-item&gt;
+        &lt;rhdp-search-filter-item group=&#34;type&#34; key=&#34;webpage&#34; value=&#34;webpage&#34; type=&#34;rhd_website&#34; name=&#34;Web Page&#34;&gt;Web Page&lt;/rhdp-search-filter-item&gt;
+    &lt;/rhdp-search-filter-group&gt;
+    &lt;rhdp-search-filter-group name=&#34;PRODUCT&#34; key=&#34;project&#34;&gt;
+
+    &lt;/rhdp-search-filter-group&gt;
+    &lt;rhdp-search-filter-group name=&#34;TOPIC&#34; key=&#34;tag&#34;&gt;
+
+    &lt;/rhdp-search-filter-group&gt;
+&lt;/rhdp-search-filters&gt;
+&lt;rhdp-search-filters type=&#34;active&#34; title=&#34;Active Filters:&#34;&gt;&lt;/rhdp-search-filters&gt;
+&lt;rhdp-search-result-count&gt;&lt;/rhdp-search-result-count&gt;
+&lt;rhdp-search-sort-page&gt;&lt;/rhdp-search-sort-page&gt;
+&lt;rhdp-search-onebox&gt;&lt;/rhdp-search-onebox&gt;
+&lt;rhdp-search-results&gt;&lt;/rhdp-search-results&gt;
+&lt;rhdp-search-query&gt;&lt;/rhdp-search-query&gt;
+&lt;/rhdp-search-app&gt;
+&lt;a href=&#34;#top&#34; id=&#34;scroll-to-top&#34;&gt;&lt;/a&gt;</code>
 </pre>
 </div>
 <div class="code-sample">
-<rhdp-search-app url="https://dcp2.jboss.org/v2/rest/search/developer_materials" oburl="/rhd-frontend/json/onebox.json"></rhdp-search-app>
+<rhdp-search-app url="https://dcp2.jboss.org/v2/rest/search/developer_materials">
+<rhdp-search-box></rhdp-search-box>
+<rhdp-search-filters title="Filter By">
+    <rhdp-search-filter-group name="CONTENT TYPE" key="type">
+        <rhdp-search-filter-item slot="primary" group="type" key="apidocs" value="rht_website,rht_apidocs" type="apidocs" name="APIs and Docs">APIs and Docs</rhdp-search-filter-item>
+        <rhdp-search-filter-item slot="primary" group="type" key="archetype" value="jbossdeveloper_archetype" type="jbossdeveloper_archetype" name="Archetype">Archetype</rhdp-search-filter-item>
+        <rhdp-search-filter-item slot="primary" group="type" key="article" value="article,solution" type="rhd_knowledgebase_article,rhd_knowledgebase_solution" name="Article">Article</rhdp-search-filter-item>
+        <rhdp-search-filter-item slot="primary" group="type" key="blogpost" value="blogpost" type="jbossorg_blog" name="Blog Posts">Blog Posts</rhdp-search-filter-item>
+        <rhdp-search-filter-item slot="primary" group="type" key="book" value="book" type="jbossorg_book" name="Book">Book</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="bom" value="jbossdeveloper_bom" type="jbossdeveloper_bom" name="BOM">BOM</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="cheatsheet" value="cheatsheet" type="jbossdeveloper_cheatsheet" name="Cheat Sheet">Cheat Sheet</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="demo" value="demo" type="jbossdeveloper_demo" name="Demo">Demo</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="event" value="jbossdeveloper_event" type="jbossdeveloper_event" name="Event">Event</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="forum" value="jbossorg_sbs_forum" type="jbossorg_sbs_forum" name="Forum">Forum</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="get-started" value="jbossdeveloper_example" type="jbossdeveloper_example" name="Get Started">Get Started</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="quickstart" value="quickstart" type="jbossdeveloper_quickstart" name="Quickstart">Quickstart</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="stackoverflow" value="stackoverflow_thread" type="stackoverflow_question" name="Stack Overflow">Stack Overflow</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="video" value="video" type="jbossdeveloper_vimeo,jbossdeveloper_youtube" name="Video">Video</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="webpage" value="webpage" type="rhd_website" name="Web Page">Web Page</rhdp-search-filter-item>
+    </rhdp-search-filter-group>
+    <rhdp-search-filter-group name="PRODUCT" key="project">
+
+    </rhdp-search-filter-group>
+    <rhdp-search-filter-group name="TOPIC" key="tag">
+
+    </rhdp-search-filter-group>
+</rhdp-search-filters>
+<rhdp-search-filters type="active" title="Active Filters:"></rhdp-search-filters>
+<rhdp-search-result-count></rhdp-search-result-count>
+<rhdp-search-sort-page></rhdp-search-sort-page>
+<rhdp-search-onebox></rhdp-search-onebox>
+<rhdp-search-results></rhdp-search-results>
+<rhdp-search-query></rhdp-search-query>
+</rhdp-search-app>
+<a href="#top" id="scroll-to-top"></a>
 </div>
 </section>
 
@@ -208,13 +276,13 @@ Search – RHD Front-end Code and Documentation
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/prism.min.js"></script>
 
-    
-    <script>
-    SystemJS.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/rhd.min.js").then(function() {
-        System.import('@rhd/rhd-app');
-    })</script>
-    
+<script src="https://redhat-developer.github.io/rhd-frontend/js/rhd.old.min.js"></script>
 
+
+<script src="https://redhat-developer.github.io/rhd-frontend/js/@pfelements/pfelement.min.js"></script>
+
+    
+    
 
   </body>
 </html>
