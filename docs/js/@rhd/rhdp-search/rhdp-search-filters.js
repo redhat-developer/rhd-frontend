@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js", "@rhd/rhdp-search/rhdp-search-filter-group", "@rhd/rhdp-search/rhdp-search-filter-item"], function (exports_1, context_1) {
+System.register(["../../@pfelements/pfelement.js", "./rhdp-search-filter-group.js", "./rhdp-search-filter-item.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,18 +13,18 @@ System.register(["../../@pfelements/pfelement.js", "@rhd/rhdp-search/rhdp-search
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, rhdp_search_filter_group_1, rhdp_search_filter_item_1, RHDPSearchFilters;
+    var pfelement_js_1, rhdp_search_filter_group_js_1, rhdp_search_filter_item_js_1, RHDPSearchFilters;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
             function (pfelement_js_1_1) {
                 pfelement_js_1 = pfelement_js_1_1;
             },
-            function (rhdp_search_filter_group_1_1) {
-                rhdp_search_filter_group_1 = rhdp_search_filter_group_1_1;
+            function (rhdp_search_filter_group_js_1_1) {
+                rhdp_search_filter_group_js_1 = rhdp_search_filter_group_js_1_1;
             },
-            function (rhdp_search_filter_item_1_1) {
-                rhdp_search_filter_item_1 = rhdp_search_filter_item_1_1;
+            function (rhdp_search_filter_item_js_1_1) {
+                rhdp_search_filter_item_js_1 = rhdp_search_filter_item_js_1_1;
             }
         ],
         execute: function () {
@@ -167,11 +167,11 @@ System.register(["../../@pfelements/pfelement.js", "@rhd/rhdp-search/rhdp-search
                     this[name] = newVal;
                 };
                 RHDPSearchFilters.prototype.addGroups = function () {
-                    var groups = this.filters.facets, len = groups.length;
+                    var groups = this.filters && this.filters.facets ? this.filters.facets : [], len = groups.length;
                     for (var i = 0; i < len; i++) {
-                        var group = new rhdp_search_filter_group_1.default(), groupInfo = groups[i], gLen = groupInfo.items.length;
+                        var group = new rhdp_search_filter_group_js_1.default(), groupInfo = groups[i], gLen = groupInfo.items.length;
                         for (var j = 0; j < gLen; j++) {
-                            var item = new rhdp_search_filter_item_1.default();
+                            var item = new rhdp_search_filter_item_js_1.default();
                             item.name = groupInfo.items[j].name;
                             item.value = groupInfo.items[j].value;
                             item.active = groupInfo.items[j].active;
@@ -215,11 +215,11 @@ System.register(["../../@pfelements/pfelement.js", "@rhd/rhdp-search/rhdp-search
                     return false;
                 };
                 RHDPSearchFilters.prototype._addFilters = function () {
-                    var groups = this.filters.facets;
+                    var groups = this.filters && this.filters.facets ? this.filters.facets : [];
                     for (var i = 0; i < groups.length; i++) {
                         var items = groups[i].items;
                         for (var j = 0; j < items.length; j++) {
-                            var item = new rhdp_search_filter_item_1.default();
+                            var item = new rhdp_search_filter_item_js_1.default();
                             item.name = items[j].name;
                             item.value = items[j].value;
                             item.inline = true;
@@ -252,4 +252,3 @@ System.register(["../../@pfelements/pfelement.js", "@rhd/rhdp-search/rhdp-search
         }
     };
 });
-//# sourceMappingURL=rhdp-search-filters.js.map

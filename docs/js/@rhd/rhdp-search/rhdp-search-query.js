@@ -289,17 +289,19 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                         qURL_1.searchParams.set('size' + this.limit.toString(), 'true');
                         if (this.activeFilters) {
                             Object.keys(this.activeFilters).forEach(function (filtergroup) {
-                                _this.filters.facets.forEach(function (group) {
-                                    if (group.key === filtergroup) {
-                                        group.items.forEach(function (facet) {
-                                            if (_this.activeFilters[group.key].indexOf(facet.key) >= 0) {
-                                                facet.value.forEach(function (fval) {
-                                                    qURL_1.searchParams.append(group.key, fval);
-                                                });
-                                            }
-                                        });
-                                    }
-                                });
+                                if (_this.filters && _this.filters.facets) {
+                                    _this.filters.facets.forEach(function (group) {
+                                        if (group.key === filtergroup) {
+                                            group.items.forEach(function (facet) {
+                                                if (_this.activeFilters[group.key].indexOf(facet.key) >= 0) {
+                                                    facet.value.forEach(function (fval) {
+                                                        qURL_1.searchParams.append(group.key, fval);
+                                                    });
+                                                }
+                                            });
+                                        }
+                                    });
+                                }
                             });
                         }
                         fetch(qURL_1.toString())
@@ -320,4 +322,3 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
         }
     };
 });
-//# sourceMappingURL=rhdp-search-query.js.map

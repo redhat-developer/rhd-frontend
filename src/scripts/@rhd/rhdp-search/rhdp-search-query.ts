@@ -1,5 +1,5 @@
 import PFElement from '../../@pfelements/pfelement.js';
-import RHDPSearchFilterItem from '@rhd/rhdp-search/rhdp-search-filter-item';
+import RHDPSearchFilterItem from './rhdp-search-filter-item.js';
 
 export default class RHDPSearchQuery extends PFElement {
     _filters;
@@ -253,17 +253,19 @@ export default class RHDPSearchQuery extends PFElement {
             qURL.searchParams.set('size'+this.limit.toString(), 'true');
             if (this.activeFilters) {
                 Object.keys(this.activeFilters).forEach(filtergroup => {
-                    this.filters.facets.forEach(group => {
-                        if (group.key === filtergroup) {
-                            group.items.forEach(facet => {
-                                if (this.activeFilters[group.key].indexOf(facet.key) >= 0) {
-                                    facet.value.forEach(fval => {
-                                        qURL.searchParams.append(group.key, fval);
-                                    });
-                                }
-                            });
-                        }
-                    });
+                    if (this.filters && this.filters.facets) {
+                        this.filters.facets.forEach(group => {
+                            if (group.key === filtergroup) {
+                                group.items.forEach(facet => {
+                                    if (this.activeFilters[group.key].indexOf(facet.key) >= 0) {
+                                        facet.value.forEach(fval => {
+                                            qURL.searchParams.append(group.key, fval);
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                    }
                 });
             }
             //console.log(qURL.toString());

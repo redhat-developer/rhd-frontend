@@ -107,4 +107,3 @@ var RHDPProjectFilterBox = (function (_super) {
 window.addEventListener('WebComponentsReady', function () {
     customElements.define('rhdp-project-filter-box', RHDPProjectFilterBox);
 });
-//# sourceMappingURL=rhdp-project-filter-box.js.map

@@ -39,4 +39,3 @@ System.register(["./dp-referrer.js", "./dp-category-list/dp-category-list.js", "
         }
     };
 });
-//# sourceMappingURL=rhd-app.js.map

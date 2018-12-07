@@ -183,8 +183,8 @@ Search – RHD Front-end Code and Documentation
 <section><div data-rhd-grid="normal">
 <pre data-rhd-col="span12" style="max-height: 10em;">
 <code class="language-html">&lt;rhdp-search-app url=&#34;https://dcp2.jboss.org/v2/rest/search/developer_materials&#34;&gt;
-&lt;rhdp-search-box&gt;&lt;/rhdp-search-box&gt;
-&lt;rhdp-search-filters title=&#34;Filter By&#34;&gt;
+&lt;rhdp-search-box slot=&#34;query&#34;&gt;&lt;/rhdp-search-box&gt;
+&lt;rhdp-search-filters title=&#34;Filter By&#34; slot=&#34;filters&#34;&gt;
     &lt;rhdp-search-filter-group name=&#34;CONTENT TYPE&#34; key=&#34;type&#34;&gt;
         &lt;rhdp-search-filter-item slot=&#34;primary&#34; group=&#34;type&#34; key=&#34;apidocs&#34; value=&#34;rht_website,rht_apidocs&#34; type=&#34;apidocs&#34; name=&#34;APIs and Docs&#34;&gt;APIs and Docs&lt;/rhdp-search-filter-item&gt;
         &lt;rhdp-search-filter-item slot=&#34;primary&#34; group=&#34;type&#34; key=&#34;archetype&#34; value=&#34;jbossdeveloper_archetype&#34; type=&#34;jbossdeveloper_archetype&#34; name=&#34;Archetype&#34;&gt;Archetype&lt;/rhdp-search-filter-item&gt;
@@ -212,17 +212,17 @@ Search – RHD Front-end Code and Documentation
 &lt;rhdp-search-filters type=&#34;active&#34; title=&#34;Active Filters:&#34;&gt;&lt;/rhdp-search-filters&gt;
 &lt;rhdp-search-result-count&gt;&lt;/rhdp-search-result-count&gt;
 &lt;rhdp-search-sort-page&gt;&lt;/rhdp-search-sort-page&gt;
-&lt;rhdp-search-onebox&gt;&lt;/rhdp-search-onebox&gt;
+&lt;rhdp-search-onebox url=&#34;../../json/onebox.json&#34;&gt;&lt;/rhdp-search-onebox&gt;
 &lt;rhdp-search-results&gt;&lt;/rhdp-search-results&gt;
-&lt;rhdp-search-query&gt;&lt;/rhdp-search-query&gt;
+&lt;rhdp-search-query url=&#34;https://dcp2.jboss.org/v2/rest/search/developer_materials&#34;&gt;&lt;/rhdp-search-query&gt;
 &lt;/rhdp-search-app&gt;
 &lt;a href=&#34;#top&#34; id=&#34;scroll-to-top&#34;&gt;&lt;/a&gt;</code>
 </pre>
 </div>
 <div class="code-sample">
 <rhdp-search-app url="https://dcp2.jboss.org/v2/rest/search/developer_materials">
-<rhdp-search-box></rhdp-search-box>
-<rhdp-search-filters title="Filter By">
+<rhdp-search-box slot="query"></rhdp-search-box>
+<rhdp-search-filters title="Filter By" slot="filters">
     <rhdp-search-filter-group name="CONTENT TYPE" key="type">
         <rhdp-search-filter-item slot="primary" group="type" key="apidocs" value="rht_website,rht_apidocs" type="apidocs" name="APIs and Docs">APIs and Docs</rhdp-search-filter-item>
         <rhdp-search-filter-item slot="primary" group="type" key="archetype" value="jbossdeveloper_archetype" type="jbossdeveloper_archetype" name="Archetype">Archetype</rhdp-search-filter-item>
@@ -250,9 +250,9 @@ Search – RHD Front-end Code and Documentation
 <rhdp-search-filters type="active" title="Active Filters:"></rhdp-search-filters>
 <rhdp-search-result-count></rhdp-search-result-count>
 <rhdp-search-sort-page></rhdp-search-sort-page>
-<rhdp-search-onebox></rhdp-search-onebox>
+<rhdp-search-onebox url="../../json/onebox.json"></rhdp-search-onebox>
 <rhdp-search-results></rhdp-search-results>
-<rhdp-search-query></rhdp-search-query>
+<rhdp-search-query url="https://dcp2.jboss.org/v2/rest/search/developer_materials"></rhdp-search-query>
 </rhdp-search-app>
 <a href="#top" id="scroll-to-top"></a>
 </div>
@@ -282,6 +282,78 @@ Search – RHD Front-end Code and Documentation
 <script src="https://redhat-developer.github.io/rhd-frontend/js/@pfelements/pfelement.min.js"></script>
 
     
+    
+        
+            <script>
+            System.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/@rhd\/rhdp-search\/rhdp-search-app.js");
+            </script>
+        
+    
+        
+            <script>
+            System.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/@rhd\/rhdp-search\/rhdp-search-box.js");
+            </script>
+        
+    
+        
+            <script>
+            System.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/@rhd\/rhdp-search\/rhdp-search-filter-group.js");
+            </script>
+        
+    
+        
+            <script>
+            System.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/@rhd\/rhdp-search\/rhdp-search-filter-item.js");
+            </script>
+        
+    
+        
+            <script>
+            System.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/@rhd\/rhdp-search\/rhdp-search-filters.js");
+            </script>
+        
+    
+        
+            <script>
+            System.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/@rhd\/rhdp-search\/rhdp-search-onebox.js");
+            </script>
+        
+    
+        
+            <script>
+            System.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/@rhd\/rhdp-search\/rhdp-search-query.js");
+            </script>
+        
+    
+        
+            <script>
+            System.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/@rhd\/rhdp-search\/rhdp-search-result-count.js");
+            </script>
+        
+    
+        
+            <script>
+            System.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/@rhd\/rhdp-search\/rhdp-search-result.js");
+            </script>
+        
+    
+        
+            <script>
+            System.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/@rhd\/rhdp-search\/rhdp-search-results.js");
+            </script>
+        
+    
+        
+            <script>
+            System.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/@rhd\/rhdp-search\/rhdp-search-sort-page.js");
+            </script>
+        
+    
+        
+            <script>
+            System.import("https:\/\/redhat-developer.github.io\/rhd-frontend\/js\/@rhd\/rhdp-search\/rhdp-search-url.js");
+            </script>
+        
     
 
   </body>

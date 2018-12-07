@@ -1,6 +1,6 @@
 import PFElement from '../../@pfelements/pfelement.js';
-import RHDPSearchFilterGroup from '@rhd/rhdp-search/rhdp-search-filter-group';
-import RHDPSearchFilterItem from '@rhd/rhdp-search/rhdp-search-filter-item';
+import RHDPSearchFilterGroup from './rhdp-search-filter-group.js';
+import RHDPSearchFilterItem from './rhdp-search-filter-item.js';
 
 export default class RHDPSearchFilters extends PFElement {
     template = el => {
@@ -277,7 +277,7 @@ export default class RHDPSearchFilters extends PFElement {
     }
 
     addGroups() {
-        let groups = this.filters.facets,
+        let groups = this.filters && this.filters.facets ? this.filters.facets : [],
             len = groups.length;
         for(let i=0; i < len; i++) {
             let group = new RHDPSearchFilterGroup(),
@@ -332,7 +332,7 @@ export default class RHDPSearchFilters extends PFElement {
     }
 
     _addFilters() {
-        var groups = this.filters.facets;
+        var groups = this.filters && this.filters.facets ? this.filters.facets : [];
         for(let i=0; i < groups.length; i++) {
             var items = groups[i].items;
             for(let j=0; j < items.length; j++) {

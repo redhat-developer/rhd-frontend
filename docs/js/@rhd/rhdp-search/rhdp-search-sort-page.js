@@ -88,4 +88,3 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
         }
     };
 });
-//# sourceMappingURL=rhdp-search-sort-page.js.map

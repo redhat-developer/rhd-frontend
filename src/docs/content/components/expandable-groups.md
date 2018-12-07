@@ -4,6 +4,8 @@ date: 2018-04-13T03:00:54-04:00
 description: ""
 draft: true
 tags: ["component"]
+scripts: ["js/@rhd/dp-category-list/dp-category.js","js/@rhd/dp-category-list/dp-category-list.js",
+"js/@rhd/dp-category-list/dp-category-item.js","js/@rhd/dp-category-list/dp-category-item-list.js","js/@rhd/dp-category-list/dp-product-short-teaser.js",]
 ---
 
 {{< code >}}

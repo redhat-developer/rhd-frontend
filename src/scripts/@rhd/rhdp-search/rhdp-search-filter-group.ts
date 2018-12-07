@@ -1,5 +1,5 @@
 import PFElement from '../../@pfelements/pfelement.js';
-import RHDPSearchFilterItem from './rhdp-search-filter-item';
+import RHDPSearchFilterItem from './rhdp-search-filter-item.js';
 
 export default class RHDPSearchFilterGroup extends PFElement {
     template = el => {

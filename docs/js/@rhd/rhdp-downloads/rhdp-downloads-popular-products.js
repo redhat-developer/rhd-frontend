@@ -71,4 +71,3 @@ System.register(["@rhd/rhdp-downloads/rhdp-downloads-popular-product"], function
         }
     };
 });
-//# sourceMappingURL=rhdp-downloads-popular-products.js.map

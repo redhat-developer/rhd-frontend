@@ -89,4 +89,3 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
         }
     };
 });
-//# sourceMappingURL=dp-category-item-list.js.map

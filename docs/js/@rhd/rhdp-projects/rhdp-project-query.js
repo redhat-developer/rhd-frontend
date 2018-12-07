@@ -136,4 +136,3 @@ var RHDPProjectQuery = (function (_super) {
 window.addEventListener('WebComponentsReady', function () {
     customElements.define('rhdp-project-query', RHDPProjectQuery);
 });
-//# sourceMappingURL=rhdp-project-query.js.map

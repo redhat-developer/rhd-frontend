@@ -150,4 +150,3 @@ var RHDPProjects = (function (_super) {
 window.addEventListener('WebComponentsReady', function () {
     customElements.define('rhdp-projects', RHDPProjects);
 });
-//# sourceMappingURL=rhdp-projects.js.map

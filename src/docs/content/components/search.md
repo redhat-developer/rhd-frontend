@@ -4,11 +4,15 @@ date: 2017-08-23T22:25:45-04:00
 description: ""
 draft: true
 tags: ["component"]
+scripts: ["js/@rhd/rhdp-search/rhdp-search-app.js","js/@rhd/rhdp-search/rhdp-search-box.js","js/@rhd/rhdp-search/rhdp-search-filter-group.js",
+"js/@rhd/rhdp-search/rhdp-search-filter-item.js","js/@rhd/rhdp-search/rhdp-search-filters.js","js/@rhd/rhdp-search/rhdp-search-onebox.js",
+"js/@rhd/rhdp-search/rhdp-search-query.js","js/@rhd/rhdp-search/rhdp-search-result-count.js","js/@rhd/rhdp-search/rhdp-search-result.js","js/@rhd/rhdp-search/rhdp-search-results.js",
+"js/@rhd/rhdp-search/rhdp-search-sort-page.js","js/@rhd/rhdp-search/rhdp-search-url.js"]
 ---
 
 {{< code >}}<rhdp-search-app url="https://dcp2.jboss.org/v2/rest/search/developer_materials">
-<rhdp-search-box></rhdp-search-box>
-<rhdp-search-filters title="Filter By">
+<rhdp-search-box slot="query"></rhdp-search-box>
+<rhdp-search-filters title="Filter By" slot="filters">
     <rhdp-search-filter-group name="CONTENT TYPE" key="type">
         <rhdp-search-filter-item slot="primary" group="type" key="apidocs" value="rht_website,rht_apidocs" type="apidocs" name="APIs and Docs">APIs and Docs</rhdp-search-filter-item>
         <rhdp-search-filter-item slot="primary" group="type" key="archetype" value="jbossdeveloper_archetype" type="jbossdeveloper_archetype" name="Archetype">Archetype</rhdp-search-filter-item>
@@ -36,8 +40,8 @@ tags: ["component"]
 <rhdp-search-filters type="active" title="Active Filters:"></rhdp-search-filters>
 <rhdp-search-result-count></rhdp-search-result-count>
 <rhdp-search-sort-page></rhdp-search-sort-page>
-<rhdp-search-onebox></rhdp-search-onebox>
+<rhdp-search-onebox url="../../json/onebox.json"></rhdp-search-onebox>
 <rhdp-search-results></rhdp-search-results>
-<rhdp-search-query></rhdp-search-query>
+<rhdp-search-query url="https://dcp2.jboss.org/v2/rest/search/developer_materials"></rhdp-search-query>
 </rhdp-search-app>
 <a href="#top" id="scroll-to-top"></a>{{< /code >}}

@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js", "@rhd/rhdp-search/rhdp-search-url", "@rhd/rhdp-search/rhdp-search-filters"], function (exports_1, context_1) {
+System.register(["../../@pfelements/pfelement.js", "./rhdp-search-url.js", "./rhdp-search-filters.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,18 +13,18 @@ System.register(["../../@pfelements/pfelement.js", "@rhd/rhdp-search/rhdp-search
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, rhdp_search_url_1, rhdp_search_filters_1, RHDPSearchApp;
+    var pfelement_js_1, rhdp_search_url_js_1, rhdp_search_filters_js_1, RHDPSearchApp;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
             function (pfelement_js_1_1) {
                 pfelement_js_1 = pfelement_js_1_1;
             },
-            function (rhdp_search_url_1_1) {
-                rhdp_search_url_1 = rhdp_search_url_1_1;
+            function (rhdp_search_url_js_1_1) {
+                rhdp_search_url_js_1 = rhdp_search_url_js_1_1;
             },
-            function (rhdp_search_filters_1_1) {
-                rhdp_search_filters_1 = rhdp_search_filters_1_1;
+            function (rhdp_search_filters_js_1_1) {
+                rhdp_search_filters_js_1 = rhdp_search_filters_js_1_1;
             }
         ],
         execute: function () {
@@ -34,12 +34,12 @@ System.register(["../../@pfelements/pfelement.js", "@rhd/rhdp-search/rhdp-search
                     var _this = _super.call(this, 'rhdp-search-app') || this;
                     _this.template = function (el) {
                         var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n        <style>\n\n    :host { \n        display: flex;\n        flex-flow: column;\n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n        margin-bottom: 30px;\n    }\n\n    .hide { display: none; }\n    \n    .show { display: block; }\n    \n    .mobile { display: none; }\n\n    h1 { grid-column: 2 / span 12; }\n\n    .loading {\n        background:url(\"https://developers.redhat.com/images/icons/ajax-loader.gif\") center 80px no-repeat;\n        min-height:250px;\n    }\n        </style>\n    <h1>" + el.name + "</h1>\n    <slot></slot>\n    ";
+                        tpl.innerHTML = "\n        <style>\n\n    :host { \n        display: flex;\n        flex-flow: column;\n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n        margin-bottom: 30px;\n    }\n\n    .query { flex: 0 0 auto; }\n    .content { flex: 1 1 auto; display: flex; flex-flow: row; }\n    .filters { flex: 0 0 auto; }\n    .results { flex: 1 0 auto; display: flex; flex-flow: column; }\n\n    .hide { display: none; }\n    \n    .show { display: block; }\n    \n    .mobile { display: none; }\n\n    h1 { flex: 0 0 auto; }\n\n    .loading {\n        background:url(\"https://developers.redhat.com/images/icons/ajax-loader.gif\") center 80px no-repeat;\n        min-height:250px;\n    }\n        </style>\n    <h1>" + el.name + "</h1>\n    <section class=\"query\"><slot name=\"query\"></slot></section>\n    <section class=\"content\">\n        <section class=\"filters\"><slot name=\"filters\"></slot></section>\n        <section class=\"results\">\n        <slot></slot>\n        </section>\n    </section>\n    ";
                         return tpl;
                     };
                     _this._name = 'Search';
-                    _this.urlEle = new rhdp_search_url_1.default();
-                    _this.modal = new rhdp_search_filters_1.default();
+                    _this.urlEle = new rhdp_search_url_js_1.default();
+                    _this.modal = new rhdp_search_filters_js_1.default();
                     _this.filterObj = {
                         term: '',
                         facets: [
@@ -129,7 +129,6 @@ System.register(["../../@pfelements/pfelement.js", "@rhd/rhdp-search/rhdp-search
                 });
                 RHDPSearchApp.prototype.connectedCallback = function () {
                     _super.prototype.render.call(this, this.template(this));
-                    this.setAttribute('data-rhd-grid', 'normal');
                     this.modal.setAttribute('type', 'modal');
                     this.modal.filters = this.filterObj;
                     top.document.body.appendChild(this.modal);
@@ -157,4 +156,3 @@ System.register(["../../@pfelements/pfelement.js", "@rhd/rhdp-search/rhdp-search
         }
     };
 });
-//# sourceMappingURL=rhdp-search-app.js.map

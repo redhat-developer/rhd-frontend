@@ -147,4 +147,3 @@ System.register(["../@pfelements/pfelement.js"], function (exports_1, context_1)
         }
     };
 });
-//# sourceMappingURL=rhdp-alert.js.map

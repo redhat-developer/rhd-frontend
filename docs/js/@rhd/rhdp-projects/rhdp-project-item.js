@@ -386,4 +386,3 @@ var RHDPProjectItem = (function (_super) {
 window.addEventListener('WebComponentsReady', function () {
     customElements.define('rhdp-project-item', RHDPProjectItem);
 });
-//# sourceMappingURL=rhdp-project-item.js.map

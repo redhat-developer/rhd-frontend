@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js", "./rhdp-search-result"], function (exports_1, context_1) {
+System.register(["../../@pfelements/pfelement.js", "./rhdp-search-result.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,15 +13,15 @@ System.register(["../../@pfelements/pfelement.js", "./rhdp-search-result"], func
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, rhdp_search_result_1, RHDPSearchResults;
+    var pfelement_js_1, rhdp_search_result_js_1, RHDPSearchResults;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
             function (pfelement_js_1_1) {
                 pfelement_js_1 = pfelement_js_1_1;
             },
-            function (rhdp_search_result_1_1) {
-                rhdp_search_result_1 = rhdp_search_result_1_1;
+            function (rhdp_search_result_js_1_1) {
+                rhdp_search_result_js_1 = rhdp_search_result_js_1_1;
             }
         ],
         execute: function () {
@@ -125,7 +125,7 @@ System.register(["../../@pfelements/pfelement.js", "./rhdp-search-result"], func
                     });
                 };
                 RHDPSearchResults.prototype.addResult = function (result) {
-                    var item = new rhdp_search_result_1.default();
+                    var item = new rhdp_search_result_js_1.default();
                     item.result = result;
                     this.shadowRoot.appendChild(item);
                 };
@@ -213,4 +213,3 @@ System.register(["../../@pfelements/pfelement.js", "./rhdp-search-result"], func
         }
     };
 });
-//# sourceMappingURL=rhdp-search-results.js.map

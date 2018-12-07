@@ -166,4 +166,3 @@ System.register(["@rhd/rhdp-os-download"], function (exports_1, context_1) {
         }
     };
 });
-//# sourceMappingURL=rhdp-downloads-all-item.js.map

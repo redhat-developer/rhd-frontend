@@ -1,11 +1,11 @@
 {
     "compilerOptions": {
-        "module": "es6",
+        "module": "system",
         "moduleResolution": "node",
         "target": "es5",
         "noImplicitAny": false,
         "allowSyntheticDefaultImports": true,
-        "sourceMap": true,
+        "sourceMap": false,
         "removeComments": true,
         "pretty": true,
         "allowJs": false,

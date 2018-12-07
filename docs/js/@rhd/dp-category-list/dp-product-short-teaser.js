@@ -94,4 +94,3 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
         }
     };
 });
-//# sourceMappingURL=dp-product-short-teaser.js.map

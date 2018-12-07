@@ -1,6 +1,6 @@
 import PFElement from '../../@pfelements/pfelement.js';
-import RHDPSearchURL from '@rhd/rhdp-search/rhdp-search-url';
-import RHDPSearchFilters from '@rhd/rhdp-search/rhdp-search-filters';
+import RHDPSearchURL from './rhdp-search-url.js';
+import RHDPSearchFilters from './rhdp-search-filters.js';
 
 /*
 <rhdp-search-app url="https://dcp2.jboss.org/v2/rest/search/developer_materials">
@@ -53,13 +53,18 @@ export default class RHDPSearchApp extends PFElement {
         margin-bottom: 30px;
     }
 
+    .query { flex: 0 0 auto; }
+    .content { flex: 1 1 auto; display: flex; flex-flow: row; }
+    .filters { flex: 0 0 auto; }
+    .results { flex: 1 0 auto; display: flex; flex-flow: column; }
+
     .hide { display: none; }
     
     .show { display: block; }
     
     .mobile { display: none; }
 
-    h1 { grid-column: 2 / span 12; }
+    h1 { flex: 0 0 auto; }
 
     .loading {
         background:url("https://developers.redhat.com/images/icons/ajax-loader.gif") center 80px no-repeat;
@@ -67,7 +72,13 @@ export default class RHDPSearchApp extends PFElement {
     }
         </style>
     <h1>${el.name}</h1>
-    <slot></slot>
+    <section class="query"><slot name="query"></slot></section>
+    <section class="content">
+        <section class="filters"><slot name="filters"></slot></section>
+        <section class="results">
+        <slot></slot>
+        </section>
+    </section>
     `;
         return tpl;
     }
@@ -174,7 +185,6 @@ export default class RHDPSearchApp extends PFElement {
 
     connectedCallback() {
         super.render(this.template(this));
-        this.setAttribute('data-rhd-grid','normal');
         // this.active.setAttribute('type', 'active');
         // this.active.title = 'Active Filters:';
         this.modal.setAttribute('type', 'modal');

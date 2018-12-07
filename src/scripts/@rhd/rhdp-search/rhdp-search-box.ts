@@ -6,7 +6,7 @@ export default class RHDPSearchBox extends PFElement {
         tpl.innerHTML = `
         <style>
             :host {
-                grid-column: 2 / span 12;
+                flex: 0 0 auto;
             }
 
             form.search-bar { 
@@ -114,7 +114,6 @@ export default class RHDPSearchBox extends PFElement {
 
     connectedCallback() {
         super.render(this.template(this));
-        this.setAttribute('data-rhd-col','span12');
         top.addEventListener('params-ready', this._checkTerm);
         //top.window.addEventListener('popstate', e => { this.term = null; });
         top.addEventListener('term-change', this._checkTerm);

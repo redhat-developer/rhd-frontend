@@ -1,5 +1,5 @@
 import PFElement from '../../@pfelements/pfelement.js';
-import RHDPSearchResult from './rhdp-search-result';
+import RHDPSearchResult from './rhdp-search-result.js';
 
 export default class RHDPSearchResults extends PFElement {
     template = el => {
