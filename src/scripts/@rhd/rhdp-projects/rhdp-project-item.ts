@@ -1,4 +1,4 @@
-class RHDPProjectItem extends HTMLElement {
+export default class RHDPProjectItem extends HTMLElement {
 
     private _imageUrl : String;
     private _projectName : String;
@@ -363,6 +363,4 @@ class RHDPProjectItem extends HTMLElement {
     }
 }
 
-window.addEventListener('WebComponentsReady', function() {
-    customElements.define('rhdp-project-item', RHDPProjectItem);
-});
+window.customElements.define('rhdp-project-item', RHDPProjectItem);

@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js"], function (exports_1, context_1) {
+System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,19 +13,19 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, RHDPSearchURL;
+    var rhelement_js_1, RHDPSearchURL;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
+            function (rhelement_js_1_1) {
+                rhelement_js_1 = rhelement_js_1_1;
             }
         ],
         execute: function () {
             RHDPSearchURL = (function (_super) {
                 __extends(RHDPSearchURL, _super);
                 function RHDPSearchURL() {
-                    var _this = _super.call(this, 'rhdp-search-url') || this;
+                    var _this = _super.call(this, RHDPSearchURL) || this;
                     _this._uri = new URL(window.location.href);
                     _this._term = _this.uri.searchParams.get('t');
                     _this._filters = _this._setFilters(_this.uri.searchParams.getAll('f'));
@@ -36,6 +36,16 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     _this._popState = _this._popState.bind(_this);
                     return _this;
                 }
+                Object.defineProperty(RHDPSearchURL.prototype, "html", {
+                    get: function () { return ''; },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchURL, "tag", {
+                    get: function () { return 'rhdp-search-url'; },
+                    enumerable: true,
+                    configurable: true
+                });
                 Object.defineProperty(RHDPSearchURL.prototype, "uri", {
                     get: function () {
                         return this._uri;
@@ -117,6 +127,7 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     configurable: true
                 });
                 RHDPSearchURL.prototype.connectedCallback = function () {
+                    _super.prototype.connectedCallback.call(this);
                     top.addEventListener('search-complete', this._changeAttr);
                     top.addEventListener('clear-filters', this._changeAttr);
                     top.window.addEventListener('popstate', this._popState);
@@ -198,9 +209,9 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     }
                 };
                 return RHDPSearchURL;
-            }(pfelement_js_1.default));
+            }(rhelement_js_1.default));
             exports_1("default", RHDPSearchURL);
-            customElements.define('rhdp-search-url', RHDPSearchURL);
+            rhelement_js_1.default.create(RHDPSearchURL);
         }
     };
 });

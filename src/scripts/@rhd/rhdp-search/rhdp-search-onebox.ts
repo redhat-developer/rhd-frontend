@@ -1,59 +1,120 @@
-import PFElement from '../../@pfelements/pfelement.js';
+// import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 
-export default class RHDPSearchOneBox extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class RHDPSearchOneBox extends RHElement {
+    get html() {
+        return `
+        ${this.feature ? `
         <style>
         :host {
-            grid-column: 5 / span 9;
-        }
-        div {
+            border: 1px solid #d5d5d5;
             display: block;
-            border: 1px solid var(--rhd-grey-3);
+            margin-bottom: 3em;
             padding: 25px;
         }
-    
-        p { margin-bottom: 20px; }
-        a.button { margin-bottom: 0; }
-    
-        ul.slots {
-            display: inline;
+        h4 {
+            font-size: 27px;
+            color: #242424;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            margin-top: 16px;
+        }    
+        p { 
+            margin-bottom: 20px; 
+            font-size: 16px;
+            line-height: 1.5;
         }
-        li {
-            display: inline;
-            list-style-type: none;
-            padding-right: 20px;
+        .button { 
+            background: #c00;
+            border: 0;
+            color: #fff;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.44;
+            padding: 9px 40px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background .2s ease-in 0s;
         }
         a { 
-            position: relative;
-            padding-left: 3em;
+            color: #06c;
+            cursor: pointer;
+            text-decoration: none;
         }
         a:hover, a:focus {
-            text-decoration: underline;
+            color: #004c98;
         }
-                svg {
-                    fill: var(--rhd-link-hover);
-                }
-
         svg {
-            max-width: 2.7em;
-            margin-right: 5px;
-            fill: var(--rhd-blue);
-            position: absolute;
+            fill: var(--rhd-link-hover);
+        }
+        a:hover svg {
+            fill: #004c98;
+        }
+        
+        a.medium-cta {
+            background-color: transparent;
+            border: 1px solid #c00;
+            color: #c00;
+            line-height: 1.44;
+            padding: 8px 40px;
+        }
+        a.medium-cta.blue {
+            border-color: #06c;
+            color: #06c;
+        }
+        a.medium-cta.blue:hover {
+            background-color: #06c;
+            color: #fff;
+        }
+        .links {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            flex: 1 0 auto;
+            margin-bottom: 1.5em;
+            line-height: 45px;
+            vertical-align: middle;
+            white-space: nowrap;
+            margin-right: 45px;
+        }
+
+        .links a:first-child {
+            flex: 0 0 auto;
+            padding: 0 40px;
+        }
+
+        .link {
+            padding-right: 20px;
+        }
+        
+        .link svg {
+            fill: #06c;
             left: 0;
+            margin-right: 5px;
+            max-height: 45px;
+            max-width: 45px;
+            float: left;
         }
         </style>
-<div>
-    ${el.feature.heading && el.feature.heading.url && el.feature.heading.text ? `<h4><a href="${el.feature.heading.url}">${el.feature.heading.text}</a></h4>` : ''}
-    ${el.feature.details ? `<p>${el.feature.details}</p>` : ''}
-    ${el.feature.button && el.feature.button.url && el.feature.button.text ? `<a href="${el.feature.button.url}?onebox=${el.feature.id}" class="button medium-cta blue">${el.feature.button.text}</a>` : ''}
-    ${el.feature.slots && el.feature.slots.length > 0 ? `<ul class="slots">
-        ${el.feature.slots.map(slot =>  this.slotTemplate`${slot}${el.feature.id}`).join('')}
-    </ul>` : ''}
-</div>`;
-        return tpl;
+
+    ${this.feature && this.feature.heading && this.feature.heading.url && this.feature.heading.text ? `<h4><a href="${this.feature.heading.url}">${this.feature.heading.text}</a></h4>` : ''}
+    ${this.feature && this.feature.details ? `<p>${this.feature.details}</p>` : ''}
+    <div class="links">
+    ${this.feature && this.feature.button && this.feature.button.url && this.feature.button.text ? `<a href="${this.feature.button.url}?onebox=${this.feature.id}" class="button medium-cta blue">${this.feature.button.text}</a>` : ''}
+    ${this.feature && this.feature.slots && this.feature.slots.length > 0 ? `
+        ${this.feature.slots.map(slot =>  this.slotTemplate`${slot}${this.feature.id}`).join('')}
+    ` : ''}
+    </div>` : ''}`;
     }
+
+    static get tag() { return 'rhdp-search-onebox'; }
+
     _term = '';
     _url = '../rhdp-apps/onebox/onebox.json';
     _data;
@@ -85,7 +146,7 @@ export default class RHDPSearchOneBox extends PFElement {
     }
 
     get data() {
-        return this._data;
+        return this._data;        
     }
     set data(val) {
         if (this._data === val) return;
@@ -100,11 +161,7 @@ export default class RHDPSearchOneBox extends PFElement {
         if (this._feature === val) return;
         this._feature = val;
         //this.innerHTML = this.feature ? this.template`${this.feature}` : '';
-        if (this._feature) {
-            super.render(this.template(this));
-        } else {
-            this.innerHTML = '';
-        }
+        super.render();
     }
 
     get mock() {
@@ -116,11 +173,11 @@ export default class RHDPSearchOneBox extends PFElement {
     }
 
     slotTemplate = (strings, slot, id) => {
-        return `${slot && slot.url && slot.text ? `<li><a href="${slot.url}?onebox=${id}">${this.getIcon(slot.icon)}${slot.text}</a></li>` : ''}`;
+        return `${slot && slot.url && slot.text ? `<a href="${slot.url}?onebox=${id}" class="link">${this.getIcon(slot.icon)}${slot.text}</a>` : ''}`;
     }
 
     constructor(url?: string) {
-        super('rhdp-search-onebox');
+        super(RHDPSearchOneBox, {delayRender: true});
         if (url) {
             this.url = url;
         }
@@ -129,7 +186,9 @@ export default class RHDPSearchOneBox extends PFElement {
     }
 
     connectedCallback() {
-        this.getData();
+        super.connectedCallback();
+        super.render();
+        //this.getData();
 
         top.addEventListener('term-change', this._termChange);
         top.addEventListener('params-ready', this._termChange);
@@ -190,4 +249,5 @@ export default class RHDPSearchOneBox extends PFElement {
     }
 }
 
-customElements.define('rhdp-search-onebox', RHDPSearchOneBox);
+RHElement.create(RHDPSearchOneBox);
+// customElements.define('rhdp-search-onebox', RHDPSearchOneBox);

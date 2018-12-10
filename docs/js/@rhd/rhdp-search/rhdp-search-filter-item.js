@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js"], function (exports_1, context_1) {
+System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,30 +13,19 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, RHDPSearchFilterItem;
+    var rhelement_js_1, RHDPSearchFilterItem;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
+            function (rhelement_js_1_1) {
+                rhelement_js_1 = rhelement_js_1_1;
             }
         ],
         execute: function () {
             RHDPSearchFilterItem = (function (_super) {
                 __extends(RHDPSearchFilterItem, _super);
                 function RHDPSearchFilterItem() {
-                    var _this = _super.call(this, 'rhdp-search-filter-item') || this;
-                    _this.template = function (el) {
-                        var tpl = document.createElement("template");
-                        var checked = el.active ? 'checked' : '';
-                        tpl.innerHTML = "<div class=\"list\"><span>" + el.name + "</span><input type=\"checkbox\" " + checked + " id=\"filter-item-" + el.key + "\" value=\"" + el.key + "\"><label for=\"filter-item-" + el.key + "\"><slot></slot></label></div>";
-                        return tpl;
-                    };
-                    _this.inlineTemplate = function (el) {
-                        var tpl = document.createElement("template");
-                        tpl.innerHTML = el.active ? "<div class=\"inline\"><slot></slot><i class=\"fa fa-times clearItem\" aria-hidden=\"true\"></i></div>" : '';
-                        return tpl;
-                    };
+                    var _this = _super.call(this, RHDPSearchFilterItem, { delayRender: true }) || this;
                     _this._active = false;
                     _this._inline = false;
                     _this._bubble = true;
@@ -47,6 +36,18 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     _this._updateFacet = _this._updateFacet.bind(_this);
                     return _this;
                 }
+                Object.defineProperty(RHDPSearchFilterItem.prototype, "html", {
+                    get: function () {
+                        return "\n        <style>\n        .list {\n            clear: left;\n            cursor: pointer;\n            display: flex;\n            flex-direction: row;\n            font-size: 14px;\n            height: auto;\n            line-height: 1.25em;\n            padding: .5em .5em 0 1.1em;\n        }\n        span { display: none; }\n        input[type=checkbox] {\n            flex: 0 0 auto;\n            margin: .25em 5px 0 0;\n            order: 0;\n        }\n        label {\n            margin-left: 0;\n            color: #4d4d4d;\n            cursor: pointer;\n            display: block;\n            font-size: .875rem;\n            font-weight: 400;\n            line-height: 1.5;\n            margin-bottom: 0;\n        }\n        input[type=checkbox]+label,\n        input[type=radio]+label {\n            display: inline-block;\n            margin-bottom: 0;\n            margin-left: .5rem;\n            margin-right: 1rem;\n            vertical-align: baseline;\n        }\n        </style>\n        <div class=\"list\">\n            <span>" + this.name + "</span>\n            <input type=\"checkbox\" " + (this.active ? 'checked' : '') + " id=\"filter-item-" + this.key + "\" value=\"" + this.key + "\">\n            <label for=\"filter-item-" + this.key + "\"><slot></slot></label>\n        </div>";
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchFilterItem, "tag", {
+                    get: function () { return 'rhdp-search-filter-item'; },
+                    enumerable: true,
+                    configurable: true
+                });
                 Object.defineProperty(RHDPSearchFilterItem.prototype, "name", {
                     get: function () {
                         return this._name;
@@ -83,24 +84,6 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                             return;
                         this._group = val;
                         this.setAttribute('group', this._group);
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                Object.defineProperty(RHDPSearchFilterItem.prototype, "inline", {
-                    get: function () {
-                        return this._inline;
-                    },
-                    set: function (val) {
-                        if (this._inline === val)
-                            return;
-                        this._inline = val;
-                        if (!this._inline) {
-                            _super.prototype.render.call(this, this.template(this));
-                        }
-                        else {
-                            _super.prototype.render.call(this, this.inlineTemplate(this));
-                        }
                     },
                     enumerable: true,
                     configurable: true
@@ -155,14 +138,6 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                             if (chkbox) {
                                 chkbox.checked = this._active;
                             }
-                            if (this.inline) {
-                                if (this._active) {
-                                    _super.prototype.render.call(this, this.inlineTemplate(this));
-                                }
-                                else {
-                                    this.innerHTML = '';
-                                }
-                            }
                             var evt = { detail: { facet: this }, bubbles: this.bubble, composed: true };
                             this.dispatchEvent(new CustomEvent('filter-item-change', evt));
                             this.bubble = true;
@@ -185,17 +160,12 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     configurable: true
                 });
                 RHDPSearchFilterItem.prototype.connectedCallback = function () {
-                    if (!this.inline) {
-                        _super.prototype.render.call(this, this.template(this));
-                        this.shadowRoot.addEventListener('change', this._updateFacet);
-                    }
-                    else {
-                        _super.prototype.render.call(this, this.inlineTemplate(this));
-                        this.shadowRoot.addEventListener('click', this._updateFacet);
-                    }
+                    _super.prototype.connectedCallback.call(this);
+                    this.shadowRoot.addEventListener('change', this._updateFacet);
                     top.addEventListener('filter-item-change', this._checkChange);
                     top.addEventListener('params-ready', this._checkParams);
                     top.addEventListener('clear-filters', this._clearFilters);
+                    _super.prototype.render.call(this);
                 };
                 Object.defineProperty(RHDPSearchFilterItem, "observedAttributes", {
                     get: function () {
@@ -209,14 +179,7 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                 };
                 RHDPSearchFilterItem.prototype._updateFacet = function (e) {
                     this.bounce = true;
-                    if (this.inline) {
-                        if (e.target['className'].indexOf('clearItem') >= 0) {
-                            this.active = !this.active;
-                        }
-                    }
-                    else {
-                        this.active = !this.active;
-                    }
+                    this.active = !this.active;
                 };
                 RHDPSearchFilterItem.prototype._checkParams = function (e) {
                     var _this = this;
@@ -259,9 +222,9 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     this.active = false;
                 };
                 return RHDPSearchFilterItem;
-            }(pfelement_js_1.default));
+            }(rhelement_js_1.default));
             exports_1("default", RHDPSearchFilterItem);
-            customElements.define('rhdp-search-filter-item', RHDPSearchFilterItem);
+            rhelement_js_1.default.create(RHDPSearchFilterItem);
         }
     };
 });

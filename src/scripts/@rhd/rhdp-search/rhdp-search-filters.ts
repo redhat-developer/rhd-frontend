@@ -1,15 +1,14 @@
-import PFElement from '../../@pfelements/pfelement.js';
+// import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 import RHDPSearchFilterGroup from './rhdp-search-filter-group.js';
 import RHDPSearchFilterItem from './rhdp-search-filter-item.js';
 
-export default class RHDPSearchFilters extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class RHDPSearchFilters extends RHElement {
+    get html() {
+        return `
         <style>
             :host {
-                grid-column: span 3;
-                grid-row: span 5;
+                display: block;
             }
             .title {
                 background: #e6e7e8; 
@@ -39,6 +38,7 @@ export default class RHDPSearchFilters extends PFElement {
             .groups {
                 background-color: #f9f9f9;
                 padding-bottom: 30px;
+                padding-top: 20px;
             }
             .active-type {
                 display: flex;
@@ -88,7 +88,7 @@ export default class RHDPSearchFilters extends PFElement {
                 }
 
                 .control {
-                    display: flex;
+                    display: none;
                     flex-direction: column;
                     width: 100%;
                     height: 100%;
@@ -105,66 +105,30 @@ export default class RHDPSearchFilters extends PFElement {
                     display: block;
                     width: 150px;
                     height: auto;
-                    border: 1px solid var(--rhd-blue);
+                    border: 1px solid #06c;
                     line-height: 1.44;
                     background-color: transparent;
                     padding: 8px 0;
-                    color: var(--rhd-blue);
+                    color: #06c;
                 }
 
                 .showBtn:hover, .showBtn:focus {
-                        background-color: var(--rhd-blue);
-                        color: var(--rhd-white);
+                        background-color: #06c;
+                        color: #fff;
                 }
             }
 
         </style>
 <a class="showBtn">Show Filters</a>
 <div class="control" id="control">
-    <div class="title">${el.title}</div>
+    <div class="title">${this.title}</div>
     <div class="groups">
     <slot></slot>
     </div>
 </div>`;
-        return tpl;
     }
 
-    modalTemplate = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
-        <style>
-            :host {
-                display: none;
-            }
-        </style>
-<div class="cover" id="cover">
-    <div class="title">${el.title} <a href="#" class="cancel" id="cancel">Close</a></div>
-    <div class="groups">
-    <slot></slot>
-    </div>
-    <div class="footer">
-    <a href="#" class="clearFilters">Clear Filters</a> 
-    <a href="#" class="applyFilters">Apply</a>
-    </div>
-</div>`;
-        return tpl;
-    }
-
-    activeTemplate = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
-        <style>
-            :host {
-                grid-column: 5 / span 9;
-            }
-        </style>
-<div class="active-type">
-    <strong>${el.title}</strong>
-    <div class="activeFilters"></div>
-    <a href="#" class="clearFilters">Clear Filters</a>
-</div>`;
-      return tpl;
-    }
+    static get tag() { return 'rhdp-search-filters'; }
 
     _type = '';
     _title = 'Filter By';
@@ -218,33 +182,17 @@ export default class RHDPSearchFilters extends PFElement {
     }
 
     constructor() {
-        super('rhdp-search-filter');
+        super(RHDPSearchFilters, {delayRender: true});
         this._toggleModal = this._toggleModal.bind(this);
         this._clearFilters = this._clearFilters.bind(this);
-        this._addFilters = this._addFilters.bind(this);
-        this._checkActive = this._checkActive.bind(this);
+        // this._addFilters = this._addFilters.bind(this);
     }
     
     connectedCallback() {
-        if (this.type === 'active') {
-            super.render(this.activeTemplate(this));
-            this.setAttribute('data-rhd-col','5span9');
-            top.addEventListener('filter-item-change', this._checkActive);
-            top.addEventListener('filter-item-init', this._checkActive);
-            top.addEventListener('search-complete', this._checkActive);
-            top.addEventListener('params-ready', this._checkActive);
-            top.addEventListener('clear-filters', this._clearFilters);
-            this._addFilters();
-        } else if (this.type === 'modal') {
-            super.render(this.modalTemplate(this));
-            this.addGroups();
-        } else {
-            super.render(this.template(this));
-            this.setAttribute('data-rhd-col','span3');
-            this.setAttribute('data-rhd-row', 'span5');
-            this.addGroups();
-        }
-
+        super.connectedCallback();
+        super.render();
+        this.addGroups();
+        
         this.shadowRoot.addEventListener('click', e => {
             let evt = { bubbles: true, composed: true };
             switch (e.target['className']) {
@@ -265,7 +213,6 @@ export default class RHDPSearchFilters extends PFElement {
         });
         //top.addEventListener('clear-filters', this._clearFilters);
         top.addEventListener('toggle-modal', this._toggleModal);
-        
     }
 
     static get observedAttributes() { 
@@ -299,57 +246,25 @@ export default class RHDPSearchFilters extends PFElement {
 
     }
 
-    _checkActive(e) {
-        if (e.detail) {
-            if (e.detail.facet) {
-                this.style.display = e.detail.facet.active ? 'block' : this.style.display;
-            } else {
-                let chk = this.shadowRoot.querySelectorAll('rhdp-search-filter-item[active]');
-                if (chk.length > 0) {
-                    this.style.display = 'block';
-                } else {
-                    this.style.display = 'none';
-                }
-            }
-        }
-    }
-
-    _initActive(e, group_key, item) {
-        if (e.detail && e.detail.filters) {
-            //console.log(e.detail.filters);
-            Object.keys(e.detail.filters).forEach(group => {
-                e.detail.filters[group].forEach(facet => {
-                    if (group === group_key) {
-                        if (facet === item.key) {
-                            return true;
-                        }
-                    }
-                });
-            });
-            
-        }
-        return false;
-    }
-
-    _addFilters() {
-        var groups = this.filters && this.filters.facets ? this.filters.facets : [];
-        for(let i=0; i < groups.length; i++) {
-            var items = groups[i].items;
-            for(let j=0; j < items.length; j++) {
-                let item = new RHDPSearchFilterItem();
-                    item.name = items[j].name;
-                    item.value = items[j].value;
-                    item.inline = true;
-                    item.bubble = false;
-                    item.key = items[j].key;
-                    item.group = groups[i].key;
-                    this.shadowRoot.querySelector('.activeFilters').appendChild(item)
-                }
-            }
-        // if (this.type === 'active') {
-        //     this._checkActive();
-        // }
-    }
+    // _addFilters() {
+    //     var groups = this.filters && this.filters.facets ? this.filters.facets : [];
+    //     for(let i=0; i < groups.length; i++) {
+    //         var items = groups[i].items;
+    //         for(let j=0; j < items.length; j++) {
+    //             let item = new RHDPSearchFilterItem();
+    //                 item.name = items[j].name;
+    //                 item.value = items[j].value;
+    //                 item.inline = true;
+    //                 item.bubble = false;
+    //                 item.key = items[j].key;
+    //                 item.group = groups[i].key;
+    //                 this.shadowRoot.querySelector('.activeFilters').appendChild(item)
+    //             }
+    //         }
+    //     // if (this.type === 'active') {
+    //     //     this._checkActive();
+    //     // }
+    // }
 
     _toggleModal(e) {
         if (this.type === 'modal') {
@@ -370,4 +285,5 @@ export default class RHDPSearchFilters extends PFElement {
     }
 }
 
-customElements.define('rhdp-search-filters', RHDPSearchFilters);
+RHElement.create(RHDPSearchFilters);
+// customElements.define('rhdp-search-filters', RHDPSearchFilters);

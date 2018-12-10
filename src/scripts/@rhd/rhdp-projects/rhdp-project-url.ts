@@ -1,4 +1,4 @@
-class RHDPProjectURL extends HTMLElement {
+export default class RHDPProjectURL extends HTMLElement {
 
     private _uri = new URL(window.location.href);
     private _term;
@@ -68,6 +68,4 @@ class RHDPProjectURL extends HTMLElement {
 
 }
 
-window.addEventListener('WebComponentsReady', function() {
-    customElements.define('rhdp-project-url', RHDPProjectURL);
-});
+window.customElements.define('rhdp-project-url', RHDPProjectURL);

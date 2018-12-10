@@ -1,34 +1,77 @@
-import PFElement from '../../@pfelements/pfelement.js';
+//import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 import RHDPSearchFilterItem from './rhdp-search-filter-item.js';
 
-export default class RHDPSearchFilterGroup extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class RHDPSearchFilterGroup extends RHElement {
+    get html() {
+        return `
         <style>
+            :host {
+                cursor: pointer;
+                display: block;
+                margin: 0 1em .5em;
+                position: relative;
+            }
+
             .secondary {
                 display: none;
             }
+
+            h6 {
+                border-bottom: 1px solid #8c8f91;
+                font-weight: 600;
+                margin: .5em 0;
+                padding-bottom: .3em;
+                text-transform: uppercase;
+                color: #242424;
+            }
+
+            .toggle {
+                float: right;
+                font-weight: 600;
+            }
+
+            .toggle.expand {
+                transform: rotate(90deg);
+                transition: .1s ease-in-out;
+            }
+
+            a.more {
+                color: #06c;
+                cursor: pointer;
+                text-decoration: none;
+                font-size: 14px;
+                display: block;
+                margin-bottom: 10px;
+                margin-left: 2.3em;
+                margin-top: 10px;
+            }
+            a.more:hover {
+                color: #004c98;
+            }
+            .hide, a.more.hide, [data-hide] {
+                display: none;
+            }
         </style>
-<h6 class="showFilters heading"><span class="group-name">${el.name}</span><span class="toggle"><i class='fa fa-chevron-right' aria-hidden='true'></i></span></h6>
-<div class="group">
-    <div class="primary">
-        <slot name="primary"></slot>
-    </div>
-    <div class="secondary">
-        <slot></slot>
-    </div>
-    <a href="#" class="more">Show More</a>
-</div>`;
-        return tpl;
+        <h6 class="showFilters heading"><span class="group-name">${this.name}</span><span class="toggle"><i class='fa fa-chevron-right' aria-hidden='true'></i></span></h6>
+        <div class="group">
+            <div class="primary">
+                <slot></slot>
+            </div>
+            <div class="secondary">
+                <slot name="secondary"></slot>
+            </div>
+            <a href="#" class="more" data-hide>Show More</a>
+        </div>`;
     }
+
+    static get tag() { return 'rhdp-search-filter-group'; }
+
     _key;
     _name;
     _items: RHDPSearchFilterItem[] = [];
     _toggle = false;
     _more = false;
-
-    moreBtn = document.createElement('a');
 
     get key() {
         return this._key;
@@ -57,7 +100,7 @@ export default class RHDPSearchFilterGroup extends PFElement {
         this._items = val;
         if (this._items.length > 5) {
             if (!this.shadowRoot.querySelector('.more')) {
-                this.shadowRoot.appendChild(this.moreBtn);
+                this.shadowRoot.querySelector(".moreBtn").removeAttribute('data-hide');
             }
         } else {
             if (this.shadowRoot.querySelector('.more')) {
@@ -87,15 +130,12 @@ export default class RHDPSearchFilterGroup extends PFElement {
     }
 
     constructor() {
-        super('rhdp-search-filter-group');
-
-        this.moreBtn.setAttribute('href', '#');
-        this.moreBtn.className = 'more';
-        this.moreBtn.innerText = 'Show More';
+        super(RHDPSearchFilterGroup, { delayRender: true });
     }
 
     connectedCallback() {
-        super.render(this.template(this));
+        super.connectedCallback();
+        super.render();
         this.shadowRoot.querySelector('h6').addEventListener('click', e => {
             e.preventDefault();
             this.toggle = !this.toggle;
@@ -106,6 +146,11 @@ export default class RHDPSearchFilterGroup extends PFElement {
                 this.more = !this.more;
             }            
         });
+
+        let slotItems = this.querySelectorAll('rhdp-search-filter-item[slot]').length;
+        if (slotItems === 0) {
+            this.shadowRoot.querySelector('.more').setAttribute('data-hide','');
+        }
 
         this.toggle = true;
     }
@@ -119,4 +164,5 @@ export default class RHDPSearchFilterGroup extends PFElement {
     }
 }
 
-customElements.define('rhdp-search-filter-group', RHDPSearchFilterGroup);
+RHElement.create(RHDPSearchFilterGroup);
+// customElements.define('rhdp-search-filter-group', RHDPSearchFilterGroup);

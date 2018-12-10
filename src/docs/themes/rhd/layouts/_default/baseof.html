@@ -27,9 +27,19 @@
   <body>
     {{ partial "header.html" . }}
     <main role="main">
+      <div class="layout-content">
+        <div id="block-rhdp-content" class="block block-system">
+          <article role="article" class="node">
+            <div class="node__content">
+              <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__items">
     {{ block "main" . }}
       <!-- The part of the page that begins to differ between templates -->
     {{ end }}
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
     </main>
     {{ block "footer" . }}
     <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->

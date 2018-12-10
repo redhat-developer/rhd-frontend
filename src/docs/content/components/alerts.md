@@ -4,8 +4,8 @@ date: 2018-04-17T14:39:40-04:00
 description: ""
 draft: true
 tags: ["component"]
+weight: 4
 scripts: ["js/@rhd/rhdp-alert.js"]
-
 ---
 
 {{< code >}}<rhdp-alert>This is the alert text</rhdp-alert>{{</ code >}}

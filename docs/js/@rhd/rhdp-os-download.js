@@ -175,17 +175,36 @@ System.register([], function (exports_1, context_1) {
                 RHDPOSDownload.prototype.connectedCallback = function () {
                     this.platformType = this.getUserAgent();
                     this.setDownloadURLByPlatform();
-                    this.innerHTML = this.template(templateObject_1 || (templateObject_1 = __makeTemplateObject(["", "", "", "", ""], ["", "", "", "", ""])), this.productName, this.downloadURL, this.platformType, this.version);
+                    this.render();
                 };
                 Object.defineProperty(RHDPOSDownload, "observedAttributes", {
                     get: function () {
-                        return ['product-code', 'platform-type', 'download-url', 'name'];
+                        return ['product-code', 'platform-type', 'download-url', 'name', 'version'];
                     },
                     enumerable: true,
                     configurable: true
                 });
                 RHDPOSDownload.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
-                    this[name] = newVal;
+                    switch (name) {
+                        case 'product-code':
+                            this.productCode = newVal;
+                            break;
+                        case 'download-url':
+                            this.downloadURL = newVal;
+                            break;
+                        case 'platform-type':
+                            this.platformType = newVal;
+                            break;
+                        case 'name':
+                            this.productName = newVal;
+                            break;
+                        default:
+                            this[name] = newVal;
+                    }
+                    this.render();
+                };
+                RHDPOSDownload.prototype.render = function () {
+                    this.innerHTML = this.template(templateObject_1 || (templateObject_1 = __makeTemplateObject(["", "", "", "", ""], ["", "", "", "", ""])), this.productName, this.downloadURL, this.platformType, this.version);
                 };
                 RHDPOSDownload.prototype.getUserAgent = function () {
                     var OSName = "Windows";
@@ -241,9 +260,7 @@ System.register([], function (exports_1, context_1) {
                 return RHDPOSDownload;
             }(HTMLElement));
             exports_1("default", RHDPOSDownload);
-            window.addEventListener('WebComponentsReady', function () {
-                customElements.define('rhdp-os-download', RHDPOSDownload);
-            });
+            window.customElements.define('rhdp-os-download', RHDPOSDownload);
         }
     };
 });

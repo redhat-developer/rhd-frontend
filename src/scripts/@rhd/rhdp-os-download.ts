@@ -25,7 +25,6 @@ export default class RHDPOSDownload extends HTMLElement {
         if (this._url === value) return;
         this._url = value;
         this.setAttribute('url', this._url);
-
     }
 
     get productCode() {
@@ -147,17 +146,37 @@ export default class RHDPOSDownload extends HTMLElement {
     connectedCallback() {
         this.platformType = this.getUserAgent();
         this.setDownloadURLByPlatform();
-        this.innerHTML = this.template`${this.productName}${this.downloadURL}${this.platformType}${this.version}`;
+        this.render();
 
     }
 
     static get observedAttributes() {
-        return ['product-code','platform-type', 'download-url', 'name'];
+        return ['product-code','platform-type', 'download-url', 'name', 'version'];
     }
 
 
     attributeChangedCallback(name, oldVal, newVal) {
-        this[name] = newVal;
+        switch (name) {
+            case 'product-code':
+                this.productCode = newVal;
+                break;
+            case 'download-url':
+                this.downloadURL = newVal;
+                break;
+            case 'platform-type':
+                this.platformType = newVal;
+                break;
+            case 'name':
+                this.productName = newVal;
+                break;
+            default:
+                this[name] = newVal;
+        }
+        this.render();
+    }
+
+    render() {
+        this.innerHTML = this.template`${this.productName}${this.downloadURL}${this.platformType}${this.version}`;
     }
 
     getUserAgent(){
@@ -223,7 +242,5 @@ export default class RHDPOSDownload extends HTMLElement {
 
 }
 
-window.addEventListener('WebComponentsReady', function() {
-    customElements.define('rhdp-os-download', RHDPOSDownload);
-});
+window.customElements.define('rhdp-os-download', RHDPOSDownload);
 

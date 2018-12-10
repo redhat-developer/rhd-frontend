@@ -1,4 +1,4 @@
-class RHDPProjectFilterBox extends HTMLElement {
+export default class RHDPProjectFilterBox extends HTMLElement {
 
     private _term = '';
     private _filter = '';
@@ -110,6 +110,4 @@ class RHDPProjectFilterBox extends HTMLElement {
 
 }
 
-window.addEventListener('WebComponentsReady', function() {
-    customElements.define('rhdp-project-filter-box', RHDPProjectFilterBox);
-});
+window.customElements.define('rhdp-project-filter-box', RHDPProjectFilterBox);

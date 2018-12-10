@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js"], function (exports_1, context_1) {
+System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -48,29 +48,36 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
             if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
         }
     };
-    var pfelement_js_1, DPCategory;
+    var rhelement_js_1, DPCategory;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
+            function (rhelement_js_1_1) {
+                rhelement_js_1 = rhelement_js_1_1;
             }
         ],
         execute: function () {
             DPCategory = (function (_super) {
                 __extends(DPCategory, _super);
                 function DPCategory() {
-                    var _this = _super.call(this, 'dp-category-list') || this;
-                    _this.template = function (el) {
-                        var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n<style>\n:host { \n    grid-column: span 1;\n    border-top: 1px solid var(--rhd-blue);\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    padding: 15px;\n    align-items: center;\n    background-color: var(--rhd-white, #ffffff);\n    position: relative;\n    z-index: 1;\n}\n\nimg, svg { \n    flex: 0 0 60px; \n    padding-right: 24px; \n    height: 60px;   \n}\n\nh4 {\n    flex: 1 0 auto;\n    color: #0066CC;\n    font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n    font-size: 14px;\n    font-weight: normal;\n    line-height: 21px;\n    margin: 0 0 5px 0;\n}\n\n:host(:hover), :host([visible]) {\n    cursor: pointer;\n    color: var(--rhd-blue);\n    fill: var(--rhd-blue);\n    border-top: 5px solid var(--rhd-blue);\n    border-bottom: 5px solid var(--rhd-blue);\n}\n\n@media (min-width: 500px) {\n    :host, :host(:hover), :host([visible]) {\n        flex-direction: column;\n        text-align: center; \n        border-top: none;\n        border-bottom: none;\n        background-color: transparent;\n        margin-bottom:30px;\n    }\n\n    :host([visible]):after, :host([visible]):before {\n        top: 100%;\n        left: 50%;\n        border: solid transparent;\n        content: \" \";\n        height: 0;\n        width: 0;\n        position: absolute;\n        pointer-events: none;\n    }\n    \n    :host([visible]):before {\n        border-bottom-color: #CCCCCC;\n        border-width: 15px;\n        margin-left: -15px;\n    }\n    :host([visible]):after {\n        border-bottom-color: #FFFFFF;\n        border-width: 16px;\n        margin-left: -16px;\n    }\n    \n\n    img, svg { flex: 0 0 150px; height: 150px; padding-right: 0; padding-bottom: 15px; }\n}\n\n@media (min-width: 800px) {\n    :host {\n        \n    }\n}\n\n@media (min-width: 1200px) {\n    :host {\n        \n    }\n}\n</style>\n" + (el.image && el.image.indexOf('svg') < 0 ? "<img src=\"" + el.image + "\">" : el.image) + "\n<h4>" + el.name + "</h4>\n<slot></slot>\n";
-                        return tpl;
-                    };
+                    var _this = _super.call(this, DPCategory, { delayRender: true }) || this;
                     _this._visible = false;
                     _this._index = -1;
                     _this._showList = _this._showList.bind(_this);
                     return _this;
                 }
+                Object.defineProperty(DPCategory.prototype, "html", {
+                    get: function () {
+                        return "\n<style>\n:host { \n    grid-column: span 1;\n    border-top: 1px solid var(--rhd-blue);\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    padding: 15px;\n    align-items: center;\n    background-color: var(--rhd-white, #ffffff);\n    position: relative;\n    z-index: 1;\n}\n\nimg, svg { \n    flex: 0 0 60px; \n    padding-right: 24px; \n    height: 60px;   \n}\n\nh4 {\n    flex: 1 0 auto;\n    color: #0066CC;\n    font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n    font-size: 14px;\n    font-weight: normal;\n    line-height: 21px;\n    margin: 0 0 5px 0;\n}\n\n:host(:hover), :host([visible]) {\n    cursor: pointer;\n    color: var(--rhd-blue);\n    fill: var(--rhd-blue);\n    border-top: 5px solid var(--rhd-blue);\n    border-bottom: 5px solid var(--rhd-blue);\n}\n\n@media (min-width: 500px) {\n    :host, :host(:hover), :host([visible]) {\n        flex-direction: column;\n        text-align: center; \n        border-top: none;\n        border-bottom: none;\n        background-color: transparent;\n        margin-bottom:30px;\n    }\n\n    :host([visible]):after, :host([visible]):before {\n        top: 100%;\n        left: 50%;\n        border: solid transparent;\n        content: \" \";\n        height: 0;\n        width: 0;\n        position: absolute;\n        pointer-events: none;\n    }\n    \n    :host([visible]):before {\n        border-bottom-color: #CCCCCC;\n        border-width: 15px;\n        margin-left: -15px;\n    }\n    :host([visible]):after {\n        border-bottom-color: #FFFFFF;\n        border-width: 16px;\n        margin-left: -16px;\n    }\n    \n\n    img, svg { flex: 0 0 150px; height: 150px; padding-right: 0; padding-bottom: 15px; }\n}\n\n@media (min-width: 800px) {\n    :host {\n        \n    }\n}\n\n@media (min-width: 1200px) {\n    :host {\n        \n    }\n}\n</style>\n" + (this.image && this.image.indexOf('svg') < 0 ? "<img src=\"" + this.image + "\">" : this.image) + "\n<h4>" + this.name + "</h4>\n<slot></slot>\n";
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(DPCategory, "tag", {
+                    get: function () { return 'dp-category'; },
+                    enumerable: true,
+                    configurable: true
+                });
                 Object.defineProperty(DPCategory.prototype, "name", {
                     get: function () { return this._name; },
                     set: function (val) {
@@ -135,12 +142,13 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                 });
                 DPCategory.prototype.connectedCallback = function () {
                     var _this = this;
-                    _super.prototype.render.call(this, this.template(this));
+                    _super.prototype.connectedCallback.call(this);
                     this.addEventListener('click', function (e) {
                         e.preventDefault();
                         _this.visible = !_this.visible;
                         return false;
                     });
+                    _super.prototype.render.call(this);
                 };
                 Object.defineProperty(DPCategory, "observedAttributes", {
                     get: function () {
@@ -181,16 +189,16 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                                 case 2:
                                     svg = _a.sent();
                                     this.image = svg.substring(svg.indexOf('<svg'));
-                                    _super.prototype.render.call(this, this.template(this));
+                                    _super.prototype.render.call(this);
                                     return [2];
                             }
                         });
                     });
                 };
                 return DPCategory;
-            }(pfelement_js_1.default));
+            }(rhelement_js_1.default));
             exports_1("default", DPCategory);
-            window.customElements.define('dp-category', DPCategory);
+            rhelement_js_1.default.create(DPCategory);
         }
     };
 });

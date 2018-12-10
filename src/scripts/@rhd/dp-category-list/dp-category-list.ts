@@ -1,10 +1,10 @@
-import PFElement from '../../@pfelements/pfelement.js';
+//import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 import DPCategoryItemList from './dp-category-item-list';
 
-export default class DPCategoryList extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class DPCategoryList extends RHElement {
+    get html() {
+        return `
 <style>
     :host {
         position: relative;
@@ -57,18 +57,19 @@ export default class DPCategoryList extends PFElement {
 <slot></slot>
 </section>
 `;
-        return tpl;
     }
+
+    static get tag() { return 'dp-category-list'; }
 
     items = [];
     active = 0;
 
     constructor() {
-        super('dp-category-list');
+        super(DPCategoryList);
     }
 
     connectedCallback() {
-        super.render(this.template(this));
+        super.connectedCallback();
 
         // let li = this.querySelectorAll('dp-category-item-list');
         // for( let ele in li ) {
@@ -144,4 +145,5 @@ export default class DPCategoryList extends PFElement {
     }
 }
 
-window.customElements.define('dp-category-list', DPCategoryList);
+RHElement.create(DPCategoryList);
+// window.customElements.define('dp-category-list', DPCategoryList);

@@ -1,4 +1,4 @@
-System.register(["../@pfelements/pfelement.js"], function (exports_1, context_1) {
+System.register(["../@rhelements/rhelement/rhelement.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,27 +13,25 @@ System.register(["../@pfelements/pfelement.js"], function (exports_1, context_1)
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, RHKeycloak;
+    var rhelement_js_1, RHKeycloak;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
+            function (rhelement_js_1_1) {
+                rhelement_js_1 = rhelement_js_1_1;
             }
         ],
         execute: function () {
             RHKeycloak = (function (_super) {
                 __extends(RHKeycloak, _super);
-                function RHKeycloak(element) {
-                    if (element === void 0) { element = 'rh-keycloak'; }
-                    var _this = _super.call(this, element) || this;
-                    _this.template = function (el) {
-                        var tpl = document.createElement("template");
-                        tpl.innerHTML = "";
-                        return tpl;
-                    };
-                    return _this;
+                function RHKeycloak() {
+                    return _super.call(this, RHKeycloak) || this;
                 }
+                Object.defineProperty(RHKeycloak, "tag", {
+                    get: function () { return 'dp-keycloak'; },
+                    enumerable: true,
+                    configurable: true
+                });
                 Object.defineProperty(RHKeycloak.prototype, "url", {
                     get: function () {
                         return this._url;
@@ -41,17 +39,15 @@ System.register(["../@pfelements/pfelement.js"], function (exports_1, context_1)
                     enumerable: true,
                     configurable: true
                 });
-                RHKeycloak.prototype.connectedCallback = function () {
-                };
                 RHKeycloak.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
                     this[name] = newVal;
                 };
                 RHKeycloak.prototype.updateToken = function () {
                 };
                 return RHKeycloak;
-            }(pfelement_js_1.default));
+            }(rhelement_js_1.default));
             exports_1("default", RHKeycloak);
-            window.customElements.define('rh-keycloak', RHKeycloak);
+            rhelement_js_1.default.create(RHKeycloak);
         }
     };
 });

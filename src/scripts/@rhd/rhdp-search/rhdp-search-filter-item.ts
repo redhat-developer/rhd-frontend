@@ -1,18 +1,53 @@
-import PFElement from '../../@pfelements/pfelement.js';
+// import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 
-export default class RHDPSearchFilterItem extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        let checked = el.active ? 'checked' : '';
-        tpl.innerHTML = `<div class="list"><span>${el.name}</span><input type="checkbox" ${checked} id="filter-item-${el.key}" value="${el.key}"><label for="filter-item-${el.key}"><slot></slot></label></div>`;
-        return tpl;
+export default class RHDPSearchFilterItem extends RHElement {
+    get html() {
+        return `
+        <style>
+        .list {
+            clear: left;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            font-size: 14px;
+            height: auto;
+            line-height: 1.25em;
+            padding: .5em .5em 0 1.1em;
+        }
+        span { display: none; }
+        input[type=checkbox] {
+            flex: 0 0 auto;
+            margin: .25em 5px 0 0;
+            order: 0;
+        }
+        label {
+            margin-left: 0;
+            color: #4d4d4d;
+            cursor: pointer;
+            display: block;
+            font-size: .875rem;
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+        input[type=checkbox]+label,
+        input[type=radio]+label {
+            display: inline-block;
+            margin-bottom: 0;
+            margin-left: .5rem;
+            margin-right: 1rem;
+            vertical-align: baseline;
+        }
+        </style>
+        <div class="list">
+            <span>${this.name}</span>
+            <input type="checkbox" ${this.active ? 'checked' : ''} id="filter-item-${this.key}" value="${this.key}">
+            <label for="filter-item-${this.key}"><slot></slot></label>
+        </div>`;
     }
 
-    inlineTemplate = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = el.active ? `<div class="inline"><slot></slot><i class="fa fa-times clearItem" aria-hidden="true"></i></div>` : '';
-        return tpl;
-    }
+    static get tag() { return 'rhdp-search-filter-item'; }
 
     _key;
     _name;
@@ -48,19 +83,6 @@ export default class RHDPSearchFilterItem extends PFElement {
         if (this._group === val) return;
         this._group = val;
         this.setAttribute('group', this._group);
-    }
-
-    get inline() {
-        return this._inline;
-    }
-    set inline(val) {
-        if (this._inline === val) return;
-        this._inline = val;
-        if (!this._inline) {
-            super.render(this.template(this));
-        } else {
-            super.render(this.inlineTemplate(this));
-        }
     }
 
     get bubble() {
@@ -104,13 +126,7 @@ export default class RHDPSearchFilterItem extends PFElement {
             if (chkbox) {
                 chkbox.checked = this._active;
             }
-            if ( this.inline ) { 
-                if (this._active) {
-                    super.render(this.inlineTemplate(this));
-                } else {
-                    this.innerHTML = '';
-                }
-            }
+            
             let evt = {detail: {facet: this}, bubbles: this.bubble, composed: true };
             this.dispatchEvent(new CustomEvent('filter-item-change', evt));
             this.bubble = true;
@@ -126,7 +142,7 @@ export default class RHDPSearchFilterItem extends PFElement {
     }
 
     constructor() {
-        super('rhdp-search-filter-item');
+        super(RHDPSearchFilterItem, {delayRender: true});
 
         this._checkParams = this._checkParams.bind(this);
         this._clearFilters = this._clearFilters.bind(this);
@@ -137,18 +153,14 @@ export default class RHDPSearchFilterItem extends PFElement {
     
 
     connectedCallback() {
-        if (!this.inline) {
-            super.render(this.template(this));
-            this.shadowRoot.addEventListener('change', this._updateFacet);
-        } else {
-            super.render(this.inlineTemplate(this));
-            this.shadowRoot.addEventListener('click', this._updateFacet);
-        }
+        super.connectedCallback();
+        this.shadowRoot.addEventListener('change', this._updateFacet);
         
         top.addEventListener('filter-item-change', this._checkChange);
         top.addEventListener('params-ready', this._checkParams);
         top.addEventListener('clear-filters', this._clearFilters);
         //top.window.addEventListener('popstate', this._clearFilters);
+        super.render();
     }
 
     static get observedAttributes() { 
@@ -161,13 +173,7 @@ export default class RHDPSearchFilterItem extends PFElement {
 
     _updateFacet(e) {
         this.bounce = true;
-        if (this.inline) {
-            if (e.target['className'].indexOf('clearItem') >= 0) {
-                this.active = !this.active; 
-            }
-        } else {
-            this.active = !this.active;
-        }
+        this.active = !this.active;
     }
 
     _checkParams(e) {
@@ -214,4 +220,5 @@ export default class RHDPSearchFilterItem extends PFElement {
     }
 }
 
-customElements.define('rhdp-search-filter-item', RHDPSearchFilterItem);
+RHElement.create(RHDPSearchFilterItem);
+// customElements.define('rhdp-search-filter-item', RHDPSearchFilterItem);

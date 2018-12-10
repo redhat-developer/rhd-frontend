@@ -1,11 +1,16 @@
+import RHDPProjectQuery from './rhdp-project-query.js';
+import RHDPProjectURL from './rhdp-project-url.js';
+import RHDPProjectItem from './rhdp-project-item.js';
+
 class RHDPProjects extends HTMLElement {
 
     private _loading = true;
     private _dcpUrl = '';
+    private _productId = '';
     private _data;
 
     get dcpUrl() {
-        return this.getAttribute('dcp-url') ? this.getAttribute('dcp-url') : this._dcpUrl;
+        return this._dcpUrl; // this.getAttribute('dcp-url') ? this.getAttribute('dcp-url') : this._dcpUrl;
     }
 
     set dcpUrl(value) {
@@ -14,9 +19,19 @@ class RHDPProjects extends HTMLElement {
         this.setAttribute('dcp-url',this._dcpUrl);
     }
 
+    get productId() {
+        return this._productId;
+    }
+
+    set productId(value) {
+        if(this._productId === value) return;
+        this._productId = value;
+        this.setAttribute('upstream-product-id', this._productId);
+        this.querySelector('rhdp-project-query')['filter'] = this._productId;
+    }
+
     get loading() {
         return this._loading;
-
     }
 
     set loading(value) {
@@ -46,8 +61,8 @@ class RHDPProjects extends HTMLElement {
         this.addEventListener('data-results-complete', this._loadDataResult);
         let query = new RHDPProjectQuery();
         query.dcpUrl = this.dcpUrl;
-        if(this._getProductId()){
-            query.filter = this._getProductId();
+        if(this.productId){
+            query.filter = this.productId;
         }
         let url = new RHDPProjectURL();
         this.appendChild(query);
@@ -60,12 +75,6 @@ class RHDPProjects extends HTMLElement {
         while(childNodes.firstChild){
             childNodes.removeChild(childNodes.firstChild);
         }
-    }
-
-
-    _getProductId(){
-        let productId = this.getAttribute('upstream-product-id');
-        return productId;
     }
 
     _loadDataResult(e){
@@ -117,20 +126,25 @@ class RHDPProjects extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return [''];
+        return ['dcp-url', 'upstream-product-id'];
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
-        this[name] = newVal;
+        switch (name) {
+            case 'dcp-url':
+                this.dcpUrl = newVal;
+                break;
+            case 'upstream-product-id':
+                this.productId = newVal;
+                break;
+            default:
+                this[name] = newVal;
+        }
         this.innerHTML = this.template`${this}`;
     }
 
     template = (strings, project) => {
-        return `
-
-        <ul class="small-block-grid-2 large-block-grid-4 medium-block-grid-3 results"></ul>
-        
-        `;
+        return `<ul class="small-block-grid-2 large-block-grid-4 medium-block-grid-3 results"></ul>`;
     }
 }
 

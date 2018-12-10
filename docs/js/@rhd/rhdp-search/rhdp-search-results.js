@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js", "./rhdp-search-result.js"], function (exports_1, context_1) {
+System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-result.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,12 +13,12 @@ System.register(["../../@pfelements/pfelement.js", "./rhdp-search-result.js"], f
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, rhdp_search_result_js_1, RHDPSearchResults;
+    var rhelement_js_1, rhdp_search_result_js_1, RHDPSearchResults;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
+            function (rhelement_js_1_1) {
+                rhelement_js_1 = rhelement_js_1_1;
             },
             function (rhdp_search_result_js_1_1) {
                 rhdp_search_result_js_1 = rhdp_search_result_js_1_1;
@@ -28,25 +28,28 @@ System.register(["../../@pfelements/pfelement.js", "./rhdp-search-result.js"], f
             RHDPSearchResults = (function (_super) {
                 __extends(RHDPSearchResults, _super);
                 function RHDPSearchResults() {
-                    var _this = _super.call(this, 'rhdp-search-results') || this;
-                    _this.template = function (el) {
-                        var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n        <style>\n            \n        </style>\n        " + (el.invalid ? "\n        <div class=\"invalidMsg\">\n        <h4>Well, this is awkward. No search term was entered yet, so this page is a little empty right now.</h4>\n        <p>After you enter a search term in the box above, you will see the results displayed here. \n        You can also use the filters to select a content type, product or topic to see some results too. \n        Try it out!</p>\n        </div>" : '');
-                        return tpl;
-                    };
+                    var _this = _super.call(this, RHDPSearchResults, { delayRender: true }) || this;
                     _this._more = false;
                     _this._last = 0;
                     _this._valid = true;
-                    _this.invalidMsg = document.createElement('div');
-                    _this.loadMore = document.createElement('div');
-                    _this.endOfResults = document.createElement('div');
-                    _this.loading = document.createElement('div');
                     _this._renderResults = _this._renderResults.bind(_this);
                     _this._setLoading = _this._setLoading.bind(_this);
                     _this._checkValid = _this._checkValid.bind(_this);
                     _this._clearResults = _this._clearResults.bind(_this);
                     return _this;
                 }
+                Object.defineProperty(RHDPSearchResults.prototype, "html", {
+                    get: function () {
+                        return "\n        <style>\n            :host {\n                display: flex;\n                flex-direction: column;\n            }\n\n            [data-hide] {\n                display: none;\n            }\n\n            h4 { \n                font-size: 27px;\n                font-weight: 600;\n                color: #242424;\n                line-height: 1.5;\n                margin-bottom: 16px;\n                margin-top: 16px;\n            }\n\n            p {\n                font-size: 16px;\n                line-height: 1.5;\n            }\n\n            div.moreBtn {\n                text-align: center;\n            }\n\n            a.moreBtn {\n                background-color: #fff;\n                border: 1px solid #06c;\n                color: #06c;\n                display: block;\n                font-weight: 600;\n                line-height: 1.44;\n                margin: 0 auto;\n                max-width: 165px;\n                padding: 8px 35px;\n                text-transform: uppercase;\n                cursor: pointer;\n                text-decoration: none;\n            }\n            a.moreBtn:hover {\n                background-color: #06c;\n                color: #fff;\n            }\n\n            .loading {\n                background: url(https://developers.redhat.com/images/icons/ajax-loader.gif) center 80px no-repeat;\n                min-height: 250px;\n            }\n        </style>\n        <slot></slot>\n        <div class=\"loading\" data-hide></div>\n        <div class=\"moreBtn\" data-hide><a class=\"moreBtn\" href=\"#\">Load More</a></div>\n        <p class=\"end-of-results\" data-hide>- End of Results -</p>\n        <div class=\"invalidMsg\" data-hide>\n        <h4>Well, this is awkward. No search term was entered yet, so this page is a little empty right now.</h4>\n        <p>After you enter a search term in the box above, you will see the results displayed here. \n        You can also use the filters to select a content type, product or topic to see some results too. \n        Try it out!</p>\n        </div>";
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResults, "tag", {
+                    get: function () { return 'rhdp-search-results'; },
+                    enumerable: true,
+                    configurable: true
+                });
                 Object.defineProperty(RHDPSearchResults.prototype, "results", {
                     get: function () {
                         return this._results;
@@ -99,14 +102,11 @@ System.register(["../../@pfelements/pfelement.js", "./rhdp-search-result.js"], f
                 });
                 RHDPSearchResults.prototype.connectedCallback = function () {
                     var _this = this;
-                    _super.prototype.render.call(this, this.template(this));
-                    this.setAttribute('data-rhd-col', '5span9');
-                    this.endOfResults.innerHTML = '<p class="end-of-results">- End of Results -</p>';
-                    this.loadMore.className = 'moreBtn';
-                    this.loadMore.innerHTML = '<a class="moreBtn" href="#">Load More</a>';
-                    this.loading.className = 'loading';
-                    this.loadMore.addEventListener('click', function (e) {
+                    _super.prototype.connectedCallback.call(this);
+                    _super.prototype.render.call(this);
+                    this.shadowRoot.querySelector('div.moreBtn').addEventListener('click', function (e) {
                         e.preventDefault();
+                        _this.more = true;
                         var evt = {
                             detail: {
                                 from: _this.last
@@ -120,44 +120,38 @@ System.register(["../../@pfelements/pfelement.js", "./rhdp-search-result.js"], f
                     top.addEventListener('search-start', this._setLoading);
                     top.addEventListener('params-ready', this._checkValid);
                     top.window.addEventListener('popstate', this._clearResults);
-                    this.shadowRoot.addEventListener('load-more', function (e) {
-                        _this.more = true;
-                    });
                 };
                 RHDPSearchResults.prototype.addResult = function (result) {
                     var item = new rhdp_search_result_js_1.default();
                     item.result = result;
-                    this.shadowRoot.appendChild(item);
+                    this.appendChild(item);
                 };
                 RHDPSearchResults.prototype._setLoading = function (e) {
+                    this.shadowRoot.querySelector('div.moreBtn').setAttribute('data-hide', '');
+                    this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide', '');
                     if (!this.more) {
-                        while (this.shadowRoot.firstChild) {
-                            this.shadowRoot.removeChild(this.shadowRoot.firstChild);
+                        while (this.firstChild) {
+                            this.removeChild(this.firstChild);
                         }
                     }
                     else {
-                        if (this.shadowRoot.querySelector('.moreBtn')) {
-                            this.shadowRoot.removeChild(this.loadMore);
-                        }
-                        if (this.shadowRoot.querySelector('.invalidMsg')) {
-                            this.shadowRoot.removeChild(this.invalidMsg);
-                        }
                         this.more = false;
                     }
-                    this.shadowRoot.appendChild(this.loading);
+                    this.shadowRoot.querySelector('.loading').removeAttribute('data-hide');
                 };
                 RHDPSearchResults.prototype._renderResults = function (e) {
                     if (this.shadowRoot.querySelector('.loading')) {
-                        this.shadowRoot.removeChild(this.loading);
+                        this.shadowRoot.querySelector('.loading').setAttribute('data-hide', '');
                     }
                     if (e.detail && typeof e.detail.results !== 'undefined' && typeof e.detail.invalid === 'undefined') {
                         this.addResults(e.detail.results);
                     }
                     else {
-                        while (this.shadowRoot.firstChild) {
-                            this.shadowRoot.removeChild(this.shadowRoot.firstChild);
+                        while (this.firstChild) {
+                            this.removeChild(this.firstChild);
                         }
-                        this.shadowRoot.appendChild(this.invalidMsg);
+                        this.shadowRoot.querySelector('div.moreBtn').setAttribute('data-hide', '');
+                        this.shadowRoot.querySelector('.invalidMsg').removeAttribute('data-hide');
                     }
                     var evt = {
                         detail: { results: this.results },
@@ -173,11 +167,11 @@ System.register(["../../@pfelements/pfelement.js", "./rhdp-search-result.js"], f
                     var obj = e.detail;
                     this.valid = Object.keys(obj.filters).length > 0 || (obj.term !== null && obj.term !== '' && typeof obj.term !== 'undefined');
                     if (!this.valid) {
-                        this.shadowRoot.appendChild(this.invalidMsg);
+                        this.shadowRoot.querySelector('.invalidMsg').removeAttribute('data-hide');
                     }
                     else {
                         if (this.shadowRoot.querySelector('.invalidMsg')) {
-                            this.shadowRoot.removeChild(this.invalidMsg);
+                            this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide', '');
                         }
                     }
                 };
@@ -190,26 +184,26 @@ System.register(["../../@pfelements/pfelement.js", "./rhdp-search-result.js"], f
                         }
                         this.last = this.last + l;
                         if (this.last >= results.hits.total) {
-                            this.shadowRoot.appendChild(this.endOfResults);
+                            this.shadowRoot.querySelector('.end-of-results').removeAttribute('data-hide');
                         }
                         if (l > 0 && this.last < results.hits.total) {
                             if (this.shadowRoot.querySelector('.end-of-results')) {
-                                this.shadowRoot.removeChild(this.endOfResults);
+                                this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide', '');
                             }
-                            this.shadowRoot.appendChild(this.loadMore);
+                            this.shadowRoot.querySelector('div.moreBtn').removeAttribute('data-hide');
                         }
                         else {
-                            if (this.shadowRoot.querySelector('.moreBtn')) {
-                                this.shadowRoot.removeChild(this.loadMore);
+                            if (this.shadowRoot.querySelector('div.moreBtn')) {
+                                this.shadowRoot.querySelector('div.moreBtn').setAttribute('data-hide', '');
                             }
-                            this.shadowRoot.appendChild(this.endOfResults);
+                            this.shadowRoot.querySelector('.end-of-results').removeAttribute('data-hide');
                         }
                     }
                 };
                 return RHDPSearchResults;
-            }(pfelement_js_1.default));
+            }(rhelement_js_1.default));
             exports_1("default", RHDPSearchResults);
-            customElements.define('rhdp-search-results', RHDPSearchResults);
+            rhelement_js_1.default.create(RHDPSearchResults);
         }
     };
 });

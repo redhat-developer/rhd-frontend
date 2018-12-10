@@ -1,8 +1,9 @@
+<header role="banner">
 <div class="rhd-masthead">
     <div class="rh-universal-header">
         <nav class="rh-nav-universal" aria-label="Red Hat Global Navigation">
             <a class="rh-logo-wrapper" id="home-link" href="https://www.redhat.com/" title="Red Hat Home page">
-                <img class="rh-header-logo" alt="Red Hat Logo" src="https://developers.redhat.com/images/branding/RHLogo_white.svg">
+                <img class="rh-header-logo" alt="Red Hat Logo" src="https://developers.redhat.com/themes/custom/rhdp/images/branding/RHLogo_white.svg">
             </a>            
             <ul class="rhd-menu rh-nav-universal-list">
                 <li class="menu-item rh-nav-universal-link">
@@ -28,25 +29,23 @@
                 <li class="menu-item">
                     <span class="icon"><svg class="svg-inline--fa fa-user fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 0c88.366 0 160 71.634 160 160s-71.634 160-160 160S96 248.366 96 160 167.634 0 256 0zm183.283 333.821l-71.313-17.828c-74.923 53.89-165.738 41.864-223.94 0l-71.313 17.828C29.981 344.505 0 382.903 0 426.955V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48v-37.045c0-44.052-29.981-82.45-72.717-93.134z"></path></svg><!-- <i class="fas fa-user"></i> --></span><a href="/user" data-drupal-link-system-path="user">My account</a>
                 </li>
-                <li class="menu-item">
+                <!-- <li class="menu-item">
                     <a href="/user/logout" data-drupal-link-system-path="user/logout">Log out</a>
-                </li>
+                </li> -->
             </ul>
         </nav>
     </div>
     <div class="container">
         <div class="rhd-masthead-inner">
             <div class="rhd-header">
-                <div id="block-rhdp-branding" class="contextual-region site-branding block block-system block-system-branding-block" data-block-plugin-id="system_branding_block">  
-                    <a href="/" title="Home" rel="home" class="rhd-header-logo">
-                        <img src="/img/logo.svg" alt="Home" class="rhd-header-logo">
-                    </a>
-                </div>
+                <a href="/" title="Home" rel="home" class="rhd-header-logo">
+                    <img src="/img/logo.svg" alt="Home">
+                </a>
                 <nav role="navigation" aria-labelledby="block-rhdnavigation-menu" id="block-rhdnavigation" class="contextual-region block block-menu navigation rhd-nav-fixed menu--rhd-navigation" data-block-plugin-id="system_menu_block:rhd-navigation">            
                     <h2 class="visually-hidden" id="block-rhdnavigation-menu">RHD Navigation</h2>
                     <ul class="rhd-menu">
-                        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                        <li class="menu-item rhd-header-link"><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></li>
+                        {{ range .Site.Taxonomies.categories.page }}
+                        <li class="menu-item rhd-header-link"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
                         {{ end }}
                         <li class="rhd-nav-search">
                             <div class="rhd-search-wrapper">
@@ -86,9 +85,9 @@
                     <nav role="navigation" aria-labelledby="block-rhdnavigation-mobile-menu" id="block-rhdnavigation-mobile" class="contextual-region block block-menu navigation rhd-nav-mobile menu--rhd-navigation" data-block-plugin-id="system_menu_block:rhd-navigation">
                         <h2 class="visually-hidden" id="block-rhdnavigation-mobile-menu">RHD Navigation</h2>
                         <ul class="rhd-menu">
-                            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                            {{ range .Site.Taxonomies.categories.page }}
                             <li class="menu-item rhd-header-link">
-                                <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+                                <a href="{{ .Permalink }}">{{ .Title }}</a>
                             </li>
                             {{ end }}
                             <li class="rhd-nav-search">
@@ -110,3 +109,5 @@
         </div>
     </div>
 </div>
+</header>
+<div class="rhd-mobile-overlay"></div>

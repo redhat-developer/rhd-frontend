@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js"], function (exports_1, context_1) {
+System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,26 +13,32 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, DPProductShortTeaser;
+    var rhelement_js_1, DPProductShortTeaser;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
+            function (rhelement_js_1_1) {
+                rhelement_js_1 = rhelement_js_1_1;
             }
         ],
         execute: function () {
             DPProductShortTeaser = (function (_super) {
                 __extends(DPProductShortTeaser, _super);
                 function DPProductShortTeaser() {
-                    var _this = _super.call(this, 'dp-product-short-teaser') || this;
-                    _this.template = function (el) {
-                        var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n<style>\n    :host { \n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n        font-size: 14px;\n        line-height: 21px;\n        margin-bottom: 30px;\n        display: flex;\n        flex-direction: column;\n        text-align: left;\n    }\n    h4 { \n        flex: 0 0 24px;\n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n        font-size: 14px;\n        font-weight: bold;\n        line-height: 24px;\n        margin: 0 0 5px 0;\n    }\n    h4 a {\n        color: #0066CC;\n        text-decoration: none;\n    }\n\n    div {\n        flex: 1 1 auto;\n        margin-bottom: 16px;\n        color: #000000;\n    }\n\n    a.more {\n        flex: 0 0 25px;\n        display: block;\n        width: auto;\n        color: #0066CC;\n        font-size: 16px;\n        line-height: 25px;\n    }\n</style>\n<h4><a href=\"" + el.link + "\">" + el.name + "</a></h4>\n<div>\n<slot></slot>\n</div>\n<a class=\"more\" href=\"" + el.downloadLink + "\">View all downloads <i class=\"fas fa-caret-right\"></i></a>\n        ";
-                        return tpl;
-                    };
-                    return _this;
+                    return _super.call(this, DPProductShortTeaser, { delayRender: true }) || this;
                 }
+                Object.defineProperty(DPProductShortTeaser.prototype, "html", {
+                    get: function () {
+                        return "\n<style>\n    :host { \n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n        font-size: 14px;\n        line-height: 21px;\n        margin-bottom: 30px;\n        display: flex;\n        flex-direction: column;\n        text-align: left;\n    }\n    h4 { \n        flex: 0 0 24px;\n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n        font-size: 14px;\n        font-weight: bold;\n        line-height: 24px;\n        margin: 0 0 5px 0;\n    }\n    h4 a {\n        color: #0066CC;\n        text-decoration: none;\n    }\n\n    div {\n        flex: 1 1 auto;\n        margin-bottom: 16px;\n        color: #000000;\n    }\n\n    a.more {\n        flex: 0 0 25px;\n        display: block;\n        width: auto;\n        color: #0066CC;\n        font-size: 16px;\n        line-height: 25px;\n    }\n</style>\n<h4><a href=\"" + this.link + "\">" + this.name + "</a></h4>\n<div>\n<slot></slot>\n</div>\n<a class=\"more\" href=\"" + this.downloadLink + "\">View all downloads <i class=\"fas fa-caret-right\"></i></a>\n        ";
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(DPProductShortTeaser, "tag", {
+                    get: function () { return 'dp-product-short-teaser'; },
+                    enumerable: true,
+                    configurable: true
+                });
                 Object.defineProperty(DPProductShortTeaser.prototype, "name", {
                     get: function () {
                         return this._name;
@@ -70,7 +76,8 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     configurable: true
                 });
                 DPProductShortTeaser.prototype.connectedCallback = function () {
-                    _super.prototype.render.call(this, this.template(this));
+                    _super.prototype.connectedCallback.call(this);
+                    _super.prototype.render.call(this);
                 };
                 Object.defineProperty(DPProductShortTeaser, "observedAttributes", {
                     get: function () {
@@ -88,9 +95,9 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     }
                 };
                 return DPProductShortTeaser;
-            }(pfelement_js_1.default));
+            }(rhelement_js_1.default));
             exports_1("default", DPProductShortTeaser);
-            window.customElements.define('dp-product-short-teaser', DPProductShortTeaser);
+            rhelement_js_1.default.create(DPProductShortTeaser);
         }
     };
 });

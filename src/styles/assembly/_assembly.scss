@@ -19,6 +19,16 @@
 @import "events-hero";
 @import "eloqua_form_embed";
 @import "content_pull_quote";
+@import "embedded_content";
+@import "content_call_to_action";
+@import "content_image";
+@import "code_snippet";
+@import "collection";
+@import "cta_form";
+@import "product_download-list";
+@import "product_hero";
+@import "product_comparison_table";
+@import "sign_up_hero";
 
 .assembly[data-audience] {
   display: none;

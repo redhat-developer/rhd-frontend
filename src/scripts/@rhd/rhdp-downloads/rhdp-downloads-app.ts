@@ -1,6 +1,6 @@
-import RHDPDownloadsPopularProducts from '@rhd/rhdp-downloads/rhdp-downloads-popular-products';
-import RHDPDownloadsProducts from '@rhd/rhdp-downloads/rhdp-downloads-products';
-import RHDPDownloadsAll from '@rhd/rhdp-downloads/rhdp-downloads-all';
+import RHDPDownloadsPopularProducts from './rhdp-downloads-popular-products.js';
+import RHDPDownloadsProducts from './rhdp-downloads-products.js';
+import RHDPDownloadsAll from './rhdp-downloads-all.js';
 
 export default class RHDPDownloadsApp extends HTMLElement {
     constructor() {

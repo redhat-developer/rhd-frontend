@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js"], function (exports_1, context_1) {
+System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,31 +13,38 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, DPCategoryList;
+    var rhelement_js_1, DPCategoryList;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
+            function (rhelement_js_1_1) {
+                rhelement_js_1 = rhelement_js_1_1;
             }
         ],
         execute: function () {
             DPCategoryList = (function (_super) {
                 __extends(DPCategoryList, _super);
                 function DPCategoryList() {
-                    var _this = _super.call(this, 'dp-category-list') || this;
-                    _this.template = function (el) {
-                        var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n<style>\n    :host {\n        position: relative;\n        background-color: #F9F9F9;\n        padding: 30px 0;\n        display: block;\n    }\n\n    section {\n        display: grid;\n        grid-template-columns: 1fr;\n        grid-template-rows: auto;\n        grid-auto-flow: row;\n        grid-gap: 0;\n        margin: 0;\n        max-width: 500px;\n    }\n\n    @media (min-width: 500px) {\n        section {\n            grid-template-columns: repeat(2, 1fr);\n            grid-column-gap: 15px;\n            margin: 0 15px;\n            max-width: 800px;\n            justify-items: center;\n        }\n    }\n\n    @media (min-width: 800px) {\n        section {\n            grid-template-columns: repeat(3, 1fr);\n            grid-column-gap: 30px;\n            margin: 0 30px;\n            max-width: 1200px;\n            justify-items: center;\n        }\n    }\n\n    @media (min-width: 1200px) {\n        section {\n            grid-template-columns: repeat(4, 1fr);\n            grid-column-gap: 30px;\n            margin: 0 auto;\n            max-width: 1260px;\n            justify-items: center;\n        }\n    }\n</style>\n<section >\n<slot></slot>\n</section>\n";
-                        return tpl;
-                    };
+                    var _this = _super.call(this, DPCategoryList) || this;
                     _this.items = [];
                     _this.active = 0;
                     return _this;
                 }
+                Object.defineProperty(DPCategoryList.prototype, "html", {
+                    get: function () {
+                        return "\n<style>\n    :host {\n        position: relative;\n        background-color: #F9F9F9;\n        padding: 30px 0;\n        display: block;\n    }\n\n    section {\n        display: grid;\n        grid-template-columns: 1fr;\n        grid-template-rows: auto;\n        grid-auto-flow: row;\n        grid-gap: 0;\n        margin: 0;\n        max-width: 500px;\n    }\n\n    @media (min-width: 500px) {\n        section {\n            grid-template-columns: repeat(2, 1fr);\n            grid-column-gap: 15px;\n            margin: 0 15px;\n            max-width: 800px;\n            justify-items: center;\n        }\n    }\n\n    @media (min-width: 800px) {\n        section {\n            grid-template-columns: repeat(3, 1fr);\n            grid-column-gap: 30px;\n            margin: 0 30px;\n            max-width: 1200px;\n            justify-items: center;\n        }\n    }\n\n    @media (min-width: 1200px) {\n        section {\n            grid-template-columns: repeat(4, 1fr);\n            grid-column-gap: 30px;\n            margin: 0 auto;\n            max-width: 1260px;\n            justify-items: center;\n        }\n    }\n</style>\n<section >\n<slot></slot>\n</section>\n";
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(DPCategoryList, "tag", {
+                    get: function () { return 'dp-category-list'; },
+                    enumerable: true,
+                    configurable: true
+                });
                 DPCategoryList.prototype.connectedCallback = function () {
                     var _this = this;
-                    _super.prototype.render.call(this, this.template(this));
+                    _super.prototype.connectedCallback.call(this);
                     this.addEventListener('dp-category-selected', function (e) {
                         var w = window.innerWidth;
                         var cols = 4;
@@ -102,9 +109,9 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                 DPCategoryList.prototype._setVisibleCategories = function (index) {
                 };
                 return DPCategoryList;
-            }(pfelement_js_1.default));
+            }(rhelement_js_1.default));
             exports_1("default", DPCategoryList);
-            window.customElements.define('dp-category-list', DPCategoryList);
+            rhelement_js_1.default.create(DPCategoryList);
         }
     };
 });

@@ -1,10 +1,10 @@
-import PFElement from '../../@pfelements/pfelement.js';
+//import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 //import fontawesome from '@fortawesome/fontawesome';
 
-export default class DPProductShortTeaser extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class DPProductShortTeaser extends RHElement {
+    get html() {
+        return `
 <style>
     :host { 
         font-family: "Overpass", "Open Sans", Arial, Helvetica, sans-serif;
@@ -43,14 +43,15 @@ export default class DPProductShortTeaser extends PFElement {
         line-height: 25px;
     }
 </style>
-<h4><a href="${el.link}">${el.name}</a></h4>
+<h4><a href="${this.link}">${this.name}</a></h4>
 <div>
 <slot></slot>
 </div>
-<a class="more" href="${el.downloadLink}">View all downloads <i class="fas fa-caret-right"></i></a>
+<a class="more" href="${this.downloadLink}">View all downloads <i class="fas fa-caret-right"></i></a>
         `;
-        return tpl;
     }
+
+    static get tag() { return 'dp-product-short-teaser'; }
 
     _name: string;
     _link: string;
@@ -81,11 +82,13 @@ export default class DPProductShortTeaser extends PFElement {
     }
 
     constructor() {
-        super('dp-product-short-teaser');
+        super(DPProductShortTeaser, {delayRender: true});
     }
 
     connectedCallback() {
-        super.render(this.template(this));
+        super.connectedCallback();
+
+        super.render();
 
         // fontawesome.dom.i2svg({node: undefined, callback: undefined});
     }
@@ -104,4 +107,5 @@ export default class DPProductShortTeaser extends PFElement {
     }
 }
 
-window.customElements.define('dp-product-short-teaser', DPProductShortTeaser);
+RHElement.create(DPProductShortTeaser);
+// window.customElements.define('dp-product-short-teaser', DPProductShortTeaser);

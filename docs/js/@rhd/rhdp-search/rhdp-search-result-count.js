@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js"], function (exports_1, context_1) {
+System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,30 +13,37 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, RHDPSearchResultCount;
+    var rhelement_js_1, RHDPSearchResultCount;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
+            function (rhelement_js_1_1) {
+                rhelement_js_1 = rhelement_js_1_1;
             }
         ],
         execute: function () {
             RHDPSearchResultCount = (function (_super) {
                 __extends(RHDPSearchResultCount, _super);
                 function RHDPSearchResultCount() {
-                    var _this = _super.call(this, 'rhdp-search-result-count') || this;
-                    _this.template = function (el) {
-                        var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n        <style>\n        :host {\n            grid-column: 5 / span 9;\n            font-weight: 600;\n            font-size: 1.2em;\n            display: block;\n        }\n\n        @media only screen and (max-width: 768px) {\n            :host { border-bottom: 1px solid var(--rhd-grey-3; }\n        }\n        </style>\n        " + el.count + " results found for " + el.term.replace('<', '&lt;').replace('>', '&gt;');
-                        return tpl;
-                    };
+                    var _this = _super.call(this, RHDPSearchResultCount, { delayRender: true }) || this;
                     _this._count = 0;
                     _this._term = '';
                     _this._loading = true;
                     _this._setText = _this._setText.bind(_this);
                     return _this;
                 }
+                Object.defineProperty(RHDPSearchResultCount.prototype, "html", {
+                    get: function () {
+                        return "\n        <style>\n        :host {\n            grid-column: 5 / span 9;\n            font-weight: 600;\n            font-size: 1.2em;\n            display: block;\n            margin-bottom: 1em;\n        }\n\n        @media only screen and (max-width: 768px) {\n            :host { border-bottom: 1px solid var(--rhd-grey-3; }\n        }\n        </style>\n        " + this.count + " results found for " + this.term.replace('<', '&lt;').replace('>', '&gt;');
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResultCount, "tag", {
+                    get: function () { return 'rhdp-search-result-count'; },
+                    enumerable: true,
+                    configurable: true
+                });
                 Object.defineProperty(RHDPSearchResultCount.prototype, "count", {
                     get: function () {
                         return this._count;
@@ -78,10 +85,11 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                 });
                 RHDPSearchResultCount.prototype.connectedCallback = function () {
                     var _this = this;
-                    _super.prototype.render.call(this, this.template(this));
+                    _super.prototype.connectedCallback.call(this);
                     top.addEventListener('params-ready', this._setText);
                     top.addEventListener('search-start', function (e) { _this.loading = true; _this._setText(e); });
                     top.addEventListener('search-complete', function (e) { _this.loading = false; _this._setText(e); });
+                    _super.prototype.render.call(this);
                 };
                 Object.defineProperty(RHDPSearchResultCount, "observedAttributes", {
                     get: function () {
@@ -92,7 +100,7 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                 });
                 RHDPSearchResultCount.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
                     this[name] = newVal;
-                    _super.prototype.render.call(this, this.template(this));
+                    _super.prototype.render.call(this);
                 };
                 RHDPSearchResultCount.prototype._setText = function (e) {
                     if (e.detail) {
@@ -110,7 +118,7 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                                 this.count = 0;
                             }
                             if (!this.loading) {
-                                _super.prototype.render.call(this, this.template(this));
+                                _super.prototype.render.call(this);
                             }
                         }
                         else {
@@ -126,9 +134,9 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     }
                 };
                 return RHDPSearchResultCount;
-            }(pfelement_js_1.default));
+            }(rhelement_js_1.default));
             exports_1("default", RHDPSearchResultCount);
-            customElements.define('rhdp-search-result-count', RHDPSearchResultCount);
+            rhelement_js_1.default.create(RHDPSearchResultCount);
         }
     };
 });

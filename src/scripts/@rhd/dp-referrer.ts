@@ -1,9 +1,9 @@
-import PFElement from '../@pfelements/pfelement.js';
+// import PFElement from '../@pfelements/pfelement.js';
+import RHElement from '../@rhelements/rhelement/rhelement.js';
 
-export default class DPReferrer extends PFElement {
-  template = el => {
-    const tpl = document.createElement("template");
-    tpl.innerHTML = `
+export default class DPReferrer extends RHElement {
+  get html() {
+      return `
     <style>
     :host {
         color: #363636 !important;
@@ -90,15 +90,14 @@ export default class DPReferrer extends PFElement {
     }
     
     </style>
-    <img src="${el.icon}">
-    ${el.size === 'xl' ? '<h3>' : ''}
-    ${el.heading ? `<strong>${el.heading}</strong>` : ''}
-    ${el.size === 'xl' ? '</h3>' : ''}
-    <p><slot>${el.text}</slot></p>
-    ${el.size === 'xl' ? `<a class="close" href="#"><i class="fas fa-times"></i></a>` : ''}`;
+    <img src="${this.icon}">
+    ${this.size === 'xl' ? '<h3>' : ''}
+    ${this.heading ? `<strong>${this.heading}</strong>` : ''}
+    ${this.size === 'xl' ? '</h3>' : ''}
+    <p><slot>${this.text}</slot></p>
+    ${this.size === 'xl' ? `<a class="close" href="#"><i class="fas fa-times"></i></a>` : ''}`;
     // ${icon({prefix: 'fas', iconName: 'times'}).html}
     // ${el.size === 'xl' ? `<a class="close">${fontawesome.icon(faTimes)}</a>` : ''}`;
-    return tpl;
 }
 
 _type = 'info';
@@ -109,6 +108,10 @@ _background = '#dcedf8';
 _border = '#87aac1';
 _text : string;
 _uri = new URL(window.location.href);
+
+static get tag() {
+    return 'dp-referrer';
+}
 
 get type() {
     return this._type;
@@ -177,21 +180,23 @@ set icon(val) {
       this._uri = val;
   }
 
-  constructor(element: string='dp-referrer') {
-      super(element);
+  constructor() {
+      super(DPReferrer, {delayRender: true});
   }
 
   connectedCallback() {
+    super.connectedCallback();
     if (this.uri.searchParams.get('referrer') === 'jbd') {
       const category = window.location.href.replace(/^https?\:\/\/([a-z._-]|[0-9])+(:?[0-9]*)?(\/pr\/[0-9]+\/export)?\//,'').replace(/\/$/,'').split('?')[0].split('#')[0].split(/\//);
       this.size = 'xl';
       this.heading = category[0] !== 'middleware' ? 'Welcome jboss.org members!' : 'You have been redirected from JBoss.org to Red Hat Developer.';
       this.innerHTML = category[0] !== 'middleware' ? `It's true — JBoss Developer and Red Hat Developer Program are joining forces. You can find all the great Middleware information that you were looking for right here on developers.redhat.com.<a href="https://developer.jboss.org/blogs/mark.little/2017/08/31/we-are-moving?_sscc=t"> Read more about this on our blog.</a>` : `It's true &mdash; JBoss Developer and Red Hat Developer are one and the same, and you can find all the great stuff you were looking for right here on <a href="https://developers.redhat.com/">developers.redhat.com.</a>`;
-      super.render(this.template(this));
+      super.render();
     } else {
       this.innerHTML = '';
     }
   }
 }
 
-window.customElements.define('dp-referrer', DPReferrer);
+RHElement.create(DPReferrer);
+// window.customElements.define('dp-referrer', DPReferrer);

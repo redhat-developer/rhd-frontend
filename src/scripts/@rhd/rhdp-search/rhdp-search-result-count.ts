@@ -1,24 +1,27 @@
-import PFElement from '../../@pfelements/pfelement.js';
+// import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 
-export default class RHDPSearchResultCount extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class RHDPSearchResultCount extends RHElement {
+    get html() {
+        return `
         <style>
         :host {
             grid-column: 5 / span 9;
             font-weight: 600;
             font-size: 1.2em;
             display: block;
+            margin-bottom: 1em;
         }
 
         @media only screen and (max-width: 768px) {
             :host { border-bottom: 1px solid var(--rhd-grey-3; }
         }
         </style>
-        ${el.count} results found for ${el.term.replace('<','&lt;').replace('>','&gt;')}`;
-        return tpl;
+        ${this.count} results found for ${this.term.replace('<','&lt;').replace('>','&gt;')}`;
     }
+
+    static get tag() { return 'rhdp-search-result-count'; }
+
     _count = 0;
     _term = '';
     _loading = true;
@@ -53,17 +56,18 @@ export default class RHDPSearchResultCount extends PFElement {
     }
 
     constructor() {
-        super('rhdp-search-result-count');
+        super(RHDPSearchResultCount, {delayRender: true });
 
         this._setText = this._setText.bind(this);
     }
 
     connectedCallback() {
-        super.render(this.template(this));
+        super.connectedCallback();
         top.addEventListener('params-ready', this._setText);
         top.addEventListener('search-start', e => { this.loading = true; this._setText(e); });
         top.addEventListener('search-complete', e => { this.loading = false; this._setText(e); });
         //top.addEventListener('term-change', this._setText);
+        super.render();
     }
 
     static get observedAttributes() { 
@@ -72,7 +76,7 @@ export default class RHDPSearchResultCount extends PFElement {
 
     attributeChangedCallback(name, oldVal, newVal) {
         this[name] = newVal;
-        super.render(this.template(this));
+        super.render();
     }
 
     _setText(e) {
@@ -90,7 +94,7 @@ export default class RHDPSearchResultCount extends PFElement {
                 }
                 if (!this.loading) {
                     // this.innerHTML = `${this.count} results found ${this.term ? `for ${this.term}` : ''}`;
-                    super.render(this.template(this));
+                    super.render();
                 }
             } else { 
                 this.term = '';
@@ -105,4 +109,5 @@ export default class RHDPSearchResultCount extends PFElement {
     }
 }
 
-customElements.define('rhdp-search-result-count', RHDPSearchResultCount);
+RHElement.create(RHDPSearchResultCount);
+// customElements.define('rhdp-search-result-count', RHDPSearchResultCount);

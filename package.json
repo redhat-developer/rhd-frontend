@@ -8,12 +8,12 @@
     "test": "npm run scripts && karma start src/tests/unit/config/karma.conf.js",
     "build": "npm run scripts && npm run styles",
     "del": "npm run del:scripts && npm run del:styles",
-    "del:scripts": "del \"dist/js**\" && del src/docs/static/js",
+    "del:scripts": "del \"dist/js**\" && del src/docs/static/js && del docs/js",
     "del:styles": "del \"dist/styles**\" && del src/docs/static/css",
     "scripts": "npm run del:scripts && npm run scripts:tsc && npm run scripts:old && npm run scripts:copy",
     "scripts:tsc": "tsc && uglifyjs-folder dist/js -c -e -o dist/js",
     "scripts:old": "uglifyjs-folder src/scripts/js -c -o dist/js/rhd.old.min.js",
-    "scripts:copy": "copyfiles -u 1 \"dist/js/**/*\" src/docs/static/",
+    "scripts:copy": "copyfiles -u 4 \"dist/js/src/scripts/**/*\" src/docs/static/js && copyfiles -u 3 \"dist/js/node_modules/**/*\" src/docs/static/js && copyfiles -u 2 \"dist/js/*.js\" src/docs/static/js",
     "styles": "npm run del:styles && npm run styles:sass && npm run styles:copy",
     "styles:sass": "node-sass src/styles/ -o dist/styles/ && node-sass src/styles/ -o dist/styles-min/ --output-style compressed && postcss -o dist/styles-min/rhd.min.css dist/styles-min/rhd.css",
     "styles:copy": "copyfiles -f \"dist/styles**/*.css\" src/docs/static/css",
@@ -30,6 +30,7 @@
   "author": "<ldary@redhat.com>",
   "license": "MIT",
   "devDependencies": {
+    "@rhelements/rh-datetime": "^1.0.0-prerelease.7",
     "browser-sync": "^2.26.3",
     "copyfiles": "^2.1.0",
     "cssnano": "^4.1.7",
@@ -52,5 +53,8 @@
     "travis-deploy-once": "^5.0.9",
     "typescript": "^3.2.1",
     "uglifyjs-folder": "^1.5.1"
+  },
+  "dependencies": {
+    "@rhelements/rhelement": "^1.0.0-prerelease.7"
   }
 }

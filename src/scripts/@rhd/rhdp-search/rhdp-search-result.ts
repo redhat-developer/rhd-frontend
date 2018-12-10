@@ -1,15 +1,15 @@
-import PFElement from '../../@pfelements/pfelement.js';
+//import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 
-export default class RHDPSearchResult extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class RHDPSearchResult extends RHElement {
+    get html() {
+        return `
         <style>
 :host {
     font-family: "Overpass", "Open Sans", Arial, Helvetica, sans-serif;
     margin-bottom: 25px;
     padding-bottom: 25px;
-    border-bottom: 1px solid $grey-3;
+    border-bottom: 1px solid #d5d5d5;
     display: flex;
     flex-direction: row;
 }
@@ -64,23 +64,34 @@ export default class RHDPSearchResult extends PFElement {
         max-height: 45px;
         margin-bottom: 25px;
     }
-    .thumb { 
+    div {
+        flex: 1 1 auto;
+    }
+    div.thumb { 
         flex: 0 0 130px; 
         margin-left: 1em;
     }
+
+    .thumb img {
+        height: auto;
+        max-width: 100%;
+    }
+
     .hlt { font-weight: 600; }
         </style>
 <div>
-    <h4>${el.url ? `<a href="${el.url}">${el.title}</a>` : el.title}</h4>
-    <p ${el.premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"'}>
-        <span class="caps">${el.kind}</span>
-        ${el.created ? `- <rh-datetime datetime="${el.created}" type="local" day="numeric" month="long" year="numeric">${el.created}</rh-datetime>` : ''}
+    <h4>${this.url ? `<a href="${this.url}">${this.title}</a>` : this.title}</h4>
+    <p ${this.premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"'}>
+        <span class="caps">${this.kind}</span>
+        ${this.created ? `- <rh-datetime datetime="${this.created}" type="local" day="numeric" month="long" year="numeric">${this.created}</rh-datetime>` : ''}
     </p>
-    <p class="result-description">${el.description}</p>
+    <p class="result-description">${this.description}</p>
 </div>
-${el.thumbnail ? `<div class="thumb"><img src="${el.thumbnail.replace('http:','https:')}"></div>` : ''}`;
-        return tpl;
+${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:','https:')}"></div>` : ''}`;
     }
+
+    static get tag() { return 'rhdp-search-result'; }
+
     _result;
     _url = ['',''];
     _title;
@@ -171,11 +182,12 @@ ${el.thumbnail ? `<div class="thumb"><img src="${el.thumbnail.replace('http:','h
     }
 
     constructor() {
-        super('rhdp-search-result');
+        super(RHDPSearchResult, {delayRender: true});
     }
 
     connectedCallback() {
-        
+        super.connectedCallback();
+        super.render();
     }
 
     static get observedAttributes() { 
@@ -188,7 +200,7 @@ ${el.thumbnail ? `<div class="thumb"><img src="${el.thumbnail.replace('http:','h
 
     renderResult() {
         // this.innerHTML = this.template`${this.url}${this.title}${this.kind}${this.created}${this.description}${this.premium}${this.thumbnail}`;
-        super.render(this.template(this));
+        super.render();
     }
 
     computeThumbnail(result) {
@@ -269,4 +281,5 @@ ${el.thumbnail ? `<div class="thumb"><img src="${el.thumbnail.replace('http:','h
 
 }
 
-customElements.define('rhdp-search-result', RHDPSearchResult);
+RHElement.create(RHDPSearchResult);
+// customElements.define('rhdp-search-result', RHDPSearchResult);

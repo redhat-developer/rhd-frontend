@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js"], function (exports_1, context_1) {
+System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,27 +13,34 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, RHDPSearchResult;
+    var rhelement_js_1, RHDPSearchResult;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
+            function (rhelement_js_1_1) {
+                rhelement_js_1 = rhelement_js_1_1;
             }
         ],
         execute: function () {
             RHDPSearchResult = (function (_super) {
                 __extends(RHDPSearchResult, _super);
                 function RHDPSearchResult() {
-                    var _this = _super.call(this, 'rhdp-search-result') || this;
-                    _this.template = function (el) {
-                        var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n        <style>\n:host {\n    font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n    margin-bottom: 25px;\n    padding-bottom: 25px;\n    border-bottom: 1px solid $grey-3;\n    display: flex;\n    flex-direction: row;\n}\n    .subscription-required {\n        &:before {\n            content: '';\n            background: url('https://static.jboss.org/rhd/images/icons/subscription-required.svg') no-repeat;\n            background-size:cover;\n            position:absolute;\n            margin-top: 5px;\n            width: .9em;\n            height: .9em;\n        }\n        .caps {\n            margin-left: 20px;\n        }\n\n    }\n\n    div:first-child { flex: 1 1 auto; }\n\n    h4 {\n        font-weight: 600;\n        font-style: normal;\n        font-size: 20px;\n        line-height: 1.4;\n        color: #06c;\n        cursor: pointer;\n        margin: 0;\n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n    }\n\n    p { margin: 0; \n        color: #424242;\n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n        }\n    .result-info span{\n        font-size: .9rem;\n        color: $grey-6;\n    }\n\n    .caps {\n        text-transform: uppercase;\n        font-size: 16px;\n        font-weight: normal;\n        line-height: 24px;\n        -webkit-font-smoothing: antialiased;\n    }\n    .result-description {\n        overflow: hidden;\n        text-overflow: ellipsis;\n        max-height: 45px;\n        margin-bottom: 25px;\n    }\n    .thumb { \n        flex: 0 0 130px; \n        margin-left: 1em;\n    }\n    .hlt { font-weight: 600; }\n        </style>\n<div>\n    <h4>" + (el.url ? "<a href=\"" + el.url + "\">" + el.title + "</a>" : el.title) + "</h4>\n    <p " + (el.premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"') + ">\n        <span class=\"caps\">" + el.kind + "</span>\n        " + (el.created ? "- <rh-datetime datetime=\"" + el.created + "\" type=\"local\" day=\"numeric\" month=\"long\" year=\"numeric\">" + el.created + "</rh-datetime>" : '') + "\n    </p>\n    <p class=\"result-description\">" + el.description + "</p>\n</div>\n" + (el.thumbnail ? "<div class=\"thumb\"><img src=\"" + el.thumbnail.replace('http:', 'https:') + "\"></div>" : '');
-                        return tpl;
-                    };
+                    var _this = _super.call(this, RHDPSearchResult, { delayRender: true }) || this;
                     _this._url = ['', ''];
                     return _this;
                 }
+                Object.defineProperty(RHDPSearchResult.prototype, "html", {
+                    get: function () {
+                        return "\n        <style>\n:host {\n    font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n    margin-bottom: 25px;\n    padding-bottom: 25px;\n    border-bottom: 1px solid #d5d5d5;\n    display: flex;\n    flex-direction: row;\n}\n    .subscription-required {\n        &:before {\n            content: '';\n            background: url('https://static.jboss.org/rhd/images/icons/subscription-required.svg') no-repeat;\n            background-size:cover;\n            position:absolute;\n            margin-top: 5px;\n            width: .9em;\n            height: .9em;\n        }\n        .caps {\n            margin-left: 20px;\n        }\n\n    }\n\n    div:first-child { flex: 1 1 auto; }\n\n    h4 {\n        font-weight: 600;\n        font-style: normal;\n        font-size: 20px;\n        line-height: 1.4;\n        color: #06c;\n        cursor: pointer;\n        margin: 0;\n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n    }\n\n    p { margin: 0; \n        color: #424242;\n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n        }\n    .result-info span{\n        font-size: .9rem;\n        color: $grey-6;\n    }\n\n    .caps {\n        text-transform: uppercase;\n        font-size: 16px;\n        font-weight: normal;\n        line-height: 24px;\n        -webkit-font-smoothing: antialiased;\n    }\n    .result-description {\n        overflow: hidden;\n        text-overflow: ellipsis;\n        max-height: 45px;\n        margin-bottom: 25px;\n    }\n    div {\n        flex: 1 1 auto;\n    }\n    div.thumb { \n        flex: 0 0 130px; \n        margin-left: 1em;\n    }\n\n    .thumb img {\n        height: auto;\n        max-width: 100%;\n    }\n\n    .hlt { font-weight: 600; }\n        </style>\n<div>\n    <h4>" + (this.url ? "<a href=\"" + this.url + "\">" + this.title + "</a>" : this.title) + "</h4>\n    <p " + (this.premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"') + ">\n        <span class=\"caps\">" + this.kind + "</span>\n        " + (this.created ? "- <rh-datetime datetime=\"" + this.created + "\" type=\"local\" day=\"numeric\" month=\"long\" year=\"numeric\">" + this.created + "</rh-datetime>" : '') + "\n    </p>\n    <p class=\"result-description\">" + this.description + "</p>\n</div>\n" + (this.thumbnail ? "<div class=\"thumb\"><img src=\"" + this.thumbnail.replace('http:', 'https:') + "\"></div>" : '');
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchResult, "tag", {
+                    get: function () { return 'rhdp-search-result'; },
+                    enumerable: true,
+                    configurable: true
+                });
                 Object.defineProperty(RHDPSearchResult.prototype, "url", {
                     get: function () {
                         return this._url;
@@ -139,6 +146,8 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     configurable: true
                 });
                 RHDPSearchResult.prototype.connectedCallback = function () {
+                    _super.prototype.connectedCallback.call(this);
+                    _super.prototype.render.call(this);
                 };
                 Object.defineProperty(RHDPSearchResult, "observedAttributes", {
                     get: function () {
@@ -151,7 +160,7 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     this[name] = newVal;
                 };
                 RHDPSearchResult.prototype.renderResult = function () {
-                    _super.prototype.render.call(this, this.template(this));
+                    _super.prototype.render.call(this);
                 };
                 RHDPSearchResult.prototype.computeThumbnail = function (result) {
                     if (result.fields.thumbnail) {
@@ -228,9 +237,9 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     this.premium = premium;
                 };
                 return RHDPSearchResult;
-            }(pfelement_js_1.default));
+            }(rhelement_js_1.default));
             exports_1("default", RHDPSearchResult);
-            customElements.define('rhdp-search-result', RHDPSearchResult);
+            rhelement_js_1.default.create(RHDPSearchResult);
         }
     };
 });

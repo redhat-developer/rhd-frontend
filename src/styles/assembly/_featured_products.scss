@@ -21,7 +21,6 @@
 
   article {
     background-color: $grey-1;
-    border-top: 6px solid $red;
     text-align: center;
     padding: 30px 15px;
     font-size: 14px;
@@ -41,10 +40,36 @@
     }
 
   }
+  &.featured article{
+    border-top: 6px solid $red;
+  }
+  &.basic article{
+    border-top: none;
+  }
   @media screen and (max-width: 1024px) {
     .grid { grid-template-columns: repeat(2, 300px); }
   }
   @media screen and (max-width: 768px) {
     .grid { grid-template-columns: repeat(1, 300px); }
+  }
+
+  .cta-link {
+    margin-top: 2rem;
+    text-align: center;
+    @include tablet-portrait {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    @include desktop-small {
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+    .button {
+      display: inline-block;
+      width: 100%;
+      @include tablet-portrait {
+        width: auto;
+      }
+    }
   }
 }

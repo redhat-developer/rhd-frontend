@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js"], function (exports_1, context_1) {
+System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,19 +13,20 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, RHDPSearchQuery;
+    var rhelement_js_1, RHDPSearchQuery;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
+            function (rhelement_js_1_1) {
+                rhelement_js_1 = rhelement_js_1_1;
             }
         ],
         execute: function () {
             RHDPSearchQuery = (function (_super) {
                 __extends(RHDPSearchQuery, _super);
                 function RHDPSearchQuery() {
-                    var _this = _super.call(this, 'rhdp-search-query') || this;
+                    var _this = _super.call(this, RHDPSearchQuery) || this;
+                    _this._filters = { term: '', facets: {} };
                     _this._limit = 10;
                     _this._from = 0;
                     _this._sort = 'relevance';
@@ -40,6 +41,16 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     _this._changeAttr = _this._changeAttr.bind(_this);
                     return _this;
                 }
+                Object.defineProperty(RHDPSearchQuery.prototype, "html", {
+                    get: function () { return ''; },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchQuery, "tag", {
+                    get: function () { return 'rhdp-search-query'; },
+                    enumerable: true,
+                    configurable: true
+                });
                 Object.defineProperty(RHDPSearchQuery.prototype, "filters", {
                     get: function () {
                         return this._filters;
@@ -60,6 +71,7 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                         if (this._activeFilters === val)
                             return;
                         this._activeFilters = val;
+                        this.filters.facets = this._activeFilters;
                     },
                     enumerable: true,
                     configurable: true
@@ -137,6 +149,7 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                         if (this._term === val)
                             return;
                         this._term = val;
+                        this.filters.term = this._term;
                         this.setAttribute('term', val.toString());
                     },
                     enumerable: true,
@@ -183,6 +196,7 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     return filterArr.join(', ');
                 };
                 RHDPSearchQuery.prototype.connectedCallback = function () {
+                    _super.prototype.connectedCallback.call(this);
                     top.addEventListener('params-ready', this._changeAttr);
                     top.addEventListener('term-change', this._changeAttr);
                     top.addEventListener('filter-item-change', this._changeAttr);
@@ -287,23 +301,14 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                         qURL_1.searchParams.set('query', this.term || '');
                         qURL_1.searchParams.set('query_highlight', 'true');
                         qURL_1.searchParams.set('size' + this.limit.toString(), 'true');
-                        if (this.activeFilters) {
-                            Object.keys(this.activeFilters).forEach(function (filtergroup) {
-                                if (_this.filters && _this.filters.facets) {
-                                    _this.filters.facets.forEach(function (group) {
-                                        if (group.key === filtergroup) {
-                                            group.items.forEach(function (facet) {
-                                                if (_this.activeFilters[group.key].indexOf(facet.key) >= 0) {
-                                                    facet.value.forEach(function (fval) {
-                                                        qURL_1.searchParams.append(group.key, fval);
-                                                    });
-                                                }
-                                            });
-                                        }
-                                    });
-                                }
+                        Object.keys(this.filters.facets).forEach(function (group) {
+                            _this.filters.facets[group].forEach(function (facet) {
+                                var values = top.document.querySelector("rhdp-search-filter-item[group=" + group + "][key=" + facet + "]").getAttribute('type').split(',');
+                                values.forEach(function (value) {
+                                    qURL_1.searchParams.append(group, value);
+                                });
                             });
-                        }
+                        });
                         fetch(qURL_1.toString())
                             .then(function (resp) { return resp.json(); })
                             .then(function (data) {
@@ -316,9 +321,9 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     }
                 };
                 return RHDPSearchQuery;
-            }(pfelement_js_1.default));
+            }(rhelement_js_1.default));
             exports_1("default", RHDPSearchQuery);
-            customElements.define('rhdp-search-query', RHDPSearchQuery);
+            rhelement_js_1.default.create(RHDPSearchQuery);
         }
     };
 });

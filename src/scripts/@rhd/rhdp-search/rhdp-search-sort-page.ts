@@ -1,33 +1,33 @@
-import PFElement from '../../@pfelements/pfelement.js';
+//import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 
-export default class RHDPSearchSortPage extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class RHDPSearchSortPage extends RHElement {
+    get html() {
+        return `
         <style>
         :host {
-            grid-column: 5 / span 9;
             display: block;
-            padding: 0 0 1em 0;
-            border-bottom: 1px solid var(--rhd-gray-4);
+            border-bottom: 1px solid #ccc;
+            margin: 0 0 1em 0;
         }
-            
+
         select { 
-            width: auto; 
-            padding-right: 20px; 
-            background: transparent;
-            font-size: 16px;
-            line-height: 1;
-            border: 0;
+            width: auto;
+            margin: 0 0 1rem;
+            -webkit-appearance: none!important;
+            -webkit-border-radius: 0;
+            background-color: #fafafa;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iMyIgdmlld0JveD0iMCAwIDYgMyI+PHBhdGggZD0iTTUuOTkyIDBsLTMgMy0zLTN6Ii8+PC9zdmc+);
+            background-position: 100%;
+            background-repeat: no-repeat;
+            border: 1px solid #ccc;
             border-radius: 0;
-            padding:7px;
-            margin:0;
-            position: relative;
-            z-index: 2;
-            padding-right: 30px;
-            /* Hacks to style dropdown */
-            -webkit-appearance: none;
-            -moz-appearance: window;
+            color: rgba(0,0,0,.75);
+            font-family: Overpass,Open Sans,Arial,Helvetica,sans-serif;
+            font-size: .875rem;
+            height: 2.3125rem;
+            line-height: normal;
+            padding: .5rem 20px .5rem .5rem;
         }
         
         select:focus, select:active {
@@ -120,8 +120,10 @@ export default class RHDPSearchSortPage extends PFElement {
         <option value="relevance">Relevance</option>
         <option value="most-recent">Most Recent</option>
     </select>`;
-        return tpl;
     }
+
+    static get tag() { return 'rhdp-search-sort-page'; }
+
     _sort;
 
     get sort() {
@@ -134,13 +136,14 @@ export default class RHDPSearchSortPage extends PFElement {
         this.shadowRoot.querySelector('select').value = val;
     }
     constructor() {
-        super('rhdp-search-sort-page');
+        super(RHDPSearchSortPage, {delayRender: true});
 
         this._sortChange = this._sortChange.bind(this);
     }
 
     connectedCallback() {
-        super.render(this.template(this));
+        super.connectedCallback();
+        super.render();
         top.addEventListener('params-ready', this._sortChange);
         this.shadowRoot.querySelector('select').onchange = this._sortChange;
     }
@@ -172,4 +175,5 @@ export default class RHDPSearchSortPage extends PFElement {
     }
 }
 
-customElements.define('rhdp-search-sort-page', RHDPSearchSortPage);
+RHElement.create(RHDPSearchSortPage);
+// customElements.define('rhdp-search-sort-page', RHDPSearchSortPage);

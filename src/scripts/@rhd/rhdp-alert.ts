@@ -1,13 +1,13 @@
-import PFElement from '../@pfelements/pfelement.js';
+// import PFElement from '../@pfelements/pfelement.js';
+import RHElement from '../@rhelements/rhelement/rhelement.js';
 // import {library, icon} from '@fortawesome/fontawesome-svg-core';
 // import {fas} from '@fortawesome/free-solid-svg-icons';
 
 // library.add(fas);
 
-export default class RHDPAlert extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class RHDPAlert extends RHElement {
+    get html() {
+        return `
         <style>
         :host {
             color: #363636 !important;
@@ -94,16 +94,17 @@ export default class RHDPAlert extends PFElement {
         }
         
         </style>
-        <img src="${el.icon}">
-        ${el.size === 'xl' ? '<h3>' : ''}
-        ${el.heading ? `<strong>${el.heading}</strong>` : ''}
-        ${el.size === 'xl' ? '</h3>' : ''}
-        <p><slot>${el.text}</slot></p>
-        ${el.size === 'xl' ? `<a class="close" href="#"><i class="fas fa-times"></i></a>` : ''}`;
+        <img src="${this.icon}">
+        ${this.size === 'xl' ? '<h3>' : ''}
+        ${this.heading ? `<strong>${this.heading}</strong>` : ''}
+        ${this.size === 'xl' ? '</h3>' : ''}
+        <p><slot>${this.text}</slot></p>
+        ${this.size === 'xl' ? `<a class="close" href="#"><i class="fas fa-times"></i></a>` : ''}`;
         // ${icon({prefix: 'fas', iconName: 'times'}).html}
         // ${el.size === 'xl' ? `<a class="close">${fontawesome.icon(faTimes)}</a>` : ''}`;
-        return tpl;
     }
+
+    static get tag() { return 'rhdp-alert'; }
     
     _type = 'info';
     _size : string;
@@ -170,12 +171,12 @@ export default class RHDPAlert extends PFElement {
         this._icon = val;
     }
 
-    constructor(element: string='rhdp-alert') {
-        super(element);
+    constructor() {
+        super(RHDPAlert, {delayRender: true });
     }
 
     connectedCallback() {
-        super.render(this.template(this));
+        super.connectedCallback();
 
         const lnk = this.shadowRoot.querySelector('.close');
         if (lnk) {
@@ -185,6 +186,7 @@ export default class RHDPAlert extends PFElement {
                 this.innerHTML = '';
             });
         }
+        super.render();
     }
 
     static get observedAttributes() {
@@ -193,9 +195,9 @@ export default class RHDPAlert extends PFElement {
 
     attributeChangedCallback(name, oldVal, newVal) {
         this[name] = newVal;
-        super.render(this.template(this));;
+        super.render();
     }
 }
 
-window.customElements.define('rhdp-alert', RHDPAlert);
-console.log('RHDP Alert script fired');
+RHElement.create(RHDPAlert);
+// window.customElements.define('rhdp-alert', RHDPAlert);

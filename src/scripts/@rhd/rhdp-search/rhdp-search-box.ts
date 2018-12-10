@@ -1,12 +1,17 @@
-import PFElement from '../../@pfelements/pfelement.js';
+// import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 
-export default class RHDPSearchBox extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class RHDPSearchBox extends RHElement {
+    get html() {
+        return `
         <style>
+            * {
+                font-family: Overpass,Open Sans,Arial,Helvetica,sans-serif;
+            }
+
             :host {
                 flex: 0 0 auto;
+                margin: 0 0 1em;
             }
 
             form.search-bar { 
@@ -28,12 +33,7 @@ export default class RHDPSearchBox extends PFElement {
             
             input.user-search {
                 background-color: white;
-                border-bottom-color: rgb(204,204,204);
-                border-bottom-style: solid;
-                border-left-color: rgb(204,204,204);
-                border-left-style: solid;
-                border-right-color: rgb(204,204,204);
-                border-right-style: solid;
+                border: 1px solid #ccc;
                 box-sizing: border-box;
                 font-size: 16px;
                 font-weight: 600;
@@ -46,6 +46,7 @@ export default class RHDPSearchBox extends PFElement {
                 transition-timing-function: ease, ease-in-out;
                 user-select: text;
                 width: 100%;
+                margin-bottom: 1em;
             }
         
             input.user-search::-webkit-search-cancel-button{
@@ -59,21 +60,23 @@ export default class RHDPSearchBox extends PFElement {
             }
         
             button {
-                text-transform: uppercase;
                 background: #c00;
-                text-decoration: none;
                 border: 0;
-                height: 40px;
-                font-weight: 600;
-                font-size: 16px;
-                padding: 9px 30px;
-                transition: background .2s ease-in 0s;
-                line-height: 1.2em;
+                color: #fff;
                 cursor: pointer;
+                font-size: 16px;
+                font-weight: 600;
+                height: 40px;
+                line-height: 1.2em;
+                padding: 9px 30px;
                 position: relative;
                 text-align: center;
-                color: #fff;
+                text-decoration: none;
+                text-transform: uppercase;
+                transition: background .2s ease-in 0s;
             }
+
+            button: hover { background-color: #8f0000; }
         
             button i.fa.fa-search { display:none; }
         
@@ -88,13 +91,16 @@ export default class RHDPSearchBox extends PFElement {
         </style>
 <form class="search-bar" role="search">
     <div class="input-cont">
-        <input value="${el.term}" class="user-success user-search" type="search" id="query" placeholder="Enter your search term">
+        <input value="${this.term}" class="user-success user-search" type="search" id="query" placeholder="Enter your search term">
     </div>
     <button id="search-btn"><span>SEARCH</span><i class='fa fa-search' aria-hidden='true'></i></button>
 </form>`;
-        return tpl;
     }
     _term = '';
+
+    static get tag() {
+        return 'rhdp-search-box';
+    }
 
     get term() {
         return this._term;
@@ -108,12 +114,13 @@ export default class RHDPSearchBox extends PFElement {
     name = 'Search Box';
 
     constructor() {
-        super('rhdp-search-box');
+        super(RHDPSearchBox, {delayRender: true});
         this._checkTerm = this._checkTerm.bind(this);
     }
 
     connectedCallback() {
-        super.render(this.template(this));
+        super.connectedCallback();
+        super.render();
         top.addEventListener('params-ready', this._checkTerm);
         //top.window.addEventListener('popstate', e => { this.term = null; });
         top.addEventListener('term-change', this._checkTerm);
@@ -156,4 +163,5 @@ export default class RHDPSearchBox extends PFElement {
     }
 }
 
-window.customElements.define('rhdp-search-box', RHDPSearchBox);
+RHElement.create(RHDPSearchBox);
+// window.customElements.define('rhdp-search-box', RHDPSearchBox);

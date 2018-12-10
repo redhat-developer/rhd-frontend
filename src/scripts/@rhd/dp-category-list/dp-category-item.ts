@@ -1,23 +1,25 @@
-import PFElement from '../../@pfelements/pfelement.js';
+//import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 
-export default class DPCategoryItem extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class DPCategoryItem extends RHElement {
+    get html() {
+        return `
             <style>
             
             </style>
             <slot></slot>
             `;
-        return tpl;
     }
+
+    static get tag() { return 'dp-category-item'; }
+    
     constructor() {
-        super('dp-category-item');
+        super(DPCategoryItem);
         
     }
 
     connectedCallback() {
-        super.render(this.template(this));
+        super.connectedCallback();
     }
 
     static get observedAttributes() { 
@@ -29,4 +31,5 @@ export default class DPCategoryItem extends PFElement {
     }
 }
 
-window.customElements.define('dp-category-item', DPCategoryItem);
+RHElement.create(DPCategoryItem);
+// window.customElements.define('dp-category-item', DPCategoryItem);

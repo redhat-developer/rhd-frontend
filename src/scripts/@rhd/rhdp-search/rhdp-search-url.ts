@@ -1,6 +1,10 @@
-import PFElement from '../../@pfelements/pfelement.js';
+// import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 
-export default class RHDPSearchURL extends PFElement {
+export default class RHDPSearchURL extends RHElement {
+    get html() { return ''; }
+    static get tag() { return 'rhdp-search-url'; }
+
     _uri = new URL(window.location.href); // https://developers.redhat.com/search/?q=term+term1+term2&f=a+b+c&s=sort&r=100
     _term = this.uri.searchParams.get('t');
     _filters = this._setFilters(this.uri.searchParams.getAll('f'));
@@ -71,13 +75,14 @@ export default class RHDPSearchURL extends PFElement {
     //history.pushState({}, `Red Hat Developer Program Search: ${this.term}`, `?q=${decodeURIComponent(this.term).replace(' ', '+')}`);
 
     constructor() {
-        super('rhdp-search-url');
+        super(RHDPSearchURL);
 
         this._changeAttr = this._changeAttr.bind(this);
         this._popState = this._popState.bind(this);
     }
 
     connectedCallback() {
+        super.connectedCallback();
         //top.addEventListener('term-change', this._changeAttr);
         //top.addEventListener('filter-item-change', this._changeAttr);
         //top.addEventListener('sort-change', this._changeAttr);
@@ -172,4 +177,5 @@ export default class RHDPSearchURL extends PFElement {
     }
 }
 
-customElements.define('rhdp-search-url', RHDPSearchURL);
+RHElement.create(RHDPSearchURL);
+//customElements.define('rhdp-search-url', RHDPSearchURL);

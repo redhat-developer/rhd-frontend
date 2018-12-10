@@ -1,8 +1,13 @@
-import PFElement from '../../@pfelements/pfelement.js';
+//import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 import RHDPSearchFilterItem from './rhdp-search-filter-item.js';
 
-export default class RHDPSearchQuery extends PFElement {
-    _filters;
+export default class RHDPSearchQuery extends RHElement {
+
+    get html() { return ''; }
+    static get tag() { return 'rhdp-search-query'; }
+
+    _filters = { term:'', facets: {} };
     _activeFilters;
     _limit = 10;
     _from = 0;
@@ -28,6 +33,8 @@ export default class RHDPSearchQuery extends PFElement {
     set activeFilters(val) {
         if (this._activeFilters === val) return;
         this._activeFilters = val;
+        this.filters.facets = this._activeFilters;
+        
     }
 
     get from() {
@@ -86,6 +93,7 @@ export default class RHDPSearchQuery extends PFElement {
     set term(val) {
         if (this._term === val) return;
         this._term = val;
+        this.filters.term = this._term;
         this.setAttribute('term', val.toString());
     }
 
@@ -133,12 +141,13 @@ export default class RHDPSearchQuery extends PFElement {
     };
 
     constructor() {
-        super('rhdp-search-query');
+        super(RHDPSearchQuery);
 
         this._changeAttr = this._changeAttr.bind(this);
     }
 
     connectedCallback() {
+        super.connectedCallback();
         top.addEventListener('params-ready', this._changeAttr);
         top.addEventListener('term-change', this._changeAttr);
         top.addEventListener('filter-item-change', this._changeAttr);
@@ -206,6 +215,9 @@ export default class RHDPSearchQuery extends PFElement {
                 this.search();
                 break;
             case 'load-more': // detail.qty
+                // if (e.detail && e.detail.from) {
+                //     this.from = e.detail.from;
+                // }
                 this.search();
                 break;
             case 'clear-filters':
@@ -247,27 +259,18 @@ export default class RHDPSearchQuery extends PFElement {
             qURL.searchParams.set('from', this.from.toString());
             if (this.sort === 'most-recent') {
                 qURL.searchParams.set('newFirst', 'true');
-            }
+            } 
             qURL.searchParams.set('query', this.term || '');
             qURL.searchParams.set('query_highlight', 'true');
             qURL.searchParams.set('size'+this.limit.toString(), 'true');
-            if (this.activeFilters) {
-                Object.keys(this.activeFilters).forEach(filtergroup => {
-                    if (this.filters && this.filters.facets) {
-                        this.filters.facets.forEach(group => {
-                            if (group.key === filtergroup) {
-                                group.items.forEach(facet => {
-                                    if (this.activeFilters[group.key].indexOf(facet.key) >= 0) {
-                                        facet.value.forEach(fval => {
-                                            qURL.searchParams.append(group.key, fval);
-                                        });
-                                    }
-                                });
-                            }
-                        });
-                    }
+            Object.keys(this.filters.facets).forEach(group => {
+                this.filters.facets[group].forEach(facet => {
+                    let values = top.document.querySelector(`rhdp-search-filter-item[group=${group}][key=${facet}]`).getAttribute('type').split(',');
+                    values.forEach(value => {
+                        qURL.searchParams.append(group, value);
+                    })
                 });
-            }
+            });
             //console.log(qURL.toString());
             fetch(qURL.toString()) //this.urlTemplate`${this.url}${this.term}${this.from}${this.limit}${this.sort}${this.filters}`)
             .then((resp) => resp.json())
@@ -281,4 +284,5 @@ export default class RHDPSearchQuery extends PFElement {
     }
 }
 
-customElements.define('rhdp-search-query', RHDPSearchQuery);
+RHElement.create(RHDPSearchQuery);
+// customElements.define('rhdp-search-query', RHDPSearchQuery);

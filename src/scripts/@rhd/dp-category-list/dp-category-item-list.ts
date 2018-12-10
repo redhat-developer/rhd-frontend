@@ -1,9 +1,9 @@
-import PFElement from '../../@pfelements/pfelement.js';
+//import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 
-export default class DPCategoryItemList extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class DPCategoryItemList extends RHElement {
+    get html() {
+        return `
             <style>
             :host[visible] {
                 display: block;
@@ -65,8 +65,9 @@ export default class DPCategoryItemList extends PFElement {
             <slot></slot>
             </div>
             `;
-        return tpl;
     }
+
+    static get tag() { return 'dp-category-item-list'; }
 
     _index = 1;
     _visible = false;
@@ -77,7 +78,7 @@ export default class DPCategoryItemList extends PFElement {
     set index(val) {
         if (this._index === val) return;
         this._index = val;
-        super.render(this.template(this));
+        super.render();
     }
 
     get visible() {
@@ -98,12 +99,12 @@ export default class DPCategoryItemList extends PFElement {
     }
 
     constructor() {
-        super('dp-category-item-list');
+        super(DPCategoryItemList);
         
     }
 
     connectedCallback() {
-        super.render(this.template(this));
+        super.connectedCallback();
     }
 
     static get observedAttributes() { 
@@ -115,4 +116,5 @@ export default class DPCategoryItemList extends PFElement {
     }
 }
 
-window.customElements.define('dp-category-item-list', DPCategoryItemList);
+RHElement.create(DPCategoryItemList);
+// window.customElements.define('dp-category-item-list', DPCategoryItemList);

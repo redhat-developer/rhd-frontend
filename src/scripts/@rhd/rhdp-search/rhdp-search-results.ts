@@ -1,22 +1,76 @@
-import PFElement from '../../@pfelements/pfelement.js';
+//import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 import RHDPSearchResult from './rhdp-search-result.js';
 
-export default class RHDPSearchResults extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class RHDPSearchResults extends RHElement {
+    get html() {
+        return `
         <style>
-            
+            :host {
+                display: flex;
+                flex-direction: column;
+            }
+
+            [data-hide] {
+                display: none;
+            }
+
+            h4 { 
+                font-size: 27px;
+                font-weight: 600;
+                color: #242424;
+                line-height: 1.5;
+                margin-bottom: 16px;
+                margin-top: 16px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            div.moreBtn {
+                text-align: center;
+            }
+
+            a.moreBtn {
+                background-color: #fff;
+                border: 1px solid #06c;
+                color: #06c;
+                display: block;
+                font-weight: 600;
+                line-height: 1.44;
+                margin: 0 auto;
+                max-width: 165px;
+                padding: 8px 35px;
+                text-transform: uppercase;
+                cursor: pointer;
+                text-decoration: none;
+            }
+            a.moreBtn:hover {
+                background-color: #06c;
+                color: #fff;
+            }
+
+            .loading {
+                background: url(https://developers.redhat.com/images/icons/ajax-loader.gif) center 80px no-repeat;
+                min-height: 250px;
+            }
         </style>
-        ${el.invalid ? `
-        <div class="invalidMsg">
+        <slot></slot>
+        <div class="loading" data-hide></div>
+        <div class="moreBtn" data-hide><a class="moreBtn" href="#">Load More</a></div>
+        <p class="end-of-results" data-hide>- End of Results -</p>
+        <div class="invalidMsg" data-hide>
         <h4>Well, this is awkward. No search term was entered yet, so this page is a little empty right now.</h4>
         <p>After you enter a search term in the box above, you will see the results displayed here. 
         You can also use the filters to select a content type, product or topic to see some results too. 
         Try it out!</p>
-        </div>` : ''}`;
-        return tpl;
+        </div>`;
     }
+
+    static get tag() { return 'rhdp-search-results'; }
+
     _results;
     _more = false;
     _last = 0;
@@ -58,13 +112,8 @@ export default class RHDPSearchResults extends PFElement {
         this._valid = val;
     }
 
-    invalidMsg = document.createElement('div');
-    loadMore = document.createElement('div');
-    endOfResults = document.createElement('div');
-    loading = document.createElement('div');
-
     constructor() {
-        super('rhdp-search-results');
+        super(RHDPSearchResults, {delayRender: true});
 
         this._renderResults = this._renderResults.bind(this);
         this._setLoading = this._setLoading.bind(this);
@@ -73,19 +122,12 @@ export default class RHDPSearchResults extends PFElement {
     }
 
     connectedCallback() {
-        super.render(this.template(this));
-        this.setAttribute('data-rhd-col', '5span9');
-        // this.invalidMsg.className = 'invalidMsg';
-        // this.invalidMsg.innerHTML = `<h4>Well, this is awkward. No search term was entered yet, so this page is a little empty right now.</h4>
-        // <p>After you enter a search term in the box above, you will see the results displayed here. 
-        // You can also use the filters to select a content type, product or topic to see some results too. Try it out!</p>`;
-        this.endOfResults.innerHTML = '<p class="end-of-results">- End of Results -</p>'
-        this.loadMore.className = 'moreBtn';
-        this.loadMore.innerHTML = '<a class="moreBtn" href="#">Load More</a>';
-        this.loading.className = 'loading';
+        super.connectedCallback();
+        super.render();
 
-        this.loadMore.addEventListener('click', e => {
+        this.shadowRoot.querySelector('div.moreBtn').addEventListener('click', e => {
             e.preventDefault();
+            this.more = true;
             let evt = {
                 detail: {
                     from: this.last
@@ -100,46 +142,40 @@ export default class RHDPSearchResults extends PFElement {
         top.addEventListener('search-start', this._setLoading);
         top.addEventListener('params-ready', this._checkValid);
         top.window.addEventListener('popstate', this._clearResults);
-        this.shadowRoot.addEventListener('load-more', e => { 
-            this.more = true; 
-        });
     }
 
     addResult(result) {
         var item = new RHDPSearchResult();
         item.result = result;
-        this.shadowRoot.appendChild(item);
+        this.appendChild(item);
     }
 
     _setLoading(e) {
+        this.shadowRoot.querySelector('div.moreBtn').setAttribute('data-hide','');
+        this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide','');
         if(!this.more) {
-            while(this.shadowRoot.firstChild){
-                this.shadowRoot.removeChild(this.shadowRoot.firstChild);
+            while(this.firstChild){
+                this.removeChild(this.firstChild);
             }
         } else {
-            if (this.shadowRoot.querySelector('.moreBtn')) {
-                this.shadowRoot.removeChild(this.loadMore);
-            }
-            if (this.shadowRoot.querySelector('.invalidMsg')) {
-                this.shadowRoot.removeChild(this.invalidMsg);
-            }
             this.more = false;
         }
-        this.shadowRoot.appendChild(this.loading);
+        this.shadowRoot.querySelector('.loading').removeAttribute('data-hide');
     }
 
     _renderResults(e) {
         if (this.shadowRoot.querySelector('.loading')) {
-            this.shadowRoot.removeChild(this.loading);
+            this.shadowRoot.querySelector('.loading').setAttribute('data-hide','');
         }
 
         if (e.detail && typeof e.detail.results !== 'undefined' && typeof e.detail.invalid === 'undefined') {
             this.addResults(e.detail.results);
         } else {
-            while(this.shadowRoot.firstChild){
-                this.shadowRoot.removeChild(this.shadowRoot.firstChild);
+            while(this.firstChild){
+                this.removeChild(this.firstChild);
             }
-            this.shadowRoot.appendChild(this.invalidMsg);
+            this.shadowRoot.querySelector('div.moreBtn').setAttribute('data-hide', '');
+            this.shadowRoot.querySelector('.invalidMsg').removeAttribute('data-hide');
         }
         let evt = { 
             detail: { results: this.results }, 
@@ -157,10 +193,10 @@ export default class RHDPSearchResults extends PFElement {
         let obj = e.detail;
         this.valid = Object.keys(obj.filters).length > 0 || (obj.term !== null && obj.term !== '' && typeof obj.term !== 'undefined');
         if(!this.valid) {
-            this.shadowRoot.appendChild(this.invalidMsg);
+            this.shadowRoot.querySelector('.invalidMsg').removeAttribute('data-hide');
         } else {
             if (this.shadowRoot.querySelector('.invalidMsg')) {
-                this.shadowRoot.removeChild(this.invalidMsg);
+                this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide','');
             }
         }
     }
@@ -174,21 +210,22 @@ export default class RHDPSearchResults extends PFElement {
             }
             this.last = this.last + l;
             if (this.last >= results.hits.total) {
-                this.shadowRoot.appendChild(this.endOfResults);
+                this.shadowRoot.querySelector('.end-of-results').removeAttribute('data-hide');
             }
             if (l > 0 && this.last < results.hits.total) {
                 if (this.shadowRoot.querySelector('.end-of-results')) { 
-                    this.shadowRoot.removeChild(this.endOfResults);
+                    this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide','');
                 }
-                this.shadowRoot.appendChild(this.loadMore);
+                this.shadowRoot.querySelector('div.moreBtn').removeAttribute('data-hide');
             } else {
-                if (this.shadowRoot.querySelector('.moreBtn')) { 
-                    this.shadowRoot.removeChild(this.loadMore);
+                if (this.shadowRoot.querySelector('div.moreBtn')) { 
+                    this.shadowRoot.querySelector('div.moreBtn').setAttribute('data-hide','');
                 }
-                this.shadowRoot.appendChild(this.endOfResults);
+                this.shadowRoot.querySelector('.end-of-results').removeAttribute('data-hide');
             }
         }
     }
 }
 
-customElements.define('rhdp-search-results', RHDPSearchResults);
+RHElement.create(RHDPSearchResults);
+// customElements.define('rhdp-search-results', RHDPSearchResults);

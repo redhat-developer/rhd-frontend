@@ -1,12 +1,9 @@
-import PFElement from '../@pfelements/pfelement.js';
+// import PFElement from '../@pfelements/pfelement.js';
+import RHElement from '../@rhelements/rhelement/rhelement.js';
 
-export default class RHKeycloak extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = ``;
-        return tpl;
-
-    }
+export default class RHKeycloak extends RHElement {
+    
+    static get tag() { return 'dp-keycloak'; }
 
     _keycloak;
     _url : string; // Keycloak Server URL
@@ -19,12 +16,8 @@ export default class RHKeycloak extends PFElement {
         return this._url;
     }
 
-    constructor(element: string='rh-keycloak') {
-        super(element);
-    }
-
-    connectedCallback() {
-        
+    constructor() {
+        super(RHKeycloak);
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
@@ -36,4 +29,5 @@ export default class RHKeycloak extends PFElement {
     }
 }
 
-window.customElements.define('rh-keycloak', RHKeycloak);
+RHElement.create(RHKeycloak);
+// window.customElements.define('rh-keycloak', RHKeycloak);

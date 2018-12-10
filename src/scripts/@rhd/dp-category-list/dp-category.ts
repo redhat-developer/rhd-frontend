@@ -1,9 +1,9 @@
-import PFElement from '../../@pfelements/pfelement.js';
+// import PFElement from '../../@pfelements/pfelement.js';
+import RHElement from '../../@rhelements/rhelement/rhelement.js';
 
-export default class DPCategory extends PFElement {
-    template = (el:DPCategory) => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class DPCategory extends RHElement {
+    get html() {
+        return `
 <style>
 :host { 
     grid-column: span 1;
@@ -90,12 +90,13 @@ h4 {
     }
 }
 </style>
-${el.image && el.image.indexOf('svg') < 0 ? `<img src="${el.image}">` : el.image }
-<h4>${ el.name }</h4>
+${this.image && this.image.indexOf('svg') < 0 ? `<img src="${this.image}">` : this.image }
+<h4>${ this.name }</h4>
 <slot></slot>
 `;
-        return tpl;
     }
+
+    static get tag() { return 'dp-category'; }
 
     _name:string;
     _image:string;
@@ -158,19 +159,20 @@ ${el.image && el.image.indexOf('svg') < 0 ? `<img src="${el.image}">` : el.image
     }
 
     constructor() {
-        super('dp-category-list');
+        super(DPCategory, {delayRender: true});
         
         this._showList = this._showList.bind(this);
     }
 
     connectedCallback() {
-        super.render(this.template(this));
+        super.connectedCallback();
 
         this.addEventListener('click', e => {
             e.preventDefault();
             this.visible = !this.visible;
             return false;
         });
+        super.render();
     }
 
     static get observedAttributes() { 
@@ -200,8 +202,9 @@ ${el.image && el.image.indexOf('svg') < 0 ? `<img src="${el.image}">` : el.image
         const resp = await fetch(path);
         const svg = await resp.text();
         this.image = svg.substring(svg.indexOf('<svg'));
-        super.render(this.template(this));
+        super.render();
     }
 }
 
-window.customElements.define('dp-category', DPCategory);
+RHElement.create(DPCategory);
+// window.customElements.define('dp-category', DPCategory);

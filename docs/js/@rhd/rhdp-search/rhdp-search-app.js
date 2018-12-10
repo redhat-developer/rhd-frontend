@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js", "./rhdp-search-url.js", "./rhdp-search-filters.js"], function (exports_1, context_1) {
+System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-url.js", "./rhdp-search-filters.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,12 +13,12 @@ System.register(["../../@pfelements/pfelement.js", "./rhdp-search-url.js", "./rh
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, rhdp_search_url_js_1, rhdp_search_filters_js_1, RHDPSearchApp;
+    var rhelement_js_1, rhdp_search_url_js_1, rhdp_search_filters_js_1, RHDPSearchApp;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
+            function (rhelement_js_1_1) {
+                rhelement_js_1 = rhelement_js_1_1;
             },
             function (rhdp_search_url_js_1_1) {
                 rhdp_search_url_js_1 = rhdp_search_url_js_1_1;
@@ -31,76 +31,26 @@ System.register(["../../@pfelements/pfelement.js", "./rhdp-search-url.js", "./rh
             RHDPSearchApp = (function (_super) {
                 __extends(RHDPSearchApp, _super);
                 function RHDPSearchApp() {
-                    var _this = _super.call(this, 'rhdp-search-app') || this;
-                    _this.template = function (el) {
-                        var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n        <style>\n\n    :host { \n        display: flex;\n        flex-flow: column;\n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n        margin-bottom: 30px;\n    }\n\n    .query { flex: 0 0 auto; }\n    .content { flex: 1 1 auto; display: flex; flex-flow: row; }\n    .filters { flex: 0 0 auto; }\n    .results { flex: 1 0 auto; display: flex; flex-flow: column; }\n\n    .hide { display: none; }\n    \n    .show { display: block; }\n    \n    .mobile { display: none; }\n\n    h1 { flex: 0 0 auto; }\n\n    .loading {\n        background:url(\"https://developers.redhat.com/images/icons/ajax-loader.gif\") center 80px no-repeat;\n        min-height:250px;\n    }\n        </style>\n    <h1>" + el.name + "</h1>\n    <section class=\"query\"><slot name=\"query\"></slot></section>\n    <section class=\"content\">\n        <section class=\"filters\"><slot name=\"filters\"></slot></section>\n        <section class=\"results\">\n        <slot></slot>\n        </section>\n    </section>\n    ";
-                        return tpl;
-                    };
+                    var _this = _super.call(this, RHDPSearchApp, { delayRender: true }) || this;
                     _this._name = 'Search';
                     _this.urlEle = new rhdp_search_url_js_1.default();
                     _this.modal = new rhdp_search_filters_js_1.default();
-                    _this.filterObj = {
-                        term: '',
-                        facets: [
-                            { name: 'CONTENT TYPE', key: 'type', items: [
-                                    { key: 'apidocs', name: 'APIs and Docs', value: ['rht_website', 'rht_apidocs'], type: ['apidocs'] },
-                                    { key: 'archetype', name: 'Archetype', value: ['jbossdeveloper_archetype'], type: ['jbossdeveloper_archetype'] },
-                                    { key: 'article', name: 'Article', value: ['article', 'solution'], type: ['rhd_knowledgebase_article', 'rht_knowledgebase_solution'] },
-                                    { key: 'blogpost', name: "Blog Posts", value: ['blogpost'], type: ['jbossorg_blog'] },
-                                    { key: 'book', name: "Book", value: ["book"], type: ["jbossdeveloper_book"] },
-                                    { key: 'bom', name: "BOM", value: ["jbossdeveloper_bom"], type: ['jbossdeveloper_bom'] },
-                                    { key: 'cheatsheet', name: "Cheat Sheet", value: ['cheatsheet'], type: ['jbossdeveloper_cheatsheet'] },
-                                    { key: 'demo', name: 'Demo', value: ['demo'], type: ['jbossdeveloper_demo'] },
-                                    { key: 'event', name: 'Event', value: ['jbossdeveloper_event'], type: ['jbossdeveloper_event'] },
-                                    { key: 'forum', name: 'Forum', value: ['jbossorg_sbs_forum'], type: ['jbossorg_sbs_forum'] },
-                                    { key: 'get-started', name: "Get Started", value: ["jbossdeveloper_example"], type: ['jbossdeveloper_example'] },
-                                    { key: 'quickstart', name: "Quickstart", value: ['quickstart'], type: ['jbossdeveloper_quickstart'] },
-                                    { key: 'stackoverflow', name: 'Stack Overflow', value: ['stackoverflow_thread'], type: ['stackoverflow_question'] },
-                                    { key: 'video', name: "Video", value: ["video"], type: ['jbossdeveloper_vimeo', 'jbossdeveloper_youtube'] },
-                                    { key: 'webpage', name: "Web Page", value: ['webpage'], type: ['rhd_website'] }
-                                ]
-                            },
-                            {
-                                name: 'PRODUCT',
-                                key: 'project',
-                                items: [
-                                    { key: 'dotnet', name: '.NET Runtime for Red Hat Enterprise Linux', value: ['dotnet'] },
-                                    { key: 'amq', name: 'JBoss A-MQ', value: ['amq'] },
-                                    { key: 'rhpam', name: 'Red Hat Process Automation Manager', value: ['rhpam', 'bpmsuite'] },
-                                    { key: 'brms', name: 'Red Hat Decision Manager', value: ['brms'] },
-                                    { key: 'datagrid', name: 'JBoss Data Grid', value: ['datagrid'] },
-                                    { key: 'datavirt', name: 'JBoss Data Virtualization', value: ['datavirt'] },
-                                    { key: 'devstudio', name: 'JBoss Developer Studio', value: ['devstudio'] },
-                                    { key: 'eap', name: 'JBoss Enterprise Application Platform', value: ['eap'] },
-                                    { key: 'fuse', name: 'JBoss Fuse', value: ['fuse'] },
-                                    { key: 'webserver', name: 'JBoss Web Server', value: ['webserver'] },
-                                    { key: 'openjdk', name: 'OpenJDK', value: ['openjdk'] },
-                                    { key: 'rhamt', name: 'Red Hat Application Migration Toolkit', value: ['rhamt'] },
-                                    { key: 'cdk', name: 'Red Hat Container Development Kit', value: ['cdk'] },
-                                    { key: 'developertoolset', name: 'Red Hat Developer Toolset', value: ['developertoolset'] },
-                                    { key: 'devsuite', name: 'Red Hat Development Suite', value: ['devsuite'] },
-                                    { key: 'rhel', name: 'Red Hat Enterprise Linux', value: ['rhel'] },
-                                    { key: 'mobileplatform', name: 'Red Hat Mobile Application Platform', value: ['mobileplatform'] },
-                                    { key: 'openshift', name: 'Red Hat OpenShift Container Platform', value: ['openshift'] },
-                                    { key: 'softwarecollections', name: 'Red Hat Software Collections', value: ['softwarecollections'] }
-                                ]
-                            },
-                            { name: 'TOPIC', key: 'tag', items: [
-                                    { key: 'dotnet', name: '.NET', value: ['dotnet', '.net', 'visual studio', 'c#'] },
-                                    { key: 'containers', name: 'Containers', value: ['atomic', 'cdk', 'containers'] },
-                                    { key: 'devops', name: 'DevOps', value: ['devops', 'CI', 'CD', 'Continuous Delivery'] },
-                                    { key: 'enterprise-java', name: 'Enterprise Java', value: ['ActiveMQ', 'AMQP', 'apache camel', 'Arquillian', 'Camel', 'CDI', 'CEP', 'CXF', 'datagrid', 'devstudio', 'Drools', 'Eclipse', 'fabric8', 'Forge', 'fuse', 'Hawkular', 'Hawtio', 'Hibernate', 'Hibernate ORM', 'Infinispan', 'iPaas', 'java ee', 'JavaEE', 'JBDS', 'JBoss', 'JBoss BPM Suite', 'Red Hat Decision Manager', 'JBoss Data Grid', 'jboss eap', 'JBoss EAP', ''] },
-                                    { key: 'iot', name: 'Internet of Things', value: ['iot', 'Internet of Things'] },
-                                    { key: 'microservices', name: 'Microservices', value: ['microservices', ' WildFly Swarm'] },
-                                    { key: 'mobile', name: 'Mobile', value: ['mobile', 'Red Hat Mobile', 'RHMAP', 'Cordova', 'FeedHenry'] },
-                                    { key: 'web-and-api-development', name: 'Web and API Development', value: ['Web', 'API', 'HTML5', 'REST', 'Camel', 'Node.js', 'RESTEasy', 'JAX-RS', 'Tomcat', 'nginx', 'Rails', 'Drupal', 'PHP', 'Bottle', 'Flask', 'Laravel', 'Dancer', 'Zope', 'TurboGears', 'Sinatra', 'httpd', 'Passenger'] },
-                                ]
-                            }
-                        ]
-                    };
                     return _this;
                 }
+                Object.defineProperty(RHDPSearchApp.prototype, "html", {
+                    get: function () {
+                        return "\n        <style>\n\n    :host { \n        display: flex;\n        flex-flow: column;\n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n        margin-bottom: 30px;\n    }\n\n    .query { flex: 0 0 auto; }\n    .content { flex: 1 1 auto; display: flex; flex-flow: row; }\n    .filters { flex: 0 0 25%; margin-right: 32px; }\n    .results { flex: 1 1 auto; display: flex; flex-flow: column; }\n\n    .hide { display: none; }\n    \n    .show { display: block; }\n    \n    .mobile { display: none; }\n\n    h1 { flex: 0 0 auto; }\n\n    .loading {\n        background:url(\"https://developers.redhat.com/images/icons/ajax-loader.gif\") center 80px no-repeat;\n        min-height:250px;\n    }\n\n    @media only screen and (max-width: 768px) {\n        .content {\n            flex-flow: column;\n        }\n    }\n        </style>\n    <h1>" + this.name + "</h1>\n    <section class=\"query\"><slot name=\"query\"></slot></section>\n    <section class=\"content\">\n        <section class=\"filters\"><slot name=\"filters\"></slot></section>\n        <section class=\"results\">\n            <slot></slot>\n        </section>\n    </section>\n    ";
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(RHDPSearchApp, "tag", {
+                    get: function () {
+                        return 'rhdp-search-app';
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
                 Object.defineProperty(RHDPSearchApp.prototype, "name", {
                     get: function () {
                         return this._name;
@@ -128,11 +78,11 @@ System.register(["../../@pfelements/pfelement.js", "./rhdp-search-url.js", "./rh
                     configurable: true
                 });
                 RHDPSearchApp.prototype.connectedCallback = function () {
-                    _super.prototype.render.call(this, this.template(this));
-                    this.modal.setAttribute('type', 'modal');
-                    this.modal.filters = this.filterObj;
+                    var _this = this;
+                    _super.prototype.connectedCallback.call(this);
+                    _super.prototype.render.call(this);
                     top.document.body.appendChild(this.modal);
-                    top.document.body.appendChild(this.urlEle);
+                    setTimeout(function () { top.document.body.appendChild(_this.urlEle); }, 1000);
                 };
                 Object.defineProperty(RHDPSearchApp, "observedAttributes", {
                     get: function () {
@@ -150,9 +100,9 @@ System.register(["../../@pfelements/pfelement.js", "./rhdp-search-url.js", "./rh
                 RHDPSearchApp.prototype.updateSort = function (e) {
                 };
                 return RHDPSearchApp;
-            }(pfelement_js_1.default));
+            }(rhelement_js_1.default));
             exports_1("default", RHDPSearchApp);
-            customElements.define('rhdp-search-app', RHDPSearchApp);
+            rhelement_js_1.default.create(RHDPSearchApp);
         }
     };
 });

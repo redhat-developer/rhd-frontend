@@ -6,14 +6,13 @@
 @import "container";
 @import "typography/typography";
 @import "patterns/patterns";
-@import "topic-page";
 @import "assembly/assembly";
 @import "foundation/foundation";
 @import "navigation";
 @import "rhd-footer";
 @import "slick";
 @import "learning-paths";
-
+@import "rhd-accordion";
 
 // Foundation dependent
 @import "products";
@@ -54,11 +53,13 @@
 @import "javaone";
 @import "ticket-monster";
 @import "vjbug";
-@import "searchapp";
+// @import "searchapp";
 @import "judcon-brno";
 @import "gids";
 @import "msbuild";
 @import "solp";
+@import "author";
+@import "view-taxonomy-term";
 
 
 //drupal admin override
@@ -487,9 +488,6 @@ code {
 
 .share-sm {
  margin-top: 2px;
- .a2a_button_google_plusone {
-   height: 24px;
- }
 }
 
 @include desktop-small-and-down {

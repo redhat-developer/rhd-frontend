@@ -1,4 +1,4 @@
-System.register(["../../@pfelements/pfelement.js"], function (exports_1, context_1) {
+System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,28 +13,34 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, DPCategoryItem;
+    var rhelement_js_1, DPCategoryItem;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
+            function (rhelement_js_1_1) {
+                rhelement_js_1 = rhelement_js_1_1;
             }
         ],
         execute: function () {
             DPCategoryItem = (function (_super) {
                 __extends(DPCategoryItem, _super);
                 function DPCategoryItem() {
-                    var _this = _super.call(this, 'dp-category-item') || this;
-                    _this.template = function (el) {
-                        var tpl = document.createElement("template");
-                        tpl.innerHTML = "\n            <style>\n            \n            </style>\n            <slot></slot>\n            ";
-                        return tpl;
-                    };
-                    return _this;
+                    return _super.call(this, DPCategoryItem) || this;
                 }
+                Object.defineProperty(DPCategoryItem.prototype, "html", {
+                    get: function () {
+                        return "\n            <style>\n            \n            </style>\n            <slot></slot>\n            ";
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(DPCategoryItem, "tag", {
+                    get: function () { return 'dp-category-item'; },
+                    enumerable: true,
+                    configurable: true
+                });
                 DPCategoryItem.prototype.connectedCallback = function () {
-                    _super.prototype.render.call(this, this.template(this));
+                    _super.prototype.connectedCallback.call(this);
                 };
                 Object.defineProperty(DPCategoryItem, "observedAttributes", {
                     get: function () {
@@ -47,9 +53,9 @@ System.register(["../../@pfelements/pfelement.js"], function (exports_1, context
                     this[name] = newVal;
                 };
                 return DPCategoryItem;
-            }(pfelement_js_1.default));
+            }(rhelement_js_1.default));
             exports_1("default", DPCategoryItem);
-            window.customElements.define('dp-category-item', DPCategoryItem);
+            rhelement_js_1.default.create(DPCategoryItem);
         }
     };
 });

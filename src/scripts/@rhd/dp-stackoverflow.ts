@@ -1,9 +1,9 @@
-import PFElement from '../@pfelements/pfelement.js';
+// import PFElement from '../@pfelements/pfelement.js';
+import RHElement from '../@rhelements/rhelement/rhelement.js';
 
-export default class DPStackOverflow extends PFElement {
-    template = el => {
-        const tpl = document.createElement("template");
-        tpl.innerHTML = `
+export default class DPStackOverflow extends RHElement {
+    get html() {
+        return `
         <style>
 
         </style>
@@ -132,16 +132,14 @@ export default class DPStackOverflow extends PFElement {
                 <a ng-click="goToPage('last'); scrollPosition();">Last</a>
             </li>
             </ul></nav>
-</div>
-`;
-        return tpl;
-    }
-    constructor() {
-        super('dp-category-list');
-        
+        </div>
+        `;
     }
 
-    connectedCallback() {
-        super.render(this.template(this));
+    static get tag() { return 'dp-stackoverflow'; }
+
+    constructor() {
+        super(DPStackOverflow);
+        
     }
 }
