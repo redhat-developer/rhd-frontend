@@ -12,7 +12,7 @@ export default class DPCategoryItem extends RHElement {
     }
 
     static get tag() { return 'dp-category-item'; }
-    
+
     constructor() {
         super(DPCategoryItem);
         

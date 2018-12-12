@@ -9,11 +9,11 @@ export default class RHDPSearchSortPage extends RHElement {
             display: block;
             border-bottom: 1px solid #ccc;
             margin: 0 0 1em 0;
+            padding-bottom: 1em;
         }
 
         select { 
             width: auto;
-            margin: 0 0 1rem;
             -webkit-appearance: none!important;
             -webkit-border-radius: 0;
             background-color: #fafafa;
@@ -63,12 +63,9 @@ export default class RHDPSearchSortPage extends RHElement {
     
         @media only screen and (max-width: 768px) {
             :host {
+                display:none;
                 align-self: flex-end; 
-                position: absolute; 
-                top: -4.5em;
                 border-bottom: none;
-                margin-left: 180px;
-                top: -4.6em;
             }
             span { display: none; }
             select { 
@@ -77,19 +74,18 @@ export default class RHDPSearchSortPage extends RHElement {
                 text-align-last: center;
                 font-weight: 600;
                 height: auto;
-                border: 1px solid var(--rhd-blue);
+                border: 1px solid #06c;
                 line-height: 1.44;
                 background-color: transparent;
                 padding: 8px 0;
-                color: var(--rhd-blue);
+                color: #06c;
                 font-size: 16px;
                 position: relative;
-                top: -4px;
             }
     
             select:hover, select:focus {
-                background-color: var(--rhd-blue);
-                color: var(--rhd-white);
+                background-color: #06c;
+                color: #fff;
             }
         
             .roomy {
@@ -145,6 +141,7 @@ export default class RHDPSearchSortPage extends RHElement {
         super.connectedCallback();
         super.render();
         top.addEventListener('params-ready', this._sortChange);
+        top.addEventListener('sort-change', this._sortChange);
         this.shadowRoot.querySelector('select').onchange = this._sortChange;
     }
 

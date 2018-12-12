@@ -27,6 +27,7 @@ export default class RHDPSearchResults extends RHElement {
             p {
                 font-size: 16px;
                 line-height: 1.5;
+                text-align: center;
             }
 
             div.moreBtn {
@@ -154,6 +155,7 @@ export default class RHDPSearchResults extends RHElement {
         this.shadowRoot.querySelector('div.moreBtn').setAttribute('data-hide','');
         this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide','');
         if(!this.more) {
+            this.last = 0;
             while(this.firstChild){
                 this.removeChild(this.firstChild);
             }
@@ -213,14 +215,11 @@ export default class RHDPSearchResults extends RHElement {
                 this.shadowRoot.querySelector('.end-of-results').removeAttribute('data-hide');
             }
             if (l > 0 && this.last < results.hits.total) {
-                if (this.shadowRoot.querySelector('.end-of-results')) { 
-                    this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide','');
-                }
+                this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide','');
+                this.shadowRoot.querySelector('.end-of-results').setAttribute('data-hide','');
                 this.shadowRoot.querySelector('div.moreBtn').removeAttribute('data-hide');
             } else {
-                if (this.shadowRoot.querySelector('div.moreBtn')) { 
-                    this.shadowRoot.querySelector('div.moreBtn').setAttribute('data-hide','');
-                }
+                this.shadowRoot.querySelector('div.moreBtn').setAttribute('data-hide','');
                 this.shadowRoot.querySelector('.end-of-results').removeAttribute('data-hide');
             }
         }

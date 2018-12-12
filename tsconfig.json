@@ -14,14 +14,17 @@
         "lib":[
           "dom", "es5", "es6"
         ],
-        //"outFile": "rhd.js"
+        //"outFile": "dist/js/rhd.js",
         "outDir": "dist/js/"
     },
     "include": [
-        //"node_modules/@fortawesome/**/*.es.js",
-        "node_modules/@rhelements/**/*.js",
-        "src/scripts/@rhd/**/*.ts"        
-        //"src/scripts/@rhd/js/app.js"
-        //"node_modules/@fortawesome/**/*"
+        "node_modules/@rhelements/rhelement/reveal.js",
+        "node_modules/@rhelements/rhelement/rhelement.js",
+        "node_modules/@rhelements/rh-datetime/rh-datetime.js",
+        "node_modules/@fortawesome/fontawesome-svg-core/index.es.js",
+        "node_modules/@fortawesome/pro-light-svg-icons/index.es.js",
+        "node_modules/@fortawesome/pro-regular-svg-icons/index.es.js",
+        "node_modules/@fortawesome/pro-solid-svg-icons/index.es.js",
+        "src/scripts/@rhd/**/*.ts"       
     ]
 }

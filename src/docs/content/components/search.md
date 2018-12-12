@@ -5,7 +5,7 @@ description: ""
 draft: true
 tags: ["component"]
 weight: 1
-scripts: ["js/@rhelements/rhelement/rhelement.js",
+scripts: ["js/@rhelements/rhelement/rhelement.js","js/@fortawesome/fontawesome-svg-core/index.es.js","js/@fortawesome/pro-solid-svg-icons/index.es.js",
 "js/@rhd/rhdp-search/rhdp-search-app.js","js/@rhd/rhdp-search/rhdp-search-box.js","js/@rhd/rhdp-search/rhdp-search-filter-group.js",
 "js/@rhd/rhdp-search/rhdp-search-filter-item.js","js/@rhd/rhdp-search/rhdp-search-filters.js","js/@rhd/rhdp-search/rhdp-search-onebox.js",
 "js/@rhd/rhdp-search/rhdp-search-query.js","js/@rhd/rhdp-search/rhdp-search-result-count.js","js/@rhd/rhdp-search/rhdp-search-result.js","js/@rhd/rhdp-search/rhdp-search-results.js", "js/@rhd/rhdp-search/rhdp-search-sort-page.js","js/@rhd/rhdp-search/rhdp-search-url.js",
@@ -16,7 +16,6 @@ scripts: ["js/@rhelements/rhelement/rhelement.js",
 {{< code >}}<rhdp-search-app url="https://dcp2.jboss.org/v2/rest/search/developer_materials">
 <rhdp-search-box slot="query"></rhdp-search-box>
 <rhdp-search-filters title="Filter By" slot="filters">
-    <rhdp-search-sort-page></rhdp-search-sort-page>
     <rhdp-search-filter-group name="CONTENT TYPE" key="type">
         <rhdp-search-filter-item group="type" key="apidocs" value="apidocs" type="rht_website,rht_apidocs" name="APIs and Docs">APIs and Docs</rhdp-search-filter-item>
         <rhdp-search-filter-item group="type" key="archetype" value="jbossdeveloper_archetype" type="jbossdeveloper_archetype" name="Archetype">Archetype</rhdp-search-filter-item>

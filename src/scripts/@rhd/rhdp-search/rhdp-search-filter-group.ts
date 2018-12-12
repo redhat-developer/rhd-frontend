@@ -1,6 +1,11 @@
 //import PFElement from '../../@pfelements/pfelement.js';
+import { library, icon, dom } from '../../@fortawesome/fontawesome-svg-core/index.es.js'
+import {faChevronRight} from '../../@fortawesome/pro-solid-svg-icons/index.es.js';
 import RHElement from '../../@rhelements/rhelement/rhelement.js';
 import RHDPSearchFilterItem from './rhdp-search-filter-item.js';
+
+library.add(faChevronRight);
+const chevronRightIcon = icon(faChevronRight).html;
 
 export default class RHDPSearchFilterGroup extends RHElement {
     get html() {
@@ -52,8 +57,11 @@ export default class RHDPSearchFilterGroup extends RHElement {
             .hide, a.more.hide, [data-hide] {
                 display: none;
             }
+
+            ${dom.css()}
+
         </style>
-        <h6 class="showFilters heading"><span class="group-name">${this.name}</span><span class="toggle"><i class='fa fa-chevron-right' aria-hidden='true'></i></span></h6>
+        <h6 class="showFilters heading"><span class="group-name">${this.name}</span><span class="toggle">${chevronRightIcon}</span></h6>
         <div class="group">
             <div class="primary">
                 <slot></slot>

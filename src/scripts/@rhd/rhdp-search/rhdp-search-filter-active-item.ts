@@ -1,5 +1,10 @@
 // import PFElement from '../../@pfelements/pfelement.js';
+import { library, icon, dom } from '../../@fortawesome/fontawesome-svg-core/index.es.js'
+import {faTimes} from '../../@fortawesome/pro-solid-svg-icons/index.es.js';
 import RHElement from '../../@rhelements/rhelement/rhelement.js';
+
+library.add(faTimes);
+const timesIcon = icon(faTimes).html;
 
 export default class RHDPSearchFilterActiveItem extends RHElement {
     get html() {
@@ -21,8 +26,14 @@ export default class RHDPSearchFilterActiveItem extends RHElement {
                 margin-right: .5em;
                 padding: .5em .7em;
             }
+            
+            ${dom.css()}
+
+            svg.svg-inline--fa { 
+                margin-left: .25em;
+            }
         </style>
-        <slot></slot><i class="fa fa-times clearItem" aria-hidden="true"></i>` : ''}`;
+        <slot></slot>${timesIcon}` : ''}`;
     }
 
     static get tag() { return 'rhdp-search-filter-active-item'; }

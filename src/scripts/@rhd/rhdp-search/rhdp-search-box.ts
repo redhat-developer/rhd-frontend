@@ -1,5 +1,12 @@
 // import PFElement from '../../@pfelements/pfelement.js';
+import { library, icon, dom } from '../../@fortawesome/fontawesome-svg-core/index.es.js'
+import {faSearch} from '../../@fortawesome/pro-solid-svg-icons/index.es.js';
 import RHElement from '../../@rhelements/rhelement/rhelement.js';
+
+library.add(faSearch);
+const searchIcon = icon(faSearch,{ transform: {
+    size: 18
+    }}).html;
 
 export default class RHDPSearchBox extends RHElement {
     get html() {
@@ -78,22 +85,24 @@ export default class RHDPSearchBox extends RHElement {
 
             button: hover { background-color: #8f0000; }
         
-            button i.fa.fa-search { display:none; }
+            button svg.svg-inline--fa { display:none; }
         
             @media only screen and (max-width: 768px) {
                 :host {
                     margin-bottom: .5em;
                 }
                 button { display: block; padding: 9px 20px; }
-                button i.fa.fa-search { display: inline-block; font-size: 18px; }
+                button svg.svg-inline--fa { display: inline-block; }
                 button span { display: none; }
             }
+            
+            ${dom.css()}
         </style>
 <form class="search-bar" role="search">
     <div class="input-cont">
         <input value="${this.term}" class="user-success user-search" type="search" id="query" placeholder="Enter your search term">
     </div>
-    <button id="search-btn"><span>SEARCH</span><i class='fa fa-search' aria-hidden='true'></i></button>
+    <button id="search-btn"><span>SEARCH</span>${searchIcon}</button>
 </form>`;
     }
     _term = '';

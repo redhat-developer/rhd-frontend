@@ -40,7 +40,7 @@ System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-resu
                 }
                 Object.defineProperty(RHDPSearchResults.prototype, "html", {
                     get: function () {
-                        return "\n        <style>\n            :host {\n                display: flex;\n                flex-direction: column;\n            }\n\n            [data-hide] {\n                display: none;\n            }\n\n            h4 { \n                font-size: 27px;\n                font-weight: 600;\n                color: #242424;\n                line-height: 1.5;\n                margin-bottom: 16px;\n                margin-top: 16px;\n            }\n\n            p {\n                font-size: 16px;\n                line-height: 1.5;\n            }\n\n            div.moreBtn {\n                text-align: center;\n            }\n\n            a.moreBtn {\n                background-color: #fff;\n                border: 1px solid #06c;\n                color: #06c;\n                display: block;\n                font-weight: 600;\n                line-height: 1.44;\n                margin: 0 auto;\n                max-width: 165px;\n                padding: 8px 35px;\n                text-transform: uppercase;\n                cursor: pointer;\n                text-decoration: none;\n            }\n            a.moreBtn:hover {\n                background-color: #06c;\n                color: #fff;\n            }\n\n            .loading {\n                background: url(https://developers.redhat.com/images/icons/ajax-loader.gif) center 80px no-repeat;\n                min-height: 250px;\n            }\n        </style>\n        <slot></slot>\n        <div class=\"loading\" data-hide></div>\n        <div class=\"moreBtn\" data-hide><a class=\"moreBtn\" href=\"#\">Load More</a></div>\n        <p class=\"end-of-results\" data-hide>- End of Results -</p>\n        <div class=\"invalidMsg\" data-hide>\n        <h4>Well, this is awkward. No search term was entered yet, so this page is a little empty right now.</h4>\n        <p>After you enter a search term in the box above, you will see the results displayed here. \n        You can also use the filters to select a content type, product or topic to see some results too. \n        Try it out!</p>\n        </div>";
+                        return "\n        <style>\n            :host {\n                display: flex;\n                flex-direction: column;\n            }\n\n            [data-hide] {\n                display: none;\n            }\n\n            h4 { \n                font-size: 27px;\n                font-weight: 600;\n                color: #242424;\n                line-height: 1.5;\n                margin-bottom: 16px;\n                margin-top: 16px;\n            }\n\n            p {\n                font-size: 16px;\n                line-height: 1.5;\n                text-align: center;\n            }\n\n            div.moreBtn {\n                text-align: center;\n            }\n\n            a.moreBtn {\n                background-color: #fff;\n                border: 1px solid #06c;\n                color: #06c;\n                display: block;\n                font-weight: 600;\n                line-height: 1.44;\n                margin: 0 auto;\n                max-width: 165px;\n                padding: 8px 35px;\n                text-transform: uppercase;\n                cursor: pointer;\n                text-decoration: none;\n            }\n            a.moreBtn:hover {\n                background-color: #06c;\n                color: #fff;\n            }\n\n            .loading {\n                background: url(https://developers.redhat.com/images/icons/ajax-loader.gif) center 80px no-repeat;\n                min-height: 250px;\n            }\n        </style>\n        <slot></slot>\n        <div class=\"loading\" data-hide></div>\n        <div class=\"moreBtn\" data-hide><a class=\"moreBtn\" href=\"#\">Load More</a></div>\n        <p class=\"end-of-results\" data-hide>- End of Results -</p>\n        <div class=\"invalidMsg\" data-hide>\n        <h4>Well, this is awkward. No search term was entered yet, so this page is a little empty right now.</h4>\n        <p>After you enter a search term in the box above, you will see the results displayed here. \n        You can also use the filters to select a content type, product or topic to see some results too. \n        Try it out!</p>\n        </div>";
                     },
                     enumerable: true,
                     configurable: true
@@ -130,6 +130,7 @@ System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-resu
                     this.shadowRoot.querySelector('div.moreBtn').setAttribute('data-hide', '');
                     this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide', '');
                     if (!this.more) {
+                        this.last = 0;
                         while (this.firstChild) {
                             this.removeChild(this.firstChild);
                         }
@@ -187,15 +188,12 @@ System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-resu
                             this.shadowRoot.querySelector('.end-of-results').removeAttribute('data-hide');
                         }
                         if (l > 0 && this.last < results.hits.total) {
-                            if (this.shadowRoot.querySelector('.end-of-results')) {
-                                this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide', '');
-                            }
+                            this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide', '');
+                            this.shadowRoot.querySelector('.end-of-results').setAttribute('data-hide', '');
                             this.shadowRoot.querySelector('div.moreBtn').removeAttribute('data-hide');
                         }
                         else {
-                            if (this.shadowRoot.querySelector('div.moreBtn')) {
-                                this.shadowRoot.querySelector('div.moreBtn').setAttribute('data-hide', '');
-                            }
+                            this.shadowRoot.querySelector('div.moreBtn').setAttribute('data-hide', '');
                             this.shadowRoot.querySelector('.end-of-results').removeAttribute('data-hide');
                         }
                     }

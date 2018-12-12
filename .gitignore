@@ -3,3 +3,4 @@ node_modules
 src/docs/static/*
 src/tests/unit/report
 dist
+.npmrc

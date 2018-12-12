@@ -35,6 +35,7 @@ export default class RHDPSearchFilters extends RHElement {
                 color: #333; 
                 width: 100%;
                 }
+            rhdp-search-sort-page { display: none; }
             .groups {
                 background-color: #f9f9f9;
                 padding-bottom: 30px;
@@ -79,13 +80,18 @@ export default class RHDPSearchFilters extends RHElement {
 
             @media only screen and (max-width: 768px) {
                 :host {
+                    display: flex;
+                    flex-direction: row;
                     flex: none; 
-                    align-self: 
-                    flex-start; 
-                    float: left;
+                    align-self: flex-start; 
                     border: none;
                     margin: 0 0 1.3em 0; 
                 }
+
+                .split { flex: 1 0 auto; }
+                .split.right { text-align: right; }
+
+                rhdp-search-sort-page { display: inline-block; margin: 0;}
 
                 .control {
                     display: none;
@@ -119,7 +125,8 @@ export default class RHDPSearchFilters extends RHElement {
             }
 
         </style>
-<a class="showBtn">Show Filters</a>
+<div class="split"><a class="showBtn">Show Filters</a></div>
+<div class="split right"><rhdp-search-sort-page></rhdp-search-sort-page></div>
 <div class="control" id="control">
     <div class="title">${this.title}</div>
     <div class="groups">

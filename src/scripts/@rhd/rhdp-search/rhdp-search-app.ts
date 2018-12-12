@@ -75,6 +75,7 @@ export default class RHDPSearchApp extends RHElement {
         .content {
             flex-flow: column;
         }
+        .filters { flex: 0 0 auto; margin-right: 0; }
     }
         </style>
     <h1>${this.name}</h1>
