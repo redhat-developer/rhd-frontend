@@ -9,6 +9,84 @@ export default class RHDPSearchModalFilters extends RHElement {
         <style>
             :host {
                 display: none;
+                align-self: flex-start;
+                border: none;
+                flex: none;
+                float: left;
+                margin: 0 0 1.3em;
+            }
+            .cover {
+                background: rgba(0,0,0,.5);
+                border: none;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                padding-top: 0;
+                position: absolute;
+                right: 100%;
+                top: 0;
+                width: 100%;
+                z-index: 99;
+                transform: translateX(100%);
+                transition: .5s ease-in-out;
+            }
+            .title {
+                flex: 0 0 40px;
+                order: 1;
+                vertical-align: middle;
+                background: #e6e7e8;
+                color: #000;
+                font-weight: 600;
+                padding: .5em 1em;
+                text-transform: uppercase;
+            }
+            .cancel {
+                color: #06c;
+                display: block;
+                float: right;
+                font-size: 14px;
+                cursor: pointer;
+                text-decoration: none;
+            }
+            .groups {
+                background: #fff;
+                flex: 1 1 100%;
+                order: 1;
+                overflow: auto;
+                padding-bottom: 30px;
+            }
+            .footer {
+                background-color: #000;
+                display: block;
+                flex: 1 0 auto;
+                height: 70px;
+                order: 2;
+                padding: 1em;
+                text-align: center;
+            }
+            .clearFilters {
+                background-color: #fff;
+                border: 1px solid #06c;
+                color: #06c;
+                display: inline-block;
+                font-weight: 600;
+                line-height: 1.44;
+                margin-right: 1em;
+                padding: 8px 20px;
+            }
+            .clearFilters:hover {
+                background-color: #06c;
+                color: #fff;
+            }
+            .applyFilters {
+                background: #c00;
+                color: #fff;
+                font-weight: 600;
+                padding: 10px 25px;
+                text-transform: uppercase;
+                transition: background .2s ease-in 0s;
+                cursor: pointer;
+                text-decoration: none;
             }
         </style>
         <div class="cover" id="cover">
@@ -70,9 +148,11 @@ export default class RHDPSearchModalFilters extends RHElement {
             window.scrollTo(0,0);
             document.body.style.overflow = 'hidden';
             this.style.height = window.innerHeight + 'px';
+            this.style.display = 'block';
         } else {
             this.shadowRoot.querySelector('.cover').className = 'cover';
             document.body.style.overflow = 'auto';
+            this.style.display = 'none';
         }
     }
 
@@ -119,25 +199,30 @@ export default class RHDPSearchModalFilters extends RHElement {
     }
 
     addGroups() {
-        let groups = this.filters && this.filters.facets ? this.filters.facets : [],
-            len = groups.length;
-        for(let i=0; i < len; i++) {
-            let group = new RHDPSearchFilterGroup(),
-                groupInfo = groups[i],
-                gLen = groupInfo.items.length;
-                for(let j=0; j < gLen; j++) {
-                    let item = new RHDPSearchFilterItem();
-                    item.name = groupInfo.items[j].name;
-                    item.value = groupInfo.items[j].value;
-                    item.active = groupInfo.items[j].active;
-                    item.key = groupInfo.items[j].key;
-                    item.group = groupInfo.key;
-                    group.items.push(item);
-                }
-            group.key = groupInfo.key;
-            group.name = groupInfo.name;        
-            this.shadowRoot.querySelector('.groups').appendChild(group);
+        let groups = top.document.querySelector('rhdp-search-filters').children;
+        for(let i=0; i < groups.length; i++) { 
+            let n = groups[i].cloneNode(true);
+            this.appendChild(n); 
         }
+        // let groups = this.filters && this.filters.facets ? this.filters.facets : [],
+        //     len = groups.length;
+        // for(let i=0; i < len; i++) {
+        //     let group = new RHDPSearchFilterGroup(),
+        //         groupInfo = groups[i],
+        //         gLen = groupInfo.items.length;
+        //         for(let j=0; j < gLen; j++) {
+        //             let item = new RHDPSearchFilterItem();
+        //             item.name = groupInfo.items[j].name;
+        //             item.value = groupInfo.items[j].value;
+        //             item.active = groupInfo.items[j].active;
+        //             item.key = groupInfo.items[j].key;
+        //             item.group = groupInfo.key;
+        //             group.items.push(item);
+        //         }
+        //     group.key = groupInfo.key;
+        //     group.name = groupInfo.name;        
+        //     this.shadowRoot.querySelector('.groups').appendChild(group);
+        // }
 
     }
 
@@ -162,9 +247,7 @@ export default class RHDPSearchModalFilters extends RHElement {
     // }
 
     _toggleModal(e) {
-        if (this.type === 'modal') {
-            this.toggle = !this.toggle;
-        }
+        this.toggle = !this.toggle;
     }
 
     applyFilters() {

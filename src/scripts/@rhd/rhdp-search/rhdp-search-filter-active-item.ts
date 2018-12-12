@@ -121,9 +121,11 @@ export default class RHDPSearchFilterActiveItem extends RHElement {
                 this.removeAttribute('active'); 
             }
             super.render();
-            let evt = {detail: {facet: this}, bubbles: this.bubble, composed: true };
-            this.dispatchEvent(new CustomEvent('filter-item-change', evt));
-            this.bubble = true;
+            if(!this.bounce){
+                let evt = {detail: {facet: this}, bubbles: true, composed: true };
+                this.bounce = true;
+                this.dispatchEvent(new CustomEvent('filter-item-change', evt));
+            }
         }
     }
     get value() {
@@ -164,56 +166,48 @@ export default class RHDPSearchFilterActiveItem extends RHElement {
     }
 
     _updateFacet(e) {
-        this.bounce = true;
-        if (this.inline) {
-            if (e.target['className'].indexOf('clearItem') >= 0) {
-                this.active = !this.active; 
-            }
-        } else {
-            this.active = !this.active;
+        if (e.target['nodeName'] !== 'SLOT') {
+            this.bounce = false;
+            this.active = !this.active; 
         }
     }
 
     _checkParams(e) {
-        let chk = false;
+        // let chk = false;
         if (e.detail && e.detail.filters) {
+            this.bounce = true;
             Object.keys(e.detail.filters).forEach(group => {
                 e.detail.filters[group].forEach(facet => {
-                    if (group === this.group) {
-                        if (facet === this.key) {
-                            chk = true;
-                            this.bubble = false;
-                            this.active = true;
-                            let evt = {detail: {facet: this}, bubbles: this.bubble, composed: true };
-                            this.dispatchEvent(new CustomEvent('filter-item-init', evt));
-                        }
+                    if (group === this.group && facet === this.key) {
+                        this.active = true;
+                        // chk = true;
+                        // this.bubble = false;
+                        // this.active = true;
+                        // this.bounce = true;
+                        // let evt = {detail: {facet: this}, bubbles: this.bubble, composed: true };
+                        // this.dispatchEvent(new CustomEvent('filter-item-init', evt));
                     }
                 });
             });
         }
 
-        if (!chk) {
-            this.bubble = false;
-            this.active = false;
-        }
+        // if (!chk) {
+        //     this.bubble = false;
+        //     this.active = false;
+        // }
     }
 
     _checkChange(e) {
         if (e.detail && e.detail.facet) {
-            if (!this.bounce) {
-                if(this.group === e.detail.facet.group && this.key === e.detail.facet.key) {
-                    this.bubble = false;
-                    this.active = e.detail.facet.active;
-                }
+            if(this.group === e.detail.facet.group && this.key === e.detail.facet.key) {
+                //this.bubble = false;
+                this.active = e.detail.facet.active;
             }
-            this.bubble = true;
-            this.bounce = false;
         }
     }
     
     _clearFilters(e) {
-        this.bubble = false; 
-        this.bounce = false;
+        this.bounce = true;
         this.active = false;
     }
 }

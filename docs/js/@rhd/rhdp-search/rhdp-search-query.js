@@ -27,6 +27,7 @@ System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_
                 function RHDPSearchQuery() {
                     var _this = _super.call(this, RHDPSearchQuery) || this;
                     _this._filters = { term: '', facets: {} };
+                    _this._activeFilters = {};
                     _this._limit = 10;
                     _this._from = 0;
                     _this._sort = 'relevance';

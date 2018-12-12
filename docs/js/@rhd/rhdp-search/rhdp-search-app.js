@@ -1,4 +1,4 @@
-System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-url.js", "./rhdp-search-filters.js"], function (exports_1, context_1) {
+System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-url.js", "./rhdp-search-modal-filters.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,7 +13,7 @@ System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-url.
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var rhelement_js_1, rhdp_search_url_js_1, rhdp_search_filters_js_1, RHDPSearchApp;
+    var rhelement_js_1, rhdp_search_url_js_1, rhdp_search_modal_filters_js_1, RHDPSearchApp;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -23,8 +23,8 @@ System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-url.
             function (rhdp_search_url_js_1_1) {
                 rhdp_search_url_js_1 = rhdp_search_url_js_1_1;
             },
-            function (rhdp_search_filters_js_1_1) {
-                rhdp_search_filters_js_1 = rhdp_search_filters_js_1_1;
+            function (rhdp_search_modal_filters_js_1_1) {
+                rhdp_search_modal_filters_js_1 = rhdp_search_modal_filters_js_1_1;
             }
         ],
         execute: function () {
@@ -34,7 +34,7 @@ System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-url.
                     var _this = _super.call(this, RHDPSearchApp, { delayRender: true }) || this;
                     _this._name = 'Search';
                     _this.urlEle = new rhdp_search_url_js_1.default();
-                    _this.modal = new rhdp_search_filters_js_1.default();
+                    _this.modal = new rhdp_search_modal_filters_js_1.default();
                     return _this;
                 }
                 Object.defineProperty(RHDPSearchApp.prototype, "html", {

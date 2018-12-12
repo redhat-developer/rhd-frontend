@@ -156,9 +156,11 @@ System.register(["../../@fortawesome/fontawesome-svg-core/index.es.js", "../../@
                                 this.removeAttribute('active');
                             }
                             _super.prototype.render.call(this);
-                            var evt = { detail: { facet: this }, bubbles: this.bubble, composed: true };
-                            this.dispatchEvent(new CustomEvent('filter-item-change', evt));
-                            this.bubble = true;
+                            if (!this.bounce) {
+                                var evt = { detail: { facet: this }, bubbles: true, composed: true };
+                                this.bounce = true;
+                                this.dispatchEvent(new CustomEvent('filter-item-change', evt));
+                            }
                         }
                     },
                     enumerable: true,
@@ -196,54 +198,33 @@ System.register(["../../@fortawesome/fontawesome-svg-core/index.es.js", "../../@
                     this[name] = newVal;
                 };
                 RHDPSearchFilterActiveItem.prototype._updateFacet = function (e) {
-                    this.bounce = true;
-                    if (this.inline) {
-                        if (e.target['className'].indexOf('clearItem') >= 0) {
-                            this.active = !this.active;
-                        }
-                    }
-                    else {
+                    if (e.target['nodeName'] !== 'SLOT') {
+                        this.bounce = false;
                         this.active = !this.active;
                     }
                 };
                 RHDPSearchFilterActiveItem.prototype._checkParams = function (e) {
                     var _this = this;
-                    var chk = false;
                     if (e.detail && e.detail.filters) {
+                        this.bounce = true;
                         Object.keys(e.detail.filters).forEach(function (group) {
                             e.detail.filters[group].forEach(function (facet) {
-                                if (group === _this.group) {
-                                    if (facet === _this.key) {
-                                        chk = true;
-                                        _this.bubble = false;
-                                        _this.active = true;
-                                        var evt = { detail: { facet: _this }, bubbles: _this.bubble, composed: true };
-                                        _this.dispatchEvent(new CustomEvent('filter-item-init', evt));
-                                    }
+                                if (group === _this.group && facet === _this.key) {
+                                    _this.active = true;
                                 }
                             });
                         });
                     }
-                    if (!chk) {
-                        this.bubble = false;
-                        this.active = false;
-                    }
                 };
                 RHDPSearchFilterActiveItem.prototype._checkChange = function (e) {
                     if (e.detail && e.detail.facet) {
-                        if (!this.bounce) {
-                            if (this.group === e.detail.facet.group && this.key === e.detail.facet.key) {
-                                this.bubble = false;
-                                this.active = e.detail.facet.active;
-                            }
+                        if (this.group === e.detail.facet.group && this.key === e.detail.facet.key) {
+                            this.active = e.detail.facet.active;
                         }
-                        this.bubble = true;
-                        this.bounce = false;
                     }
                 };
                 RHDPSearchFilterActiveItem.prototype._clearFilters = function (e) {
-                    this.bubble = false;
-                    this.bounce = false;
+                    this.bounce = true;
                     this.active = false;
                 };
                 return RHDPSearchFilterActiveItem;

@@ -8,7 +8,7 @@ export default class RHDPSearchQuery extends RHElement {
     static get tag() { return 'rhdp-search-query'; }
 
     _filters = { term:'', facets: {} };
-    _activeFilters;
+    _activeFilters = {};
     _limit = 10;
     _from = 0;
     _sort = 'relevance';

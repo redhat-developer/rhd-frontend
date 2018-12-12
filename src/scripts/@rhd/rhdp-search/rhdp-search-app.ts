@@ -1,7 +1,7 @@
 //import PFElement from '../../@pfelements/pfelement.js';
 import RHElement from '../../@rhelements/rhelement/rhelement.js';
 import RHDPSearchURL from './rhdp-search-url.js';
-import RHDPSearchFilters from './rhdp-search-filters.js';
+import RHDPSearchModalFilters from './rhdp-search-modal-filters.js';
 
 /*
 <rhdp-search-app url="https://dcp2.jboss.org/v2/rest/search/developer_materials">
@@ -128,7 +128,7 @@ export default class RHDPSearchApp extends RHElement {
     // count = new RHDPSearchResultCount();
     // filters = new RHDPSearchFilters();
     // active = new RHDPSearchFilters();
-    modal = new RHDPSearchFilters();
+    modal = new RHDPSearchModalFilters();
     // onebox = new RHDPSearchOneBox('/rhd-frontend/json/onebox.json');
     // results = new RHDPSearchResults();
     // sort = new RHDPSearchSortPage();

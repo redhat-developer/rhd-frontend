@@ -253,7 +253,7 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
         } else if (result.fields && result.fields.sys_description) {
             description = result.fields.sys_description[0];
         } else {
-            description = result.fields.sys_content_plaintext[0];
+            description = result.fields.sys_content_plaintext ? result.fields.sys_content_plaintext[0] : '';
         }
 
         // Removes all HTML tags from description

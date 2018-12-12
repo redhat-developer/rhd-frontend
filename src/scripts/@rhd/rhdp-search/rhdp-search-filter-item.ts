@@ -39,6 +39,60 @@ export default class RHDPSearchFilterItem extends RHElement {
             margin-right: 1rem;
             vertical-align: baseline;
         }
+
+        @media only screen and (max-width: 768px) {
+            .list {
+                line-height: 25px;
+                padding-left: 0;
+                font-size: 16px;
+            }
+            
+            span { display: inline; font-size: 16px; }
+            
+            input[type=checkbox]{
+                height: 0;
+                width: 0;
+                visibility: hidden;
+                order: 2;
+            }
+
+            label {
+                cursor: pointer;
+                text-indent: -1200px;
+                width: 50px;
+                height: 25px;
+                background: grey;
+                display: block;
+                border-radius: 25px;
+                position: absolute;
+                right: 0;
+            }
+    
+            label:after {
+                content: '';
+                position: absolute;
+                top: 1px;
+                left: 1px;
+                width: 23px;
+                height: 23px;
+                background: #fff;
+                border-radius: 20px;
+                transition: 0.3s;
+            }
+    
+            input:checked + label {
+                background: #08c0fc;;
+            }
+    
+            input:checked + label:after  {
+                left: calc(100% - 1px);
+                transform: translateX(-100%);
+            }
+    
+            label:active:after {
+                width: 33px;
+            }
+        }
         </style>
         <div class="list">
             <span>${this.name}</span>
@@ -54,7 +108,6 @@ export default class RHDPSearchFilterItem extends RHElement {
     _active = false;
     _value;
     _inline = false;
-    _bubble = true;
     _bounce = false;
     _group;
 
@@ -83,15 +136,6 @@ export default class RHDPSearchFilterItem extends RHElement {
         if (this._group === val) return;
         this._group = val;
         this.setAttribute('group', this._group);
-    }
-
-    get bubble() {
-        return this._bubble;
-    }
-
-    set bubble(val) {
-        if (this._bubble === val) return;
-        this._bubble = val;
     }
 
     get bounce() {
@@ -126,10 +170,11 @@ export default class RHDPSearchFilterItem extends RHElement {
             if (chkbox) {
                 chkbox.checked = this._active;
             }
-            
-            let evt = {detail: {facet: this}, bubbles: this.bubble, composed: true };
-            this.dispatchEvent(new CustomEvent('filter-item-change', evt));
-            this.bubble = true;
+            if(!this.bounce){
+                let evt = {detail: {facet: this}, bubbles: true, composed: true };
+                this.bounce = true;
+                this.dispatchEvent(new CustomEvent('filter-item-change', evt));
+            }
         }
     }
     get value() {
@@ -172,50 +217,45 @@ export default class RHDPSearchFilterItem extends RHElement {
     }
 
     _updateFacet(e) {
-        this.bounce = true;
+        this.bounce = false;
         this.active = !this.active;
     }
 
     _checkParams(e) {
-        let chk = false;
+        // let chk = false;
         if (e.detail && e.detail.filters) {
+            this.bounce = true;
             Object.keys(e.detail.filters).forEach(group => {
                 e.detail.filters[group].forEach(facet => {
-                    if (group === this.group) {
-                        if (facet === this.key) {
-                            chk = true;
-                            this.bubble = false;
-                            this.active = true;
-                            let evt = {detail: {facet: this}, bubbles: this.bubble, composed: true };
-                            this.dispatchEvent(new CustomEvent('filter-item-init', evt));
-                        }
+                    if (group === this.group && facet === this.key) {
+                        this.active = true;
+                            // chk = true;
+                            //this.bubble = false;
+                            // this.active = true;
+                            // let evt = {detail: {facet: this}, bubbles: this.bubble, composed: true };
+                            // this.dispatchEvent(new CustomEvent('filter-item-init', evt));  
                     }
                 });
             });
         }
 
-        if (!chk) {
-            this.bubble = false;
-            this.active = false;
-        }
+        // if (!chk) {
+        //     this.bubble = false;
+        //     this.active = false;
+        // }
     }
 
     _checkChange(e) {
         if (e.detail && e.detail.facet) {
-            if (!this.bounce) {
-                if(this.group === e.detail.facet.group && this.key === e.detail.facet.key) {
-                    this.bubble = false;
-                    this.active = e.detail.facet.active;
-                }
+            if(this.group === e.detail.facet.group && this.key === e.detail.facet.key) {
+                //this.bubble = false;
+                this.active = e.detail.facet.active;
             }
-            this.bubble = true;
-            this.bounce = false;
         }
     }
     
     _clearFilters(e) {
-        this.bubble = false; 
-        this.bounce = false;
+        this.bounce = true;
         this.active = false;
     }
 }
