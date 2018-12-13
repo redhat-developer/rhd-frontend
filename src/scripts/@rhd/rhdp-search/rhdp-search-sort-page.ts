@@ -173,4 +173,3 @@ export default class RHDPSearchSortPage extends RHElement {
 }
 
 RHElement.create(RHDPSearchSortPage);
-// customElements.define('rhdp-search-sort-page', RHDPSearchSortPage);

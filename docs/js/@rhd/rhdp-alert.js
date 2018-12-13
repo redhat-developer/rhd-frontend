@@ -128,7 +128,6 @@ System.register(["../@rhelements/rhelement/rhelement.js"], function (exports_1, 
                     if (lnk) {
                         lnk.addEventListener('click', function (e) {
                             e.preventDefault();
-                            console.log('Close');
                             _this.innerHTML = '';
                         });
                     }

@@ -6,7 +6,7 @@ describe('Alert component', function() {
         txt = 'Test Text';
     
     beforeEach(function() {
-            wc = new RHDPAlert();
+            wc = document.createElement('rhdp-alert');
             wc.heading = heading;
             wc.innerText = txt;
             document.body.appendChild(wc);

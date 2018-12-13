@@ -4,7 +4,7 @@
 describe('Search Query', function() {
     var wc;
     beforeEach(function() {
-        wc = new RHDPSearchQuery();
+        wc = document.createElement('rhdp-search-query');
         document.body.insertBefore(wc, document.body.firstChild);
     });
 

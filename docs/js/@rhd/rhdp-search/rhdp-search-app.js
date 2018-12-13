@@ -97,8 +97,6 @@ System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-url.
                 RHDPSearchApp.prototype.toggleModal = function (e) {
                     this.modal.toggle = e.detail.toggle;
                 };
-                RHDPSearchApp.prototype.updateSort = function (e) {
-                };
                 return RHDPSearchApp;
             }(rhelement_js_1.default));
             exports_1("default", RHDPSearchApp);

@@ -3,7 +3,7 @@ describe('RHDP Project Filter Box Component', function() {
     var wc;
 
     beforeEach(function() {
-        wc = new RHDPProjectFilterBox();
+        wc = document.createElement('rhdp-project-filter-box');
         document.body.appendChild(wc);
     });
 

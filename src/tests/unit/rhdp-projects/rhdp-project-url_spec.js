@@ -3,7 +3,7 @@ describe('RHDP Project Url', function() {
     var wc;
 
     beforeEach(function() {
-        wc = new RHDPProjectURL();
+        wc = document.createElement('rhdp-project-url');
         document.body.appendChild(wc);
     });
 

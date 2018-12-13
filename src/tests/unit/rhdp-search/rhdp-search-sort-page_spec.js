@@ -5,7 +5,7 @@ describe('Search Sort and Paging', function() {
     var wc;
 
     beforeEach(function() {
-        wc = new RHDPSearchSortPage();
+        wc = document.createElement('rhdp-search-sort-page');
         document.body.insertBefore(wc, document.body.firstChild);
     });
 

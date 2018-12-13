@@ -47,7 +47,7 @@ describe('Search Result', function() {
                 ]
             }
         };
-        wc = new RHDPSearchResult();
+        wc = document.createElement('rhdp-search-result');
         document.body.insertBefore(wc, document.body.firstChild);
     });
 

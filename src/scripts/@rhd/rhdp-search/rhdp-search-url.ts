@@ -83,16 +83,9 @@ export default class RHDPSearchURL extends RHElement {
 
     connectedCallback() {
         super.connectedCallback();
-        //top.addEventListener('term-change', this._changeAttr);
-        //top.addEventListener('filter-item-change', this._changeAttr);
-        //top.addEventListener('sort-change', this._changeAttr);
-        //top.addEventListener('load-more', this._changeAttr);
         top.addEventListener('search-complete', this._changeAttr);
         top.addEventListener('clear-filters', this._changeAttr);
         top.window.addEventListener('popstate', this._popState);
-        // Ignoring tracking these for now
-        // top.addEventListener('filter-group-toggle', this._changeAttr);
-        // top.addEventListener('filter-group-more-toggle', this._changeAttr);
         this._paramsReady();
     }
 
@@ -178,4 +171,3 @@ export default class RHDPSearchURL extends RHElement {
 }
 
 RHElement.create(RHDPSearchURL);
-//customElements.define('rhdp-search-url', RHDPSearchURL);

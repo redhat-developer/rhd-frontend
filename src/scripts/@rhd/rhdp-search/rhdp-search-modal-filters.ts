@@ -160,7 +160,6 @@ export default class RHDPSearchModalFilters extends RHElement {
         super(RHDPSearchModalFilters, {delayRender: true});
         this._toggleModal = this._toggleModal.bind(this);
         this._clearFilters = this._clearFilters.bind(this);
-        // this._addFilters = this._addFilters.bind(this);
     }
     
     connectedCallback() {
@@ -185,7 +184,6 @@ export default class RHDPSearchModalFilters extends RHElement {
                     break;
             }
         });
-        //top.addEventListener('clear-filters', this._clearFilters);
         top.addEventListener('toggle-modal', this._toggleModal);
         super.render();
     }
@@ -204,47 +202,7 @@ export default class RHDPSearchModalFilters extends RHElement {
             let n = groups[i].cloneNode(true);
             this.appendChild(n); 
         }
-        // let groups = this.filters && this.filters.facets ? this.filters.facets : [],
-        //     len = groups.length;
-        // for(let i=0; i < len; i++) {
-        //     let group = new RHDPSearchFilterGroup(),
-        //         groupInfo = groups[i],
-        //         gLen = groupInfo.items.length;
-        //         for(let j=0; j < gLen; j++) {
-        //             let item = new RHDPSearchFilterItem();
-        //             item.name = groupInfo.items[j].name;
-        //             item.value = groupInfo.items[j].value;
-        //             item.active = groupInfo.items[j].active;
-        //             item.key = groupInfo.items[j].key;
-        //             item.group = groupInfo.key;
-        //             group.items.push(item);
-        //         }
-        //     group.key = groupInfo.key;
-        //     group.name = groupInfo.name;        
-        //     this.shadowRoot.querySelector('.groups').appendChild(group);
-        // }
-
     }
-
-    // _addFilters() {
-    //     var groups = this.filters && this.filters.facets ? this.filters.facets : [];
-    //     for(let i=0; i < groups.length; i++) {
-    //         var items = groups[i].items;
-    //         for(let j=0; j < items.length; j++) {
-    //             let item = new RHDPSearchFilterItem();
-    //                 item.name = items[j].name;
-    //                 item.value = items[j].value;
-    //                 item.inline = true;
-    //                 item.bubble = false;
-    //                 item.key = items[j].key;
-    //                 item.group = groups[i].key;
-    //                 this.shadowRoot.querySelector('.activeFilters').appendChild(item)
-    //             }
-    //         }
-    //     // if (this.type === 'active') {
-    //     //     this._checkActive();
-    //     // }
-    // }
 
     _toggleModal(e) {
         this.toggle = !this.toggle;
@@ -264,4 +222,3 @@ export default class RHDPSearchModalFilters extends RHElement {
 }
 
 RHElement.create(RHDPSearchModalFilters);
-// customElements.define('rhdp-search-filters', RHDPSearchFilters);

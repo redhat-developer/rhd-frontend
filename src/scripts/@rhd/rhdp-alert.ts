@@ -182,7 +182,6 @@ export default class RHDPAlert extends RHElement {
         if (lnk) {
             lnk.addEventListener('click', e => {
                 e.preventDefault();
-                console.log('Close');
                 this.innerHTML = '';
             });
         }

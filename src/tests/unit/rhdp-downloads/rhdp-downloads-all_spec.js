@@ -21,7 +21,7 @@ describe('Downloads All Products', function () {
 
     beforeEach(function () {
         wc = document.createElement('rhdp-downloads-all');
-        products = new RHDPDownloadsProducts();
+        products = document.createElement('rhdp-downloads-products');
         products.products = mockProduct;
 
     });

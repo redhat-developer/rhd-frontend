@@ -106,7 +106,6 @@ export default class RHDPSearchActiveFilters extends RHElement {
                     break;
             }
         });
-        //top.addEventListener('clear-filters', this._clearFilters);
     }
 
     static get observedAttributes() { 
@@ -130,7 +129,6 @@ export default class RHDPSearchActiveFilters extends RHElement {
 
     _initActive(e, group_key, item) {
         if (e.detail && e.detail.filters) {
-            //console.log(e.detail.filters);
             Object.keys(e.detail.filters).forEach(group => {
                 e.detail.filters[group].forEach(facet => {
                     if (group === group_key) {
@@ -160,9 +158,6 @@ export default class RHDPSearchActiveFilters extends RHElement {
                     this.appendChild(item)
                 }
             }
-        // if (this.type === 'active') {
-        //     this._checkActive();
-        // }
     }
 
     applyFilters() {
@@ -179,4 +174,3 @@ export default class RHDPSearchActiveFilters extends RHElement {
 }
 
 RHElement.create(RHDPSearchActiveFilters);
-// customElements.define('rhdp-search-filters', RHDPSearchFilters);

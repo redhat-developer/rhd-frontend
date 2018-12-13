@@ -5,7 +5,7 @@ describe('Search Results (list)', function() {
     var wc;
 
     beforeEach(function() {
-        wc = new RHDPSearchResults();
+        wc = document.createElement('rhdp-search-results');
         document.body.insertBefore(wc, document.body.firstChild);
     });
 

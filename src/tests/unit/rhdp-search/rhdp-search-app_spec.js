@@ -6,7 +6,7 @@ xdescribe('Given Search Application', function() {
     var wc;
 
     beforeEach(function() {
-        wc = new RHDPSearchApp();
+        wc = document.createElement('rhdp-search-app');
         document.body.insertBefore(wc, document.body.firstChild);
     });
 

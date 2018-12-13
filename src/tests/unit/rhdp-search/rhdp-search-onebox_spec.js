@@ -1,10 +1,11 @@
 "use strict";
-// Test rhdp-search-result-count component
+// Test rhdp-search-result-count component\
+System.import('../../dist/js/src/scripts/@rhd/rhdp-search/rhdp-search-onebox.js');
 
 describe('Search OneBox', function() {
     var wc;
     beforeEach(function() {
-        wc = new RHDPSearchOneBox();
+        wc = document.createElement('rhdp-search-onebox');
         wc.mock = true;
     });
 

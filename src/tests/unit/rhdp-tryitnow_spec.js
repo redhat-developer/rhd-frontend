@@ -1,7 +1,7 @@
 "use strict";
 //rhdp-tryitnow component testing
 window.addEventListener('WebComponentsReady', function () {
-    describe('Try-it now feature', function() {
+    xdescribe('Try-it now feature', function() {
         var wc;
         beforeEach(function() {
             wc = new RHDPTryItNow();

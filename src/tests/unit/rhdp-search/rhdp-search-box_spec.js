@@ -6,7 +6,7 @@ describe('Search Box', function() {
     var wc;
     
     beforeEach(function() {
-        wc = new RHDPSearchBox();
+        wc = document.createElement('rhdp-search-box');
         document.body.insertBefore(wc, document.body.firstChild);
     });
 

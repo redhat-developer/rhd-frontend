@@ -227,4 +227,3 @@ export default class RHDPSearchResults extends RHElement {
 }
 
 RHElement.create(RHDPSearchResults);
-// customElements.define('rhdp-search-results', RHDPSearchResults);

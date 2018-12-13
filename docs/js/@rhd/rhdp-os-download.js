@@ -32,7 +32,7 @@ System.register([], function (exports_1, context_1) {
                     _this.stage_download_url = 'https://developers.stage.redhat.com';
                     _this.productDownloads = {
                         "devsuite": { "windowsUrl": "/download-manager/file/devsuite-2.3.0-GA-installer.exe", "macUrl": "/download-manager/file/devsuite-2.3.0-GA-bundle-installer-mac.dmg", "rhelUrl": "/products/devsuite/hello-world/#fndtn-rhel" },
-                        "cdk": { "windowsUrl": "/download-manager/file/cdk-3.5.0-1-minishift-windows-amd64.exe", "macUrl": "/download-manager/file/cdk-3.5.0-1-minishift-darwin-amd64", "rhelUrl": "/download-manager/file/cdk-3.5.0-1-minishift-linux-amd64" }
+                        "cdk": { "windowsUrl": "/download-manager/file/cdk-3.7.0-1-minishift-windows-amd64.exe", "macUrl": "/download-manager/file/cdk-3.7.0-1-minishift-darwin-amd64", "rhelUrl": "/download-manager/file/cdk-3.7.0-1-minishift-linux-amd64" }
                     };
                     _this.template = function (strings, product, downloadUrl, platform, version) {
                         return "<div class=\"large-8 columns download-link\">\n                    <a class=\"button heavy-cta\" href=\"" + downloadUrl + "\">\n                        <i class=\"fa fa-download\"></i> Download</a>\n                    <div class=\"version-name\">" + product + " " + version + " " + (_this.displayOS ? "for " + platform : '') + "</div>\n                </div>\n                ";

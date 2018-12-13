@@ -31,7 +31,7 @@ var ytEmbed = {
 
         // temp hardcode our own key if not provided
         if (!this.cfg.key) {
-                this.cfg.key = 'AIzaSyA8OmKcw2DMNkJicyCJ0vqvf90xgeH52zE';
+            this.cfg.key = 'AIzaSyA8OmKcw2DMNkJicyCJ0vqvf90xgeH52zE';
         }
 
         if (!this.cfg.block) {
@@ -82,53 +82,53 @@ var ytEmbed = {
 
 
                 switch (this.cfg.order) {
-                    case "new_first":
-                        this.cfg.orderby = 'date';
-                        //this.cfg.sortorder = 'ascending';
-                        break;
+                case "new_first":
+                    this.cfg.orderby = 'date';
+                    //this.cfg.sortorder = 'ascending';
+                    break;
 
-                    case "highest_rating":
-                        this.cfg.orderby = 'rating';
-                        //this.cfg.sortorder = 'descending';
-                        break;
+                case "highest_rating":
+                    this.cfg.orderby = 'rating';
+                    //this.cfg.sortorder = 'descending';
+                    break;
 
-                    case "most_relevance":
-                        this.cfg.orderby = 'relevance';
-                        //this.cfg.sortorder = 'descending';
-                        break;
+                case "most_relevance":
+                    this.cfg.orderby = 'relevance';
+                    //this.cfg.sortorder = 'descending';
+                    break;
                 }
                 var url = "https://www.googleapis.com";
 
                 //what data do we need: a search, a user search, a playlist
                 switch (this.cfg.type) {
-                    case "search":
-                        url += '/youtube/v3/search?q=' + this.cfg.q + '&type=video&callback=ytEmbed.callback[' + this.ytQuery + ']&order=' + this.cfg.orderby;
-                        break;
+                case "search":
+                    url += '/youtube/v3/search?q=' + this.cfg.q + '&type=video&callback=ytEmbed.callback[' + this.ytQuery + ']&order=' + this.cfg.orderby;
+                    break;
 
-                    case "user":
-                        url += '/youtube/v3/channels?forUsername=' + this.cfg.q + '&callback=ytEmbed.callback[' + this.ytQuery + ']';
-                        break;
+                case "user":
+                    url += '/youtube/v3/channels?forUsername=' + this.cfg.q + '&callback=ytEmbed.callback[' + this.ytQuery + ']';
+                    break;
 
-                    case "playlist":
-                        url += '/youtube/v3/playlistItems?playlistId=' + this.cfg.q + '&callback=ytEmbed.callback[' + this.ytQuery + ']&order=' + this.cfg.orderby;
-                        break;
+                case "playlist":
+                    url += '/youtube/v3/playlistItems?playlistId=' + this.cfg.q + '&callback=ytEmbed.callback[' + this.ytQuery + ']&order=' + this.cfg.orderby;
+                    break;
 
-                    case "videos":
-                        url += '/youtube/v3/videos?id=' + this.cfg.q + '&callback=ytEmbed.callback[' + this.ytQuery + ']&order=' + this.cfg.orderby;
-                        break;
+                case "videos":
+                    url += '/youtube/v3/videos?id=' + this.cfg.q + '&callback=ytEmbed.callback[' + this.ytQuery + ']&order=' + this.cfg.orderby;
+                    break;
 
-                    case "featured":
-                        url += '/youtube/v3/videos?chart=mostPopular&callback=ytEmbed.callback[' + this.ytQuery + ']';
-                        break;
+                case "featured":
+                    url += '/youtube/v3/videos?chart=mostPopular&callback=ytEmbed.callback[' + this.ytQuery + ']';
+                    break;
 
-                    case "channel":
-                        url += '/youtube/v3/channels?id=' + this.cfg.q + '&callback=ytEmbed.callback[' + this.ytQuery + ']';
-                        break;
+                case "channel":
+                    url += '/youtube/v3/channels?id=' + this.cfg.q + '&callback=ytEmbed.callback[' + this.ytQuery + ']';
+                    break;
 
-                    default:
-                        this.message('Unknown setting type. Use: search, playlist or user.');
-                        return;
-                        break;
+                default:
+                    this.message('Unknown setting type. Use: search, playlist or user.');
+                    return;
+                    break;
                 }
 
                 if (this.cfg.type == "user"||this.cfg.type == "channel") {
@@ -293,7 +293,7 @@ var ytEmbed = {
                 var span = document.createElement('span');
                 a.appendChild(span);
                 var img = document.createElement('img');
-                img.setAttribute('src', (entry.snippet.thumbnails ? entry.snippet.thumbnails.medium.url : ''));
+                img.setAttribute('src', entry.snippet.thumbnails ? entry.snippet.thumbnails.medium.url : '');
                 span.appendChild(img);
                 var em = document.createElement('em');
                 span.appendChild(em);
@@ -429,9 +429,9 @@ var ytEmbed = {
         if (ds) {
             if (ds.length > 255) {
                 return ds.substr(0, 252) + '...';
-            } else {
+            } 
                 return ds;
-            }
+            
         } else {
             return "No description available.";
         }
@@ -443,9 +443,9 @@ var ytEmbed = {
     formatDate: function(dt) {
         if (dt) {
             return dt.substr(0, 10)
-        } else {
+        } 
             return "unknown";
-        }
+        
     },
     /**
      * Depreciated
@@ -484,7 +484,7 @@ var ytEmbed = {
      * Play video (static)
      */
     playVideo: function(data) {
-        console.log(data);
+        //console.log(data);
         if (data.cfg.parent) {
             var player = document.getElementById(data.cfg.parent + "Player");
         } else {

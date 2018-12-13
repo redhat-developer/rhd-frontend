@@ -5,7 +5,7 @@ describe('Search Filter Item', function() {
     var wc;
     var name = 'Test1', key = 'test1', value = 'jbossdeveloper_test1';
     beforeEach(function() {
-        wc = new RHDPSearchFilterItem();
+        wc = document.createElement('rhdp-search-filter-item');
         wc.name = name;
         wc.key = key;
         wc.value = value;

@@ -153,7 +153,6 @@ export default class RHDPSearchFilterActiveItem extends RHElement {
         top.addEventListener('filter-item-change', this._checkChange);
         top.addEventListener('params-ready', this._checkParams);
         top.addEventListener('clear-filters', this._clearFilters);
-        //top.window.addEventListener('popstate', this._clearFilters);
         super.render();
     }
 
@@ -180,27 +179,15 @@ export default class RHDPSearchFilterActiveItem extends RHElement {
                 e.detail.filters[group].forEach(facet => {
                     if (group === this.group && facet === this.key) {
                         this.active = true;
-                        // chk = true;
-                        // this.bubble = false;
-                        // this.active = true;
-                        // this.bounce = true;
-                        // let evt = {detail: {facet: this}, bubbles: this.bubble, composed: true };
-                        // this.dispatchEvent(new CustomEvent('filter-item-init', evt));
                     }
                 });
             });
         }
-
-        // if (!chk) {
-        //     this.bubble = false;
-        //     this.active = false;
-        // }
     }
 
     _checkChange(e) {
         if (e.detail && e.detail.facet) {
             if(this.group === e.detail.facet.group && this.key === e.detail.facet.key) {
-                //this.bubble = false;
                 this.active = e.detail.facet.active;
             }
         }
@@ -213,4 +200,3 @@ export default class RHDPSearchFilterActiveItem extends RHElement {
 }
 
 RHElement.create(RHDPSearchFilterActiveItem);
-// customElements.define('rhdp-search-filter-item', RHDPSearchFilterItem);

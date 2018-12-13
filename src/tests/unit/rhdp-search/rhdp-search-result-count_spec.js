@@ -4,7 +4,7 @@
 describe('Search Result Count', function() {
     var wc;
     beforeEach(function() {
-        wc = new RHDPSearchResultCount(); 
+        wc = document.createElement('rhdp-search-result-count');
         document.body.insertBefore(wc, document.body.firstChild);
     });
 

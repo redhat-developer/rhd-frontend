@@ -4,7 +4,7 @@ describe('RHDP Project Query Component', function() {
     var wc;
 
     beforeEach(function() {
-        wc = new RHDPProjectQuery();
+        wc = document.createElement('rhdp-project-query');
         wc.mockData = true;
         document.body.appendChild(wc);
     });

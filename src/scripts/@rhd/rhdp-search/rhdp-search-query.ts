@@ -187,7 +187,7 @@ export default class RHDPSearchQuery extends RHElement {
     }
 
     _changeAttr(e) {
-        console.log(e);
+        // console.log(e);
         switch (e.type) {
             case 'term-change':
                 if (e.detail && e.detail.term && e.detail.term.length > 0) {
@@ -215,9 +215,6 @@ export default class RHDPSearchQuery extends RHElement {
                 this.search();
                 break;
             case 'load-more': // detail.qty
-                // if (e.detail && e.detail.from) {
-                //     this.from = e.detail.from;
-                // }
                 this.search();
                 break;
             case 'clear-filters':
@@ -242,11 +239,6 @@ export default class RHDPSearchQuery extends RHElement {
                 break;
         }   
     }
-
-    // _checkValid(e) {
-    //     let obj = e.detail;
-    //     this.valid = ;
-    // }
 
     search() {
         let evt = { bubbles: true, composed: true };
@@ -285,4 +277,3 @@ export default class RHDPSearchQuery extends RHElement {
 }
 
 RHElement.create(RHDPSearchQuery);
-// customElements.define('rhdp-search-query', RHDPSearchQuery);

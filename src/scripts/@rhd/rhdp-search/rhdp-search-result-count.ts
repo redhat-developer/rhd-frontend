@@ -66,7 +66,6 @@ export default class RHDPSearchResultCount extends RHElement {
         top.addEventListener('params-ready', this._setText);
         top.addEventListener('search-start', e => { this.loading = true; this._setText(e); });
         top.addEventListener('search-complete', e => { this.loading = false; this._setText(e); });
-        //top.addEventListener('term-change', this._setText);
         super.render();
     }
 
@@ -93,7 +92,6 @@ export default class RHDPSearchResultCount extends RHElement {
                     this.count = 0;
                 }
                 if (!this.loading) {
-                    // this.innerHTML = `${this.count} results found ${this.term ? `for ${this.term}` : ''}`;
                     super.render();
                 }
             } else { 
@@ -110,4 +108,3 @@ export default class RHDPSearchResultCount extends RHElement {
 }
 
 RHElement.create(RHDPSearchResultCount);
-// customElements.define('rhdp-search-result-count', RHDPSearchResultCount);

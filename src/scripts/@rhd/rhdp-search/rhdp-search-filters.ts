@@ -192,7 +192,6 @@ export default class RHDPSearchFilters extends RHElement {
         super(RHDPSearchFilters, {delayRender: true});
         this._toggleModal = this._toggleModal.bind(this);
         this._clearFilters = this._clearFilters.bind(this);
-        // this._addFilters = this._addFilters.bind(this);
     }
     
     connectedCallback() {
@@ -218,7 +217,6 @@ export default class RHDPSearchFilters extends RHElement {
                     break;
             }
         });
-        //top.addEventListener('clear-filters', this._clearFilters);
         top.addEventListener('toggle-modal', this._toggleModal);
     }
 
@@ -253,26 +251,6 @@ export default class RHDPSearchFilters extends RHElement {
 
     }
 
-    // _addFilters() {
-    //     var groups = this.filters && this.filters.facets ? this.filters.facets : [];
-    //     for(let i=0; i < groups.length; i++) {
-    //         var items = groups[i].items;
-    //         for(let j=0; j < items.length; j++) {
-    //             let item = new RHDPSearchFilterItem();
-    //                 item.name = items[j].name;
-    //                 item.value = items[j].value;
-    //                 item.inline = true;
-    //                 item.bubble = false;
-    //                 item.key = items[j].key;
-    //                 item.group = groups[i].key;
-    //                 this.shadowRoot.querySelector('.activeFilters').appendChild(item)
-    //             }
-    //         }
-    //     // if (this.type === 'active') {
-    //     //     this._checkActive();
-    //     // }
-    // }
-
     _toggleModal(e) {
         if (this.type === 'modal') {
             this.toggle = !this.toggle;
@@ -293,4 +271,3 @@ export default class RHDPSearchFilters extends RHElement {
 }
 
 RHElement.create(RHDPSearchFilters);
-// customElements.define('rhdp-search-filters', RHDPSearchFilters);

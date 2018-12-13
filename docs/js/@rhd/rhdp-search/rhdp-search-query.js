@@ -237,7 +237,6 @@ System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_
                     }
                 };
                 RHDPSearchQuery.prototype._changeAttr = function (e) {
-                    console.log(e);
                     switch (e.type) {
                         case 'term-change':
                             if (e.detail && e.detail.term && e.detail.term.length > 0) {

@@ -199,7 +199,6 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
     }
 
     renderResult() {
-        // this.innerHTML = this.template`${this.url}${this.title}${this.kind}${this.created}${this.description}${this.premium}${this.thumbnail}`;
         super.render();
     }
 
@@ -282,4 +281,3 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
 }
 
 RHElement.create(RHDPSearchResult);
-// customElements.define('rhdp-search-result', RHDPSearchResult);

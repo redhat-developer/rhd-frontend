@@ -160,7 +160,6 @@ export default class RHDPSearchOneBox extends RHElement {
     set feature(val) {
         if (this._feature === val) return;
         this._feature = val;
-        //this.innerHTML = this.feature ? this.template`${this.feature}` : '';
         super.render();
     }
 
@@ -188,7 +187,6 @@ export default class RHDPSearchOneBox extends RHElement {
     connectedCallback() {
         super.connectedCallback();
         super.render();
-        //this.getData();
 
         top.addEventListener('term-change', this._termChange);
         top.addEventListener('params-ready', this._termChange);
@@ -250,4 +248,3 @@ export default class RHDPSearchOneBox extends RHElement {
 }
 
 RHElement.create(RHDPSearchOneBox);
-// customElements.define('rhdp-search-onebox', RHDPSearchOneBox);

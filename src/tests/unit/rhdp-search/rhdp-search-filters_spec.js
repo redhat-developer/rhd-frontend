@@ -6,7 +6,7 @@ describe('Search Filters', function() {
     var facet = {"term":"","facets":[]};
 
     beforeEach(function() {
-        wc = new RHDPSearchFilters();
+        wc = document.createElement('rhdp-search-filters');
         wc.filters = facet;
         document.body.insertBefore(wc, document.body.firstChild);
     });

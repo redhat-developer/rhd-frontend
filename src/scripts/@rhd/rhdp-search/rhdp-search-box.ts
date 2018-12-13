@@ -131,7 +131,6 @@ export default class RHDPSearchBox extends RHElement {
         super.connectedCallback();
         super.render();
         top.addEventListener('params-ready', this._checkTerm);
-        //top.window.addEventListener('popstate', e => { this.term = null; });
         top.addEventListener('term-change', this._checkTerm);
 
         this.shadowRoot.addEventListener('submit', e => {
@@ -173,4 +172,3 @@ export default class RHDPSearchBox extends RHElement {
 }
 
 RHElement.create(RHDPSearchBox);
-// window.customElements.define('rhdp-search-box', RHDPSearchBox);

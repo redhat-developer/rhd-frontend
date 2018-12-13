@@ -4,7 +4,7 @@ describe('RHDP Project Items Component', function() {
     var wc;
 
     beforeEach(function() {
-        wc = new RHDPProjectItem();
+        wc = document.createElement('rhdp-project-item');
     });
 
     afterEach(function() {

@@ -6,7 +6,7 @@ draft: true
 tags: ["component"]
 weight: 3
 scripts: ["js/@rhd/dp-category-list/dp-category.js","js/@rhd/dp-category-list/dp-category-list.js",
-"js/@rhd/dp-category-list/dp-category-item.js","js/@rhd/dp-category-list/dp-category-item-list.js","js/@rhd/dp-category-list/dp-product-short-teaser.js",]
+"js/@rhd/dp-category-list/dp-category-item.js","js/@rhd/dp-category-list/dp-category-item-list.js","js/@rhd/dp-category-list/dp-product-short-teaser.js"]
 ---
 
 {{< code >}}

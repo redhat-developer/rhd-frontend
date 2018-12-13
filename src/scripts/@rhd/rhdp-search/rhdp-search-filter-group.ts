@@ -173,4 +173,3 @@ export default class RHDPSearchFilterGroup extends RHElement {
 }
 
 RHElement.create(RHDPSearchFilterGroup);
-// customElements.define('rhdp-search-filter-group', RHDPSearchFilterGroup);
