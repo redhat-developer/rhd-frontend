@@ -1,12 +1,13 @@
 "use strict";
 // Test rhdp-search-result-count component\
-System.import('../../dist/js/src/scripts/@rhd/rhdp-search/rhdp-search-onebox.js');
 
-describe('Search OneBox', function() {
+describe('Search OneBox', () => {
     var wc;
-    beforeEach(function() {
-        wc = document.createElement('rhdp-search-onebox');
-        wc.mock = true;
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-search-onebox.js').then(() => {
+            wc = document.createElement('rhdp-search-onebox');
+            wc.mock = true;
+        });
     });
 
     afterEach(function() {
@@ -36,18 +37,18 @@ describe('Search OneBox', function() {
         it('should be blank with no values', function() {
             wc.setAttribute('url', '');
             wc.setAttribute('term', '');
-            expect(wc.innerHTML.length).toEqual(0);
+            expect(wc.shadowRoot.innerHTML.trim().length).toEqual(0);
         });
 
         it('should be blank with only a URL value', function() {
             wc.setAttribute('url', 'https://developers.redhat.com/rhdp-apps/onebox/onebox.json');
-            expect(wc.innerHTML.length).toEqual(0);
+            expect(wc.shadowRoot.innerHTML.trim().length).toEqual(0);
         });
 
         it('should be blank with only a term value', function() {
             wc.setAttribute('url', '');
             wc.setAttribute('term', 'Test Feature Heading');
-            expect(wc.innerHTML.length).toEqual(0);
+            expect(wc.shadowRoot.innerHTML.trim().length).toEqual(0);
         });
     })
     
@@ -96,12 +97,12 @@ describe('Search OneBox', function() {
 
         it('should be blank with an unmatched term', function() {
             wc.setAttribute('term', 'invalid test term');
-            expect(wc.innerHTML.length).toEqual(0);
+            expect(wc.shadowRoot.innerHTML.trim().length).toEqual(0);
         });
 
         it('should not be blank with a matched term regardless of captialization', function() {
             wc.setAttribute('term', 'Feature1 Term');
-            expect(wc.innerHTML.length).toBeGreaterThan(0);
+            expect(wc.shadowRoot.innerHTML.trim().length).toBeGreaterThan(0);
         });
 
         describe('and a matched term', function() {
@@ -110,35 +111,35 @@ describe('Search OneBox', function() {
             });
 
             it('should not be blank', function() {
-                expect(wc.innerHTML.length).toBeGreaterThan(0);
+                expect(wc.shadowRoot.innerHTML.trim().length).toBeGreaterThan(0);
             });
 
             it('should have a heading linked to the appropriate URL', function() {
-                expect(wc.querySelector('h4').innerText).toEqual('feature1.heading.text');
-                expect(wc.querySelector('h4 a').href).toBe('https://feature1.heading.url/');
+                expect(wc.shadowRoot.querySelector('h4').innerText).toEqual('feature1.heading.text');
+                expect(wc.shadowRoot.querySelector('h4 a').href).toBe('https://feature1.heading.url/');
             });
 
             it('should have a paragraph with the feature details', function() {
-                expect(wc.querySelector('p').innerText).toEqual('feature1.details');
+                expect(wc.shadowRoot.querySelector('p').innerText).toEqual('feature1.details');
             });
 
             it('should have a button linked to the appropriate URL', function() {
-                expect(wc.querySelector('a.button').href).toEqual('https://feature1.button.url/?onebox=feature1')
-                expect(wc.querySelector('a.button').innerText).toEqual('feature1.button.text')
+                expect(wc.shadowRoot.querySelector('a.button').href).toEqual('https://feature1.button.url/?onebox=feature1')
+                expect(wc.shadowRoot.querySelector('a.button').innerText).toEqual('feature1.button.text'.toUpperCase())
             });
 
-            it('should have an unordered list with three items', function() {
-                expect(wc.querySelector('ul')).not.toBeNull();
-                expect(wc.querySelectorAll('li').length).toEqual(3);
+            it('should have an group of links with four items', function() {
+                expect(wc.shadowRoot.querySelector('.links a')).not.toBeNull();
+                expect(wc.shadowRoot.querySelectorAll('.links a').length).toEqual(4);
             });
 
             it('should list the slotted items with icons, text, and links', function() {
-                var lis = wc.querySelectorAll('li');
+                var lis = wc.shadowRoot.querySelectorAll('.links a:not(.button)');
                 for(var i=0; i < 3; i++) {
                     var slotID = i+1;
                     expect(lis[i].innerText).toEqual('feature1.slot'+slotID+'.text');
                     expect(lis[i].querySelector('svg')).not.toBeNull();
-                    expect(lis[i].querySelector('a').href).toEqual('https://feature1.slot'+slotID+'.url/?onebox=feature1');
+                    expect(lis[i].href).toEqual('https://feature1.slot'+slotID+'.url/?onebox=feature1');
                 }
             });
         });
@@ -149,37 +150,37 @@ describe('Search OneBox', function() {
             });
 
             it('should not be blank', function() {
-                expect(wc.innerHTML.length).toBeGreaterThan(0);
+                expect(wc.shadowRoot.innerHTML.trim().length).toBeGreaterThan(0);
             });
 
             it('should have a heading linked to the appropriate URL', function() {
-                expect(wc.querySelector('h4').innerText).toEqual('feature2.heading.text');
-                expect(wc.querySelector('h4 a').href).toBe('https://feature2.heading.url/');
+                expect(wc.shadowRoot.querySelector('h4').innerText).toEqual('feature2.heading.text');
+                expect(wc.shadowRoot.querySelector('h4 a').href).toBe('https://feature2.heading.url/');
             });
 
             it('should have a paragraph with the feature details', function() {
-                expect(wc.querySelector('p').innerText).toEqual('feature2.details');
+                expect(wc.shadowRoot.querySelector('p').innerText).toEqual('feature2.details');
             });
 
             it('should have a button linked to the appropriate URL', function() {
-                expect(wc.querySelector('a.button').href).toEqual('https://feature2.button.url/?onebox=feature2')
-                expect(wc.querySelector('a.button').innerText).toEqual('feature2.button.text')
+                expect(wc.shadowRoot.querySelector('a.button').href).toEqual('https://feature2.button.url/?onebox=feature2')
+                expect(wc.shadowRoot.querySelector('a.button').innerText).toEqual('feature2.button.text'.toUpperCase())
             });
 
-            it('should have an unordered list with three items', function() {
-                expect(wc.querySelector('ul')).not.toBeNull();
-                expect(wc.querySelectorAll('li').length).toEqual(3);
+            it('should have an group of links with four items', function() {
+                expect(wc.shadowRoot.querySelector('.links a')).not.toBeNull();
+                expect(wc.shadowRoot.querySelectorAll('.links a').length).toEqual(4);
             });
 
             it('should list the slotted items with icons, text, and links', function() {
-                var lis = wc.querySelectorAll('li');
+                var lis = wc.shadowRoot.querySelectorAll('.links a:not(.button)');
                 for(var i=0; i < 3; i++) {
                     var slotID = i+1;
                     expect(lis[i].innerText).toEqual('feature2.slot'+slotID+'.text');
                     expect(lis[i].querySelector('svg')).not.toBeNull();
-                    expect(lis[i].querySelector('a').href).toEqual('https://feature2.slot'+slotID+'.url/?onebox=feature2');
+                    expect(lis[i].href).toEqual('https://feature2.slot'+slotID+'.url/?onebox=feature2');
                 }
             });
         });
-    })
+    });
 });

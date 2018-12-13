@@ -13,18 +13,19 @@ describe('OS detection component', function () {
     displayOS,
     wc;
 
-    beforeEach(function () {
-        wc = document.createElement('rhdp-os-download');
-        productName = "Test product";
-        rhelURL = "http://www.rhel-url-download.com/";
-        macURL = "http://www.mac-url-download.com/";
-        winURL ="http://www.win-url-download.com/";
-        version = "7.0.0";
-        displayOS = "true";
-        url = 'https://testdownload.com/products/testproduct/download/';
-        downloadURL = 'https://testdownload.com/products/testproduct/download/';
-        productCode = 'testproduct';
-
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-os-download.js').then(() => {
+            wc = document.createElement('rhdp-os-download');
+            productName = "Test product";
+            rhelURL = "http://www.rhel-url-download.com/";
+            macURL = "http://www.mac-url-download.com/";
+            winURL ="http://www.win-url-download.com/";
+            version = "7.0.0";
+            displayOS = "true";
+            url = 'https://testdownload.com/products/testproduct/download/';
+            downloadURL = 'https://testdownload.com/products/testproduct/download/';
+            productCode = 'testproduct';
+        });
     });
 
     afterEach(function () {

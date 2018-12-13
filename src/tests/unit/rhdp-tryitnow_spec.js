@@ -3,8 +3,10 @@
 window.addEventListener('WebComponentsReady', function () {
     xdescribe('Try-it now feature', function() {
         var wc;
-        beforeEach(function() {
-            wc = new RHDPTryItNow();
+        beforeEach(async () => {
+            await System.import('./base/src/docs/static/js/@rhd/rhdp-alert.js').then(() => {
+                wc = new RHDPTryItNow();
+            });
         });
 
         afterEach(function() {

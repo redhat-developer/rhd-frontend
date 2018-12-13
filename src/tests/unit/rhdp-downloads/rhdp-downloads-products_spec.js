@@ -3,9 +3,12 @@
 
 describe('Download Products', function() {
     var wc;
-    beforeEach(function() {
-        wc = document.createElement('rhdp-downloads-products');
-        wc.mock = true;
+
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-downloads/rhdp-downloads-products.js').then(() => {
+            wc = document.createElement('rhdp-downloads-products');
+            wc.mock = true;
+        });
     });
 
     afterEach(function() {

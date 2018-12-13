@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && npm run docs",
-    "test": "npm run scripts && karma start src/tests/unit/config/karma.conf.js",
+    "test": "npm run scripts && karma start",
     "build": "npm run scripts && npm run styles",
     "del": "npm run del:scripts && npm run del:styles",
     "del:scripts": "del \"dist/js**\" && del src/docs/static/js && del docs/js",
@@ -16,6 +16,7 @@
     "scripts:old": "uglifyjs-folder src/scripts/js -c -o dist/js/rhd.old.min.js",
     "scripts:copyOLD": "copyfiles -u 2 \"dist/js/*.js\" src/docs/static/js",
     "scripts:copy": "npm run scripts:cpmain && npm run scripts:cpnpm",
+    "scripts:flatten": "",
     "scripts:cpmain": "copyfiles -u 4 \"dist/js/src/scripts/**/*\" src/docs/static/js && copyfiles -u 2 \"dist/js/*.js\" src/docs/static/js",
     "scripts:cpnpm": "copyfiles -u 3 \"dist/js/node_modules/**/*\" src/docs/static/js",
     "styles": "npm run del:styles && npm run styles:sass && npm run styles:copy",

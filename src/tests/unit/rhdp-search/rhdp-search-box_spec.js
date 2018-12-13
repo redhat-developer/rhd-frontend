@@ -5,9 +5,11 @@ describe('Search Box', function() {
     
     var wc;
     
-    beforeEach(function() {
-        wc = document.createElement('rhdp-search-box');
-        document.body.insertBefore(wc, document.body.firstChild);
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-search-box.js').then(() => {
+            wc = document.createElement('rhdp-search-box');
+            document.body.insertBefore(wc, document.body.firstChild);
+        });
     });
 
     afterEach(function() {
@@ -15,7 +17,7 @@ describe('Search Box', function() {
     });
     
     it('should be true', function() {
-        expect(wc.querySelector('span').innerText).toEqual("SEARCH");
+        expect(wc.shadowRoot.querySelector('span').innerText).toEqual("SEARCH");
     });
 
 });

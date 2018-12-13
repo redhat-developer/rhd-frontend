@@ -4,17 +4,18 @@
 describe('Downloads All Product Items', function () {
     var wc;
 
-    beforeEach(function () {
-        wc = document.createElement('rhdp-downloads-all-item');
-        wc.name = 'Test Product';
-        wc.productId = 'testproduct';
-        wc.dataFallbackUrl = 'http://www.testproduct.com';
-        wc.downloadUrl = 'http://www.downloadtestproduct.com';
-        wc.description = 'This is a description for a solid test product';
-        wc.learnMore = 'http://www.testproduct.com/learnmore';
-        wc.version = '1.0.0';
-        wc.platformType = 'Windows';
-
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-downloads/rhdp-downloads-all-item.js').then(() => {
+            wc = document.createElement('rhdp-downloads-all-item');
+            wc.name = 'Test Product';
+            wc.productId = 'testproduct';
+            wc.dataFallbackUrl = 'http://www.testproduct.com';
+            wc.downloadUrl = 'http://www.downloadtestproduct.com';
+            wc.description = 'This is a description for a solid test product';
+            wc.learnMore = 'http://www.testproduct.com/learnmore';
+            wc.version = '1.0.0';
+            wc.platformType = 'Windows';
+        });
     });
 
     afterEach(function () {

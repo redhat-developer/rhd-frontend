@@ -3,10 +3,11 @@
 
 describe('Search Results (list)', function() {
     var wc;
-
-    beforeEach(function() {
-        wc = document.createElement('rhdp-search-results');
-        document.body.insertBefore(wc, document.body.firstChild);
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-search-results.js').then(() => {
+            wc = document.createElement('rhdp-search-results');
+            document.body.insertBefore(wc, document.body.firstChild);
+        });
     });
 
     afterEach(function() {

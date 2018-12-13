@@ -3,8 +3,14 @@
 describe('RHDP Project Items Component', function() {
     var wc;
 
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-projects/rhdp-project-item.js').then(() => {
+            wc = document.createElement('rhdp-project-item');
+        });
+    });
+
     beforeEach(function() {
-        wc = document.createElement('rhdp-project-item');
+       
     });
 
     afterEach(function() {

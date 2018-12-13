@@ -4,12 +4,15 @@
 describe('Search Filter Item', function() {
     var wc;
     var name = 'Test1', key = 'test1', value = 'jbossdeveloper_test1';
-    beforeEach(function() {
-        wc = document.createElement('rhdp-search-filter-item');
-        wc.name = name;
-        wc.key = key;
-        wc.value = value;
-        document.body.insertBefore(wc, document.body.firstChild);
+
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-search-onebox.js').then(() => {
+            wc = document.createElement('rhdp-search-filter-item');
+            wc.name = name;
+            wc.key = key;
+            wc.value = value;
+            document.body.insertBefore(wc, document.body.firstChild);
+        });
     });
 
     afterEach(function() {
@@ -18,8 +21,8 @@ describe('Search Filter Item', function() {
 
     describe('properties', function() {
         it('should show the name field', function() {
-            expect(wc.querySelector('span').innerText).toEqual(name);
-            expect(wc.querySelector('label').innerText).toEqual(name);
+            expect(wc.shadowRoot.querySelector('span').innerText).toEqual(name);
+            expect(wc.shadowRoot.querySelector('label').innerText).toEqual(name);
         });
 
         it('should update the appropriate fields', function() {
@@ -32,9 +35,9 @@ describe('Search Filter Item', function() {
 
     describe('Checkbox', function() {
         it('should set the active state', function() {
-            wc.querySelector('input').click();
+            wc.shadowRoot.querySelector('input').click();
             expect(wc.active).toBe(true);
-            wc.querySelector('input').click();
+            wc.shadowRoot.querySelector('input').click();
             expect(wc.active).toBe(false);
         });
 
@@ -65,14 +68,14 @@ describe('Search Filter Item', function() {
             expect(wc.innerText.trim()).toBe(name);
         });
         it('should clear inline element on clearItem click', function() {
-            var clr = wc.querySelector('.clearItem');
+            var clr = wc.shadowRoot.querySelector('.clearItem');
             clr.click();
             setTimeout(function() {
                 expect(wc.innerHTML).toBe('');
             }, 500)
         });
         it('should set active on clearItem click', function() {
-            var clr = wc.querySelector('.clearItem');
+            var clr = wc.shadowRoot.querySelector('.clearItem');
             clr.click();
             expect(wc.active).toBe(true);
         });

@@ -18,12 +18,14 @@ describe('Downloads All Products', function () {
         }]
     };
 
-
-    beforeEach(function () {
-        wc = document.createElement('rhdp-downloads-all');
-        products = document.createElement('rhdp-downloads-products');
-        products.products = mockProduct;
-
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-downloads-all.js').then(() => {
+            System.import('./base/src/docs/static/js/@rhd/rhdp-downloads/rhdp-downloads-products.js').then(() => {
+                wc = document.createElement('rhdp-downloads-all');
+                products = document.createElement('rhdp-downloads-products');
+                products.products = mockProduct;
+            });
+        });
     });
 
     afterEach(function () {

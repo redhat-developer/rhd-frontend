@@ -3,8 +3,10 @@
 
 describe('Downloads Popular Product Item', function() {
     var wc;
-    beforeEach(function() {
-        wc = document.createElement('rhdp-downloads-popular-product');
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-downloads/rhdp-downloads-popular-product.js').then(() => {
+            wc = document.createElement('rhdp-downloads-popular-product');
+        });
     });
 
     afterEach(function() {
@@ -38,7 +40,6 @@ describe('Downloads Popular Product Item', function() {
 
     });
     describe('with valid data', function() {
-
 
         beforeEach(function() {
             wc.name = "Test Name";

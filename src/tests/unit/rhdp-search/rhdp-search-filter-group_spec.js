@@ -3,9 +3,12 @@
 
 describe('Search Filter Group', function() {
     var wc;
-    beforeEach(function() {
-        wc = document.createElement('rhdp-search-filter-group');
-        document.body.insertBefore(wc, document.body.firstChild);
+
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-search-onebox.js').then(() => {
+            wc = document.createElement('rhdp-search-filter-group');
+            document.body.insertBefore(wc, document.body.firstChild);
+        });
     });
 
     afterEach(function() {
@@ -31,12 +34,12 @@ describe('Search Filter Group', function() {
         });
         it('should have a toggle property', function() {
             expect(wc.toggle).toBe(true);
-            expect(wc.querySelector('.group').className).toEqual('group');
-            expect(wc.querySelector('.toggle').className).toEqual('toggle expand');
+            expect(wc.shadowRoot.querySelector('.group').className).toEqual('group');
+            expect(wc.shadowRoot.querySelector('.toggle').className).toEqual('toggle expand');
             wc.toggle = false;
             expect(wc.toggle).toBe(false);
-            expect(wc.querySelector('.group').className).toEqual('group hide');
-            expect(wc.querySelector('.toggle').className).toEqual('toggle');
+            expect(wc.shadowRoot.querySelector('.group').className).toEqual('group hide');
+            expect(wc.shadowRoot.querySelector('.toggle').className).toEqual('toggle');
 
         });
     });

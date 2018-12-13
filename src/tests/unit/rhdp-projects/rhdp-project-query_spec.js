@@ -3,10 +3,12 @@
 describe('RHDP Project Query Component', function() {
     var wc;
 
-    beforeEach(function() {
-        wc = document.createElement('rhdp-project-query');
-        wc.mockData = true;
-        document.body.appendChild(wc);
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-projects/rhdp-project-query.js').then(() => {
+            wc = document.createElement('rhdp-project-query');
+            wc.mockData = true;
+            document.body.appendChild(wc);
+        });
     });
 
     afterEach(function() {

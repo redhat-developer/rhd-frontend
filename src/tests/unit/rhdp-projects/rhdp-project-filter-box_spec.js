@@ -2,9 +2,11 @@
 describe('RHDP Project Filter Box Component', function() {
     var wc;
 
-    beforeEach(function() {
-        wc = document.createElement('rhdp-project-filter-box');
-        document.body.appendChild(wc);
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-project-filter-box.js').then(() => {
+            wc = document.createElement('rhdp-project-filter-box');
+            document.body.appendChild(wc);
+        });
     });
 
     afterEach(function() {

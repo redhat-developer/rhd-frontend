@@ -5,10 +5,12 @@ describe('Search Filters', function() {
     var wc;
     var facet = {"term":"","facets":[]};
 
-    beforeEach(function() {
-        wc = document.createElement('rhdp-search-filters');
-        wc.filters = facet;
-        document.body.insertBefore(wc, document.body.firstChild);
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-search-filters.js').then(() => {
+            wc = document.createElement('rhdp-search-filters');
+            wc.filters = facet;
+            document.body.insertBefore(wc, document.body.firstChild);
+        });
     });
 
     afterEach(function() {

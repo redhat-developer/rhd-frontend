@@ -14,41 +14,43 @@ describe('Search Result', function() {
         book: "Book"
     };
     var testResult;
-    beforeEach(function() {
-        testResult = {
-            fields: {
-                sys_content_plaintext: ['Test Plain Text'],
-                sys_contributors: ['Test Contributor <test.contributor@redhat.com>'],
-                contributors: ["test.contributor@redhat.com"],
-                duration: [690],
-                sys_created: [new Date('2001-02-03T15:35:33.000Z')],
-                sys_description: ["Test Description"],
-                level: ["Beginner"],
-                thumbnail: ["https://i.ytimg.com/vi/yiJeXw3saM8/mqdefault.jpg"],
-                experimental: [false],
-                sys_tags: ["tag1", "tag2", "tag3"],
-                github_repo_url: ["https://github.com/jboss-fuse/quickstarts"],
-                target_product: ["fuse"],
-                sys_title: ["Test Title"],
-                sys_type: ["blogpost"],
-                sys_url_view: ["https://developers.redhat.com/blog"]
-            },
-            highlight: {
-                sys_description: [
-                    'Test <span class="hlt">Highlight</span> Description 1',
-                    'Test <span class="hlt">Highlight</span> Description 2'
-                ],
-                sys_title: [
-                    'Test <span class="hlt">Highlight</span> Title'
-                ],
-                sys_content_plaintext: [
-                    'Test <span class="hlt">Highlight</span> Plain Text 1',
-                    'Test <span class="hlt">Highligh</span> Plain Text 2'
-                ]
-            }
-        };
-        wc = document.createElement('rhdp-search-result');
-        document.body.insertBefore(wc, document.body.firstChild);
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-search-result.js').then(() => {
+            testResult = {
+                fields: {
+                    sys_content_plaintext: ['Test Plain Text'],
+                    sys_contributors: ['Test Contributor <test.contributor@redhat.com>'],
+                    contributors: ["test.contributor@redhat.com"],
+                    duration: [690],
+                    sys_created: [new Date('2001-02-03T15:35:33.000Z')],
+                    sys_description: ["Test Description"],
+                    level: ["Beginner"],
+                    thumbnail: ["https://i.ytimg.com/vi/yiJeXw3saM8/mqdefault.jpg"],
+                    experimental: [false],
+                    sys_tags: ["tag1", "tag2", "tag3"],
+                    github_repo_url: ["https://github.com/jboss-fuse/quickstarts"],
+                    target_product: ["fuse"],
+                    sys_title: ["Test Title"],
+                    sys_type: ["blogpost"],
+                    sys_url_view: ["https://developers.redhat.com/blog"]
+                },
+                highlight: {
+                    sys_description: [
+                        'Test <span class="hlt">Highlight</span> Description 1',
+                        'Test <span class="hlt">Highlight</span> Description 2'
+                    ],
+                    sys_title: [
+                        'Test <span class="hlt">Highlight</span> Title'
+                    ],
+                    sys_content_plaintext: [
+                        'Test <span class="hlt">Highlight</span> Plain Text 1',
+                        'Test <span class="hlt">Highligh</span> Plain Text 2'
+                    ]
+                }
+            };
+            wc = document.createElement('rhdp-search-result');
+            document.body.insertBefore(wc, document.body.firstChild);
+        });
     });
 
     afterEach(function() {
@@ -58,7 +60,7 @@ describe('Search Result', function() {
     xit('should have a created date from resultset', function() {
         wc.result = testResult;
         setTimeout(function() {
-            expect(wc.querySelector('rh-datetime').innerHTML).toEqual('February 3, 2001');
+            expect(wc.shadowRoot.querySelector('rh-datetime').innerHTML).toEqual('February 3, 2001');
         }, 500);
     });
 

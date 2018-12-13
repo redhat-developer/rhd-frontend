@@ -2,9 +2,11 @@
 describe('RHDP Project Url', function() {
     var wc;
 
-    beforeEach(function() {
-        wc = document.createElement('rhdp-project-url');
-        document.body.appendChild(wc);
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-projects/rhdp-project-url.js').then(() => {
+            wc = document.createElement('rhdp-project-url');
+            document.body.appendChild(wc);
+        });
     });
 
     afterEach(function() {

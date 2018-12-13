@@ -2,10 +2,12 @@
 
 describe('Media thank you page', function () {
     var wc;
-    beforeEach(function () {
-        wc = document.createElement('rhdp-thankyou');
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-thankyou.js').then(() => {
+            wc = document.createElement('rhdp-thankyou');
+        });
     });
-
+    
     afterEach(function () {
         document.body.removeChild(document.body.firstChild);
     });

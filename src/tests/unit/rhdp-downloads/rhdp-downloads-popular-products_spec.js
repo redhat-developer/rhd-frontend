@@ -18,10 +18,11 @@ describe('Downloads Popular Products', function() {
         }]
     };
 
-    beforeEach(function() {
-        wc = document.createElement('rhdp-downloads-popular-products');
-        wc.productList = products;
-
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-downloads/rhdp-downloads-popular-products.js').then(() => {
+            wc = document.createElement('rhdp-downloads-popular-products');
+            wc.productList = products;
+        });
     });
 
     afterEach(function() {

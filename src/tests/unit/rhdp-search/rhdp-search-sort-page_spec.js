@@ -3,10 +3,11 @@
 
 describe('Search Sort and Paging', function() {
     var wc;
-
-    beforeEach(function() {
-        wc = document.createElement('rhdp-search-sort-page');
-        document.body.insertBefore(wc, document.body.firstChild);
+    beforeEach(async () => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-search-sort-page.js').then(() => {
+            wc = document.createElement('rhdp-search-sort-page');
+            document.body.insertBefore(wc, document.body.firstChild);
+        });
     });
 
     afterEach(function() {
@@ -30,13 +31,13 @@ Unit tests for component pass
     });
 
     it('should share the sort property out', function() {
-        document.addEventListener('sort-change', function(e) {
+        top.document.addEventListener('sort-change', function(e) {
             expect(wc.sort).toEqual('relevance');
         });
         wc.sort = "relevance";
     });
 
     it('should read "Sort results by [[sort]]', function() {
-        expect(wc.innerText.trim()).toEqual('Sort results by');
+        expect(wc.shadowRoot.innerText.trim()).toEqual('Sort results by');
     });
 });
