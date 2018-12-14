@@ -4,6 +4,7 @@ import RHElement from '../../@rhelements/rhelement/rhelement.js';
 export default class RHDPSearchResultCount extends RHElement {
     get html() {
         return `
+        ${this.term || this.count ? `
         <style>
         :host {
             grid-column: 5 / span 9;
@@ -14,10 +15,10 @@ export default class RHDPSearchResultCount extends RHElement {
         }
 
         @media only screen and (max-width: 768px) {
-            :host { border-bottom: 1px solid var(--rhd-grey-3; }
+            :host { border-bottom: 1px solid #d5d5d5; }
         }
         </style>
-        ${this.count} results found for ${this.term.replace('<','&lt;').replace('>','&gt;')}`;
+        <span>${this.count} results found ${this.term ? 'for': ''} ${this.term.replace('<','&lt;').replace('>','&gt;')}</span>` : ''}`;
     }
 
     static get tag() { return 'rhdp-search-result-count'; }

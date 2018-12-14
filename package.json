@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && npm run docs",
-    "test": "npm run scripts && karma start",
+    "test": "karma start",
     "build": "npm run scripts && npm run styles",
     "del": "npm run del:scripts && npm run del:styles",
     "del:scripts": "del \"dist/js**\" && del src/docs/static/js && del docs/js",

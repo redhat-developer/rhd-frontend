@@ -5,7 +5,7 @@ describe('Search Filter Group', function() {
     var wc;
 
     beforeEach(async () => {
-        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-search-onebox.js').then(() => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-search-filter-group.js').then(() => {
             wc = document.createElement('rhdp-search-filter-group');
             document.body.insertBefore(wc, document.body.firstChild);
         });

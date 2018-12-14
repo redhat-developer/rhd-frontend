@@ -55,6 +55,7 @@ export default class RHDPSearchFilterActiveItem extends RHElement {
         if (this._name === val) return;
         this._name = val;
         this.setAttribute('name', this._name);
+        this.innerHTML = this._name;
     }
     get key() {
         return this._key;

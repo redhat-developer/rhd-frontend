@@ -9,7 +9,7 @@ describe('Alert component', function() {
             wc = document.createElement('rhdp-alert');
             wc.heading = heading;
             wc.innerText = txt;
-            document.body.appendChild(wc);
+            document.body.insertBefore(wc, document.body.firstChild);
         });
     });
 

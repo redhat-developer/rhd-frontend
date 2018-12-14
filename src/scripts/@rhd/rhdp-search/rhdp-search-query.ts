@@ -243,7 +243,7 @@ export default class RHDPSearchQuery extends RHElement {
     search() {
         let evt = { bubbles: true, composed: true };
         this.dispatchEvent(new CustomEvent('search-start', evt));
-        if ((this.activeFilters && Object.keys(this.activeFilters).length > 0) || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined')) {
+        if (this.url && ((this.activeFilters && Object.keys(this.activeFilters).length > 0) || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined'))) {
 
             let qURL = new URL(this.url);
             qURL.searchParams.set('tags_or_logic', 'true');

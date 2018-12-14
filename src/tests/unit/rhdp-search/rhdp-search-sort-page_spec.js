@@ -31,13 +31,14 @@ Unit tests for component pass
     });
 
     it('should share the sort property out', function() {
-        top.document.addEventListener('sort-change', function(e) {
+        document.addEventListener('sort-change', function(e) {
+            document.removeEventListener('sort-change', this);
             expect(wc.sort).toEqual('relevance');
         });
         wc.sort = "relevance";
     });
 
     it('should read "Sort results by [[sort]]', function() {
-        expect(wc.shadowRoot.innerText.trim()).toEqual('Sort results by');
+        expect(wc.shadowRoot.querySelector('span').innerHTML).toEqual('Sort results by');
     });
 });

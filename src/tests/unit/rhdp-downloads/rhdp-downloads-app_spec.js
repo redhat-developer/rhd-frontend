@@ -7,8 +7,8 @@ describe('Given Downloads Application', function() {
 
     beforeEach(async () => {
         await System.import('./base/src/docs/static/js/@rhd/rhdp-downloads/rhdp-downloads-app.js').then(() => {
-            document.body.insertBefore(document.createElement('rhdp-downloads-app'), document.body.firstChild);
-            wc = document.body.firstChild;
+            wc = document.createElement('rhdp-downloads-app');
+            document.body.insertBefore(wc, document.body.firstChild);
         });
     });
 

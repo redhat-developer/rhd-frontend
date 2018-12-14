@@ -36,10 +36,14 @@ export default class RHDPSearchResult extends RHElement {
         font-style: normal;
         font-size: 20px;
         line-height: 1.4;
-        color: #06c;
-        cursor: pointer;
         margin: 0;
         font-family: "Overpass", "Open Sans", Arial, Helvetica, sans-serif;
+    }
+
+    h4 a {
+        color: #06c;
+        cursor: pointer;
+        text-decoration: none;
     }
 
     p { margin: 0; 

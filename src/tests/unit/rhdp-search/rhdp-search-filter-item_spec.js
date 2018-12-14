@@ -3,14 +3,15 @@
 
 describe('Search Filter Item', function() {
     var wc;
-    var name = 'Test1', key = 'test1', value = 'jbossdeveloper_test1';
+    var name = 'Test1', group='testgroup', key = 'test1', value = 'jbossdeveloper_test1';
 
     beforeEach(async () => {
-        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-search-onebox.js').then(() => {
+        await System.import('./base/src/docs/static/js/@rhd/rhdp-search/rhdp-search-filter-item.js').then(() => {
             wc = document.createElement('rhdp-search-filter-item');
             wc.name = name;
             wc.key = key;
             wc.value = value;
+            wc.group = group;
             document.body.insertBefore(wc, document.body.firstChild);
         });
     });
@@ -22,7 +23,7 @@ describe('Search Filter Item', function() {
     describe('properties', function() {
         it('should show the name field', function() {
             expect(wc.shadowRoot.querySelector('span').innerText).toEqual(name);
-            expect(wc.shadowRoot.querySelector('label').innerText).toEqual(name);
+            expect(wc.textContent).toEqual(name);
         });
 
         it('should update the appropriate fields', function() {
@@ -35,51 +36,29 @@ describe('Search Filter Item', function() {
 
     describe('Checkbox', function() {
         it('should set the active state', function() {
+            let v = true;
+            wc.addEventListener('filter-item-change', (e) => {
+                if(!v) { wc.removeEventListener('filter-item-change', this); }
+                expect(wc.active).toBe(v);
+                v = !v;
+                
+            });
             wc.shadowRoot.querySelector('input').click();
-            expect(wc.active).toBe(true);
             wc.shadowRoot.querySelector('input').click();
-            expect(wc.active).toBe(false);
         });
 
     });
 
     describe('Active', function() {
         it('should modify the active state', function() {
+            let v = true;
+            wc.addEventListener('filter-item-change', (e) => {
+                if(!v) { wc.removeEventListener('filter-item-change', this); }
+                expect(wc.active).toBe(v);
+                v = !v;
+            })
             wc.active = true;
-            expect(wc.active).toBe(true);
             wc.active = false;
-            expect(wc.active).toBe(false);
         });
     });
-
-    /**
-     * TODO: Test all of the inline components for search to make sure they work properly
-      */
-    describe('Inline properties', function() {
-        beforeEach(function() {
-            wc.active = true;
-            wc.setAttribute('inline', true);
-        });
-
-        afterEach(function() {
-
-        });
-        it('should set inline innertext', function() {
-            expect(wc.innerText.trim()).toBe(name);
-        });
-        it('should clear inline element on clearItem click', function() {
-            var clr = wc.shadowRoot.querySelector('.clearItem');
-            clr.click();
-            setTimeout(function() {
-                expect(wc.innerHTML).toBe('');
-            }, 500)
-        });
-        it('should set active on clearItem click', function() {
-            var clr = wc.shadowRoot.querySelector('.clearItem');
-            clr.click();
-            expect(wc.active).toBe(true);
-        });
-
-    });
-
 });

@@ -17,7 +17,7 @@ export default class RHDPSearchApp extends RHElement {
 
     .query { flex: 0 0 auto; }
     .content { flex: 1 1 auto; display: flex; flex-flow: row; position: relative;}
-    .filters { flex: 0 0 25%; margin-right: 32px; }
+    .filters { flex: 0 0 28%; margin-right: 32px; }
     .results { flex: 1 1 auto; display: flex; flex-flow: column; }
 
     .hide { display: none; }
@@ -26,7 +26,15 @@ export default class RHDPSearchApp extends RHElement {
     
     .mobile { display: none; }
 
-    h1 { flex: 0 0 auto; }
+    h2 { 
+        flex: 0 0 auto; 
+        margin-top: 30px;
+        font-size: 38px;
+        line-height: 1.24;
+        color: #242424;
+        font-weight: 500;
+        margin-bottom: 16px;
+    }
 
     .loading {
         background:url("https://developers.redhat.com/images/icons/ajax-loader.gif") center 80px no-repeat;
@@ -40,7 +48,7 @@ export default class RHDPSearchApp extends RHElement {
         .filters { flex: 0 0 auto; margin-right: 0; }
     }
         </style>
-    <h1>${this.name}</h1>
+    <h2>${this.name}</h2>
     <section class="query"><slot name="query"></slot></section>
     <section class="content">
         <section class="filters"><slot name="filters"></slot></section>

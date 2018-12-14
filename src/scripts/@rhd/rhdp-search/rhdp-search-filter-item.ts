@@ -118,6 +118,10 @@ export default class RHDPSearchFilterItem extends RHElement {
         if (this._name === val) return;
         this._name = val;
         this.setAttribute('name', this._name);
+        if (this.shadowRoot.querySelector('span')) {
+            this.shadowRoot.querySelector('span').innerText = this._name;
+        }
+        this.innerHTML = this._name;
     }
     get key() {
         return this._key;
@@ -199,12 +203,12 @@ export default class RHDPSearchFilterItem extends RHElement {
 
     connectedCallback() {
         super.connectedCallback();
+        super.render();
         this.shadowRoot.addEventListener('change', this._updateFacet);
         
         top.addEventListener('filter-item-change', this._checkChange);
         top.addEventListener('params-ready', this._checkParams);
         top.addEventListener('clear-filters', this._clearFilters);
-        super.render();
     }
 
     static get observedAttributes() { 

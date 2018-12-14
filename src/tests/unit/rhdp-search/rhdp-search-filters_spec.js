@@ -18,7 +18,7 @@ describe('Search Filters', function() {
     });
 
     it('should be true', function() {
-        expect(wc.innerText.trim()).toEqual('Show Filters\nFilter By');
+        expect(wc.shadowRoot.querySelector('.title').innerText.trim()).toEqual('Filter By'.toUpperCase());
     });
 });
 
