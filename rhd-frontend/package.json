@@ -1,0 +1,17 @@
+{
+    "name": "rhd-frontend",
+    "version": "2.0.0",
+    "description": "Front-end assets and documentation for Red Hat Developer site",
+    "repository": "https://github.com/redhat-developer/rhd-frontend.git",
+    "author": "<ldary@redhat.com>",
+    "license": "MIT",
+    "dependencies": {
+      "@fortawesome/fontawesome-svg-core": "^1.2.9",
+      "@fortawesome/pro-light-svg-icons": "^5.6.0",
+      "@fortawesome/pro-regular-svg-icons": "^5.6.0",
+      "@fortawesome/pro-solid-svg-icons": "^5.6.0",
+      "@rhelements/rh-datetime": "^1.0.0-prerelease.7",
+      "@rhelements/rhelement": "^1.0.0-prerelease.7"
+    }
+  }
+  

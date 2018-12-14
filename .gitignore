@@ -1,5 +1,7 @@
 node_modules
 !vendor
+rhd-frontend/**
+!rhd-frontend/package.json
 src/docs/static/*
 src/tests/unit/report
 dist
