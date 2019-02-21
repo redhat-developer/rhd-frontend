@@ -1,7 +1,7 @@
 // import PFElement from '../@pfelements/pfelement.js';
-import RHElement from '../@rhelements/rhelement/rhelement.js';
+import PFElement from '../@patternfly/pfelement/pfelement.js';
 
-export default class DPStackOverflow extends RHElement {
+export default class DPStackOverflow extends PFElement {
     get html() {
         return `
         <style>

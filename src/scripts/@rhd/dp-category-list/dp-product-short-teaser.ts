@@ -1,8 +1,8 @@
 //import PFElement from '../../@pfelements/pfelement.js';
-import RHElement from '../../@rhelements/rhelement/rhelement.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.js';
 //import fontawesome from '@fortawesome/fontawesome';
 
-export default class DPProductShortTeaser extends RHElement {
+export default class DPProductShortTeaser extends PFElement {
     get html() {
         return `
 <style>
@@ -107,5 +107,5 @@ export default class DPProductShortTeaser extends RHElement {
     }
 }
 
-RHElement.create(DPProductShortTeaser);
+PFElement.create(DPProductShortTeaser);
 // window.customElements.define('dp-product-short-teaser', DPProductShortTeaser);

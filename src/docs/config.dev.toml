@@ -1,4 +1,4 @@
-baseURL = "https://redhat-developer.github.io/rhd-frontend/"
+baseURL = "http://localhost:8080/"
 languageCode = "en-us"
 title = "RHD Front-end Code and Documentation"
 theme = "rhd"

@@ -1,4 +1,4 @@
-System.register(["../../@fortawesome/fontawesome-svg-core/index.es.js", "../../@fortawesome/pro-solid-svg-icons/index.es.js", "../../@rhelements/rhelement/rhelement.js"], function (exports_1, context_1) {
+System.register(["../../@fortawesome/fontawesome-svg-core/index.es.js", "../../@fortawesome/pro-solid-svg-icons/index.es.js", "../../@patternfly/pfelement/pfelement.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,7 +13,7 @@ System.register(["../../@fortawesome/fontawesome-svg-core/index.es.js", "../../@
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var index_es_js_1, index_es_js_2, rhelement_js_1, searchIcon, RHDPSearchBox;
+    var index_es_js_1, index_es_js_2, pfelement_js_1, searchIcon, RHDPSearchBox;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -23,8 +23,8 @@ System.register(["../../@fortawesome/fontawesome-svg-core/index.es.js", "../../@
             function (index_es_js_2_1) {
                 index_es_js_2 = index_es_js_2_1;
             },
-            function (rhelement_js_1_1) {
-                rhelement_js_1 = rhelement_js_1_1;
+            function (pfelement_js_1_1) {
+                pfelement_js_1 = pfelement_js_1_1;
             }
         ],
         execute: function () {
@@ -109,9 +109,9 @@ System.register(["../../@fortawesome/fontawesome-svg-core/index.es.js", "../../@
                     this.dispatchEvent(new CustomEvent('term-change', evt));
                 };
                 return RHDPSearchBox;
-            }(rhelement_js_1.default));
+            }(pfelement_js_1.default));
             exports_1("default", RHDPSearchBox);
-            rhelement_js_1.default.create(RHDPSearchBox);
+            pfelement_js_1.default.create(RHDPSearchBox);
         }
     };
 });

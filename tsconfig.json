@@ -18,9 +18,9 @@
         "outDir": "dist/js/"
     },
     "include": [
-        "node_modules/@rhelements/rhelement/reveal.js",
-        "node_modules/@rhelements/rhelement/rhelement.js",
-        "node_modules/@rhelements/rh-datetime/rh-datetime.js",
+        "node_modules/@patternfly/pfelement/reveal.js",
+        "node_modules/@patternfly/pfelement/pfelement.js",
+        "node_modules/@patternfly/pf-datetime/pf-datetime.js",
         "node_modules/@fortawesome/fontawesome-svg-core/index.es.js",
         "node_modules/@fortawesome/pro-light-svg-icons/index.es.js",
         "node_modules/@fortawesome/pro-regular-svg-icons/index.es.js",

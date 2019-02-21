@@ -1,11 +1,11 @@
-// import PFElement from '../@pfelements/pfelement.js';
-import RHElement from '../@rhelements/rhelement/rhelement.js';
+import PFElement from '../@patternfly/pfelement/pfelement.js';
+//import PFElement from '../@patternfly/pfelement/pfelement.js';
 // import {library, icon} from '@fortawesome/fontawesome-svg-core';
 // import {fas} from '@fortawesome/free-solid-svg-icons';
 
 // library.add(fas);
 
-export default class RHDPAlert extends RHElement {
+export default class RHDPAlert extends PFElement {
     get html() {
         return `
         <style>
@@ -198,5 +198,5 @@ export default class RHDPAlert extends RHElement {
     }
 }
 
-RHElement.create(RHDPAlert);
+PFElement.create(RHDPAlert);
 // window.customElements.define('rhdp-alert', RHDPAlert);

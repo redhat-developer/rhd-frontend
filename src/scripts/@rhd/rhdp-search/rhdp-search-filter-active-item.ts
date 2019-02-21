@@ -1,12 +1,12 @@
 // import PFElement from '../../@pfelements/pfelement.js';
 import { library, icon, dom } from '../../@fortawesome/fontawesome-svg-core/index.es.js'
 import {faTimes} from '../../@fortawesome/pro-solid-svg-icons/index.es.js';
-import RHElement from '../../@rhelements/rhelement/rhelement.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.js';
 
 library.add(faTimes);
 const timesIcon = icon(faTimes).html;
 
-export default class RHDPSearchFilterActiveItem extends RHElement {
+export default class RHDPSearchFilterActiveItem extends PFElement {
     get html() {
         return `${this.active ? `
         <style>
@@ -200,4 +200,4 @@ export default class RHDPSearchFilterActiveItem extends RHElement {
     }
 }
 
-RHElement.create(RHDPSearchFilterActiveItem);
+PFElement.create(RHDPSearchFilterActiveItem);

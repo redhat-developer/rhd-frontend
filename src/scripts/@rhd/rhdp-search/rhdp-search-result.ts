@@ -1,7 +1,7 @@
 //import PFElement from '../../@pfelements/pfelement.js';
-import RHElement from '../../@rhelements/rhelement/rhelement.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.js';
 
-export default class RHDPSearchResult extends RHElement {
+export default class RHDPSearchResult extends PFElement {
     get html() {
         return `
         <style>
@@ -284,4 +284,4 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
 
 }
 
-RHElement.create(RHDPSearchResult);
+PFElement.create(RHDPSearchResult);
