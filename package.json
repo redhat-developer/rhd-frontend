@@ -22,7 +22,7 @@
     "styles": "npm run del:styles && npm run styles:sass && npm run styles:copy",
     "styles:sass": "node-sass src/styles/ -o dist/styles/ && node-sass src/styles/ -o dist/styles-min/ --output-style compressed && postcss -o dist/styles-min/rhd.min.css dist/styles-min/rhd.css",
     "styles:copy": "copyfiles -f \"dist/styles**/*.css\" src/docs/static/css",
-    "docs": "hugo -D -s src/docs && npm run docs:front",
+    "docs": "hugo -D -s src/docs --config src/docs/config.dev.toml && npm run docs:front",
     "docs:front": "npm run docs:styles && npm run docs:scripts",
     "docs:styles": "npm run styles:copy && sassdoc \"src/styles/**/*.scss\" -d \"docs/styling\"",
     "docs:scripts": "npm run scripts:copy && jsdoc -c jsdoc.config.json",

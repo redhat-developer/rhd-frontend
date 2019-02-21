@@ -1,0 +1,44 @@
+version: 2.1
+
+executors:
+  node:
+    docker:
+      - image: circleci/node:10
+
+orbs:
+  nodeorb: circleci/node@0.0.8
+
+jobs:
+  build:
+    executor: node
+    steps:
+      - checkout
+      - nodeorb/install-package-manager:
+          npm: true
+      - run:
+          name: Install npm
+          command: npm install
+  test:
+    executor: node
+    steps:
+      - checkout
+      - nodeorb/install-package-manager:
+          npm: true
+      - run:
+          name: Install npm
+          command: npm install
+      - run:
+          name: Run Tests
+          command: npm test
+      - store_artifacts:
+          path: 'src/tests/unit/report/unit-test-report.html'
+          prefix: tests
+
+workflows:
+  "Test":
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+    
