@@ -1,9 +1,9 @@
 //import PFElement from '../../@pfelements/pfelement.js';
-import RHElement from '../../@rhelements/rhelement/rhelement.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.js';
 import RHDPSearchURL from './rhdp-search-url.js';
 import RHDPSearchModalFilters from './rhdp-search-modal-filters.js';
 
-export default class RHDPSearchApp extends RHElement {
+export default class RHDPSearchApp extends PFElement {
     get html() {
         return `
         <style>
@@ -113,4 +113,4 @@ export default class RHDPSearchApp extends RHElement {
     }
 }
 
-RHElement.create(RHDPSearchApp);
+PFElement.create(RHDPSearchApp);

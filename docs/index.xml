@@ -63,7 +63,7 @@
       <pubDate>Thu, 19 Apr 2018 13:22:06 -0400</pubDate>
       
       <guid>https://redhat-developer.github.io/rhd-frontend/components/rhdp-downloads/</guid>
-      <description>&amp;lt;rhdp-os-download product-code=&amp;#34;rhel&amp;#34; download-url=&amp;#34;https://developers.redhat.com/download-manager/content/origin/files/sha256/60/60a0be5aeed1f08f2bb7599a578c89ec134b4016cd62a8604b29f15d543a469c/rhel-server-7.6-x86_64-dvd.iso&amp;#34; name=&amp;#34;Red Hat Enterprise Linux&amp;#34; version=&amp;#34;7.6.0&amp;#34; platform-type=&amp;#34;RHEL&amp;#34;&amp;gt;&amp;lt;/rhdp-os-download&amp;gt;     &amp;lt;rhdp-downloads-app url=&amp;#34;https://developers.redhat.com/download-manager/rest/available/rhel,eap,devstudio,fuse,datagrid,eap,webserver,cdk,devsuite,amq,brms,bpmsuite,datavirt,mobileplatform,openshift,openjdk,dotnet,migrationtoolkit?nv=1&amp;#34;&amp;gt;&amp;lt;/rhdp-downloads&amp;gt;</description>
+      <description>&amp;lt;rhdp-os-download product-code=&amp;#34;rhel&amp;#34; download-url=&amp;#34;https://developers.redhat.com/download-manager/content/origin/files/sha256/60/60a0be5aeed1f08f2bb7599a578c89ec134b4016cd62a8604b29f15d543a469c/rhel-server-7.6-x86_64-dvd.iso&amp;#34; name=&amp;#34;Red Hat Enterprise Linux&amp;#34; version=&amp;#34;7.6.0&amp;#34; platform-type=&amp;#34;RHEL&amp;#34;&amp;gt;&amp;lt;/rhdp-os-download&amp;gt;     &amp;lt;rhdp-downloads-app url=&amp;#34;https://developers.redhat.com/download-manager/rest/available/rhel,eap,devstudio,fuse,datagrid,eap,webserver,cdk,devsuite,amq,brms,bpmsuite,datavirt,mobileplatform,openshift,openjdk,dotnet,migrationtoolkit?nv=1&amp;#34;&amp;gt;&amp;lt;/rhdp-downloads&amp;gt;     </description>
     </item>
     
     <item>

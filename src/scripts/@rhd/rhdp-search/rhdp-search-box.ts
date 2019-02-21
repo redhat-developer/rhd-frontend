@@ -1,14 +1,14 @@
 // import PFElement from '../../@pfelements/pfelement.js';
 import { library, icon, dom } from '../../@fortawesome/fontawesome-svg-core/index.es.js'
 import {faSearch} from '../../@fortawesome/pro-solid-svg-icons/index.es.js';
-import RHElement from '../../@rhelements/rhelement/rhelement.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.js';
 
 library.add(faSearch);
 const searchIcon = icon(faSearch,{ transform: {
     size: 18
     }}).html;
 
-export default class RHDPSearchBox extends RHElement {
+export default class RHDPSearchBox extends PFElement {
     get html() {
         return `
         <style>
@@ -171,4 +171,4 @@ export default class RHDPSearchBox extends RHElement {
     }
 }
 
-RHElement.create(RHDPSearchBox);
+PFElement.create(RHDPSearchBox);

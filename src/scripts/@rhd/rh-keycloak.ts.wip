@@ -1,7 +1,7 @@
 // import PFElement from '../@pfelements/pfelement.js';
-import RHElement from '../@rhelements/rhelement/rhelement.js';
+import PFElement from '../@patternfly/pfelement/pfelement.js';
 
-export default class RHKeycloak extends RHElement {
+export default class RHKeycloak extends PFElement {
     
     static get tag() { return 'dp-keycloak'; }
 
@@ -29,5 +29,5 @@ export default class RHKeycloak extends RHElement {
     }
 }
 
-RHElement.create(RHKeycloak);
+PFElement.create(RHKeycloak);
 // window.customElements.define('rh-keycloak', RHKeycloak);

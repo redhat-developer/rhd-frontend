@@ -1,7 +1,7 @@
-// import PFElement from '../@pfelements/pfelement.js';
-import RHElement from '../@rhelements/rhelement/rhelement.js';
+import PFElement from '../@patternfly/pfelement/pfelement.js';
+// import PFElement from '../@patternfly/pfelement/pfelement.js';
 
-export default class DPReferrer extends RHElement {
+export default class DPReferrer extends PFElement {
   get html() {
       return `
     <style>
@@ -198,5 +198,5 @@ set icon(val) {
   }
 }
 
-RHElement.create(DPReferrer);
+PFElement.create(DPReferrer);
 // window.customElements.define('dp-referrer', DPReferrer);

@@ -1,9 +1,9 @@
 // import PFElement from '../../@pfelements/pfelement.js';
-import RHElement from '../../@rhelements/rhelement/rhelement.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.js';
 import RHDPSearchFilterGroup from './rhdp-search-filter-group.js';
 import RHDPSearchFilterItem from './rhdp-search-filter-item.js';
 
-export default class RHDPSearchModalFilters extends RHElement {
+export default class RHDPSearchModalFilters extends PFElement {
     get html() {
         return `
         <style>
@@ -221,4 +221,4 @@ export default class RHDPSearchModalFilters extends RHElement {
     }
 }
 
-RHElement.create(RHDPSearchModalFilters);
+PFElement.create(RHDPSearchModalFilters);

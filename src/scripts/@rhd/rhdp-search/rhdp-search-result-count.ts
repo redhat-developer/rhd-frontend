@@ -1,7 +1,7 @@
 // import PFElement from '../../@pfelements/pfelement.js';
-import RHElement from '../../@rhelements/rhelement/rhelement.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.js';
 
-export default class RHDPSearchResultCount extends RHElement {
+export default class RHDPSearchResultCount extends PFElement {
     get html() {
         return `
         ${this.term || this.count ? `
@@ -108,4 +108,4 @@ export default class RHDPSearchResultCount extends RHElement {
     }
 }
 
-RHElement.create(RHDPSearchResultCount);
+PFElement.create(RHDPSearchResultCount);

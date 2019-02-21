@@ -1,4 +1,4 @@
-System.register(["../@rhelements/rhelement/rhelement.js"], function (exports_1, context_1) {
+System.register(["../@patternfly/pfelement/pfelement.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,12 +13,12 @@ System.register(["../@rhelements/rhelement/rhelement.js"], function (exports_1, 
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var rhelement_js_1, RHDPAlert;
+    var pfelement_js_1, RHDPAlert;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (rhelement_js_1_1) {
-                rhelement_js_1 = rhelement_js_1_1;
+            function (pfelement_js_1_1) {
+                pfelement_js_1 = pfelement_js_1_1;
             }
         ],
         execute: function () {
@@ -145,9 +145,9 @@ System.register(["../@rhelements/rhelement/rhelement.js"], function (exports_1, 
                     _super.prototype.render.call(this);
                 };
                 return RHDPAlert;
-            }(rhelement_js_1.default));
+            }(pfelement_js_1.default));
             exports_1("default", RHDPAlert);
-            rhelement_js_1.default.create(RHDPAlert);
+            pfelement_js_1.default.create(RHDPAlert);
         }
     };
 });

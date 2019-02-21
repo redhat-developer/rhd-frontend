@@ -1,7 +1,7 @@
 // import PFElement from '../../@pfelements/pfelement.js';
-import RHElement from '../../@rhelements/rhelement/rhelement.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.js';
 
-export default class RHDPSearchOneBox extends RHElement {
+export default class RHDPSearchOneBox extends PFElement {
     get html() {
         return `
         ${this.feature ? `
@@ -247,4 +247,4 @@ export default class RHDPSearchOneBox extends RHElement {
     }
 }
 
-RHElement.create(RHDPSearchOneBox);
+PFElement.create(RHDPSearchOneBox);

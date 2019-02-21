@@ -1,7 +1,7 @@
-//import PFElement from '../../@pfelements/pfelement.js';
-import RHElement from '../../@rhelements/rhelement/rhelement.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.js';
+// import PFElement from '../../@patternfly/pfelement/pfelement.js';
 
-export default class DPCategoryItemList extends RHElement {
+export default class DPCategoryItemList extends PFElement {
     get html() {
         return `
             <style>
@@ -116,5 +116,5 @@ export default class DPCategoryItemList extends RHElement {
     }
 }
 
-RHElement.create(DPCategoryItemList);
+PFElement.create(DPCategoryItemList);
 // window.customElements.define('dp-category-item-list', DPCategoryItemList);

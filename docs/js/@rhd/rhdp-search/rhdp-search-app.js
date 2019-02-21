@@ -1,4 +1,4 @@
-System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-url.js", "./rhdp-search-modal-filters.js"], function (exports_1, context_1) {
+System.register(["../../@patternfly/pfelement/pfelement.js", "./rhdp-search-url.js", "./rhdp-search-modal-filters.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,12 +13,12 @@ System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-url.
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var rhelement_js_1, rhdp_search_url_js_1, rhdp_search_modal_filters_js_1, RHDPSearchApp;
+    var pfelement_js_1, rhdp_search_url_js_1, rhdp_search_modal_filters_js_1, RHDPSearchApp;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (rhelement_js_1_1) {
-                rhelement_js_1 = rhelement_js_1_1;
+            function (pfelement_js_1_1) {
+                pfelement_js_1 = pfelement_js_1_1;
             },
             function (rhdp_search_url_js_1_1) {
                 rhdp_search_url_js_1 = rhdp_search_url_js_1_1;
@@ -98,9 +98,9 @@ System.register(["../../@rhelements/rhelement/rhelement.js", "./rhdp-search-url.
                     this.modal.toggle = e.detail.toggle;
                 };
                 return RHDPSearchApp;
-            }(rhelement_js_1.default));
+            }(pfelement_js_1.default));
             exports_1("default", RHDPSearchApp);
-            rhelement_js_1.default.create(RHDPSearchApp);
+            pfelement_js_1.default.create(RHDPSearchApp);
         }
     };
 });

@@ -1,7 +1,7 @@
 //import PFElement from '../../@pfelements/pfelement.js';
-import RHElement from '../../@rhelements/rhelement/rhelement.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.js';
 
-export default class RHDPSearchSortPage extends RHElement {
+export default class RHDPSearchSortPage extends PFElement {
     get html() {
         return `
         <style>
@@ -172,4 +172,4 @@ export default class RHDPSearchSortPage extends RHElement {
     }
 }
 
-RHElement.create(RHDPSearchSortPage);
+PFElement.create(RHDPSearchSortPage);

@@ -1,7 +1,7 @@
 // import PFElement from '../../@pfelements/pfelement.js';
-import RHElement from '../../@rhelements/rhelement/rhelement.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.js';
 
-export default class RHDPSearchURL extends RHElement {
+export default class RHDPSearchURL extends PFElement {
     get html() { return ''; }
     static get tag() { return 'rhdp-search-url'; }
 
@@ -170,4 +170,4 @@ export default class RHDPSearchURL extends RHElement {
     }
 }
 
-RHElement.create(RHDPSearchURL);
+PFElement.create(RHDPSearchURL);

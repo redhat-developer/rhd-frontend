@@ -1,7 +1,7 @@
 // import PFElement from '../../@pfelements/pfelement.js';
-import RHElement from '../../@rhelements/rhelement/rhelement.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.js';
 
-export default class DPCategory extends RHElement {
+export default class DPCategory extends PFElement {
     get html() {
         return `
 <style>
@@ -206,5 +206,5 @@ ${this.image && this.image.indexOf('svg') < 0 ? `<img src="${this.image}">` : th
     }
 }
 
-RHElement.create(DPCategory);
+PFElement.create(DPCategory);
 // window.customElements.define('dp-category', DPCategory);

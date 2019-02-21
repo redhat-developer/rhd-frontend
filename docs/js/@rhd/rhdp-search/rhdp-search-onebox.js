@@ -1,4 +1,4 @@
-System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_1, context_1) {
+System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -17,12 +17,12 @@ System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_
         if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
         return cooked;
     };
-    var rhelement_js_1, RHDPSearchOneBox, templateObject_1;
+    var pfelement_js_1, RHDPSearchOneBox, templateObject_1;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (rhelement_js_1_1) {
-                rhelement_js_1 = rhelement_js_1_1;
+            function (pfelement_js_1_1) {
+                pfelement_js_1 = pfelement_js_1_1;
             }
         ],
         execute: function () {
@@ -187,9 +187,9 @@ System.register(["../../@rhelements/rhelement/rhelement.js"], function (exports_
                     return icons[name];
                 };
                 return RHDPSearchOneBox;
-            }(rhelement_js_1.default));
+            }(pfelement_js_1.default));
             exports_1("default", RHDPSearchOneBox);
-            rhelement_js_1.default.create(RHDPSearchOneBox);
+            pfelement_js_1.default.create(RHDPSearchOneBox);
         }
     };
 });

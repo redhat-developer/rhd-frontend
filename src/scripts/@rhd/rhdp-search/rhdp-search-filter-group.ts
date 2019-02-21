@@ -1,13 +1,13 @@
 //import PFElement from '../../@pfelements/pfelement.js';
 import { library, icon, dom } from '../../@fortawesome/fontawesome-svg-core/index.es.js'
 import {faChevronRight} from '../../@fortawesome/pro-solid-svg-icons/index.es.js';
-import RHElement from '../../@rhelements/rhelement/rhelement.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.js';
 import RHDPSearchFilterItem from './rhdp-search-filter-item.js';
 
 library.add(faChevronRight);
 const chevronRightIcon = icon(faChevronRight).html;
 
-export default class RHDPSearchFilterGroup extends RHElement {
+export default class RHDPSearchFilterGroup extends PFElement {
     get html() {
         return `
         <style>
@@ -172,4 +172,4 @@ export default class RHDPSearchFilterGroup extends RHElement {
     }
 }
 
-RHElement.create(RHDPSearchFilterGroup);
+PFElement.create(RHDPSearchFilterGroup);
