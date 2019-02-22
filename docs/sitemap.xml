@@ -198,6 +198,10 @@
   </url>
   
   <url>
+    <loc>http://localhost:8080/error/</loc>
+  </url>
+  
+  <url>
     <loc>http://localhost:8080/tags/assembly/</loc>
     <lastmod>2018-04-13T02:45:06-04:00</lastmod>
     <priority>0</priority>

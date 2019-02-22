@@ -17,7 +17,7 @@ jobs:
           npm: true
       - run:
           name: Install npm
-          command: npm install --no-package-lock
+          command: 'npm install --no-package-lock'
       - run:
           name: Build
           command: npm run build
