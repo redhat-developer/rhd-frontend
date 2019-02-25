@@ -7,7 +7,8 @@ executors:
 
 jobs:
   test:
-    executor: node
+    docker:
+      - image: circleci/node:latest
     steps:
       - checkout
       - run:
