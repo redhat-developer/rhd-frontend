@@ -292,14 +292,5 @@
       <description> Headings  H1 &amp;lt;h1&amp;gt;Heading 1&amp;lt;/h1&amp;gt;   Heading 1  H2 &amp;lt;h2&amp;gt;Heading 2&amp;lt;/h2&amp;gt;   Heading 2  H3 &amp;lt;h3&amp;gt;Heading 3&amp;lt;/h3&amp;gt;   Heading 3  H4 &amp;lt;h4&amp;gt;Heading 4&amp;lt;/h4&amp;gt;   Heading 4  H5 &amp;lt;h5&amp;gt;Heading 5&amp;lt;/h5&amp;gt;   Heading 5   </description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://redhat-developer.github.io/rhd-frontend/error/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://redhat-developer.github.io/rhd-frontend/error/</guid>
-      <description>Looks like Red Hat Developer is currently down for maintenance.         Register     .st0 { fill: #820000; } .st1 { fill: #EC7A08; } .st2 { fill: #0088CE; } .st3 { fill: #3F9C35; } .st4 { fill: #CC0000; } .st5 { fill: #F0AB00; } .st6 { fill: #00B9E4; } .st7 { fill: #92D400; } .st8 { fill: #231F20; }       Looks like Red Hat Developer is currently down for maintenance.</description>
-    </item>
-    
   </channel>
 </rss>

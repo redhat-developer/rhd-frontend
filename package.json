@@ -46,7 +46,8 @@
     "@patternfly/pfe-tabs": "^1.0.0-prerelease.9",
     "@patternfly/pfelement": "^1.0.0-prerelease.9",
     "@rhelements/rh-datetime": "^1.0.0-prerelease.7",
-    "@rhelements/rhelement": "^1.0.0-prerelease.7"
+    "@rhelements/rhelement": "^1.0.0-prerelease.7",
+    "npm": "^6.8.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.3",

@@ -13,7 +13,7 @@ jobs:
       - checkout
       - run:
           name: Update npm
-          command: 'sudo npm install -g npm'
+          command: 'npm install npm'
       - run:
           name: Add Fontawesome Registry
           command: 'npm config set "@fortawesome:registry" https://npm.fontawesome.com/'
