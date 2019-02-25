@@ -4,7 +4,7 @@
   "description": "Front-end assets and documentation for Red Hat Developer site",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && npm run docs && spandx -c spandx.config.dev.js",
+    "start": "npm run build && npm run docs:dev && spandx -c spandx.config.dev.js",
     "test": "karma start",
     "build": "npm run scripts && npm run styles && npm run docs",
     "del": "npm run del:scripts && npm run del:styles",
