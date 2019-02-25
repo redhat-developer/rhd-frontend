@@ -4,7 +4,7 @@
   "description": "Front-end assets and documentation for Red Hat Developer site",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && npm run docs && spandx -c spandx.config.dev.js",
+    "start": "npm run build && npm run docs:dev && spandx -c spandx.config.dev.js",
     "test": "karma start",
     "build": "npm run scripts && npm run styles && npm run docs",
     "del": "npm run del:scripts && npm run del:styles",
@@ -46,7 +46,8 @@
     "@patternfly/pfe-tabs": "^1.0.0-prerelease.9",
     "@patternfly/pfelement": "^1.0.0-prerelease.9",
     "@rhelements/rh-datetime": "^1.0.0-prerelease.7",
-    "@rhelements/rhelement": "^1.0.0-prerelease.7"
+    "@rhelements/rhelement": "^1.0.0-prerelease.7",
+    "npm": "^6.8.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.3",

@@ -1,23 +1,34 @@
-version: 2.1
+version: 2
 
 executors:
   node:
     docker:
       - image: circleci/node:latest
 
-orbs:
-  nodeorb: circleci/node@0.0.8
-
 jobs:
-  test:
-    executor: node
+  build:
+    docker:
+      - image: circleci/node:latest
     steps:
       - checkout
-      - nodeorb/install-package-manager:
-          npm: true
+      - run:
+          name: Update npm
+          command: 'npm install npm'
+      - run:
+          name: Add Fontawesome Registry
+          command: 'npm config set "@fortawesome:registry" https://npm.fontawesome.com/'
+      - run:
+          name: Add Fontawesome Token
+          command: 'npm config set "//npm.fontawesome.com/:_authToken" ${FONTAWESOME_TOKEN}'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Install npm
           command: 'npm install --no-package-lock'
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
       - run:
           name: Build
           command: npm run build
@@ -27,3 +38,5 @@ jobs:
       - store_artifacts:
           path: 'src/tests/unit/report/unit-test-report.html'
           prefix: tests
+      - store_test_results:
+          path: 'src/tests/unit/report/unit-test-report.html'

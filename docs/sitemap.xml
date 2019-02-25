@@ -198,10 +198,6 @@
   </url>
   
   <url>
-    <loc>https://redhat-developer.github.io/rhd-frontend/error/</loc>
-  </url>
-  
-  <url>
     <loc>https://redhat-developer.github.io/rhd-frontend/tags/assembly/</loc>
     <lastmod>2018-04-13T02:45:06-04:00</lastmod>
     <priority>0</priority>
