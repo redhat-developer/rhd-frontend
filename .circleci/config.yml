@@ -31,7 +31,7 @@ jobs:
           command: npm run build
       - run:
           name: Run Tests
-          command: npm test
+          command: 'CHROME_BIN=/usr/bin/google-chrome && npm test'
       - store_artifacts:
           path: 'src/tests/unit/report/unit-test-report.html'
           prefix: tests
