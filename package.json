@@ -73,6 +73,7 @@
     "semantic-release": "^15.13.3",
     "spandx": "^1.0.3",
     "typescript": "^3.3.3",
+    "typescript-json-schema": "^0.36.0",
     "uglifyjs-folder": "^1.5.1"
   }
 }

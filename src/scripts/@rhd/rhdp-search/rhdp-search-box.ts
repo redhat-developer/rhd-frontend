@@ -4,6 +4,7 @@ import {faSearch} from '../../@fortawesome/pro-solid-svg-icons/index.es.js';
 import PFElement from '../../@patternfly/pfelement/pfelement.js';
 
 library.add(faSearch);
+
 const searchIcon = icon(faSearch,{ transform: {
     size: 18
     }}).html;
