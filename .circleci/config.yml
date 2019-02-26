@@ -6,15 +6,12 @@ jobs:
       - image: circleci/node:latest-browsers
     steps:
       - checkout
-      - run:
-          name: Update npm
-          command: 'sudo npm install -g npm'
-      - run:
-          name: Add fontawesome
-          command: 'sudo npm config set "@fortawesome:registry" https://npm.fontawesome.com/ && \
-              sudo npm config set "//npm.fontawesome.com/:_authToken" $FONTAWESOME_TOKEN'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Add fontawesome
+          command: 'npm config set "@fortawesome:registry" https://npm.fontawesome.com/ && \
+              npm config set "//npm.fontawesome.com/:_authToken" $FONTAWESOME_TOKEN'
       - run:
           name: Install dependencies
           command: 'npm install --no-package-lock'
