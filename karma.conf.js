@@ -8,8 +8,18 @@ module.exports = function (config) {
                 base: 'ChromeHeadless',
                 flags: [
                     '--no-sandbox',
-                    '--disable-setuid-sandbox',
-                    '--disable-gpu'
+                    '--disable-gpu',
+                    '--enable-logging',
+                    '--no-default-browser-check',
+                    '--no-first-run',
+                    '--disable-default-apps',
+                    '--disable-popup-blocking',
+                    '--disable-translate',
+                    '--disable-background-timer-throttling',
+                    '--disable-renderer-backgrounding',
+                    '--disable-device-discovery-notifications',
+                    '--remote-debugging-port=9222',
+                    '--disable-web-security'
                 ]
             }
         },
