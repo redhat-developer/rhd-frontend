@@ -2,7 +2,28 @@
 // Karma configuration for running unit-tests in Docker
 module.exports = function (config) {
     config.set({
-        browsers: ['ChromeHeadless'],
+        browsers: ['ChromeHeadlessNoSandbox'],
+        customLaunchers: {
+            ChromeHeadlessNoSandbox: {
+                base: 'Chrome',
+                flags: [
+                    '--headless',
+                    '--no-sandbox',
+                    '--disable-gpu',
+                    '--enable-logging',
+                    '--no-default-browser-check',
+                    '--no-first-run',
+                    '--disable-default-apps',
+                    '--disable-popup-blocking',
+                    '--disable-translate',
+                    '--disable-background-timer-throttling',
+                    '--disable-renderer-backgrounding',
+                    '--disable-device-discovery-notifications',
+                    '--remote-debugging-port=9222',
+                    '--disable-web-security'
+                ]
+            }
+        },
         plugins: [
             'karma-chrome-launcher',
             'karma-jasmine',
@@ -19,7 +40,10 @@ module.exports = function (config) {
             pageTitle: 'RHD frontend unit-test results'
         },
         failOnEmptyTestSuite: false,
-
+        captureTimeout: 210000,
+        browserDisconnectTolerance: 3,
+        browserDisconnectTimeout : 210000,
+        browserNoActivityTimeout : 210000,
         files: [
             // 'jasmine-global.js',
             'src/tests/unit/config/jquery.min.js',

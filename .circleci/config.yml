@@ -1,25 +1,22 @@
 version: 2
 
-executors:
-  node:
-    docker:
-      - image: circleci/node:latest
-
 jobs:
   build:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:latest-browsers
+        environment:
+          CHROME_BIN: "/usr/bin/google-chrome"
     steps:
       - checkout
+      - run: 
+          name: Chrome Version
+          command: google-chrome --version
       - run:
           name: Update npm
-          command: 'npm install npm'
+          command: 'sudo npm install -g npm'
       - run:
-          name: Add Fontawesome Registry
-          command: 'npm config set "@fortawesome:registry" https://npm.fontawesome.com/'
-      - run:
-          name: Add Fontawesome Token
-          command: 'npm config set "//npm.fontawesome.com/:_authToken" ${FONTAWESOME_TOKEN}'
+          name: Add npmrc
+          command: "echo $'@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=$FONTAWESOME_TOKEN' >.npmrc"
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -34,7 +31,7 @@ jobs:
           command: npm run build
       - run:
           name: Run Tests
-          command: npm test
+          command: 'CHROME_BIN=/usr/bin/google-chrome && npm test'
       - store_artifacts:
           path: 'src/tests/unit/report/unit-test-report.html'
           prefix: tests
