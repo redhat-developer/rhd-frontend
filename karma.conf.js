@@ -28,16 +28,27 @@ module.exports = function (config) {
             'karma-chrome-launcher',
             'karma-jasmine',
             'karma-jasmine-ajax',
+            'karma-junit-reporter',
             'karma-htmlfile-reporter'
         ],
         //logLevel: config.LOG_DEBUG,
         singleRun: true,
         colors: true,
         frameworks: ['jasmine-ajax', 'jasmine'],
-        reporters: ['progress', 'html'],
+        reporters: ['progress', 'html','junit'],
         htmlReporter: {
             outputFile: 'src/tests/unit/report/unit-test-report.html',
             pageTitle: 'RHD frontend unit-test results'
+        },
+        junitReporter: {
+            outputDir: 'src/tests/unit/report/', // results will be saved as $outputDir/$browserName.xml
+            outputFile: 'unit-test-report.xml', // if included, results will be saved as $outputDir/$browserName/$outputFile
+            suite: '', // suite will become the package name attribute in xml testsuite element
+            useBrowserName: false, // add browser name to report and classes names
+            nameFormatter: undefined, // function (browser, result) to customize the name attribute in xml testcase element
+            classNameFormatter: undefined, // function (browser, result) to customize the classname attribute in xml testcase element
+            properties: {}, // key value pair of properties to add to the <properties> section of the report
+            xmlVersion: null // use '1' if reporting to be per SonarQube 6.2 XML format
         },
         failOnEmptyTestSuite: false,
         captureTimeout: 210000,
