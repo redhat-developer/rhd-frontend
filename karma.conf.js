@@ -2,7 +2,17 @@
 // Karma configuration for running unit-tests in Docker
 module.exports = function (config) {
     config.set({
-        browsers: ['ChromeHeadless'],
+        browsers: ['ChromeHeadlessNoSandbox'],
+        customLaunchers: {
+            ChromeHeadlessNoSandbox: {
+                base: 'ChromeHeadless',
+                flags: [
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox',
+                    '--disable-gpu'
+                ]
+            }
+        },
         plugins: [
             'karma-chrome-launcher',
             'karma-jasmine',
