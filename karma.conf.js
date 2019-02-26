@@ -39,7 +39,10 @@ module.exports = function (config) {
             pageTitle: 'RHD frontend unit-test results'
         },
         failOnEmptyTestSuite: false,
-
+        captureTimeout: 210000,
+        browserDisconnectTolerance: 3,
+        browserDisconnectTimeout : 210000,
+        browserNoActivityTimeout : 210000,
         files: [
             // 'jasmine-global.js',
             'src/tests/unit/config/jquery.min.js',
