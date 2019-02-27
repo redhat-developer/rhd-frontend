@@ -4,23 +4,19 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest-browsers
-        environment:
-          CHROME_BIN: "/usr/bin/google-chrome"
     steps:
       - checkout
-      - run: 
-          name: Chrome Version
-          command: google-chrome --version
       - run:
           name: Update npm
           command: 'sudo npm install -g npm'
       - run:
           name: Add npmrc
-          command: "echo $'@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=$FONTAWESOME_TOKEN' >.npmrc"
+          command: "echo '@fortawesome:registry=https://npm.fontawesome.com/' >.npmrc
+            echo '//npm.fontawesome.com/:_authToken=$FONTAWESOME_TOKEN' >>.npmrc"
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: Install npm
+          name: Install dependencies
           command: 'npm install --no-package-lock'
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
@@ -36,4 +32,4 @@ jobs:
           path: 'src/tests/unit/report/unit-test-report.html'
           prefix: tests
       - store_test_results:
-          path: 'src/tests/unit/report/unit-test-report.html'
+          path: 'src/tests/unit/report/unit-test-report.xml'
