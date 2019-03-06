@@ -5,12 +5,12 @@ description: ""
 draft: true
 tags: ["component"]
 weight: 1
-scripts: ["js/@rhelements/rhelement/rhelement.js","js/@fortawesome/fontawesome-svg-core/index.es.js","js/@fortawesome/pro-solid-svg-icons/index.es.js",
+scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-svg-core/index.es.js","js/@fortawesome/pro-solid-svg-icons/index.es.js",
 "js/@rhd/rhdp-search/rhdp-search-app.js","js/@rhd/rhdp-search/rhdp-search-box.js","js/@rhd/rhdp-search/rhdp-search-filter-group.js",
 "js/@rhd/rhdp-search/rhdp-search-filter-item.js","js/@rhd/rhdp-search/rhdp-search-filters.js","js/@rhd/rhdp-search/rhdp-search-onebox.js",
 "js/@rhd/rhdp-search/rhdp-search-query.js","js/@rhd/rhdp-search/rhdp-search-result-count.js","js/@rhd/rhdp-search/rhdp-search-result.js","js/@rhd/rhdp-search/rhdp-search-results.js", "js/@rhd/rhdp-search/rhdp-search-sort-page.js","js/@rhd/rhdp-search/rhdp-search-url.js",
 "js/@rhd/rhdp-search/rhdp-search-modal-filters.js","js/@rhd/rhdp-search/rhdp-search-active-filters.js",
-"js/@rhd/rhdp-search/rhdp-search-filter-active-item.js", "js/@rhelements/rh-datetime/rh-datetime.min.js"]
+"js/@rhd/rhdp-search/rhdp-search-filter-active-item.js", "js/@patternfly/pfe-datetime/pfe-datetime.min.js"]
 ---
 
 {{< code >}}<rhdp-search-app url="https://dcp2.jboss.org/v2/rest/search/developer_materials">

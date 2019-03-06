@@ -5,7 +5,7 @@ description: ""
 draft: true
 tags: ["component"]
 weight: 4
-scripts: ["js/@rhd/rhdp-alert.js"]
+scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-svg-core/index.es.js","js/@fortawesome/pro-solid-svg-icons/index.es.js", "js/@rhd/rhdp-alert.js"]
 ---
 
 {{< code >}}<rhdp-alert>This is the alert text</rhdp-alert>{{</ code >}}

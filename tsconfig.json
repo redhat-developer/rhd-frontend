@@ -20,7 +20,7 @@
     "include": [
         "node_modules/@patternfly/pfelement/reveal.js",
         "node_modules/@patternfly/pfelement/pfelement.js",
-        "node_modules/@patternfly/pf-datetime/pf-datetime.js",
+        "node_modules/@patternfly/pfe-datetime/pfe-datetime.js",
         "node_modules/@fortawesome/fontawesome-svg-core/index.es.js",
         "node_modules/@fortawesome/pro-light-svg-icons/index.es.js",
         "node_modules/@fortawesome/pro-regular-svg-icons/index.es.js",
