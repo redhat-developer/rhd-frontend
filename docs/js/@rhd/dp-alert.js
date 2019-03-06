@@ -1,4 +1,4 @@
-System.register(["@patternfly/pfelement/pfelement.js", "@fortawesome/fontawesome-svg-core/index.es", "@fortawesome/pro-solid-svg-icons/index.es"], function (exports_1, context_1) {
+System.register(["../@patternfly/pfelement/pfelement.js", "../@fortawesome/fontawesome-svg-core/index.es", "../@fortawesome/pro-solid-svg-icons/index.es"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
