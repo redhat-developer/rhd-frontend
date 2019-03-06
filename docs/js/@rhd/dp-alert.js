@@ -1,4 +1,4 @@
-System.register(["@patternfly/pfelement/pfelement", "@fortawesome/fontawesome-svg-core/index.es", "@fortawesome/pro-solid-svg-icons/index.es"], function (exports_1, context_1) {
+System.register(["@patternfly/pfelement/pfelement.js", "@fortawesome/fontawesome-svg-core/index.es", "@fortawesome/pro-solid-svg-icons/index.es"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,12 +13,12 @@ System.register(["@patternfly/pfelement/pfelement", "@fortawesome/fontawesome-sv
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_1, index_es_1, index_es_2, DPAlert;
+    var pfelement_js_1, index_es_1, index_es_2, DPAlert;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (pfelement_1_1) {
-                pfelement_1 = pfelement_1_1;
+            function (pfelement_js_1_1) {
+                pfelement_js_1 = pfelement_js_1_1;
             },
             function (index_es_1_1) {
                 index_es_1 = index_es_1_1;
@@ -157,9 +157,9 @@ System.register(["@patternfly/pfelement/pfelement", "@fortawesome/fontawesome-sv
                     this.remove();
                 };
                 return DPAlert;
-            }(pfelement_1.default));
+            }(pfelement_js_1.default));
             exports_1("default", DPAlert);
-            pfelement_1.default.create(DPAlert);
+            pfelement_js_1.default.create(DPAlert);
         }
     };
 });
