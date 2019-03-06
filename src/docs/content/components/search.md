@@ -34,7 +34,7 @@ scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-s
         <rhdp-search-filter-item slot="secondary" group="type" key="webpage" value="webpage" type="rht_website" name="Web Page">Web Page</rhdp-search-filter-item>
     </rhdp-search-filter-group>
     <rhdp-search-filter-group name="PRODUCT" key="project">
-        <rhdp-search-filter-item name=".NET Runtime for Red Hat Enterprise Linux" value="dotnet" class="filter-item-dotnet" key="dotnet" group="project">.NET Runtime for Red Hat Enterprise Linux</rhdp-search-filter-item>
+        <rhdp-search-filter-item name=".NET Runtime for Red Hat Enterprise Linux" value="dotnet" class="filter-item-dotnet" key="dotnet" group="project" type="dotnet">.NET Runtime for Red Hat Enterprise Linux</rhdp-search-filter-item>
     </rhdp-search-filter-group>
     <rhdp-search-filter-group name="TOPIC" key="tag"></rhdp-search-filter-group>
 </rhdp-search-filters>
@@ -54,6 +54,7 @@ scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-s
     <rhdp-search-filter-active-item slot="secondary" group="type" key="stackoverflow" value="stackoverflow_question" type="stackoverflow_question" name="Stack Overflow">Stack Overflow</rhdp-search-filter-active-item>
     <rhdp-search-filter-active-item slot="secondary" group="type" key="video" value="video" type="jbossdeveloper_vimeo,jbossdeveloper_youtube" name="Video">Video</rhdp-search-filter-active-item>
     <rhdp-search-filter-active-item slot="secondary" group="type" key="webpage" value="webpage" type="rht_website" name="Web Page">Web Page</rhdp-search-filter-active-item>
+    <rhdp-search-filter-active-item name=".NET Runtime for Red Hat Enterprise Linux" value="dotnet" class="filter-item-dotnet" key="dotnet" group="project" type="dotnet">.NET Runtime for Red Hat Enterprise Linux</rhdp-search-filter-active-item>
 </rhdp-search-active-filters>
 <rhdp-search-result-count></rhdp-search-result-count>
 <rhdp-search-sort-page></rhdp-search-sort-page>

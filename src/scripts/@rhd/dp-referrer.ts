@@ -1,5 +1,4 @@
 import PFElement from '../@patternfly/pfelement/pfelement.js';
-// import PFElement from '../@patternfly/pfelement/pfelement.js';
 
 export default class DPReferrer extends PFElement {
   get html() {
@@ -96,9 +95,9 @@ export default class DPReferrer extends PFElement {
     ${this.size === 'xl' ? '</h3>' : ''}
     <p><slot>${this.text}</slot></p>
     ${this.size === 'xl' ? `<a class="close" href="#"><i class="fas fa-times"></i></a>` : ''}`;
-    // ${icon({prefix: 'fas', iconName: 'times'}).html}
-    // ${el.size === 'xl' ? `<a class="close">${fontawesome.icon(faTimes)}</a>` : ''}`;
 }
+
+static get tag() { return 'dp-referrer'; }
 
 _type = 'info';
 _size : string;
@@ -109,9 +108,7 @@ _border = '#87aac1';
 _text : string;
 _uri = new URL(window.location.href);
 
-static get tag() {
-    return 'dp-referrer';
-}
+
 
 get type() {
     return this._type;
@@ -193,7 +190,7 @@ set icon(val) {
       this.innerHTML = category[0] !== 'middleware' ? `It's true — JBoss Developer and Red Hat Developer Program are joining forces. You can find all the great Middleware information that you were looking for right here on developers.redhat.com.<a href="https://developer.jboss.org/blogs/mark.little/2017/08/31/we-are-moving?_sscc=t"> Read more about this on our blog.</a>` : `It's true &mdash; JBoss Developer and Red Hat Developer are one and the same, and you can find all the great stuff you were looking for right here on <a href="https://developers.redhat.com/">developers.redhat.com.</a>`;
       super.render();
     } else {
-      this.innerHTML = '';
+      this.remove();
     }
   }
 }

@@ -1,12 +1,10 @@
-import PFElement from '../@patternfly/pfelement/pfelement.js';
-import {library, icon} from '../@fortawesome/fontawesome-svg-core/index.es.js';
-import {faTimes} from '../@fortawesome/pro-solid-svg-icons/index.es.js';
+import PFElement from '@patternfly/pfelement/pfelement';
+import {library, icon} from '@fortawesome/fontawesome-svg-core/index.es';
+import {faTimes} from '@fortawesome/pro-solid-svg-icons/index.es';
 
 library.add(faTimes);
 
-const timesIcon = icon(faTimes).html;
-
-export default class RHDPAlert extends PFElement {
+export default class DPAlert extends PFElement {
     get html() {
         return `
         <style>
@@ -92,7 +90,7 @@ export default class RHDPAlert extends PFElement {
             color: #3b6e90;
         }
 
-        svg { pointer-events: none; }
+        svg, path { pointer-events: none; }
         
         </style>
         <img src="${this.icon}">
@@ -100,10 +98,10 @@ export default class RHDPAlert extends PFElement {
         ${this.heading ? `<strong>${this.heading}</strong>` : ''}
         ${this.size === 'xl' ? '</h3>' : ''}
         <p><slot>${this.text}</slot></p>
-        ${this.size === 'xl' ? `<a class="close">${timesIcon}</a>` : ''}`;
+        ${this.size === 'xl' ? `<a class="close" href="#">${icon(faTimes, { attributes: {'pointer-events': 'none'} }).html}</a>` : ''}`;
     }
 
-    static get tag() { return 'rhdp-alert'; }
+    static get tag() { return 'dp-alert'; }
     
     _type = 'info';
     _size : string;
@@ -171,7 +169,7 @@ export default class RHDPAlert extends PFElement {
     }
 
     constructor() {
-        super(RHDPAlert, {delayRender: true });
+        super(DPAlert, {delayRender: true });
     }
 
     connectedCallback() {
@@ -179,11 +177,12 @@ export default class RHDPAlert extends PFElement {
 
         let closer = this.shadowRoot.querySelector('.close');
         if (closer) {
-            closer.addEventListener('mouseup', e => {
-                console.log(e.composedPath());
-                if (e.composedPath().indexOf(closer) >= 0) {
+            this.addEventListener('click', e => {
+                e.preventDefault();
+                if(e.composedPath()[0]['className'] === 'close') {
                     this.remove();
                 }
+                // console.log(e.composedPath());
             });    
         }
 
@@ -198,7 +197,10 @@ export default class RHDPAlert extends PFElement {
         this[name] = newVal;
         super.render();
     }
+
+    acknowledge() {
+        this.remove();
+    }
 }
 
-PFElement.create(RHDPAlert);
-// window.customElements.define('rhdp-alert', RHDPAlert);
+PFElement.create(DPAlert);
