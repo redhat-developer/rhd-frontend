@@ -5,8 +5,8 @@ describe('Alert component', function() {
         heading = 'Test Heading', 
         txt = 'Test Text';
     beforeEach(async () => {
-        await System.import('./base/src/docs/static/js/@rhd/rhdp-alert.js').then(() => {
-            wc = document.createElement('rhdp-alert');
+        await System.import('./base/src/docs/static/js/@rhd/dp-alert.js').then(() => {
+            wc = document.createElement('dp-alert');
             wc.heading = heading;
             wc.innerText = txt;
             document.body.insertBefore(wc, document.body.firstChild);

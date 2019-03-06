@@ -41,9 +41,7 @@ System.register(["../@patternfly/pfelement/pfelement.js"], function (exports_1, 
                     configurable: true
                 });
                 Object.defineProperty(DPReferrer, "tag", {
-                    get: function () {
-                        return 'dp-referrer';
-                    },
+                    get: function () { return 'dp-referrer'; },
                     enumerable: true,
                     configurable: true
                 });
@@ -146,7 +144,7 @@ System.register(["../@patternfly/pfelement/pfelement.js"], function (exports_1, 
                         _super.prototype.render.call(this);
                     }
                     else {
-                        this.innerHTML = '';
+                        this.remove();
                     }
                 };
                 return DPReferrer;
