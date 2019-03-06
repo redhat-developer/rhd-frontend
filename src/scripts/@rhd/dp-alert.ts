@@ -1,6 +1,6 @@
-import PFElement from '@patternfly/pfelement/pfelement.js';
-import {library, icon} from '@fortawesome/fontawesome-svg-core/index.es';
-import {faTimes} from '@fortawesome/pro-solid-svg-icons/index.es';
+import PFElement from '../@patternfly/pfelement/pfelement.js';
+import {library, icon} from '../@fortawesome/fontawesome-svg-core/index.es';
+import {faTimes} from '../@fortawesome/pro-solid-svg-icons/index.es';
 
 library.add(faTimes);
 
