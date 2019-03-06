@@ -1,9 +1,10 @@
 import PFElement from '../@patternfly/pfelement/pfelement.js';
-//import PFElement from '../@patternfly/pfelement/pfelement.js';
-// import {library, icon} from '@fortawesome/fontawesome-svg-core';
-// import {fas} from '@fortawesome/free-solid-svg-icons';
+import {library, icon} from '../@fortawesome/fontawesome-svg-core/index.es.js';
+import {faTimes} from '../@fortawesome/pro-solid-svg-icons/index.es.js';
 
-// library.add(fas);
+library.add(faTimes);
+
+const timesIcon = icon(faTimes).html;
 
 export default class RHDPAlert extends PFElement {
     get html() {
@@ -85,13 +86,13 @@ export default class RHDPAlert extends PFElement {
         }
         
         a.close {
-            top: 1em;
-            margin-right: 5px;
+            margin-left: 5px;
             background-repeat: no-repeat;
             height: 24px;
-            width: 24px;
             color: #3b6e90;
         }
+
+        svg { pointer-events: none; }
         
         </style>
         <img src="${this.icon}">
@@ -99,9 +100,7 @@ export default class RHDPAlert extends PFElement {
         ${this.heading ? `<strong>${this.heading}</strong>` : ''}
         ${this.size === 'xl' ? '</h3>' : ''}
         <p><slot>${this.text}</slot></p>
-        ${this.size === 'xl' ? `<a class="close" href="#"><i class="fas fa-times"></i></a>` : ''}`;
-        // ${icon({prefix: 'fas', iconName: 'times'}).html}
-        // ${el.size === 'xl' ? `<a class="close">${fontawesome.icon(faTimes)}</a>` : ''}`;
+        ${this.size === 'xl' ? `<a class="close">${timesIcon}</a>` : ''}`;
     }
 
     static get tag() { return 'rhdp-alert'; }
@@ -178,13 +177,16 @@ export default class RHDPAlert extends PFElement {
     connectedCallback() {
         super.connectedCallback();
 
-        const lnk = this.shadowRoot.querySelector('.close');
-        if (lnk) {
-            lnk.addEventListener('click', e => {
-                e.preventDefault();
-                this.innerHTML = '';
-            });
+        let closer = this.shadowRoot.querySelector('.close');
+        if (closer) {
+            closer.addEventListener('mouseup', e => {
+                console.log(e.composedPath());
+                if (e.composedPath().indexOf(closer) >= 0) {
+                    this.remove();
+                }
+            });    
         }
+
         super.render();
     }
 

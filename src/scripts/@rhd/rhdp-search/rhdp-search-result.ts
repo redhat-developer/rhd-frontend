@@ -87,7 +87,7 @@ export default class RHDPSearchResult extends PFElement {
     <h4>${this.url ? `<a href="${this.url}">${this.title}</a>` : this.title}</h4>
     <p ${this.premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"'}>
         <span class="caps">${this.kind}</span>
-        ${this.created ? `- <rh-datetime datetime="${this.created}" type="local" day="numeric" month="long" year="numeric">${this.created}</rh-datetime>` : ''}
+        ${this.created ? `- <pfe-datetime datetime="${this.created}" type="local" day="numeric" month="long" year="numeric">${this.created}</pfe-datetime>` : ''}
     </p>
     <p class="result-description">${this.description}</p>
 </div>
