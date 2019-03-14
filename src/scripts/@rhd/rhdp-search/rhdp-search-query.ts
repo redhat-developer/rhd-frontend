@@ -70,7 +70,7 @@ export default class RHDPSearchQuery extends PFElement {
     set results(val) {
         if (this._results === val) return;
         this._results = val;
-        this.from = this.results && this.results.hits && typeof this.results.hits.hits !== 'undefined' ? this.from + this.results.hits.hits.length : 0;
+        this.from = this.results && this.results.response && typeof this.results.response.numFound !== 'undefined' ? this.from + this.results.response.numFound : 0;
         let evt = {
             detail: { 
                 term: this.term,
@@ -78,7 +78,7 @@ export default class RHDPSearchQuery extends PFElement {
                 sort: this.sort,
                 limit: this.limit,
                 from: this.from,
-                results: this.results,
+                results: this.results.response,
             }, 
             bubbles: true,
             composed: true
@@ -137,7 +137,7 @@ export default class RHDPSearchQuery extends PFElement {
         if(sort === 'most-recent') {
             order = '&newFirst=true';
         } 
-        return `${url}?tags_or_logic=true&filter_out_excluded=true&from=${from}${order}&query=${term}&query_highlight=true&size${limit}=true${types}${tags}${sys_types}`;
+        return `${url}?tags_or_logic=true&filter_out_excluded=true&from=${from}${order}&q=${term}&query_highlight=true&size${limit}=true${types}${tags}${sys_types}`;
     };
 
     constructor() {
@@ -252,7 +252,7 @@ export default class RHDPSearchQuery extends PFElement {
             if (this.sort === 'most-recent') {
                 qURL.searchParams.set('newFirst', 'true');
             } 
-            qURL.searchParams.set('query', this.term || '');
+            qURL.searchParams.set('q', this.term || '');
             qURL.searchParams.set('query_highlight', 'true');
             qURL.searchParams.set('size'+this.limit.toString(), 'true');
             Object.keys(this.filters.facets).forEach(group => {

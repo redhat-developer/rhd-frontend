@@ -133,13 +133,10 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                         if (this._result === val)
                             return;
                         this._result = val;
-                        this.computeTitle(val);
-                        this.computeKind(val);
-                        this.computeCreated(val);
-                        this.computeDescription(val);
-                        this.computeURL(val);
-                        this.computePremium(val);
-                        this.computeThumbnail(val);
+                        this.title = this._result.title[0] || 'Default Title';
+                        this.description = this._result.description[0] || 'Default Description';
+                        this.url = this._result.id;
+                        this.kind = this._result.type[0] || 'webpage';
                         this.renderResult();
                     },
                     enumerable: true,

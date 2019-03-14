@@ -60,6 +60,6 @@ scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-s
 <rhdp-search-sort-page></rhdp-search-sort-page>
 <rhdp-search-onebox url="../../json/onebox.json"></rhdp-search-onebox>
 <rhdp-search-results></rhdp-search-results>
-<rhdp-search-query url="https://dcp2.jboss.org/v2/rest/search/developer_materials"></rhdp-search-query>
+<rhdp-search-query url="https://api.developers.stage.redhat.com/search/"></rhdp-search-query>
 </rhdp-search-app>
 <a href="#top" id="scroll-to-top"></a>{{< /code >}}

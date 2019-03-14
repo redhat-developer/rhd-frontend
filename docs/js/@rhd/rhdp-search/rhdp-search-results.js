@@ -177,17 +177,17 @@ System.register(["../../@patternfly/pfelement/pfelement.js", "./rhdp-search-resu
                     }
                 };
                 RHDPSearchResults.prototype.addResults = function (results) {
-                    if (results && results.hits && results.hits.hits) {
-                        var hits = results.hits.hits;
+                    if (results && results.docs) {
+                        var hits = results.docs;
                         var l = hits.length;
                         for (var i = 0; i < l; i++) {
                             this.addResult(hits[i]);
                         }
                         this.last = this.last + l;
-                        if (this.last >= results.hits.total) {
+                        if (this.last >= results.numFound) {
                             this.shadowRoot.querySelector('.end-of-results').removeAttribute('data-hide');
                         }
-                        if (l > 0 && this.last < results.hits.total) {
+                        if (l > 0 && this.last < results.numFound) {
                             this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide', '');
                             this.shadowRoot.querySelector('.end-of-results').setAttribute('data-hide', '');
                             this.shadowRoot.querySelector('div.moreBtn').removeAttribute('data-hide');
