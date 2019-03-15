@@ -294,18 +294,18 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                         var qURL_1 = new URL(this.url);
                         qURL_1.searchParams.set('tags_or_logic', 'true');
                         qURL_1.searchParams.set('filter_out_excluded', 'true');
-                        qURL_1.searchParams.set('from', this.from.toString());
+                        qURL_1.searchParams.set('start', this.from.toString());
                         if (this.sort === 'most-recent') {
                             qURL_1.searchParams.set('newFirst', 'true');
                         }
                         qURL_1.searchParams.set('q', this.term || '');
                         qURL_1.searchParams.set('query_highlight', 'true');
-                        qURL_1.searchParams.set('size' + this.limit.toString(), 'true');
+                        qURL_1.searchParams.set('rows', this.limit.toString());
                         Object.keys(this.filters.facets).forEach(function (group) {
                             _this.filters.facets[group].forEach(function (facet) {
                                 var values = top.document.querySelector("rhdp-search-filter-item[group=" + group + "][key=" + facet + "]").getAttribute('type').split(',');
                                 values.forEach(function (value) {
-                                    qURL_1.searchParams.append(group, value);
+                                    qURL_1.searchParams.append('fq', group + ":" + value);
                                 });
                             });
                         });
