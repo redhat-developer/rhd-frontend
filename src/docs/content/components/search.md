@@ -17,7 +17,13 @@ scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-s
 <rhdp-search-box slot="query"></rhdp-search-box>
 <rhdp-search-filters title="Filter By" slot="filters">
     <rhdp-search-filter-group name="CONTENT TYPE" key="type">
-        <rhdp-search-filter-item group="type" key="apidocs" value="apidocs" type="rht_website,rht_apidocs" name="APIs and Docs">APIs and Docs</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="webpage" value="webpage" type="webpage" name="Web Page">Web Page</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="product" value="product" type="product" name="Product">Product</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="learning_path" value="learning_path" type="learning_path" name="Learning Path">Learning Path</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="article" value="article" type="article" name="Article">Article</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="book" value="book" type="book" name="Book">Book</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="topic" value="topic" type="topic" name="Topic">Topic</rhdp-search-filter-item>
+        <rhdp-search-filter-item group="type" key="video" value="video" type="video" name="Video">Video</rhdp-search-filter-item><!-- <rhdp-search-filter-item group="type" key="apidocs" value="apidocs" type="rht_website,rht_apidocs" name="APIs and Docs">APIs and Docs</rhdp-search-filter-item>
         <rhdp-search-filter-item group="type" key="archetype" value="jbossdeveloper_archetype" type="jbossdeveloper_archetype" name="Archetype">Archetype</rhdp-search-filter-item>
         <rhdp-search-filter-item group="type" key="article" value="article,solution" type="rht_knowledgebase_article,rht_knowledgebase_solution" name="Article">Article</rhdp-search-filter-item>
         <rhdp-search-filter-item group="type" key="blogpost" value="blogpost" type="jbossorg_blog" name="Blog Posts">Blog Posts</rhdp-search-filter-item>
@@ -30,8 +36,8 @@ scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-s
         <rhdp-search-filter-item slot="secondary" group="type" key="get-started" value="jbossdeveloper_example" type="jbossdeveloper_example" name="Get Started">Get Started</rhdp-search-filter-item>
         <rhdp-search-filter-item slot="secondary" group="type" key="quickstart" value="quickstart" type="jbossdeveloper_quickstart" name="Quickstart">Quickstart</rhdp-search-filter-item>
         <rhdp-search-filter-item slot="secondary" group="type" key="stackoverflow" value="stackoverflow_question" type="stackoverflow_question" name="Stack Overflow">Stack Overflow</rhdp-search-filter-item>
-        <rhdp-search-filter-item slot="secondary" group="type" key="video" value="video" type="jbossdeveloper_vimeo,jbossdeveloper_youtube" name="Video">Video</rhdp-search-filter-item>
-        <rhdp-search-filter-item slot="secondary" group="type" key="webpage" value="webpage" type="rht_website" name="Web Page">Web Page</rhdp-search-filter-item>
+        <rhdp-search-filter-item slot="secondary" group="type" key="video" value="video" type="jbossdeveloper_vimeo,jbossdeveloper_youtube" name="Video">Video</rhdp-search-filter-item> -->
+        
     </rhdp-search-filter-group>
     <rhdp-search-filter-group name="PRODUCT" key="project">
         <rhdp-search-filter-item name=".NET Runtime for Red Hat Enterprise Linux" value="dotnet" class="filter-item-dotnet" key="dotnet" group="project" type="dotnet">.NET Runtime for Red Hat Enterprise Linux</rhdp-search-filter-item>

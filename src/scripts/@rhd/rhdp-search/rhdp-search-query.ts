@@ -248,18 +248,18 @@ export default class RHDPSearchQuery extends PFElement {
             let qURL = new URL(this.url);
             qURL.searchParams.set('tags_or_logic', 'true');
             qURL.searchParams.set('filter_out_excluded', 'true');
-            qURL.searchParams.set('from', this.from.toString());
+            qURL.searchParams.set('start', this.from.toString());
             if (this.sort === 'most-recent') {
                 qURL.searchParams.set('newFirst', 'true');
             } 
             qURL.searchParams.set('q', this.term || '');
             qURL.searchParams.set('query_highlight', 'true');
-            qURL.searchParams.set('size'+this.limit.toString(), 'true');
+            qURL.searchParams.set('rows', this.limit.toString());
             Object.keys(this.filters.facets).forEach(group => {
                 this.filters.facets[group].forEach(facet => {
                     let values = top.document.querySelector(`rhdp-search-filter-item[group=${group}][key=${facet}]`).getAttribute('type').split(',');
                     values.forEach(value => {
-                        qURL.searchParams.append(group, value);
+                        qURL.searchParams.append('fq',`${group}:${value}`);
                     })
                 });
             });
