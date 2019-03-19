@@ -70,8 +70,8 @@ export default class RHDPSearchResultCount extends PFElement {
         super.render();
     }
 
-    static get observedAttributes() { 
-        return ['count', 'term']; 
+    static get observedAttributes() {
+        return ['count', 'term'];
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
@@ -87,15 +87,15 @@ export default class RHDPSearchResultCount extends PFElement {
                 } else {
                     this.term = '';
                 }
-                if (e.detail.results && e.detail.results.hits && e.detail.results.hits.total) {
-                    this.count = e.detail.results.hits.total;
+                if (e.detail.results && e.detail.results.numFound && e.detail.results.numFound) {
+                    this.count = e.detail.results.numFound;
                 } else {
                     this.count = 0;
                 }
                 if (!this.loading) {
                     super.render();
                 }
-            } else { 
+            } else {
                 this.term = '';
                 this.count = 0;
                 this.shadowRoot.innerHTML = '';
