@@ -34,7 +34,7 @@ export default class RHDPSearchQuery extends PFElement {
         if (this._activeFilters === val) return;
         this._activeFilters = val;
         this.filters.facets = this._activeFilters;
-        
+
     }
 
     get from() {
@@ -63,23 +63,23 @@ export default class RHDPSearchQuery extends PFElement {
         this._sort = val;
         this.setAttribute('sort', val);
     }
-    
+
     get results() {
         return this._results;
     }
     set results(val) {
         if (this._results === val) return;
         this._results = val;
-        this.from = this.results && this.results.response && typeof this.results.response.numFound !== 'undefined' ? this.from + this.results.response.numFound : 0;
+        this.from = this.results && this.results.response && typeof this.results.response.docs !== 'undefined' ? this.from + this.results.response.docs.length : 0;
         let evt = {
-            detail: { 
+            detail: {
                 term: this.term,
                 filters: this.activeFilters,
                 sort: this.sort,
                 limit: this.limit,
                 from: this.from,
                 results: this.results.response,
-            }, 
+            },
             bubbles: true,
             composed: true
         };
@@ -136,8 +136,8 @@ export default class RHDPSearchQuery extends PFElement {
         var order = '';
         if(sort === 'most-recent') {
             order = '&newFirst=true';
-        } 
-        return `${url}?tags_or_logic=true&filter_out_excluded=true&from=${from}${order}&q=${term}&query_highlight=true&size${limit}=true${types}${tags}${sys_types}`;
+        }
+        return `${url}?start=${from}&q=${term}&hl=true&hl.fl=description&rows=${limit}&${types}&${tags}&${sys_types}`;
     };
 
     constructor() {
@@ -157,8 +157,8 @@ export default class RHDPSearchQuery extends PFElement {
         top.addEventListener('load-more', this._changeAttr);
     }
 
-    static get observedAttributes() { 
-        return ['term', 'sort', 'limit', 'results', 'url']; 
+    static get observedAttributes() {
+        return ['term', 'sort', 'limit', 'results', 'url'];
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
@@ -167,13 +167,13 @@ export default class RHDPSearchQuery extends PFElement {
 
     _setFilters(item : RHDPSearchFilterItem) {
         let add = item.active;
-        
+
         if (add) {
             this.activeFilters[item.group] = this.activeFilters[item.group] || [];
             this.activeFilters[item.group].push(item.key);
         } else {
             Object.keys(this.activeFilters).forEach(group => {
-                if (group === item.group) { 
+                if (group === item.group) {
                     let idx = this.activeFilters[group].indexOf(item.key);
                     if (idx >= 0) {
                         this.activeFilters[group].splice(idx, 1);
@@ -197,7 +197,7 @@ export default class RHDPSearchQuery extends PFElement {
                 }
                 this.from = 0;
                 this.search();
-                
+
                 break;
             case 'filter-item-change': //detail.facet
                 if (e.detail && e.detail.facet) {
@@ -237,7 +237,7 @@ export default class RHDPSearchQuery extends PFElement {
                     this.search();
                 }
                 break;
-        }   
+        }
     }
 
     search() {
@@ -246,28 +246,32 @@ export default class RHDPSearchQuery extends PFElement {
         if (this.url && ((this.activeFilters && Object.keys(this.activeFilters).length > 0) || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined'))) {
 
             let qURL = new URL(this.url);
-            qURL.searchParams.set('tags_or_logic', 'true');
-            qURL.searchParams.set('filter_out_excluded', 'true');
+            // qURL.searchParams.set('tags_or_logic', 'true');
+            // qURL.searchParams.set('filter_out_excluded', 'true');
             qURL.searchParams.set('start', this.from.toString());
-            if (this.sort === 'most-recent') {
-                qURL.searchParams.set('newFirst', 'true');
-            } 
+            // TODO: figure out the sorting
+            // if (this.sort === 'most-recent') {
+            //     qURL.searchParams.set('newFirst', 'true');
+            // }
             qURL.searchParams.set('q', this.term || '');
-            qURL.searchParams.set('query_highlight', 'true');
+            qURL.searchParams.set('hl', 'true');
+            qURL.searchParams.set('hl.fl', 'description');
             qURL.searchParams.set('rows', this.limit.toString());
+            // qURL.searchParams.set('start', (this.from + this.limit).toString());
+
+            let facetQuery = [];
             Object.keys(this.filters.facets).forEach(group => {
                 this.filters.facets[group].forEach(facet => {
-                    let values = top.document.querySelector(`rhdp-search-filter-item[group=${group}][key=${facet}]`).getAttribute('type').split(',');
-                    values.forEach(value => {
-                        qURL.searchParams.append('fq',`${group}:${value}`);
-                    })
+                     facetQuery[group] = top.document.querySelector(`rhdp-search-filter-item[group=${group}][key=${facet}]`).getAttribute('type').replace(',', ' OR ')
                 });
             });
-            //console.log(qURL.toString());
+            console.log(facetQuery);
+            // qURL.searchParams.set('fq', facetQuery.);
+            //facetQuery // map reduce??
             fetch(qURL.toString()) //this.urlTemplate`${this.url}${this.term}${this.from}${this.limit}${this.sort}${this.filters}`)
             .then((resp) => resp.json())
-            .then((data) => { 
-                this.results = data; 
+            .then((data) => {
+                this.results = data;
             });
         } else {
             let evt = { detail: { invalid: true }, bubbles: true, composed: true };

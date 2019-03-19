@@ -175,7 +175,7 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
         if (this._result === val) return;
         this._result = val;
         this.title = this._result.title[0] ? this._result.title[0] : 'Default Title';
-        this.description = this._result.description[0] ? this._result.description : 'Default Description';
+        this.description = (this._result.description && this._result.description[0]) ? this._result.description[0] : 'Default Description';
         this.url = this._result.id;
         this.kind = this._result.type[0] ? this._result.type[0] : 'webpage';
         // this.computeTitle(val);
@@ -198,8 +198,8 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
         super.render();
     }
 
-    static get observedAttributes() { 
-        return ['result']; 
+    static get observedAttributes() {
+        return ['result'];
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
@@ -216,14 +216,14 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
         }
     }
 
-    computeTitle(result) { 
+    computeTitle(result) {
         var title = '';
         if(result.highlight && result.highlight.sys_title) {
             title = result.highlight.sys_title[0];
         } else {
             title = result.fields.sys_title[0];
         }
-        this.title = title; 
+        this.title = title;
     }
     computeKind(result) {
         var kind = result.fields.sys_type || "webpage",
@@ -256,7 +256,7 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
         if(result.highlight && result.highlight.sys_description) {
             description = result.highlight.sys_description[0];
         } else if( result.highlight && result.highlight.sys_content_plaintext) {
-            description = result.highlight.sys_content_plaintext[0];               
+            description = result.highlight.sys_content_plaintext[0];
         } else if (result.fields && result.fields.sys_description) {
             description = result.fields.sys_description[0];
         } else {
