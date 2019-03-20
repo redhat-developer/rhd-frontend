@@ -228,6 +228,9 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     else {
                         if (this.activeFilters.has(item.group)) {
                             this.activeFilters.get(item.group).delete(item.key);
+                            if (this.activeFilters.get(item.group).size === 0) {
+                                this.activeFilters.delete(item.group);
+                            }
                         }
                     }
                 };
@@ -285,21 +288,17 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     var _this = this;
                     var evt = { bubbles: true, composed: true };
                     this.dispatchEvent(new CustomEvent('search-start', evt));
-                    if (this.url && ((this.activeFilters && Object.keys(this.activeFilters).length > 0) || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined'))) {
-                        var qURL = new URL(this.url);
-                        qURL.searchParams.set('start', this.from.toString());
-                        qURL.searchParams.set('q', this.term || '');
-                        qURL.searchParams.set('hl', 'true');
-                        qURL.searchParams.set('hl.fl', 'description');
-                        qURL.searchParams.set('rows', this.limit.toString());
-                        var facetQuery_1 = [];
-                        Object.keys(this.filters.facets).forEach(function (group) {
-                            _this.filters.facets[group].forEach(function (facet) {
-                                facetQuery_1[group] = top.document.querySelector("rhdp-search-filter-item[group=" + group + "][key=" + facet + "]").getAttribute('type').replace(',', ' OR ');
-                            });
+                    if (this.url && ((this.activeFilters && this.activeFilters.size > 0) || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined'))) {
+                        var qURL_1 = new URL(this.url);
+                        qURL_1.searchParams.set('start', this.from.toString());
+                        qURL_1.searchParams.set('q', this.term || '');
+                        qURL_1.searchParams.set('hl', 'true');
+                        qURL_1.searchParams.set('hl.fl', 'description');
+                        qURL_1.searchParams.set('rows', this.limit.toString());
+                        this.activeFilters.forEach(function (filters, group) {
+                            qURL_1.searchParams.set(group, Array.from(filters).join(','));
                         });
-                        console.log(this.activeFilters);
-                        fetch(qURL.toString())
+                        fetch(qURL_1.toString())
                             .then(function (resp) { return resp.json(); })
                             .then(function (data) {
                             _this.results = data;

@@ -8,7 +8,7 @@ export default class RHDPSearchQuery extends PFElement {
     static get tag() { return 'rhdp-search-query'; }
 
     _filters = { term:'', facets: {} };
-    _activeFilters = new Map();
+    _activeFilters: Map<string, Set<string>> = new Map();
     _limit = 10;
     _from = 0;
     _sort = 'relevance';
@@ -179,6 +179,9 @@ export default class RHDPSearchQuery extends PFElement {
         } else {
             if(this.activeFilters.has(item.group)) {
                 this.activeFilters.get(item.group).delete(item.key);
+                if(this.activeFilters.get(item.group).size === 0) {
+                    this.activeFilters.delete(item.group);
+                }
             }
             // Object.keys(this.activeFilters).forEach(group => {
             //     if (group === item.group) {
@@ -251,7 +254,7 @@ export default class RHDPSearchQuery extends PFElement {
     search() {
         let evt = { bubbles: true, composed: true };
         this.dispatchEvent(new CustomEvent('search-start', evt));
-        if (this.url && ((this.activeFilters && Object.keys(this.activeFilters).length > 0) || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined'))) {
+        if (this.url && ((this.activeFilters && this.activeFilters.size > 0) || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined'))) {
 
             let qURL = new URL(this.url);
             // qURL.searchParams.set('tags_or_logic', 'true');
@@ -267,13 +270,15 @@ export default class RHDPSearchQuery extends PFElement {
             qURL.searchParams.set('rows', this.limit.toString());
             // qURL.searchParams.set('start', (this.from + this.limit).toString());
 
-            let facetQuery = [];
-            Object.keys(this.filters.facets).forEach(group => {
-                this.filters.facets[group].forEach(facet => {
-                     facetQuery[group] = top.document.querySelector(`rhdp-search-filter-item[group=${group}][key=${facet}]`).getAttribute('type').replace(',', ' OR ')
-                });
+            this.activeFilters.forEach((filters, group) => {
+                qURL.searchParams.set(group, Array.from(filters).join(','));
             });
-            console.log(this.activeFilters);
+            // Object.keys(this.filters.facets).forEach(group => {
+            //     this.filters.facets[group].forEach(facet => {
+            //          facetQuery[group] = top.document.querySelector(`rhdp-search-filter-item[group=${group}][key=${facet}]`).getAttribute('type').replace(',', ' OR ')
+            //     });
+            // });
+            // console.log(this.activeFilters);
             // qURL.searchParams.set('fq', facetQuery.);
             //facetQuery // map reduce??
             fetch(qURL.toString()) //this.urlTemplate`${this.url}${this.term}${this.from}${this.limit}${this.sort}${this.filters}`)

@@ -168,7 +168,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     this.dispatchEvent(new CustomEvent('params-ready', evt));
                 };
                 RHDPSearchURL.prototype._setFilters = function (filtersQS) {
-                    return new Map(filtersQS.map(function (o) { return [o.split('~')[0], new Set(o.split('~')[1].split('+'))]; }));
+                    return new Map(filtersQS.map(function (o) { return [o.split('~')[0], new Set(o.split('~')[1].split(' '))]; }));
                 };
                 RHDPSearchURL.prototype._changeAttr = function (e) {
                     switch (e.type) {
