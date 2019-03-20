@@ -134,7 +134,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                             return;
                         this._result = val;
                         this.title = this._result.title[0] ? this._result.title[0] : 'Default Title';
-                        this.description = this._result.description[0] ? this._result.description : 'Default Description';
+                        this.description = (this._result.description && this._result.description[0]) ? this._result.description[0] : 'Default Description';
                         this.url = this._result.id;
                         this.kind = this._result.type[0] ? this._result.type[0] : 'webpage';
                         this.renderResult();

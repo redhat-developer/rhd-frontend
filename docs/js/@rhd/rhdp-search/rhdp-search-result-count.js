@@ -111,8 +111,8 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                             else {
                                 this.term = '';
                             }
-                            if (e.detail.results && e.detail.results.hits && e.detail.results.hits.total) {
-                                this.count = e.detail.results.hits.total;
+                            if (e.detail.results && e.detail.results.numFound && e.detail.results.numFound) {
+                                this.count = e.detail.results.numFound;
                             }
                             else {
                                 this.count = 0;

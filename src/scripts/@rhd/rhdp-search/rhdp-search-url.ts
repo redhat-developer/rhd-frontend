@@ -7,7 +7,7 @@ export default class RHDPSearchURL extends PFElement {
 
     _uri = new URL(window.location.href); // https://developers.redhat.com/search/?q=term+term1+term2&f=a+b+c&s=sort&r=100
     _term = this.uri.searchParams.get('t');
-    _filters = this._setFilters(this.uri.searchParams.getAll('f'));
+    _filters: Map<string, Set<string>> = this._setFilters(this.uri.searchParams.getAll('f'));
     _sort = this.uri.searchParams.get('s') || 'relevance';
     _qty = this.uri.searchParams.get('r');
     _params;
@@ -40,9 +40,12 @@ export default class RHDPSearchURL extends PFElement {
     set filters(val) {
         this._filters = val;
         this.uri.searchParams.delete('f');
-        Object.keys(this._filters).forEach(group => {
-            this.uri.searchParams.append('f',`${group}~${this._filters[group].join(' ')}`)
+        this._filters.forEach((val, key) => {
+            this.uri.searchParams.append('f',`${key}~${Array.from(val).reduce((acc, curr) => acc+' '+curr)}`)
         });
+        // Object.keys(this._filters).forEach(group => {
+        //     this.uri.searchParams.append('f',`${group}~${this._filters[group].join(' ')}`)
+        // });
     }
 
     get sort() {
@@ -97,6 +100,11 @@ export default class RHDPSearchURL extends PFElement {
         this[name] = newVal;
     }
 
+    _getValueArray(vals: Set<string>) {
+        let str = '';
+
+    }
+
     _popState(e) {
         this.uri = new URL(document.location.href); // https://developers.redhat.com/search/?q=term+term1+term2&f=a+b+c&s=sort&r=100
         this.term = this.uri.searchParams.get('t') || null;
@@ -120,22 +128,15 @@ export default class RHDPSearchURL extends PFElement {
         this.dispatchEvent(new CustomEvent('params-ready', evt));
     }
 
-    _setFilters(filtersQS) {
-        let filters = {};
-        filtersQS.forEach(filter => {
-            let kv = filter.split('~'),
-                k = kv[0],
-                v = kv[1].split(' ');
-                filters[k] = v;
-        });
-        return filters;
+    _setFilters(filtersQS): Map<string, Set<string>> {
+        return new Map(filtersQS.map(o => [o.split('~')[0], new Set(o.split('~')[1].split('+'))]));
     }
 
     _changeAttr(e) {
         switch (e.type) {
             case 'clear-filters':
                 this.uri.searchParams.delete('f');
-                this.filters = {};
+                this.filters.clear();
                 break;
             case 'load-more': // detail.qty
                 break;
@@ -160,7 +161,7 @@ export default class RHDPSearchURL extends PFElement {
             history.pushState({}, `RHDP Search: ${this.term ? this.term : ''}`, `${this.uri.pathname}${this.uri.search}`);
         } else {
             this.term = '';
-            this.filters = {};
+            this.filters.clear();
             this.sort = 'relevance';
             this.uri.searchParams.delete('t');
             this.uri.searchParams.delete('f');

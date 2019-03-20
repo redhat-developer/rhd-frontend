@@ -80,8 +80,8 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                         var _this = this;
                         this._filters = val;
                         this.uri.searchParams.delete('f');
-                        Object.keys(this._filters).forEach(function (group) {
-                            _this.uri.searchParams.append('f', group + "~" + _this._filters[group].join(' '));
+                        this._filters.forEach(function (val, key) {
+                            _this.uri.searchParams.append('f', key + "~" + Array.from(val).reduce(function (acc, curr) { return acc + ' ' + curr; }));
                         });
                     },
                     enumerable: true,
@@ -143,6 +143,9 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                 RHDPSearchURL.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
                     this[name] = newVal;
                 };
+                RHDPSearchURL.prototype._getValueArray = function (vals) {
+                    var str = '';
+                };
                 RHDPSearchURL.prototype._popState = function (e) {
                     this.uri = new URL(document.location.href);
                     this.term = this.uri.searchParams.get('t') || null;
@@ -165,18 +168,13 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     this.dispatchEvent(new CustomEvent('params-ready', evt));
                 };
                 RHDPSearchURL.prototype._setFilters = function (filtersQS) {
-                    var filters = {};
-                    filtersQS.forEach(function (filter) {
-                        var kv = filter.split('~'), k = kv[0], v = kv[1].split(' ');
-                        filters[k] = v;
-                    });
-                    return filters;
+                    return new Map(filtersQS.map(function (o) { return [o.split('~')[0], new Set(o.split('~')[1].split('+'))]; }));
                 };
                 RHDPSearchURL.prototype._changeAttr = function (e) {
                     switch (e.type) {
                         case 'clear-filters':
                             this.uri.searchParams.delete('f');
-                            this.filters = {};
+                            this.filters.clear();
                             break;
                         case 'load-more':
                             break;
@@ -200,7 +198,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     }
                     else {
                         this.term = '';
-                        this.filters = {};
+                        this.filters.clear();
                         this.sort = 'relevance';
                         this.uri.searchParams.delete('t');
                         this.uri.searchParams.delete('f');

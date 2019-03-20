@@ -176,13 +176,16 @@ export default class RHDPSearchFilterActiveItem extends PFElement {
         // let chk = false;
         if (e.detail && e.detail.filters) {
             this.bounce = true;
-            Object.keys(e.detail.filters).forEach(group => {
-                e.detail.filters[group].forEach(facet => {
-                    if (group === this.group && facet === this.key) {
-                        this.active = true;
-                    }
-                });
-            });
+            if(e.detail.filters.has(this.group) && e.detail.filters.get(this.group).has(this.key)){
+                this.active = true;
+            }
+            // Object.keys(e.detail.filters).forEach(group => {
+            //     e.detail.filters[group].forEach(facet => {
+            //         if (group === this.group && facet === this.key) {
+            //             this.active = true;
+            //         }
+            //     });
+            // });
         }
     }
 

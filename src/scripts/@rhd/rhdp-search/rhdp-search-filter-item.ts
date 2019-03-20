@@ -182,7 +182,7 @@ export default class RHDPSearchFilterItem extends PFElement {
         }
     }
     get value() {
-        return this._value;
+        return this._value.split(',');
     }
     set value(val) {
         if (this._value === val) return;
@@ -228,13 +228,16 @@ export default class RHDPSearchFilterItem extends PFElement {
         // let chk = false;
         if (e.detail && e.detail.filters) {
             this.bounce = true;
-            Object.keys(e.detail.filters).forEach(group => {
-                e.detail.filters[group].forEach(facet => {
-                    if (group === this.group && facet === this.key) {
-                        this.active = true;
-                    }
-                });
-            });
+            if(e.detail.filters.has(this.group) && e.detail.filters.get(this.group).has(this.key)){
+                this.active = true;
+            }
+            // Object.keys(e.detail.filters).forEach(group => {
+            //     e.detail.filters[group].forEach(facet => {
+            //         if (group === this.group && facet === this.key) {
+            //             this.active = true;
+            //         }
+            //     });
+            // });
         }
     }
 
