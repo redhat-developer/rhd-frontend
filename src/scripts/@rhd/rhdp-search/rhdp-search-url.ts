@@ -129,7 +129,7 @@ export default class RHDPSearchURL extends PFElement {
     }
 
     _setFilters(filtersQS): Map<string, Set<string>> {
-        return new Map(filtersQS.map(o => [o.split('~')[0], new Set(o.split('~')[1].split('+'))]));
+        return new Map(filtersQS.map(o => [o.split('~')[0], new Set(o.split('~')[1].split(' '))]));
     }
 
     _changeAttr(e) {

@@ -169,13 +169,14 @@ export default class RHDPSearchResults extends PFElement {
         if (this.shadowRoot.querySelector('.loading')) {
             this.shadowRoot.querySelector('.loading').setAttribute('data-hide','');
         }
-
+            
         if (e.detail && typeof e.detail.results !== 'undefined' && typeof e.detail.invalid === 'undefined') {
             this.addResults(e.detail.results);
         } else {
             while(this.firstChild){
                 this.removeChild(this.firstChild);
             }
+            this.shadowRoot.querySelector('.end-of-results').setAttribute('data-hide','');
             this.shadowRoot.querySelector('div.moreBtn').setAttribute('data-hide', '');
             this.shadowRoot.querySelector('.invalidMsg').removeAttribute('data-hide');
         }
