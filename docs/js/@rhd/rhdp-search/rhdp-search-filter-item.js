@@ -141,7 +141,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                 });
                 Object.defineProperty(RHDPSearchFilterItem.prototype, "value", {
                     get: function () {
-                        return this._value;
+                        return this._value.split(',');
                     },
                     set: function (val) {
                         if (this._value === val)
@@ -175,16 +175,11 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     this.active = !this.active;
                 };
                 RHDPSearchFilterItem.prototype._checkParams = function (e) {
-                    var _this = this;
                     if (e.detail && e.detail.filters) {
                         this.bounce = true;
-                        Object.keys(e.detail.filters).forEach(function (group) {
-                            e.detail.filters[group].forEach(function (facet) {
-                                if (group === _this.group && facet === _this.key) {
-                                    _this.active = true;
-                                }
-                            });
-                        });
+                        if (e.detail.filters.has(this.group) && e.detail.filters.get(this.group).has(this.key)) {
+                            this.active = true;
+                        }
                     }
                 };
                 RHDPSearchFilterItem.prototype._checkChange = function (e) {

@@ -205,16 +205,11 @@ System.register(["../../@fortawesome/fontawesome-svg-core/index.es.js", "../../@
                     }
                 };
                 RHDPSearchFilterActiveItem.prototype._checkParams = function (e) {
-                    var _this = this;
                     if (e.detail && e.detail.filters) {
                         this.bounce = true;
-                        Object.keys(e.detail.filters).forEach(function (group) {
-                            e.detail.filters[group].forEach(function (facet) {
-                                if (group === _this.group && facet === _this.key) {
-                                    _this.active = true;
-                                }
-                            });
-                        });
+                        if (e.detail.filters.has(this.group) && e.detail.filters.get(this.group).has(this.key)) {
+                            this.active = true;
+                        }
                     }
                 };
                 RHDPSearchFilterActiveItem.prototype._checkChange = function (e) {

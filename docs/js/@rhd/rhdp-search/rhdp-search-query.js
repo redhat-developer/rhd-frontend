@@ -27,7 +27,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                 function RHDPSearchQuery() {
                     var _this = _super.call(this, RHDPSearchQuery) || this;
                     _this._filters = { term: '', facets: {} };
-                    _this._activeFilters = {};
+                    _this._activeFilters = new Map();
                     _this._limit = 10;
                     _this._from = 0;
                     _this._sort = 'relevance';
@@ -37,7 +37,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                         if (sort === 'most-recent') {
                             order = '&newFirst=true';
                         }
-                        return url + "?tags_or_logic=true&filter_out_excluded=true&from=" + from + order + "&q=" + term + "&query_highlight=true&size" + limit + "=true" + types + tags + sys_types;
+                        return url + "?start=" + from + "&q=" + term + "&hl=true&hl.fl=description&rows=" + limit + "&" + types + "&" + tags + "&" + sys_types;
                     };
                     _this._changeAttr = _this._changeAttr.bind(_this);
                     return _this;
@@ -124,7 +124,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                         if (this._results === val)
                             return;
                         this._results = val;
-                        this.from = this.results && this.results.response && typeof this.results.response.numFound !== 'undefined' ? this.from + this.results.response.numFound : 0;
+                        this.from = this.results && this.results.response && typeof this.results.response.docs !== 'undefined' ? this.from + this.results.response.docs.length : 0;
                         var evt = {
                             detail: {
                                 term: this.term,
@@ -216,24 +216,19 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     this[name] = newVal;
                 };
                 RHDPSearchQuery.prototype._setFilters = function (item) {
-                    var _this = this;
                     var add = item.active;
                     if (add) {
-                        this.activeFilters[item.group] = this.activeFilters[item.group] || [];
-                        this.activeFilters[item.group].push(item.key);
+                        if (this.activeFilters.has(item.group)) {
+                            this.activeFilters.get(item.group).add(item.key);
+                        }
+                        else {
+                            this.activeFilters.set(item.group, new Set([item.key]));
+                        }
                     }
                     else {
-                        Object.keys(this.activeFilters).forEach(function (group) {
-                            if (group === item.group) {
-                                var idx = _this.activeFilters[group].indexOf(item.key);
-                                if (idx >= 0) {
-                                    _this.activeFilters[group].splice(idx, 1);
-                                    if (_this.activeFilters[group].length === 0) {
-                                        delete _this.activeFilters[group];
-                                    }
-                                }
-                            }
-                        });
+                        if (this.activeFilters.has(item.group)) {
+                            this.activeFilters.get(item.group).delete(item.key);
+                        }
                     }
                 };
                 RHDPSearchQuery.prototype._changeAttr = function (e) {
@@ -266,7 +261,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                             this.search();
                             break;
                         case 'clear-filters':
-                            this.activeFilters = {};
+                            this.activeFilters.clear();
                             this.search();
                             break;
                         case 'params-ready':
@@ -280,7 +275,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                                 this.activeFilters = e.detail.filters;
                             }
                             this.from = 0;
-                            if (Object.keys(e.detail.filters).length > 0 || e.detail.term !== null || e.detail.sort !== null || e.detail.qty !== null) {
+                            if (this.activeFilters.size > 0 || e.detail.term !== null || e.detail.sort !== null || e.detail.qty !== null) {
                                 this.search();
                             }
                             break;
@@ -291,25 +286,20 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     var evt = { bubbles: true, composed: true };
                     this.dispatchEvent(new CustomEvent('search-start', evt));
                     if (this.url && ((this.activeFilters && Object.keys(this.activeFilters).length > 0) || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined'))) {
-                        var qURL_1 = new URL(this.url);
-                        qURL_1.searchParams.set('tags_or_logic', 'true');
-                        qURL_1.searchParams.set('filter_out_excluded', 'true');
-                        qURL_1.searchParams.set('start', this.from.toString());
-                        if (this.sort === 'most-recent') {
-                            qURL_1.searchParams.set('newFirst', 'true');
-                        }
-                        qURL_1.searchParams.set('q', this.term || '');
-                        qURL_1.searchParams.set('query_highlight', 'true');
-                        qURL_1.searchParams.set('rows', this.limit.toString());
+                        var qURL = new URL(this.url);
+                        qURL.searchParams.set('start', this.from.toString());
+                        qURL.searchParams.set('q', this.term || '');
+                        qURL.searchParams.set('hl', 'true');
+                        qURL.searchParams.set('hl.fl', 'description');
+                        qURL.searchParams.set('rows', this.limit.toString());
+                        var facetQuery_1 = [];
                         Object.keys(this.filters.facets).forEach(function (group) {
                             _this.filters.facets[group].forEach(function (facet) {
-                                var values = top.document.querySelector("rhdp-search-filter-item[group=" + group + "][key=" + facet + "]").getAttribute('type').split(',');
-                                values.forEach(function (value) {
-                                    qURL_1.searchParams.append('fq', group + ":" + value);
-                                });
+                                facetQuery_1[group] = top.document.querySelector("rhdp-search-filter-item[group=" + group + "][key=" + facet + "]").getAttribute('type').replace(',', ' OR ');
                             });
                         });
-                        fetch(qURL_1.toString())
+                        console.log(this.activeFilters);
+                        fetch(qURL.toString())
                             .then(function (resp) { return resp.json(); })
                             .then(function (data) {
                             _this.results = data;

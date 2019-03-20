@@ -8,7 +8,7 @@ export default class RHDPSearchQuery extends PFElement {
     static get tag() { return 'rhdp-search-query'; }
 
     _filters = { term:'', facets: {} };
-    _activeFilters = {};
+    _activeFilters = new Map();
     _limit = 10;
     _from = 0;
     _sort = 'relevance';
@@ -169,20 +169,28 @@ export default class RHDPSearchQuery extends PFElement {
         let add = item.active;
 
         if (add) {
-            this.activeFilters[item.group] = this.activeFilters[item.group] || [];
-            this.activeFilters[item.group].push(item.key);
+            if(this.activeFilters.has(item.group)) {
+                this.activeFilters.get(item.group).add(item.key);
+            } else {
+                this.activeFilters.set(item.group, new Set([item.key]));   
+            }
+            // this.activeFilters[item.group] = this.activeFilters[item.group] || [];
+            // this.activeFilters[item.group].push(item.key);
         } else {
-            Object.keys(this.activeFilters).forEach(group => {
-                if (group === item.group) {
-                    let idx = this.activeFilters[group].indexOf(item.key);
-                    if (idx >= 0) {
-                        this.activeFilters[group].splice(idx, 1);
-                        if (this.activeFilters[group].length === 0) {
-                            delete this.activeFilters[group];
-                        }
-                    }
-                }
-            });
+            if(this.activeFilters.has(item.group)) {
+                this.activeFilters.get(item.group).delete(item.key);
+            }
+            // Object.keys(this.activeFilters).forEach(group => {
+            //     if (group === item.group) {
+            //         let idx = this.activeFilters[group].indexOf(item.key);
+            //         if (idx >= 0) {
+            //             this.activeFilters[group].splice(idx, 1);
+            //             if (this.activeFilters[group].length === 0) {
+            //                 delete this.activeFilters[group];
+            //             }
+            //         }
+            //     }
+            // });
         }
     }
 
@@ -218,7 +226,7 @@ export default class RHDPSearchQuery extends PFElement {
                 this.search();
                 break;
             case 'clear-filters':
-                this.activeFilters = {};
+                this.activeFilters.clear();
                 this.search();
                 break;
             case 'params-ready':
@@ -233,7 +241,7 @@ export default class RHDPSearchQuery extends PFElement {
                 }
 
                 this.from = 0;
-                if (Object.keys(e.detail.filters).length > 0 || e.detail.term !== null || e.detail.sort !== null || e.detail.qty !== null) {
+                if (this.activeFilters.size > 0 || e.detail.term !== null || e.detail.sort !== null || e.detail.qty !== null) {
                     this.search();
                 }
                 break;
@@ -265,7 +273,7 @@ export default class RHDPSearchQuery extends PFElement {
                      facetQuery[group] = top.document.querySelector(`rhdp-search-filter-item[group=${group}][key=${facet}]`).getAttribute('type').replace(',', ' OR ')
                 });
             });
-            console.log(facetQuery);
+            console.log(this.activeFilters);
             // qURL.searchParams.set('fq', facetQuery.);
             //facetQuery // map reduce??
             fetch(qURL.toString()) //this.urlTemplate`${this.url}${this.term}${this.from}${this.limit}${this.sort}${this.filters}`)
