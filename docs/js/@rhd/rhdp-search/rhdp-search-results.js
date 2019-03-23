@@ -187,6 +187,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js", "./rhdp-search-resu
                         this.last = this.last + l;
                         if (this.last >= results.numFound) {
                             this.shadowRoot.querySelector('.end-of-results').removeAttribute('data-hide');
+                            this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide', '');
                         }
                         if (l > 0 && this.last < results.numFound) {
                             this.shadowRoot.querySelector('.invalidMsg').setAttribute('data-hide', '');

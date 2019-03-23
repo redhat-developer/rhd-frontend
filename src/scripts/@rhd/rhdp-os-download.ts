@@ -13,8 +13,7 @@ export default class RHDPOSDownload extends HTMLElement {
 
     stage_download_url = 'https://developers.stage.redhat.com';
     productDownloads = {
-        "devsuite" : {"windowsUrl" : "/download-manager/file/devsuite-2.3.0-GA-installer.exe", "macUrl" : "/download-manager/file/devsuite-2.3.0-GA-bundle-installer-mac.dmg", "rhelUrl" : "/products/devsuite/hello-world/#fndtn-rhel"},
-        "cdk" : {"windowsUrl" : "/download-manager/file/cdk-3.7.0-1-minishift-windows-amd64.exe", "macUrl" : "/download-manager/file/cdk-3.7.0-1-minishift-darwin-amd64", "rhelUrl" : "/download-manager/file/cdk-3.7.0-1-minishift-linux-amd64"}
+        "cdk" : {"windowsUrl" : "/download-manager/file/cdk-3.5.0-1-minishift-windows-amd64.exe", "macUrl" : "/download-manager/file/cdk-3.5.0-1-minishift-darwin-amd64", "rhelUrl" : "/download-manager/file/cdk-3.5.0-1-minishift-linux-amd64"}
     };
 
     get url() {
@@ -25,6 +24,7 @@ export default class RHDPOSDownload extends HTMLElement {
         if (this._url === value) return;
         this._url = value;
         this.setAttribute('url', this._url);
+
     }
 
     get productCode() {
@@ -146,37 +146,17 @@ export default class RHDPOSDownload extends HTMLElement {
     connectedCallback() {
         this.platformType = this.getUserAgent();
         this.setDownloadURLByPlatform();
-        this.render();
+        this.innerHTML = this.template`${this.productName}${this.downloadURL}${this.platformType}${this.version}`;
 
     }
 
     static get observedAttributes() {
-        return ['product-code','platform-type', 'download-url', 'name', 'version'];
+        return ['product-code','platform-type', 'download-url', 'name'];
     }
 
 
     attributeChangedCallback(name, oldVal, newVal) {
-        switch (name) {
-            case 'product-code':
-                this.productCode = newVal;
-                break;
-            case 'download-url':
-                this.downloadURL = newVal;
-                break;
-            case 'platform-type':
-                this.platformType = newVal;
-                break;
-            case 'name':
-                this.productName = newVal;
-                break;
-            default:
-                this[name] = newVal;
-        }
-        this.render();
-    }
-
-    render() {
-        this.innerHTML = this.template`${this.productName}${this.downloadURL}${this.platformType}${this.version}`;
+        this[name] = newVal;
     }
 
     getUserAgent(){
@@ -199,11 +179,6 @@ export default class RHDPOSDownload extends HTMLElement {
 
     setOSURL(productId){
         switch(productId){
-            case 'devsuite':
-                this.winURL = this.getDownloadOrigin(this.productDownloads.devsuite.windowsUrl);
-                this.macURL = this.getDownloadOrigin(this.productDownloads.devsuite.macUrl);
-                this.rhelURL = this.getDownloadOrigin(this.productDownloads.devsuite.rhelUrl);
-                break;
             case 'cdk':
                 this.winURL = this.getDownloadOrigin(this.productDownloads.cdk.windowsUrl);
                 this.macURL = this.getDownloadOrigin(this.productDownloads.cdk.macUrl);
@@ -242,5 +217,7 @@ export default class RHDPOSDownload extends HTMLElement {
 
 }
 
-window.customElements.define('rhdp-os-download', RHDPOSDownload);
+window.addEventListener('WebComponentsReady', function() {
+    customElements.define('rhdp-os-download', RHDPOSDownload);
+});
 

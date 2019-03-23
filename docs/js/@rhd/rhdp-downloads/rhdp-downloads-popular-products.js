@@ -1,4 +1,4 @@
-System.register(["./rhdp-downloads-popular-product.js"], function (exports_1, context_1) {
+System.register(["@rhd/rhdp-downloads/rhdp-downloads-popular-product"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,12 +13,12 @@ System.register(["./rhdp-downloads-popular-product.js"], function (exports_1, co
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var rhdp_downloads_popular_product_js_1, RHDPDownloadsPopularProducts;
+    var rhdp_downloads_popular_product_1, RHDPDownloadsPopularProducts;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (rhdp_downloads_popular_product_js_1_1) {
-                rhdp_downloads_popular_product_js_1 = rhdp_downloads_popular_product_js_1_1;
+            function (rhdp_downloads_popular_product_1_1) {
+                rhdp_downloads_popular_product_1 = rhdp_downloads_popular_product_1_1;
             }
         ],
         execute: function () {
@@ -40,7 +40,7 @@ System.register(["./rhdp-downloads-popular-product.js"], function (exports_1, co
                     configurable: true
                 });
                 RHDPDownloadsPopularProducts.prototype.addProduct = function (product) {
-                    var productNode = new rhdp_downloads_popular_product_js_1.default();
+                    var productNode = new rhdp_downloads_popular_product_1.default();
                     productNode.name = product.productName;
                     productNode.productId = product.productCode;
                     productNode.dataFallbackUrl = product.dataFallbackUrl;

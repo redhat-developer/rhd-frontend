@@ -5,6 +5,9 @@
     text-align: left;
     padding: 100px 0;
   }
+  h2 {
+    font-size: 50px;
+  }
   .header {
     text-align: center;
     margin-bottom: 16px;
@@ -84,6 +87,16 @@
   .button {
     margin: 15px 15px 0 0 !important;
     @include tablet-portrait {
+    }
+  }
+  &.assembly-bigger-image {
+    .assembly-content + .assembly-image {
+      @include desktop-small {
+        max-width: 500px;
+        img {
+          max-width: 500px;
+        }
+      }
     }
   }
 }

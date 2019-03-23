@@ -1,4 +1,4 @@
-System.register(["../rhdp-os-download.js"], function (exports_1, context_1) {
+System.register(["@rhd/rhdp-os-download"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -17,12 +17,12 @@ System.register(["../rhdp-os-download.js"], function (exports_1, context_1) {
         if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
         return cooked;
     };
-    var rhdp_os_download_js_1, RHDPDownloadsPopularProduct, templateObject_1;
+    var rhdp_os_download_1, RHDPDownloadsPopularProduct, templateObject_1;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (rhdp_os_download_js_1_1) {
-                rhdp_os_download_js_1 = rhdp_os_download_js_1_1;
+            function (rhdp_os_download_1_1) {
+                rhdp_os_download_1 = rhdp_os_download_1_1;
             }
         ],
         execute: function () {
@@ -88,7 +88,7 @@ System.register(["../rhdp-os-download.js"], function (exports_1, context_1) {
                     configurable: true
                 });
                 RHDPDownloadsPopularProduct.prototype.osVersionExtract = function (productId) {
-                    var osPlatform = new rhdp_os_download_js_1.default();
+                    var osPlatform = new rhdp_os_download_1.default();
                     osPlatform.platformType = osPlatform.getUserAgent();
                     osPlatform.downloadURL = this.downloadUrl;
                     osPlatform.setOSURL(productId);

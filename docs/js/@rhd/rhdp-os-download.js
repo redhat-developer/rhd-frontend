@@ -31,8 +31,7 @@ System.register([], function (exports_1, context_1) {
                     _this._winURL = "";
                     _this.stage_download_url = 'https://developers.stage.redhat.com';
                     _this.productDownloads = {
-                        "devsuite": { "windowsUrl": "/download-manager/file/devsuite-2.3.0-GA-installer.exe", "macUrl": "/download-manager/file/devsuite-2.3.0-GA-bundle-installer-mac.dmg", "rhelUrl": "/products/devsuite/hello-world/#fndtn-rhel" },
-                        "cdk": { "windowsUrl": "/download-manager/file/cdk-3.7.0-1-minishift-windows-amd64.exe", "macUrl": "/download-manager/file/cdk-3.7.0-1-minishift-darwin-amd64", "rhelUrl": "/download-manager/file/cdk-3.7.0-1-minishift-linux-amd64" }
+                        "cdk": { "windowsUrl": "/download-manager/file/cdk-3.5.0-1-minishift-windows-amd64.exe", "macUrl": "/download-manager/file/cdk-3.5.0-1-minishift-darwin-amd64", "rhelUrl": "/download-manager/file/cdk-3.5.0-1-minishift-linux-amd64" }
                     };
                     _this.template = function (strings, product, downloadUrl, platform, version) {
                         return "<div class=\"large-8 columns download-link\">\n                    <a class=\"button heavy-cta\" href=\"" + downloadUrl + "\">\n                        <i class=\"fa fa-download\"></i> Download</a>\n                    <div class=\"version-name\">" + product + " " + version + " " + (_this.displayOS ? "for " + platform : '') + "</div>\n                </div>\n                ";
@@ -175,36 +174,17 @@ System.register([], function (exports_1, context_1) {
                 RHDPOSDownload.prototype.connectedCallback = function () {
                     this.platformType = this.getUserAgent();
                     this.setDownloadURLByPlatform();
-                    this.render();
+                    this.innerHTML = this.template(templateObject_1 || (templateObject_1 = __makeTemplateObject(["", "", "", "", ""], ["", "", "", "", ""])), this.productName, this.downloadURL, this.platformType, this.version);
                 };
                 Object.defineProperty(RHDPOSDownload, "observedAttributes", {
                     get: function () {
-                        return ['product-code', 'platform-type', 'download-url', 'name', 'version'];
+                        return ['product-code', 'platform-type', 'download-url', 'name'];
                     },
                     enumerable: true,
                     configurable: true
                 });
                 RHDPOSDownload.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
-                    switch (name) {
-                        case 'product-code':
-                            this.productCode = newVal;
-                            break;
-                        case 'download-url':
-                            this.downloadURL = newVal;
-                            break;
-                        case 'platform-type':
-                            this.platformType = newVal;
-                            break;
-                        case 'name':
-                            this.productName = newVal;
-                            break;
-                        default:
-                            this[name] = newVal;
-                    }
-                    this.render();
-                };
-                RHDPOSDownload.prototype.render = function () {
-                    this.innerHTML = this.template(templateObject_1 || (templateObject_1 = __makeTemplateObject(["", "", "", "", ""], ["", "", "", "", ""])), this.productName, this.downloadURL, this.platformType, this.version);
+                    this[name] = newVal;
                 };
                 RHDPOSDownload.prototype.getUserAgent = function () {
                     var OSName = "Windows";
@@ -222,11 +202,6 @@ System.register([], function (exports_1, context_1) {
                 };
                 RHDPOSDownload.prototype.setOSURL = function (productId) {
                     switch (productId) {
-                        case 'devsuite':
-                            this.winURL = this.getDownloadOrigin(this.productDownloads.devsuite.windowsUrl);
-                            this.macURL = this.getDownloadOrigin(this.productDownloads.devsuite.macUrl);
-                            this.rhelURL = this.getDownloadOrigin(this.productDownloads.devsuite.rhelUrl);
-                            break;
                         case 'cdk':
                             this.winURL = this.getDownloadOrigin(this.productDownloads.cdk.windowsUrl);
                             this.macURL = this.getDownloadOrigin(this.productDownloads.cdk.macUrl);
@@ -260,7 +235,9 @@ System.register([], function (exports_1, context_1) {
                 return RHDPOSDownload;
             }(HTMLElement));
             exports_1("default", RHDPOSDownload);
-            window.customElements.define('rhdp-os-download', RHDPOSDownload);
+            window.addEventListener('WebComponentsReady', function () {
+                customElements.define('rhdp-os-download', RHDPOSDownload);
+            });
         }
     };
 });
