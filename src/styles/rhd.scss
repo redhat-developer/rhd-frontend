@@ -53,17 +53,24 @@
 @import "javaone";
 @import "ticket-monster";
 @import "vjbug";
-// @import "searchapp";
+@import "searchapp";
 @import "judcon-brno";
 @import "gids";
 @import "msbuild";
 @import "solp";
 @import "author";
 @import "view-taxonomy-term";
+@import "katacoda";
 
 
 //drupal admin override
 @import "drupal-user-login-form";
+
+// Drupal Akamai cache clear block styles
+@import "akamai-block";
+
+// Curated Links assembly type
+@import "curated-links";
 
 [data-rhd-grid="normal"] {
   display: flex;
@@ -663,4 +670,28 @@ body.overlay-open {
 
 .caption > figcaption {
   margin-top: 10px;
+}
+
+a#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+  background-color: #333;
+  background-color: rgba(0,0,0,0.8);
+  width: 44px;
+  height: 44px;
+  font-size: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 13px;
+  text-decoration: none;
+  z-index: 1;
+  opacity: 0.8;
+  display: none;
+  &:focus, &:active, &:hover {
+    outline: none;
+    opacity: 1;
+  }
 }

@@ -136,7 +136,7 @@ ul.toc {
   padding: 15px 20px;
   border-top: 8px solid #000;
   transform: translateY(0);
-  transition: 150ms ease-in-out;
+  transition: none;
   &.gsi-nav-fixed {
     transform: translateY(30px);
   }
@@ -211,7 +211,8 @@ ul.toc {
   -moz-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #94aebd;
-  margin-bottom: 2em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
 
   .thankyouclose {
     float:right;
