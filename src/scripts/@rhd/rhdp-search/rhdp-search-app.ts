@@ -1,73 +1,22 @@
-//import PFElement from '../../@pfelements/pfelement.js';
-import PFElement from '../../@patternfly/pfelement/pfelement.js';
-import RHDPSearchURL from './rhdp-search-url.js';
-import RHDPSearchModalFilters from './rhdp-search-modal-filters.js';
+import RHDPSearchURL from '@rhd/rhdp-search/rhdp-search-url';
+import RHDPSearchQuery from '@rhd/rhdp-search/rhdp-search-query';
+import RHDPSearchBox from '@rhd/rhdp-search/rhdp-search-box';
+import RHDPSearchResultCount from '@rhd/rhdp-search/rhdp-search-result-count';
+import RHDPSearchFilters from '@rhd/rhdp-search/rhdp-search-filters';
+import RHDPSearchOneBox from '@rhd/rhdp-search/rhdp-search-onebox';
+import RHDPSearchResults from './rhdp-search-results';
+import RHDPSearchSortPage from '@rhd/rhdp-search/rhdp-search-sort-page';
 
-export default class RHDPSearchApp extends PFElement {
-    get html() {
-        return `
-        <style>
-
-    :host { 
-        display: flex;
-        flex-flow: column;
-        font-family: "Overpass", "Open Sans", Arial, Helvetica, sans-serif;
-        margin-bottom: 30px;
-    }
-
-    .query { flex: 0 0 auto; }
-    .content { flex: 1 1 auto; display: flex; flex-flow: row; position: relative;}
-    .filters { flex: 0 0 28%; margin-right: 32px; }
-    .results { flex: 1 1 auto; display: flex; flex-flow: column; }
-
-    .hide { display: none; }
-    
-    .show { display: block; }
-    
-    .mobile { display: none; }
-
-    h2 { 
-        flex: 0 0 auto; 
-        margin-top: 30px;
-        font-size: 38px;
-        line-height: 1.24;
-        color: #242424;
-        font-weight: 500;
-        margin-bottom: 16px;
-    }
-
-    .loading {
-        background:url("https://developers.redhat.com/images/icons/ajax-loader.gif") center 80px no-repeat;
-        min-height:250px;
-    }
-
-    @media only screen and (max-width: 768px) {
-        .content {
-            flex-flow: column;
-        }
-        .filters { flex: 0 0 auto; margin-right: 0; }
-    }
-        </style>
-    <h2>${this.name}</h2>
-    <section class="query"><slot name="query"></slot></section>
-    <section class="content">
-        <section class="filters"><slot name="filters"></slot></section>
-        <section class="results">
-            <slot></slot>
-        </section>
-    </section>
-    `;
-    }
-
-    static get tag() {
-        return 'rhdp-search-app';
-    }
+export default class RHDPSearchApp extends HTMLElement {
     constructor() {
-        super(RHDPSearchApp, {delayRender: true});
+        super();
+        //this.toggleModal = this.toggleModal.bind(this);
+        //this.updateFacets = this.updateFacets.bind(this);
     }
 
     _name = 'Search';
     _url;
+    _oburl = '../rhdp-apps/onebox/onebox.json';
 
     get name() {
         return this._name;
@@ -86,22 +35,150 @@ export default class RHDPSearchApp extends PFElement {
     set url(val) {
         if (this._url === val) return;
         this._url = val;
-        //this.query.url = this.url;
+        this.query.url = this.url;
         this.setAttribute('url', this.url);
     }
 
-    urlEle = new RHDPSearchURL();
-    modal = new RHDPSearchModalFilters();
+    get oburl() {
+        return this._oburl;
+    }
+    set oburl(val) {
+        if (this._oburl === val) return;
+        this._oburl = val;
+    }
 
+
+
+    template = `<div class="row">
+    <span class="search-outage-msg"></span>
+    <div class="large-24 medium-24 small-24 columns searchpage-middle">
+        <div class="row">
+            <div class="large-24 medium-24 small-24 columns">
+                <h2>${this.name}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 medium-8 small-24 columns"></div>
+            <div class="large-18 medium-16 small-24 columns"></div>
+        </div>
+    </div></div>`;
+
+    urlEle = new RHDPSearchURL();
+    query = new RHDPSearchQuery();
+    box = new RHDPSearchBox();
+    count = new RHDPSearchResultCount();
+    filters = new RHDPSearchFilters();
+    active = new RHDPSearchFilters();
+    modal = new RHDPSearchFilters();
+    onebox = new RHDPSearchOneBox();
+    results = new RHDPSearchResults();
+    sort = new RHDPSearchSortPage();
+
+    filterObj = {
+        term:'', 
+        facets: [
+            { name: 'CONTENT TYPE', key: 'type', items: [
+                {key: 'apidocs', name: 'APIs and Docs', value: ['rht_website', 'rht_apidocs'], type: ['apidocs']},
+                {key: 'archetype', name: 'Archetype', value: ['jbossdeveloper_archetype'], type: ['jbossdeveloper_archetype']},
+                {key: 'article', name: 'Article', value: ['rht_knowledgebase_article', 'rht_knowledgebase_solution'], type: ['rht_knowledgebase_article', 'rht_knowledgebase_solution']},
+                {key: 'blogpost', name: "Blog Posts", value: ['jbossorg_blog'], type: ['jbossorg_blog']},
+                {key: 'book', name: "Book", value: ["jbossdeveloper_book"], type: ["jbossdeveloper_book"]},
+                {key: 'bom', name: "BOM", value: ["jbossdeveloper_bom"], type: ['jbossdeveloper_bom']},
+                {key: 'cheatsheet', name: "Cheat Sheet", value: ['jbossdeveloper_cheatsheet'], type: ['jbossdeveloper_cheatsheet']},
+                {key: 'demo', name: 'Demo', value: ['jbossdeveloper_demo'], type: ['jbossdeveloper_demo']},
+                {key: 'event', name: 'Event', value: ['jbossdeveloper_event'], type: ['jbossdeveloper_event']},
+                {key: 'forum', name: 'Forum', value: ['jbossorg_sbs_forum'], type: ['jbossorg_sbs_forum']},
+                {key: 'get-started', name: "Get Started", value: ["jbossdeveloper_example"], type: ['jbossdeveloper_example'] },
+                {key: 'quickstart', name: "Quickstart", value: ['jbossdeveloper_quickstart'], type: ['jbossdeveloper_quickstart']},
+                {key: 'stackoverflow', name: 'Stack Overflow', value: ['stackoverflow_question'], type: ['stackoverflow_question']},
+                {key: 'video', name: "Video", value: ['jbossdeveloper_vimeo', 'jbossdeveloper_youtube'], type:['jbossdeveloper_vimeo', 'jbossdeveloper_youtube'] },
+                {key: 'webpage', name: "Web Page", value: ['rht_website'], type: ['rht_website']}
+                ] 
+            },
+            {
+                name:'PRODUCT', 
+                key: 'project', 
+                items: [
+                {key: 'dotnet', name: '.NET Runtime for Red Hat Enterprise Linux', value: ['dotnet']},
+                {key: 'amq', name: 'JBoss A-MQ', value: ['amq']},
+                {key: 'rhpam', name: 'Red Hat Process Automation Manager', value: ['rhpam','bpmsuite']},
+                {key: 'brms', name: 'Red Hat Decision Manager', value: ['brms']},
+                {key: 'datagrid', name: 'JBoss Data Grid', value: ['datagrid']},
+                {key: 'datavirt', name: 'JBoss Data Virtualization', value: ['datavirt']},
+                {key: 'devstudio', name: 'JBoss Developer Studio', value: ['devstudio']},
+                {key: 'eap', name: 'JBoss Enterprise Application Platform', value: ['eap']},
+                {key: 'fuse', name: 'JBoss Fuse', value: ['fuse']},
+                {key: 'webserver', name: 'JBoss Web Server', value: ['webserver']},
+                {key: 'openjdk', name: 'OpenJDK', value: ['openjdk']},
+                {key: 'rhamt', name: 'Red Hat Application Migration Toolkit', value: ['rhamt']},
+                {key: 'cdk', name: 'Red Hat Container Development Kit', value: ['cdk']},
+                {key: 'developertoolset', name: 'Red Hat Developer Toolset', value: ['developertoolset']},
+                {key: 'devsuite', name: 'Red Hat Development Suite', value: ['devsuite']},
+                {key: 'rhel', name: 'Red Hat Enterprise Linux', value: ['rhel']},
+                {key: 'mobileplatform', name: 'Red Hat Mobile Application Platform', value: ['mobileplatform']},
+                {key: 'openshift', name: 'Red Hat OpenShift Container Platform', value: ['openshift']},
+                {key: 'softwarecollections', name: 'Red Hat Software Collections', value: ['softwarecollections']}
+                ]
+            },
+            { name: 'TOPIC', key: 'tag', items: [
+                /*
+                Architecture
+                Big Data
+                CI/CD
+                Containers
+                DevOps
+                Integration
+                Internet of Things
+                Java
+                Kubernetes
+                Linux
+                Microservices
+                Performance
+                Programming Languages
+                Security
+                Serverless
+                Service Mesh
+                Spring Boot
+                */
+                {key: 'dotnet', name: '.NET', value: ['dotnet','.net','visual studio','c#']},
+                {key: 'containers', name: 'Containers', value: ['atomic','cdk','containers']},
+                {key: 'devops', name: 'DevOps', value: ['devops','CI','CD','Continuous Delivery']},
+                {key: 'enterprise-java', name: 'Enterprise Java', value: ['ActiveMQ','AMQP','apache camel','Arquillian','Camel','CDI','CEP','CXF','datagrid','devstudio','Drools','Eclipse','fabric8','Forge','fuse','Hawkular','Hawtio','Hibernate','Hibernate ORM','Infinispan','iPaas','java ee','JavaEE','JBDS','JBoss','JBoss BPM Suite','Red Hat Decision Manager','JBoss Data Grid','jboss eap','JBoss EAP','']},
+                {key: 'iot', name: 'Internet of Things', value: ['iot','Internet of Things']},
+                {key: 'microservices', name: 'Microservices', value: ['microservices',' WildFly Swarm']},
+                {key: 'mobile', name: 'Mobile', value: ['mobile','Red Hat Mobile','RHMAP','Cordova','FeedHenry']},
+                {key: 'web-and-api-development', name: 'Web and API Development', value: ['Web','API','HTML5','REST','Camel','Node.js','RESTEasy','JAX-RS','Tomcat','nginx','Rails','Drupal','PHP','Bottle','Flask','Laravel','Dancer','Zope','TurboGears','Sinatra','httpd','Passenger']},
+                ] 
+            }
+        ]
+    };
     connectedCallback() {
-        super.connectedCallback();
-        super.render();
-        top.document.body.appendChild(this.modal);
-        setTimeout(() => { top.document.body.appendChild(this.urlEle); }, 1000) 
+        this.innerHTML = this.template;
+
+        this.active.setAttribute('type', 'active');
+        this.active.title = 'Active Filters:';
+        this.modal.setAttribute('type', 'modal');
+        this.modal.filters = this.filterObj;
+        this.active.filters = this.filterObj;
+        this.filters.filters = this.filterObj;
+        this.query.filters = this.filterObj;
+        this.onebox.url = this.oburl;
+        
+        //document.querySelector('.wrapper').appendChild(this.modal);
+        document.body.appendChild(this.modal);
+        this.querySelector('.row .large-24 .row .large-24').appendChild(this.query);
+        this.querySelector('.row .large-24 .row .large-24').appendChild(this.box);
+        this.querySelector('.large-6').appendChild(this.filters);
+        this.querySelector('.large-18').appendChild(this.active);
+        this.querySelector('.large-18').appendChild(this.count);
+        this.querySelector('.large-18').appendChild(this.sort);
+        this.querySelector('.large-18').appendChild(this.onebox);
+        this.querySelector('.large-18').appendChild(this.results);
+        document.body.appendChild(this.urlEle);
     }
 
     static get observedAttributes() { 
-        return ['url', 'name']; 
+        return ['url', 'name', 'oburl']; 
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
@@ -111,6 +188,13 @@ export default class RHDPSearchApp extends PFElement {
     toggleModal(e) {
         this.modal.toggle = e.detail.toggle;
     }
+
+    updateSort(e) {
+        this.query.sort = e.detail.sort;
+        this.query.from = 0;
+        this.results.last = 0;
+        this.count.term = this.box.term;
+    }
 }
 
-PFElement.create(RHDPSearchApp);
+customElements.define('rhdp-search-app', RHDPSearchApp);

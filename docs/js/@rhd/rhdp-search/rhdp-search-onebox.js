@@ -1,4 +1,4 @@
-System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_1, context_1) {
+System.register([], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -17,44 +17,27 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
         if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
         return cooked;
     };
-    var pfelement_js_1, RHDPSearchOneBox, templateObject_1;
+    var RHDPSearchOneBox, templateObject_1, templateObject_2;
     var __moduleName = context_1 && context_1.id;
     return {
-        setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
-            }
-        ],
+        setters: [],
         execute: function () {
             RHDPSearchOneBox = (function (_super) {
                 __extends(RHDPSearchOneBox, _super);
-                function RHDPSearchOneBox(url) {
-                    var _this = _super.call(this, RHDPSearchOneBox, { delayRender: true }) || this;
+                function RHDPSearchOneBox() {
+                    var _this = _super.call(this) || this;
                     _this._term = '';
                     _this._url = '../rhdp-apps/onebox/onebox.json';
                     _this._mock = false;
                     _this.slotTemplate = function (strings, slot, id) {
-                        return "" + (slot && slot.url && slot.text ? "<a href=\"" + slot.url + "?onebox=" + id + "\" class=\"link\">" + _this.getIcon(slot.icon) + slot.text + "</a>" : '');
+                        return "" + (slot && slot.url && slot.text ? "<li><a href=\"" + slot.url + "?onebox=" + id + "\">" + _this.getIcon(slot.icon) + slot.text + "</a></li>" : '');
                     };
-                    if (url) {
-                        _this.url = url;
-                    }
+                    _this.template = function (strings, feature) {
+                        return "<div>\n            " + (feature.heading && feature.heading.url && feature.heading.text ? "<h4><a href=\"" + feature.heading.url + "\">" + feature.heading.text + "</a></h4>" : '') + "\n            " + (feature.details ? "<p>" + feature.details + "</p>" : '') + "\n            " + (feature.button && feature.button.url && feature.button.text ? "<a href=\"" + feature.button.url + "?onebox=" + feature.id + "\" class=\"button medium-cta blue\">" + feature.button.text + "</a>" : '') + "\n            " + (feature.slots && feature.slots.length > 0 ? "<ul class=\"slots\">\n                " + feature.slots.map(function (slot) { return _this.slotTemplate(templateObject_1 || (templateObject_1 = __makeTemplateObject(["", "", ""], ["", "", ""])), slot, feature.id); }).join('') + "\n            </ul>" : '') + "\n        </div>";
+                    };
                     _this._termChange = _this._termChange.bind(_this);
                     return _this;
                 }
-                Object.defineProperty(RHDPSearchOneBox.prototype, "html", {
-                    get: function () {
-                        var _this = this;
-                        return "\n        " + (this.feature ? "\n        <style>\n        :host {\n            border: 1px solid #d5d5d5;\n            display: block;\n            margin-bottom: 3em;\n            padding: 25px;\n        }\n        h4 {\n            font-size: 27px;\n            color: #242424;\n            font-weight: 600;\n            line-height: 1.5;\n            margin-bottom: 16px;\n            margin-top: 16px;\n        }    \n        p { \n            margin-bottom: 20px; \n            font-size: 16px;\n            line-height: 1.5;\n        }\n        .button { \n            background: #c00;\n            border: 0;\n            color: #fff;\n            display: inline-block;\n            font-size: 16px;\n            font-weight: 600;\n            line-height: 1.44;\n            padding: 9px 40px;\n            text-align: center;\n            text-decoration: none;\n            text-transform: uppercase;\n            transition: background .2s ease-in 0s;\n        }\n        a { \n            color: #06c;\n            cursor: pointer;\n            text-decoration: none;\n        }\n        a:hover, a:focus {\n            color: #004c98;\n        }\n        svg {\n            fill: var(--rhd-link-hover);\n        }\n        a:hover svg {\n            fill: #004c98;\n        }\n        \n        a.medium-cta {\n            background-color: transparent;\n            border: 1px solid #c00;\n            color: #c00;\n            line-height: 1.44;\n            padding: 8px 40px;\n        }\n        a.medium-cta.blue {\n            border-color: #06c;\n            color: #06c;\n        }\n        a.medium-cta.blue:hover {\n            background-color: #06c;\n            color: #fff;\n        }\n        .links {\n            display: flex;\n            flex-direction: row;\n            flex-wrap: wrap;\n        }\n\n        .links a {\n            flex: 1 0 auto;\n            margin-bottom: 1.5em;\n            line-height: 45px;\n            vertical-align: middle;\n            white-space: nowrap;\n            margin-right: 45px;\n        }\n\n        .links a:first-child {\n            flex: 0 0 auto;\n            padding: 0 40px;\n        }\n\n        .link {\n            padding-right: 20px;\n        }\n        \n        .link svg {\n            fill: #06c;\n            left: 0;\n            margin-right: 5px;\n            max-height: 45px;\n            max-width: 45px;\n            float: left;\n        }\n        </style>\n\n    " + (this.feature && this.feature.heading && this.feature.heading.url && this.feature.heading.text ? "<h4><a href=\"" + this.feature.heading.url + "\">" + this.feature.heading.text + "</a></h4>" : '') + "\n    " + (this.feature && this.feature.details ? "<p>" + this.feature.details + "</p>" : '') + "\n    <div class=\"links\">\n    " + (this.feature && this.feature.button && this.feature.button.url && this.feature.button.text ? "<a href=\"" + this.feature.button.url + "?onebox=" + this.feature.id + "\" class=\"button medium-cta blue\">" + this.feature.button.text + "</a>" : '') + "\n    " + (this.feature && this.feature.slots && this.feature.slots.length > 0 ? "\n        " + this.feature.slots.map(function (slot) { return _this.slotTemplate(templateObject_1 || (templateObject_1 = __makeTemplateObject(["", "", ""], ["", "", ""])), slot, _this.feature.id); }).join('') + "\n    " : '') + "\n    </div>" : '');
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                Object.defineProperty(RHDPSearchOneBox, "tag", {
-                    get: function () { return 'rhdp-search-onebox'; },
-                    enumerable: true,
-                    configurable: true
-                });
                 Object.defineProperty(RHDPSearchOneBox.prototype, "term", {
                     get: function () {
                         if ((this._term === null) || (this._term === '')) {
@@ -109,7 +92,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                         if (this._feature === val)
                             return;
                         this._feature = val;
-                        _super.prototype.render.call(this);
+                        this.innerHTML = this.feature ? this.template(templateObject_2 || (templateObject_2 = __makeTemplateObject(["", ""], ["", ""])), this.feature) : '';
                     },
                     enumerable: true,
                     configurable: true
@@ -127,8 +110,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     configurable: true
                 });
                 RHDPSearchOneBox.prototype.connectedCallback = function () {
-                    _super.prototype.connectedCallback.call(this);
-                    _super.prototype.render.call(this);
+                    this.getData();
                     top.addEventListener('term-change', this._termChange);
                     top.addEventListener('params-ready', this._termChange);
                 };
@@ -187,9 +169,9 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     return icons[name];
                 };
                 return RHDPSearchOneBox;
-            }(pfelement_js_1.default));
+            }(HTMLElement));
             exports_1("default", RHDPSearchOneBox);
-            pfelement_js_1.default.create(RHDPSearchOneBox);
+            customElements.define('rhdp-search-onebox', RHDPSearchOneBox);
         }
     };
 });

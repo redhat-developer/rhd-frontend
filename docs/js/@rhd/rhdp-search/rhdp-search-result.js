@@ -1,4 +1,4 @@
-System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_1, context_1) {
+System.register([], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,37 +13,28 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, RHDPSearchResult;
+    var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+        if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+        return cooked;
+    };
+    var RHDPSearchResult, templateObject_1;
     var __moduleName = context_1 && context_1.id;
     return {
-        setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
-            }
-        ],
+        setters: [],
         execute: function () {
             RHDPSearchResult = (function (_super) {
                 __extends(RHDPSearchResult, _super);
                 function RHDPSearchResult() {
-                    var _this = _super.call(this, RHDPSearchResult, { delayRender: true }) || this;
-                    _this._url = ['', ''];
+                    var _this = _super.call(this) || this;
+                    _this.template = function (strings, url, title, kind, created, description, premium, thumbnail) {
+                        return "<div>\n            <h4>" + (url ? "<a href=\"" + url + "\">" + title + "</a>" : title) + "</h4>\n            <p " + (premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"') + ">\n                <span class=\"caps\">" + kind + "</span>\n                " + (created ? "- <rh-datetime datetime=\"" + created + "\" type=\"local\" day=\"numeric\" month=\"long\" year=\"numeric\">" + created + "</rh-datetime>" : '') + "\n            </p>\n            <p class=\"result-description\">" + description + "</p>\n        </div>\n        " + (thumbnail ? "<div class=\"thumb\"><img src=\"" + thumbnail.replace('http:', 'https:') + "\"></div>" : '');
+                    };
                     return _this;
                 }
-                Object.defineProperty(RHDPSearchResult.prototype, "html", {
-                    get: function () {
-                        return "\n        <style>\n:host {\n    font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n    margin-bottom: 25px;\n    padding-bottom: 25px;\n    border-bottom: 1px solid #d5d5d5;\n    display: flex;\n    flex-direction: row;\n}\n    .subscription-required {\n        &:before {\n            content: '';\n            background: url('https://static.jboss.org/rhd/images/icons/subscription-required.svg') no-repeat;\n            background-size:cover;\n            position:absolute;\n            margin-top: 5px;\n            width: .9em;\n            height: .9em;\n        }\n        .caps {\n            margin-left: 20px;\n        }\n\n    }\n\n    div:first-child { flex: 1 1 auto; }\n\n    h4 {\n        font-weight: 600;\n        font-style: normal;\n        font-size: 20px;\n        line-height: 1.4;\n        margin: 0;\n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n    }\n\n    h4 a {\n        color: #06c;\n        cursor: pointer;\n        text-decoration: none;\n    }\n\n    p { margin: 0; \n        color: #424242;\n        font-family: \"Overpass\", \"Open Sans\", Arial, Helvetica, sans-serif;\n        }\n    .result-info span{\n        font-size: .9rem;\n        color: $grey-6;\n    }\n\n    .caps {\n        text-transform: uppercase;\n        font-size: 16px;\n        font-weight: normal;\n        line-height: 24px;\n        -webkit-font-smoothing: antialiased;\n    }\n    .result-description {\n        overflow: hidden;\n        text-overflow: ellipsis;\n        max-height: 45px;\n        margin-bottom: 25px;\n    }\n    div {\n        flex: 1 1 auto;\n    }\n    div.thumb { \n        flex: 0 0 130px; \n        margin-left: 1em;\n    }\n\n    .thumb img {\n        height: auto;\n        max-width: 100%;\n    }\n\n    .hlt { font-weight: 600; }\n        </style>\n<div>\n    <h4>" + (this.url ? "<a href=\"" + this.url + "\">" + this.title + "</a>" : this.title) + "</h4>\n    <p " + (this.premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"') + ">\n        <span class=\"caps\">" + this.kind + "</span>\n        " + (this.created ? "- <pfe-datetime datetime=\"" + this.created + "\" type=\"local\" day=\"numeric\" month=\"long\" year=\"numeric\">" + this.created + "</pfe-datetime>" : '') + "\n    </p>\n    <p class=\"result-description\">" + this.description + "</p>\n</div>\n" + (this.thumbnail ? "<div class=\"thumb\"><img src=\"" + this.thumbnail.replace('http:', 'https:') + "\"></div>" : '');
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                Object.defineProperty(RHDPSearchResult, "tag", {
-                    get: function () { return 'rhdp-search-result'; },
-                    enumerable: true,
-                    configurable: true
-                });
                 Object.defineProperty(RHDPSearchResult.prototype, "url", {
                     get: function () {
-                        return this._url;
+                        var stage = window.location.href.indexOf('stage') >= 0 || window.location.href.indexOf('developers') < 0 ? '.stage' : '';
+                        return !this.premium ? this._url : "https://broker" + stage + ".redhat.com/partner/drc/userMapping?redirect=" + encodeURIComponent(this._url);
                     },
                     set: function (val) {
                         if (this._url === val)
@@ -96,7 +87,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     set: function (val) {
                         if (this._description === val)
                             return;
-                        this._description = val;
+                        this._description = val.replace('>', '&gt;').replace('<', '&lt;');
                     },
                     enumerable: true,
                     configurable: true
@@ -133,18 +124,19 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                         if (this._result === val)
                             return;
                         this._result = val;
-                        this.title = this._result.title[0] ? this._result.title[0] : 'Default Title';
-                        this.description = (this._result.description && this._result.description[0]) ? this._result.description[0] : 'Default Description';
-                        this.url = this._result.id;
-                        this.kind = this._result.type[0] ? this._result.type[0] : 'webpage';
+                        this.computeTitle(val);
+                        this.computeKind(val);
+                        this.computeCreated(val);
+                        this.computeDescription(val);
+                        this.computeURL(val);
+                        this.computePremium(val);
+                        this.computeThumbnail(val);
                         this.renderResult();
                     },
                     enumerable: true,
                     configurable: true
                 });
                 RHDPSearchResult.prototype.connectedCallback = function () {
-                    _super.prototype.connectedCallback.call(this);
-                    _super.prototype.render.call(this);
                 };
                 Object.defineProperty(RHDPSearchResult, "observedAttributes", {
                     get: function () {
@@ -157,7 +149,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     this[name] = newVal;
                 };
                 RHDPSearchResult.prototype.renderResult = function () {
-                    _super.prototype.render.call(this);
+                    this.innerHTML = this.template(templateObject_1 || (templateObject_1 = __makeTemplateObject(["", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", ""])), this.url, this.title, this.kind, this.created, this.description, this.premium, this.thumbnail);
                 };
                 RHDPSearchResult.prototype.computeThumbnail = function (result) {
                     if (result.fields.thumbnail) {
@@ -211,7 +203,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                         description = result.fields.sys_description[0];
                     }
                     else {
-                        description = result.fields.sys_content_plaintext ? result.fields.sys_content_plaintext[0] : '';
+                        description = result.fields.sys_content_plaintext[0];
                     }
                     var tempDiv = document.createElement("div");
                     tempDiv.innerHTML = description;
@@ -220,7 +212,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                 };
                 RHDPSearchResult.prototype.computeURL = function (result) {
                     if (result.fields && result.fields.sys_type === 'book' && result.fields.field_book_url) {
-                        this.url = result.fields.field_book_url;
+                        this.url = result.fields.field_book_url ? result.fields.field_book_url : '';
                     }
                     else {
                         this.url = (result.fields && result.fields.sys_url_view) ? result.fields.sys_url_view : '';
@@ -234,9 +226,9 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     this.premium = premium;
                 };
                 return RHDPSearchResult;
-            }(pfelement_js_1.default));
+            }(HTMLElement));
             exports_1("default", RHDPSearchResult);
-            pfelement_js_1.default.create(RHDPSearchResult);
+            customElements.define('rhdp-search-result', RHDPSearchResult);
         }
     };
 });

@@ -1,19 +1,14 @@
-// import PFElement from '../../@pfelements/pfelement.js';
-import PFElement from '../../@patternfly/pfelement/pfelement.js';
-
-export default class RHDPSearchURL extends PFElement {
-    get html() { return ''; }
-    static get tag() { return 'rhdp-search-url'; }
-
+export default class RHDPSearchURL extends HTMLElement {
     _uri = new URL(window.location.href); // https://developers.redhat.com/search/?q=term+term1+term2&f=a+b+c&s=sort&r=100
     _term = this.uri.searchParams.get('t');
-    _filters: Map<string, Set<string>> = this._setFilters(this.uri.searchParams.getAll('f'));
+    _filters = this._setFilters(this.uri.searchParams.getAll('f'));
     _sort = this.uri.searchParams.get('s') || 'relevance';
     _qty = this.uri.searchParams.get('r');
     _params;
     _history;
     _init = true;
-
+    
+    
     get uri() {
         return this._uri;
     }
@@ -25,8 +20,17 @@ export default class RHDPSearchURL extends PFElement {
     }
 
     get term() {
-        return this._term;
+        // Hack for IE11 to remove the enfoced %2b encoding of + symbol in url
+        var ua = window.navigator.userAgent; //Check the userAgent property of the window.navigator object
+        var trident = ua.indexOf('Trident/'); //IE 11
+        var isIE = trident > 0;
+        var tmpTerm = this._term;
+        if(isIE){
+            tmpTerm = tmpTerm.replace( "+", " " );
+        }
+        return tmpTerm;
     }
+
     set term(val) {
         if (this._term === val) return;
         this._term = val;
@@ -40,12 +44,9 @@ export default class RHDPSearchURL extends PFElement {
     set filters(val) {
         this._filters = val;
         this.uri.searchParams.delete('f');
-        this._filters.forEach((val, key) => {
-            this.uri.searchParams.append('f',`${key}~${Array.from(val).reduce((acc, curr) => acc+' '+curr)}`)
+        Object.keys(this._filters).forEach(group => {
+            this.uri.searchParams.append('f',`${group}~${this._filters[group].join(' ')}`)
         });
-        // Object.keys(this._filters).forEach(group => {
-        //     this.uri.searchParams.append('f',`${group}~${this._filters[group].join(' ')}`)
-        // });
     }
 
     get sort() {
@@ -78,17 +79,23 @@ export default class RHDPSearchURL extends PFElement {
     //history.pushState({}, `Red Hat Developer Program Search: ${this.term}`, `?q=${decodeURIComponent(this.term).replace(' ', '+')}`);
 
     constructor() {
-        super(RHDPSearchURL);
+        super();
 
         this._changeAttr = this._changeAttr.bind(this);
         this._popState = this._popState.bind(this);
     }
 
     connectedCallback() {
-        super.connectedCallback();
+        //top.addEventListener('term-change', this._changeAttr);
+        //top.addEventListener('filter-item-change', this._changeAttr);
+        //top.addEventListener('sort-change', this._changeAttr);
+        //top.addEventListener('load-more', this._changeAttr);
         top.addEventListener('search-complete', this._changeAttr);
         top.addEventListener('clear-filters', this._changeAttr);
         top.window.addEventListener('popstate', this._popState);
+        // Ignoring tracking these for now
+        // top.addEventListener('filter-group-toggle', this._changeAttr);
+        // top.addEventListener('filter-group-more-toggle', this._changeAttr);
         this._paramsReady();
     }
 
@@ -98,11 +105,6 @@ export default class RHDPSearchURL extends PFElement {
 
     attributeChangedCallback(name, oldVal, newVal) {
         this[name] = newVal;
-    }
-
-    _getValueArray(vals: Set<string>) {
-        let str = '';
-
     }
 
     _popState(e) {
@@ -115,28 +117,33 @@ export default class RHDPSearchURL extends PFElement {
     }
 
     _paramsReady() {
-        let evt = {
+        this.dispatchEvent(new CustomEvent('params-ready', {
             detail: { 
                 term: this.term,
                 filters: this.filters,
                 sort: this.sort,
                 qty: this.qty
             }, 
-            bubbles: true,
-            composed: true
-        }
-        this.dispatchEvent(new CustomEvent('params-ready', evt));
+            bubbles: true 
+        }));
     }
 
-    _setFilters(filtersQS): Map<string, Set<string>> {
-        return new Map(filtersQS.map(o => [o.split('~')[0], new Set(o.split('~')[1].split(' '))]));
+    _setFilters(filtersQS) {
+        let filters = {};
+        filtersQS.forEach(filter => {
+            let kv = filter.split('~'),
+                k = kv[0],
+                v = kv[1].split(' ');
+                filters[k] = v;
+        });
+        return filters;
     }
 
     _changeAttr(e) {
         switch (e.type) {
             case 'clear-filters':
                 this.uri.searchParams.delete('f');
-                this.filters.clear();
+                this.filters = {};
                 break;
             case 'load-more': // detail.qty
                 break;
@@ -161,7 +168,7 @@ export default class RHDPSearchURL extends PFElement {
             history.pushState({}, `RHDP Search: ${this.term ? this.term : ''}`, `${this.uri.pathname}${this.uri.search}`);
         } else {
             this.term = '';
-            this.filters.clear();
+            this.filters = {};
             this.sort = 'relevance';
             this.uri.searchParams.delete('t');
             this.uri.searchParams.delete('f');
@@ -171,4 +178,4 @@ export default class RHDPSearchURL extends PFElement {
     }
 }
 
-PFElement.create(RHDPSearchURL);
+customElements.define('rhdp-search-url', RHDPSearchURL);

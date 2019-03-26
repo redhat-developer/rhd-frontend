@@ -6,60 +6,45 @@ draft: true
 tags: ["component"]
 weight: 1
 scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-svg-core/index.es.js","js/@fortawesome/pro-solid-svg-icons/index.es.js",
-"js/@rhd/rhdp-search/rhdp-search-app.js","js/@rhd/rhdp-search/rhdp-search-box.js","js/@rhd/rhdp-search/rhdp-search-filter-group.js",
-"js/@rhd/rhdp-search/rhdp-search-filter-item.js","js/@rhd/rhdp-search/rhdp-search-filters.js","js/@rhd/rhdp-search/rhdp-search-onebox.js",
-"js/@rhd/rhdp-search/rhdp-search-query.js","js/@rhd/rhdp-search/rhdp-search-result-count.js","js/@rhd/rhdp-search/rhdp-search-result.js","js/@rhd/rhdp-search/rhdp-search-results.js", "js/@rhd/rhdp-search/rhdp-search-sort-page.js","js/@rhd/rhdp-search/rhdp-search-url.js",
-"js/@rhd/rhdp-search/rhdp-search-modal-filters.js","js/@rhd/rhdp-search/rhdp-search-active-filters.js",
-"js/@rhd/rhdp-search/rhdp-search-filter-active-item.js", "js/@patternfly/pfe-datetime/pfe-datetime.min.js"]
+"js/@rhd/dp-search/dp-search-app.js","js/@rhd/dp-search/dp-search-box.js","js/@rhd/dp-search/dp-search-filter-group.js",
+"js/@rhd/dp-search/dp-search-filter-item.js","js/@rhd/dp-search/dp-search-filters.js","js/@rhd/dp-search/dp-search-onebox.js",
+"js/@rhd/dp-search/dp-search-query.js","js/@rhd/dp-search/dp-search-result-count.js","js/@rhd/dp-search/dp-search-result.js","js/@rhd/dp-search/dp-search-results.js", "js/@rhd/dp-search/dp-search-sort-page.js","js/@rhd/dp-search/dp-search-url.js",
+"js/@rhd/dp-search/dp-search-modal-filters.js","js/@rhd/dp-search/dp-search-active-filters.js",
+"js/@rhd/dp-search/dp-search-filter-active-item.js", "js/@patternfly/pfe-datetime/pfe-datetime.min.js"]
 ---
 
-{{< code >}}<rhdp-search-app url="https://dcp2.jboss.org/v2/rest/search/developer_materials">
-<rhdp-search-box slot="query"></rhdp-search-box>
-<rhdp-search-filters title="Filter By" slot="filters">
-    <rhdp-search-filter-group name="CONTENT TYPE" name="type">
-        <rhdp-search-filter-item group="type" key="webpage" value="webpage"  name="Web Page">Web Page</rhdp-search-filter-item>
-        <rhdp-search-filter-item group="type" key="product" value="product"  name="Product">Product</rhdp-search-filter-item>
-        <rhdp-search-filter-item group="type" key="learning_path" value="learning_path" name="Learning Path">Learning Path</rhdp-search-filter-item>
-        <rhdp-search-filter-item group="type" key="article" value="article"  name="Article">Article</rhdp-search-filter-item>
-        <rhdp-search-filter-item group="type" key="book" value="book" name="Book">Book</rhdp-search-filter-item>
-        <rhdp-search-filter-item group="type" key="topic" value="topic" name="Topic">Topic</rhdp-search-filter-item>
-        <rhdp-search-filter-item group="type" key="video" value="video" name="Video">Video</rhdp-search-filter-item>
-        <rhdp-search-filter-item group="type" key="apidocs" value="rht_website,rht_apidocs" name="APIs and Docs">APIs and Docs</rhdp-search-filter-item>
-        <!-- <rhdp-search-filter-item group="type" key="apidocs" value="apidocs" type="rht_website,rht_apidocs" name="APIs and Docs">APIs and Docs</rhdp-search-filter-item>
-        <rhdp-search-filter-item group="type" key="archetype" value="jbossdeveloper_archetype" type="jbossdeveloper_archetype" name="Archetype">Archetype</rhdp-search-filter-item>
-        <rhdp-search-filter-item group="type" key="article" value="article,solution" type="rht_knowledgebase_article,rht_knowledgebase_solution" name="Article">Article</rhdp-search-filter-item>
-        <rhdp-search-filter-item group="type" key="blogpost" value="blogpost" type="jbossorg_blog" name="Blog Posts">Blog Posts</rhdp-search-filter-item>
-        <rhdp-search-filter-item group="type" key="book" value="jbossdeveloper_book" type="jbossdeveloper_book" name="Book">Book</rhdp-search-filter-item>
-        <rhdp-search-filter-item slot="secondary" group="type" key="bom" value="jbossdeveloper_bom" type="jbossdeveloper_bom" name="BOM">BOM</rhdp-search-filter-item>
-        <rhdp-search-filter-item slot="secondary" group="type" key="cheatsheet" value="cheatsheet" type="jbossdeveloper_cheatsheet" name="Cheat Sheet">Cheat Sheet</rhdp-search-filter-item>
-        <rhdp-search-filter-item slot="secondary" group="type" key="demo" value="demo" type="jbossdeveloper_demo" name="Demo">Demo</rhdp-search-filter-item>
-        <rhdp-search-filter-item slot="secondary" group="type" key="event" value="jbossdeveloper_event" type="jbossdeveloper_event" name="Event">Event</rhdp-search-filter-item>
-        <rhdp-search-filter-item slot="secondary" group="type" key="forum" value="jbossorg_sbs_forum" type="jbossorg_sbs_forum" name="Forum">Forum</rhdp-search-filter-item>
-        <rhdp-search-filter-item slot="secondary" group="type" key="get-started" value="jbossdeveloper_example" type="jbossdeveloper_example" name="Get Started">Get Started</rhdp-search-filter-item>
-        <rhdp-search-filter-item slot="secondary" group="type" key="quickstart" value="quickstart" type="jbossdeveloper_quickstart" name="Quickstart">Quickstart</rhdp-search-filter-item>
-        <rhdp-search-filter-item slot="secondary" group="type" key="stackoverflow" value="stackoverflow_question" type="stackoverflow_question" name="Stack Overflow">Stack Overflow</rhdp-search-filter-item>
-        <rhdp-search-filter-item slot="secondary" group="type" key="video" value="video" type="jbossdeveloper_vimeo,jbossdeveloper_youtube" name="Video">Video</rhdp-search-filter-item> -->
-        
-    </rhdp-search-filter-group>
-    <rhdp-search-filter-group name="PRODUCT" name="project">
-        <rhdp-search-filter-item name=".NET Runtime for Red Hat Enterprise Linux" value="dotnet" class="filter-item-dotnet" key="dotnet" group="project">.NET Runtime for Red Hat Enterprise Linux</rhdp-search-filter-item>
-    </rhdp-search-filter-group>
-    <rhdp-search-filter-group name="TOPIC" key="tag"></rhdp-search-filter-group>
-</rhdp-search-filters>
-<rhdp-search-active-filters title="Active Filters:">
-    <rhdp-search-filter-active-item group="type" key="webpage" value="webpage"  name="Web Page">Web Page</rhdp-search-filter-active-item>
-        <rhdp-search-filter-active-item group="type" key="product" value="product"  name="Product">Product</rhdp-search-filter-active-item>
-        <rhdp-search-filter-active-item group="type" key="learning_path" value="learning_path" name="Learning Path">Learning Path</rhdp-search-filter-active-item>
-        <rhdp-search-filter-active-item group="type" key="article" value="article"  name="Article">Article</rhdp-search-filter-active-item>
-        <rhdp-search-filter-active-item group="type" key="book" value="book" name="Book">Book</rhdp-search-filter-active-item>
-        <rhdp-search-filter-active-item group="type" key="topic" value="topic" name="Topic">Topic</rhdp-search-filter-active-item>
-        <rhdp-search-filter-active-item group="type" key="video" value="video" name="Video">Video</rhdp-search-filter-active-item>
-        <rhdp-search-filter-active-item group="type" key="apidocs" value="rht_website,rht_apidocs" name="APIs and Docs">APIs and Docs</rhdp-search-filter-active-item>
-</rhdp-search-active-filters>
-<rhdp-search-result-count></rhdp-search-result-count>
-<rhdp-search-sort-page></rhdp-search-sort-page>
-<rhdp-search-onebox url="../../json/onebox.json"></rhdp-search-onebox>
-<rhdp-search-results></rhdp-search-results>
-<rhdp-search-query url="https://api.developers.stage.redhat.com/search/"></rhdp-search-query>
-</rhdp-search-app>
+{{< code >}}<dp-search-app url="https://dcp2.jboss.org/v2/rest/search/developer_materials">
+<dp-search-box slot="query"></dp-search-box>
+<dp-search-filters title="Filter By" slot="filters">
+    <dp-search-filter-group name="CONTENT TYPE" name="type">
+        <dp-search-filter-item group="type" key="webpage" value="webpage"  name="Web Page">Web Page</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="product" value="product"  name="Product">Product</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="learning_path" value="learning_path" name="Learning Path">Learning Path</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="article" value="article"  name="Article">Article</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="book" value="book" name="Book">Book</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="topic" value="topic" name="Topic">Topic</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="video" value="video" name="Video">Video</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="apidocs" value="rht_website,rht_apidocs" name="APIs and Docs">APIs and Docs</dp-search-filter-item>
+    </dp-search-filter-group>
+    <dp-search-filter-group name="PRODUCT" name="project">
+        <dp-search-filter-item name=".NET Runtime for Red Hat Enterprise Linux" value="dotnet" class="filter-item-dotnet" key="dotnet" group="project">.NET Runtime for Red Hat Enterprise Linux</dp-search-filter-item>
+    </dp-search-filter-group>
+    <dp-search-filter-group name="TOPIC" key="tag"></dp-search-filter-group>
+</dp-search-filters>
+<dp-search-active-filters title="Active Filters:">
+    <dp-search-filter-active-item group="type" key="webpage" value="webpage"  name="Web Page">Web Page</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="product" value="product"  name="Product">Product</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="learning_path" value="learning_path" name="Learning Path">Learning Path</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="article" value="article"  name="Article">Article</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="book" value="book" name="Book">Book</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="topic" value="topic" name="Topic">Topic</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="video" value="video" name="Video">Video</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="apidocs" value="rht_website,rht_apidocs" name="APIs and Docs">APIs and Docs</dp-search-filter-active-item>
+</dp-search-active-filters>
+<dp-search-result-count></dp-search-result-count>
+<dp-search-sort-page></dp-search-sort-page>
+<dp-search-onebox url="../../json/onebox.json"></dp-search-onebox>
+<dp-search-results></dp-search-results>
+<dp-search-query url="https://api.developers.stage.redhat.com/search/"></dp-search-query>
+</dp-search-app>
 <a href="#top" id="scroll-to-top"></a>{{< /code >}}
