@@ -35,7 +35,7 @@ export default class DPSearchFilters extends PFElement {
                 color: #333; 
                 width: 100%;
                 }
-            rhdp-search-sort-page { display: none; }
+            dp-search-sort-page { display: none; }
             .groups {
                 background-color: #f9f9f9;
                 padding-bottom: 30px;
@@ -91,7 +91,7 @@ export default class DPSearchFilters extends PFElement {
                 .split { flex: 1 0 auto; }
                 .split.right { text-align: right; }
 
-                rhdp-search-sort-page { display: inline-block; margin: 0;}
+                dp-search-sort-page { display: inline-block; margin: 0;}
 
                 .control {
                     display: none;

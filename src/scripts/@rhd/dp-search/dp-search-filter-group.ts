@@ -155,7 +155,7 @@ export default class DPSearchFilterGroup extends PFElement {
             }            
         });
 
-        let slotItems = this.querySelectorAll('rhdp-search-filter-item[slot]').length;
+        let slotItems = this.querySelectorAll('dp-search-filter-item[slot]').length;
         if (slotItems === 0) {
             this.shadowRoot.querySelector('.more').setAttribute('data-hide','');
         }
