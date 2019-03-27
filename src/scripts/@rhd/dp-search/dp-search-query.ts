@@ -75,6 +75,7 @@ export default class DPSearchQuery extends PFElement {
             detail: {
                 term: this.term,
                 filters: this.activeFilters,
+                facets: this.results.facet_counts || {},
                 sort: this.sort,
                 limit: this.limit,
                 from: this.from,

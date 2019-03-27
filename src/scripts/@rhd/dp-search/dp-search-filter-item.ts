@@ -197,6 +197,7 @@ export default class DPSearchFilterItem extends PFElement {
         this._clearFilters = this._clearFilters.bind(this);
         this._checkChange = this._checkChange.bind(this);
         this._updateFacet = this._updateFacet.bind(this);
+        this._updateName = this._updateName.bind(this);
     }
 
     
@@ -209,6 +210,7 @@ export default class DPSearchFilterItem extends PFElement {
         top.addEventListener('filter-item-change', this._checkChange);
         top.addEventListener('params-ready', this._checkParams);
         top.addEventListener('clear-filters', this._clearFilters);
+        top.addEventListener('search-complete', this._updateName)
     }
 
     static get observedAttributes() { 
@@ -217,6 +219,23 @@ export default class DPSearchFilterItem extends PFElement {
 
     attributeChangedCallback(name, oldVal, newVal) {
         this[name] = newVal;
+    }
+
+    _updateName(e) {
+        if (e.detail && e.detail.facets && e.detail.facets.facet_fields) {
+            let facets = e.detail.facets.facet_fields;
+            if (facets[this.group] && facets[this.group].indexOf(this.value[0]) >= 0) {
+                if (this.name.indexOf('(') > 0) {
+                    this.name = this.name.replace(/\([0-9]+\)/, "("+facets[this.group][facets[this.group].indexOf(this.value[0])+1]+")");
+                } else {
+                    this.name = this.name+" ("+facets[this.group][facets[this.group].indexOf(this.value[0])+1]+")";
+                }
+            } else {
+                this.name = this.name.replace(/\([0-9]+\)/,'');
+            }
+        } else {
+            this.name = this.name.replace(/\([0-9]+\)/,'');
+        }
     }
 
     _updateFacet(e) {
