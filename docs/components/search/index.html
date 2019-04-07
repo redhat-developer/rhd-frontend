@@ -191,29 +191,121 @@ Search – RHD Front-end Code and Documentation
 &lt;dp-search-box slot=&#34;query&#34;&gt;&lt;/dp-search-box&gt;
 &lt;dp-search-filters title=&#34;Filter By&#34; slot=&#34;filters&#34;&gt;
     &lt;dp-search-filter-group name=&#34;CONTENT TYPE&#34; name=&#34;type&#34;&gt;
-        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;webpage&#34; value=&#34;webpage&#34;  name=&#34;Web Page&#34;&gt;Web Page&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;product&#34; value=&#34;product&#34;  name=&#34;Product&#34;&gt;Product&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;learning_path&#34; value=&#34;learning_path&#34; name=&#34;Learning Path&#34;&gt;Learning Path&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;article&#34; value=&#34;article&#34;  name=&#34;Article&#34;&gt;Article&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;book&#34; value=&#34;book&#34; name=&#34;Book&#34;&gt;Book&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;topic&#34; value=&#34;topic&#34; name=&#34;Topic&#34;&gt;Topic&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;video&#34; value=&#34;video&#34; name=&#34;Video&#34;&gt;Video&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;apidocs&#34; value=&#34;rht_website,rht_apidocs&#34; name=&#34;APIs and Docs&#34;&gt;APIs and Docs&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;article&#34; value=&#34;article&#34; name=&#34;Article&#34;&gt;Article&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;webpage&#34; value=&#34;webpage&#34; name=&#34;webpage&#34;&gt;webpage&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;video_resource&#34; value=&#34;video_resource&#34; name=&#34;video_resource&#34;&gt;video_resource&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;page&#34; value=&#34;page&#34; name=&#34;page&#34;&gt;page&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;product&#34; value=&#34;product&#34; name=&#34;product&#34;&gt;product&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;coding_resource&#34; value=&#34;coding_resource&#34; name=&#34;coding_resource&#34;&gt;coding_resource&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;books&#34; value=&#34;books&#34; name=&#34;books&#34;&gt;books&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;assembly_page&#34; value=&#34;assembly_page&#34; name=&#34;assembly_page&#34;&gt;assembly_page&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;topic_page&#34; value=&#34;topic_page&#34; name=&#34;topic_page&#34;&gt;topic_page&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;promotion_card&#34; value=&#34;promotion_card&#34; name=&#34;promotion_card&#34;&gt;promotion_card&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;cheat_sheet&#34; value=&#34;cheat_sheet&#34; name=&#34;cheat_sheet&#34;&gt;cheat_sheet&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;promotion_page&#34; value=&#34;promotion_page&#34; name=&#34;promotion_page&#34;&gt;promotion_page&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;katacoda_individual_lesson&#34; value=&#34;katacoda_individual_lesson&#34; name=&#34;katacoda_individual_lesson&#34;&gt;katacoda_individual_lesson&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;rhd_microsite&#34; value=&#34;rhd_microsite&#34; name=&#34;rhd_microsite&#34;&gt;rhd_microsite&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;author&#34; value=&#34;author&#34; name=&#34;author&#34;&gt;author&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;learning_path&#34; value=&#34;learning_path&#34; name=&#34;learning_path&#34;&gt;learning_path&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;katacoda_course&#34; value=&#34;katacoda_course&#34; name=&#34;katacoda_course&#34;&gt;katacoda_course&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;landing_page_single_offer&#34; value=&#34;landing_page_single_offer&#34; name=&#34;SOLP&#34;&gt;SOLP&lt;/dp-search-filter-item&gt;
     &lt;/dp-search-filter-group&gt;
-    &lt;dp-search-filter-group name=&#34;PRODUCT&#34; name=&#34;project&#34;&gt;
-        &lt;dp-search-filter-item name=&#34;.NET Runtime for Red Hat Enterprise Linux&#34; value=&#34;dotnet&#34; class=&#34;filter-item-dotnet&#34; key=&#34;dotnet&#34; group=&#34;project&#34;&gt;.NET Runtime for Red Hat Enterprise Linux&lt;/dp-search-filter-item&gt;
+    &lt;dp-search-filter-group name=&#34;PRODUCT&#34; name=&#34;product&#34;&gt;
+        &lt;dp-search-filter-item group=&#34;rhd_taxonomy_product&#34; facet=&#34;rhd_taxonomy_product&#34; key=&#34;application&#34; value=&#34;application&#34; name=&#34;application&#34;&gt;application&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;rhd_taxonomy_product&#34; facet=&#34;rhd_taxonomy_product&#34; key=&#34;openshift&#34; value=&#34;openshift&#34; name=&#34;openshift&#34;&gt;openshift&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;rhd_taxonomy_product&#34; facet=&#34;rhd_taxonomy_product&#34; key=&#34;codeready&#34; value=&#34;codeready&#34; name=&#34;codeready&#34;&gt;codeready&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;rhd_taxonomy_product&#34; facet=&#34;rhd_taxonomy_product&#34; key=&#34;data&#34; value=&#34;data&#34; name=&#34;data&#34;&gt;data&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;rhd_taxonomy_product&#34; facet=&#34;rhd_taxonomy_product&#34; key=&#34;jboss&#34; value=&#34;jboss&#34; name=&#34;jboss&#34;&gt;jboss&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;rhd_taxonomy_product&#34; facet=&#34;rhd_taxonomy_product&#34; key=&#34;manager&#34; value=&#34;manager&#34; name=&#34;manager&#34;&gt;manager&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;rhd_taxonomy_product&#34; facet=&#34;rhd_taxonomy_product&#34; key=&#34;collections&#34; value=&#34;collections&#34; name=&#34;collections&#34;&gt;collections&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;rhd_taxonomy_product&#34; facet=&#34;rhd_taxonomy_product&#34; key=&#34;development&#34; value=&#34;development&#34; name=&#34;development&#34;&gt;development&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;rhd_taxonomy_product&#34; facet=&#34;rhd_taxonomy_product&#34; key=&#34;kit&#34; value=&#34;kit&#34; name=&#34;kit&#34;&gt;kit&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;rhd_taxonomy_product&#34; facet=&#34;rhd_taxonomy_product&#34; key=&#34;platform&#34; value=&#34;platform&#34; name=&#34;platform&#34;&gt;platform&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;rhd_taxonomy_product&#34; facet=&#34;rhd_taxonomy_product&#34; key=&#34;rhel&#34; value=&#34;rhel&#34; name=&#34;rhel&#34;&gt;rhel&lt;/dp-search-filter-item&gt;
     &lt;/dp-search-filter-group&gt;
-    &lt;dp-search-filter-group name=&#34;TOPIC&#34; key=&#34;tag&#34;&gt;&lt;/dp-search-filter-group&gt;
+    &lt;dp-search-filter-group name=&#34;PRODUCT LINE&#34; key=&#34;product_line&#34;&gt;
+        &lt;dp-search-filter-item group=&#34;product_line&#34; facet=&#34;rhd_taxonomy_product_line&#34; key=&#34;middleware&#34; value=&#34;middleware&#34; name=&#34;middleware&#34;&gt;middleware&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;product_line&#34; facet=&#34;rhd_taxonomy_product_line&#34; key=&#34;codeready&#34; value=&#34;codeready&#34; name=&#34;codeready&#34;&gt;codeready&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;product_line&#34; facet=&#34;rhd_taxonomy_product_line&#34; key=&#34;integration&#34; value=&#34;integration&#34; name=&#34;integration&#34;&gt;integration&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;product_line&#34; facet=&#34;rhd_taxonomy_product_line&#34; key=&#34;rhel&#34; value=&#34;rhel&#34; name=&#34;rhel&#34;&gt;rhel&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;product_line&#34; facet=&#34;rhd_taxonomy_product_line&#34; key=&#34;application&#34; value=&#34;application&#34; name=&#34;application&#34;&gt;application&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;product_line&#34; facet=&#34;rhd_taxonomy_product_line&#34; key=&#34;runtimes&#34; value=&#34;runtimes&#34; name=&#34;runtimes&#34;&gt;runtimes&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;product_line&#34; facet=&#34;rhd_taxonomy_product_line&#34; key=&#34;automation&#34; value=&#34;automation&#34; name=&#34;automation&#34;&gt;automation&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;product_line&#34; facet=&#34;rhd_taxonomy_product_line&#34; key=&#34;process&#34; value=&#34;process&#34; name=&#34;process&#34;&gt;process&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;product_line&#34; facet=&#34;rhd_taxonomy_product_line&#34; key=&#34;openshift&#34; value=&#34;openshift&#34; name=&#34;openshift&#34;&gt;openshift&lt;/dp-search-filter-item&gt;
+    &lt;/dp-search-filter-group&gt;
+    &lt;dp-search-filter-group name=&#34;TOPIC&#34; key=&#34;topic&#34;&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;linux&#34; value=&#34;linux&#34; name=&#34;Linux&#34;&gt;Linux&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;microservices&#34; value=&#34;microservices&#34; name=&#34;Microservices&#34;&gt;Microservices&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;java&#34; value=&#34;java&#34; name=&#34;Java&#34;&gt;Java&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;containers&#34; value=&#34;containers&#34; name=&#34;Containers&#34;&gt;Containers&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;kubernetes&#34; value=&#34;kubernetes&#34; name=&#34;Kubernetes&#34;&gt;Kubernetes&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;c&#34; value=&#34;c&#34; name=&#34;C&#34;&gt;C&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;devops&#34; value=&#34;devops&#34; name=&#34;DevOps&#34;&gt;DevOps&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;security&#34; value=&#34;security&#34; name=&#34;security&#34;&gt;security&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;boot&#34; value=&#34;boot&#34; name=&#34;boot&#34;&gt;boot&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;spring&#34; value=&#34;spring&#34; name=&#34;spring&#34;&gt;spring&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;mesh&#34; value=&#34;mesh&#34; name=&#34;mesh&#34;&gt;mesh&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;serverless&#34; value=&#34;serverless&#34; name=&#34;serverless&#34;&gt;serverless&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;service&#34; value=&#34;service&#34; name=&#34;service&#34;&gt;service&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;developer&#34; value=&#34;developer&#34; name=&#34;developer&#34;&gt;developer&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;topic&#34; facet=&#34;rhd_taxonomy_topic&#34; key=&#34;tools&#34; value=&#34;tools&#34; name=&#34;tools&#34;&gt;tools&lt;/dp-search-filter-item&gt;
+    &lt;/dp-search-filter-group&gt;
 &lt;/dp-search-filters&gt;
 &lt;dp-search-active-filters title=&#34;Active Filters:&#34;&gt;
-    &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;webpage&#34; value=&#34;webpage&#34;  name=&#34;Web Page&#34;&gt;Web Page&lt;/dp-search-filter-active-item&gt;
-        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;product&#34; value=&#34;product&#34;  name=&#34;Product&#34;&gt;Product&lt;/dp-search-filter-active-item&gt;
-        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;learning_path&#34; value=&#34;learning_path&#34; name=&#34;Learning Path&#34;&gt;Learning Path&lt;/dp-search-filter-active-item&gt;
-        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;article&#34; value=&#34;article&#34;  name=&#34;Article&#34;&gt;Article&lt;/dp-search-filter-active-item&gt;
-        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;book&#34; value=&#34;book&#34; name=&#34;Book&#34;&gt;Book&lt;/dp-search-filter-active-item&gt;
-        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;topic&#34; value=&#34;topic&#34; name=&#34;Topic&#34;&gt;Topic&lt;/dp-search-filter-active-item&gt;
-        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;video&#34; value=&#34;video&#34; name=&#34;Video&#34;&gt;Video&lt;/dp-search-filter-active-item&gt;
-        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;apidocs&#34; value=&#34;rht_website,rht_apidocs&#34; name=&#34;APIs and Docs&#34;&gt;APIs and Docs&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;article&#34; value=&#34;article&#34; name=&#34;Article&#34;&gt;Article&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;webpage&#34; value=&#34;webpage&#34; name=&#34;webpage&#34;&gt;webpage&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;video_resource&#34; value=&#34;video_resource&#34; name=&#34;video_resource&#34;&gt;video_resource&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;page&#34; value=&#34;page&#34; name=&#34;page&#34;&gt;page&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;product&#34; value=&#34;product&#34; name=&#34;product&#34;&gt;product&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;coding_resource&#34; value=&#34;coding_resource&#34; name=&#34;coding_resource&#34;&gt;coding_resource&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;books&#34; value=&#34;books&#34; name=&#34;books&#34;&gt;books&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;assembly_page&#34; value=&#34;assembly_page&#34; name=&#34;assembly_page&#34;&gt;assembly_page&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;topic_page&#34; value=&#34;topic_page&#34; name=&#34;topic_page&#34;&gt;topic_page&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;promotion_card&#34; value=&#34;promotion_card&#34; name=&#34;promotion_card&#34;&gt;promotion_card&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;cheat_sheet&#34; value=&#34;cheat_sheet&#34; name=&#34;cheat_sheet&#34;&gt;cheat_sheet&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;promotion_page&#34; value=&#34;promotion_page&#34; name=&#34;promotion_page&#34;&gt;promotion_page&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;katacoda_individual_lesson&#34; value=&#34;katacoda_individual_lesson&#34; name=&#34;katacoda_individual_lesson&#34;&gt;katacoda_individual_lesson&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;rhd_microsite&#34; value=&#34;rhd_microsite&#34; name=&#34;rhd_microsite&#34;&gt;rhd_microsite&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;author&#34; value=&#34;author&#34; name=&#34;author&#34;&gt;author&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;learning_path&#34; value=&#34;learning_path&#34; name=&#34;learning_path&#34;&gt;learning_path&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;katacoda_course&#34; value=&#34;katacoda_course&#34; name=&#34;katacoda_course&#34;&gt;katacoda_course&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;type&#34; key=&#34;landing_page_single_offer&#34; value=&#34;landing_page_single_offer&#34; name=&#34;SOLP&#34;&gt;SOLP&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;rhd_taxonomy_product&#34; key=&#34;application&#34; value=&#34;application&#34; name=&#34;application&#34;&gt;application&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;rhd_taxonomy_product&#34; key=&#34;openshift&#34; value=&#34;openshift&#34; name=&#34;openshift&#34;&gt;openshift&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;rhd_taxonomy_product&#34; key=&#34;codeready&#34; value=&#34;codeready&#34; name=&#34;codeready&#34;&gt;codeready&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;rhd_taxonomy_product&#34; key=&#34;data&#34; value=&#34;data&#34; name=&#34;data&#34;&gt;data&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;rhd_taxonomy_product&#34; key=&#34;jboss&#34; value=&#34;jboss&#34; name=&#34;jboss&#34;&gt;jboss&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;rhd_taxonomy_product&#34; key=&#34;manager&#34; value=&#34;manager&#34; name=&#34;manager&#34;&gt;manager&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;rhd_taxonomy_product&#34; key=&#34;collections&#34; value=&#34;collections&#34; name=&#34;collections&#34;&gt;collections&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;rhd_taxonomy_product&#34; key=&#34;development&#34; value=&#34;development&#34; name=&#34;development&#34;&gt;development&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;rhd_taxonomy_product&#34; key=&#34;kit&#34; value=&#34;kit&#34; name=&#34;kit&#34;&gt;kit&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;rhd_taxonomy_product&#34; key=&#34;platform&#34; value=&#34;platform&#34; name=&#34;platform&#34;&gt;platform&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;rhd_taxonomy_product&#34; key=&#34;rhel&#34; value=&#34;rhel&#34; name=&#34;rhel&#34;&gt;rhel&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;product_line&#34; key=&#34;middleware&#34; value=&#34;middleware&#34; name=&#34;middleware&#34;&gt;middleware&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;product_line&#34; key=&#34;codeready&#34; value=&#34;codeready&#34; name=&#34;codeready&#34;&gt;codeready&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;product_line&#34; key=&#34;integration&#34; value=&#34;integration&#34; name=&#34;integration&#34;&gt;integration&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;product_line&#34; key=&#34;rhel&#34; value=&#34;rhel&#34; name=&#34;rhel&#34;&gt;rhel&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;product_line&#34; key=&#34;application&#34; value=&#34;application&#34; name=&#34;application&#34;&gt;application&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;product_line&#34; key=&#34;runtimes&#34; value=&#34;runtimes&#34; name=&#34;runtimes&#34;&gt;runtimes&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;product_line&#34; key=&#34;automation&#34; value=&#34;automation&#34; name=&#34;automation&#34;&gt;automation&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;product_line&#34; key=&#34;process&#34; value=&#34;process&#34; name=&#34;process&#34;&gt;process&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;product_line&#34; key=&#34;openshift&#34; value=&#34;openshift&#34; name=&#34;openshift&#34;&gt;openshift&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;linux&#34; value=&#34;linux&#34; name=&#34;Linux&#34;&gt;Linux&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;microservices&#34; value=&#34;microservices&#34; name=&#34;Microservices&#34;&gt;Microservices&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;java&#34; value=&#34;java&#34; name=&#34;Java&#34;&gt;Java&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;containers&#34; value=&#34;containers&#34; name=&#34;Containers&#34;&gt;Containers&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;kubernetes&#34; value=&#34;kubernetes&#34; name=&#34;Kubernetes&#34;&gt;Kubernetes&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;c&#34; value=&#34;c&#34; name=&#34;C&#34;&gt;C&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;devops&#34; value=&#34;devops&#34; name=&#34;DevOps&#34;&gt;DevOps&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;security&#34; value=&#34;security&#34; name=&#34;security&#34;&gt;security&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;boot&#34; value=&#34;boot&#34; name=&#34;boot&#34;&gt;boot&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;spring&#34; value=&#34;spring&#34; name=&#34;spring&#34;&gt;spring&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;mesh&#34; value=&#34;mesh&#34; name=&#34;mesh&#34;&gt;mesh&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;serverless&#34; value=&#34;serverless&#34; name=&#34;serverless&#34;&gt;serverless&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;service&#34; value=&#34;service&#34; name=&#34;service&#34;&gt;service&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;developer&#34; value=&#34;developer&#34; name=&#34;developer&#34;&gt;developer&lt;/dp-search-filter-active-item&gt;
+        &lt;dp-search-filter-active-item group=&#34;topic&#34; key=&#34;tools&#34; value=&#34;tools&#34; name=&#34;tools&#34;&gt;tools&lt;/dp-search-filter-active-item&gt;
 &lt;/dp-search-active-filters&gt;
 &lt;dp-search-result-count&gt;&lt;/dp-search-result-count&gt;
 &lt;dp-search-sort-page&gt;&lt;/dp-search-sort-page&gt;
@@ -221,7 +313,8 @@ Search – RHD Front-end Code and Documentation
 &lt;dp-search-results&gt;&lt;/dp-search-results&gt;
 &lt;dp-search-query url=&#34;https://api.developers.stage.redhat.com/search/&#34;&gt;&lt;/dp-search-query&gt;
 &lt;/dp-search-app&gt;
-&lt;a href=&#34;#top&#34; id=&#34;scroll-to-top&#34;&gt;&lt;/a&gt;</code>
+&lt;a href=&#34;#top&#34; id=&#34;scroll-to-top&#34;&gt;&lt;/a&gt;
+</code>
 </pre>
 </div>
 <div class="code-sample">
@@ -229,29 +322,121 @@ Search – RHD Front-end Code and Documentation
 <dp-search-box slot="query"></dp-search-box>
 <dp-search-filters title="Filter By" slot="filters">
     <dp-search-filter-group name="CONTENT TYPE" name="type">
-        <dp-search-filter-item group="type" key="webpage" value="webpage"  name="Web Page">Web Page</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="product" value="product"  name="Product">Product</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="learning_path" value="learning_path" name="Learning Path">Learning Path</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="article" value="article"  name="Article">Article</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="book" value="book" name="Book">Book</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="topic" value="topic" name="Topic">Topic</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="video" value="video" name="Video">Video</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="apidocs" value="rht_website,rht_apidocs" name="APIs and Docs">APIs and Docs</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="article" value="article" name="Article">Article</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="webpage" value="webpage" name="webpage">webpage</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="video_resource" value="video_resource" name="video_resource">video_resource</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="page" value="page" name="page">page</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="product" value="product" name="product">product</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="coding_resource" value="coding_resource" name="coding_resource">coding_resource</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="books" value="books" name="books">books</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="assembly_page" value="assembly_page" name="assembly_page">assembly_page</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="topic_page" value="topic_page" name="topic_page">topic_page</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="promotion_card" value="promotion_card" name="promotion_card">promotion_card</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="cheat_sheet" value="cheat_sheet" name="cheat_sheet">cheat_sheet</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="promotion_page" value="promotion_page" name="promotion_page">promotion_page</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="katacoda_individual_lesson" value="katacoda_individual_lesson" name="katacoda_individual_lesson">katacoda_individual_lesson</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="rhd_microsite" value="rhd_microsite" name="rhd_microsite">rhd_microsite</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="author" value="author" name="author">author</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="learning_path" value="learning_path" name="learning_path">learning_path</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="katacoda_course" value="katacoda_course" name="katacoda_course">katacoda_course</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="landing_page_single_offer" value="landing_page_single_offer" name="SOLP">SOLP</dp-search-filter-item>
     </dp-search-filter-group>
-    <dp-search-filter-group name="PRODUCT" name="project">
-        <dp-search-filter-item name=".NET Runtime for Red Hat Enterprise Linux" value="dotnet" class="filter-item-dotnet" key="dotnet" group="project">.NET Runtime for Red Hat Enterprise Linux</dp-search-filter-item>
+    <dp-search-filter-group name="PRODUCT" name="product">
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="application" value="application" name="application">application</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="openshift" value="openshift" name="openshift">openshift</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="codeready" value="codeready" name="codeready">codeready</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="data" value="data" name="data">data</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="jboss" value="jboss" name="jboss">jboss</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="manager" value="manager" name="manager">manager</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="collections" value="collections" name="collections">collections</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="development" value="development" name="development">development</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="kit" value="kit" name="kit">kit</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="platform" value="platform" name="platform">platform</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="rhel" value="rhel" name="rhel">rhel</dp-search-filter-item>
     </dp-search-filter-group>
-    <dp-search-filter-group name="TOPIC" key="tag"></dp-search-filter-group>
+    <dp-search-filter-group name="PRODUCT LINE" key="product_line">
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="middleware" value="middleware" name="middleware">middleware</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="codeready" value="codeready" name="codeready">codeready</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="integration" value="integration" name="integration">integration</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="rhel" value="rhel" name="rhel">rhel</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="application" value="application" name="application">application</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="runtimes" value="runtimes" name="runtimes">runtimes</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="automation" value="automation" name="automation">automation</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="process" value="process" name="process">process</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="openshift" value="openshift" name="openshift">openshift</dp-search-filter-item>
+    </dp-search-filter-group>
+    <dp-search-filter-group name="TOPIC" key="topic">
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="linux" value="linux" name="Linux">Linux</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="microservices" value="microservices" name="Microservices">Microservices</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="java" value="java" name="Java">Java</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="containers" value="containers" name="Containers">Containers</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="kubernetes" value="kubernetes" name="Kubernetes">Kubernetes</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="c" value="c" name="C">C</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="devops" value="devops" name="DevOps">DevOps</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="security" value="security" name="security">security</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="boot" value="boot" name="boot">boot</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="spring" value="spring" name="spring">spring</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="mesh" value="mesh" name="mesh">mesh</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="serverless" value="serverless" name="serverless">serverless</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="service" value="service" name="service">service</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="developer" value="developer" name="developer">developer</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="tools" value="tools" name="tools">tools</dp-search-filter-item>
+    </dp-search-filter-group>
 </dp-search-filters>
 <dp-search-active-filters title="Active Filters:">
-    <dp-search-filter-active-item group="type" key="webpage" value="webpage"  name="Web Page">Web Page</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="product" value="product"  name="Product">Product</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="learning_path" value="learning_path" name="Learning Path">Learning Path</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="article" value="article"  name="Article">Article</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="book" value="book" name="Book">Book</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="topic" value="topic" name="Topic">Topic</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="video" value="video" name="Video">Video</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="apidocs" value="rht_website,rht_apidocs" name="APIs and Docs">APIs and Docs</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="article" value="article" name="Article">Article</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="webpage" value="webpage" name="webpage">webpage</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="video_resource" value="video_resource" name="video_resource">video_resource</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="page" value="page" name="page">page</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="product" value="product" name="product">product</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="coding_resource" value="coding_resource" name="coding_resource">coding_resource</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="books" value="books" name="books">books</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="assembly_page" value="assembly_page" name="assembly_page">assembly_page</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="topic_page" value="topic_page" name="topic_page">topic_page</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="promotion_card" value="promotion_card" name="promotion_card">promotion_card</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="cheat_sheet" value="cheat_sheet" name="cheat_sheet">cheat_sheet</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="promotion_page" value="promotion_page" name="promotion_page">promotion_page</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="katacoda_individual_lesson" value="katacoda_individual_lesson" name="katacoda_individual_lesson">katacoda_individual_lesson</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="rhd_microsite" value="rhd_microsite" name="rhd_microsite">rhd_microsite</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="author" value="author" name="author">author</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="learning_path" value="learning_path" name="learning_path">learning_path</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="katacoda_course" value="katacoda_course" name="katacoda_course">katacoda_course</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="landing_page_single_offer" value="landing_page_single_offer" name="SOLP">SOLP</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="application" value="application" name="application">application</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="openshift" value="openshift" name="openshift">openshift</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="codeready" value="codeready" name="codeready">codeready</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="data" value="data" name="data">data</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="jboss" value="jboss" name="jboss">jboss</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="manager" value="manager" name="manager">manager</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="collections" value="collections" name="collections">collections</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="development" value="development" name="development">development</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="kit" value="kit" name="kit">kit</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="platform" value="platform" name="platform">platform</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="rhel" value="rhel" name="rhel">rhel</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="middleware" value="middleware" name="middleware">middleware</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="codeready" value="codeready" name="codeready">codeready</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="integration" value="integration" name="integration">integration</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="rhel" value="rhel" name="rhel">rhel</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="application" value="application" name="application">application</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="runtimes" value="runtimes" name="runtimes">runtimes</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="automation" value="automation" name="automation">automation</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="process" value="process" name="process">process</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="openshift" value="openshift" name="openshift">openshift</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="linux" value="linux" name="Linux">Linux</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="microservices" value="microservices" name="Microservices">Microservices</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="java" value="java" name="Java">Java</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="containers" value="containers" name="Containers">Containers</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="kubernetes" value="kubernetes" name="Kubernetes">Kubernetes</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="c" value="c" name="C">C</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="devops" value="devops" name="DevOps">DevOps</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="security" value="security" name="security">security</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="boot" value="boot" name="boot">boot</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="spring" value="spring" name="spring">spring</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="mesh" value="mesh" name="mesh">mesh</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="serverless" value="serverless" name="serverless">serverless</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="service" value="service" name="service">service</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="developer" value="developer" name="developer">developer</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="tools" value="tools" name="tools">tools</dp-search-filter-active-item>
 </dp-search-active-filters>
 <dp-search-result-count></dp-search-result-count>
 <dp-search-sort-page></dp-search-sort-page>
@@ -260,6 +445,7 @@ Search – RHD Front-end Code and Documentation
 <dp-search-query url="https://api.developers.stage.redhat.com/search/"></dp-search-query>
 </dp-search-app>
 <a href="#top" id="scroll-to-top"></a>
+
 </div>
 
 <!--
@@ -267,33 +453,125 @@ Search – RHD Front-end Code and Documentation
 <dp-search-box slot="query"></dp-search-box>
 <dp-search-filters title="Filter By" slot="filters">
     <dp-search-filter-group name="CONTENT TYPE" name="type">
-        <dp-search-filter-item group="type" key="webpage" value="webpage"  name="Web Page">Web Page</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="product" value="product"  name="Product">Product</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="learning_path" value="learning_path" name="Learning Path">Learning Path</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="article" value="article"  name="Article">Article</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="book" value="book" name="Book">Book</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="topic" value="topic" name="Topic">Topic</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="video" value="video" name="Video">Video</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="apidocs" value="rht_website,rht_apidocs" name="APIs and Docs">APIs and Docs</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="article" value="article" name="Article">Article</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="webpage" value="webpage" name="webpage">webpage</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="video_resource" value="video_resource" name="video_resource">video_resource</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="page" value="page" name="page">page</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="product" value="product" name="product">product</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="coding_resource" value="coding_resource" name="coding_resource">coding_resource</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="books" value="books" name="books">books</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="assembly_page" value="assembly_page" name="assembly_page">assembly_page</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="topic_page" value="topic_page" name="topic_page">topic_page</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="promotion_card" value="promotion_card" name="promotion_card">promotion_card</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="cheat_sheet" value="cheat_sheet" name="cheat_sheet">cheat_sheet</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="promotion_page" value="promotion_page" name="promotion_page">promotion_page</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="katacoda_individual_lesson" value="katacoda_individual_lesson" name="katacoda_individual_lesson">katacoda_individual_lesson</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="rhd_microsite" value="rhd_microsite" name="rhd_microsite">rhd_microsite</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="author" value="author" name="author">author</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="learning_path" value="learning_path" name="learning_path">learning_path</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="katacoda_course" value="katacoda_course" name="katacoda_course">katacoda_course</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="landing_page_single_offer" value="landing_page_single_offer" name="SOLP">SOLP</dp-search-filter-item>
     </dp-search-filter-group>
-    <dp-search-filter-group name="PRODUCT" name="project">
-        <dp-search-filter-item name=".NET Runtime for Red Hat Enterprise Linux" value="dotnet" class="filter-item-dotnet" key="dotnet" group="project">.NET Runtime for Red Hat Enterprise Linux</dp-search-filter-item>
+    <dp-search-filter-group name="PRODUCT" name="product">
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="application" value="application" name="application">application</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="openshift" value="openshift" name="openshift">openshift</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="codeready" value="codeready" name="codeready">codeready</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="data" value="data" name="data">data</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="jboss" value="jboss" name="jboss">jboss</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="manager" value="manager" name="manager">manager</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="collections" value="collections" name="collections">collections</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="development" value="development" name="development">development</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="kit" value="kit" name="kit">kit</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="platform" value="platform" name="platform">platform</dp-search-filter-item>
+        <dp-search-filter-item group="rhd_taxonomy_product" facet="rhd_taxonomy_product" key="rhel" value="rhel" name="rhel">rhel</dp-search-filter-item>
     </dp-search-filter-group>
-    <dp-search-filter-group name="TOPIC" key="tag"></dp-search-filter-group>
+    <dp-search-filter-group name="PRODUCT LINE" key="product_line">
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="middleware" value="middleware" name="middleware">middleware</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="codeready" value="codeready" name="codeready">codeready</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="integration" value="integration" name="integration">integration</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="rhel" value="rhel" name="rhel">rhel</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="application" value="application" name="application">application</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="runtimes" value="runtimes" name="runtimes">runtimes</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="automation" value="automation" name="automation">automation</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="process" value="process" name="process">process</dp-search-filter-item>
+        <dp-search-filter-item group="product_line" facet="rhd_taxonomy_product_line" key="openshift" value="openshift" name="openshift">openshift</dp-search-filter-item>
+    </dp-search-filter-group>
+    <dp-search-filter-group name="TOPIC" key="topic">
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="linux" value="linux" name="Linux">Linux</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="microservices" value="microservices" name="Microservices">Microservices</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="java" value="java" name="Java">Java</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="containers" value="containers" name="Containers">Containers</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="kubernetes" value="kubernetes" name="Kubernetes">Kubernetes</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="c" value="c" name="C">C</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="devops" value="devops" name="DevOps">DevOps</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="security" value="security" name="security">security</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="boot" value="boot" name="boot">boot</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="spring" value="spring" name="spring">spring</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="mesh" value="mesh" name="mesh">mesh</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="serverless" value="serverless" name="serverless">serverless</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="service" value="service" name="service">service</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="developer" value="developer" name="developer">developer</dp-search-filter-item>
+        <dp-search-filter-item group="topic" facet="rhd_taxonomy_topic" key="tools" value="tools" name="tools">tools</dp-search-filter-item>
+    </dp-search-filter-group>
 </dp-search-filters>
 <dp-search-active-filters title="Active Filters:">
-    <dp-search-filter-active-item group="type" key="webpage" value="webpage"  name="Web Page">Web Page</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="product" value="product"  name="Product">Product</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="learning_path" value="learning_path" name="Learning Path">Learning Path</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="article" value="article"  name="Article">Article</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="book" value="book" name="Book">Book</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="topic" value="topic" name="Topic">Topic</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="video" value="video" name="Video">Video</dp-search-filter-active-item>
-        <dp-search-filter-active-item group="type" key="apidocs" value="rht_website,rht_apidocs" name="APIs and Docs">APIs and Docs</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="article" value="article" name="Article">Article</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="webpage" value="webpage" name="webpage">webpage</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="video_resource" value="video_resource" name="video_resource">video_resource</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="page" value="page" name="page">page</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="product" value="product" name="product">product</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="coding_resource" value="coding_resource" name="coding_resource">coding_resource</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="books" value="books" name="books">books</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="assembly_page" value="assembly_page" name="assembly_page">assembly_page</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="topic_page" value="topic_page" name="topic_page">topic_page</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="promotion_card" value="promotion_card" name="promotion_card">promotion_card</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="cheat_sheet" value="cheat_sheet" name="cheat_sheet">cheat_sheet</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="promotion_page" value="promotion_page" name="promotion_page">promotion_page</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="katacoda_individual_lesson" value="katacoda_individual_lesson" name="katacoda_individual_lesson">katacoda_individual_lesson</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="rhd_microsite" value="rhd_microsite" name="rhd_microsite">rhd_microsite</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="author" value="author" name="author">author</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="learning_path" value="learning_path" name="learning_path">learning_path</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="katacoda_course" value="katacoda_course" name="katacoda_course">katacoda_course</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="type" key="landing_page_single_offer" value="landing_page_single_offer" name="SOLP">SOLP</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="application" value="application" name="application">application</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="openshift" value="openshift" name="openshift">openshift</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="codeready" value="codeready" name="codeready">codeready</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="data" value="data" name="data">data</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="jboss" value="jboss" name="jboss">jboss</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="manager" value="manager" name="manager">manager</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="collections" value="collections" name="collections">collections</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="development" value="development" name="development">development</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="kit" value="kit" name="kit">kit</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="platform" value="platform" name="platform">platform</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="rhd_taxonomy_product" key="rhel" value="rhel" name="rhel">rhel</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="middleware" value="middleware" name="middleware">middleware</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="codeready" value="codeready" name="codeready">codeready</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="integration" value="integration" name="integration">integration</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="rhel" value="rhel" name="rhel">rhel</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="application" value="application" name="application">application</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="runtimes" value="runtimes" name="runtimes">runtimes</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="automation" value="automation" name="automation">automation</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="process" value="process" name="process">process</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="product_line" key="openshift" value="openshift" name="openshift">openshift</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="linux" value="linux" name="Linux">Linux</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="microservices" value="microservices" name="Microservices">Microservices</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="java" value="java" name="Java">Java</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="containers" value="containers" name="Containers">Containers</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="kubernetes" value="kubernetes" name="Kubernetes">Kubernetes</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="c" value="c" name="C">C</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="devops" value="devops" name="DevOps">DevOps</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="security" value="security" name="security">security</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="boot" value="boot" name="boot">boot</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="spring" value="spring" name="spring">spring</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="mesh" value="mesh" name="mesh">mesh</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="serverless" value="serverless" name="serverless">serverless</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="service" value="service" name="service">service</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="developer" value="developer" name="developer">developer</dp-search-filter-active-item>
+        <dp-search-filter-active-item group="topic" key="tools" value="tools" name="tools">tools</dp-search-filter-active-item>
 </dp-search-active-filters>
 <dp-search-result-count></dp-search-result-count>
 <dp-search-sort-page></dp-search-sort-page>
-<dp-search-onebox url="../../json/onebox.json"></dp-search-onebox>
+<dp-search-onebox></dp-search-onebox>
 <dp-search-results></dp-search-results>
 <dp-search-query url="https://api.developers.stage.redhat.com/search/"></dp-search-query>
 </dp-search-app>

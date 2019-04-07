@@ -97,7 +97,7 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
     static get tag() { return 'dp-search-result'; }
 
     _result;
-    _url = ['',''];
+    _url;
     _title;
     _kind;
     _created;
@@ -106,7 +106,8 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
     _thumbnail;
 
     get url() {
-        return this._url;
+        const stage = window.location.href.indexOf('stage') >= 0 || window.location.href.indexOf('developers') < 0 ? '.stage' : '';
+        return !this.premium ? this._url : `https://broker${stage}.redhat.com/partner/drc/userMapping?redirect=${encodeURIComponent(this._url)}`;
     }
 
     set url(val) {

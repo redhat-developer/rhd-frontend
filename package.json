@@ -42,11 +42,9 @@
     "@patternfly/pfe-cta": "^1.0.0-prerelease.9",
     "@patternfly/pfe-datetime": "^1.0.0-prerelease.9",
     "@patternfly/pfe-layouts": "^1.0.0-prerelease.9",
-    "@patternfly/pfe-sass": "^1.0.0-prerelease.9",
+    "@patternfly/pfe-sass": "^1.0.0-prerelease.11",
     "@patternfly/pfe-tabs": "^1.0.0-prerelease.9",
-    "@patternfly/pfelement": "^1.0.0-prerelease.9",
-    "@rhelements/rh-datetime": "^1.0.0-prerelease.7",
-    "@rhelements/rhelement": "^1.0.0-prerelease.7",
+    "@patternfly/pfelement": "^1.0.0-prerelease.11",
     "npm": "^6.8.0"
   },
   "devDependencies": {

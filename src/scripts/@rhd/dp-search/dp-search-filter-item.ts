@@ -109,6 +109,7 @@ export default class DPSearchFilterItem extends PFElement {
     _value;
     _inline = false;
     _bounce = false;
+    _facet;
     _group;
 
     get name() {
@@ -132,6 +133,17 @@ export default class DPSearchFilterItem extends PFElement {
         this.className = `filter-item-${this._key}`;
         this.setAttribute('key', this._key);
     }
+
+    get facet() {
+        return this._facet ? this._facet : this.group;
+    }
+
+    set facet(val) {
+        if (this._facet === val) return;
+        this._facet = val;
+        this.setAttribute('facet', this._facet);
+    }
+
     get group() {
         return this._group;
     }
@@ -214,7 +226,7 @@ export default class DPSearchFilterItem extends PFElement {
     }
 
     static get observedAttributes() { 
-        return ['name', 'active', 'value', 'inline', 'key', 'group']; 
+        return ['name', 'active', 'value', 'inline', 'key', 'group', 'facet']; 
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
@@ -224,15 +236,23 @@ export default class DPSearchFilterItem extends PFElement {
     _updateName(e) {
         if (e.detail && e.detail.facets && e.detail.facets.facet_fields) {
             let facets = e.detail.facets.facet_fields;
+            // Check group name then facet name for match
             if (facets[this.group] && facets[this.group].indexOf(this.value[0]) >= 0) {
                 if (this.name.indexOf('(') > 0) {
                     this.name = this.name.replace(/\([0-9]+\)/, "("+facets[this.group][facets[this.group].indexOf(this.value[0])+1]+")");
                 } else {
                     this.name = this.name+" ("+facets[this.group][facets[this.group].indexOf(this.value[0])+1]+")";
                 }
+            } else if (facets[this.facet] && facets[this.facet].indexOf(this.value[0]) >= 0) {
+                if (this.name.indexOf('(') > 0) {
+                    this.name = this.name.replace(/\([0-9]+\)/, "("+facets[this.facet][facets[this.facet].indexOf(this.value[0])+1]+")");
+                } else {
+                    this.name = this.name+" ("+facets[this.facet][facets[this.facet].indexOf(this.value[0])+1]+")";
+                }
             } else {
                 this.name = this.name.replace(/\([0-9]+\)/,'');
             }
+
         } else {
             this.name = this.name.replace(/\([0-9]+\)/,'');
         }
