@@ -41,7 +41,7 @@
     "@patternfly/pfe-card": "^1.0.0-prerelease.9",
     "@patternfly/pfe-cta": "^1.0.0-prerelease.9",
     "@patternfly/pfe-datetime": "^1.0.0-prerelease.9",
-    "@patternfly/pfe-layouts": "^1.0.0-prerelease.9",
+    "@patternfly/pfe-layouts": "^1.0.0-prerelease.11",
     "@patternfly/pfe-sass": "^1.0.0-prerelease.11",
     "@patternfly/pfe-tabs": "^1.0.0-prerelease.9",
     "@patternfly/pfelement": "^1.0.0-prerelease.11",
