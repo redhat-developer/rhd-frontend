@@ -2,75 +2,84 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Page on RHD Front-end Code and Documentation</title>
-    <link>https://redhat-developer.github.io/rhd-frontend/categories/page/</link>
+    <link>http://localhost:8080/categories/page/</link>
     <description>Recent content in Page on RHD Front-end Code and Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Apr 2018 14:39:40 -0400</lastBuildDate>
     
-	<atom:link href="https://redhat-developer.github.io/rhd-frontend/categories/page/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:8080/categories/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Assemblies</title>
-      <link>https://redhat-developer.github.io/rhd-frontend/patterns/assemblies/</link>
+      <title>2019 Summit Updates</title>
+      <link>http://localhost:8080/patterns/summit/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/assemblies/</guid>
+      <guid>http://localhost:8080/patterns/summit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assemblies</title>
+      <link>http://localhost:8080/patterns/assemblies/</link>
+      <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
+      
+      <guid>http://localhost:8080/patterns/assemblies/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Code</title>
-      <link>https://redhat-developer.github.io/rhd-frontend/patterns/code/</link>
+      <link>http://localhost:8080/patterns/code/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/code/</guid>
+      <guid>http://localhost:8080/patterns/code/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Components</title>
-      <link>https://redhat-developer.github.io/rhd-frontend/components/</link>
+      <link>http://localhost:8080/components/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhd-frontend/components/</guid>
+      <guid>http://localhost:8080/components/</guid>
       <description> Where are our components/elements:  Downloads - https://developers.redhat.com/products/rhel/download/ Search, Onebox, RH-Datetime - https://developers.redhat.com/search/?t=rhel Expandable Groups - https://developers.redhat.com/products/ Projects - https://developers.redhat.com/products/fuse/community/#!filter-product=fuse  What components/elements are coming:  Alerts and JBoss Referrer - https://developers.redhat.com/?referrer=jbd Stack Overflow Keycloak  </description>
     </item>
     
     <item>
       <title>Content</title>
-      <link>https://redhat-developer.github.io/rhd-frontend/patterns/content/</link>
+      <link>http://localhost:8080/patterns/content/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/content/</guid>
+      <guid>http://localhost:8080/patterns/content/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Design</title>
-      <link>https://redhat-developer.github.io/rhd-frontend/patterns/design/</link>
+      <link>http://localhost:8080/patterns/design/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/design/</guid>
+      <guid>http://localhost:8080/patterns/design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Layout</title>
-      <link>https://redhat-developer.github.io/rhd-frontend/patterns/layout/</link>
+      <link>http://localhost:8080/patterns/layout/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/layout/</guid>
+      <guid>http://localhost:8080/patterns/layout/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Miscellany</title>
-      <link>https://redhat-developer.github.io/rhd-frontend/patterns/misc/</link>
+      <link>http://localhost:8080/patterns/misc/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/misc/</guid>
+      <guid>http://localhost:8080/patterns/misc/</guid>
       <description></description>
     </item>
     

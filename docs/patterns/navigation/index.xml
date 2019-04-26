@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Navigation on RHD Front-end Code and Documentation</title>
+    <link>http://localhost:8080/patterns/navigation/</link>
+    <description>Recent content in Navigation on RHD Front-end Code and Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Apr 2018 14:39:40 -0400</lastBuildDate>
+    
+	<atom:link href="http://localhost:8080/patterns/navigation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Universal Header</title>
+      <link>http://localhost:8080/patterns/navigation/uni-header/</link>
+      <pubDate>Thu, 03 Aug 2017 14:58:26 -0400</pubDate>
+      
+      <guid>http://localhost:8080/patterns/navigation/uni-header/</guid>
+      <description>&amp;lt;div class=&amp;#34;rh-universal-header&amp;#34;&amp;gt; &amp;lt;nav class=&amp;#34;rh-nav-universal&amp;#34; aria-label=&amp;#34;Red Hat Global Navigation&amp;#34;&amp;gt; &amp;lt;a class=&amp;#34;rh-logo-wrapper&amp;#34; href=&amp;#34;https://www.redhat.com/&amp;#34; title=&amp;#34;Red Hat Home page&amp;#34;&amp;gt;&amp;lt;img class=&amp;#34;rh-header-logo&amp;#34; alt=&amp;#34;Red Hat Logo&amp;#34; src=&amp;#34;/themes/custom/rhdp/images/branding/RHLogo_white.svg&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;ul class=&amp;#34;rhd-menu rh-nav-universal-list&amp;#34;&amp;gt; &amp;lt;li class=&amp;#34;menu-item rh-nav-universal-link&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;https://access.redhat.com/&amp;#34; title=&amp;#34;The Red Hat Customer Portal provides comprehensive documentation, tools, security updates, and knowledge to help customers succeed with Red Hat solutions.&amp;#34;&amp;gt;Customer Portal&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;li class=&amp;#34;menu-item rh-nav-universal-link&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;/&amp;#34; title=&amp;#34;The Red Hat Developer program provides tools, technologies, and community to help developers solve problems, connect with colleagues, discover what’s next, and lead their projects forward.</description>
+    </item>
+    
+    <item>
+      <title>Universal Footer</title>
+      <link>http://localhost:8080/patterns/navigation/uni-footer/</link>
+      <pubDate>Thu, 03 Aug 2017 14:58:26 -0400</pubDate>
+      
+      <guid>http://localhost:8080/patterns/navigation/uni-footer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logo</title>
+      <link>http://localhost:8080/patterns/navigation/logo/</link>
+      <pubDate>Thu, 03 Aug 2017 14:58:04 -0400</pubDate>
+      
+      <guid>http://localhost:8080/patterns/navigation/logo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
