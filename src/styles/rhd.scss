@@ -1,3 +1,41 @@
+@import "redhat-theme/src/advanced-theme";
+
+$soft-dark: rgba(0,0,0,.8);
+$white: white;
+
+%link {
+    text-decoration: var(--pfe-theme--link--text-decoration, "underline");
+    color: var(--pfe-theme--color--ui-link, #06c);
+}
+
+:root {
+    --rhd--theme--color--ui--soft-dark: #{$soft-dark};
+    --rhd--theme--color--ui--link-universal: rgba(255, 255, 255, 0.062);
+    --pfe-theme--color--text: #242424;
+}
+
+.rh-universal-header {
+    background-color: $soft-dark;
+    background-color: var(--rhd--theme--color--ui--soft-dark, $soft-dark);
+ 
+}
+
+.rh-nav-universal {
+    --pfe-theme--color--ui-link: #{$white};
+    --pfe-theme--link--text-decoration: none;
+
+    &-list {
+
+        &-item {
+
+        }
+    }
+}
+
+a {
+    @extend %link;
+}
+
 // @import "mixins";
 // @import "mq-mixins";
 // @import "fonts/fonts";
