@@ -1,4 +1,4 @@
-System.register(["./rhdp-downloads-all-item.js"], function (exports_1, context_1) {
+System.register(["@rhd/rhdp-downloads/rhdp-downloads-all-item"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -17,12 +17,12 @@ System.register(["./rhdp-downloads-all-item.js"], function (exports_1, context_1
         if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
         return cooked;
     };
-    var rhdp_downloads_all_item_js_1, RHDPDownloadsAll, templateObject_1;
+    var rhdp_downloads_all_item_1, RHDPDownloadsAll, templateObject_1;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (rhdp_downloads_all_item_js_1_1) {
-                rhdp_downloads_all_item_js_1 = rhdp_downloads_all_item_js_1_1;
+            function (rhdp_downloads_all_item_1_1) {
+                rhdp_downloads_all_item_1 = rhdp_downloads_all_item_1_1;
             }
         ],
         execute: function () {
@@ -83,7 +83,7 @@ System.register(["./rhdp-downloads-all-item.js"], function (exports_1, context_1
                         var len = products.length;
                         for (var i = 0; i < len; i++) {
                             if (products[i].groupHeading === this.heading) {
-                                var item = new rhdp_downloads_all_item_js_1.default();
+                                var item = new rhdp_downloads_all_item_1.default();
                                 item.name = products[i].productName;
                                 item.productId = products[i].productCode ? products[i].productCode : "";
                                 item.dataFallbackUrl = products[i].dataFallbackUrl ? products[i].dataFallbackUrl : "";

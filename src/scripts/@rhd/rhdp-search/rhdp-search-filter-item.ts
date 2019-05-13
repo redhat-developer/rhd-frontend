@@ -1,113 +1,10 @@
-// import PFElement from '../../@pfelements/pfelement.js';
-import PFElement from '../../@patternfly/pfelement/pfelement.js';
-
-export default class RHDPSearchFilterItem extends PFElement {
-    get html() {
-        return `
-        <style>
-        .list {
-            clear: left;
-            cursor: pointer;
-            display: flex;
-            flex-direction: row;
-            font-size: 14px;
-            height: auto;
-            line-height: 1.25em;
-            padding: .5em .5em 0 1.1em;
-        }
-        span { display: none; }
-        input[type=checkbox] {
-            flex: 0 0 auto;
-            margin: .25em 5px 0 0;
-            order: 0;
-        }
-        label {
-            margin-left: 0;
-            color: #4d4d4d;
-            cursor: pointer;
-            display: block;
-            font-size: .875rem;
-            font-weight: 400;
-            line-height: 1.5;
-            margin-bottom: 0;
-        }
-        input[type=checkbox]+label,
-        input[type=radio]+label {
-            display: inline-block;
-            margin-bottom: 0;
-            margin-left: .5rem;
-            margin-right: 1rem;
-            vertical-align: baseline;
-        }
-
-        @media only screen and (max-width: 768px) {
-            .list {
-                line-height: 25px;
-                padding-left: 0;
-                font-size: 16px;
-            }
-            
-            span { display: inline; font-size: 16px; }
-            
-            input[type=checkbox]{
-                height: 0;
-                width: 0;
-                visibility: hidden;
-                order: 2;
-            }
-
-            label {
-                cursor: pointer;
-                text-indent: -1200px;
-                width: 50px;
-                height: 25px;
-                background: grey;
-                display: block;
-                border-radius: 25px;
-                position: absolute;
-                right: 0;
-            }
-    
-            label:after {
-                content: '';
-                position: absolute;
-                top: 1px;
-                left: 1px;
-                width: 23px;
-                height: 23px;
-                background: #fff;
-                border-radius: 20px;
-                transition: 0.3s;
-            }
-    
-            input:checked + label {
-                background: #08c0fc;;
-            }
-    
-            input:checked + label:after  {
-                left: calc(100% - 1px);
-                transform: translateX(-100%);
-            }
-    
-            label:active:after {
-                width: 33px;
-            }
-        }
-        </style>
-        <div class="list">
-            <span>${this.name}</span>
-            <input type="checkbox" ${this.active ? 'checked' : ''} id="filter-item-${this.key}" value="${this.key}">
-            <label for="filter-item-${this.key}"><slot></slot></label>
-        </div>`;
-    }
-
-    static get tag() { return 'rhdp-search-filter-item'; }
-
+export default class RHDPSearchFilterItem extends HTMLElement {
     _key;
     _name;
     _active = false;
     _value;
     _inline = false;
+    _bubble = true;
     _bounce = false;
     _group;
 
@@ -118,10 +15,6 @@ export default class RHDPSearchFilterItem extends PFElement {
         if (this._name === val) return;
         this._name = val;
         this.setAttribute('name', this._name);
-        if (this.shadowRoot.querySelector('span')) {
-            this.shadowRoot.querySelector('span').innerText = this._name;
-        }
-        this.innerHTML = this._name;
     }
     get key() {
         return this._key;
@@ -142,15 +35,6 @@ export default class RHDPSearchFilterItem extends PFElement {
         this.setAttribute('group', this._group);
     }
 
-    get bounce() {
-        return this._bounce;
-    }
-    set bounce(val) {
-        if (this._bounce === val) return;
-        this._bounce = val;
-    }
-
-
     get active() {
         return this._active;
     }
@@ -165,7 +49,7 @@ export default class RHDPSearchFilterItem extends PFElement {
             return;
         } else {
             this._active = val;
-            let chkbox = this.shadowRoot.querySelector('input');
+            let chkbox = this.querySelector('input');
             if(this._active) { 
                 this.setAttribute('active','');
             } else { 
@@ -174,11 +58,10 @@ export default class RHDPSearchFilterItem extends PFElement {
             if (chkbox) {
                 chkbox.checked = this._active;
             }
-            if(!this.bounce){
-                let evt = {detail: {facet: this}, bubbles: true, composed: true };
-                this.bounce = true;
-                this.dispatchEvent(new CustomEvent('filter-item-change', evt));
-            }
+            if ( this.inline ) { this.innerHTML = this._active ? this.inlineTemplate`${this.name}${this._active}` : ''; }
+    
+            this.dispatchEvent(new CustomEvent('filter-item-change', {detail: {facet: this}, bubbles: this.bubble}));
+            this.bubble = true;
         }
     }
     get value() {
@@ -189,9 +72,34 @@ export default class RHDPSearchFilterItem extends PFElement {
         this._value = val;
         this.setAttribute('value', this.value);
     }
+    get inline() {
+        return this._inline;
+    }
+    set inline(val) {
+        if (this._inline === val) return;
+        this._inline = val;
+        this.innerHTML = !this._inline ? this.template`${this.name}${this.key}${this.active}` : this.inlineTemplate`${this.name}${this.active}`;
+    }
+
+    get bubble() {
+        return this._bubble;
+    }
+
+    set bubble(val) {
+        if (this._bubble === val) return;
+        this._bubble = val;
+    }
+
+    get bounce() {
+        return this._bounce;
+    }
+    set bounce(val) {
+        if (this._bounce === val) return;
+        this._bounce = val;
+    }
 
     constructor() {
-        super(RHDPSearchFilterItem, {delayRender: true});
+        super();
 
         this._checkParams = this._checkParams.bind(this);
         this._clearFilters = this._clearFilters.bind(this);
@@ -199,16 +107,27 @@ export default class RHDPSearchFilterItem extends PFElement {
         this._updateFacet = this._updateFacet.bind(this);
     }
 
+    template = (strings, name, key, active) => {
+        var checked = active ? 'checked' : '';
+        return `<div class="list"><span>${name}</span><input type="checkbox" ${checked} id="filter-item-${key}" value="${key}"><label for="filter-item-${key}">${name}</label></div>`; 
+    };
     
+    inlineTemplate = (strings, name, active) => {
+        return active ? `<div class="inline">${name} <i class="fa fa-times clearItem" aria-hidden="true"></i></div>` : '';
+    }
 
     connectedCallback() {
-        super.connectedCallback();
-        super.render();
-        this.shadowRoot.addEventListener('change', this._updateFacet);
+        this.innerHTML = !this.inline ? this.template`${this.name}${this.key}${this.active}` : this.inlineTemplate`${this.name}${this.active}`;
+        if (!this.inline) {
+            this.addEventListener('change', this._updateFacet);
+        } else {
+            this.addEventListener('click', this._updateFacet);
+        }
         
         top.addEventListener('filter-item-change', this._checkChange);
         top.addEventListener('params-ready', this._checkParams);
         top.addEventListener('clear-filters', this._clearFilters);
+        //top.window.addEventListener('popstate', this._clearFilters);
     }
 
     static get observedAttributes() { 
@@ -220,36 +139,57 @@ export default class RHDPSearchFilterItem extends PFElement {
     }
 
     _updateFacet(e) {
-        this.bounce = false;
-        this.active = !this.active;
+        this.bounce = true;
+        if (this.inline) {
+            if (e.target['className'].indexOf('clearItem') >= 0) {
+                this.active = !this.active; 
+            }
+        } else {
+            this.active = !this.active;
+        }
     }
 
     _checkParams(e) {
-        // let chk = false;
+        let chk = false;
         if (e.detail && e.detail.filters) {
-            this.bounce = true;
             Object.keys(e.detail.filters).forEach(group => {
                 e.detail.filters[group].forEach(facet => {
-                    if (group === this.group && facet === this.key) {
-                        this.active = true;
+                    if (group === this.group) {
+                        if (facet === this.key) {
+                            chk = true;
+                            this.bubble = false;
+                            this.active = true;
+                            this.dispatchEvent(new CustomEvent('filter-item-init', {detail: {facet: this}, bubbles: this.bubble}));
+                        }
                     }
                 });
             });
+        }
+
+        if (!chk) {
+            this.bubble = false;
+            this.active = false;
         }
     }
 
     _checkChange(e) {
         if (e.detail && e.detail.facet) {
-            if(this.group === e.detail.facet.group && this.key === e.detail.facet.key) {
-                this.active = e.detail.facet.active;
+            if (!this.bounce) {
+                if(this.group === e.detail.facet.group && this.key === e.detail.facet.key) {
+                    this.bubble = false;
+                    this.active = e.detail.facet.active;
+                }
             }
+            this.bubble = true;
+            this.bounce = false;
         }
     }
     
     _clearFilters(e) {
-        this.bounce = true;
+        this.bubble = false; 
+        this.bounce = false;
         this.active = false;
     }
 }
 
-PFElement.create(RHDPSearchFilterItem);
+customElements.define('rhdp-search-filter-item', RHDPSearchFilterItem);

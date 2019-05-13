@@ -1,4 +1,4 @@
-System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_1, context_1) {
+System.register([], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,37 +13,24 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, RHDPSearchResultCount;
+    var RHDPSearchResultCount;
     var __moduleName = context_1 && context_1.id;
     return {
-        setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
-            }
-        ],
+        setters: [],
         execute: function () {
             RHDPSearchResultCount = (function (_super) {
                 __extends(RHDPSearchResultCount, _super);
                 function RHDPSearchResultCount() {
-                    var _this = _super.call(this, RHDPSearchResultCount, { delayRender: true }) || this;
+                    var _this = _super.call(this) || this;
                     _this._count = 0;
                     _this._term = '';
                     _this._loading = true;
+                    _this.template = function (strings, count, term) {
+                        return count + " results found for " + term.replace('<', '&lt;').replace('>', '&gt;');
+                    };
                     _this._setText = _this._setText.bind(_this);
                     return _this;
                 }
-                Object.defineProperty(RHDPSearchResultCount.prototype, "html", {
-                    get: function () {
-                        return "\n        " + (this.term || this.count ? "\n        <style>\n        :host {\n            grid-column: 5 / span 9;\n            font-weight: 600;\n            font-size: 1.2em;\n            display: block;\n            margin-bottom: 1em;\n        }\n\n        @media only screen and (max-width: 768px) {\n            :host { border-bottom: 1px solid #d5d5d5; }\n        }\n        </style>\n        <span>" + this.count + " results found " + (this.term ? 'for' : '') + " " + this.term.replace('<', '&lt;').replace('>', '&gt;') + "</span>" : '');
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                Object.defineProperty(RHDPSearchResultCount, "tag", {
-                    get: function () { return 'rhdp-search-result-count'; },
-                    enumerable: true,
-                    configurable: true
-                });
                 Object.defineProperty(RHDPSearchResultCount.prototype, "count", {
                     get: function () {
                         return this._count;
@@ -85,11 +72,9 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                 });
                 RHDPSearchResultCount.prototype.connectedCallback = function () {
                     var _this = this;
-                    _super.prototype.connectedCallback.call(this);
                     top.addEventListener('params-ready', this._setText);
                     top.addEventListener('search-start', function (e) { _this.loading = true; _this._setText(e); });
                     top.addEventListener('search-complete', function (e) { _this.loading = false; _this._setText(e); });
-                    _super.prototype.render.call(this);
                 };
                 Object.defineProperty(RHDPSearchResultCount, "observedAttributes", {
                     get: function () {
@@ -100,7 +85,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                 });
                 RHDPSearchResultCount.prototype.attributeChangedCallback = function (name, oldVal, newVal) {
                     this[name] = newVal;
-                    _super.prototype.render.call(this);
+                    this.innerHTML = this.count + " results found " + (this.term ? "for " + this.term : '');
                 };
                 RHDPSearchResultCount.prototype._setText = function (e) {
                     if (e.detail) {
@@ -118,25 +103,25 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                                 this.count = 0;
                             }
                             if (!this.loading) {
-                                _super.prototype.render.call(this);
+                                this.innerHTML = this.count + " results found " + (this.term ? "for " + this.term : '');
                             }
                         }
                         else {
                             this.term = '';
                             this.count = 0;
-                            this.shadowRoot.innerHTML = '';
+                            this.innerHTML = '';
                         }
                     }
                     else {
                         this.term = '';
                         this.count = 0;
-                        this.shadowRoot.innerHTML = '';
+                        this.innerHTML = '';
                     }
                 };
                 return RHDPSearchResultCount;
-            }(pfelement_js_1.default));
+            }(HTMLElement));
             exports_1("default", RHDPSearchResultCount);
-            pfelement_js_1.default.create(RHDPSearchResultCount);
+            customElements.define('rhdp-search-result-count', RHDPSearchResultCount);
         }
     };
 });

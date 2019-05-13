@@ -73,16 +73,6 @@ System.register([], function (exports_1, context_1) {
                                 "version": "",
                                 "learnMoreLink": "/products/cdk/overview/"
                             }, {
-                                "productName": "Red Hat Development Suite",
-                                "groupHeading": "DEVELOPER TOOLS",
-                                "productCode": "devsuite",
-                                "featured": true,
-                                "dataFallbackUrl": "https://access.redhat.com/downloads",
-                                "downloadLink": "",
-                                "description": "A fully integrated development environment for modern enterprise development.",
-                                "version": "",
-                                "learnMoreLink": "/products/devsuite/overview/"
-                            }, {
                                 "productName": "Red Hat JBoss Developer Studio",
                                 "groupHeading": "DEVELOPER TOOLS",
                                 "productCode": "devstudio",

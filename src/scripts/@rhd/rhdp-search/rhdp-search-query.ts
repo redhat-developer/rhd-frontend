@@ -1,14 +1,8 @@
-//import PFElement from '../../@pfelements/pfelement.js';
-import PFElement from '../../@patternfly/pfelement/pfelement.js';
-import RHDPSearchFilterItem from './rhdp-search-filter-item.js';
+import RHDPSearchFilterItem from '@rhd/rhdp-search/rhdp-search-filter-item';
 
-export default class RHDPSearchQuery extends PFElement {
-
-    get html() { return ''; }
-    static get tag() { return 'rhdp-search-query'; }
-
-    _filters = { term:'', facets: {} };
-    _activeFilters = {};
+export default class RHDPSearchQuery extends HTMLElement {
+    _filters;
+    _activeFilters;
     _limit = 10;
     _from = 0;
     _sort = 'relevance';
@@ -33,8 +27,6 @@ export default class RHDPSearchQuery extends PFElement {
     set activeFilters(val) {
         if (this._activeFilters === val) return;
         this._activeFilters = val;
-        this.filters.facets = this._activeFilters;
-        
     }
 
     get from() {
@@ -71,7 +63,7 @@ export default class RHDPSearchQuery extends PFElement {
         if (this._results === val) return;
         this._results = val;
         this.from = this.results && this.results.hits && typeof this.results.hits.hits !== 'undefined' ? this.from + this.results.hits.hits.length : 0;
-        let evt = {
+        this.dispatchEvent(new CustomEvent('search-complete', {
             detail: { 
                 term: this.term,
                 filters: this.activeFilters,
@@ -80,10 +72,8 @@ export default class RHDPSearchQuery extends PFElement {
                 from: this.from,
                 results: this.results,
             }, 
-            bubbles: true,
-            composed: true
-        };
-        this.dispatchEvent(new CustomEvent('search-complete', evt));
+            bubbles: true 
+        }));
     }
 
     get term() {
@@ -93,7 +83,6 @@ export default class RHDPSearchQuery extends PFElement {
     set term(val) {
         if (this._term === val) return;
         this._term = val;
-        this.filters.term = this._term;
         this.setAttribute('term', val.toString());
     }
 
@@ -141,13 +130,12 @@ export default class RHDPSearchQuery extends PFElement {
     };
 
     constructor() {
-        super(RHDPSearchQuery);
+        super();
 
         this._changeAttr = this._changeAttr.bind(this);
     }
 
     connectedCallback() {
-        super.connectedCallback();
         top.addEventListener('params-ready', this._changeAttr);
         top.addEventListener('term-change', this._changeAttr);
         top.addEventListener('filter-item-change', this._changeAttr);
@@ -187,7 +175,6 @@ export default class RHDPSearchQuery extends PFElement {
     }
 
     _changeAttr(e) {
-        // console.log(e);
         switch (e.type) {
             case 'term-change':
                 if (e.detail && e.detail.term && e.detail.term.length > 0) {
@@ -240,10 +227,14 @@ export default class RHDPSearchQuery extends PFElement {
         }   
     }
 
+    // _checkValid(e) {
+    //     let obj = e.detail;
+    //     this.valid = ;
+    // }
+
     search() {
-        let evt = { bubbles: true, composed: true };
-        this.dispatchEvent(new CustomEvent('search-start', evt));
-        if (this.url && ((this.activeFilters && Object.keys(this.activeFilters).length > 0) || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined'))) {
+        this.dispatchEvent(new CustomEvent('search-start', { bubbles: true }));
+        if (Object.keys(this.activeFilters).length > 0 || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined')) {
 
             let qURL = new URL(this.url);
             qURL.searchParams.set('tags_or_logic', 'true');
@@ -251,18 +242,25 @@ export default class RHDPSearchQuery extends PFElement {
             qURL.searchParams.set('from', this.from.toString());
             if (this.sort === 'most-recent') {
                 qURL.searchParams.set('newFirst', 'true');
-            } 
+            }
             qURL.searchParams.set('query', this.term || '');
             qURL.searchParams.set('query_highlight', 'true');
             qURL.searchParams.set('size'+this.limit.toString(), 'true');
-            Object.keys(this.filters.facets).forEach(group => {
-                this.filters.facets[group].forEach(facet => {
-                    let values = top.document.querySelector(`rhdp-search-filter-item[group=${group}][key=${facet}]`).getAttribute('type').split(',');
-                    values.forEach(value => {
-                        qURL.searchParams.append(group, value);
-                    })
+            if (this.activeFilters) {
+                Object.keys(this.activeFilters).forEach(filtergroup => {
+                    this.filters.facets.forEach(group => {
+                        if (group.key === filtergroup) {
+                            group.items.forEach(facet => {
+                                if (this.activeFilters[group.key].indexOf(facet.key) >= 0) {
+                                    facet.value.forEach(fval => {
+                                        qURL.searchParams.append(group.key, fval);
+                                    });
+                                }
+                            });
+                        }
+                    });
                 });
-            });
+            }
             //console.log(qURL.toString());
             fetch(qURL.toString()) //this.urlTemplate`${this.url}${this.term}${this.from}${this.limit}${this.sort}${this.filters}`)
             .then((resp) => resp.json())
@@ -270,10 +268,9 @@ export default class RHDPSearchQuery extends PFElement {
                 this.results = data; 
             });
         } else {
-            let evt = { detail: { invalid: true }, bubbles: true, composed: true };
-            this.dispatchEvent(new CustomEvent('search-complete', evt));
+            this.dispatchEvent(new CustomEvent('search-complete', { detail: { invalid: true }, bubbles: true }));
         }
     }
 }
 
-PFElement.create(RHDPSearchQuery);
+customElements.define('rhdp-search-query', RHDPSearchQuery);

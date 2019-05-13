@@ -1,103 +1,6 @@
-//import PFElement from '../../@pfelements/pfelement.js';
-import PFElement from '../../@patternfly/pfelement/pfelement.js';
-
-export default class RHDPSearchResult extends PFElement {
-    get html() {
-        return `
-        <style>
-:host {
-    font-family: "Overpass", "Open Sans", Arial, Helvetica, sans-serif;
-    margin-bottom: 25px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #d5d5d5;
-    display: flex;
-    flex-direction: row;
-}
-    .subscription-required {
-        &:before {
-            content: '';
-            background: url('https://static.jboss.org/rhd/images/icons/subscription-required.svg') no-repeat;
-            background-size:cover;
-            position:absolute;
-            margin-top: 5px;
-            width: .9em;
-            height: .9em;
-        }
-        .caps {
-            margin-left: 20px;
-        }
-
-    }
-
-    div:first-child { flex: 1 1 auto; }
-
-    h4 {
-        font-weight: 600;
-        font-style: normal;
-        font-size: 20px;
-        line-height: 1.4;
-        margin: 0;
-        font-family: "Overpass", "Open Sans", Arial, Helvetica, sans-serif;
-    }
-
-    h4 a {
-        color: #06c;
-        cursor: pointer;
-        text-decoration: none;
-    }
-
-    p { margin: 0; 
-        color: #424242;
-        font-family: "Overpass", "Open Sans", Arial, Helvetica, sans-serif;
-        }
-    .result-info span{
-        font-size: .9rem;
-        color: $grey-6;
-    }
-
-    .caps {
-        text-transform: uppercase;
-        font-size: 16px;
-        font-weight: normal;
-        line-height: 24px;
-        -webkit-font-smoothing: antialiased;
-    }
-    .result-description {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-height: 45px;
-        margin-bottom: 25px;
-    }
-    div {
-        flex: 1 1 auto;
-    }
-    div.thumb { 
-        flex: 0 0 130px; 
-        margin-left: 1em;
-    }
-
-    .thumb img {
-        height: auto;
-        max-width: 100%;
-    }
-
-    .hlt { font-weight: 600; }
-        </style>
-<div>
-    <h4>${this.url ? `<a href="${this.url}">${this.title}</a>` : this.title}</h4>
-    <p ${this.premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"'}>
-        <span class="caps">${this.kind}</span>
-        ${this.created ? `- <pfe-datetime datetime="${this.created}" type="local" day="numeric" month="long" year="numeric">${this.created}</pfe-datetime>` : ''}
-    </p>
-    <p class="result-description">${this.description}</p>
-</div>
-${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:','https:')}"></div>` : ''}`;
-    }
-
-    static get tag() { return 'rhdp-search-result'; }
-
+export default class RHDPSearchResult extends HTMLElement {
     _result;
-    _url = ['',''];
+    _url;
     _title;
     _kind;
     _created;
@@ -106,7 +9,8 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
     _thumbnail;
 
     get url() {
-        return this._url;
+        const stage = window.location.href.indexOf('stage') >= 0 || window.location.href.indexOf('developers') < 0 ? '.stage' : '';
+        return !this.premium ? this._url : `https://broker${stage}.redhat.com/partner/drc/userMapping?redirect=${encodeURIComponent(this._url)}`;
     }
 
     set url(val) {
@@ -147,7 +51,7 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
 
     set description(val) {
         if (this._description === val) return;
-        this._description = val;
+        this._description = val.replace('>','&gt;').replace('<','&lt;');
     }
 
     get premium() {
@@ -186,12 +90,23 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
     }
 
     constructor() {
-        super(RHDPSearchResult, {delayRender: true});
+        super();
     }
 
+    template = (strings, url, title, kind, created, description, premium, thumbnail) => {
+        return `<div>
+            <h4>${url ? `<a href="${url}">${title}</a>` : title}</h4>
+            <p ${premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"'}>
+                <span class="caps">${kind}</span>
+                ${created ? `- <rh-datetime datetime="${created}" type="local" day="numeric" month="long" year="numeric">${created}</rh-datetime>` : ''}
+            </p>
+            <p class="result-description">${description}</p>
+        </div>
+        ${thumbnail ? `<div class="thumb"><img src="${thumbnail.replace('http:','https:')}"></div>` : ''}`; 
+    };
+
     connectedCallback() {
-        super.connectedCallback();
-        super.render();
+        
     }
 
     static get observedAttributes() { 
@@ -203,7 +118,7 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
     }
 
     renderResult() {
-        super.render();
+        this.innerHTML = this.template`${this.url}${this.title}${this.kind}${this.created}${this.description}${this.premium}${this.thumbnail}`;
     }
 
     computeThumbnail(result) {
@@ -256,7 +171,7 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
         } else if (result.fields && result.fields.sys_description) {
             description = result.fields.sys_description[0];
         } else {
-            description = result.fields.sys_content_plaintext ? result.fields.sys_content_plaintext[0] : '';
+            description = result.fields.sys_content_plaintext[0];
         }
 
         // Removes all HTML tags from description
@@ -268,7 +183,7 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
     }
     computeURL(result) {
         if (result.fields && result.fields.sys_type === 'book' && result.fields.field_book_url) {
-            this.url = result.fields.field_book_url;
+            this.url = result.fields.field_book_url ? result.fields.field_book_url : '';
         } else {
             this.url = (result.fields && result.fields.sys_url_view) ? result.fields.sys_url_view : '';
         }
@@ -284,4 +199,4 @@ ${this.thumbnail ? `<div class="thumb"><img src="${this.thumbnail.replace('http:
 
 }
 
-PFElement.create(RHDPSearchResult);
+customElements.define('rhdp-search-result', RHDPSearchResult);

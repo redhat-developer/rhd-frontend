@@ -1,4 +1,4 @@
-System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_1, context_1) {
+System.register([], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
         var extendStatics = function (d, b) {
@@ -13,21 +13,15 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var pfelement_js_1, RHDPSearchQuery;
+    var RHDPSearchQuery;
     var __moduleName = context_1 && context_1.id;
     return {
-        setters: [
-            function (pfelement_js_1_1) {
-                pfelement_js_1 = pfelement_js_1_1;
-            }
-        ],
+        setters: [],
         execute: function () {
             RHDPSearchQuery = (function (_super) {
                 __extends(RHDPSearchQuery, _super);
                 function RHDPSearchQuery() {
-                    var _this = _super.call(this, RHDPSearchQuery) || this;
-                    _this._filters = { term: '', facets: {} };
-                    _this._activeFilters = {};
+                    var _this = _super.call(this) || this;
                     _this._limit = 10;
                     _this._from = 0;
                     _this._sort = 'relevance';
@@ -42,16 +36,6 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     _this._changeAttr = _this._changeAttr.bind(_this);
                     return _this;
                 }
-                Object.defineProperty(RHDPSearchQuery.prototype, "html", {
-                    get: function () { return ''; },
-                    enumerable: true,
-                    configurable: true
-                });
-                Object.defineProperty(RHDPSearchQuery, "tag", {
-                    get: function () { return 'rhdp-search-query'; },
-                    enumerable: true,
-                    configurable: true
-                });
                 Object.defineProperty(RHDPSearchQuery.prototype, "filters", {
                     get: function () {
                         return this._filters;
@@ -72,7 +56,6 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                         if (this._activeFilters === val)
                             return;
                         this._activeFilters = val;
-                        this.filters.facets = this._activeFilters;
                     },
                     enumerable: true,
                     configurable: true
@@ -125,7 +108,7 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                             return;
                         this._results = val;
                         this.from = this.results && this.results.hits && typeof this.results.hits.hits !== 'undefined' ? this.from + this.results.hits.hits.length : 0;
-                        var evt = {
+                        this.dispatchEvent(new CustomEvent('search-complete', {
                             detail: {
                                 term: this.term,
                                 filters: this.activeFilters,
@@ -134,10 +117,8 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                                 from: this.from,
                                 results: this.results,
                             },
-                            bubbles: true,
-                            composed: true
-                        };
-                        this.dispatchEvent(new CustomEvent('search-complete', evt));
+                            bubbles: true
+                        }));
                     },
                     enumerable: true,
                     configurable: true
@@ -150,7 +131,6 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                         if (this._term === val)
                             return;
                         this._term = val;
-                        this.filters.term = this._term;
                         this.setAttribute('term', val.toString());
                     },
                     enumerable: true,
@@ -197,7 +177,6 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                     return filterArr.join(', ');
                 };
                 RHDPSearchQuery.prototype.connectedCallback = function () {
-                    _super.prototype.connectedCallback.call(this);
                     top.addEventListener('params-ready', this._changeAttr);
                     top.addEventListener('term-change', this._changeAttr);
                     top.addEventListener('filter-item-change', this._changeAttr);
@@ -288,9 +267,8 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                 };
                 RHDPSearchQuery.prototype.search = function () {
                     var _this = this;
-                    var evt = { bubbles: true, composed: true };
-                    this.dispatchEvent(new CustomEvent('search-start', evt));
-                    if (this.url && ((this.activeFilters && Object.keys(this.activeFilters).length > 0) || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined'))) {
+                    this.dispatchEvent(new CustomEvent('search-start', { bubbles: true }));
+                    if (Object.keys(this.activeFilters).length > 0 || (this.term !== null && this.term !== '' && typeof this.term !== 'undefined')) {
                         var qURL_1 = new URL(this.url);
                         qURL_1.searchParams.set('tags_or_logic', 'true');
                         qURL_1.searchParams.set('filter_out_excluded', 'true');
@@ -301,14 +279,21 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                         qURL_1.searchParams.set('query', this.term || '');
                         qURL_1.searchParams.set('query_highlight', 'true');
                         qURL_1.searchParams.set('size' + this.limit.toString(), 'true');
-                        Object.keys(this.filters.facets).forEach(function (group) {
-                            _this.filters.facets[group].forEach(function (facet) {
-                                var values = top.document.querySelector("rhdp-search-filter-item[group=" + group + "][key=" + facet + "]").getAttribute('type').split(',');
-                                values.forEach(function (value) {
-                                    qURL_1.searchParams.append(group, value);
+                        if (this.activeFilters) {
+                            Object.keys(this.activeFilters).forEach(function (filtergroup) {
+                                _this.filters.facets.forEach(function (group) {
+                                    if (group.key === filtergroup) {
+                                        group.items.forEach(function (facet) {
+                                            if (_this.activeFilters[group.key].indexOf(facet.key) >= 0) {
+                                                facet.value.forEach(function (fval) {
+                                                    qURL_1.searchParams.append(group.key, fval);
+                                                });
+                                            }
+                                        });
+                                    }
                                 });
                             });
-                        });
+                        }
                         fetch(qURL_1.toString())
                             .then(function (resp) { return resp.json(); })
                             .then(function (data) {
@@ -316,14 +301,13 @@ System.register(["../../@patternfly/pfelement/pfelement.js"], function (exports_
                         });
                     }
                     else {
-                        var evt_1 = { detail: { invalid: true }, bubbles: true, composed: true };
-                        this.dispatchEvent(new CustomEvent('search-complete', evt_1));
+                        this.dispatchEvent(new CustomEvent('search-complete', { detail: { invalid: true }, bubbles: true }));
                     }
                 };
                 return RHDPSearchQuery;
-            }(pfelement_js_1.default));
+            }(HTMLElement));
             exports_1("default", RHDPSearchQuery);
-            pfelement_js_1.default.create(RHDPSearchQuery);
+            customElements.define('rhdp-search-query', RHDPSearchQuery);
         }
     };
 });

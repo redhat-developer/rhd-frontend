@@ -6,3 +6,4 @@ src/docs/static/*
 src/tests/unit/report
 dist
 .npmrc
+.idea

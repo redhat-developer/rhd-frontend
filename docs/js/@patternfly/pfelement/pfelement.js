@@ -13,97 +13,215 @@ System.register([], function (exports_1, context_1) {
             d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
     })();
-    var t, s, o;
+    var logger, prefix, PFElement;
     var __moduleName = context_1 && context_1.id;
-    function e() { t("[reveal] web components ready"), t("[reveal] elements ready, revealing the body"), window.document.body.removeAttribute("unresolved"); }
+    function reveal() {
+        logger("[reveal] elements ready, revealing the body");
+        window.document.body.removeAttribute("unresolved");
+    }
+    function autoReveal(logFunction) {
+        logger = logFunction;
+        var polyfillPresent = window.WebComponents;
+        var polyfillReady = polyfillPresent && window.WebComponents.ready;
+        if (!polyfillPresent || polyfillReady) {
+            handleWebComponentsReady();
+        }
+        else {
+            window.addEventListener("WebComponentsReady", handleWebComponentsReady);
+        }
+    }
+    function handleWebComponentsReady() {
+        logger("[reveal] web components ready");
+        reveal();
+    }
     return {
         setters: [],
         execute: function () {
-            t = function () { return null; };
-            s = "pfe-";
-            o = (function (_super) {
-                __extends(o, _super);
-                function o(t, _a) {
-                    var _b = _a === void 0 ? {} : _a, _c = _b.type, e = _c === void 0 ? null : _c, _d = _b.delayRender, s = _d === void 0 ? !1 : _d;
-                    var _this = this;
-                    _this = _super.call(this) || this, _this.connected = !1, _this._pfeClass = t, _this.tag = t.tag, _this.props = t.properties, _this._queue = [], _this.template = document.createElement("template"), _this.attachShadow({ mode: "open" }), e && _this._queueAction({ type: "setProperty", data: { name: "pfeType", value: e } }), s || _this.render();
+            logger = function () { return null; };
+            prefix = "pfe-";
+            PFElement = (function (_super) {
+                __extends(PFElement, _super);
+                function PFElement(pfeClass, _a) {
+                    var _b = _a === void 0 ? {} : _a, _c = _b.type, type = _c === void 0 ? null : _c, _d = _b.delayRender, delayRender = _d === void 0 ? false : _d;
+                    var _this = _super.call(this) || this;
+                    _this.connected = false;
+                    _this._pfeClass = pfeClass;
+                    _this.tag = pfeClass.tag;
+                    _this.props = pfeClass.properties;
+                    _this._queue = [];
+                    _this.template = document.createElement("template");
+                    _this.attachShadow({ mode: "open" });
+                    if (type) {
+                        _this._queueAction({
+                            type: "setProperty",
+                            data: {
+                                name: "pfeType",
+                                value: type
+                            }
+                        });
+                    }
+                    if (!delayRender) {
+                        _this.render();
+                    }
                     return _this;
                 }
-                o.create = function (t) { window.customElements.define(t.tag, t); };
-                o.debugLog = function (t) {
-                    if (t === void 0) { t = null; }
-                    return null !== t && (o._debugLog = !!t), o._debugLog;
+                PFElement.create = function (pfe) {
+                    window.customElements.define(pfe.tag, pfe);
                 };
-                o.log = function () {
-                    var t = [];
-                    for (var _i = 0; _i < arguments.length; _i++) {
-                        t[_i] = arguments[_i];
+                PFElement.debugLog = function (preference) {
+                    if (preference === void 0) { preference = null; }
+                    if (preference !== null) {
+                        PFElement._debugLog = !!preference;
                     }
-                    o.debugLog() && console.log.apply(console, t);
+                    return PFElement._debugLog;
                 };
-                Object.defineProperty(o, "PfeTypes", {
-                    get: function () { return { Container: "container", Content: "content", Combo: "combo" }; },
+                PFElement.log = function () {
+                    var msgs = [];
+                    for (var _i = 0; _i < arguments.length; _i++) {
+                        msgs[_i] = arguments[_i];
+                    }
+                    if (PFElement.debugLog()) {
+                        console.log.apply(console, msgs);
+                    }
+                };
+                Object.defineProperty(PFElement, "PfeTypes", {
+                    get: function () {
+                        return {
+                            Container: "container",
+                            Content: "content",
+                            Combo: "combo"
+                        };
+                    },
                     enumerable: true,
                     configurable: true
                 });
-                Object.defineProperty(o.prototype, "pfeType", {
-                    get: function () { return this.getAttribute(s + "type"); },
-                    set: function (t) { this.setAttribute(s + "type", t); },
+                Object.defineProperty(PFElement.prototype, "pfeType", {
+                    get: function () {
+                        return this.getAttribute(prefix + "type");
+                    },
+                    set: function (value) {
+                        this.setAttribute(prefix + "type", value);
+                    },
                     enumerable: true,
                     configurable: true
                 });
-                o.prototype.has_slot = function (t) { return this.querySelector("[slot='" + t + "']"); };
-                o.prototype.has_slot = function (t) { return this.querySelector("[slot='" + t + "']"); };
-                o.prototype.connectedCallback = function () { this.connected = !0, window.ShadyCSS && window.ShadyCSS.styleElement(this), this.classList.add("PFElement"), "object" == typeof this.props && this._mapSchemaToProperties(this.tag, this.props), this._queue.length && this._processQueue(); };
-                o.prototype.disconnectedCallback = function () { this.connected = !1; };
-                o.prototype.attributeChangedCallback = function (t, e, s) { if (!this._pfeClass.cascadingAttributes)
-                    return; var o = this._pfeClass.cascadingAttributes[t]; o && this._copyAttribute(t, o); };
-                o.prototype._copyAttribute = function (t, e) { var s = this.querySelectorAll(e).concat(this.shadowRoot.querySelectorAll(e)), o = this.getAttribute(t), i = null == o ? "removeAttribute" : "setAttribute"; for (var _i = 0, s_1 = s; _i < s_1.length; _i++) {
-                    var e_1 = s_1[_i];
-                    e_1[i](t, o);
-                } };
-                o.prototype._mapSchemaToProperties = function (t, e) {
-                    var _this = this;
-                    Object.keys(e).forEach(function (o) { var i = e[o]; if (_this[o] = i, _this[o].value = null, _this.hasAttribute("" + s + o))
-                        _this[o].value = _this.getAttribute("" + s + o);
-                    else if (i.default) {
-                        var e_2 = _this._hasDependency(t, i.options), n = !i.options || i.options && !i.options.dependencies.length;
-                        (e_2 || n) && (_this.setAttribute("" + s + o, i.default), _this[o].value = i.default);
-                    } });
+                PFElement.prototype.has_slot = function (name) {
+                    return this.querySelector("[slot='" + name + "']");
                 };
-                o.prototype._hasDependency = function (t, e) { var o = e ? e.dependencies : [], i = !1; for (var e_3 = 0; e_3 < o.length; e_3 += 1) {
-                    var n = "slot" === o[e_3].type && this.has_slot(t + "--" + o[e_3].id), r = "attribute" === o[e_3].type && this.getAttribute("" + s + o[e_3].id);
-                    if (n || r) {
-                        i = !0;
-                        break;
+                PFElement.prototype.has_slots = function (name) {
+                    return this.querySelectorAll("[slot='" + name + "']").slice();
+                };
+                PFElement.prototype.connectedCallback = function () {
+                    this.connected = true;
+                    if (window.ShadyCSS) {
+                        window.ShadyCSS.styleElement(this);
                     }
-                } return i; };
-                o.prototype._queueAction = function (t) { this._queue.push(t); };
-                o.prototype._processQueue = function () {
+                    this.classList.add("PFElement");
+                    if (typeof this.props === "object") {
+                        this._mapSchemaToProperties(this.tag, this.props);
+                    }
+                    if (this._queue.length) {
+                        this._processQueue();
+                    }
+                };
+                PFElement.prototype.disconnectedCallback = function () {
+                    this.connected = false;
+                };
+                PFElement.prototype.attributeChangedCallback = function (attr, oldVal, newVal) {
+                    if (!this._pfeClass.cascadingAttributes) {
+                        return;
+                    }
+                    var cascadeTo = this._pfeClass.cascadingAttributes[attr];
+                    if (cascadeTo) {
+                        this._copyAttribute(attr, cascadeTo);
+                    }
+                };
+                PFElement.prototype._copyAttribute = function (name, to) {
+                    var recipients = this.querySelectorAll(to).concat(this.shadowRoot.querySelectorAll(to));
+                    var value = this.getAttribute(name);
+                    var fname = value == null ? "removeAttribute" : "setAttribute";
+                    for (var _i = 0, recipients_1 = recipients; _i < recipients_1.length; _i++) {
+                        var node = recipients_1[_i];
+                        node[fname](name, value);
+                    }
+                };
+                PFElement.prototype._mapSchemaToProperties = function (tag, properties) {
                     var _this = this;
-                    this._queue.forEach(function (t) { _this["_" + t.type](t.data); }), this._queue = [];
+                    Object.keys(properties).forEach(function (attr) {
+                        var data = properties[attr];
+                        _this[attr] = data;
+                        _this[attr].value = null;
+                        if (_this.hasAttribute("" + prefix + attr)) {
+                            _this[attr].value = _this.getAttribute("" + prefix + attr);
+                        }
+                        else if (data.default) {
+                            var dependency_exists = _this._hasDependency(tag, data.options);
+                            var no_dependencies = !data.options || (data.options && !data.options.dependencies.length);
+                            if (dependency_exists || no_dependencies) {
+                                _this.setAttribute("" + prefix + attr, data.default);
+                                _this[attr].value = data.default;
+                            }
+                        }
+                    });
                 };
-                o.prototype._setProperty = function (_a) {
-                    var t = _a.name, e = _a.value;
-                    this[t] = e;
+                PFElement.prototype._hasDependency = function (tag, opts) {
+                    var dependencies = opts ? opts.dependencies : [];
+                    var hasDependency = false;
+                    for (var i = 0; i < dependencies.length; i += 1) {
+                        var slot_exists = dependencies[i].type === "slot" &&
+                            this.has_slot(tag + "--" + dependencies[i].id);
+                        var attribute_exists = dependencies[i].type === "attribute" &&
+                            this.getAttribute("" + prefix + dependencies[i].id);
+                        if (slot_exists || attribute_exists) {
+                            hasDependency = true;
+                            break;
+                        }
+                    }
+                    return hasDependency;
                 };
-                o.var = function (t, e) {
-                    if (e === void 0) { e = document.body; }
-                    return window.getComputedStyle(e).getPropertyValue(t).trim();
+                PFElement.prototype._queueAction = function (action) {
+                    this._queue.push(action);
                 };
-                o.prototype.var = function (t) { return o.var(t, this); };
-                o.prototype.render = function () { this.shadowRoot.innerHTML = "", this.template.innerHTML = this.html, window.ShadyCSS && window.ShadyCSS.prepareTemplate(this.template, this.tag), this.shadowRoot.appendChild(this.template.content.cloneNode(!0)); };
-                o.prototype.log = function () {
-                    var t = [];
+                PFElement.prototype._processQueue = function () {
+                    var _this = this;
+                    this._queue.forEach(function (action) {
+                        _this["_" + action.type](action.data);
+                    });
+                    this._queue = [];
+                };
+                PFElement.prototype._setProperty = function (_a) {
+                    var name = _a.name, value = _a.value;
+                    this[name] = value;
+                };
+                PFElement.var = function (name, element) {
+                    if (element === void 0) { element = document.body; }
+                    return window
+                        .getComputedStyle(element)
+                        .getPropertyValue(name)
+                        .trim();
+                };
+                PFElement.prototype.var = function (name) {
+                    return PFElement.var(name, this);
+                };
+                PFElement.prototype.render = function () {
+                    this.shadowRoot.innerHTML = "";
+                    this.template.innerHTML = this.html;
+                    if (window.ShadyCSS) {
+                        window.ShadyCSS.prepareTemplate(this.template, this.tag);
+                    }
+                    this.shadowRoot.appendChild(this.template.content.cloneNode(true));
+                };
+                PFElement.prototype.log = function () {
+                    var msgs = [];
                     for (var _i = 0; _i < arguments.length; _i++) {
-                        t[_i] = arguments[_i];
+                        msgs[_i] = arguments[_i];
                     }
-                    o.log.apply(o, ["[" + this.tag + "]"].concat(t));
+                    PFElement.log.apply(PFElement, ["[" + this.tag + "]"].concat(msgs));
                 };
-                return o;
+                return PFElement;
             }(HTMLElement));
-            !function (s) { t = s; var o = window.WebComponents, i = o && window.WebComponents.ready; !o || i ? e() : window.addEventListener("WebComponentsReady", e); }(o.log);
-            exports_1("default", o);
+            autoReveal(PFElement.log);
+            exports_1("default", PFElement);
         }
     };
 });

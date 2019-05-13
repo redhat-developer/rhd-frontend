@@ -1,116 +1,5 @@
-// import PFElement from '../../@pfelements/pfelement.js';
-import { library, icon, dom } from '../../@fortawesome/fontawesome-svg-core/index.es.js'
-import {faSearch} from '../../@fortawesome/pro-solid-svg-icons/index.es.js';
-import PFElement from '../../@patternfly/pfelement/pfelement.js';
-
-library.add(faSearch);
-
-const searchIcon = icon(faSearch,{ transform: {
-    size: 18
-    }}).html;
-
-export default class RHDPSearchBox extends PFElement {
-    get html() {
-        return `
-        <style>
-            * {
-                font-family: Overpass,Open Sans,Arial,Helvetica,sans-serif;
-            }
-
-            :host {
-                flex: 0 0 auto;
-                margin: 0 0 1em;
-            }
-
-            form.search-bar { 
-                box-sizing: border-box;
-                color: rgb(66,66,66);
-                cursor: auto;
-                display: flex;
-                flex-direction: row;
-                font-size: 16px;
-                line-height: 24px;
-                position: relative; 
-                margin: 0;
-                width: 100%;
-            }
-        
-            form.search-bar div {
-                flex: 1 1 100%;
-            }
-            
-            input.user-search {
-                background-color: white;
-                border: 1px solid #ccc;
-                box-sizing: border-box;
-                font-size: 16px;
-                font-weight: 600;
-                height: 40px;
-                text-align: start;
-                padding: 8px;
-                transition-property: box-shadow, border-color;
-                transition-delay: 0s, 0s;
-                transition-duration: 0.45s, 0.45s;
-                transition-timing-function: ease, ease-in-out;
-                user-select: text;
-                width: 100%;
-                margin-bottom: 1em;
-            }
-        
-            input.user-search::-webkit-search-cancel-button{
-                position:relative;
-                -webkit-appearance: none;
-                height: 20px;
-                width: 20px;
-                background-image: url('https://static.jboss.org/rhd/images/icons/fa_times_icon.svg');
-                opacity: 1;
-                pointer-events: auto;
-            }
-        
-            button {
-                background: #c00;
-                border: 0;
-                color: #fff;
-                cursor: pointer;
-                font-size: 16px;
-                font-weight: 600;
-                height: 40px;
-                line-height: 1.2em;
-                padding: 9px 30px;
-                position: relative;
-                text-align: center;
-                text-decoration: none;
-                text-transform: uppercase;
-                transition: background .2s ease-in 0s;
-            }
-
-            button: hover { background-color: #8f0000; }
-        
-            button svg.svg-inline--fa { display:none; }
-        
-            @media only screen and (max-width: 768px) {
-                :host {
-                    margin-bottom: .5em;
-                }
-                button { display: block; padding: 9px 20px; }
-                button svg.svg-inline--fa { display: inline-block; }
-                button span { display: none; }
-            }
-            
-            ${dom.css()}
-        </style>
-<form class="search-bar" role="search">
-    <div class="input-cont">
-        <input value="${this.term}" class="user-success user-search" type="search" id="query" placeholder="Enter your search term">
-    </div>
-    <button id="search-btn"><span>SEARCH</span>${searchIcon}</button>
-</form>`;
-    }
+export default class RHDPSearchBox extends HTMLElement {
     _term = '';
-
-    static get tag() {
-        return 'rhdp-search-box';
-    }
 
     get term() {
         return this._term;
@@ -118,29 +7,38 @@ export default class RHDPSearchBox extends PFElement {
     set term(val) {
         if (this._term === val) return;
         this._term = decodeURI(val);
-        this.shadowRoot.querySelector('input').setAttribute('value', this.term);
+        this.querySelector('input').setAttribute('value', this.term);
     }
 
     name = 'Search Box';
+    template = (strings, name, term) => {
+        return `<form class="search-bar" role="search">
+        <div class="input-cont">
+            <input value="${term}" class="user-success user-search" type="search" id="query" placeholder="Enter your search term">
+        </div>
+        <button id="search-btn"><span>SEARCH</span><i class='fa fa-search' aria-hidden='true'></i></button>
+        </form>`;
+    };
 
     constructor() {
-        super(RHDPSearchBox, {delayRender: true});
+        super();
         this._checkTerm = this._checkTerm.bind(this);
     }
 
     connectedCallback() {
-        super.connectedCallback();
-        super.render();
         top.addEventListener('params-ready', this._checkTerm);
+        //top.window.addEventListener('popstate', e => { this.term = null; });
         top.addEventListener('term-change', this._checkTerm);
 
-        this.shadowRoot.addEventListener('submit', e => {
+        this.innerHTML = this.template`${this.name}${this.term}`;
+
+        this.addEventListener('submit', e => {
             e.preventDefault();
             this._termChange();
             return false;
         });
 
-        this.shadowRoot.querySelector('#search-btn').addEventListener('click', e => { 
+        this.querySelector('#search-btn').addEventListener('click', e => { 
             
         });
     }
@@ -160,16 +58,14 @@ export default class RHDPSearchBox extends PFElement {
     }
 
     _termChange() {
-        this.term = this.shadowRoot.querySelector('input').value;
-        let evt = {
+        this.term = this.querySelector('input').value;
+        this.dispatchEvent(new CustomEvent('term-change', {
             detail: { 
                 term: this.term
             }, 
-            bubbles: true,
-            composed: true
-        };
-        this.dispatchEvent(new CustomEvent('term-change', evt));
+            bubbles: true
+        }));
     }
 }
 
-PFElement.create(RHDPSearchBox);
+customElements.define('rhdp-search-box', RHDPSearchBox);

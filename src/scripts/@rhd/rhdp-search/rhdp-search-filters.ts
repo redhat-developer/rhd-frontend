@@ -1,142 +1,7 @@
-// import PFElement from '../../@pfelements/pfelement.js';
-import PFElement from '../../@patternfly/pfelement/pfelement.js';
-import RHDPSearchFilterGroup from './rhdp-search-filter-group.js';
-import RHDPSearchFilterItem from './rhdp-search-filter-item.js';
+import RHDPSearchFilterGroup from '@rhd/rhdp-search/rhdp-search-filter-group';
+import RHDPSearchFilterItem from '@rhd/rhdp-search/rhdp-search-filter-item';
 
-export default class RHDPSearchFilters extends PFElement {
-    get html() {
-        return `
-        <style>
-            :host {
-                display: block;
-            }
-            .title {
-                background: #e6e7e8; 
-                color: #000;
-                text-transform: uppercase;
-                padding: .5em 1em;
-                font-weight: 600;
-            }
-            .cancel { display: none; }
-            .showBtn { 
-                display: none;
-                background: #ccc;
-                text-decoration: none;
-                border: 0;
-                height: 40px;
-                font-weight: 600;
-                font-size: 16px;
-                padding: 9px 40px;
-                transition: background .2s ease-in 0s;
-                line-height: 1.2em;
-                cursor: pointer;
-                position: relative;
-                text-align: center;
-                color: #333; 
-                width: 100%;
-                }
-            rhdp-search-sort-page { display: none; }
-            .groups {
-                background-color: #f9f9f9;
-                padding-bottom: 30px;
-                padding-top: 20px;
-            }
-            .active-type {
-                display: flex;
-                flex-direction: row;
-                margin-bottom: 1em;
-                .inline {
-                    font-size: 16px;
-                    font-weight: 600;
-                }
-
-                .clearFilters {
-                    font-size: 16px;
-                }
-
-            }
-            .active-type strong {
-                flex: 0 1 auto; 
-                order: 1; 
-                font-weight: 600;
-                font-size: 1.2em;
-                margin: 0.3em .7em 0 0;
-                white-space: nowrap;
-            }
-            .active-type div { flex: 1 1 auto; order: 2; list-style: none; }
-            .active-type a {
-                flex: 0 1 auto;
-                order: 3;
-                text-decoration: none;
-                color: #0066CC;
-                margin-top: .3em;
-                font-weight: 100;
-                font-size: 14px;
-                white-space: nowrap;
-                &:hover, &:active, &:focus { color: #004080; }
-            }
-
-            #footer { display: none; }
-
-            @media only screen and (max-width: 768px) {
-                :host {
-                    display: flex;
-                    flex-direction: row;
-                    flex: none; 
-                    align-self: flex-start; 
-                    border: none;
-                    margin: 0 0 1.3em 0; 
-                }
-
-                .split { flex: 1 0 auto; }
-                .split.right { text-align: right; }
-
-                rhdp-search-sort-page { display: inline-block; margin: 0;}
-
-                .control {
-                    display: none;
-                    flex-direction: column;
-                    width: 100%;
-                    height: 100%;
-                    padding-top: 51px;
-                    background: rgba(0,0,0,.5);
-                    border: none;
-                    z-index: 99;
-                    right: 100%;
-                    position: absolute;
-                    top: 100px;
-                }
-                .title { flex: 0 0 40px; order: 1; vertical-align: middle; }
-                .showBtn {
-                    display: block;
-                    width: 150px;
-                    height: auto;
-                    border: 1px solid #06c;
-                    line-height: 1.44;
-                    background-color: transparent;
-                    padding: 8px 0;
-                    color: #06c;
-                }
-
-                .showBtn:hover, .showBtn:focus {
-                        background-color: #06c;
-                        color: #fff;
-                }
-            }
-
-        </style>
-<div class="split"><a class="showBtn">Show Filters</a></div>
-<div class="split right"><rhdp-search-sort-page></rhdp-search-sort-page></div>
-<div class="control" id="control">
-    <div class="title">${this.title}</div>
-    <div class="groups">
-    <slot></slot>
-    </div>
-</div>`;
-    }
-
-    static get tag() { return 'rhdp-search-filters'; }
-
+export default class RHDPSearchFilters extends HTMLElement {
     _type = '';
     _title = 'Filter By';
     _filters;
@@ -178,46 +43,91 @@ export default class RHDPSearchFilters extends PFElement {
         if (this._toggle === val) return;
         this._toggle = val;
         if(this._toggle) {
-            this.shadowRoot.querySelector('.cover').className = 'cover modal';
+            this.querySelector('.cover').className = 'cover modal';
             window.scrollTo(0,0);
             document.body.style.overflow = 'hidden';
             this.style.height = window.innerHeight + 'px';
         } else {
-            this.shadowRoot.querySelector('.cover').className = 'cover';
+            this.querySelector('.cover').className = 'cover';
             document.body.style.overflow = 'auto';
         }
     }
 
     constructor() {
-        super(RHDPSearchFilters, {delayRender: true});
+        super();
         this._toggleModal = this._toggleModal.bind(this);
         this._clearFilters = this._clearFilters.bind(this);
+        this._addFilters = this._addFilters.bind(this);
+        this._checkActive = this._checkActive.bind(this);
     }
-    
+    modalTemplate = (string, title) => {
+        return `<div class="cover" id="cover">
+            <div class="title">${title} <a href="#" class="cancel" id="cancel">Close</a></div>
+            <div class="groups">
+            </div>
+            <div class="footer">
+            <a href="#" class="clearFilters">Clear Filters</a> 
+            <a href="#" class="applyFilters">Apply</a>
+            </div>
+        </div>`;
+    }
+    activeTemplate = (strings, title) => {
+        return `<div class="active-type">
+        <strong>${title}</strong>
+        <div class="activeFilters"></div>
+        <a href="#" class="clearFilters">Clear Filters</a>
+      </div>`;
+    }
+    template = (strings, title) => {
+        return `<a class="showBtn">Show Filters</a>
+        <div class="control" id="control">
+            <div class="title">${title}</div>
+            <div class="groups">
+            </div>
+        </div>`; 
+    };
+
     connectedCallback() {
-        super.connectedCallback();
-        super.render();
-        this.addGroups();
-        
-        this.shadowRoot.addEventListener('click', e => {
-            let evt = { bubbles: true, composed: true };
+        if (this.type === 'active') {
+            this.innerHTML = this.activeTemplate`${this.title}`;
+            top.addEventListener('filter-item-change', this._checkActive);
+            top.addEventListener('filter-item-init', this._checkActive);
+            top.addEventListener('search-complete', this._checkActive);
+            top.addEventListener('params-ready', this._checkActive);
+            top.addEventListener('clear-filters', this._clearFilters);
+            this._addFilters();
+        } else if (this.type === 'modal') {
+            this.innerHTML = this.modalTemplate`${this.title}`;
+            this.addGroups();
+        } else {
+            this.innerHTML = this.template`${this.title}`;
+            this.addGroups();
+        }
+
+        this.addEventListener('click', e => {
             switch (e.target['className']) {
                 case 'showBtn':
                 case 'cancel':
                 case 'applyFilters':
                     e.preventDefault();
-                    this.dispatchEvent(new CustomEvent('toggle-modal', evt));
+                    this.dispatchEvent(new CustomEvent('toggle-modal', {
+                        bubbles: true 
+                    }));
                     break;
                 case 'clearFilters':
                     e.preventDefault();
-                    this.dispatchEvent(new CustomEvent('clear-filters', evt));
+                    this.dispatchEvent(new CustomEvent('clear-filters', {
+                        bubbles: true 
+                    }));
                     break;
                 case 'more':
                     e.preventDefault();
                     break;
             }
         });
+        //top.addEventListener('clear-filters', this._clearFilters);
         top.addEventListener('toggle-modal', this._toggleModal);
+        
     }
 
     static get observedAttributes() { 
@@ -229,26 +139,88 @@ export default class RHDPSearchFilters extends PFElement {
     }
 
     addGroups() {
-        let groups = this.filters && this.filters.facets ? this.filters.facets : [],
+        let groups = this.filters.facets,
             len = groups.length;
         for(let i=0; i < len; i++) {
             let group = new RHDPSearchFilterGroup(),
                 groupInfo = groups[i],
-                gLen = groupInfo.items.length;
-                for(let j=0; j < gLen; j++) {
+                groupNode = group.querySelector('.group'),
+                primaryFilters = group.querySelector('.primary'),
+                secondaryFilters = group.querySelector('.secondary'),
+                len = groupInfo.items ? groupInfo.items.length : 0;
+                if (len <= 5) {
+                    groupNode.removeChild(groupNode.lastChild);
+                }
+                for(let j=0; j < len; j++) {
                     let item = new RHDPSearchFilterItem();
                     item.name = groupInfo.items[j].name;
                     item.value = groupInfo.items[j].value;
                     item.active = groupInfo.items[j].active;
                     item.key = groupInfo.items[j].key;
                     item.group = groupInfo.key;
-                    group.items.push(item);
+                    if (j < 5) {
+                        primaryFilters.appendChild(item);
+                    } else {
+                        secondaryFilters.appendChild(item);
+                    }
                 }
             group.key = groupInfo.key;
             group.name = groupInfo.name;        
-            this.shadowRoot.querySelector('.groups').appendChild(group);
+            this.querySelector('.groups').appendChild(group);
         }
 
+    }
+
+    _checkActive(e) {
+        if (e.detail) {
+            if (e.detail.facet) {
+                this.style.display = e.detail.facet.active ? 'block' : this.style.display;
+            } else {
+                let chk = this.querySelectorAll('rhdp-search-filter-item[active]');
+                if (chk.length > 0) {
+                    this.style.display = 'block';
+                } else {
+                    this.style.display = 'none';
+                }
+            }
+        }
+    }
+
+    _initActive(e, group_key, item) {
+        if (e.detail && e.detail.filters) {
+            //console.log(e.detail.filters);
+            Object.keys(e.detail.filters).forEach(group => {
+                e.detail.filters[group].forEach(facet => {
+                    if (group === group_key) {
+                        if (facet === item.key) {
+                            return true;
+                        }
+                    }
+                });
+            });
+            
+        }
+        return false;
+    }
+
+    _addFilters() {
+        var groups = this.filters.facets;
+        for(let i=0; i < groups.length; i++) {
+            var items = groups[i].items;
+            for(let j=0; j < items.length; j++) {
+                let item = new RHDPSearchFilterItem();
+                    item.name = items[j].name;
+                    item.value = items[j].value;
+                    item.inline = true;
+                    item.bubble = false;
+                    item.key = items[j].key;
+                    item.group = groups[i].key;
+                    this.querySelector('.activeFilters').appendChild(item)
+                }
+            }
+        // if (this.type === 'active') {
+        //     this._checkActive();
+        // }
     }
 
     _toggleModal(e) {
@@ -258,11 +230,9 @@ export default class RHDPSearchFilters extends PFElement {
     }
 
     applyFilters() {
-        let evt = {
-            bubbles: true,
-            composed: true
-        }
-        this.dispatchEvent(new CustomEvent('apply-filters', evt));
+        this.dispatchEvent(new CustomEvent('apply-filters', {
+            bubbles: true
+        }));
     }
 
     _clearFilters(e) {
@@ -270,4 +240,4 @@ export default class RHDPSearchFilters extends PFElement {
     }
 }
 
-PFElement.create(RHDPSearchFilters);
+customElements.define('rhdp-search-filters', RHDPSearchFilters);
