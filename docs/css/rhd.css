@@ -275,7 +275,8 @@ body.page-node-type-coding-resource h1.page-title, .visually-hidden {
 :root {
   --rhd--theme--color--ui--soft-dark: rgba(0, 0, 0, 0.8);
   --rhd--theme--color--ui--link-universal: rgba(255, 255, 255, 0.062);
-  --pfe-theme--color--text: #242424; }
+  --pfe-theme--color--text: #242424;
+  --pfe-theme--font-size--xxl: 46px; }
 
 .rh-universal-header {
   background-color: rgba(0, 0, 0, 0.8);
