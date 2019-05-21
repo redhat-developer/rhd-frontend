@@ -8,17 +8,12 @@
   </url>
   
   <url>
-    <loc>https://redhat-developer.github.io/rhd-frontend/patterns/summit/uni-header/</loc>
-    <lastmod>2017-08-03T14:58:26-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://redhat-developer.github.io/rhd-frontend/components/onebox/</loc>
     <lastmod>2017-08-23T22:56:37-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://redhat-developer.github.io/rhd-frontend/patterns/summit/assemblies/</loc>
+    <loc>https://redhat-developer.github.io/rhd-frontend/patterns/assemblies/assemblies/</loc>
     <lastmod>2017-08-03T14:58:26-04:00</lastmod>
   </url>
   
@@ -29,6 +24,11 @@
   
   <url>
     <loc>https://redhat-developer.github.io/rhd-frontend/components/alerts/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://redhat-developer.github.io/rhd-frontend/pages/home/</loc>
     <lastmod>2018-04-17T14:39:40-04:00</lastmod>
   </url>
   
@@ -50,11 +50,6 @@
   <url>
     <loc>https://redhat-developer.github.io/rhd-frontend/components/stack-overflow/</loc>
     <lastmod>2018-04-30T13:12:43-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://redhat-developer.github.io/rhd-frontend/patterns/summit/</loc>
-    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
   </url>
   
   <url>
@@ -89,6 +84,11 @@
   
   <url>
     <loc>https://redhat-developer.github.io/rhd-frontend/patterns/misc/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://redhat-developer.github.io/rhd-frontend/pages/</loc>
     <lastmod>2018-04-17T14:39:40-04:00</lastmod>
   </url>
   
@@ -155,16 +155,6 @@
   <url>
     <loc>https://redhat-developer.github.io/rhd-frontend/patterns/misc/links/</loc>
     <lastmod>2017-08-03T15:03:17-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://redhat-developer.github.io/rhd-frontend/patterns/summit/uni-footer/</loc>
-    <lastmod>2017-08-03T14:58:26-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://redhat-developer.github.io/rhd-frontend/patterns/summit/logo/</loc>
-    <lastmod>2017-08-03T14:58:04-04:00</lastmod>
   </url>
   
   <url>
@@ -266,8 +256,8 @@
   </url>
   
   <url>
-    <loc>https://redhat-developer.github.io/rhd-frontend/tags/navigation/</loc>
-    <lastmod>2017-08-03T14:58:26-04:00</lastmod>
+    <loc>https://redhat-developer.github.io/rhd-frontend/tags/page/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
     <priority>0</priority>
   </url>
   

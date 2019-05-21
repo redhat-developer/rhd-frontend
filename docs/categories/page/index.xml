@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>2019 Summit Updates</title>
-      <link>https://redhat-developer.github.io/rhd-frontend/patterns/summit/</link>
-      <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
-      
-      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/summit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Assemblies</title>
       <link>https://redhat-developer.github.io/rhd-frontend/patterns/assemblies/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
@@ -80,6 +71,15 @@
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
       <guid>https://redhat-developer.github.io/rhd-frontend/patterns/misc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pages</title>
+      <link>https://redhat-developer.github.io/rhd-frontend/pages/</link>
+      <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
+      
+      <guid>https://redhat-developer.github.io/rhd-frontend/pages/</guid>
       <description></description>
     </item>
     

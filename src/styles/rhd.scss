@@ -16,6 +16,22 @@ $white: white;
     display: none;
 }
 
+%on-dark-assembly {
+  --pfe-theme--font-size--alpha: 46px;
+
+}
+/* Assembly Variations */
+[data-variant="dark"] {
+  --pfe-theme--color--surface--base: rgb(19, 20, 20);
+  --pfe-theme--font-size--alpha: 42px;
+  --pfe-theme--color--text: white;
+  --pfe-theme--color--text--on-dark: white;
+}
+
+[data-variant="dark"] p {
+  color: var(--pfe-theme--color--text--on-dark, white);
+}
+
 :root {
     --rhd--theme--color--ui--soft-dark: #{$soft-dark};
     --rhd--theme--color--ui--link-universal: rgba(255, 255, 255, 0.062);
