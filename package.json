@@ -21,7 +21,7 @@
     "scripts:cpnpm": "copyfiles -u 3 \"dist/js/node_modules/**/*\" src/docs/static/js",
     "styles": "npm run del:styles && npm run styles:sass && npm run styles:copy",
     "styles:sass": "node-sass src/styles/ -o dist/styles/ && node-sass src/styles/ -o dist/styles-min/ --output-style compressed && postcss -o dist/styles-min/rhd.min.css dist/styles-min/rhd.css",
-    "styles:copy": "copyfiles -f \"dist/styles**/*.css\" src/docs/static/css && copyfiles -f \"node_modules/@patternfly/pfe-layouts/pfe-layouts*.css\" src/docs/static/css",
+    "styles:copy": "copyfiles -f \"dist/styles**/*.css\" src/docs/static/css && copyfiles -f \"node_modules/@patternfly/pfe-layouts/pfe-*.css\" src/docs/static/css",
     "docs": "hugo -D -s src/docs --config src/docs/config.toml && npm run docs:front",
     "docs:dev": "hugo -D -s src/docs --config src/docs/config.dev.toml && npm run docs:front",
     "docs:front": "npm run docs:styles && npm run docs:scripts",

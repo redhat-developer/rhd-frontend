@@ -272,6 +272,12 @@ body.page-node-type-learning-path h1.page-title,
 body.page-node-type-coding-resource h1.page-title, .visually-hidden {
   display: none; }
 
+.assembly {
+  background-image: var(--rhd-theme--ui--background-image, none);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 /* Assembly Variations */
 [data-variant="dark"] {
   --pfe-theme--color--surface--base: rgb(19, 20, 20);

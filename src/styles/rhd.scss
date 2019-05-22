@@ -16,6 +16,17 @@ $white: white;
     display: none;
 }
 
+%assembly {
+  background-image: var(--rhd-theme--ui--background-image, none);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.assembly {
+  @extend %assembly;
+}
+
 %on-dark-assembly {
   --pfe-theme--font-size--alpha: 46px;
 

@@ -13,7 +13,7 @@ module.exports = {
         // Route a URL path to an app server.
         // This is most useful for testing local files (esp JS and CSS) against
         // a remote QA or production server.
-        //"/": { host: "http://developers.redhat.com" }
+        "/themes": { host: "http://developers.redhat.com/" }
 
         // Route a URL path to an app server, and watch local files for changes.
         // This is most useful for putting a local development at a certain
