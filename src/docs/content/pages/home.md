@@ -46,85 +46,63 @@ scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-s
                 <h2 class="header field field--name-field-title field--type-string field--label-hidden field__items">
                   Build here
                 </h2>
-                <div class="pfe-l-grid pfe-m-gutters pfe-l-grid-fill-height pfe-m-all-6-col">
-                  <ul class="content-tile-list count-4">
-                    <li>
-                      <article class="wordpress-blog-post-tile">
-                        <a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-developer-cheat-sheet/">
-                    <div class="tile-image vertical">
-        <div class="image-table">
-          <div class="image-cell">
-            <img src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/dce8036d40e0b11dd1c1d0620e8ebe59.png?itok=092K5PjH" width="356" height="200" alt="Red Hat Enterprise Linux 8 developer cheat sheet" typeof="foaf:Image" class="image-style-static-item">
-          </div>
-        </div>
-      </div>
-        <h3 class="tile-title">Red Hat Enterprise Linux 8 developer cheat sheet</h3>
-        </a><div class="tile-comment-count hidden" data-disqus-thread-link="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-developer-cheat-sheet/" data-disqus-comment-count=""><a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-developer-cheat-sheet/">
-      </a><a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-developer-cheat-sheet/#disqus_thread">
-        <span class="fa fa-comment"></span>
-        <span class="comment-number" data-disqus-comment-count-number=""></span> 
-        <span class="count-verbage" data-disqus-comment-count-verbage="">Comments</span>
-      </a>
-    </div>
-      
-</article>
-</li><li><article class="wordpress-blog-post-tile">
-  <a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/">
-          <div class="tile-image horizontal">
-        <div class="image-table">
-          <div class="image-cell">
-                                                    <img src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/e82397e71d7ae42dd48a946b0a9a3e1f.png?itok=J7cA6g6b" width="356" height="200" alt="Red Hat Enterprise Linux 8 now generally available" typeof="foaf:Image" class="image-style-static-item">
-                      </div>
-        </div>
-      </div>
-        <h3 class="tile-title">Red Hat Enterprise Linux 8 now generally available</h3>
-        </a><div class="tile-comment-count hidden" data-disqus-thread-link="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/" data-disqus-comment-count=""><a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/">
-      </a><a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/#disqus_thread">
-        <span class="fa fa-comment"></span>
-        <span class="comment-number" data-disqus-comment-count-number=""></span> 
-        <span class="count-verbage" data-disqus-comment-count-verbage="">Comments</span>
-      </a>
-    </div>      
-</article>
-</li><li><article class="wordpress-blog-post-tile">
-  <a href="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/">
-          <div class="tile-image vertical">
-        <div class="image-table">
-          <div class="image-cell">
-                                                    <img src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/86fa8b876def478a861853d96654f01d.png?itok=tk2vh1wo" width="356" height="200" alt="Podman basics cheat sheet" typeof="foaf:Image" class="image-style-static-item">
-                      </div>
-        </div>
-      </div>
-        <h3 class="tile-title">Podman basics cheat sheet</h3>
-        </a><div class="tile-comment-count hidden" data-disqus-thread-link="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/" data-disqus-comment-count=""><a href="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/">
-      </a><a href="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/#disqus_thread">
-        <span class="fa fa-comment"></span>
-        <span class="comment-number" data-disqus-comment-count-number=""></span> 
-        <span class="count-verbage" data-disqus-comment-count-verbage="">Comments</span>
-      </a>
-    </div>
-      
-</article>
-</li><li><article class="wordpress-blog-post-tile">
-  <a href="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/">
-          <div class="tile-image horizontal">
-        <div class="image-table">
-          <div class="image-cell">
-                                                    <img src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/e684ea8849af25532d2f2c5ad1c6dab4.png?itok=x5vFfjEH" width="356" height="200" alt="Not all OpenJDK 12 builds include Shenandoah: Here&amp;#8217;s why" typeof="foaf:Image" class="image-style-static-item">
-                      </div>
-        </div>
-      </div>
-        <h3 class="tile-title">Not all OpenJDK 12 builds include Shenandoah: Here’s why</h3>
-        </a><div class="tile-comment-count hidden" data-disqus-thread-link="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/" data-disqus-comment-count=""><a href="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/">
-      </a><a href="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/#disqus_thread">
-        <span class="fa fa-comment"></span>
-        <span class="comment-number" data-disqus-comment-count-number=""></span> 
-        <span class="count-verbage" data-disqus-comment-count-verbage="">Comments</span>
-      </a>
-    </div>
-</article>
-</li></ul></div>  </div>
-  </section>
+                <div class="pfe-l-grid pfe-m-gutters pfe-l-grid-fill-height pfe-m-all-3-col">
+                  <pfe-card pfe-color="lighter">
+                    <a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-developer-cheat-sheet/">
+                      <img pfe-overflow="top right left" src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/dce8036d40e0b11dd1c1d0620e8ebe59.png?itok=092K5PjH">
+                    </a>
+                    <h3 class="tile-title">
+                      <a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-developer-cheat-sheet/">Red Hat Enterprise Linux 8 developer cheat sheet</a>
+                    </h3>
+                    <div class="tile-comment-count hidden" data-disqus-thread-link="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-developer-cheat-sheet/" data-disqus-comment-count="">
+                      <a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-developer-cheat-sheet/#disqus_thread">
+                        <span class="fa fa-comment"></span>
+                        <span class="comment-number" data-disqus-comment-count-number=""></span> 
+                        <span class="count-verbage" data-disqus-comment-count-verbage="">Comments</span>
+                      </a>
+                    </div>
+                  </pfe-card>
+                  <pfe-card pfe-color="lighter">
+                    <a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/"><img pfe-overflow="top right left" src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/e82397e71d7ae42dd48a946b0a9a3e1f.png?itok=J7cA6g6b"></a>
+                    <h3 class="tile-title">
+                    <a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/">Red Hat Enterprise Linux 8 now generally available</a>
+                    </h3>
+                    <div class="tile-comment-count hidden" data-disqus-thread-link="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/" data-disqus-comment-count=""><a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/">
+                    </a><a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/#disqus_thread">
+                      <span class="fa fa-comment"></span>
+                      <span class="comment-number" data-disqus-comment-count-number=""></span> 
+                      <span class="count-verbage" data-disqus-comment-count-verbage="">Comments</span>
+                    </a>
+                    </div>
+                  </pfe-card>
+                  <pfe-card pfe-color="lighter">
+                    <a href="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/"><img pfe-overflow="top right left" src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/86fa8b876def478a861853d96654f01d.png?itok=tk2vh1wo"></a>
+                    <h3 class="tile-title">
+                    <a href="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/">Podman basics cheat sheet</a>
+                    </h3>
+                    <div class="tile-comment-count hidden" data-disqus-thread-link="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/" data-disqus-comment-count=""><a href="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/">
+                      </a><a href="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/#disqus_thread">
+                        <span class="fa fa-comment"></span>
+                        <span class="comment-number" data-disqus-comment-count-number=""></span> 
+                        <span class="count-verbage" data-disqus-comment-count-verbage="">Comments</span>
+                      </a>
+                    </div>
+                  </pfe-card>
+                  <pfe-card pfe-color="lighter">
+                    <a href="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/"><img pfe-overflow="top right left" src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/e684ea8849af25532d2f2c5ad1c6dab4.png?itok=x5vFfjEH"></a>
+                    <h3 class="tile-title">
+                    <a href="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/">Not all OpenJDK 12 builds include Shenandoah: Here’s why</a>
+                    </h3>
+                    <div class="tile-comment-count hidden" data-disqus-thread-link="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/" data-disqus-comment-count=""><a href="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/">
+                    </a><a href="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/#disqus_thread">
+                      <span class="fa fa-comment"></span>
+                      <span class="comment-number" data-disqus-comment-count-number=""></span> 
+                      <span class="count-verbage" data-disqus-comment-count-verbage="">Comments</span>
+                    </a>
+                    </div>
+                  </pfe-card>
+                </div>
+              </section>
     <section id="assembly-field-sections-345" class="assembly assembly-type-dynamic_content_list">
   <div class="container ">
   <h2 class="header field__item">Go Anywhere</h2>
@@ -221,9 +199,7 @@ scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-s
   </div>
 </div><div class="latest-disqus-comment">
   <h6 class="comment-title">Containers without daemons: Podman and Buildah available in RHEL 7.6 and RHEL 8 Beta</h6>
-  <div class="comment-body">“How can I match existing containerization work in regards to docker version compatibility. 
-
-So e.g if I want to run and build containers in the future based on my existing...”</div>
+  <div class="comment-body">“How can I match existing containerization work in regards to docker version compatibility. So e.g if I want to run and build containers in the future based on my existing...”</div>
   <div class="comment-footer">
     <div class="date">May 14, 2019</div>
     <div class="reply"><a href="https://developers.redhat.com/blog/2018/11/20/buidah-podman-containers-without-daemons/#comment-4461975364" class="reply-link">Reply</a></div>
