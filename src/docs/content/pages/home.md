@@ -5,7 +5,7 @@ description: ""
 draft: true
 tags: ["page"]
 weight: 4
-scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-svg-core/index.es.js","js/@fortawesome/pro-solid-svg-icons/index.es.js", "js/@patternfly/pfe-cta/pfe-cta.js", "js/@rhd/dp-alert.js"]
+scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-svg-core/index.es.js","js/@fortawesome/pro-solid-svg-icons/index.es.js", "js/@patternfly/pfe-cta/pfe-cta.js", "js/@patternfly/pfe-card/pfe-card.js", "js/@rhd/dp-alert.js"]
 ---
 
 {{< code >}}
@@ -103,129 +103,128 @@ scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-s
                   </pfe-card>
                 </div>
               </section>
-    <section id="assembly-field-sections-345" class="assembly assembly-type-dynamic_content_list">
-  <div class="container ">
-  <h2 class="header field__item">Go Anywhere</h2>
-    <div class="grid">
-              <div><div class="item-list"><ul class="content-teaser-list count-6"><li>
-<article class="rhd-list-entry">
-    <div class="text-content">
-        <h3 class="rhd-list-entry--title"><a href="https://developers.redhat.com/blog/2019/05/14/bringing-iot-to-red-hat-amq-online/">Bringing IoT to Red Hat AMQ Online</a></h3>
-        <div class="rhd-list-entry--date">May 14, 2019</div>
-        <div class="rhd-list-entry--summary"><p>Red Hat AMQ Online 1.1 was recently announced, and I am excited about it because it contains a tech preview of our Internet of Things (IoT) support. AMQ Online is the “messaging as service solution” from Red Hat AMQ. Leveraging the work we did on Eclipse Hono&nbsp;allows us to integrate a scalable, cloud-native IoT personality […]</p>
-</div>
-    </div>
-            <div class="rhd-list-entry--image">
-                                                    <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/e243d76bb39d5ac12184f0c855bf4e4c.png?itok=TaTJzkaz" alt="Bringing IoT to Red Hat AMQ Online" typeof="foaf:Image" class="image-style-teaser">
-        </div>
-    </article>
-</li><li>
-<article class="rhd-list-entry">
-    <div class="text-content">
-        <h3 class="rhd-list-entry--title"><a href="https://developers.redhat.com/blog/2019/05/14/use-the-kubernetes-python-client-from-your-running-red-hat-openshift-pods/">Use the Kubernetes Python client from your running Red Hat OpenShift pods</a></h3>
-        <div class="rhd-list-entry--date">May 14, 2019</div>
-        <div class="rhd-list-entry--summary"><p>Red Hat OpenShift is part of the Cloud Native Computing Foundation (CNCF) Certified Program, ensuring portability and interoperability for your container workloads. This also allows you to use Kubernetes tools to interact with an OpenShift cluster, like kubectl, and you can rest assured that all the APIs you know and love are right there at […]</p>
-</div>
-    </div>
-            <div class="rhd-list-entry--image">
-                                                    <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/d2dd1fb5e0433c79c97271b1d2a201b4.png?itok=d5C9OmA4" alt="Use the Kubernetes Python client from your running Red Hat OpenShift pods" typeof="foaf:Image" class="image-style-teaser">
-        </div>
-    </article>
-</li><li>
-<article class="rhd-list-entry">
-    <div class="text-content">
-        <h3 class="rhd-list-entry--title"><a href="https://developers.redhat.com/blog/2019/05/13/building-and-understanding-reactive-microservices-using-eclipse-vert-x-and-distributed-tracing/">Building and understanding reactive microservices using Eclipse Vert.x and distributed tracing</a></h3>
-        <div class="rhd-list-entry--date">May 13, 2019</div>
-        <div class="rhd-list-entry--summary"><p>I recently had the opportunity to speak at Red Hat Summit 2019. In my session, titled “Vert.x application development with Jaeger distributed tracing,” I discussed how scalable event-driven applications could be built with Eclipse Vert.x, a Java Virtual Machine toolkit for building reactive applications. Thanks to many developer tools, creating these applications is no longer […]</p>
-</div>
-    </div>
-            <div class="rhd-list-entry--image">
-                                                    <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/f54e08bd8f35b685ebe57bb2d5397f38.png?itok=pwHyQbrY" alt="Building and understanding reactive microservices using Eclipse Vert.x and distributed tracing" typeof="foaf:Image" class="image-style-teaser">
-        </div>
-    </article>
-</li><li>
-<article class="rhd-list-entry">
-    <div class="text-content">
-        <h3 class="rhd-list-entry--title"><a href="https://developers.redhat.com/blog/2019/05/13/migrating-java-applications-to-quarkus-part-2-before-and-after/">Migrating Java applications to Quarkus, Part 2: Before and after</a></h3>
-        <div class="rhd-list-entry--date">May 13, 2019</div>
-        <div class="rhd-list-entry--summary"><p>This article is a continuation of Migrating Java applications to Quarkus: Lessons learned, and here, I’ll make a comparison of performance metrics for building and running a Java app before and after Quarkus. My goal here is to demonstrate how awesome Quarkus is and maybe help you decide to use Quarkus to build your cool […]</p>
-</div>
-    </div>
-            <div class="rhd-list-entry--image">
-                                                    <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/b356646680e6c550c55f845b5b5ca6e6.jpg?itok=RIkej_V9" alt="Migrating Java applications to Quarkus, Part 2: Before and after" typeof="foaf:Image" class="image-style-teaser">
-        </div>
-    </article>
-</li><li>
-<article class="rhd-list-entry">
-    <div class="text-content">
-        <h3 class="rhd-list-entry--title"><a href="https://developers.redhat.com/blog/2019/05/09/create-your-first-quarkus-project-with-eclipse-ide-red-hat-codeready-studio/">Create your first Quarkus project with Eclipse IDE (Red Hat CodeReady Studio)</a></h3>
-        <div class="rhd-list-entry--date">May 9, 2019</div>
-        <div class="rhd-list-entry--summary"><p>You’ve probably heard about Quarkus, the Supersonic Subatomic Java framework tailored for Kubernetes and containers. In this article, I will show how easy is it to create and set up a Quarkus project in an Eclipse IDE based environment.</p>
-</div>
-    </div>
-            <div class="rhd-list-entry--image">
-                                                    <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/b356646680e6c550c55f845b5b5ca6e6.jpg?itok=RIkej_V9" alt="Create your first Quarkus project with Eclipse IDE (Red Hat CodeReady Studio)" typeof="foaf:Image" class="image-style-teaser">
-        </div>
-    </article>
-</li><li>
-<article class="rhd-list-entry">
-    <div class="text-content">
-        <h3 class="rhd-list-entry--title"><a href="https://developers.redhat.com/blog/2019/05/08/looking-up-a-hash-table-library-for-caching-in-the-3scale-istio-adapter/">Looking up a hash table library for caching in the 3scale Istio adapter</a></h3>
-        <div class="rhd-list-entry--date">May 8, 2019</div>
-        <div class="rhd-list-entry--summary"><p>You have probably already heard about the service mesh concept and one of its leading implementations, Istio. In the 3scale engineering team at Red Hat, we are working on a component to extend the functionality of Istio (and Red Hat’s distribution, Maistra) by integrating some API Management features via the 3scale platform. In this article, […]</p>
-</div>
-    </div>
-            <div class="rhd-list-entry--image">
-                                                    <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/96d2c9705c691867a96c50f9674bf6d4.png?itok=StazOUK_" alt="Looking up a hash table library for caching in the 3scale Istio adapter" typeof="foaf:Image" class="image-style-teaser">
-        </div>
-    </article>
-</li></ul></div></div>
-              <aside class="sidebar">
-                    <div class="disqus">
-            <h5 class="header"><span class="fa fa-comment"></span> Latest Comments</h5>
-            <div><div class="comment-wrapper"><div class="latest-disqus-comment">
-  <h6 class="comment-title">Introducing CodeReady Linux Builder</h6>
-  <div class="comment-body">“Redhat Linux 8”</div>
-  <div class="comment-footer">
-    <div class="date">May 14, 2019</div>
-    <div class="reply"><a href="https://developers.redhat.com/blog/2018/11/15/introducing-codeready-linux-builder/#comment-4462244727" class="reply-link">Reply</a></div>
-  </div>
-</div><div class="latest-disqus-comment">
-  <h6 class="comment-title">Red Hat Enterprise Linux 8 Image Builder: Building custom system images</h6>
-  <div class="comment-body">“Glad you published this.  I am interested to see more based on using an Enterprise setup with Satellite and RHEL 8.”</div>
-  <div class="comment-footer">
-    <div class="date">May 14, 2019</div>
-    <div class="reply"><a href="https://developers.redhat.com/blog/2019/03/28/red-hat-enterprise-linux-8-image-builder-building-custom-system-images/#comment-4462505117" class="reply-link">Reply</a></div>
-  </div>
-</div><div class="latest-disqus-comment">
-  <h6 class="comment-title">Containers without daemons: Podman and Buildah available in RHEL 7.6 and RHEL 8 Beta</h6>
-  <div class="comment-body">“How can I match existing containerization work in regards to docker version compatibility. So e.g if I want to run and build containers in the future based on my existing...”</div>
-  <div class="comment-footer">
-    <div class="date">May 14, 2019</div>
-    <div class="reply"><a href="https://developers.redhat.com/blog/2018/11/20/buidah-podman-containers-without-daemons/#comment-4461975364" class="reply-link">Reply</a></div>
-  </div>
-</div><div class="latest-disqus-comment">
-  <h6 class="comment-title">Create your first Quarkus project with Eclipse IDE (Red Hat CodeReady Studio)</h6>
-  <div class="comment-body">“How do you stop it running? Stop button on the Console window does nothing.”</div>
-  <div class="comment-footer">
-    <div class="date">May 14, 2019</div>
-    <div class="reply"><a href="https://developers.redhat.com/blog/2019/05/09/create-your-first-quarkus-project-with-eclipse-ide-red-hat-codeready-studio/#comment-4461751082" class="reply-link">Reply</a></div>
-  </div>
-</div></div><div class="hidden template--rhd-disqus--comment--latest"><div class="hidden latest-disqus-comment">
-  <h6 class="comment-title">Example thread title</h6>
-  <div class="comment-body">Comment body goes here.</div>
-  <div class="comment-footer">
-    <div class="date">May 15, 2019</div>
-    <div class="reply"><a href="" class="reply-link">Reply</a></div>
-  </div>
-</div>
-</div></div>
+              <section id="assembly-field-sections-345" class="assembly assembly-type-dynamic_content_list">
+                <div class="container ">
+                  <h2 class="header field__item">Go Anywhere</h2>
+                  <div class="pfe-l-grid pfe-m-gutters">
+                    <div class="pfe-m-9-col">
+                      <ul class="content-teaser-list count-6">
+                        <li>
+                          <article class="rhd-list-entry">
+                            <div class="text-content">
+                              <h3 class="rhd-list-entry--title"><a href="https://developers.redhat.com/blog/2019/05/14/bringing-iot-to-red-hat-amq-online/">Bringing IoT to Red Hat AMQ Online</a></h3>
+                              <div class="rhd-list-entry--date">May 14, 2019</div>
+                              <div class="rhd-list-entry--summary">
+                                <p>Red Hat AMQ Online 1.1 was recently announced, and I am excited about it because it contains a tech preview of our Internet of Things (IoT) support. AMQ Online is the “messaging as service solution” from Red Hat AMQ. Leveraging the work we did on Eclipse Hono&nbsp;allows us to integrate a scalable, cloud-native IoT personality […]</p>
+                              </div>
+                            </div>
+                            <div class="rhd-list-entry--image">
+                              <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/e243d76bb39d5ac12184f0c855bf4e4c.png?itok=TaTJzkaz" alt="Bringing IoT to Red Hat AMQ Online" typeof="foaf:Image" class="image-style-teaser">
+                            </div>
+                          </article>
+                        </li>
+                        <li>
+                          <article class="rhd-list-entry">
+                            <div class="text-content">
+                              <h3 class="rhd-list-entry--title"><a href="https://developers.redhat.com/blog/2019/05/14/use-the-kubernetes-python-client-from-your-running-red-hat-openshift-pods/">Use the Kubernetes Python client from your running Red Hat OpenShift pods</a></h3>
+                              <div class="rhd-list-entry--date">May 14, 2019</div>
+                              <div class="rhd-list-entry--summary">
+                                <p>Red Hat OpenShift is part of the Cloud Native Computing Foundation (CNCF) Certified Program, ensuring portability and interoperability for your container workloads. This also allows you to use Kubernetes tools to interact with an OpenShift cluster, like kubectl, and you can rest assured that all the APIs you know and love are right there at […]</p>
+                              </div>
+                            </div>
+                            <div class="rhd-list-entry--image">
+                              <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/d2dd1fb5e0433c79c97271b1d2a201b4.png?itok=d5C9OmA4" alt="Use the Kubernetes Python client from your running Red Hat OpenShift pods" typeof="foaf:Image" class="image-style-teaser">
+                            </div>
+                          </article>
+                        </li>
+                        <li>
+                          <article class="rhd-list-entry">
+                            <div class="text-content">
+                              <h3 class="rhd-list-entry--title"><a href="https://developers.redhat.com/blog/2019/05/13/building-and-understanding-reactive-microservices-using-eclipse-vert-x-and-distributed-tracing/">Building and understanding reactive microservices using Eclipse Vert.x and distributed tracing</a></h3>
+                              <div class="rhd-list-entry--date">May 13, 2019</div>
+                              <div class="rhd-list-entry--summary"><p>I recently had the opportunity to speak at Red Hat Summit 2019. In my session, titled “Vert.x application development with Jaeger distributed tracing,” I discussed how scalable event-driven applications could be built with Eclipse Vert.x, a Java Virtual Machine toolkit for building reactive applications. Thanks to many developer tools, creating these applications is no longer […]</p>
+                              </div>
+                            </div>
+                            <div class="rhd-list-entry--image">
+                              <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/f54e08bd8f35b685ebe57bb2d5397f38.png?itok=pwHyQbrY" alt="Building and understanding reactive microservices using Eclipse Vert.x and distributed tracing" typeof="foaf:Image" class="image-style-teaser">
+                            </div>
+                          </article>
+                        </li>
+                        <li>
+                          <article class="rhd-list-entry">
+                            <div class="text-content">
+                              <h3 class="rhd-list-entry--title"><a href="https://developers.redhat.com/blog/2019/05/13/migrating-java-applications-to-quarkus-part-2-before-and-after/">Migrating Java applications to Quarkus, Part 2: Before and after</a></h3>
+                              <div class="rhd-list-entry--date">May 13, 2019</div>
+                              <div class="rhd-list-entry--summary"><p>This article is a continuation of Migrating Java applications to Quarkus: Lessons learned, and here, I’ll make a comparison of performance metrics for building and running a Java app before and after Quarkus. My goal here is to demonstrate how awesome Quarkus is and maybe help you decide to use Quarkus to build your cool […]</p>
+                              </div>
+                            </div>
+                            <div class="rhd-list-entry--image">
+                              <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/b356646680e6c550c55f845b5b5ca6e6.jpg?itok=RIkej_V9" alt="Migrating Java applications to Quarkus, Part 2: Before and after" typeof="foaf:Image" class="image-style-teaser">
+                            </div>
+                          </article>
+                        </li>
+                        <li>
+                          <article class="rhd-list-entry">
+                            <div class="text-content">
+                              <h3 class="rhd-list-entry--title"><a href="https://developers.redhat.com/blog/2019/05/09/create-your-first-quarkus-project-with-eclipse-ide-red-hat-codeready-studio/">Create your first Quarkus project with Eclipse IDE (Red Hat CodeReady Studio)</a></h3>
+                              <div class="rhd-list-entry--date">May 9, 2019</div>
+                              <div class="rhd-list-entry--summary"><p>You’ve probably heard about Quarkus, the Supersonic Subatomic Java framework tailored for Kubernetes and containers. In this article, I will show how easy is it to create and set up a Quarkus project in an Eclipse IDE based environment.</p>
+                              </div>
+                            </div>
+                            <div class="rhd-list-entry--image">
+                              <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/b356646680e6c550c55f845b5b5ca6e6.jpg?itok=RIkej_V9" alt="Create your first Quarkus project with Eclipse IDE (Red Hat CodeReady Studio)" typeof="foaf:Image" class="image-style-teaser">
+                            </div>
+                          </article>
+                        </li>
+                      </ul>
+                      <div class="cta-link">
+                        <a href="https://developers.redhat.com/blog/page/2/" class="button medium-cta blue">More Articles</a>
+                      </div>
+                    </div>
+                    <aside  class="pfe-m-3-col">
+                      <div class="disqus">
+                                  <h5 class="header"><span class="fa fa-comment"></span> Latest Comments</h5>
+                                  <div><div class="comment-wrapper"><div class="latest-disqus-comment">
+                        <h6 class="comment-title">Introducing CodeReady Linux Builder</h6>
+                        <div class="comment-body">“Redhat Linux 8”</div>
+                        <div class="comment-footer">
+                          <div class="date">May 14, 2019</div>
+                          <div class="reply"><a href="https://developers.redhat.com/blog/2018/11/15/introducing-codeready-linux-builder/#comment-4462244727" class="reply-link">Reply</a></div>
+                        </div>
+                      </div><div class="latest-disqus-comment">
+                        <h6 class="comment-title">Red Hat Enterprise Linux 8 Image Builder: Building custom system images</h6>
+                        <div class="comment-body">“Glad you published this.  I am interested to see more based on using an Enterprise setup with Satellite and RHEL 8.”</div>
+                        <div class="comment-footer">
+                          <div class="date">May 14, 2019</div>
+                          <div class="reply"><a href="https://developers.redhat.com/blog/2019/03/28/red-hat-enterprise-linux-8-image-builder-building-custom-system-images/#comment-4462505117" class="reply-link">Reply</a></div>
+                        </div>
+                      </div><div class="latest-disqus-comment">
+                        <h6 class="comment-title">Containers without daemons: Podman and Buildah available in RHEL 7.6 and RHEL 8 Beta</h6>
+                        <div class="comment-body">“How can I match existing containerization work in regards to docker version compatibility. So e.g if I want to run and build containers in the future based on my existing...”</div>
+                        <div class="comment-footer">
+                          <div class="date">May 14, 2019</div>
+                          <div class="reply"><a href="https://developers.redhat.com/blog/2018/11/20/buidah-podman-containers-without-daemons/#comment-4461975364" class="reply-link">Reply</a></div>
+                        </div>
+                      </div><div class="latest-disqus-comment">
+                        <h6 class="comment-title">Create your first Quarkus project with Eclipse IDE (Red Hat CodeReady Studio)</h6>
+                        <div class="comment-body">“How do you stop it running? Stop button on the Console window does nothing.”</div>
+                        <div class="comment-footer">
+                          <div class="date">May 14, 2019</div>
+                          <div class="reply"><a href="https://developers.redhat.com/blog/2019/05/09/create-your-first-quarkus-project-with-eclipse-ide-red-hat-codeready-studio/#comment-4461751082" class="reply-link">Reply</a></div>
+                        </div>
+                      </div></div><div class="hidden template--rhd-disqus--comment--latest"><div class="hidden latest-disqus-comment">
+                        <h6 class="comment-title">Example thread title</h6>
+                        <div class="comment-body">Comment body goes here.</div>
+                        <div class="comment-footer">
+                          <div class="date">May 15, 2019</div>
+                          <div class="reply"><a href="" class="reply-link">Reply</a></div>
+                        </div>
+                      </div>
+                      </div></div>
+                                </div>
+                    </aside>
           </div>
-                  </aside>
-          </div>
-    <div class="cta-link">
-                  <a href="https://developers.redhat.com/blog/page/2/" class="button medium-cta blue">More Articles</a>
-    </div>
+    
 
   </div>
   </section>

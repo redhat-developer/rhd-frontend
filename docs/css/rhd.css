@@ -262,7 +262,7 @@ a {
   a :hover {
     color: var(--pfe-theme--color--ui-link--hover, #004080); }
 
-body.page-node-type-page h1.page-title,
+.hidden, body.page-node-type-page h1.page-title,
 body.page-node-type-video-resource h1.page-title,
 body.page-node-type-books h1.page-title,
 body.page-node-type-cheat-sheet h1.page-title,
@@ -277,6 +277,11 @@ body.page-node-type-coding-resource h1.page-title, .visually-hidden {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover; }
+
+.tile-title {
+  font-size: var(--pfe-theme--font-size--epsilon, 22px); }
+  .tile-title a {
+    color: var(--pfe-theme--color--text, #151515); }
 
 /* Assembly Variations */
 [data-variant="dark"] {
