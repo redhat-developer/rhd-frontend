@@ -48,8 +48,8 @@ scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-s
                 </h2>
                 <div class="pfe-l-grid pfe-m-gutters pfe-l-grid-fill-height pfe-m-all-3-col">
                   <pfe-card pfe-color="lighter">
-                    <a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-developer-cheat-sheet/">
-                      <img pfe-overflow="top right left" src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/dce8036d40e0b11dd1c1d0620e8ebe59.png?itok=092K5PjH">
+                    <a pfe-overflow="top right left" href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-developer-cheat-sheet/">
+                      <img src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/dce8036d40e0b11dd1c1d0620e8ebe59.png?itok=092K5PjH">
                     </a>
                     <h3 class="tile-title">
                       <a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-developer-cheat-sheet/">Red Hat Enterprise Linux 8 developer cheat sheet</a>
