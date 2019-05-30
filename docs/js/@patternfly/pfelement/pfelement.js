@@ -48,6 +48,7 @@ System.register([], function (exports_1, context_1) {
                     _this._pfeClass = pfeClass;
                     _this.tag = pfeClass.tag;
                     _this.props = pfeClass.properties;
+                    _this.slots = pfeClass.slots;
                     _this._queue = [];
                     _this.template = document.createElement("template");
                     _this.attachShadow({ mode: "open" });
@@ -117,8 +118,12 @@ System.register([], function (exports_1, context_1) {
                         window.ShadyCSS.styleElement(this);
                     }
                     this.classList.add("PFElement");
+                    this.setAttribute("pfelement", "");
                     if (typeof this.props === "object") {
                         this._mapSchemaToProperties(this.tag, this.props);
+                    }
+                    if (typeof this.slots === "object") {
+                        this._mapSchemaToSlots(this.tag, this.slots);
                     }
                     if (this._queue.length) {
                         this._processQueue();
@@ -149,16 +154,24 @@ System.register([], function (exports_1, context_1) {
                     var _this = this;
                     Object.keys(properties).forEach(function (attr) {
                         var data = properties[attr];
+                        var hasPrefix = true;
+                        var attrName = attr;
                         _this[attr] = data;
                         _this[attr].value = null;
-                        if (_this.hasAttribute("" + prefix + attr)) {
-                            _this[attr].value = _this.getAttribute("" + prefix + attr);
+                        if (typeof _this[attr].prefixed !== "undefined") {
+                            hasPrefix = _this[attr].prefixed;
+                        }
+                        if (hasPrefix) {
+                            attrName = "" + prefix + attr;
+                        }
+                        if (_this.hasAttribute(attrName)) {
+                            _this[attr].value = _this.getAttribute(attrName);
                         }
                         else if (data.default) {
                             var dependency_exists = _this._hasDependency(tag, data.options);
                             var no_dependencies = !data.options || (data.options && !data.options.dependencies.length);
                             if (dependency_exists || no_dependencies) {
-                                _this.setAttribute("" + prefix + attr, data.default);
+                                _this.setAttribute(attrName, data.default);
                                 _this[attr].value = data.default;
                             }
                         }
@@ -169,7 +182,7 @@ System.register([], function (exports_1, context_1) {
                     var hasDependency = false;
                     for (var i = 0; i < dependencies.length; i += 1) {
                         var slot_exists = dependencies[i].type === "slot" &&
-                            this.has_slot(tag + "--" + dependencies[i].id);
+                            this.has_slots(tag + "--" + dependencies[i].id).length > 0;
                         var attribute_exists = dependencies[i].type === "attribute" &&
                             this.getAttribute("" + prefix + dependencies[i].id);
                         if (slot_exists || attribute_exists) {
@@ -178,6 +191,29 @@ System.register([], function (exports_1, context_1) {
                         }
                     }
                     return hasDependency;
+                };
+                PFElement.prototype._mapSchemaToSlots = function (tag, slots) {
+                    var _this = this;
+                    Object.keys(slots).forEach(function (slot) {
+                        var slotObj = slots[slot];
+                        var slotExists = false;
+                        if (slotObj.namedSlot) {
+                            if (_this.has_slots(tag + "--" + slot).length > 0) {
+                                slotExists = true;
+                            }
+                        }
+                        else {
+                            if (_this.querySelectorAll(":not([slot])").slice().length > 0) {
+                                slotExists = true;
+                            }
+                        }
+                        if (slotExists) {
+                            _this.setAttribute("has_" + slot, "");
+                        }
+                        else {
+                            _this.removeAttribute("has_" + slot);
+                        }
+                    });
                 };
                 PFElement.prototype._queueAction = function (action) {
                     this._queue.push(action);

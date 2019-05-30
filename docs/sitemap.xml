@@ -283,6 +283,12 @@
   </url>
   
   <url>
+    <loc>https://redhat-developer.github.io/rhd-frontend/categories/subpage/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://redhat-developer.github.io/rhd-frontend/tags/</loc>
     <lastmod>2017-08-03T14:58:26-04:00</lastmod>
     <priority>0</priority>

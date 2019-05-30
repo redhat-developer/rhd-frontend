@@ -19,5 +19,14 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Subpage</title>
+      <link>https://redhat-developer.github.io/rhd-frontend/categories/subpage/</link>
+      <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
+      
+      <guid>https://redhat-developer.github.io/rhd-frontend/categories/subpage/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

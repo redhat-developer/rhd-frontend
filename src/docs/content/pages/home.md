@@ -8,8 +8,7 @@ weight: 4
 scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-svg-core/index.es.js","js/@fortawesome/pro-solid-svg-icons/index.es.js", "js/@patternfly/pfe-cta/pfe-cta.js", "js/@rhd/dp-alert.js"]
 ---
 
-{{< code >}}
-<main role="main">
+{{< code >}}<main role="main">
   <a id="main-content" tabindex="-1"></a>
   <div class="layout-content">
     <div class="region region-content">

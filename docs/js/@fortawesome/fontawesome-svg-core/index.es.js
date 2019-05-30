@@ -1,6 +1,6 @@
 System.register([], function (exports_1, context_1) {
     "use strict";
-    var noop, _WINDOW, _DOCUMENT, _MUTATION_OBSERVER, _PERFORMANCE, _ref, _ref$userAgent, userAgent, WINDOW, DOCUMENT, MUTATION_OBSERVER, PERFORMANCE, IS_BROWSER, IS_DOM, IS_IE, NAMESPACE_IDENTIFIER, UNITS_IN_GRID, DEFAULT_FAMILY_PREFIX, DEFAULT_REPLACEMENT_CLASS, DATA_FA_I2SVG, DATA_FA_PSEUDO_ELEMENT, DATA_FA_PSEUDO_ELEMENT_PENDING, DATA_PREFIX, DATA_ICON, HTML_CLASS_I2SVG_BASE_CLASS, TAGNAMES_TO_SKIP_FOR_PSEUDOELEMENTS, PRODUCTION, PREFIX_TO_STYLE, STYLE_TO_PREFIX, LAYERS_TEXT_CLASSNAME, FONT_FAMILY_PATTERN, FONT_WEIGHT_TO_PREFIX, oneToTen, oneToTwenty, ATTRIBUTES_WATCHED_FOR_MUTATION, RESERVED_CLASSES, initial, _default, _config, config, w, namespace, functions, listener, loaded, PENDING, SETTLED, FULFILLED, REJECTED, NOOP, isNode, asyncSetTimer, asyncQueue, asyncTimer, picked, d, meaninglessTransform, idPool, ALL_SPACE, noop$1, p, preamble, begin, end, perf, bindInternal4, reduce, styles, shims, _byUnicode, _byLigature, _byOldName, build, styles$1, emptyCanonicalIcon, noop$2, mutators, disabled, mo, parseTransformString, FILL, ANIMATION_BASE, RING, OPACITY_ANIMATE, DOT, QUESTION, EXCLAMATION, missing, styles$2, styles$3, baseStyles, Library, library, noAuto, _cssInserted, dom, parse, icon, text, counter, layer, api, autoReplace;
+    var noop, _WINDOW, _DOCUMENT, _MUTATION_OBSERVER, _PERFORMANCE, _ref, _ref$userAgent, userAgent, WINDOW, DOCUMENT, MUTATION_OBSERVER, PERFORMANCE, IS_BROWSER, IS_DOM, IS_IE, NAMESPACE_IDENTIFIER, UNITS_IN_GRID, DEFAULT_FAMILY_PREFIX, DEFAULT_REPLACEMENT_CLASS, DATA_FA_I2SVG, DATA_FA_PSEUDO_ELEMENT, DATA_FA_PSEUDO_ELEMENT_PENDING, DATA_PREFIX, DATA_ICON, HTML_CLASS_I2SVG_BASE_CLASS, MUTATION_APPROACH_ASYNC, TAGNAMES_TO_SKIP_FOR_PSEUDOELEMENTS, PRODUCTION, PREFIX_TO_STYLE, STYLE_TO_PREFIX, LAYERS_TEXT_CLASSNAME, FONT_FAMILY_PATTERN, FONT_WEIGHT_TO_PREFIX, oneToTen, oneToTwenty, ATTRIBUTES_WATCHED_FOR_MUTATION, RESERVED_CLASSES, initial, _default, _config, config, w, namespace, functions, listener, loaded, PENDING, SETTLED, FULFILLED, REJECTED, NOOP, isNode, asyncSetTimer, asyncQueue, asyncTimer, picked, d, meaninglessTransform, idPool, ALL_SPACE, noop$1, p, preamble, begin, end, perf, bindInternal4, reduce, styles, shims, _byUnicode, _byLigature, _byOldName, build, styles$1, emptyCanonicalIcon, noop$2, mutators, disabled, mo, parseTransformString, FILL, ANIMATION_BASE, RING, OPACITY_ANIMATE, DOT, QUESTION, EXCLAMATION, missing, styles$2, styles$3, baseStyles, Library, library, noAuto, _cssInserted, dom, parse, icon, text, counter, layer, api, autoReplace;
     var __moduleName = context_1 && context_1.id;
     function _typeof(obj) {
         if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -532,7 +532,7 @@ System.register([], function (exports_1, context_1) {
                 'data-prefix': prefix,
                 'data-icon': iconName,
                 'class': attrClass,
-                'role': 'img',
+                'role': extra.attributes.role || 'img',
                 'xmlns': 'http://www.w3.org/2000/svg',
                 'viewBox': "0 0 ".concat(width, " ").concat(height)
             })
@@ -636,6 +636,14 @@ System.register([], function (exports_1, context_1) {
         }
         return val;
     }
+    function toHex(unicode) {
+        var result = '';
+        for (var i = 0; i < unicode.length; i++) {
+            var hex = unicode.charCodeAt(i).toString(16);
+            result += ('000' + hex).slice(-4);
+        }
+        return result;
+    }
     function defineIcons(prefix, icons) {
         var params = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
         var _params$skipHooks = params.skipHooks, skipHooks = _params$skipHooks === void 0 ? false : _params$skipHooks;
@@ -661,10 +669,10 @@ System.register([], function (exports_1, context_1) {
         }
     }
     function byUnicode(prefix, unicode) {
-        return _byUnicode[prefix][unicode];
+        return (_byUnicode[prefix] || {})[unicode];
     }
     function byLigature(prefix, ligature) {
-        return _byLigature[prefix][ligature];
+        return (_byLigature[prefix] || {})[ligature];
     }
     function byOldName(name) {
         return _byOldName[name] || {
@@ -722,15 +730,19 @@ System.register([], function (exports_1, context_1) {
         var mutator = mutators[config.autoReplaceSvg];
         return mutator || mutators.replace;
     }
+    function performOperationSync(op) {
+        op();
+    }
     function perform(mutations, callback) {
         var callbackFunction = typeof callback === 'function' ? callback : noop$2;
         if (mutations.length === 0) {
             callbackFunction();
         }
         else {
-            var frame = WINDOW.requestAnimationFrame || function (op) {
-                return op();
-            };
+            var frame = performOperationSync;
+            if (config.mutateApproach === MUTATION_APPROACH_ASYNC) {
+                frame = WINDOW.requestAnimationFrame || performOperationSync;
+            }
             frame(function () {
                 var mutator = getMutator();
                 var mark = perf.begin('mutate');
@@ -810,14 +822,6 @@ System.register([], function (exports_1, context_1) {
             }, {});
         }
         return val;
-    }
-    function toHex(unicode) {
-        var result = '';
-        for (var i = 0; i < unicode.length; i++) {
-            var hex = unicode.charCodeAt(i).toString(16);
-            result += ('000' + hex).slice(-4);
-        }
-        return result;
     }
     function classParser(node) {
         var existingPrefix = node.getAttribute('data-prefix');
@@ -1021,7 +1025,12 @@ System.register([], function (exports_1, context_1) {
         if (prefixesDomQuery.length === 0) {
             return;
         }
-        var candidates = toArray(root.querySelectorAll(prefixesDomQuery));
+        var candidates = [];
+        try {
+            candidates = toArray(root.querySelectorAll(prefixesDomQuery));
+        }
+        catch (e) {
+        }
         if (candidates.length > 0) {
             hclAdd('pending');
             hclRemove('complete');
@@ -1091,9 +1100,11 @@ System.register([], function (exports_1, context_1) {
             else if (fontFamily) {
                 var content = styles.getPropertyValue('content');
                 var prefix = ~['Light', 'Regular', 'Solid', 'Brands'].indexOf(fontFamily[1]) ? STYLE_TO_PREFIX[fontFamily[1].toLowerCase()] : FONT_WEIGHT_TO_PREFIX[fontWeight];
-                var iconName = byUnicode(prefix, toHex(content.length === 3 ? content.substr(1, 1) : content));
-                if (!alreadyProcessedPseudoElement || alreadyProcessedPseudoElement.getAttribute(DATA_PREFIX) !== prefix || alreadyProcessedPseudoElement.getAttribute(DATA_ICON) !== iconName) {
-                    node.setAttribute(pendingAttribute, iconName);
+                var hexValue = toHex(content.length === 3 ? content.substr(1, 1) : content);
+                var iconName = byUnicode(prefix, hexValue);
+                var iconIdentifier = iconName;
+                if (iconName && (!alreadyProcessedPseudoElement || alreadyProcessedPseudoElement.getAttribute(DATA_PREFIX) !== prefix || alreadyProcessedPseudoElement.getAttribute(DATA_ICON) !== iconIdentifier)) {
+                    node.setAttribute(pendingAttribute, iconIdentifier);
                     if (alreadyProcessedPseudoElement) {
                         node.removeChild(alreadyProcessedPseudoElement);
                     }
@@ -1107,7 +1118,7 @@ System.register([], function (exports_1, context_1) {
                                 mask: emptyCanonicalIcon()
                             },
                             prefix: prefix,
-                            iconName: iconName,
+                            iconName: iconIdentifier,
                             extra: extra,
                             watchable: true
                         }));
@@ -1276,6 +1287,7 @@ System.register([], function (exports_1, context_1) {
             DATA_PREFIX = 'data-prefix';
             DATA_ICON = 'data-icon';
             HTML_CLASS_I2SVG_BASE_CLASS = 'fontawesome-i2svg';
+            MUTATION_APPROACH_ASYNC = 'async';
             TAGNAMES_TO_SKIP_FOR_PSEUDOELEMENTS = ['HTML', 'HEAD', 'STYLE', 'SCRIPT'];
             PRODUCTION = function () {
                 try {
@@ -1309,14 +1321,14 @@ System.register([], function (exports_1, context_1) {
             oneToTen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
             oneToTwenty = oneToTen.concat([11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
             ATTRIBUTES_WATCHED_FOR_MUTATION = ['class', 'data-prefix', 'data-icon', 'data-fa-transform', 'data-fa-mask'];
-            RESERVED_CLASSES = ['xs', 'sm', 'lg', 'fw', 'ul', 'li', 'border', 'pull-left', 'pull-right', 'spin', 'pulse', 'rotate-90', 'rotate-180', 'rotate-270', 'flip-horizontal', 'flip-vertical', 'stack', 'stack-1x', 'stack-2x', 'inverse', 'layers', 'layers-text', 'layers-counter'].concat(oneToTen.map(function (n) {
+            RESERVED_CLASSES = ['xs', 'sm', 'lg', 'fw', 'ul', 'li', 'border', 'pull-left', 'pull-right', 'spin', 'pulse', 'rotate-90', 'rotate-180', 'rotate-270', 'flip-horizontal', 'flip-vertical', 'flip-both', 'stack', 'stack-1x', 'stack-2x', 'inverse', 'layers', 'layers-text', 'layers-counter'].concat(oneToTen.map(function (n) {
                 return "".concat(n, "x");
             })).concat(oneToTwenty.map(function (n) {
                 return "w-".concat(n);
             }));
             initial = WINDOW.FontAwesomeConfig || {};
             if (DOCUMENT && typeof DOCUMENT.querySelector === 'function') {
-                var attrs = [['data-family-prefix', 'familyPrefix'], ['data-replacement-class', 'replacementClass'], ['data-auto-replace-svg', 'autoReplaceSvg'], ['data-auto-add-css', 'autoAddCss'], ['data-auto-a11y', 'autoA11y'], ['data-search-pseudo-elements', 'searchPseudoElements'], ['data-observe-mutations', 'observeMutations'], ['data-keep-original-source', 'keepOriginalSource'], ['data-measure-performance', 'measurePerformance'], ['data-show-missing-icons', 'showMissingIcons']];
+                var attrs = [['data-family-prefix', 'familyPrefix'], ['data-replacement-class', 'replacementClass'], ['data-auto-replace-svg', 'autoReplaceSvg'], ['data-auto-add-css', 'autoAddCss'], ['data-auto-a11y', 'autoA11y'], ['data-search-pseudo-elements', 'searchPseudoElements'], ['data-observe-mutations', 'observeMutations'], ['data-mutate-approach', 'mutateApproach'], ['data-keep-original-source', 'keepOriginalSource'], ['data-measure-performance', 'measurePerformance'], ['data-show-missing-icons', 'showMissingIcons']];
                 attrs.forEach(function (_ref) {
                     var _ref2 = _slicedToArray(_ref, 2), attr = _ref2[0], key = _ref2[1];
                     var val = coerce(getAttrConfig(attr));
@@ -1333,6 +1345,7 @@ System.register([], function (exports_1, context_1) {
                 autoA11y: true,
                 searchPseudoElements: false,
                 observeMutations: true,
+                mutateApproach: 'async',
                 keepOriginalSource: true,
                 measurePerformance: false,
                 showMissingIcons: true
@@ -1487,7 +1500,7 @@ System.register([], function (exports_1, context_1) {
                 mark: noop$1,
                 measure: noop$1
             };
-            preamble = "FA \"5.7.2\"";
+            preamble = "FA \"5.8.2\"";
             begin = function begin(name) {
                 p.mark("".concat(preamble, " ").concat(name, " begins"));
                 return function () {
