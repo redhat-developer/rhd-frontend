@@ -30,6 +30,18 @@ $gutter: 30px;
   @extend %assembly;
 }
 
+.hidden {
+  @extend %hidden;
+}
+
+.tile-title {
+  font-size: var(--pfe-theme--font-size--epsilon, 22px);
+
+  a {
+    color: var(--pfe-theme--color--text, #151515);
+  }
+}
+
 %on-dark-assembly {
   --pfe-theme--font-size--alpha: 46px;
 

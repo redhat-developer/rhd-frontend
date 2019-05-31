@@ -1,5 +1,5 @@
-import RHDPSearchFilterGroup from '@rhd/rhdp-search/rhdp-search-filter-group';
-import RHDPSearchFilterItem from '@rhd/rhdp-search/rhdp-search-filter-item';
+import RHDPSearchFilterGroup from './rhdp-search-filter-group';
+import RHDPSearchFilterItem from './rhdp-search-filter-item';
 
 export default class RHDPSearchFilters extends HTMLElement {
     _type = '';

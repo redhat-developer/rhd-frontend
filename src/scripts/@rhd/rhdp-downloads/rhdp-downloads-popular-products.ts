@@ -1,4 +1,4 @@
-import RHDPDownloadsPopularProduct from '@rhd/rhdp-downloads/rhdp-downloads-popular-product';
+import RHDPDownloadsPopularProduct from './rhdp-downloads-popular-product';
 
 export default class RHDPDownloadsPopularProducts extends HTMLElement {
 

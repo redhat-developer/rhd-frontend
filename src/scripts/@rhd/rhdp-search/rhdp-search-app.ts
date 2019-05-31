@@ -1,11 +1,11 @@
-import RHDPSearchURL from '@rhd/rhdp-search/rhdp-search-url';
-import RHDPSearchQuery from '@rhd/rhdp-search/rhdp-search-query';
-import RHDPSearchBox from '@rhd/rhdp-search/rhdp-search-box';
-import RHDPSearchResultCount from '@rhd/rhdp-search/rhdp-search-result-count';
-import RHDPSearchFilters from '@rhd/rhdp-search/rhdp-search-filters';
-import RHDPSearchOneBox from '@rhd/rhdp-search/rhdp-search-onebox';
+import RHDPSearchURL from './rhdp-search-url';
+import RHDPSearchQuery from './rhdp-search-query';
+import RHDPSearchBox from './rhdp-search-box';
+import RHDPSearchResultCount from './rhdp-search-result-count';
+import RHDPSearchFilters from './rhdp-search-filters';
+import RHDPSearchOneBox from './rhdp-search-onebox';
 import RHDPSearchResults from './rhdp-search-results';
-import RHDPSearchSortPage from '@rhd/rhdp-search/rhdp-search-sort-page';
+import RHDPSearchSortPage from './rhdp-search-sort-page';
 
 export default class RHDPSearchApp extends HTMLElement {
     constructor() {

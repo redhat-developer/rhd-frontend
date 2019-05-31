@@ -1,4 +1,4 @@
-import RHDPOSDownload from '@rhd/rhdp-os-download';
+import RHDPOSDownload from '../rhdp-os-download';
 
 export default class RHDPDownloadsAllItem extends HTMLElement {
 

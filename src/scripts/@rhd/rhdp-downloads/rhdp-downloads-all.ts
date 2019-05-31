@@ -1,4 +1,4 @@
-import RHDPDownloadsAllItem from '@rhd/rhdp-downloads/rhdp-downloads-all-item';
+import RHDPDownloadsAllItem from './rhdp-downloads-all-item';
 
 export default class RHDPDownloadsAll extends HTMLElement {
 
