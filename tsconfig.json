@@ -12,6 +12,9 @@
         "allowJs": true,
         "baseUrl": "src/scripts",
         "rootDirs": ["node_modules", "src/scripts"],
+        "paths": {
+            "PFElement": ["../../node_modules/@patternfly/pfelement/*"]
+        },
         "lib":[
           "dom", "es5", "es6"
         ],
@@ -25,10 +28,12 @@
         // "node_modules/@patternfly/pfe-cta/pfe-cta.js",
         // "node_modules/@patternfly/pfe-card/pfe-card.js",
         // "node_modules/@patternfly/pfe-band/pfe-band.js",
-        "node_modules/@fortawesome/fontawesome-svg-core/index.es.js",
-        "node_modules/@fortawesome/pro-light-svg-icons/index.es.js",
-        "node_modules/@fortawesome/pro-regular-svg-icons/index.es.js",
-        "node_modules/@fortawesome/pro-solid-svg-icons/index.es.js",
+        // "node_modules/@fortawesome/fontawesome-svg-core/index.es.js",
+        // "node_modules/@fortawesome/pro-light-svg-icons/index.es.js",
+        // "node_modules/@fortawesome/pro-regular-svg-icons/index.es.js",
+        // "node_modules/@fortawesome/pro-solid-svg-icons/index.es.js",
+        "node_modules/@patternfly/pfe-types/*.ts",
+        "node_modules/@fortawesome/**/*.ts",
         "src/scripts/@rhd/**/*.ts"       
     ]
 }

@@ -2,14 +2,15 @@
 {{ .Title }} – {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-<h1 data-rhd-grid="normal"><span data-rhd-col="span12">{{ .Title }}</span></h1>
-<aside>
-    {{ with .NextInSection }}
-        <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
-    {{ end }}
+<header class="pfe-l-grid"><h1 class="pfe-m-10-col pfe-m-startat-2-col">{{ .Title }}</h1></header>
+<aside class="pfe-l-grid">
     {{ with .PrevInSection }}
-        <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
+        <a class="previous pfe-m-5-col pfe-m-startat-2-col" href="{{.Permalink}}"> {{.Title}}</a>
     {{ end }}
+    {{ with .NextInSection }}
+        <a class="next pfe-m-5-col pfe-l--text-align--right" href="{{.Permalink}}"> {{.Title}}</a>
+    {{ end }}
+    
 </aside>
 <section>{{ .Content }}</section>
 {{ end }}

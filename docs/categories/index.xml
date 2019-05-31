@@ -19,5 +19,14 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Subpage</title>
+      <link>http://localhost:8080/categories/subpage/</link>
+      <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
+      
+      <guid>http://localhost:8080/categories/subpage/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
