@@ -5,7 +5,7 @@ description: ""
 draft: true
 tags: ["component"]
 weight: 1
-scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-svg-core/index.es.js","js/@fortawesome/pro-solid-svg-icons/index.es.js",
+scripts: ["js/@patternfly/pfelement/pfelement.umd.js","js/@fortawesome/fontawesome-svg-core/index.js","js/@fortawesome/pro-solid-svg-icons/index.js",
 "js/@rhd/dp-search/dp-search-app.js","js/@rhd/dp-search/dp-search-box.js","js/@rhd/dp-search/dp-search-filter-group.js",
 "js/@rhd/dp-search/dp-search-filter-item.js","js/@rhd/dp-search/dp-search-filters.js","js/@rhd/dp-search/dp-search-onebox.js",
 "js/@rhd/dp-search/dp-search-query.js","js/@rhd/dp-search/dp-search-result-count.js","js/@rhd/dp-search/dp-search-result.js","js/@rhd/dp-search/dp-search-results.js", "js/@rhd/dp-search/dp-search-sort-page.js","js/@rhd/dp-search/dp-search-url.js",
@@ -272,9 +272,9 @@ scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-s
 <a href="#top" id="scroll-to-top"></a>
 <script>
 var inject = document.createElement('script')
-inject.innerText = "System.import('/themes/custom/rhdp/js/@patternfly/pfelement/pfelement.js');\n"+
-"System.import('/themes/custom/rhdp/js/@fortawesome/fontawesome-svg-core/index.es.js');\n"+
-"System.import('/themes/custom/rhdp/js/@fortawesome/pro-solid-svg-icons/index.es.js');\n"+
+inject.innerText = "System.import('/themes/custom/rhdp/js/@patternfly/pfelement/pfelement.umd.js');\n"+
+"System.import('/themes/custom/rhdp/js/@fortawesome/fontawesome-svg-core/index.js');\n"+
+"System.import('/themes/custom/rhdp/js/@fortawesome/pro-solid-svg-icons/index.js');\n"+
 "System.import('/themes/custom/rhdp/js/@rhd/dp-search/dp-search-app.js');\n"+
 "System.import('/themes/custom/rhdp/js/@rhd/dp-search/dp-search-box.js');\n"+
 "System.import('/themes/custom/rhdp/js/@rhd/dp-search/dp-search-filter-group.js');\n"+

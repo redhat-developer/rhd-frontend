@@ -5,7 +5,7 @@ description: ""
 draft: true
 tags: ["component"]
 weight: 4
-scripts: ["js/@patternfly/pfelement/pfelement.js","js/@fortawesome/fontawesome-svg-core/index.es.js","js/@fortawesome/pro-solid-svg-icons/index.es.js", "js/@rhd/dp-alert.js"]
+scripts: ["js/@patternfly/pfelement/pfelement.umd.js","js/@fortawesome/fontawesome-svg-core/index.js","js/@fortawesome/pro-solid-svg-icons/index.js", "js/@rhd/dp-alert.js"]
 ---
 
 {{< code >}}<dp-alert>This is the alert text</dp-alert>{{</ code >}}

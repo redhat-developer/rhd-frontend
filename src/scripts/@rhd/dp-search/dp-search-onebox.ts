@@ -175,11 +175,8 @@ export default class DPSearchOneBox extends PFElement {
         return `${slot && slot.url && slot.text ? `<a href="${slot.url}?onebox=${id}" class="link">${this.getIcon(slot.icon)}${slot.text}</a>` : ''}`;
     }
 
-    constructor(url?: string) {
+    constructor() {
         super(DPSearchOneBox, {delayRender: true});
-        if (url) {
-            this.url = url;
-        }
 
         this._termChange = this._termChange.bind(this);
     }

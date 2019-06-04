@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "module": "system",
+        "module": "umd",
         "moduleResolution": "node",
         "target": "es5",
         "noImplicitAny": false,
@@ -15,21 +15,9 @@
           "dom", "es5", "es6"
         ],
         //"outFile": "dist/js/rhd.js",
-        "outDir": "dist/js/"
+        "outDir": "node_modules/@rhd/"
     },
     "include": [
-        // "node_modules/@patternfly/pfelement/reveal.js",
-        // "node_modules/@patternfly/pfelement/pfelement.js",
-        // "node_modules/@patternfly/pfe-datetime/pfe-datetime.js",
-        // "node_modules/@patternfly/pfe-cta/pfe-cta.js",
-        // "node_modules/@patternfly/pfe-card/pfe-card.js",
-        // "node_modules/@patternfly/pfe-band/pfe-band.js",
-        // "node_modules/@fortawesome/fontawesome-svg-core/index.es.js",
-        // "node_modules/@fortawesome/pro-light-svg-icons/index.es.js",
-        // "node_modules/@fortawesome/pro-regular-svg-icons/index.es.js",
-        // "node_modules/@fortawesome/pro-solid-svg-icons/index.es.js",
-        "node_modules/@patternfly/pfe-types/*.ts",
-        "node_modules/@fortawesome/**/*.ts",
         "src/scripts/@rhd/**/*.ts"       
     ]
 }
