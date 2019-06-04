@@ -8,16 +8,17 @@
     "test": "karma start",
     "build": "npm run scripts && npm run styles && npm run docs",
     "del": "npm run del:scripts && npm run del:styles",
-    "del:scripts": "del \"node_modules/@rhd/**\" && del src/docs/static/js && del docs/js",
+    "del:scripts": "del \"node_modules/@rhd/**\" && del src/docs/static/js && del docs/js && del dist/js",
     "del:styles": "del \"dist/styles**\" && del src/docs/static/css",
+    "fix:fa": "rename -n \"node_modules/@fortawesome/!(fontawesome-common-types)/index.d.ts\" index.es.d.ts",
     "scripts": "npm run del:scripts && npm run scripts:tsc && npm run scripts:old && npm run scripts:copy",
     "scripts:tsc": "tsc",
     "scripts:uglify": "uglifyjs-folder dist/js -c -e -o dist/js --source-map",
-    "scripts:old": "uglifyjs-folder src/scripts/js -c -o dist/js/rhd.old.min.js --source-map",
+    "scripts:old": "uglifyjs-folder src/scripts/js -c -o dist/js/@rhd/rhd.old.min.js --source-map",
     "scripts:copyOLD": "copyfiles -u 2 \"dist/js/*.js\" src/docs/static/js",
     "scripts:copy": "npm run scripts:cpmain && npm run scripts:cpnpm",
-    "scripts:umd": "cd node_modules/@rhd && each '**/*.js' -- rollup --format umd --name RHD --output $PWD/%p $PWD/%p",
-    "scripts:cpmain": "copyfiles -u 2 \"node_modules/@rhd/**/*\" src/docs/static/js/@rhd",
+    "scripts:umd": "cd node_modules/@rhd && each '**/*.js' -- rollup -f umd -n RHD -o ../../dist/js/@rhd/%p $PWD/%p",
+    "scripts:cpmain": "copyfiles -u 2 \"dist/js/**/*\" src/docs/static/js",
     "scripts:cpnpm": "copyfiles -u 1 \"node_modules/@fortawesome/**/*\" src/docs/static/js && copyfiles -u 1 \"node_modules/@patternfly/**/*\" src/docs/static/js",
     "styles": "npm run del:styles && npm run styles:sass && npm run styles:copy",
     "styles:sass": "node-sass src/styles/ -o dist/styles/ && node-sass src/styles/ -o dist/styles-min/ --output-style compressed && postcss -o dist/styles-min/rhd.min.css dist/styles-min/rhd.css",
@@ -46,11 +47,11 @@
     "@patternfly/pfe-tabs": "^1.0.0-prerelease.15",
     "@patternfly/pfelement": "^1.0.0-prerelease.15",
     "browser-sync": "^2.26.5",
+    "cli-foreachfile": "^1.0.5",
     "copyfiles": "^2.1.0",
     "cssnano": "^4.1.10",
     "del-cli": "^1.1.0",
     "eslint": "^5.16.0",
-    "globby": "^9.2.0",
     "hugo-cli": "^0.10.0",
     "jasmine-core": "^3.4.0",
     "jsdoc": "^3.6.2",
@@ -73,8 +74,5 @@
     "typescript": "^3.4.5",
     "typescript-json-schema": "^0.36.0",
     "uglifyjs-folder": "^1.5.1"
-  },
-  "dependencies": {
-    "cli-foreachfile": "^1.0.5"
   }
 }

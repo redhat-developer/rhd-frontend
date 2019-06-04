@@ -1,0 +1,75 @@
+{
+  "_from": "@patternfly/pfe-tabs",
+  "_id": "@patternfly/pfe-tabs@1.0.0-prerelease.15",
+  "_inBundle": false,
+  "_integrity": "sha512-pp7VNu0v6uTmiXlcjAtbu8nwnKtfcofe4GSDoMnoxLqYnRQDfS/d8tiz6/jC9I4GESIY1XnIXazr0QkEpaJNug==",
+  "_location": "/@patternfly/pfe-tabs",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@patternfly/pfe-tabs",
+    "name": "@patternfly/pfe-tabs",
+    "escapedName": "@patternfly%2fpfe-tabs",
+    "scope": "@patternfly",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-tabs/-/pfe-tabs-1.0.0-prerelease.15.tgz",
+  "_shasum": "5d5c1f08ac2d9ef7c60de1e48433949edd5a8fb6",
+  "_spec": "@patternfly/pfe-tabs",
+  "_where": "/home/ldary/rh/rhd-frontend",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-elements/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Kyle Buchanan",
+      "email": "kylebuch8@gmail.com",
+      "url": "https://github.com/kylebuch8"
+    },
+    {
+      "name": "cd"
+    }
+  ],
+  "dependencies": {
+    "@patternfly/pfe-sass": "^1.0.0-prerelease.15",
+    "@patternfly/pfelement": "^1.0.0-prerelease.15"
+  },
+  "deprecated": false,
+  "description": "Tabs for PatternFly Elements",
+  "generator-pfelement-version": "0.5.4",
+  "gitHead": "e39d5925e968fdf885e46936097b68576f393547",
+  "homepage": "https://github.com/patternfly/patternfly-elements#readme",
+  "keywords": [
+    "web-components",
+    "html"
+  ],
+  "license": "MIT",
+  "main": "pfe-tabs.js",
+  "name": "@patternfly/pfe-tabs",
+  "pfelement": {
+    "className": "PfeTabs",
+    "elementName": "pfe-tabs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patternfly/patternfly-elements.git",
+    "directory": "elements/pfe-tabs"
+  },
+  "scripts": {
+    "build": "../../node_modules/.bin/gulp && ../../node_modules/.bin/prettier --ignore-path ../../.prettierignore --write '**/*.{js,json}'",
+    "dev": "../../node_modules/.bin/gulp dev",
+    "test": "../../node_modules/.bin/wct --configFile ../../wct.conf.json elements/pfe-tabs/test/"
+  },
+  "version": "1.0.0-prerelease.15"
+}

@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
-        "module": "umd",
+        "module": "es6",
         "moduleResolution": "node",
-        "target": "es5",
+        "target": "es6",
         "noImplicitAny": false,
         "allowSyntheticDefaultImports": true,
         "sourceMap": false,
@@ -10,12 +10,13 @@
         "downlevelIteration": true,
         "pretty": true,
         "allowJs": true,
+        "esModuleInterop": true,
         "rootDirs": ["node_modules", "src/scripts"],
         "lib":[
           "dom", "es5", "es6"
         ],
         //"outFile": "dist/js/rhd.js",
-        "outDir": "node_modules/@rhd/"
+        "outDir": "src/docs/static/js/@rhd/"
     },
     "include": [
         "src/scripts/@rhd/**/*.ts"       

@@ -1,0 +1,70 @@
+{
+  "_from": "@patternfly/pfe-datetime",
+  "_id": "@patternfly/pfe-datetime@1.0.0-prerelease.15",
+  "_inBundle": false,
+  "_integrity": "sha512-9g7SEhlGr33y3NzISBJ0RR3tV6fT+8jZzDp2O5ahIlo/EAn5c6zx+hTuEj8gihk4CTfdgE5Ekuprh3xwNPJomg==",
+  "_location": "/@patternfly/pfe-datetime",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@patternfly/pfe-datetime",
+    "name": "@patternfly/pfe-datetime",
+    "escapedName": "@patternfly%2fpfe-datetime",
+    "scope": "@patternfly",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-datetime/-/pfe-datetime-1.0.0-prerelease.15.tgz",
+  "_shasum": "0c5bfd92bd33548b85326913329e69c8c88f51d6",
+  "_spec": "@patternfly/pfe-datetime",
+  "_where": "/home/ldary/rh/rhd-frontend",
+  "authors": [
+    {
+      "name": "Luke Dary"
+    },
+    {
+      "name": "Kyle Buchanan",
+      "email": "kylebuch8@gmail.com",
+      "url": "https://github.com/kylebuch8"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-elements/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@patternfly/pfelement": "^1.0.0-prerelease.15"
+  },
+  "deprecated": false,
+  "description": "Datetime element for PFElements",
+  "generator-pfelement-version": "0.2.8",
+  "gitHead": "e39d5925e968fdf885e46936097b68576f393547",
+  "homepage": "https://github.com/patternfly/patternfly-elements#readme",
+  "license": "MIT",
+  "main": "pfe-datetime.js",
+  "name": "@patternfly/pfe-datetime",
+  "pfelement": {
+    "className": "PfeDatetime",
+    "elementName": "pfe-datetime"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patternfly/patternfly-elements.git",
+    "directory": "elements/pfe-datetime"
+  },
+  "scripts": {
+    "build": "../../node_modules/.bin/gulp && ../../node_modules/.bin/prettier --ignore-path ../../.prettierignore --write '**/*.{js,json}'",
+    "dev": "../../node_modules/.bin/gulp dev",
+    "test": "../../node_modules/.bin/wct --configFile ../../wct.conf.json elements/pfe-datetime/test/"
+  },
+  "version": "1.0.0-prerelease.15"
+}
