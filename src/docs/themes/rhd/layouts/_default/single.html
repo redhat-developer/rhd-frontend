@@ -17,8 +17,8 @@
 
 {{ define "scripts"}}
     {{ with .Param "scripts" }}
-        {{ range . }}{{ with . | absURL }}
-<script src="{{ . }}"></script>
-        {{ end }}{{ end }};
+    <script>
+        {{ range . }}{{ with . | absURL }}System.import("{{ . }}");{{ end }}{{ end }};
+    </script>
     {{ end }}
 {{ end }}

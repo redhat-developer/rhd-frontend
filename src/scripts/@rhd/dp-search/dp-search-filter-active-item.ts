@@ -1,7 +1,7 @@
-// import PFElement from '../../@pfelements/pfelement.js';
-import { library, icon, dom } from '../../@fortawesome/fontawesome-svg-core/index.es.js'
-import {faTimes} from '../../@fortawesome/pro-solid-svg-icons/index.es.js';
-import PFElement from '../../@patternfly/pfelement/pfelement.js';
+// import PFElement from '../../@pfelements/pfelement.umd.js';
+import { library, icon, dom } from '../../@fortawesome/fontawesome-svg-core/index.js'
+import {faTimes} from '../../@fortawesome/pro-solid-svg-icons/index.js';
+import PFElement from '../../@patternfly/pfelement/pfelement.umd.js';
 
 library.add(faTimes);
 const timesIcon = icon(faTimes).html;
