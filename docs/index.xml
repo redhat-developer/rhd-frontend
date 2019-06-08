@@ -2,320 +2,320 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on RHD Front-end Code and Documentation</title>
-    <link>http://localhost:8080/</link>
+    <link>https://redhat-developer.github.io/rhd-frontend/</link>
     <description>Recent content in Home on RHD Front-end Code and Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 03 Aug 2017 10:56:11 -0400</lastBuildDate>
     
-	<atom:link href="http://localhost:8080/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://redhat-developer.github.io/rhd-frontend/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Search</title>
-      <link>http://localhost:8080/components/search/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/search/</link>
       <pubDate>Wed, 23 Aug 2017 22:25:45 -0400</pubDate>
       
-      <guid>http://localhost:8080/components/search/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/search/</guid>
       <description>&amp;lt;dp-search-app url=&amp;#34;https://dcp2.jboss.org/v2/rest/search/developer_materials&amp;#34;&amp;gt; &amp;lt;dp-search-box slot=&amp;#34;query&amp;#34;&amp;gt;&amp;lt;/dp-search-box&amp;gt; &amp;lt;dp-search-filters title=&amp;#34;Filter By&amp;#34; slot=&amp;#34;filters&amp;#34;&amp;gt; &amp;lt;dp-search-filter-group name=&amp;#34;CONTENT TYPE&amp;#34; name=&amp;#34;type&amp;#34;&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;article&amp;#34; value=&amp;#34;article&amp;#34; name=&amp;#34;Article&amp;#34;&amp;gt;Article&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;webpage&amp;#34; value=&amp;#34;webpage&amp;#34; name=&amp;#34;webpage&amp;#34;&amp;gt;webpage&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;video_resource&amp;#34; value=&amp;#34;video_resource&amp;#34; name=&amp;#34;video_resource&amp;#34;&amp;gt;video_resource&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;page&amp;#34; value=&amp;#34;page&amp;#34; name=&amp;#34;page&amp;#34;&amp;gt;page&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;product&amp;#34; value=&amp;#34;product&amp;#34; name=&amp;#34;product&amp;#34;&amp;gt;product&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;coding_resource&amp;#34; value=&amp;#34;coding_resource&amp;#34; name=&amp;#34;coding_resource&amp;#34;&amp;gt;coding_resource&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;books&amp;#34; value=&amp;#34;books&amp;#34; name=&amp;#34;books&amp;#34;&amp;gt;books&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;assembly_page&amp;#34; value=&amp;#34;assembly_page&amp;#34; name=&amp;#34;assembly_page&amp;#34;&amp;gt;assembly_page&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;topic_page&amp;#34; value=&amp;#34;topic_page&amp;#34; name=&amp;#34;topic_page&amp;#34;&amp;gt;topic_page&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;promotion_card&amp;#34; value=&amp;#34;promotion_card&amp;#34; name=&amp;#34;promotion_card&amp;#34;&amp;gt;promotion_card&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;cheat_sheet&amp;#34; value=&amp;#34;cheat_sheet&amp;#34; name=&amp;#34;cheat_sheet&amp;#34;&amp;gt;cheat_sheet&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;promotion_page&amp;#34; value=&amp;#34;promotion_page&amp;#34; name=&amp;#34;promotion_page&amp;#34;&amp;gt;promotion_page&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;katacoda_individual_lesson&amp;#34; value=&amp;#34;katacoda_individual_lesson&amp;#34; name=&amp;#34;katacoda_individual_lesson&amp;#34;&amp;gt;katacoda_individual_lesson&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;rhd_microsite&amp;#34; value=&amp;#34;rhd_microsite&amp;#34; name=&amp;#34;rhd_microsite&amp;#34;&amp;gt;rhd_microsite&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;author&amp;#34; value=&amp;#34;author&amp;#34; name=&amp;#34;author&amp;#34;&amp;gt;author&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;learning_path&amp;#34; value=&amp;#34;learning_path&amp;#34; name=&amp;#34;learning_path&amp;#34;&amp;gt;learning_path&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;katacoda_course&amp;#34; value=&amp;#34;katacoda_course&amp;#34; name=&amp;#34;katacoda_course&amp;#34;&amp;gt;katacoda_course&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;type&amp;#34; key=&amp;#34;landing_page_single_offer&amp;#34; value=&amp;#34;landing_page_single_offer&amp;#34; name=&amp;#34;SOLP&amp;#34;&amp;gt;SOLP&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;/dp-search-filter-group&amp;gt; &amp;lt;dp-search-filter-group name=&amp;#34;PRODUCT&amp;#34; name=&amp;#34;product&amp;#34;&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;rhd_taxonomy_product&amp;#34; facet=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;application&amp;#34; value=&amp;#34;application&amp;#34; name=&amp;#34;application&amp;#34;&amp;gt;application&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;rhd_taxonomy_product&amp;#34; facet=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;openshift&amp;#34; value=&amp;#34;openshift&amp;#34; name=&amp;#34;openshift&amp;#34;&amp;gt;openshift&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;rhd_taxonomy_product&amp;#34; facet=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;codeready&amp;#34; value=&amp;#34;codeready&amp;#34; name=&amp;#34;codeready&amp;#34;&amp;gt;codeready&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;rhd_taxonomy_product&amp;#34; facet=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;data&amp;#34; value=&amp;#34;data&amp;#34; name=&amp;#34;data&amp;#34;&amp;gt;data&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;rhd_taxonomy_product&amp;#34; facet=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;jboss&amp;#34; value=&amp;#34;jboss&amp;#34; name=&amp;#34;jboss&amp;#34;&amp;gt;jboss&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;rhd_taxonomy_product&amp;#34; facet=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;manager&amp;#34; value=&amp;#34;manager&amp;#34; name=&amp;#34;manager&amp;#34;&amp;gt;manager&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;rhd_taxonomy_product&amp;#34; facet=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;collections&amp;#34; value=&amp;#34;collections&amp;#34; name=&amp;#34;collections&amp;#34;&amp;gt;collections&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;rhd_taxonomy_product&amp;#34; facet=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;development&amp;#34; value=&amp;#34;development&amp;#34; name=&amp;#34;development&amp;#34;&amp;gt;development&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;rhd_taxonomy_product&amp;#34; facet=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;kit&amp;#34; value=&amp;#34;kit&amp;#34; name=&amp;#34;kit&amp;#34;&amp;gt;kit&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;rhd_taxonomy_product&amp;#34; facet=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;platform&amp;#34; value=&amp;#34;platform&amp;#34; name=&amp;#34;platform&amp;#34;&amp;gt;platform&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;rhd_taxonomy_product&amp;#34; facet=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;rhel&amp;#34; value=&amp;#34;rhel&amp;#34; name=&amp;#34;rhel&amp;#34;&amp;gt;rhel&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;/dp-search-filter-group&amp;gt; &amp;lt;dp-search-filter-group name=&amp;#34;PRODUCT LINE&amp;#34; key=&amp;#34;product_line&amp;#34;&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;product_line&amp;#34; facet=&amp;#34;rhd_taxonomy_product_line&amp;#34; key=&amp;#34;middleware&amp;#34; value=&amp;#34;middleware&amp;#34; name=&amp;#34;middleware&amp;#34;&amp;gt;middleware&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;product_line&amp;#34; facet=&amp;#34;rhd_taxonomy_product_line&amp;#34; key=&amp;#34;codeready&amp;#34; value=&amp;#34;codeready&amp;#34; name=&amp;#34;codeready&amp;#34;&amp;gt;codeready&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;product_line&amp;#34; facet=&amp;#34;rhd_taxonomy_product_line&amp;#34; key=&amp;#34;integration&amp;#34; value=&amp;#34;integration&amp;#34; name=&amp;#34;integration&amp;#34;&amp;gt;integration&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;product_line&amp;#34; facet=&amp;#34;rhd_taxonomy_product_line&amp;#34; key=&amp;#34;rhel&amp;#34; value=&amp;#34;rhel&amp;#34; name=&amp;#34;rhel&amp;#34;&amp;gt;rhel&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;product_line&amp;#34; facet=&amp;#34;rhd_taxonomy_product_line&amp;#34; key=&amp;#34;application&amp;#34; value=&amp;#34;application&amp;#34; name=&amp;#34;application&amp;#34;&amp;gt;application&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;product_line&amp;#34; facet=&amp;#34;rhd_taxonomy_product_line&amp;#34; key=&amp;#34;runtimes&amp;#34; value=&amp;#34;runtimes&amp;#34; name=&amp;#34;runtimes&amp;#34;&amp;gt;runtimes&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;product_line&amp;#34; facet=&amp;#34;rhd_taxonomy_product_line&amp;#34; key=&amp;#34;automation&amp;#34; value=&amp;#34;automation&amp;#34; name=&amp;#34;automation&amp;#34;&amp;gt;automation&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;product_line&amp;#34; facet=&amp;#34;rhd_taxonomy_product_line&amp;#34; key=&amp;#34;process&amp;#34; value=&amp;#34;process&amp;#34; name=&amp;#34;process&amp;#34;&amp;gt;process&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;product_line&amp;#34; facet=&amp;#34;rhd_taxonomy_product_line&amp;#34; key=&amp;#34;openshift&amp;#34; value=&amp;#34;openshift&amp;#34; name=&amp;#34;openshift&amp;#34;&amp;gt;openshift&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;/dp-search-filter-group&amp;gt; &amp;lt;dp-search-filter-group name=&amp;#34;TOPIC&amp;#34; key=&amp;#34;topic&amp;#34;&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;linux&amp;#34; value=&amp;#34;linux&amp;#34; name=&amp;#34;Linux&amp;#34;&amp;gt;Linux&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;microservices&amp;#34; value=&amp;#34;microservices&amp;#34; name=&amp;#34;Microservices&amp;#34;&amp;gt;Microservices&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;java&amp;#34; value=&amp;#34;java&amp;#34; name=&amp;#34;Java&amp;#34;&amp;gt;Java&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;containers&amp;#34; value=&amp;#34;containers&amp;#34; name=&amp;#34;Containers&amp;#34;&amp;gt;Containers&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;kubernetes&amp;#34; value=&amp;#34;kubernetes&amp;#34; name=&amp;#34;Kubernetes&amp;#34;&amp;gt;Kubernetes&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;c&amp;#34; value=&amp;#34;c&amp;#34; name=&amp;#34;C&amp;#34;&amp;gt;C&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;devops&amp;#34; value=&amp;#34;devops&amp;#34; name=&amp;#34;DevOps&amp;#34;&amp;gt;DevOps&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;security&amp;#34; value=&amp;#34;security&amp;#34; name=&amp;#34;security&amp;#34;&amp;gt;security&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;boot&amp;#34; value=&amp;#34;boot&amp;#34; name=&amp;#34;boot&amp;#34;&amp;gt;boot&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;spring&amp;#34; value=&amp;#34;spring&amp;#34; name=&amp;#34;spring&amp;#34;&amp;gt;spring&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;mesh&amp;#34; value=&amp;#34;mesh&amp;#34; name=&amp;#34;mesh&amp;#34;&amp;gt;mesh&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;serverless&amp;#34; value=&amp;#34;serverless&amp;#34; name=&amp;#34;serverless&amp;#34;&amp;gt;serverless&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;service&amp;#34; value=&amp;#34;service&amp;#34; name=&amp;#34;service&amp;#34;&amp;gt;service&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;developer&amp;#34; value=&amp;#34;developer&amp;#34; name=&amp;#34;developer&amp;#34;&amp;gt;developer&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;dp-search-filter-item group=&amp;#34;topic&amp;#34; facet=&amp;#34;rhd_taxonomy_topic&amp;#34; key=&amp;#34;tools&amp;#34; value=&amp;#34;tools&amp;#34; name=&amp;#34;tools&amp;#34;&amp;gt;tools&amp;lt;/dp-search-filter-item&amp;gt; &amp;lt;/dp-search-filter-group&amp;gt; &amp;lt;/dp-search-filters&amp;gt; &amp;lt;dp-search-active-filters title=&amp;#34;Active Filters:&amp;#34;&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;article&amp;#34; value=&amp;#34;article&amp;#34; name=&amp;#34;Article&amp;#34;&amp;gt;Article&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;webpage&amp;#34; value=&amp;#34;webpage&amp;#34; name=&amp;#34;webpage&amp;#34;&amp;gt;webpage&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;video_resource&amp;#34; value=&amp;#34;video_resource&amp;#34; name=&amp;#34;video_resource&amp;#34;&amp;gt;video_resource&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;page&amp;#34; value=&amp;#34;page&amp;#34; name=&amp;#34;page&amp;#34;&amp;gt;page&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;product&amp;#34; value=&amp;#34;product&amp;#34; name=&amp;#34;product&amp;#34;&amp;gt;product&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;coding_resource&amp;#34; value=&amp;#34;coding_resource&amp;#34; name=&amp;#34;coding_resource&amp;#34;&amp;gt;coding_resource&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;books&amp;#34; value=&amp;#34;books&amp;#34; name=&amp;#34;books&amp;#34;&amp;gt;books&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;assembly_page&amp;#34; value=&amp;#34;assembly_page&amp;#34; name=&amp;#34;assembly_page&amp;#34;&amp;gt;assembly_page&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;topic_page&amp;#34; value=&amp;#34;topic_page&amp;#34; name=&amp;#34;topic_page&amp;#34;&amp;gt;topic_page&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;promotion_card&amp;#34; value=&amp;#34;promotion_card&amp;#34; name=&amp;#34;promotion_card&amp;#34;&amp;gt;promotion_card&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;cheat_sheet&amp;#34; value=&amp;#34;cheat_sheet&amp;#34; name=&amp;#34;cheat_sheet&amp;#34;&amp;gt;cheat_sheet&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;promotion_page&amp;#34; value=&amp;#34;promotion_page&amp;#34; name=&amp;#34;promotion_page&amp;#34;&amp;gt;promotion_page&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;katacoda_individual_lesson&amp;#34; value=&amp;#34;katacoda_individual_lesson&amp;#34; name=&amp;#34;katacoda_individual_lesson&amp;#34;&amp;gt;katacoda_individual_lesson&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;rhd_microsite&amp;#34; value=&amp;#34;rhd_microsite&amp;#34; name=&amp;#34;rhd_microsite&amp;#34;&amp;gt;rhd_microsite&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;author&amp;#34; value=&amp;#34;author&amp;#34; name=&amp;#34;author&amp;#34;&amp;gt;author&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;learning_path&amp;#34; value=&amp;#34;learning_path&amp;#34; name=&amp;#34;learning_path&amp;#34;&amp;gt;learning_path&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;katacoda_course&amp;#34; value=&amp;#34;katacoda_course&amp;#34; name=&amp;#34;katacoda_course&amp;#34;&amp;gt;katacoda_course&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;type&amp;#34; key=&amp;#34;landing_page_single_offer&amp;#34; value=&amp;#34;landing_page_single_offer&amp;#34; name=&amp;#34;SOLP&amp;#34;&amp;gt;SOLP&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;application&amp;#34; value=&amp;#34;application&amp;#34; name=&amp;#34;application&amp;#34;&amp;gt;application&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;openshift&amp;#34; value=&amp;#34;openshift&amp;#34; name=&amp;#34;openshift&amp;#34;&amp;gt;openshift&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;codeready&amp;#34; value=&amp;#34;codeready&amp;#34; name=&amp;#34;codeready&amp;#34;&amp;gt;codeready&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;data&amp;#34; value=&amp;#34;data&amp;#34; name=&amp;#34;data&amp;#34;&amp;gt;data&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;jboss&amp;#34; value=&amp;#34;jboss&amp;#34; name=&amp;#34;jboss&amp;#34;&amp;gt;jboss&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;manager&amp;#34; value=&amp;#34;manager&amp;#34; name=&amp;#34;manager&amp;#34;&amp;gt;manager&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;collections&amp;#34; value=&amp;#34;collections&amp;#34; name=&amp;#34;collections&amp;#34;&amp;gt;collections&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;development&amp;#34; value=&amp;#34;development&amp;#34; name=&amp;#34;development&amp;#34;&amp;gt;development&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;kit&amp;#34; value=&amp;#34;kit&amp;#34; name=&amp;#34;kit&amp;#34;&amp;gt;kit&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;platform&amp;#34; value=&amp;#34;platform&amp;#34; name=&amp;#34;platform&amp;#34;&amp;gt;platform&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;rhd_taxonomy_product&amp;#34; key=&amp;#34;rhel&amp;#34; value=&amp;#34;rhel&amp;#34; name=&amp;#34;rhel&amp;#34;&amp;gt;rhel&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;product_line&amp;#34; key=&amp;#34;middleware&amp;#34; value=&amp;#34;middleware&amp;#34; name=&amp;#34;middleware&amp;#34;&amp;gt;middleware&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;product_line&amp;#34; key=&amp;#34;codeready&amp;#34; value=&amp;#34;codeready&amp;#34; name=&amp;#34;codeready&amp;#34;&amp;gt;codeready&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;product_line&amp;#34; key=&amp;#34;integration&amp;#34; value=&amp;#34;integration&amp;#34; name=&amp;#34;integration&amp;#34;&amp;gt;integration&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;product_line&amp;#34; key=&amp;#34;rhel&amp;#34; value=&amp;#34;rhel&amp;#34; name=&amp;#34;rhel&amp;#34;&amp;gt;rhel&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;product_line&amp;#34; key=&amp;#34;application&amp;#34; value=&amp;#34;application&amp;#34; name=&amp;#34;application&amp;#34;&amp;gt;application&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;product_line&amp;#34; key=&amp;#34;runtimes&amp;#34; value=&amp;#34;runtimes&amp;#34; name=&amp;#34;runtimes&amp;#34;&amp;gt;runtimes&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;product_line&amp;#34; key=&amp;#34;automation&amp;#34; value=&amp;#34;automation&amp;#34; name=&amp;#34;automation&amp;#34;&amp;gt;automation&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;product_line&amp;#34; key=&amp;#34;process&amp;#34; value=&amp;#34;process&amp;#34; name=&amp;#34;process&amp;#34;&amp;gt;process&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;product_line&amp;#34; key=&amp;#34;openshift&amp;#34; value=&amp;#34;openshift&amp;#34; name=&amp;#34;openshift&amp;#34;&amp;gt;openshift&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;linux&amp;#34; value=&amp;#34;linux&amp;#34; name=&amp;#34;Linux&amp;#34;&amp;gt;Linux&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;microservices&amp;#34; value=&amp;#34;microservices&amp;#34; name=&amp;#34;Microservices&amp;#34;&amp;gt;Microservices&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;java&amp;#34; value=&amp;#34;java&amp;#34; name=&amp;#34;Java&amp;#34;&amp;gt;Java&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;containers&amp;#34; value=&amp;#34;containers&amp;#34; name=&amp;#34;Containers&amp;#34;&amp;gt;Containers&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;kubernetes&amp;#34; value=&amp;#34;kubernetes&amp;#34; name=&amp;#34;Kubernetes&amp;#34;&amp;gt;Kubernetes&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;c&amp;#34; value=&amp;#34;c&amp;#34; name=&amp;#34;C&amp;#34;&amp;gt;C&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;devops&amp;#34; value=&amp;#34;devops&amp;#34; name=&amp;#34;DevOps&amp;#34;&amp;gt;DevOps&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;security&amp;#34; value=&amp;#34;security&amp;#34; name=&amp;#34;security&amp;#34;&amp;gt;security&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;boot&amp;#34; value=&amp;#34;boot&amp;#34; name=&amp;#34;boot&amp;#34;&amp;gt;boot&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;spring&amp;#34; value=&amp;#34;spring&amp;#34; name=&amp;#34;spring&amp;#34;&amp;gt;spring&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;mesh&amp;#34; value=&amp;#34;mesh&amp;#34; name=&amp;#34;mesh&amp;#34;&amp;gt;mesh&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;serverless&amp;#34; value=&amp;#34;serverless&amp;#34; name=&amp;#34;serverless&amp;#34;&amp;gt;serverless&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;service&amp;#34; value=&amp;#34;service&amp;#34; name=&amp;#34;service&amp;#34;&amp;gt;service&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;developer&amp;#34; value=&amp;#34;developer&amp;#34; name=&amp;#34;developer&amp;#34;&amp;gt;developer&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;dp-search-filter-active-item group=&amp;#34;topic&amp;#34; key=&amp;#34;tools&amp;#34; value=&amp;#34;tools&amp;#34; name=&amp;#34;tools&amp;#34;&amp;gt;tools&amp;lt;/dp-search-filter-active-item&amp;gt; &amp;lt;/dp-search-active-filters&amp;gt; &amp;lt;dp-search-result-count&amp;gt;&amp;lt;/dp-search-result-count&amp;gt; &amp;lt;dp-search-sort-page&amp;gt;&amp;lt;/dp-search-sort-page&amp;gt; &amp;lt;dp-search-onebox url=&amp;#34;.</description>
     </item>
     
     <item>
       <title>Onebox</title>
-      <link>http://localhost:8080/components/onebox/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/onebox/</link>
       <pubDate>Wed, 23 Aug 2017 22:56:37 -0400</pubDate>
       
-      <guid>http://localhost:8080/components/onebox/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/onebox/</guid>
       <description>&amp;lt;rhdp-search-onebox url=&amp;#34;../../json/onebox.json&amp;#34; term=&amp;#34;fuse&amp;#34;&amp;gt;&amp;lt;/rhdp-search-onebox&amp;gt;     </description>
     </item>
     
     <item>
       <title>Assemblies</title>
-      <link>http://localhost:8080/patterns/assemblies/assemblies/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/assemblies/assemblies/</link>
       <pubDate>Thu, 03 Aug 2017 14:58:26 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/assemblies/assemblies/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/assemblies/assemblies/</guid>
       <description>Content with Image Has a background &amp;lt;section class=&amp;#34;assembly-dark assembly-image-left assembly assembly-type-content_with_image has-background&amp;#34; id=&amp;#34;assembly-field-sections-9285&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;assembly-content&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;clearfix text-formatted field field--name-field-content field--type-text-long field--label-hidden field__items&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;field__item&amp;#34;&amp;gt; &amp;lt;h2&amp;gt;REGISTER FOR SUMMIT!&amp;lt;/h2&amp;gt; &amp;lt;h4&amp;gt;BOSTON, MA&amp;amp;nbsp; &amp;amp;nbsp;&amp;lt;strong&amp;gt;|&amp;lt;/strong&amp;gt;&amp;amp;nbsp; &amp;amp;nbsp;MAY 7-9 2019&amp;lt;/h4&amp;gt; &amp;lt;p&amp;gt;&amp;amp;nbsp;&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; &amp;lt;a class=&amp;#34;button heavy-cta white&amp;#34; href=&amp;#34;https://www.redhat.com/en/summit/2019/?intcmp=701f20000012i8UAAQ&amp;#34;&amp;gt;Register Now&amp;lt;/a&amp;gt;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp; &amp;lt;a class=&amp;#34;button medium-cta white&amp;#34; href=&amp;#34;https://developers.redhat.com/blog/2019/03/25/dive-into-developer-focused-sessions-at-red-hat-summit/&amp;#34;&amp;gt;Learn more&amp;lt;/a&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;assembly-image&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;field field--name-field-image field--type-image field--label-hidden field__items&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;field__item&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;/sites/default/files/styles/large/public/RH_Summit_Logo_1color_reverse.png?itok=clzg_jMW&amp;#34; width=&amp;#34;445&amp;#34; height=&amp;#34;211&amp;#34; alt=&amp;#34;Summit_logo&amp;#34; typeof=&amp;#34;foaf:Image&amp;#34; class=&amp;#34;image-style-large&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;background&amp;#34; style=&amp;#34;background-image: url(https://developers.</description>
     </item>
     
     <item>
       <title>Expandable Groups</title>
-      <link>http://localhost:8080/components/expandable-groups/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/expandable-groups/</link>
       <pubDate>Fri, 13 Apr 2018 03:00:54 -0400</pubDate>
       
-      <guid>http://localhost:8080/components/expandable-groups/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/expandable-groups/</guid>
       <description>&amp;lt;dp-category-list&amp;gt; &amp;lt;dp-category name=&amp;#34;Application Automation&amp;#34; image=&amp;#34;/rhd-frontend/img/Icon_RH_Automation.svg&amp;#34;&amp;gt; &amp;lt;dp-category-item-list&amp;gt; &amp;lt;dp-category-item&amp;gt; &amp;lt;dp-product-short-teaser name=&amp;#34;Red Hat Decision Manager&amp;#34; link=&amp;#34;/products/red-hat-decision-manager&amp;#34; download-link=&amp;#34;/products/red-hat-decision-manager/download&amp;#34;&amp;gt; A programming platform to easily capture and maintain rules for business changes, without impacting static applications. &amp;lt;/dp-product-short-teaser&amp;gt; &amp;lt;/dp-category-item&amp;gt; &amp;lt;dp-category-item&amp;gt; &amp;lt;dp-product-short-teaser name=&amp;#34;Red Hat JBoss BPM Suite&amp;#34; link=&amp;#34;/products/bpmsuite&amp;#34; download-link=&amp;#34;/products/bpmsuite/download&amp;#34; &amp;gt; A platform that combines business rules and process management (BPM), and complex event processing. &amp;lt;/dp-product-short-teaser&amp;gt; &amp;lt;/dp-category-item&amp;gt; &amp;lt;/dp-category-item-list&amp;gt; &amp;lt;/dp-category&amp;gt; &amp;lt;dp-category name=&amp;#34;Application Integration&amp;#34; image=&amp;#34;/rhd-frontend/img/Icon_RH_Object_Gear-Group_RGB_Flat.svg&amp;#34;&amp;gt; &amp;lt;dp-category-item-list&amp;gt; &amp;lt;dp-category-item&amp;gt; &amp;lt;dp-product-short-teaser name=&amp;#34;Red Hat AMQ&amp;#34; link=&amp;#34;/products/amq&amp;#34; download-link=&amp;#34;/products/amq/download&amp;#34;&amp;gt; A small-footprint, performant, robust messaging platform that enables real-time app, device, and service integration.</description>
     </item>
     
     <item>
       <title>Alerts</title>
-      <link>http://localhost:8080/components/alerts/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/alerts/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>http://localhost:8080/components/alerts/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/alerts/</guid>
       <description>&amp;lt;dp-alert&amp;gt;This is the alert text&amp;lt;/dp-alert&amp;gt;   This is the alert text  &amp;lt;dp-alert heading=&amp;#34;Alert with a Heading:&amp;#34;&amp;gt;This is the alert text&amp;lt;/dp-alert&amp;gt;   This is the alert text  &amp;lt;dp-alert type=&amp;#34;success&amp;#34; heading=&amp;#34;Success Heading:&amp;#34;&amp;gt;This is the success text&amp;lt;/dp-alert&amp;gt;   This is the success text  &amp;lt;dp-alert type=&amp;#34;warning&amp;#34; heading=&amp;#34;Warning Heading:&amp;#34;&amp;gt;This is the warning text&amp;lt;/dp-alert&amp;gt;   This is the warning text  &amp;lt;dp-alert type=&amp;#34;error&amp;#34; heading=&amp;#34;Error Heading:&amp;#34;&amp;gt;This is the error text&amp;lt;/dp-alert&amp;gt;   This is the error text  &amp;lt;dp-alert type=&amp;#34;info&amp;#34; size=&amp;#34;xl&amp;#34; heading=&amp;#34;Welcome jboss.</description>
     </item>
     
     <item>
       <title>Home Page</title>
-      <link>http://localhost:8080/pages/home/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/pages/home/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>http://localhost:8080/pages/home/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/pages/home/</guid>
       <description>&amp;lt;main role=&amp;#34;main&amp;#34;&amp;gt; &amp;lt;a id=&amp;#34;main-content&amp;#34; tabindex=&amp;#34;-1&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;div class=&amp;#34;layout-content&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;region region-content&amp;#34;&amp;gt; &amp;lt;div id=&amp;#34;block-rhdp-content&amp;#34; data-block-plugin-id=&amp;#34;system_main_block&amp;#34; class=&amp;#34;block block-system block-system-main-block&amp;#34;&amp;gt; &amp;lt;article role=&amp;#34;article&amp;#34; about=&amp;#34;/home/&amp;#34; class=&amp;#34;node node--type-assembly-page node--view-mode-full&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;node__content row&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;section id=&amp;#34;assembly-field-sections-11325&amp;#34; class=&amp;#34;assembly&amp;#34; style=&amp;#34;--rhd-theme--ui--background-image: url(http://localhost:8888/sites/default/files/styles/billboard/public/combo-bg_0.png?itok=J7MIhgrs);&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;clearfix text-formatted field field--name-field-content field--type-text-long field--label-hidden field__items&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;field__item&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;pfe-l-grid pfe-m-all-6-col&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;p&amp;gt;&amp;amp;nbsp;&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;lt;img alt=&amp;#34;helloworld&amp;#34; height=&amp;#34;107&amp;#34; src=&amp;#34;https://developers.redhat.com/sites/default/files/styles/large/public/RHEL-helloworld.png?itok=kTPVSU3E&amp;#34; width=&amp;#34;284&amp;#34;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;amp;nbsp;&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;Download your developer edition of Red Hat Enterprise Linux 8&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;lt;pfe-cta priority=&amp;#34;primary&amp;#34;&amp;gt;&amp;lt;a class=&amp;#34;button heavy-cta&amp;#34; href=&amp;#34;https://developers.redhat.com/rhel8/&amp;#34;&amp;gt;DOWNLOAD&amp;lt;/a&amp;gt;&amp;lt;/pfe-cta&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;p&amp;gt;&amp;amp;nbsp;&amp;lt;/p&amp;gt; &amp;lt;article class=&amp;#34;embedded-entity&amp;#34;&amp;gt;&amp;lt;img src=&amp;#34;https://developers.</description>
     </item>
     
     <item>
       <title>Product Page</title>
-      <link>http://localhost:8080/pages/product/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/pages/product/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>http://localhost:8080/pages/product/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/pages/product/</guid>
       <description>    </description>
     </item>
     
     <item>
       <title>Topic Page</title>
-      <link>http://localhost:8080/pages/topic/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/pages/topic/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>http://localhost:8080/pages/topic/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/pages/topic/</guid>
       <description>    </description>
     </item>
     
     <item>
       <title>Referrer</title>
-      <link>http://localhost:8080/components/referrer/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/referrer/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>http://localhost:8080/components/referrer/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/referrer/</guid>
       <description>Add JBD Referrer
 &amp;lt;dp-referrer&amp;gt;&amp;lt;/dp-referrer&amp;gt;     </description>
     </item>
     
     <item>
       <title>RHDP Downloads Component</title>
-      <link>http://localhost:8080/components/rhdp-downloads/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/rhdp-downloads/</link>
       <pubDate>Thu, 19 Apr 2018 13:22:06 -0400</pubDate>
       
-      <guid>http://localhost:8080/components/rhdp-downloads/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/rhdp-downloads/</guid>
       <description>&amp;lt;rhdp-os-download product-code=&amp;#34;rhel&amp;#34; download-url=&amp;#34;https://developers.redhat.com/download-manager/content/origin/files/sha256/60/60a0be5aeed1f08f2bb7599a578c89ec134b4016cd62a8604b29f15d543a469c/rhel-server-7.6-x86_64-dvd.iso&amp;#34; name=&amp;#34;Red Hat Enterprise Linux&amp;#34; version=&amp;#34;7.6.0&amp;#34; platform-type=&amp;#34;RHEL&amp;#34;&amp;gt;&amp;lt;/rhdp-os-download&amp;gt;     &amp;lt;rhdp-downloads-app url=&amp;#34;https://developers.redhat.com/download-manager/rest/available/rhel,eap,devstudio,fuse,datagrid,eap,webserver,cdk,devsuite,amq,brms,bpmsuite,datavirt,mobileplatform,openshift,openjdk,dotnet,migrationtoolkit?nv=1&amp;#34;&amp;gt;&amp;lt;/rhdp-downloads&amp;gt;     </description>
     </item>
     
     <item>
       <title>Community</title>
-      <link>http://localhost:8080/components/community/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/community/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>http://localhost:8080/components/community/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/community/</guid>
       <description>&amp;lt;div data-product-id=&amp;#34;fuse&amp;#34;&amp;gt; &amp;lt;rhdp-projects dcp-url=&amp;#34;https://dcp2.jboss.org/v2/rest/search/suggest_project_name_ngram_more_fields?sort=sys_title&amp;amp;amp;query=&amp;#34; upstream-product-id=&amp;#34;fuse&amp;#34;&amp;gt; &amp;lt;rhdp-project-query&amp;gt;&amp;lt;/rhdp-project-query&amp;gt; &amp;lt;rhdp-project-url&amp;gt;&amp;lt;/rhdp-project-url&amp;gt; &amp;lt;/rhdp-projects&amp;gt; &amp;lt;/div&amp;gt;        </description>
     </item>
     
     <item>
       <title>Stack Overflow</title>
-      <link>http://localhost:8080/components/stack-overflow/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/stack-overflow/</link>
       <pubDate>Mon, 30 Apr 2018 13:12:43 -0400</pubDate>
       
-      <guid>http://localhost:8080/components/stack-overflow/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/stack-overflow/</guid>
       <description>&amp;lt;div ng-app=&amp;#34;search&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;row&amp;#34; ng-controller=&amp;#34;SearchController&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;large-24 columns&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;large-24 columns&amp;#34;&amp;gt; &amp;lt;form class=&amp;#34;search-bar&amp;#34; ng-submit=&amp;#34;updateSearch(); resetPagination();&amp;#34; role=&amp;#34;search&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;large-24 columns&amp;#34; id=&amp;#34;scrollPoint&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;large-14 columns stackoverflow-filters&amp;#34;&amp;gt; &amp;lt;label for=&amp;#34;filterByProduct&amp;#34;&amp;gt;Filter by Product&amp;lt;/label&amp;gt; &amp;lt;div class=&amp;#34;styled-select&amp;#34;&amp;gt; &amp;lt;select id=&amp;#34;filterByProduct&amp;#34; name=&amp;#34;filter-by-product&amp;#34; ng-change=&amp;#34;updateSearch(); resetPagination();&amp;#34; ng-model=&amp;#34;params.product&amp;#34;&amp;gt;&amp;lt;option value=&amp;#34;&amp;#34;&amp;gt;Show all&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;openjdk&amp;#34;&amp;gt;OpenJDK&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;rhamt&amp;#34;&amp;gt;Red Hat Application Migration Toolkit&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;cdk&amp;#34;&amp;gt;Red Hat Developer Container Kit&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;developertoolset&amp;#34;&amp;gt;Red Hat Developer Toolset&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;rhel&amp;#34;&amp;gt;Red Hat Enterprise Linux&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;amq&amp;#34;&amp;gt;Red Hat JBoss AMQ&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;bpmsuite&amp;#34;&amp;gt;Red Hat JBoss BPM Suite&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;brms&amp;#34;&amp;gt;Red Hat Decision Manager&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;datagrid&amp;#34;&amp;gt;Red Hat JBoss Data Grid&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;datavirt&amp;#34;&amp;gt;Red Hat JBoss Data Virtualization&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;devstudio&amp;#34;&amp;gt;Red Hat JBoss Developer Studio&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;eap&amp;#34;&amp;gt;Red Hat JBoss Enterprise Application Platform&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;fuse&amp;#34;&amp;gt;Red Hat JBoss Fuse&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;webserver&amp;#34;&amp;gt;Red Hat JBoss Web Server&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;rhmap&amp;#34;&amp;gt;Red Hat Mobile Application Platform&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;rhoar&amp;#34;&amp;gt;Red Hat Openshift Application Runtimes&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;openshift&amp;#34;&amp;gt;Red Hat OpenShift Container Platform&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;softwarecollections&amp;#34;&amp;gt;Red Hat Software Collections&amp;lt;/option&amp;gt; &amp;lt;option value=&amp;#34;dotnet&amp;#34;&amp;gt;.</description>
     </item>
     
     <item>
       <title>All Product Listing</title>
-      <link>http://localhost:8080/patterns/assemblies/all-product-listing/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/assemblies/all-product-listing/</link>
       <pubDate>Fri, 13 Apr 2018 02:45:06 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/assemblies/all-product-listing/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/assemblies/all-product-listing/</guid>
       <description>&amp;lt;div class=&amp;#34;view-content grid all-products-listing&amp;#34; data-rhd-grid=&amp;#34;normal&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/dotnet/overview&amp;#34;&amp;gt;.NET Core 2.0&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/devsuite/overview&amp;#34;&amp;gt;Red Hat Development Suite&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/cdk/overview&amp;#34;&amp;gt;Red Hat Container Development Kit&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/devstudio/overview&amp;#34;&amp;gt;Red Hat JBoss Developer Studio&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/openshift/overview&amp;#34;&amp;gt;Red Hat OpenShift Container Platform&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/red-hat-decision-manager/overview&amp;#34;&amp;gt;Red Hat Decision Manager&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/bpmsuite/overview&amp;#34;&amp;gt;Red Hat JBoss BPM Suite&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/amq/overview&amp;#34;&amp;gt;Red Hat AMQ&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/softwarecollections/overview&amp;#34;&amp;gt;Red Hat Software Collections&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/eap/overview&amp;#34;&amp;gt;Red Hat JBoss Enterprise Application Platform&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/datagrid/overview&amp;#34;&amp;gt;Red Hat JBoss Data Grid&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/webserver/overview&amp;#34;&amp;gt;Red Hat JBoss Web Server&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/rhel/overview&amp;#34;&amp;gt;Red Hat Enterprise Linux&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/datavirt/overview&amp;#34;&amp;gt;Red Hat JBoss Data Virtualization&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/fuse/overview&amp;#34;&amp;gt;Red Hat JBoss Fuse&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/mobileplatform/overview&amp;#34;&amp;gt;Red Hat Mobile Application Platform&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/openjdk/overview&amp;#34;&amp;gt;OpenJDK&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/developertoolset/overview&amp;#34;&amp;gt;Red Hat Developer Toolset&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/rhamt/overview&amp;#34;&amp;gt;Red Hat Application Migration Toolkit&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/rhoar/overview&amp;#34;&amp;gt;Red Hat OpenShift Application Runtimes&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/clang-llvm-go-rust/overview&amp;#34;&amp;gt;Compilers: Clang/LLVM, Go, Rust&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;views-row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;views-field views-field-title&amp;#34;&amp;gt;&amp;lt;span class=&amp;#34;field-content&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;/products/sap/overview&amp;#34;&amp;gt;Red Hat Enterprise Linux for SAP Solutions&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;    .</description>
     </item>
     
     <item>
       <title>Featured Products</title>
-      <link>http://localhost:8080/patterns/assemblies/featured_products/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/assemblies/featured_products/</link>
       <pubDate>Fri, 13 Apr 2018 00:18:55 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/assemblies/featured_products/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/assemblies/featured_products/</guid>
       <description>&amp;lt;section data-quickedit-entity-id=&amp;#34;assembly/29&amp;#34; id=&amp;#34;assembly-field-sections-29&amp;#34; class=&amp;#34;assembly assembly-type-featured_products&amp;#34; data-quickedit-entity-instance-id=&amp;#34;0&amp;#34;&amp;gt; &amp;lt;h2 data-quickedit-field-id=&amp;#34;assembly/29/field_title/en/default&amp;#34; class=&amp;#34;field field--name-field-title field--type-string field--label-hidden field__item&amp;#34;&amp;gt;Featured Products&amp;lt;/h2&amp;gt; &amp;lt;article data-quickedit-entity-id=&amp;#34;node/33805&amp;#34; role=&amp;#34;article&amp;#34; class=&amp;#34;contextual-region node node--type-product node--view-mode-featured-tile&amp;#34; about=&amp;#34;/node/33805&amp;#34; data-quickedit-entity-instance-id=&amp;#34;0&amp;#34;&amp;gt; &amp;lt;h2&amp;gt; &amp;lt;a href=&amp;#34;/node/33805&amp;#34; rel=&amp;#34;bookmark&amp;#34;&amp;gt;&amp;lt;span data-quickedit-field-id=&amp;#34;node/33805/title/en/featured_tile&amp;#34; class=&amp;#34;field field--name-title field--type-string field--label-hidden quickedit-field&amp;#34;&amp;gt;Red Hat OpenShift Container Platform&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;/h2&amp;gt; &amp;lt;div class=&amp;#34;node__content&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;description field field--name-field-short-description field--type-string-long field--label-hidden field__items quickedit-field&amp;#34; data-quickedit-field-id=&amp;#34;node/33805/field_short_description/en/featured_tile&amp;#34;&amp;gt; An open, hybrid Platform-as-a-Service (PaaS) to quickly develop, host, scale, and deliver apps in the cloud. &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/article&amp;gt; &amp;lt;article data-quickedit-entity-id=&amp;#34;node/47235&amp;#34; role=&amp;#34;article&amp;#34; class=&amp;#34;contextual-region node node--type-product node--view-mode-featured-tile&amp;#34; about=&amp;#34;/node/47235&amp;#34; data-quickedit-entity-instance-id=&amp;#34;0&amp;#34;&amp;gt; &amp;lt;h2&amp;gt; &amp;lt;a href=&amp;#34;/node/47235&amp;#34; rel=&amp;#34;bookmark&amp;#34;&amp;gt;&amp;lt;span data-quickedit-field-id=&amp;#34;node/47235/title/en/featured_tile&amp;#34; class=&amp;#34;field field--name-title field--type-string field--label-hidden quickedit-field&amp;#34;&amp;gt;Red Hat OpenShift Application Runtimes&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;/h2&amp;gt; &amp;lt;div class=&amp;#34;node__content&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;description field field--name-field-short-description field--type-string-long field--label-hidden field__items quickedit-field&amp;#34; data-quickedit-field-id=&amp;#34;node/47235/field_short_description/en/featured_tile&amp;#34;&amp;gt; Cloud native application runtimes optimized for OpenShift.</description>
     </item>
     
     <item>
       <title>Home Page Layout</title>
-      <link>http://localhost:8080/patterns/layout/home/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/layout/home/</link>
       <pubDate>Wed, 04 Oct 2017 08:06:49 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/layout/home/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/layout/home/</guid>
       <description>&amp;lt;a class=&amp;#34;spotlight-item dotnet-spotlight&amp;#34; href=&amp;#34;https://developers.redhat.com/blog/?p=438176&amp;#34;&amp;gt;.NET Core for RHEL and the OpenShift Container Platform.&amp;lt;/a&amp;gt; &amp;lt;a class=&amp;#34;spotlight-item&amp;#34; href=&amp;#34;https://developers.redhat.com/blog/?p=438176&amp;#34;&amp;gt;.NET Core for RHEL and the OpenShift Container Platform.&amp;lt;/a&amp;gt; &amp;lt;a class=&amp;#34;spotlight-item&amp;#34; href=&amp;#34;https://developers.redhat.com/blog/?p=438176&amp;#34;&amp;gt;.NET Core for RHEL and the OpenShift Container Platform.&amp;lt;/a&amp;gt; &amp;lt;a class=&amp;#34;spotlight-item&amp;#34; href=&amp;#34;https://developers.redhat.com/blog/?p=438176&amp;#34;&amp;gt;.NET Core for RHEL and the OpenShift Container Platform.&amp;lt;/a&amp;gt;    .NET Core for RHEL and the OpenShift Container Platform. .NET Core for RHEL and the OpenShift Container Platform. .NET Core for RHEL and the OpenShift Container Platform.</description>
     </item>
     
     <item>
       <title>TS - TypeScript</title>
-      <link>http://localhost:8080/patterns/code/ts/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/code/ts/</link>
       <pubDate>Fri, 18 Aug 2017 15:15:45 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/code/ts/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/code/ts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTML - Hypertext Markup Language</title>
-      <link>http://localhost:8080/patterns/code/html/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/code/html/</link>
       <pubDate>Thu, 03 Aug 2017 15:06:55 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/code/html/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/code/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSS - Cascading Stylesheets</title>
-      <link>http://localhost:8080/patterns/code/css/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/code/css/</link>
       <pubDate>Thu, 03 Aug 2017 15:06:49 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/code/css/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/code/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JS - JavaScript</title>
-      <link>http://localhost:8080/patterns/code/js/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/code/js/</link>
       <pubDate>Thu, 03 Aug 2017 15:06:41 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/code/js/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/code/js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Accessibility (a11y)</title>
-      <link>http://localhost:8080/patterns/misc/a11y/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/misc/a11y/</link>
       <pubDate>Thu, 03 Aug 2017 15:05:58 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/misc/a11y/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/misc/a11y/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Interactive Elements</title>
-      <link>http://localhost:8080/patterns/misc/interactive/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/misc/interactive/</link>
       <pubDate>Thu, 03 Aug 2017 15:05:26 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/misc/interactive/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/misc/interactive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Notifications</title>
-      <link>http://localhost:8080/patterns/content/notifications/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/content/notifications/</link>
       <pubDate>Thu, 03 Aug 2017 15:04:51 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/content/notifications/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/content/notifications/</guid>
       <description>Alerts Information &amp;lt;div class=&amp;#34;alert-box alert-info&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;icon&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;alert-content&amp;#34;&amp;gt; &amp;lt;strong&amp;gt;Info:&amp;lt;/strong&amp;gt;&amp;lt;p&amp;gt;Lorem ipsum dolor sit amet, per id case aliquam expetenda.&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;     Info:Lorem ipsum dolor sit amet, per id case aliquam expetenda.
    Success &amp;lt;div class=&amp;#34;alert-box alert-success&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;icon&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;alert-content&amp;#34;&amp;gt; &amp;lt;strong&amp;gt;Success:&amp;lt;/strong&amp;gt;&amp;lt;p&amp;gt;Lorem ipsum dolor sit amet, per id case aliquam expetenda.&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;     Success:Lorem ipsum dolor sit amet, per id case aliquam expetenda.</description>
     </item>
     
     <item>
       <title>Style</title>
-      <link>http://localhost:8080/patterns/content/style/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/content/style/</link>
       <pubDate>Thu, 03 Aug 2017 15:04:33 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/content/style/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/content/style/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Handshakes, Log In, and Registration</title>
-      <link>http://localhost:8080/patterns/misc/handoffs/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/misc/handoffs/</link>
       <pubDate>Thu, 03 Aug 2017 15:03:56 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/misc/handoffs/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/misc/handoffs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Links</title>
-      <link>http://localhost:8080/patterns/misc/links/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/misc/links/</link>
       <pubDate>Thu, 03 Aug 2017 15:03:17 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/misc/links/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/misc/links/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Graphics</title>
-      <link>http://localhost:8080/patterns/design/graphics/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/design/graphics/</link>
       <pubDate>Thu, 03 Aug 2017 14:57:35 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/design/graphics/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/design/graphics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Responsive Grid</title>
-      <link>http://localhost:8080/patterns/layout/grid/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/layout/grid/</link>
       <pubDate>Thu, 03 Aug 2017 14:22:23 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/layout/grid/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/layout/grid/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Logos</title>
-      <link>http://localhost:8080/patterns/design/logos/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/design/logos/</link>
       <pubDate>Thu, 03 Aug 2017 14:11:29 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/design/logos/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/design/logos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>System</title>
-      <link>http://localhost:8080/patterns/design/system/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/design/system/</link>
       <pubDate>Thu, 03 Aug 2017 14:11:29 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/design/system/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/design/system/</guid>
       <description>&amp;lt;h1&amp;gt;Heading&amp;lt;/h1&amp;gt;   Heading  </description>
     </item>
     
     <item>
       <title>Background</title>
-      <link>http://localhost:8080/patterns/design/background/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/design/background/</link>
       <pubDate>Thu, 03 Aug 2017 14:11:21 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/design/background/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/design/background/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Color</title>
-      <link>http://localhost:8080/patterns/design/color/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/design/color/</link>
       <pubDate>Thu, 03 Aug 2017 14:11:06 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/design/color/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/design/color/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Box Model Properties</title>
-      <link>http://localhost:8080/patterns/layout/boxmodel/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/layout/boxmodel/</link>
       <pubDate>Thu, 03 Aug 2017 14:10:42 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/layout/boxmodel/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/layout/boxmodel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Buttons and Calls to Action</title>
-      <link>http://localhost:8080/patterns/misc/btn-cta/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/misc/btn-cta/</link>
       <pubDate>Thu, 03 Aug 2017 10:56:11 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/misc/btn-cta/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/misc/btn-cta/</guid>
       <description> Buttons    Style Sample     Default &amp;lt;a href=&amp;#34;#&amp;#34; class=&amp;#34;button&amp;#34;&amp;gt;Button&amp;lt;/a&amp;gt;   Button    Form Submit &amp;lt;input type=&amp;#34;submit&amp;#34; class=&amp;#34;button&amp;#34; value=&amp;#34;Submit&amp;#34;&amp;gt;       Heavy CTAs    Style Sample     Default &amp;lt;a href=&amp;#34;#&amp;#34; class=&amp;#34;button heavy-cta&amp;#34;&amp;gt;Some action&amp;lt;/a&amp;gt;   Some action    White &amp;lt;a href=&amp;#34;#&amp;#34; class=&amp;#34;button heavy-cta white&amp;#34;&amp;gt;Some action&amp;lt;/a&amp;gt;   Some action    Black &amp;lt;a href=&amp;#34;#&amp;#34; class=&amp;#34;button heavy-cta black&amp;#34;&amp;gt;Some action&amp;lt;/a&amp;gt;   Some action    Blue &amp;lt;a href=&amp;#34;#&amp;#34; class=&amp;#34;button heavy-cta blue&amp;#34;&amp;gt;Some action&amp;lt;/a&amp;gt;   Some action     Medium CTAs    Style Sample     Default &amp;lt;a href=&amp;#34;#&amp;#34; class=&amp;#34;button medium-cta&amp;#34;&amp;gt;Some action&amp;lt;/a&amp;gt;   Some action    White &amp;lt;a href=&amp;#34;#&amp;#34; class=&amp;#34;button medium-cta white&amp;#34;&amp;gt;Some action&amp;lt;/a&amp;gt;   Some action    Black &amp;lt;a href=&amp;#34;#&amp;#34; class=&amp;#34;button medium-cta black&amp;#34;&amp;gt;Some action&amp;lt;/a&amp;gt;   Some action    Blue &amp;lt;a href=&amp;#34;#&amp;#34; class=&amp;#34;button medium-cta blue&amp;#34;&amp;gt;Some action&amp;lt;/a&amp;gt;   Some action     Light CTAs    Style Sample     Default &amp;lt;a href=&amp;#34;#&amp;#34; class=&amp;#34;light-cta&amp;#34;&amp;gt;Some action&amp;lt;/a&amp;gt;   Some action    White &amp;lt;a href=&amp;#34;#&amp;#34; class=&amp;#34;light-cta white&amp;#34;&amp;gt;Some action&amp;lt;/a&amp;gt;   Some action    Black &amp;lt;a href=&amp;#34;#&amp;#34; class=&amp;#34;light-cta black&amp;#34;&amp;gt;Some action&amp;lt;/a&amp;gt;   Some action     </description>
     </item>
     
     <item>
       <title>Typography</title>
-      <link>http://localhost:8080/patterns/design/typography/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/patterns/design/typography/</link>
       <pubDate>Thu, 03 Aug 2017 10:56:11 -0400</pubDate>
       
-      <guid>http://localhost:8080/patterns/design/typography/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/design/typography/</guid>
       <description> Headings  H1 &amp;lt;h1&amp;gt;Heading 1&amp;lt;/h1&amp;gt;   Heading 1  H2 &amp;lt;h2&amp;gt;Heading 2&amp;lt;/h2&amp;gt;   Heading 2  H3 &amp;lt;h3&amp;gt;Heading 3&amp;lt;/h3&amp;gt;   Heading 3  H4 &amp;lt;h4&amp;gt;Heading 4&amp;lt;/h4&amp;gt;   Heading 4  H5 &amp;lt;h5&amp;gt;Heading 5&amp;lt;/h5&amp;gt;   Heading 5   </description>
     </item>
     

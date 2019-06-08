@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "module": "umd",
+        "moduleResolution": "node",
+        "target": "es5",
+        "noImplicitAny": false,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": false,
+        "removeComments": true,
+        "downlevelIteration": true,
+        "declaration": true,
+        "strictBindCallApply": false,
+        "pretty": true,
+        "rootDirs": ["src"],
+        "lib":[
+          "dom", "dom.iterable", "es5", "es6"
+        ],
+        //"outFile": "dist/pfelement.js",
+        "outDir": "."
+    },
+    "include": [
+        "src/*.ts"       
+    ],
+    "exclude": []
+
+}

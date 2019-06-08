@@ -1,5 +1,5 @@
-//import PFElement from '../../@pfelements/pfelement.umd.js';
-import PFElement from '../../@patternfly/pfelement/pfelement.umd.js';
+//import {PFElement} from '../../@pfelements/pfelement.umd.js';
+import {PFElement} from '../../@patternfly/pfelement/pfelement.ts.js';
 //import fontawesome from '@fortawesome/fontawesome';
 
 export default class DPProductShortTeaser extends PFElement {

@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "module": "system",
+        "module": "umd",
         "moduleResolution": "node",
         "target": "es5",
         "noImplicitAny": false,
@@ -9,11 +9,11 @@
         "removeComments": true,
         "downlevelIteration": true,
         "pretty": true,
+        "strictBindCallApply": false,
         "allowJs": true,
-        "esModuleInterop": true,
         "rootDirs": ["node_modules", "src/scripts"],
         "lib":[
-          "dom", "es5", "es6"
+          "dom", "es5", "dom.iterable", "es6"
         ],
         //"outFile": "dist/js/rhd.js",
         "outDir": "src/docs/static/js/@rhd/"

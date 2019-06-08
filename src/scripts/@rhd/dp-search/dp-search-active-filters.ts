@@ -1,5 +1,5 @@
-// import PFElement from '../../@pfelements/pfelement.umd.js';
-import PFElement from '../../@patternfly/pfelement/pfelement.umd.js';
+// import {PFElement} from '../../@pfelements/pfelement.umd.js';
+import {PFElement} from '../../@patternfly/pfelement/pfelement.ts.js';
 import DPSearchFilterGroup from './dp-search-filter-group.js';
 import DPSearchFilterActiveItem from './dp-search-filter-active-item.js';
 

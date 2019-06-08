@@ -1,4 +1,4 @@
-//import PFElement from '../@pfelements/pfelement';
+//import {PFElement} from '../@pfelements/pfelement';
 //import RHDPAlert from './rhdp-alert.js';
 import DPReferrer from './dp-referrer.js';
 import DPCategoryList from './dp-category-list/dp-category-list.js';

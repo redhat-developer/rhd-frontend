@@ -5,7 +5,7 @@ description: ""
 draft: true
 tags: ["page"]
 weight: 4
-scripts: ["js/@patternfly/pfelement/pfelement.umd.js","js/@fortawesome/fontawesome-svg-core/index.js","js/@fortawesome/pro-solid-svg-icons/index.js", "js/@patternfly/pfe-cta/pfe-cta.js", "js/@patternfly/pfe-card/pfe-card.js", "js/@rhd/dp-alert.js"]
+scripts: ["/js/@patternfly/pfe-cta/pfe-cta.umd.js", "/js/@patternfly/pfe-card/pfe-card.umd.js", "/js/@rhd/dp-alert.js"]
 ---
 
 {{< code >}}<main role="main">
