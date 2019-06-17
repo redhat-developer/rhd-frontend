@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && npm run docs:dev && spandx -c spandx.config.dev.js",
+    "serve": "spandx -c spandx.config.dev.js",
     "test": "karma start",
     "build": "npm run scripts && npm run styles && npm run docs",
     "del": "npm run del:scripts && npm run del:styles",

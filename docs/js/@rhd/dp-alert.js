@@ -17,12 +17,12 @@ var __extends = (this && this.__extends) || (function () {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@patternfly/pfelement/pfelement.umd.js", "@fortawesome/fontawesome-svg-core/index.js", "@fortawesome/pro-solid-svg-icons/index.js"], factory);
+        define(["require", "exports", "@patternfly/pfelement/pfelement.umd", "@fortawesome/fontawesome-svg-core/index.js", "@fortawesome/pro-solid-svg-icons/index.js"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
+    var pfelement_umd_1 = require("@patternfly/pfelement/pfelement.umd");
     var index_js_1 = require("@fortawesome/fontawesome-svg-core/index.js");
     var index_js_2 = require("@fortawesome/pro-solid-svg-icons/index.js");
     index_js_1.library.add(index_js_2.faTimes);
@@ -154,7 +154,7 @@ var __extends = (this && this.__extends) || (function () {
             this.remove();
         };
         return DPAlert;
-    }(pfelement_umd_js_1.PFElement));
+    }(pfelement_umd_1.PFElement));
     exports.DPAlert = DPAlert;
-    pfelement_umd_js_1.PFElement.create(DPAlert);
+    pfelement_umd_1.PFElement.create(DPAlert);
 });

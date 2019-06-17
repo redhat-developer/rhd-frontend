@@ -8,6 +8,53 @@ weight: 4
 scripts: ["/js/@patternfly/pfe-cta/pfe-cta.umd.js", "/js/@patternfly/pfe-card/pfe-card.umd.js", "/js/@rhd/dp-alert.js"]
 ---
 
+{{< code >}}
+<section data-quickedit-entity-id="assembly/11325" id="assembly-field-sections-11325" class="assembly assembly-type-rich_text contextual-region has-background" data-quickedit-entity-instance-id="0">
+  <div class="container">
+      <div data-quickedit-field-id="assembly/11325/field_content/en/default" class="clearfix text-formatted field field--name-field-content field--type-text-long field--label-hidden field__items">
+                <div class="field__item">
+        <div class="layout-container">
+<div class="row">
+<div class="columns large-12 medium-12 small-12">
+<div class="layout-column-editable layout-column-one">
+<p>&nbsp;</p>
+
+<p><img alt="helloworld" height="107" src="/sites/default/files/styles/large/public/RHEL-helloworld.png?itok=kTPVSU3E" width="284"></p>
+
+<p>&nbsp;</p>
+
+<p>Download your developer edition of Red Hat Enterprise Linux 8</p>
+
+<p><a class="button heavy-cta" href="https://developers.redhat.com/rhel8/">DOWNLOAD</a>&nbsp; &nbsp; &nbsp; &nbsp;</p>
+
+<p>&nbsp;</p>
+</div>
+</div>
+
+<div class="columns large-12 medium-12 small-12">
+<div class="layout-column-editable layout-column-two">
+<p>&nbsp;</p>
+
+<article class="embedded-entity"><img src="/sites/default/files/OpenShift4_Logo_Black.png" alt="OpenShift4_Logo_Black" title="OpenShift4_Logo_Black" typeof="foaf:Image"></article><p>&nbsp;</p>
+
+<p>The&nbsp;Kubernetes platform for big ideas</p>
+
+<p><a class="button heavy-cta" href="https://developers.redhat.com/openshift/">DOWNLOAD</a>&nbsp; &nbsp; &nbsp;</p>
+
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+</div>
+
+<p>&nbsp;</p>
+            </div>
+          </div>
+  </div>
+      <div class="background" style="background-image: url(https://developers.redhat.com/sites/default/files/styles/billboard/public/combo-bg_0.png?itok=J7MIhgrs);"></div>
+  </section>
+{{</ code >}}
+
 {{< code >}}<main role="main">
   <a id="main-content" tabindex="-1"></a>
   <div class="layout-content">
