@@ -128,11 +128,11 @@ category: Function
   --pfe-theme--line-height--xxl: 1.2;
   --pfe-theme--line-height--xl: 1.2;
   --pfe-theme--line-height--alpha: 1.3;
-  --pfe-theme--line-height--beta: 1.2;
-  --pfe-theme--line-height--gamma: 1.2;
-  --pfe-theme--line-height--delta: 1.2;
-  --pfe-theme--line-height--epsilon: 1.2;
-  --pfe-theme--line-height--zeta: 1.2;
+  --pfe-theme--line-height--beta: 1.3;
+  --pfe-theme--line-height--gamma: 1.3;
+  --pfe-theme--line-height--delta: 1.5;
+  --pfe-theme--line-height--epsilon: 1.5;
+  --pfe-theme--line-height--zeta: 1.5;
   --pfe-theme--line-height: 1.5;
   --pfe-theme--font-weight--xxl: 300;
   --pfe-theme--font-weight--xl: 300;
@@ -152,101 +152,101 @@ category: Function
   --pfe-theme--color--text--on-dark: #fff;
   --pfe-theme--color--text--on-saturated: #eee; }
 
+/*doc
+---
+title: strip-unit
+category: Function
+---
+
+-   __$num:__ accepts the string number with unit and returns the raw number, no unit
+*/
+/*doc
+---
+title: pem
+category: Function
+---
+
+-   __$pxval:__ pixel value to return as em
+-   __$base:__ defaults to 18px, but optional context can be passed in
+
+```inline
+.class-name {
+    font-size: pem(36); // Returns 2em (or 36px)
+    padding: pem(18, 36) // pass in current font-size context to return 18px/1em padding
+}
+```
+*/
 .pfe-headline-xxl {
-  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", "Helvetica", "Arial", sans-serif);
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
   font-size: var(--pfe-theme--font-size--xxl, 48px);
   line-height: var(--pfe-theme--line-height--xxl, 1.2);
   font-weight: var(--pfe-theme--font-weight--xxl, 300); }
 
 .pfe-headline-xl {
-  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", "Helvetica", "Arial", sans-serif);
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
   font-size: var(--pfe-theme--font-size--xl, 40px);
   line-height: var(--pfe-theme--line-height--xl, 1.2);
   font-weight: var(--pfe-theme--font-weight--xl, 300); }
 
-.pfe-headline-1 {
-  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", "Helvetica", "Arial", sans-serif);
+.pfe-headline-1, .PFElement h1 {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
   font-size: var(--pfe-theme--font-size--alpha, 36px);
   line-height: var(--pfe-theme--line-height--alpha, 1.3);
   font-weight: var(--pfe-theme--font-weight--alpha, 400); }
 
-.pfe-headline-2 {
-  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", "Helvetica", "Arial", sans-serif);
+.pfe-headline-2, .PFElement h2 {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
   font-size: var(--pfe-theme--font-size--beta, 28px);
   line-height: var(--pfe-theme--line-height--beta, 1.3);
   font-weight: var(--pfe-theme--font-weight--beta, 400); }
 
-.pfe-headline-3 {
-  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", "Helvetica", "Arial", sans-serif);
+.pfe-headline-3, .PFElement h3 {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
   font-size: var(--pfe-theme--font-size--gamma, 24px);
   line-height: var(--pfe-theme--line-height--gamma, 1.3);
   font-weight: var(--pfe-theme--font-weight--gamma, 400); }
 
-.pfe-headline-4 {
-  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", "Helvetica", "Arial", sans-serif);
+.pfe-headline-4, .PFElement h4 {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
   font-size: var(--pfe-theme--font-size--delta, 20px);
   line-height: var(--pfe-theme--line-height--delta, 1.5);
   font-weight: var(--pfe-theme--font-weight--delta, 400); }
 
-.pfe-headline-5 {
-  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", "Helvetica", "Arial", sans-serif);
+.pfe-headline-5, .PFElement h5 {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
   font-size: var(--pfe-theme--font-size--epsilon, 18px);
-  line-height: var(--pfe-theme--line-height--epsilon, 1.2);
-  font-weight: var(--pfe-theme--font-weight--epsilon, 700); }
+  line-height: var(--pfe-theme--line-height--epsilon, 1.5);
+  font-weight: var(--pfe-theme--font-weight--epsilon, 400); }
 
-.pfe-headline-6 {
-  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", "Helvetica", "Arial", sans-serif);
+.pfe-headline-6, .PFElement h6 {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
   font-size: var(--pfe-theme--font-size--zeta, 16px);
-  line-height: var(--pfe-theme--line-height--zeta, 1.2);
-  font-weight: var(--pfe-theme--font-weight--zeta, 700); }
+  line-height: var(--pfe-theme--line-height--zeta, 1.5);
+  font-weight: var(--pfe-theme--font-weight--zeta, 400); }
+
+.pfe-text, .PFElement p {
+  font-family: var(--pfe-theme--font-family, "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  font-size: var(--pfe-theme--font-size, 18px);
+  line-height: var(--pfe-theme--line-height, 1.5);
+  font-weight: var(--pfe-theme--font-weight, 400); }
 
 .PFElement {
   font-family: var(--pfe-theme--font-family);
   color: var(--pfe-broadcasted--color--text); }
   .PFElement a {
     color: var(--pfe-broadcasted--color--ui-link); }
-    .PFElement a:visited {
-      color: var(--pfe-broadcasted--color--ui-link--visited); }
     .PFElement a:hover {
       color: var(--pfe-broadcasted--color--ui-link--hover); }
     .PFElement a:focus {
       color: var(--pfe-broadcasted--color--ui-link--focus); }
   .PFElement > *:first-child {
     margin-top: 0; }
-  .PFElement h1, .PFElement h2, .PFElement h3, .PFElement h4, .PFElement h5, .PFElement h6 {
-    font-family: var(--pfe-theme--font-family--heading); }
-  .PFElement h1 {
-    font-size: var(--pfe-theme--font-size--alpha, 36px);
-    line-height: var(--pfe-theme--line-height--alpha, 1.3);
-    font-weight: var(--pfe-theme--font-weight--alpha, 400); }
-  .PFElement h2 {
-    font-size: var(--pfe-theme--font-size--beta, 28px);
-    line-height: var(--pfe-theme--line-height--beta, 1.3);
-    font-weight: var(--pfe-theme--font-weight--beta, 400); }
-  .PFElement h3 {
-    font-size: var(--pfe-theme--font-size--gamma, 24px);
-    line-height: var(--pfe-theme--line-height--gamma, 1.3);
-    font-weight: var(--pfe-theme--font-weight--gamma, 400); }
-  .PFElement h4 {
-    font-size: var(--pfe-theme--font-size--delta, 20px);
-    line-height: var(--pfe-theme--line-height--delta, 1.5);
-    font-weight: var(--pfe-theme--font-weight--delta, 400); }
-  .PFElement h5 {
-    font-size: var(--pfe-theme--font-size--epsilon, 18px);
-    line-height: var(--pfe-theme--line-height--epsilon, 1.2);
-    font-weight: var(--pfe-theme--font-weight--epsilon, 700); }
-  .PFElement h6 {
-    font-size: var(--pfe-theme--font-size--zeta, 16px);
-    line-height: var(--pfe-theme--line-height--zeta, 1.2);
-    font-weight: var(--pfe-theme--font-weight--zeta, 700); }
   .PFElement pre, .PFElement code {
-    font-family: var(--pfe-theme--font-family--code); }
+    font-family: var(--pfe-theme--font-family--code, "Overpass Mono", Consolas, Monaco, Andale Mono, monospace); }
 
 /* COMPONENT SPECIFIC STYLES */
 pfe-cta[priority="primary"] a,
 pfe-cta[priority="secondary"] a {
-  text-transform: uppercase;
-  font-weight: 700;
   font-size: 1em; }
 
 pfe-cta:not([priority="primary"]) a,

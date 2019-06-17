@@ -11,7 +11,7 @@
         "pretty": true,
         "strictBindCallApply": false,
         "allowJs": true,
-        "rootDirs": ["node_modules", "src/scripts"],
+        "rootDirs": ["src/scripts"],
         "lib":[
           "dom", "es5", "dom.iterable", "es6"
         ],

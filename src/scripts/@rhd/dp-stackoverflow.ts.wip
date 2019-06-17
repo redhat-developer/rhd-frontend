@@ -1,5 +1,5 @@
 // import {PFElement} from '../@pfelements/pfelement.umd.js';
-import {PFElement} from '../@patternfly/pfelement/pfelement.ts.js';
+import {PFElement} from '../@patternfly/pfelement/pfelement.umd.js/pfelement.ts.js';
 
 export default class DPStackOverflow extends PFElement {
     get html() {

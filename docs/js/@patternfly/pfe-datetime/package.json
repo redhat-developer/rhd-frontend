@@ -1,34 +1,28 @@
 {
-  "_args": [
-    [
-      "@patternfly/pfe-datetime@1.0.0-prerelease.16",
-      "/home/ldary/Projects/rh/rhd-frontend"
-    ]
-  ],
-  "_development": true,
-  "_from": "@patternfly/pfe-datetime@1.0.0-prerelease.16",
+  "_from": "@patternfly/pfe-datetime@^1.0.0-prerelease.16",
   "_id": "@patternfly/pfe-datetime@1.0.0-prerelease.16",
   "_inBundle": false,
   "_integrity": "sha512-zPPzaPBTXnIYzJ8VaUHZO9KirKyaTf4GjyL3DwPHT7G4Pt0iQQ0MXCgumZJpMPkXf0c5RyOFxGAjekYuQW8RsA==",
   "_location": "/@patternfly/pfe-datetime",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "@patternfly/pfe-datetime@1.0.0-prerelease.16",
+    "raw": "@patternfly/pfe-datetime@^1.0.0-prerelease.16",
     "name": "@patternfly/pfe-datetime",
     "escapedName": "@patternfly%2fpfe-datetime",
     "scope": "@patternfly",
-    "rawSpec": "1.0.0-prerelease.16",
+    "rawSpec": "^1.0.0-prerelease.16",
     "saveSpec": null,
-    "fetchSpec": "1.0.0-prerelease.16"
+    "fetchSpec": "^1.0.0-prerelease.16"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
   "_resolved": "https://registry.npmjs.org/@patternfly/pfe-datetime/-/pfe-datetime-1.0.0-prerelease.16.tgz",
-  "_spec": "1.0.0-prerelease.16",
-  "_where": "/home/ldary/Projects/rh/rhd-frontend",
+  "_shasum": "cface030558cdb2516b44e72fdc4a28dc2e2bfae",
+  "_spec": "@patternfly/pfe-datetime@^1.0.0-prerelease.16",
+  "_where": "/home/ldary/rh/rhd-frontend",
   "authors": [
     {
       "name": "Luke Dary"
@@ -42,9 +36,11 @@
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-elements/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "@patternfly/pfelement": "^1.0.0-prerelease.16"
   },
+  "deprecated": false,
   "description": "Datetime element for PFElements",
   "generator-pfelement-version": "0.2.8",
   "gitHead": "6ee18e0fe929f7d8161b22114882716b8bcdeff4",

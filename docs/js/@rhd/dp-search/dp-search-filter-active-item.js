@@ -17,14 +17,14 @@ var __extends = (this && this.__extends) || (function () {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../@fortawesome/fontawesome-svg-core/index.js", "../../@fortawesome/pro-solid-svg-icons/index.js", "../../@patternfly/pfelement/pfelement.ts.js"], factory);
+        define(["require", "exports", "@fortawesome/fontawesome-svg-core/index.js", "@fortawesome/pro-solid-svg-icons/index.js", "@patternfly/pfelement/pfelement.umd.js"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var index_js_1 = require("../../@fortawesome/fontawesome-svg-core/index.js");
-    var index_js_2 = require("../../@fortawesome/pro-solid-svg-icons/index.js");
-    var pfelement_ts_js_1 = require("../../@patternfly/pfelement/pfelement.ts.js");
+    var index_js_1 = require("@fortawesome/fontawesome-svg-core/index.js");
+    var index_js_2 = require("@fortawesome/pro-solid-svg-icons/index.js");
+    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
     index_js_1.library.add(index_js_2.faTimes);
     var timesIcon = index_js_1.icon(index_js_2.faTimes).html;
     var DPSearchFilterActiveItem = (function (_super) {
@@ -221,7 +221,7 @@ var __extends = (this && this.__extends) || (function () {
             this.active = false;
         };
         return DPSearchFilterActiveItem;
-    }(pfelement_ts_js_1.PFElement));
+    }(pfelement_umd_js_1.PFElement));
     exports.default = DPSearchFilterActiveItem;
-    pfelement_ts_js_1.PFElement.create(DPSearchFilterActiveItem);
+    pfelement_umd_js_1.PFElement.create(DPSearchFilterActiveItem);
 });

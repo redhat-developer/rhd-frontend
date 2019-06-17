@@ -17,12 +17,12 @@ var __extends = (this && this.__extends) || (function () {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../@patternfly/pfelement/pfelement.ts.js"], factory);
+        define(["require", "exports", "@patternfly/pfelement/pfelement.umd.js"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_ts_js_1 = require("../../@patternfly/pfelement/pfelement.ts.js");
+    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
     var DPProductShortTeaser = (function (_super) {
         __extends(DPProductShortTeaser, _super);
         function DPProductShortTeaser() {
@@ -96,7 +96,7 @@ var __extends = (this && this.__extends) || (function () {
             }
         };
         return DPProductShortTeaser;
-    }(pfelement_ts_js_1.PFElement));
+    }(pfelement_umd_js_1.PFElement));
     exports.default = DPProductShortTeaser;
-    pfelement_ts_js_1.PFElement.create(DPProductShortTeaser);
+    pfelement_umd_js_1.PFElement.create(DPProductShortTeaser);
 });

@@ -17,12 +17,12 @@ var __extends = (this && this.__extends) || (function () {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../@patternfly/pfelement/pfelement.ts.js"], factory);
+        define(["require", "exports", "@patternfly/pfelement/pfelement.umd.js"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_ts_js_1 = require("../../@patternfly/pfelement/pfelement.ts.js");
+    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
     var DPCategoryItemList = (function (_super) {
         __extends(DPCategoryItemList, _super);
         function DPCategoryItemList() {
@@ -91,7 +91,7 @@ var __extends = (this && this.__extends) || (function () {
             this[name] = newVal;
         };
         return DPCategoryItemList;
-    }(pfelement_ts_js_1.PFElement));
+    }(pfelement_umd_js_1.PFElement));
     exports.default = DPCategoryItemList;
-    pfelement_ts_js_1.PFElement.create(DPCategoryItemList);
+    pfelement_umd_js_1.PFElement.create(DPCategoryItemList);
 });

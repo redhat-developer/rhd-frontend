@@ -5,7 +5,7 @@ description: ""
 draft: true
 tags: ["component"]
 weight: 4
-scripts: ["/js/@rhd/dp-alert.js"]
+scripts: ["/js/@patternfly/pfelement/pfelement.umd.js","/js/@rhd/dp-alert.js"]
 ---
 
 {{< code >}}<dp-alert>This is the alert text</dp-alert>{{</ code >}}

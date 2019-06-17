@@ -65,8 +65,8 @@ export class PFElement extends HTMLElement {
   _queue = [];
   template = document.createElement("template");
 
-  static create(pfe: IPFElement) {
-    window.customElements.define(pfe.tag, () => pfe);
+  static create(pfe: any) {
+    window.customElements.define(pfe.tag, pfe);
   }
 
   static debugLog(preference = null) {
@@ -108,7 +108,7 @@ export class PFElement extends HTMLElement {
     return [...this.querySelectorAll(`[slot='${name}']`)];
   }
 
-  constructor(pfeClass: IPFElement, options?: IPFElementOptions) {
+  constructor(pfeClass: any, options?: IPFElementOptions) {
     super();
 
     this._pfeClass = pfeClass;

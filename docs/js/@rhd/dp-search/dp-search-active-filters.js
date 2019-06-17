@@ -17,12 +17,12 @@ var __extends = (this && this.__extends) || (function () {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../@patternfly/pfelement/pfelement.ts.js", "./dp-search-filter-active-item.js"], factory);
+        define(["require", "exports", "@patternfly/pfelement/pfelement.umd.js", "./dp-search-filter-active-item.js"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_ts_js_1 = require("../../@patternfly/pfelement/pfelement.ts.js");
+    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
     var dp_search_filter_active_item_js_1 = require("./dp-search-filter-active-item.js");
     var DPSearchActiveFilters = (function (_super) {
         __extends(DPSearchActiveFilters, _super);
@@ -162,7 +162,7 @@ var __extends = (this && this.__extends) || (function () {
             this.style.display = 'none';
         };
         return DPSearchActiveFilters;
-    }(pfelement_ts_js_1.PFElement));
+    }(pfelement_umd_js_1.PFElement));
     exports.default = DPSearchActiveFilters;
-    pfelement_ts_js_1.PFElement.create(DPSearchActiveFilters);
+    pfelement_umd_js_1.PFElement.create(DPSearchActiveFilters);
 });

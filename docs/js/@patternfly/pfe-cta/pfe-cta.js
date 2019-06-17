@@ -1,4 +1,4 @@
-import { PFElement } from '../pfelement/pfelement.js';
+import PFElement from '../pfelement/pfelement.js';
 
 /*
  * @license

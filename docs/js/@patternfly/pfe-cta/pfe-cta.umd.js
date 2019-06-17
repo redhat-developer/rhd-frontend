@@ -1,8 +1,10 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('../pfelement/pfelement.umd')) :
   typeof define === 'function' && define.amd ? define(['../pfelement/pfelement.umd'], factory) :
-  (global.PfeCta = factory(global.pfelement_umd));
-}(this, (function (pfelement_umd) { 'use strict';
+  (global.PfeCta = factory(global.PFElement));
+}(this, (function (PFElement) { 'use strict';
+
+  PFElement = PFElement && PFElement.hasOwnProperty('default') ? PFElement['default'] : PFElement;
 
   var classCallCheck = function (instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -161,9 +163,9 @@
       }
     }]);
     return PfeCta;
-  }(pfelement_umd.PFElement);
+  }(PFElement);
 
-  pfelement_umd.PFElement.create(PfeCta);
+  PFElement.create(PfeCta);
 
   return PfeCta;
 

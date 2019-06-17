@@ -21,12 +21,12 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../@patternfly/pfelement/pfelement.ts.js"], factory);
+        define(["require", "exports", "@patternfly/pfelement/pfelement.umd.js"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_ts_js_1 = require("../../@patternfly/pfelement/pfelement.ts.js");
+    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
     var DPSearchOneBox = (function (_super) {
         __extends(DPSearchOneBox, _super);
         function DPSearchOneBox() {
@@ -185,8 +185,8 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
             return icons[name];
         };
         return DPSearchOneBox;
-    }(pfelement_ts_js_1.PFElement));
+    }(pfelement_umd_js_1.PFElement));
     exports.default = DPSearchOneBox;
-    pfelement_ts_js_1.PFElement.create(DPSearchOneBox);
+    pfelement_umd_js_1.PFElement.create(DPSearchOneBox);
     var templateObject_1;
 });

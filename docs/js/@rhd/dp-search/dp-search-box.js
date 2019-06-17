@@ -17,14 +17,14 @@ var __extends = (this && this.__extends) || (function () {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../@fortawesome/fontawesome-svg-core/index.js", "../../@fortawesome/pro-solid-svg-icons/index.js", "../../@patternfly/pfelement/pfelement.ts.js"], factory);
+        define(["require", "exports", "@fortawesome/fontawesome-svg-core/index.js", "@fortawesome/pro-solid-svg-icons/index.js", "@patternfly/pfelement/pfelement.umd.js"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var index_js_1 = require("../../@fortawesome/fontawesome-svg-core/index.js");
-    var index_js_2 = require("../../@fortawesome/pro-solid-svg-icons/index.js");
-    var pfelement_ts_js_1 = require("../../@patternfly/pfelement/pfelement.ts.js");
+    var index_js_1 = require("@fortawesome/fontawesome-svg-core/index.js");
+    var index_js_2 = require("@fortawesome/pro-solid-svg-icons/index.js");
+    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
     index_js_1.library.add(index_js_2.faSearch);
     var searchIcon = index_js_1.icon(index_js_2.faSearch, { transform: {
             size: 18
@@ -106,7 +106,7 @@ var __extends = (this && this.__extends) || (function () {
             this.dispatchEvent(new CustomEvent('term-change', evt));
         };
         return DPSearchBox;
-    }(pfelement_ts_js_1.PFElement));
+    }(pfelement_umd_js_1.PFElement));
     exports.default = DPSearchBox;
-    pfelement_ts_js_1.PFElement.create(DPSearchBox);
+    pfelement_umd_js_1.PFElement.create(DPSearchBox);
 });

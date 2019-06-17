@@ -17,12 +17,12 @@ var __extends = (this && this.__extends) || (function () {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../@patternfly/pfelement/pfelement.ts.js", "./dp-search-url.js", "./dp-search-modal-filters.js"], factory);
+        define(["require", "exports", "@patternfly/pfelement/pfelement.umd.js", "./dp-search-url.js", "./dp-search-modal-filters.js"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_ts_js_1 = require("../../@patternfly/pfelement/pfelement.ts.js");
+    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
     var dp_search_url_js_1 = require("./dp-search-url.js");
     var dp_search_modal_filters_js_1 = require("./dp-search-modal-filters.js");
     var DPSearchApp = (function (_super) {
@@ -95,7 +95,7 @@ var __extends = (this && this.__extends) || (function () {
             this.modal.toggle = e.detail.toggle;
         };
         return DPSearchApp;
-    }(pfelement_ts_js_1.PFElement));
+    }(pfelement_umd_js_1.PFElement));
     exports.default = DPSearchApp;
-    pfelement_ts_js_1.PFElement.create(DPSearchApp);
+    pfelement_umd_js_1.PFElement.create(DPSearchApp);
 });

@@ -17,12 +17,12 @@ var __extends = (this && this.__extends) || (function () {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../@patternfly/pfelement/pfelement.ts.js"], factory);
+        define(["require", "exports", "@patternfly/pfelement/pfelement.umd.js"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_ts_js_1 = require("../../@patternfly/pfelement/pfelement.ts.js");
+    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
     var DPSearchURL = (function (_super) {
         __extends(DPSearchURL, _super);
         function DPSearchURL() {
@@ -208,7 +208,7 @@ var __extends = (this && this.__extends) || (function () {
             }
         };
         return DPSearchURL;
-    }(pfelement_ts_js_1.PFElement));
+    }(pfelement_umd_js_1.PFElement));
     exports.default = DPSearchURL;
-    pfelement_ts_js_1.PFElement.create(DPSearchURL);
+    pfelement_umd_js_1.PFElement.create(DPSearchURL);
 });
