@@ -136,7 +136,7 @@ scripts: ["@rhd/dp-search/dp-search-app","@rhd/dp-search/dp-search-box","@rhd/dp
 <dp-search-sort-page></dp-search-sort-page>
 <dp-search-onebox url="../../json/onebox.json"></dp-search-onebox>
 <dp-search-results></dp-search-results>
-<dp-search-query url="https://api.developers.redhat.com/search/"></dp-search-query>
+<dp-search-query url="https://api.developers.stage.redhat.com/search/"></dp-search-query>
 </dp-search-app>
 <a href="#top" id="scroll-to-top"></a>
 {{< /code >}}

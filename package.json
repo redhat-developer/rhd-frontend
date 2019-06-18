@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && npm run docs:dev && spandx -c spandx.config.dev.js",
+    "watch": "hugo serve -D -w -s src/docs --config src/docs/config.dev.toml --bind=0.0.0.0 --port=8080",
     "serve": "spandx -c spandx.config.dev.js",
     "test": "karma start",
     "build": "npm run scripts && npm run styles && npm run docs",
