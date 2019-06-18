@@ -62,7 +62,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                     </div>
                   </pfe-card>
                   <pfe-card pfe-color="lighter">
-                    <a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/"><img pfe-overflow="top right left" src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/e82397e71d7ae42dd48a946b0a9a3e1f.png?itok=J7cA6g6b"></a>
+                    <a pfe-overflow="top right left" href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/"><img src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/e82397e71d7ae42dd48a946b0a9a3e1f.png?itok=J7cA6g6b"></a>
                     <h3 class="tile-title">
                     <a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/">Red Hat Enterprise Linux 8 now generally available</a>
                     </h3>
@@ -75,7 +75,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                     </div>
                   </pfe-card>
                   <pfe-card pfe-color="lighter">
-                    <a href="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/"><img pfe-overflow="top right left" src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/86fa8b876def478a861853d96654f01d.png?itok=tk2vh1wo"></a>
+                    <a pfe-overflow="top right left" href="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/"><img src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/86fa8b876def478a861853d96654f01d.png?itok=tk2vh1wo"></a>
                     <h3 class="tile-title">
                     <a href="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/">Podman basics cheat sheet</a>
                     </h3>
@@ -88,7 +88,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                     </div>
                   </pfe-card>
                   <pfe-card pfe-color="lighter">
-                    <a href="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/"><img pfe-overflow="top right left" src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/e684ea8849af25532d2f2c5ad1c6dab4.png?itok=x5vFfjEH"></a>
+                    <a pfe-overflow="top right left" href="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/"><img src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/e684ea8849af25532d2f2c5ad1c6dab4.png?itok=x5vFfjEH"></a>
                     <h3 class="tile-title">
                     <a href="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/">Not all OpenJDK 12 builds include Shenandoah: Here’s why</a>
                     </h3>
