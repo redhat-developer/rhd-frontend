@@ -18,10 +18,10 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-define(["require", "exports", "./rhdp-downloads-all-item.js"], function (require, exports, rhdp_downloads_all_item_js_1) {
+define(["require", "exports", "./rhdp-downloads-all-item"], function (require, exports, rhdp_downloads_all_item_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    rhdp_downloads_all_item_js_1 = __importDefault(rhdp_downloads_all_item_js_1);
+    rhdp_downloads_all_item_1 = __importDefault(rhdp_downloads_all_item_1);
     var RHDPDownloadsAll = (function (_super) {
         __extends(RHDPDownloadsAll, _super);
         function RHDPDownloadsAll() {
@@ -79,7 +79,7 @@ define(["require", "exports", "./rhdp-downloads-all-item.js"], function (require
                 var len = products.length;
                 for (var i = 0; i < len; i++) {
                     if (products[i].groupHeading === this.heading) {
-                        var item = new rhdp_downloads_all_item_js_1.default();
+                        var item = new rhdp_downloads_all_item_1.default();
                         item.name = products[i].productName;
                         item.productId = products[i].productCode ? products[i].productCode : "";
                         item.dataFallbackUrl = products[i].dataFallbackUrl ? products[i].dataFallbackUrl : "";

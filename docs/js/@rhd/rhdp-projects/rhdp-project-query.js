@@ -136,6 +136,6 @@ define(["require", "exports"], function (require, exports) {
         };
         return RHDPProjectQuery;
     }(HTMLElement));
-    exports.default = RHDPProjectQuery;
+    exports.RHDPProjectQuery = RHDPProjectQuery;
     window.customElements.define('rhdp-project-query', RHDPProjectQuery);
 });

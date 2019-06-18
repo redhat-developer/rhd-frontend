@@ -1,4 +1,4 @@
-export default class RHDPProjectItem extends HTMLElement {
+export class RHDPProjectItem extends HTMLElement {
 
     private _imageUrl : String;
     private _projectName : String;

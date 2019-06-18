@@ -1,4 +1,4 @@
-export default class RHDPProjectQuery extends HTMLElement {
+export class RHDPProjectQuery extends HTMLElement {
 
     private _dcpUrl = 'https://dcp2.jboss.org/v2/rest/search/suggest_project_name_ngram_more_fields?sort=sys_title&query=';
     private _term = '';

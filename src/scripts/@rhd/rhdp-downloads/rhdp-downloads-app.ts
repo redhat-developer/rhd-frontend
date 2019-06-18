@@ -1,13 +1,13 @@
-import RHDPDownloadsPopularProducts from './rhdp-downloads-popular-products.js';
-import RHDPDownloadsProducts from './rhdp-downloads-products.js';
-import RHDPDownloadsAll from './rhdp-downloads-all.js';
+import RHDPDownloadsPopularProducts from './rhdp-downloads-popular-products';
+import RHDPDownloadsProducts from './rhdp-downloads-products';
+import RHDPDownloadsAll from './rhdp-downloads-all';
 
 export default class RHDPDownloadsApp extends HTMLElement {
     constructor() {
         super();
     }
 
-    _url;
+    _url: string;
     stage_download_url = 'https://developers.stage.redhat.com';
     popularProduct = new RHDPDownloadsPopularProducts();
     products = new RHDPDownloadsProducts();

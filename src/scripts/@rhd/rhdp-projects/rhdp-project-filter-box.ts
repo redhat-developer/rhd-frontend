@@ -1,4 +1,4 @@
-export default class RHDPProjectFilterBox extends HTMLElement {
+export class RHDPProjectFilterBox extends HTMLElement {
 
     private _term = '';
     private _filter = '';

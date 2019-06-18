@@ -15,15 +15,9 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-define(["require", "exports", "./rhdp-project-query.js", "./rhdp-project-url.js", "./rhdp-project-item.js"], function (require, exports, rhdp_project_query_js_1, rhdp_project_url_js_1, rhdp_project_item_js_1) {
+define(["require", "exports", "./rhdp-project-query", "./rhdp-project-url", "./rhdp-project-item"], function (require, exports, rhdp_project_query_1, rhdp_project_url_1, rhdp_project_item_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    rhdp_project_query_js_1 = __importDefault(rhdp_project_query_js_1);
-    rhdp_project_url_js_1 = __importDefault(rhdp_project_url_js_1);
-    rhdp_project_item_js_1 = __importDefault(rhdp_project_item_js_1);
     var RHDPProjects = (function (_super) {
         __extends(RHDPProjects, _super);
         function RHDPProjects() {
@@ -92,12 +86,12 @@ define(["require", "exports", "./rhdp-project-query.js", "./rhdp-project-url.js"
         RHDPProjects.prototype.connectedCallback = function () {
             this.innerHTML = this.template(templateObject_1 || (templateObject_1 = __makeTemplateObject(["", ""], ["", ""])), this);
             this.addEventListener('data-results-complete', this._loadDataResult);
-            var query = new rhdp_project_query_js_1.default();
+            var query = new rhdp_project_query_1.RHDPProjectQuery();
             query.dcpUrl = this.dcpUrl;
             if (this.productId) {
                 query.filter = this.productId;
             }
-            var url = new rhdp_project_url_js_1.default();
+            var url = new rhdp_project_url_1.RHDPProjectURL();
             this.appendChild(query);
             this.appendChild(url);
         };
@@ -119,7 +113,7 @@ define(["require", "exports", "./rhdp-project-query.js", "./rhdp-project-url.js"
                     hits = e.detail.data.hits.hits;
                 }
                 for (var i = 0; i < hits.length; i++) {
-                    var project = new rhdp_project_item_js_1.default();
+                    var project = new rhdp_project_item_1.RHDPProjectItem();
                     var props = hits[i].fields;
                     var thumbnailSize = "200x150";
                     project.imageUrl = "https://static.jboss.org/" + (props.specialIcon || props.sys_project) + "/images/" + (props.specialIcon || props.sys_project) + "_" + thumbnailSize + ".png";

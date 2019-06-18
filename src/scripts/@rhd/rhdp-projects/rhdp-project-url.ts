@@ -1,4 +1,4 @@
-export default class RHDPProjectURL extends HTMLElement {
+export class RHDPProjectURL extends HTMLElement {
 
     private _uri = new URL(window.location.href);
     private _term;

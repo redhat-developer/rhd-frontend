@@ -1,6 +1,6 @@
-import RHDPProjectQuery from './rhdp-project-query.js';
-import RHDPProjectURL from './rhdp-project-url.js';
-import RHDPProjectItem from './rhdp-project-item.js';
+import {RHDPProjectQuery} from './rhdp-project-query';
+import {RHDPProjectURL} from './rhdp-project-url';
+import {RHDPProjectItem} from './rhdp-project-item';
 
 class RHDPProjects extends HTMLElement {
 

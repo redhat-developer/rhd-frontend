@@ -5,8 +5,8 @@ description: ""
 draft: true
 tags: ["component"]
 weight: 7
-scripts: ["js/@rhd/rhdp-projects/rhdp-project-filter-box.js","js/@rhd/rhdp-projects/rhdp-project-item.js","js/@rhd/rhdp-projects/rhdp-project-query.js","js/@rhd/rhdp-projects/rhdp-project-url.js",
-"js/@rhd/rhdp-projects/rhdp-projects.js"]
+scripts: ["@rhd/rhdp-projects/rhdp-project-filter-box","@rhd/rhdp-projects/rhdp-project-item","@rhd/rhdp-projects/rhdp-project-query","@rhd/rhdp-projects/rhdp-project-url",
+"@rhd/rhdp-projects/rhdp-projects"]
 
 ---
 
