@@ -1,8 +1,8 @@
 //import {PFElement} from '../../@pfelements/pfelement.umd.js';
-import { library, icon, dom } from '@fortawesome/fontawesome-svg-core/index.js'
-import {faChevronRight} from '@fortawesome/pro-solid-svg-icons/index.js';
-import {PFElement} from '@patternfly/pfelement/pfelement.umd.js';
-import DPSearchFilterItem from './dp-search-filter-item.js';
+import { library, icon, dom } from '@fortawesome/fontawesome-svg-core/index'
+import {faChevronRight} from '@fortawesome/pro-solid-svg-icons/index';
+import PFElement from '@patternfly/pfelement/pfelement.umd';
+import DPSearchFilterItem from './dp-search-filter-item';
 
 library.add(faChevronRight);
 const chevronRightIcon = icon(faChevronRight).html;

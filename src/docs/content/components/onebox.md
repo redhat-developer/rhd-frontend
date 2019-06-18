@@ -5,7 +5,7 @@ description: ""
 draft: true
 tags: ["component"]
 weight: 2
-scripts: ["js/@rhd/rhdp-search/rhdp-search-onebox.js"]
+scripts: ["@rhd/rhdp-search/rhdp-search-onebox"]
 ---
 
 {{< code >}}<rhdp-search-onebox url="../../json/onebox.json" term="fuse"></rhdp-search-onebox>{{< /code >}}

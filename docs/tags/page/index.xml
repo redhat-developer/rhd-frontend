@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Page on RHD Front-end Code and Documentation</title>
-    <link>http://localhost:8080/tags/page/</link>
+    <link>https://redhat-developer.github.io/rhd-frontend/tags/page/</link>
     <description>Recent content in Page on RHD Front-end Code and Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Apr 2018 14:39:40 -0400</lastBuildDate>
     
-	<atom:link href="http://localhost:8080/tags/page/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://redhat-developer.github.io/rhd-frontend/tags/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Home Page</title>
-      <link>http://localhost:8080/pages/home/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/pages/home/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>http://localhost:8080/pages/home/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/pages/home/</guid>
       <description>&amp;lt;section data-quickedit-entity-id=&amp;#34;assembly/11325&amp;#34; id=&amp;#34;assembly-field-sections-11325&amp;#34; class=&amp;#34;assembly assembly-type-rich_text contextual-region has-background&amp;#34; data-quickedit-entity-instance-id=&amp;#34;0&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt; &amp;lt;div data-quickedit-field-id=&amp;#34;assembly/11325/field_content/en/default&amp;#34; class=&amp;#34;clearfix text-formatted field field--name-field-content field--type-text-long field--label-hidden field__items&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;field__item&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;layout-container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;row&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;columns large-12 medium-12 small-12&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;layout-column-editable layout-column-one&amp;#34;&amp;gt; &amp;lt;p&amp;gt;&amp;amp;nbsp;&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;lt;img alt=&amp;#34;helloworld&amp;#34; height=&amp;#34;107&amp;#34; src=&amp;#34;/sites/default/files/styles/large/public/RHEL-helloworld.png?itok=kTPVSU3E&amp;#34; width=&amp;#34;284&amp;#34;&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;amp;nbsp;&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;Download your developer edition of Red Hat Enterprise Linux 8&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;lt;a class=&amp;#34;button heavy-cta&amp;#34; href=&amp;#34;https://developers.redhat.com/rhel8/&amp;#34;&amp;gt;DOWNLOAD&amp;lt;/a&amp;gt;&amp;amp;nbsp; &amp;amp;nbsp; &amp;amp;nbsp; &amp;amp;nbsp;&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;&amp;amp;nbsp;&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;columns large-12 medium-12 small-12&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;layout-column-editable layout-column-two&amp;#34;&amp;gt; &amp;lt;p&amp;gt;&amp;amp;nbsp;&amp;lt;/p&amp;gt; &amp;lt;article class=&amp;#34;embedded-entity&amp;#34;&amp;gt;&amp;lt;img src=&amp;#34;/sites/default/files/OpenShift4_Logo_Black.</description>
     </item>
     
     <item>
       <title>Product Page</title>
-      <link>http://localhost:8080/pages/product/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/pages/product/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>http://localhost:8080/pages/product/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/pages/product/</guid>
       <description>    </description>
     </item>
     
     <item>
       <title>Topic Page</title>
-      <link>http://localhost:8080/pages/topic/</link>
+      <link>https://redhat-developer.github.io/rhd-frontend/pages/topic/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
-      <guid>http://localhost:8080/pages/topic/</guid>
+      <guid>https://redhat-developer.github.io/rhd-frontend/pages/topic/</guid>
       <description>    </description>
     </item>
     

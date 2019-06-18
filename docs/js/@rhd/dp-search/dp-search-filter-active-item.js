@@ -11,22 +11,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@fortawesome/fontawesome-svg-core/index.js", "@fortawesome/pro-solid-svg-icons/index.js", "@patternfly/pfelement/pfelement.umd.js"], factory);
-    }
-})(function (require, exports) {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+define(["require", "exports", "@fortawesome/fontawesome-svg-core/index", "@fortawesome/pro-solid-svg-icons/index", "@patternfly/pfelement/pfelement.umd"], function (require, exports, index_1, index_2, pfelement_umd_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var index_js_1 = require("@fortawesome/fontawesome-svg-core/index.js");
-    var index_js_2 = require("@fortawesome/pro-solid-svg-icons/index.js");
-    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
-    index_js_1.library.add(index_js_2.faTimes);
-    var timesIcon = index_js_1.icon(index_js_2.faTimes).html;
+    pfelement_umd_1 = __importDefault(pfelement_umd_1);
+    index_1.library.add(index_2.faTimes);
+    var timesIcon = index_1.icon(index_2.faTimes).html;
     var DPSearchFilterActiveItem = (function (_super) {
         __extends(DPSearchFilterActiveItem, _super);
         function DPSearchFilterActiveItem() {
@@ -43,7 +36,7 @@ var __extends = (this && this.__extends) || (function () {
         }
         Object.defineProperty(DPSearchFilterActiveItem.prototype, "html", {
             get: function () {
-                return "" + (this.active ? "\n        <style>\n            :host {\n                font-size: 16px;\n                font-weight: 600;\n                flex: 0 0 auto;\n                list-style: none;\n                order: 2;\n                background-color: #8c8f91;\n                border: 1px solid #8c8f91;\n                color: #fff;\n                cursor: default;\n                display: inline-block;\n                line-height: 1em;\n                margin-bottom: .5em;\n                margin-right: .5em;\n                padding: .5em .7em;\n            }\n            \n            " + index_js_1.dom.css() + "\n\n            svg.svg-inline--fa { \n                margin-left: .25em;\n            }\n        </style>\n        <slot></slot>" + timesIcon : '');
+                return "" + (this.active ? "\n        <style>\n            :host {\n                font-size: 16px;\n                font-weight: 600;\n                flex: 0 0 auto;\n                list-style: none;\n                order: 2;\n                background-color: #8c8f91;\n                border: 1px solid #8c8f91;\n                color: #fff;\n                cursor: default;\n                display: inline-block;\n                line-height: 1em;\n                margin-bottom: .5em;\n                margin-right: .5em;\n                padding: .5em .7em;\n            }\n            \n            " + index_1.dom.css() + "\n\n            svg.svg-inline--fa { \n                margin-left: .25em;\n            }\n        </style>\n        <slot></slot>" + timesIcon : '');
             },
             enumerable: true,
             configurable: true
@@ -221,7 +214,7 @@ var __extends = (this && this.__extends) || (function () {
             this.active = false;
         };
         return DPSearchFilterActiveItem;
-    }(pfelement_umd_js_1.PFElement));
+    }(pfelement_umd_1.default));
     exports.default = DPSearchFilterActiveItem;
-    pfelement_umd_js_1.PFElement.create(DPSearchFilterActiveItem);
+    pfelement_umd_1.default.create(DPSearchFilterActiveItem);
 });

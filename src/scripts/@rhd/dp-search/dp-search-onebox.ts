@@ -1,5 +1,5 @@
 // import {PFElement} from '../../@pfelements/pfelement.umd.js';
-import {PFElement} from '@patternfly/pfelement/pfelement.umd.js';
+import PFElement from '@patternfly/pfelement/pfelement.umd';
 
 export default class DPSearchOneBox extends PFElement {
     get html() {

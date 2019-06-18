@@ -11,20 +11,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@patternfly/pfelement/pfelement.umd.js", "./dp-search-filter-group.js", "./dp-search-filter-item.js"], factory);
-    }
-})(function (require, exports) {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+define(["require", "exports", "@patternfly/pfelement/pfelement.umd", "./dp-search-filter-group", "./dp-search-filter-item"], function (require, exports, pfelement_umd_1, dp_search_filter_group_1, dp_search_filter_item_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
-    var dp_search_filter_group_js_1 = require("./dp-search-filter-group.js");
-    var dp_search_filter_item_js_1 = require("./dp-search-filter-item.js");
+    pfelement_umd_1 = __importDefault(pfelement_umd_1);
+    dp_search_filter_group_1 = __importDefault(dp_search_filter_group_1);
+    dp_search_filter_item_1 = __importDefault(dp_search_filter_item_1);
     var DPSearchFilters = (function (_super) {
         __extends(DPSearchFilters, _super);
         function DPSearchFilters() {
@@ -144,9 +139,9 @@ var __extends = (this && this.__extends) || (function () {
         DPSearchFilters.prototype.addGroups = function () {
             var groups = this.filters && this.filters.facets ? this.filters.facets : [], len = groups.length;
             for (var i = 0; i < len; i++) {
-                var group = new dp_search_filter_group_js_1.default(), groupInfo = groups[i], gLen = groupInfo.items.length;
+                var group = new dp_search_filter_group_1.default(), groupInfo = groups[i], gLen = groupInfo.items.length;
                 for (var j = 0; j < gLen; j++) {
-                    var item = new dp_search_filter_item_js_1.default();
+                    var item = new dp_search_filter_item_1.default();
                     item.name = groupInfo.items[j].name;
                     item.value = groupInfo.items[j].value;
                     item.active = groupInfo.items[j].active;
@@ -175,7 +170,7 @@ var __extends = (this && this.__extends) || (function () {
             this.style.display = 'none';
         };
         return DPSearchFilters;
-    }(pfelement_umd_js_1.PFElement));
+    }(pfelement_umd_1.default));
     exports.default = DPSearchFilters;
-    pfelement_umd_js_1.PFElement.create(DPSearchFilters);
+    pfelement_umd_1.default.create(DPSearchFilters);
 });

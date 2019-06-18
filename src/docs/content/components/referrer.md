@@ -5,7 +5,7 @@ description: ""
 draft: true
 tags: ["component"]
 weight: 5
-scripts: ["js/@rhd/dp-referrer.js"]
+scripts: ["@rhd/dp-referrer"]
 ---
 [Add JBD Referrer](?referrer=jbd)
 

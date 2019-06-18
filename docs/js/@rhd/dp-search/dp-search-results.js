@@ -11,19 +11,14 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@patternfly/pfelement/pfelement.umd.js", "./dp-search-result.js"], factory);
-    }
-})(function (require, exports) {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+define(["require", "exports", "@patternfly/pfelement/pfelement.umd", "./dp-search-result"], function (require, exports, pfelement_umd_1, dp_search_result_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
-    var dp_search_result_js_1 = require("./dp-search-result.js");
+    pfelement_umd_1 = __importDefault(pfelement_umd_1);
+    dp_search_result_1 = __importDefault(dp_search_result_1);
     var DPSearchResults = (function (_super) {
         __extends(DPSearchResults, _super);
         function DPSearchResults() {
@@ -121,7 +116,7 @@ var __extends = (this && this.__extends) || (function () {
             top.window.addEventListener('popstate', this._clearResults);
         };
         DPSearchResults.prototype.addResult = function (result) {
-            var item = new dp_search_result_js_1.default();
+            var item = new dp_search_result_1.default();
             item.result = result;
             this.appendChild(item);
         };
@@ -199,7 +194,7 @@ var __extends = (this && this.__extends) || (function () {
             }
         };
         return DPSearchResults;
-    }(pfelement_umd_js_1.PFElement));
+    }(pfelement_umd_1.default));
     exports.default = DPSearchResults;
-    pfelement_umd_js_1.PFElement.create(DPSearchResults);
+    pfelement_umd_1.default.create(DPSearchResults);
 });

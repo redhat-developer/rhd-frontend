@@ -11,20 +11,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./rhdp-downloads-popular-products.js", "./rhdp-downloads-products.js", "./rhdp-downloads-all.js"], factory);
-    }
-})(function (require, exports) {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+define(["require", "exports", "./rhdp-downloads-popular-products.js", "./rhdp-downloads-products.js", "./rhdp-downloads-all.js"], function (require, exports, rhdp_downloads_popular_products_js_1, rhdp_downloads_products_js_1, rhdp_downloads_all_js_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var rhdp_downloads_popular_products_js_1 = require("./rhdp-downloads-popular-products.js");
-    var rhdp_downloads_products_js_1 = require("./rhdp-downloads-products.js");
-    var rhdp_downloads_all_js_1 = require("./rhdp-downloads-all.js");
+    rhdp_downloads_popular_products_js_1 = __importDefault(rhdp_downloads_popular_products_js_1);
+    rhdp_downloads_products_js_1 = __importDefault(rhdp_downloads_products_js_1);
+    rhdp_downloads_all_js_1 = __importDefault(rhdp_downloads_all_js_1);
     var RHDPDownloadsApp = (function (_super) {
         __extends(RHDPDownloadsApp, _super);
         function RHDPDownloadsApp() {

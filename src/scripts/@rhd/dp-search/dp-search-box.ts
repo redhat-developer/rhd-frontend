@@ -1,7 +1,7 @@
 // import {PFElement} from '../../@pfelements/pfelement.umd.js';
-import { library, icon, dom } from '@fortawesome/fontawesome-svg-core/index.js'
-import {faSearch} from '@fortawesome/pro-solid-svg-icons/index.js';
-import {PFElement} from '@patternfly/pfelement/pfelement.umd.js';
+import { library, icon, dom } from '@fortawesome/fontawesome-svg-core/index'
+import {faSearch} from '@fortawesome/pro-solid-svg-icons/index';
+import PFElement from '@patternfly/pfelement/pfelement.umd';
 
 library.add(faSearch);
 

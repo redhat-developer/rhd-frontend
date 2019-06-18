@@ -15,19 +15,14 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
 };
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./rhdp-search-filter-group", "./rhdp-search-filter-item"], factory);
-    }
-})(function (require, exports) {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+define(["require", "exports", "./rhdp-search-filter-group", "./rhdp-search-filter-item"], function (require, exports, rhdp_search_filter_group_1, rhdp_search_filter_item_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var rhdp_search_filter_group_1 = require("./rhdp-search-filter-group");
-    var rhdp_search_filter_item_1 = require("./rhdp-search-filter-item");
+    rhdp_search_filter_group_1 = __importDefault(rhdp_search_filter_group_1);
+    rhdp_search_filter_item_1 = __importDefault(rhdp_search_filter_item_1);
     var RHDPSearchFilters = (function (_super) {
         __extends(RHDPSearchFilters, _super);
         function RHDPSearchFilters() {

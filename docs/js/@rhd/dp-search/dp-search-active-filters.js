@@ -11,19 +11,14 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@patternfly/pfelement/pfelement.umd.js", "./dp-search-filter-active-item.js"], factory);
-    }
-})(function (require, exports) {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+define(["require", "exports", "@patternfly/pfelement/pfelement.umd", "./dp-search-filter-active-item"], function (require, exports, pfelement_umd_1, dp_search_filter_active_item_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
-    var dp_search_filter_active_item_js_1 = require("./dp-search-filter-active-item.js");
+    pfelement_umd_1 = __importDefault(pfelement_umd_1);
+    dp_search_filter_active_item_1 = __importDefault(dp_search_filter_active_item_1);
     var DPSearchActiveFilters = (function (_super) {
         __extends(DPSearchActiveFilters, _super);
         function DPSearchActiveFilters() {
@@ -140,7 +135,7 @@ var __extends = (this && this.__extends) || (function () {
             for (var i = 0; i < groups.length; i++) {
                 var items = groups[i].items;
                 for (var j = 0; j < items.length; j++) {
-                    var item = new dp_search_filter_active_item_js_1.default();
+                    var item = new dp_search_filter_active_item_1.default();
                     item.name = items[j].name;
                     item.value = items[j].value;
                     item.inline = true;
@@ -162,7 +157,7 @@ var __extends = (this && this.__extends) || (function () {
             this.style.display = 'none';
         };
         return DPSearchActiveFilters;
-    }(pfelement_umd_js_1.PFElement));
+    }(pfelement_umd_1.default));
     exports.default = DPSearchActiveFilters;
-    pfelement_umd_js_1.PFElement.create(DPSearchActiveFilters);
+    pfelement_umd_1.default.create(DPSearchActiveFilters);
 });

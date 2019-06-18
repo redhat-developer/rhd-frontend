@@ -11,25 +11,20 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./rhdp-search-url", "./rhdp-search-query", "./rhdp-search-box", "./rhdp-search-result-count", "./rhdp-search-filters", "./rhdp-search-onebox", "./rhdp-search-results", "./rhdp-search-sort-page"], factory);
-    }
-})(function (require, exports) {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+define(["require", "exports", "./rhdp-search-url", "./rhdp-search-query", "./rhdp-search-box", "./rhdp-search-result-count", "./rhdp-search-filters", "./rhdp-search-onebox", "./rhdp-search-results", "./rhdp-search-sort-page"], function (require, exports, rhdp_search_url_1, rhdp_search_query_1, rhdp_search_box_1, rhdp_search_result_count_1, rhdp_search_filters_1, rhdp_search_onebox_1, rhdp_search_results_1, rhdp_search_sort_page_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var rhdp_search_url_1 = require("./rhdp-search-url");
-    var rhdp_search_query_1 = require("./rhdp-search-query");
-    var rhdp_search_box_1 = require("./rhdp-search-box");
-    var rhdp_search_result_count_1 = require("./rhdp-search-result-count");
-    var rhdp_search_filters_1 = require("./rhdp-search-filters");
-    var rhdp_search_onebox_1 = require("./rhdp-search-onebox");
-    var rhdp_search_results_1 = require("./rhdp-search-results");
-    var rhdp_search_sort_page_1 = require("./rhdp-search-sort-page");
+    rhdp_search_url_1 = __importDefault(rhdp_search_url_1);
+    rhdp_search_query_1 = __importDefault(rhdp_search_query_1);
+    rhdp_search_box_1 = __importDefault(rhdp_search_box_1);
+    rhdp_search_result_count_1 = __importDefault(rhdp_search_result_count_1);
+    rhdp_search_filters_1 = __importDefault(rhdp_search_filters_1);
+    rhdp_search_onebox_1 = __importDefault(rhdp_search_onebox_1);
+    rhdp_search_results_1 = __importDefault(rhdp_search_results_1);
+    rhdp_search_sort_page_1 = __importDefault(rhdp_search_sort_page_1);
     var RHDPSearchApp = (function (_super) {
         __extends(RHDPSearchApp, _super);
         function RHDPSearchApp() {

@@ -11,7 +11,7 @@ const trim = require("gulp-trim");
 const banner = require("gulp-banner");
 
 gulp.task("clean", () => {
-  return del(["pfelement.js", "./*.umd.*", "./*.css", "./*.js.map"]);
+  return del(["pfelement.js", "./**/*.umd.*", "./*.css", "./*.js.map"]);
 });
 
 gulp.task("compile", () => {

@@ -11,27 +11,22 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@patternfly/pfelement/pfelement.umd.js", "./dp-search-url.js", "./dp-search-modal-filters.js"], factory);
-    }
-})(function (require, exports) {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+define(["require", "exports", "@patternfly/pfelement/pfelement.umd", "./dp-search-url", "./dp-search-modal-filters"], function (require, exports, pfelement_umd_1, dp_search_url_1, dp_search_modal_filters_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
-    var dp_search_url_js_1 = require("./dp-search-url.js");
-    var dp_search_modal_filters_js_1 = require("./dp-search-modal-filters.js");
+    pfelement_umd_1 = __importDefault(pfelement_umd_1);
+    dp_search_url_1 = __importDefault(dp_search_url_1);
+    dp_search_modal_filters_1 = __importDefault(dp_search_modal_filters_1);
     var DPSearchApp = (function (_super) {
         __extends(DPSearchApp, _super);
         function DPSearchApp() {
             var _this = _super.call(this, DPSearchApp, { delayRender: true }) || this;
             _this._name = 'Search';
-            _this.urlEle = new dp_search_url_js_1.default();
-            _this.modal = new dp_search_modal_filters_js_1.default();
+            _this.urlEle = new dp_search_url_1.default();
+            _this.modal = new dp_search_modal_filters_1.default();
             return _this;
         }
         Object.defineProperty(DPSearchApp.prototype, "html", {
@@ -95,7 +90,7 @@ var __extends = (this && this.__extends) || (function () {
             this.modal.toggle = e.detail.toggle;
         };
         return DPSearchApp;
-    }(pfelement_umd_js_1.PFElement));
+    }(pfelement_umd_1.default));
     exports.default = DPSearchApp;
-    pfelement_umd_js_1.PFElement.create(DPSearchApp);
+    pfelement_umd_1.default.create(DPSearchApp);
 });

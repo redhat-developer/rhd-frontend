@@ -1,71 +1,8 @@
-/*
- * Copyright 2019 Red Hat, Inc.
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
-*/
-
-import { autoReveal } from "./reveal.ts.js";
+import { autoReveal } from "./reveal.js";
 const prefix = "pfe-";
 
-interface IPFElement {
-  readonly tag: string;
-  schemaUrl?: string;
-  styleUrl?: string;
-  templateUrl?: string;
-  properties?: object;
-  cascadingAttributes?: object;
-  html?: string;
-  slots?: object;
-}
-
-interface IPFElementOptions {
-  type?: string;
-  delayRender?: boolean;
-}
-
-interface IPFElementDependencyOpts {
-  dependencies?: Array<IPFElementDependency>;
-}
-
-interface IPFElementDependency {
-  type?: string;
-  id?: string;
-}
-
-export class PFElement extends HTMLElement {
-  connected = false;
-  _pfeClass: IPFElement;
-  tag: string;
-  html?: string;
-  schemaUrl?: string;
-  templateUrl?: string;
-  styleUrl?: string;
-  properties?: any;
-  static _debugLog: boolean;
-
-  props?: object;
-  slots?: object;
-  _queue = [];
-  template = document.createElement("template");
-
-  static create(pfe: any) {
+class PFElement extends HTMLElement {
+  static create(pfe) {
     window.customElements.define(pfe.tag, pfe);
   }
 
@@ -99,36 +36,39 @@ export class PFElement extends HTMLElement {
   }
 
   // Returns a single element assigned to that slot; if multiple, it returns the first
-  has_slot(name: string) {
+  has_slot(name) {
     return this.querySelector(`[slot='${name}']`);
   }
 
   // Returns an array with all elements assigned to that slot
-  has_slots(name: string) {
+  has_slots(name) {
     return [...this.querySelectorAll(`[slot='${name}']`)];
   }
 
-  constructor(pfeClass: any, options?: IPFElementOptions) {
+  constructor(pfeClass, { type = null, delayRender = false } = {}) {
     super();
 
+    this.connected = false;
     this._pfeClass = pfeClass;
     this.tag = pfeClass.tag;
     this.props = pfeClass.properties;
     this.slots = pfeClass.slots;
+    this._queue = [];
+    this.template = document.createElement("template");
 
     this.attachShadow({ mode: "open" });
 
-    if (options && options.type) {
+    if (type) {
       this._queueAction({
         type: "setProperty",
         data: {
           name: "pfeType",
-          value: options.type
+          value: type
         }
       });
     }
 
-    if (options && !options.delayRender) {
+    if (!delayRender) {
       this.render();
     }
   }
@@ -136,8 +76,8 @@ export class PFElement extends HTMLElement {
   connectedCallback() {
     this.connected = true;
 
-    if (window.hasOwnProperty('ShadyCSS')) {
-      window['ShadyCSS'].styleElement(this);
+    if (window.ShadyCSS) {
+      window.ShadyCSS.styleElement(this);
     }
 
     // maybe we should use just the attribute instead of the class?
@@ -162,7 +102,7 @@ export class PFElement extends HTMLElement {
     this.connected = false;
   }
 
-  attributeChangedCallback(attr: string, oldVal: string, newVal: string) {
+  attributeChangedCallback(attr, oldVal, newVal) {
     if (!this._pfeClass.cascadingAttributes) {
       return;
     }
@@ -173,7 +113,7 @@ export class PFElement extends HTMLElement {
     }
   }
 
-  _copyAttribute(name: string, to: string) {
+  _copyAttribute(name, to) {
     const recipients = [
       ...this.querySelectorAll(to),
       ...this.shadowRoot.querySelectorAll(to)
@@ -188,7 +128,7 @@ export class PFElement extends HTMLElement {
   // Map the imported properties json to real props on the element
   // @notice static getter of properties is built via tooling
   // to edit modify src/element.json
-  _mapSchemaToProperties(tag: string, properties: object) {
+  _mapSchemaToProperties(tag, properties) {
     // Loop over the properties provided by the schema
     Object.keys(properties).forEach(attr => {
       let data = properties[attr];
@@ -228,7 +168,7 @@ export class PFElement extends HTMLElement {
   }
 
   // Test whether expected dependencies exist
-  _hasDependency(tag: string, opts: IPFElementDependencyOpts) {
+  _hasDependency(tag, opts) {
     // Get any possible dependencies for this attribute to exist
     let dependencies = opts ? opts.dependencies : [];
     // Initialize the dependency return value
@@ -315,8 +255,8 @@ export class PFElement extends HTMLElement {
     this.shadowRoot.innerHTML = "";
     this.template.innerHTML = this.html;
 
-    if (window.hasOwnProperty('ShadyCSS')) {
-      window['ShadyCSS'].prepareTemplate(this.template, this.tag);
+    if (window.ShadyCSS) {
+      window.ShadyCSS.prepareTemplate(this.template, this.tag);
     }
 
     this.shadowRoot.appendChild(this.template.content.cloneNode(true));
@@ -329,5 +269,5 @@ export class PFElement extends HTMLElement {
 
 autoReveal(PFElement.log);
 
-//export default PFElement;
+export default PFElement;
 //# sourceMappingURL=PFElement.js.map

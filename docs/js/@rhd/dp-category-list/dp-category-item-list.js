@@ -11,18 +11,13 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@patternfly/pfelement/pfelement.umd.js"], factory);
-    }
-})(function (require, exports) {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+define(["require", "exports", "@patternfly/pfelement/pfelement.umd"], function (require, exports, pfelement_umd_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
+    pfelement_umd_1 = __importDefault(pfelement_umd_1);
     var DPCategoryItemList = (function (_super) {
         __extends(DPCategoryItemList, _super);
         function DPCategoryItemList() {
@@ -91,7 +86,7 @@ var __extends = (this && this.__extends) || (function () {
             this[name] = newVal;
         };
         return DPCategoryItemList;
-    }(pfelement_umd_js_1.PFElement));
+    }(pfelement_umd_1.default));
     exports.default = DPCategoryItemList;
-    pfelement_umd_js_1.PFElement.create(DPCategoryItemList);
+    pfelement_umd_1.default.create(DPCategoryItemList);
 });

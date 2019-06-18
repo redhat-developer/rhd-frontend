@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (factory((global.PFElement = {})));
-}(this, (function (exports) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global.PFElement = factory());
+}(this, (function () { 'use strict';
 
   var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
     return typeof obj;
@@ -488,9 +488,7 @@
 
   autoReveal(PFElement.log);
 
-  exports.PFElement = PFElement;
-
-  Object.defineProperty(exports, '__esModule', { value: true });
+  return PFElement;
 
 })));
 //# sourceMappingURL=pfelement.umd.js.map

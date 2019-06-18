@@ -5,7 +5,7 @@ description: ""
 draft: true
 tags: ["page"]
 weight: 4
-scripts: ["/js/@patternfly/pfe-cta/pfe-cta.umd.js", "/js/@patternfly/pfe-card/pfe-card.umd.js", "/js/@rhd/dp-alert.js"]
+scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd", "@rhd/dp-alert"]
 ---
 
 {{< code >}}

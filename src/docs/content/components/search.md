@@ -5,12 +5,11 @@ description: ""
 draft: true
 tags: ["component"]
 weight: 1
-scripts: ["js/@patternfly/pfelement/pfelement.umd.js","js/@fortawesome/fontawesome-svg-core/index.js","js/@fortawesome/pro-solid-svg-icons/index.js",
-"js/@rhd/dp-search/dp-search-app.js","js/@rhd/dp-search/dp-search-box.js","js/@rhd/dp-search/dp-search-filter-group.js",
-"js/@rhd/dp-search/dp-search-filter-item.js","js/@rhd/dp-search/dp-search-filters.js","js/@rhd/dp-search/dp-search-onebox.js",
-"js/@rhd/dp-search/dp-search-query.js","js/@rhd/dp-search/dp-search-result-count.js","js/@rhd/dp-search/dp-search-result.js","js/@rhd/dp-search/dp-search-results.js", "js/@rhd/dp-search/dp-search-sort-page.js","js/@rhd/dp-search/dp-search-url.js",
-"js/@rhd/dp-search/dp-search-modal-filters.js","js/@rhd/dp-search/dp-search-active-filters.js",
-"js/@rhd/dp-search/dp-search-filter-active-item.js", "js/@patternfly/pfe-datetime/pfe-datetime.min.js"]
+scripts: ["@rhd/dp-search/dp-search-app","@rhd/dp-search/dp-search-box","@rhd/dp-search/dp-search-filter-group",
+"@rhd/dp-search/dp-search-filter-item","@rhd/dp-search/dp-search-filters","@rhd/dp-search/dp-search-onebox",
+"@rhd/dp-search/dp-search-query","@rhd/dp-search/dp-search-result-count","@rhd/dp-search/dp-search-result","@rhd/dp-search/dp-search-results", "@rhd/dp-search/dp-search-sort-page","@rhd/dp-search/dp-search-url",
+"@rhd/dp-search/dp-search-modal-filters","@rhd/dp-search/dp-search-active-filters",
+"@rhd/dp-search/dp-search-filter-active-item"]
 ---
 
 {{< code >}}<dp-search-app url="https://dcp2.jboss.org/v2/rest/search/developer_materials">
@@ -137,7 +136,7 @@ scripts: ["js/@patternfly/pfelement/pfelement.umd.js","js/@fortawesome/fontaweso
 <dp-search-sort-page></dp-search-sort-page>
 <dp-search-onebox url="../../json/onebox.json"></dp-search-onebox>
 <dp-search-results></dp-search-results>
-<dp-search-query url="https://api.developers.stage.redhat.com/search/"></dp-search-query>
+<dp-search-query url="https://api.developers.redhat.com/search/"></dp-search-query>
 </dp-search-app>
 <a href="#top" id="scroll-to-top"></a>
 {{< /code >}}

@@ -1,6 +1,6 @@
 //import {PFElement} from '../../@pfelements/pfelement.umd.js';
-import {PFElement} from '@patternfly/pfelement/pfelement.umd.js';
-import DPSearchFilterItem from './dp-search-filter-item.js';
+import PFElement from '@patternfly/pfelement/pfelement.umd';
+import DPSearchFilterItem from './dp-search-filter-item';
 
 export default class DPSearchQuery extends PFElement {
 

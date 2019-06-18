@@ -1,7 +1,7 @@
 // import {PFElement} from '../../@pfelements/pfelement.umd.js';
-import {PFElement} from '@patternfly/pfelement/pfelement.umd.js';
-import DPSearchFilterGroup from './dp-search-filter-group.js';
-import DPSearchFilterActiveItem from './dp-search-filter-active-item.js';
+import PFElement from '@patternfly/pfelement/pfelement.umd';
+import DPSearchFilterGroup from './dp-search-filter-group';
+import DPSearchFilterActiveItem from './dp-search-filter-active-item';
 
 export default class DPSearchActiveFilters extends PFElement {
     get html() {

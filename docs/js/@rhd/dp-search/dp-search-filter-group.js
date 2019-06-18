@@ -11,22 +11,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@fortawesome/fontawesome-svg-core/index.js", "@fortawesome/pro-solid-svg-icons/index.js", "@patternfly/pfelement/pfelement.umd.js"], factory);
-    }
-})(function (require, exports) {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+define(["require", "exports", "@fortawesome/fontawesome-svg-core/index", "@fortawesome/pro-solid-svg-icons/index", "@patternfly/pfelement/pfelement.umd"], function (require, exports, index_1, index_2, pfelement_umd_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var index_js_1 = require("@fortawesome/fontawesome-svg-core/index.js");
-    var index_js_2 = require("@fortawesome/pro-solid-svg-icons/index.js");
-    var pfelement_umd_js_1 = require("@patternfly/pfelement/pfelement.umd.js");
-    index_js_1.library.add(index_js_2.faChevronRight);
-    var chevronRightIcon = index_js_1.icon(index_js_2.faChevronRight).html;
+    pfelement_umd_1 = __importDefault(pfelement_umd_1);
+    index_1.library.add(index_2.faChevronRight);
+    var chevronRightIcon = index_1.icon(index_2.faChevronRight).html;
     var DPSearchFilterGroup = (function (_super) {
         __extends(DPSearchFilterGroup, _super);
         function DPSearchFilterGroup() {
@@ -38,7 +31,7 @@ var __extends = (this && this.__extends) || (function () {
         }
         Object.defineProperty(DPSearchFilterGroup.prototype, "html", {
             get: function () {
-                return "\n        <style>\n            :host {\n                cursor: pointer;\n                display: block;\n                margin: 0 1em .5em;\n                position: relative;\n            }\n\n            .secondary {\n                display: none;\n            }\n\n            h6 {\n                border-bottom: 1px solid #8c8f91;\n                font-weight: 600;\n                margin: .5em 0;\n                padding-bottom: .3em;\n                text-transform: uppercase;\n                color: #242424;\n            }\n\n            .toggle {\n                float: right;\n                font-weight: 600;\n            }\n\n            .toggle.expand {\n                transform: rotate(90deg);\n                transition: .1s ease-in-out;\n            }\n\n            a.more {\n                color: #06c;\n                cursor: pointer;\n                text-decoration: none;\n                font-size: 14px;\n                display: block;\n                margin-bottom: 10px;\n                margin-left: 2.3em;\n                margin-top: 10px;\n            }\n            a.more:hover {\n                color: #004c98;\n            }\n            .hide, a.more.hide, [data-hide] {\n                display: none;\n            }\n\n            " + index_js_1.dom.css() + "\n\n        </style>\n        <h6 class=\"showFilters heading\"><span class=\"group-name\">" + this.name + "</span><span class=\"toggle\">" + chevronRightIcon + "</span></h6>\n        <div class=\"group\">\n            <div class=\"primary\">\n                <slot></slot>\n            </div>\n            <div class=\"secondary\">\n                <slot name=\"secondary\"></slot>\n            </div>\n            <a href=\"#\" class=\"more\" data-hide>Show More</a>\n        </div>";
+                return "\n        <style>\n            :host {\n                cursor: pointer;\n                display: block;\n                margin: 0 1em .5em;\n                position: relative;\n            }\n\n            .secondary {\n                display: none;\n            }\n\n            h6 {\n                border-bottom: 1px solid #8c8f91;\n                font-weight: 600;\n                margin: .5em 0;\n                padding-bottom: .3em;\n                text-transform: uppercase;\n                color: #242424;\n            }\n\n            .toggle {\n                float: right;\n                font-weight: 600;\n            }\n\n            .toggle.expand {\n                transform: rotate(90deg);\n                transition: .1s ease-in-out;\n            }\n\n            a.more {\n                color: #06c;\n                cursor: pointer;\n                text-decoration: none;\n                font-size: 14px;\n                display: block;\n                margin-bottom: 10px;\n                margin-left: 2.3em;\n                margin-top: 10px;\n            }\n            a.more:hover {\n                color: #004c98;\n            }\n            .hide, a.more.hide, [data-hide] {\n                display: none;\n            }\n\n            " + index_1.dom.css() + "\n\n        </style>\n        <h6 class=\"showFilters heading\"><span class=\"group-name\">" + this.name + "</span><span class=\"toggle\">" + chevronRightIcon + "</span></h6>\n        <div class=\"group\">\n            <div class=\"primary\">\n                <slot></slot>\n            </div>\n            <div class=\"secondary\">\n                <slot name=\"secondary\"></slot>\n            </div>\n            <a href=\"#\" class=\"more\" data-hide>Show More</a>\n        </div>";
             },
             enumerable: true,
             configurable: true
@@ -156,7 +149,7 @@ var __extends = (this && this.__extends) || (function () {
             this[name] = newVal;
         };
         return DPSearchFilterGroup;
-    }(pfelement_umd_js_1.PFElement));
+    }(pfelement_umd_1.default));
     exports.default = DPSearchFilterGroup;
-    pfelement_umd_js_1.PFElement.create(DPSearchFilterGroup);
+    pfelement_umd_1.default.create(DPSearchFilterGroup);
 });
