@@ -19,7 +19,7 @@
     {{ with .Param "scripts" }}
     <script>
         var require = {
-            baseUrl: '{{ "/js/" | absURL }}',
+            baseUrl: '{{ "js/" | absURL }}',
             deps: [{{ range . }}{{ with . }}
                 "{{ . }}",
             {{ end }}{{ end }}]
