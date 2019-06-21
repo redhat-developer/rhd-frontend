@@ -386,7 +386,7 @@ define(["require", "exports"], function (require, exports) {
         };
         return RHDPProjectItem;
     }(HTMLElement));
-    exports.RHDPProjectItem = RHDPProjectItem;
+    exports.default = RHDPProjectItem;
     window.customElements.define('rhdp-project-item', RHDPProjectItem);
     var templateObject_1, templateObject_2, templateObject_3;
 });

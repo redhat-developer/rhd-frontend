@@ -86,6 +86,6 @@ define(["require", "exports"], function (require, exports) {
         };
         return RHDPProjectURL;
     }(HTMLElement));
-    exports.RHDPProjectURL = RHDPProjectURL;
+    exports.default = RHDPProjectURL;
     window.customElements.define('rhdp-project-url', RHDPProjectURL);
 });

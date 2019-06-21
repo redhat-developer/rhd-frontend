@@ -14,19 +14,19 @@ var __extends = (this && this.__extends) || (function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-define(["require", "exports", "./rhdp-downloads-popular-products", "./rhdp-downloads-products", "./rhdp-downloads-all"], function (require, exports, rhdp_downloads_popular_products_1, rhdp_downloads_products_1, rhdp_downloads_all_1) {
+define(["require", "exports", "./rhdp-downloads-popular-products.js", "./rhdp-downloads-products.js", "./rhdp-downloads-all.js"], function (require, exports, rhdp_downloads_popular_products_js_1, rhdp_downloads_products_js_1, rhdp_downloads_all_js_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    rhdp_downloads_popular_products_1 = __importDefault(rhdp_downloads_popular_products_1);
-    rhdp_downloads_products_1 = __importDefault(rhdp_downloads_products_1);
-    rhdp_downloads_all_1 = __importDefault(rhdp_downloads_all_1);
+    rhdp_downloads_popular_products_js_1 = __importDefault(rhdp_downloads_popular_products_js_1);
+    rhdp_downloads_products_js_1 = __importDefault(rhdp_downloads_products_js_1);
+    rhdp_downloads_all_js_1 = __importDefault(rhdp_downloads_all_js_1);
     var RHDPDownloadsApp = (function (_super) {
         __extends(RHDPDownloadsApp, _super);
         function RHDPDownloadsApp() {
             var _this = _super.call(this) || this;
             _this.stage_download_url = 'https://developers.stage.redhat.com';
-            _this.popularProduct = new rhdp_downloads_popular_products_1.default();
-            _this.products = new rhdp_downloads_products_1.default();
+            _this.popularProduct = new rhdp_downloads_popular_products_js_1.default();
+            _this.products = new rhdp_downloads_products_js_1.default();
             _this.template = "<div class=\"hero hero-wide hero-downloads\">\n                    <div class=\"row\">\n                        <div class=\"large-12 medium-24 columns\" id=\"downloads\">\n                            <h2>Downloads</h2>\n                        </div>\n                    </div>\n                </div>\n                <span class=\"dl-outage-msg\"></span>\n                <div class=\"most-popular-downloads\">\n                    <div class=\"row\">\n                        <div class=\"large-24 column\">\n                            <h3>Most Popular</h3>\n                        </div>\n                    </div>\n                \n                    <div class=\"row\">\n                    </div>\n                </div>\n                <div class=\"row\" id=\"downloads\">\n                    <div class=\"large-24 columns\">\n                        <h3 class=\"downloads-header\">All Downloads</h3>\n                    </div>\n                </div>";
             return _this;
         }
@@ -61,7 +61,7 @@ define(["require", "exports", "./rhdp-downloads-popular-products", "./rhdp-downl
             this.querySelector('.most-popular-downloads .row').appendChild(this.popularProduct);
         };
         RHDPDownloadsApp.prototype.downloadsAllFactory = function (id, heading, productList) {
-            var downloads = new rhdp_downloads_all_1.default();
+            var downloads = new rhdp_downloads_all_js_1.default();
             downloads.id = id;
             downloads.heading = heading;
             downloads.products = productList;
