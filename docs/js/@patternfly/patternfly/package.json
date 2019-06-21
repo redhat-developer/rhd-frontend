@@ -1,4 +1,11 @@
 {
+  "_args": [
+    [
+      "@patternfly/patternfly@2.21.5",
+      "/Users/ajolicoe/dev/rhdp/rhd-frontend"
+    ]
+  ],
+  "_development": true,
   "_from": "@patternfly/patternfly@2.21.5",
   "_id": "@patternfly/patternfly@2.21.5",
   "_inBundle": false,
@@ -20,15 +27,12 @@
     "#DEV:/"
   ],
   "_resolved": "https://registry.npmjs.org/@patternfly/patternfly/-/patternfly-2.21.5.tgz",
-  "_shasum": "86c99040c6ad1e03abc3652dbea58e02ff62156f",
-  "_spec": "@patternfly/patternfly@2.21.5",
+  "_spec": "2.21.5",
   "_where": "/Users/ajolicoe/dev/rhdp/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-next/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {},
-  "deprecated": false,
   "description": "Assets, source, tooling, and content for PatternFly 4",
   "devDependencies": {
     "@commitlint/cli": "^7.4.0",

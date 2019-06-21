@@ -1,28 +1,32 @@
 {
-  "_from": "@fortawesome/fontawesome-pro",
+  "_args": [
+    [
+      "@fortawesome/fontawesome-pro@5.9.0",
+      "/Users/ajolicoe/dev/rhdp/rhd-frontend"
+    ]
+  ],
+  "_from": "@fortawesome/fontawesome-pro@5.9.0",
   "_id": "@fortawesome/fontawesome-pro@5.9.0",
   "_inBundle": false,
   "_integrity": "sha512-vb7MJ0S+4FWZajv+iWKikG3QzX0oIAI+tYtlMBVwAyUmddESL/w5/2LCzbc81Vs4esGz0gr+bIem6BeMkIg+Mw==",
   "_location": "/@fortawesome/fontawesome-pro",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "@fortawesome/fontawesome-pro",
+    "raw": "@fortawesome/fontawesome-pro@5.9.0",
     "name": "@fortawesome/fontawesome-pro",
     "escapedName": "@fortawesome%2ffontawesome-pro",
     "scope": "@fortawesome",
-    "rawSpec": "",
+    "rawSpec": "5.9.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "5.9.0"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://npm.fontawesome.com/@fortawesome/fontawesome-pro/-/fontawesome-pro-5.9.0.tgz",
-  "_shasum": "ee27f6c3958e1e6f07ae6d157d017b98a9fc0608",
-  "_spec": "@fortawesome/fontawesome-pro",
+  "_spec": "5.9.0",
   "_where": "/Users/ajolicoe/dev/rhdp/rhd-frontend",
   "author": {
     "name": "Dave Gandy",
@@ -32,7 +36,6 @@
   "bugs": {
     "url": "http://github.com/FortAwesome/Font-Awesome/issues"
   },
-  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Brian Talbot",
@@ -56,7 +59,6 @@
     }
   ],
   "dependencies": {},
-  "deprecated": false,
   "description": "The iconic font, CSS, and SVG framework",
   "engines": {
     "node": ">=6"

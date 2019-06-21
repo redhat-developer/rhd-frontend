@@ -1,33 +1,33 @@
 {
   "_args": [
     [
-      "@patternfly/pfe-layouts@1.0.0-prerelease.16",
+      "@patternfly/pfe-layouts@1.0.0-prerelease.17",
       "/Users/ajolicoe/dev/rhdp/rhd-frontend"
     ]
   ],
   "_development": true,
-  "_from": "@patternfly/pfe-layouts@1.0.0-prerelease.16",
-  "_id": "@patternfly/pfe-layouts@1.0.0-prerelease.16",
+  "_from": "@patternfly/pfe-layouts@1.0.0-prerelease.17",
+  "_id": "@patternfly/pfe-layouts@1.0.0-prerelease.17",
   "_inBundle": false,
-  "_integrity": "sha512-v8gpOr7RFjZiSw9HJluLl4pakPFnVLkVQYhB9suUVY+2djULY8WXd0PLecXUjuk2P3plrVKARzqt5Dog+BNiTw==",
+  "_integrity": "sha512-rchZ4kF/4s4UAVts0NCkX6rlt+Qfrt4I8XYSIdF2Im8POImSnBJvtTMHiy8QBGniSqaMox3M27GJ+N/oIl29AA==",
   "_location": "/@patternfly/pfe-layouts",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "@patternfly/pfe-layouts@1.0.0-prerelease.16",
+    "raw": "@patternfly/pfe-layouts@1.0.0-prerelease.17",
     "name": "@patternfly/pfe-layouts",
     "escapedName": "@patternfly%2fpfe-layouts",
     "scope": "@patternfly",
-    "rawSpec": "1.0.0-prerelease.16",
+    "rawSpec": "1.0.0-prerelease.17",
     "saveSpec": null,
-    "fetchSpec": "1.0.0-prerelease.16"
+    "fetchSpec": "1.0.0-prerelease.17"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
-  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-layouts/-/pfe-layouts-1.0.0-prerelease.16.tgz",
-  "_spec": "1.0.0-prerelease.16",
+  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-layouts/-/pfe-layouts-1.0.0-prerelease.17.tgz",
+  "_spec": "1.0.0-prerelease.17",
   "_where": "/Users/ajolicoe/dev/rhdp/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-elements/issues"
@@ -40,10 +40,10 @@
     }
   ],
   "dependencies": {
-    "@patternfly/pfe-sass": "^1.0.0-prerelease.16"
+    "@patternfly/pfe-sass": "^1.0.0-prerelease.17"
   },
   "description": "Layouts helper classes for PatternFly Elements",
-  "gitHead": "6ee18e0fe929f7d8161b22114882716b8bcdeff4",
+  "gitHead": "4382b491b97b4b6b154a35d2c9db47c065eff081",
   "homepage": "https://github.com/patternfly/patternfly-elements#readme",
   "keywords": [
     "web-components",
@@ -67,5 +67,5 @@
     "build": "../../node_modules/.bin/gulp",
     "dev": "../../node_modules/.bin/gulp dev"
   },
-  "version": "1.0.0-prerelease.16"
+  "version": "1.0.0-prerelease.17"
 }
