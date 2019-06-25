@@ -1,4 +1,4 @@
-baseURL = "http://0.0.0.0:8080/"
+baseURL = "https://redhat-developer.github.io/rhd-frontend/"
 bind = "0.0.0.0"
 port = "8080"
 languageCode = "en-us"

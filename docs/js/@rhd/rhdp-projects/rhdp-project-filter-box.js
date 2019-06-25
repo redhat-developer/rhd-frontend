@@ -107,7 +107,7 @@ define(["require", "exports"], function (require, exports) {
         };
         return RHDPProjectFilterBox;
     }(HTMLElement));
-    exports.default = RHDPProjectFilterBox;
+    exports.RHDPProjectFilterBox = RHDPProjectFilterBox;
     window.customElements.define('rhdp-project-filter-box', RHDPProjectFilterBox);
     var templateObject_1;
 });
