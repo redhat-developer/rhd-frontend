@@ -35,7 +35,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
           </div>
         </div>
       </section>
-      <section id="assembly-field-sections-9225" class="pfe-u-content-spacer rhd-m-content-type--feed">
+      <section id="assembly-field-sections-9225" class="rhd-u-content-spacer rhd-m-content-type--feed">
         <div class="container narrow">
           <h2 class="pfe-headline-1 pfe-l--text-align--center">
             Build here
@@ -109,17 +109,17 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
             </pfe-card>
           </div>
         </section>
-        <section id="assembly-field-sections-345" class="pfe-u-content-spacer rhd-m-content-type--feed">
+        <section id="assembly-field-sections-345" class="rhd-u-content-spacer rhd-m-content-type--feed">
           <div class="container">
             <h2 class="pfe-headline-1 pfe-l--text-align--center">Go Anywhere</h2>
             <div class="pfe-l-grid pfe-m-gutters">
               <div class="pfe-m-9-col">
-                <article class="pfe-l-grid pfe-m-gutters rhd-m-content-teaser--list pfe-u-py-2xl">
-                  <div class="pfe-m-4-col pfe-u-py-lg">
+                <article class="pfe-l-grid pfe-m-gutters rhd-m-content-teaser--list rhd-u-py-2xl">
+                  <div class="pfe-m-4-col rhd-u-py-lg">
                     <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/e243d76bb39d5ac12184f0c855bf4e4c.png?itok=TaTJzkaz" alt="Bringing IoT to Red Hat AMQ Online" typeof="foaf:Image" class="image-style-teaser">
                   </div>
-                  <div class="pfe-m-8-col pfe-u-py-lg">
-                    <h5 class="pfe-headline-5 pfe-u-mb-md">
+                  <div class="pfe-m-8-col rhd-u-py-lg">
+                    <h5 class="pfe-headline-5 rhd-u-mb-md">
                       <a href="https://developers.redhat.com/blog/2019/05/14/bringing-iot-to-red-hat-amq-online/" class="pfe-headline-link">Bringing IoT to Red Hat AMQ Online</a>
                     </h5>
                     <div>May 14, 2019</div>
@@ -128,12 +128,12 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                     </div>
                   </div>
                 </article>
-                <article class="pfe-l-grid pfe-m-gutters rhd-m-content-teaser--list pfe-u-py-2xl">
-                  <div class="pfe-m-4-col pfe-u-py-lg">
+                <article class="pfe-l-grid pfe-m-gutters rhd-m-content-teaser--list rhd-u-py-2xl">
+                  <div class="pfe-m-4-col rhd-u-py-lg">
                     <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/d2dd1fb5e0433c79c97271b1d2a201b4.png?itok=d5C9OmA4" alt="Use the Kubernetes Python client from your running Red Hat OpenShift pods" typeof="foaf:Image" class="image-style-teaser">
                   </div>
-                  <div class="pfe-m-8-col pfe-u-py-lg">
-                    <h5 class="pfe-headline-5 pfe-u-mb-md">
+                  <div class="pfe-m-8-col rhd-u-py-lg">
+                    <h5 class="pfe-headline-5 rhd-u-mb-md">
                       <a href="https://developers.redhat.com/blog/2019/05/14/use-the-kubernetes-python-client-from-your-running-red-hat-openshift-pods/" class="pfe-headline-link">Use the Kubernetes Python client from your running Red Hat OpenShift pods</a>
                     </h5>
                     <div class="rhd-c-time">May 14, 2019</div>
@@ -142,12 +142,12 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                     </div>
                   </div>
                 </article>
-                <article class="pfe-l-grid pfe-m-gutters rhd-m-content-teaser--list pfe-u-py-2xl">
-                  <div class="pfe-m-4-col pfe-u-py-lg">
+                <article class="pfe-l-grid pfe-m-gutters rhd-m-content-teaser--list rhd-u-py-2xl">
+                  <div class="pfe-m-4-col rhd-u-py-lg">
                     <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/f54e08bd8f35b685ebe57bb2d5397f38.png?itok=pwHyQbrY" alt="Building and understanding reactive microservices using Eclipse Vert.x and distributed tracing" typeof="foaf:Image" class="image-style-teaser">
                   </div>
-                  <div class="pfe-m-8-col pfe-u-py-lg">
-                    <h5 class="pfe-headline-5 pfe-u-mb-md">
+                  <div class="pfe-m-8-col rhd-u-py-lg">
+                    <h5 class="pfe-headline-5 rhd-u-mb-md">
                       <a href="https://developers.redhat.com/blog/2019/05/13/building-and-understanding-reactive-microservices-using-eclipse-vert-x-and-distributed-tracing/" class="pfe-headline-link">Building and understanding reactive microservices using Eclipse Vert.x and distributed tracing</a>
                     </h5>
                     <div class="rhd-c-time">May 13, 2019</div>
@@ -156,12 +156,12 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                     </div>
                   </div>
                 </article>
-                <article class="pfe-l-grid pfe-m-gutters rhd-m-content-teaser--list pfe-u-py-2xl">
-                  <div class="pfe-m-4-col pfe-u-py-lg">
+                <article class="pfe-l-grid pfe-m-gutters rhd-m-content-teaser--list rhd-u-py-2xl">
+                  <div class="pfe-m-4-col rhd-u-py-lg">
                     <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/b356646680e6c550c55f845b5b5ca6e6.jpg?itok=RIkej_V9" alt="Migrating Java applications to Quarkus, Part 2: Before and after" typeof="foaf:Image" class="image-style-teaser">
                   </div>
-                  <div class="pfe-m-8-col pfe-u-py-lg">
-                    <h5 class="pfe-headline-5 pfe-u-mb-md">
+                  <div class="pfe-m-8-col rhd-u-py-lg">
+                    <h5 class="pfe-headline-5 rhd-u-mb-md">
                       <a href="https://developers.redhat.com/blog/2019/05/13/migrating-java-applications-to-quarkus-part-2-before-and-after/" class="pfe-headline-link">Migrating Java applications to Quarkus, Part 2: Before and after</a>
                     </h5>
                     <div class="rhd-c-time">May 13, 2019</div>
@@ -170,12 +170,12 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                     </div>
                   </div>
                 </article>
-                <article class="pfe-l-grid pfe-m-gutters rhd-m-content-teaser--list pfe-u-py-2xl">
-                  <div class="pfe-m-4-col pfe-u-py-lg">
+                <article class="pfe-l-grid pfe-m-gutters rhd-m-content-teaser--list rhd-u-py-2xl">
+                  <div class="pfe-m-4-col rhd-u-py-lg">
                     <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/b356646680e6c550c55f845b5b5ca6e6.jpg?itok=RIkej_V9" alt="Create your first Quarkus project with Eclipse IDE (Red Hat CodeReady Studio)" typeof="foaf:Image" class="image-style-teaser">
                   </div>
-                  <div class="pfe-m-8-col pfe-u-py-lg">
-                    <h5 class="pfe-headline-5 pfe-u-mb-md">
+                  <div class="pfe-m-8-col rhd-u-py-lg">
+                    <h5 class="pfe-headline-5 rhd-u-mb-md">
                       <a href="https://developers.redhat.com/blog/2019/05/09/create-your-first-quarkus-project-with-eclipse-ide-red-hat-codeready-studio/" class="pfe-headline-link">Create your first Quarkus project with Eclipse IDE (Red Hat CodeReady Studio)</a>
                     </h5>
                     <div class="rhd-c-time">May 9, 2019</div>
@@ -184,11 +184,11 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                     </div>
                   </div>
                 </article>
-                <pfe-cta priority="secondary" class="PFElement pfe-u-my-xl">
+                <pfe-cta priority="secondary" class="PFElement rhd-u-my-xl">
                   <a href="https://developers.redhat.com/blog/page/2/">More Articles</a>
                 </pfe-cta>
               </div>
-              <aside  class="pfe-m-3-col rhd-m-background-white pfe-u-p-md pfe-u-mt-2xl">
+              <aside  class="pfe-m-3-col rhd-m-background-comments rhd-u-mt-2xl">
                 <div class="disqus">
                   <h5 class="header">
                     <span class="fa fa-comment"></span> Latest Comments
@@ -196,7 +196,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                   <div>
                     <div class="comment-wrapper">
                       <div>
-                        <h6 class="rhd-comment-header pfe-u-my-md">Introducing CodeReady Linux Builder</h6>
+                        <h6 class="rhd-comment-header rhd-u-my-md">Introducing CodeReady Linux Builder</h6>
                         <div class="rhd-comment-body">“Redhat Linux 8”</div>
                           <div class="rhd-comment-footer">
                             <div class="date">May 14, 2019</div>
@@ -204,7 +204,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                           </div>
                         </div>
                         <div>
-                          <h6 class="rhd-comment-header pfe-u-my-md">Red Hat Enterprise Linux 8 Image Builder: Building custom system images</h6>
+                          <h6 class="rhd-comment-header rhd-u-my-md">Red Hat Enterprise Linux 8 Image Builder: Building custom system images</h6>
                           <div class="rhd-comment-body">“Glad you published this.  I am interested to see more based on using an Enterprise setup with Satellite and RHEL 8.”</div>
                           <div class="rhd-comment-footer">
                             <div class="date">May 14, 2019</div>
@@ -212,7 +212,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                           </div>
                         </div>
                         <div>
-                          <h6 class="rhd-comment-header pfe-u-my-md">Containers without daemons: Podman and Buildah available in RHEL 7.6 and RHEL 8 Beta</h6>
+                          <h6 class="rhd-comment-header rhd-u-my-md">Containers without daemons: Podman and Buildah available in RHEL 7.6 and RHEL 8 Beta</h6>
                           <div class="rhd-comment-body">“How can I match existing containerization work in regards to docker version compatibility. So e.g if I want to run and build containers in the future based on my existing...”</div>
                           <div class="rhd-comment-footer">
                             <div class="date">May 14, 2019</div>
@@ -220,7 +220,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                           </div>
                         </div>
                         <div>
-                          <h6 class="rhd-comment-header pfe-u-my-md">Create your first Quarkus project with Eclipse IDE (Red Hat CodeReady Studio)</h6>
+                          <h6 class="rhd-comment-header rhd-u-my-md">Create your first Quarkus project with Eclipse IDE (Red Hat CodeReady Studio)</h6>
                           <div class="rhd-comment-body">“How do you stop it running? Stop button on the Console window does nothing.”</div>
                           <div class="rhd-comment-footer">
                             <div class="date">May 14, 2019</div>
@@ -232,9 +232,9 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                   </div>
                 </div>
               </section>
-              <section class="pfe-u-content-spacer rhd-c-background-type__ebooks">
+              <section class="rhd-u-content-spacer rhd-c-background-type__ebooks">
                 <div class="container">
-                  <h2 class="pfe-headline-1 pfe-l--text-align--center pfe-u-py-md">
+                  <h2 class="pfe-headline-1 pfe-l--text-align--center rhd-u-py-md">
                     Red Hat Developer eBooks
                   </h2>
                   <div class="pfe-l-grid pfe-m-gutters">
@@ -311,7 +311,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                       </div>
                         <div class="pfe-m-12-col">
                           <div class="pfe-l-grid">
-                            <div class="pfe-u-container-spacer-py-3xl">
+                            <div class="rhd-u-container-spacer-py-3xl">
                               <pfe-cta priority="secondary">
                                 <a href="#">View all ebooks</a>
                               </pfe-cta>
@@ -323,9 +323,9 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                   </div>
                 </div>
               </section>
-              <section class="pfe-u-content-spacer rhd-c-background-type__ebooks">
+              <section class="rhd-u-content-spacer rhd-c-background-type__ebooks">
                 <div class="container">
-                  <h2 class="pfe-headline-1 pfe-l--text-align--center pfe-u-py-md">
+                  <h2 class="pfe-headline-1 pfe-l--text-align--center rhd-u-py-md">
                     Red Hat Developer Cheat Sheets
                   </h2>
                   <div class="pfe-l-grid pfe-m-gutters">
@@ -376,7 +376,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                       </div>
                         <div class="pfe-m-12-col">
                           <div class="pfe-l-grid">
-                            <div class="pfe-u-container-spacer-py-3xl">
+                            <div class="rhd-u-container-spacer-py-3xl">
                               <pfe-cta priority="secondary">
                                 <a href="#">View all cheat sheets</a>
                               </pfe-cta>
@@ -388,7 +388,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                   </div>
                 </div>
               </section>
-              <section class="rhd-e-section-blue pfe-u-content-spacer">
+              <section class="rhd-e-section-blue rhd-u-content-spacer">
                 <div class="container">
                   <div class="pfe-l-bullseye">
                     <div class="pfe-l-bullseye__item pfe-l--text-align--center">
@@ -397,23 +397,23 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                       </h2>
                       <p class="pfe-l--text-align--center">DevNation Live: Subatomic reactive systems with Quarkus</p>
                       <p class="pfe-l--text-align--center">Presented by&nbsp;Clememt Escoffier on May 16, 2019 at 12:00 PM ET</p>
-                      <pfe-cta priority="primary" class="pfe-u-py-md">
+                      <pfe-cta priority="primary" class="rhd-u-py-md">
                         <a href="https://onlinexperiences.com/Launch/QReg/ShowUUID=F6BB8BA6-5AB4-4DC0-B592-5ABC912BBC61">Register Now</a>
                       </pfe-cta>
                     </div>
                   </div>
                 </div>
               </section>
-              <section id="assembly-field-sections-7105" class="pfe-u-content-spacer">
+              <section id="assembly-field-sections-7105" class="rhd-u-content-spacer">
                 <div class="container">
-                  <h1 class="pfe-headline-xxl pfe-u-py-md">Developer Tutorials and Red Hat Software for Cloud Application Development</h1>
-                  <p class="pfe-u-pb-md">Join Red Hat Developer for the tools and training to develop applications for the cloud. Members get access to developer editions of Red Hat’s software, documentation, and premium books from our experts on microservices, serverless, Kubernetes, and Linux.</p>
-                  <h2 class="pfe-headline-1 pfe-u-py-md">Cloud-Native Developer Career Training</h2>
-                  <p class="pfe-u-pb-md">Today’s containerized applications are changing development work requiring developers to adopt new architectures and DevOps (link to topic) processes. &nbsp;Red Hat Developer helps you build these skills and provides you with the tools you need to use them in your next application and beyond. Build here. Go anywhere.</p>
-                  <pfe-cta priority="primary" class="pfe-u-my-md pfe-u-mr-md">
+                  <h1 class="pfe-headline-xxl rhd-u-py-md">Developer Tutorials and Red Hat Software for Cloud Application Development</h1>
+                  <p class="rhd-u-pb-md">Join Red Hat Developer for the tools and training to develop applications for the cloud. Members get access to developer editions of Red Hat’s software, documentation, and premium books from our experts on microservices, serverless, Kubernetes, and Linux.</p>
+                  <h2 class="pfe-headline-1 rhd-u-py-md">Cloud-Native Developer Career Training</h2>
+                  <p class="rhd-u-pb-md">Today’s containerized applications are changing development work requiring developers to adopt new architectures and DevOps (link to topic) processes. &nbsp;Red Hat Developer helps you build these skills and provides you with the tools you need to use them in your next application and beyond. Build here. Go anywhere.</p>
+                  <pfe-cta priority="primary" class="rhd-u-my-md rhd-u-mr-md">
                     <a href="https://developers.redhat.com/register/?intcmp=701f2000001OMHaAAO">Join Red Hat Developer</a>
                   </pfe-cta>
-                  <pfe-cta priority="secondary" class="pfe-u-my-md">
+                  <pfe-cta priority="secondary" class="rhd-u-my-md">
                     <a href="/articles/red-hat-developer-program-benefits/">Learn more</a>
                   </pfe-cta>
                 </div>
