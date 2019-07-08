@@ -1,20 +1,27 @@
 {
-  "_from": "@patternfly/pfelement@^1.0.0-prerelease.17",
-  "_id": "@patternfly/pfelement@1.0.0-prerelease.17",
+  "_args": [
+    [
+      "@patternfly/pfelement@1.0.0-prerelease.16",
+      "/Users/ajolicoe/dev/rhdp/rhd-frontend"
+    ]
+  ],
+  "_development": true,
+  "_from": "@patternfly/pfelement@1.0.0-prerelease.16",
+  "_id": "@patternfly/pfelement@1.0.0-prerelease.16",
   "_inBundle": false,
-  "_integrity": "sha512-lvZgFD7HLeTggm9wpNNA8Ljqcm4Wc4eSS22k7uOgMG95Xl0t1YHn/YGJ/vzmdHXCOW2VHaJF8TCbjBFweRBltg==",
+  "_integrity": "sha512-sDfikxxtkuiCITB6f0QXpnIBIlWvu3e8dwdbteGJXg6N9anOJzUMyXCf3A/AW/F1F07eP2zp+H1e34c5yhWEMQ==",
   "_location": "/@patternfly/pfelement",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "@patternfly/pfelement@^1.0.0-prerelease.17",
+    "raw": "@patternfly/pfelement@1.0.0-prerelease.16",
     "name": "@patternfly/pfelement",
     "escapedName": "@patternfly%2fpfelement",
     "scope": "@patternfly",
-    "rawSpec": "^1.0.0-prerelease.17",
+    "rawSpec": "1.0.0-prerelease.16",
     "saveSpec": null,
-    "fetchSpec": "^1.0.0-prerelease.17"
+    "fetchSpec": "1.0.0-prerelease.16"
   },
   "_requiredBy": [
     "#DEV:/",
@@ -24,14 +31,12 @@
     "/@patternfly/pfe-datetime",
     "/@patternfly/pfe-tabs"
   ],
-  "_resolved": "https://registry.npmjs.org/@patternfly/pfelement/-/pfelement-1.0.0-prerelease.17.tgz",
-  "_shasum": "2a603f147c07477361a3332f4bda95fd22feeaca",
-  "_spec": "@patternfly/pfelement@^1.0.0-prerelease.17",
+  "_resolved": "https://registry.npmjs.org/@patternfly/pfelement/-/pfelement-1.0.0-prerelease.16.tgz",
+  "_spec": "1.0.0-prerelease.16",
   "_where": "/Users/ajolicoe/dev/rhdp/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-elements/issues"
   },
-  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Kyle Buchanan",
@@ -46,10 +51,9 @@
       "url": "https://github.com/castastrophe"
     }
   ],
-  "deprecated": false,
   "description": "Base class for PatternFly Elements",
   "generator-pfelement-version": "0.3.4",
-  "gitHead": "4382b491b97b4b6b154a35d2c9db47c065eff081",
+  "gitHead": "6ee18e0fe929f7d8161b22114882716b8bcdeff4",
   "homepage": "https://github.com/patternfly/patternfly-elements#readme",
   "keywords": [
     "web-components",
@@ -75,5 +79,5 @@
     "dev": "../../node_modules/.bin/gulp dev",
     "test": "../../node_modules/.bin/wct --configFile ../../wct.conf.json elements/pfelement/test/"
   },
-  "version": "1.0.0-prerelease.17"
+  "version": "1.0.0-prerelease.16"
 }

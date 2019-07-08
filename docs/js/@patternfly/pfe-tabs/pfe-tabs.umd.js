@@ -820,9 +820,7 @@
           this.setAttribute("tabindex", 0);
         }
 
-        if (this.previousElementSibling.getAttribute("aria-selected") !== "true") {
-          this.hidden = true;
-        }
+        this.hidden = true;
 
         if (window.ShadyCSS) {
           this._observer.observe(this, { childList: true });

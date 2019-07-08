@@ -1,0 +1,37 @@
+:root {
+  --rhd-theme--ui-background-image__resources: "url(https://developers.redhat.com/images/gray_diamond_background.png)";  // --rhd-theme--ui-background-image__featured_resources
+  --rhd-theme--ui-background-image__video-hero: "url(https://developers.redhat.com/sites/default/files/styles/billboard/public/background-image-video-blue_3.png?itok=v0B6IL-P)";  // --rhd-theme--ui-background-image__video-hero
+  --rhd-theme--ui-background-image__rich-text: "url(https://developers.redhat.com/sites/default/files/styles/billboard/public/background-image-code-medgray.png?itok=9aKu_b_8)";  // --rhd-theme--ui-background-image__rich-text
+  --rhd-theme--ui-background-image__content-with-image: "url(https://developers.redhat.com/sites/default/files/styles/billboard/public/background-image-code-darkgray.png?itok=f8kbCk5b)";  // --rhd-theme--ui-background-image__content-with-image
+  --rhd-theme--ui-background-image__events-hero: "url(https://developers.redhat.com/sites/default/files/styles/billboard/public/DevNation_Live_Herobg.jpg?itok=43yxfAMc)";  // --rhd-theme--ui-background-image__events-hero
+  --rhd-theme--ui-background-image__courses: "url(https://developers.redhat.com/sites/default/files/styles/billboard/public/rhd-katacoda-header-1410x940.jpg?itok=DNc-VGxM)";  // --rhd-theme--ui-background-image__courses
+  --rhd-theme--ui-background-image__product-hero-light: "url(https://developers.redhat.com/images/design/product-hero-light.png)";  // --rhd-theme--ui-background-image__product-hero-light
+  --rhd-theme--ui-background-image__product-hero-dark: "url(https://developers.redhat.com/images/design/product-hero-dark.png)";  // --rhd-theme--ui-background-image__product-hero-dark
+}
+
+.rhd-c-background-image {
+  &__resources {
+    background-image: var(--rhd-theme--ui-background-image__resources);
+  }
+  &__video-hero {
+    background-image: var(--rhd-theme--ui-background-image__video-hero);
+  }
+  &__rich-text {
+    background-image: var(--rhd-theme--ui-background-image__rich-text);
+  }
+  &__content-with-image {
+    background-image: var(--rhd-theme--ui-background-image__content-with-image);
+  }
+  &__events-hero {
+    background-image: var(--rhd-theme--ui-background-image__events-hero);
+  }
+  &__courses {
+    background-image: var(--rhd-theme--ui-background-image__courses);
+  }
+  &__product-hero-light {
+    background-image: var(--rhd-theme--ui-background-image__product-hero-light);
+  }
+  &__product-hero-dark {
+    background-image: var(--rhd-theme--ui-background-image__product-hero-dark);
+  }
+}
