@@ -2,7 +2,7 @@
   "_args": [
     [
       "@patternfly/pfe-band@1.0.0-prerelease.16",
-      "/home/ldary/Projects/rh/rhd-frontend"
+      "/Users/ajolicoe/dev/rhdp/rhd-frontend"
     ]
   ],
   "_development": true,
@@ -28,7 +28,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/@patternfly/pfe-band/-/pfe-band-1.0.0-prerelease.16.tgz",
   "_spec": "1.0.0-prerelease.16",
-  "_where": "/home/ldary/Projects/rh/rhd-frontend",
+  "_where": "/Users/ajolicoe/dev/rhdp/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-elements/issues"
   },

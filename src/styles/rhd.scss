@@ -68,7 +68,7 @@ $gutter: 30px;
 .rh-universal-header {
     background-color: $soft-dark;
     background-color: var(--rhd--theme--color--ui--soft-dark, $soft-dark);
- 
+
 }
 
 .rh-header-logo {
@@ -147,11 +147,11 @@ body { margin: 0; padding: 0; color: $grey-7; }
 //     }
 // }
 
-// p a:not(.button):hover { 
-//   border-bottom: 1px solid $grey-3-5; 
+// p a:not(.button):hover {
+//   border-bottom: 1px solid $grey-3-5;
 // }
 
-// p a.external-link:after { 
+// p a.external-link:after {
 //   display: none;
 // }
 
@@ -181,6 +181,7 @@ body { margin: 0; padding: 0; color: $grey-7; }
 // @import "patterns/patterns";
 // @import "assembly/assembly";
 // @import "foundation/foundation";
+@import "2019/backgrounds";
 @import "2019/navigation";
 @import "2019/rhd-footer";
 @import "2019/slick";
