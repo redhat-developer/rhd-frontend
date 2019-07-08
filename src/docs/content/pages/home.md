@@ -388,7 +388,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                   </div>
                 </div>
               </section>
-              <section class="rhd-e-section-blue rhd-u-content-spacer">
+              <section class="rhd-m-background-blue rhd-u-content-spacer">
                 <div class="container">
                   <div class="pfe-l-bullseye">
                     <div class="pfe-l-bullseye__item pfe-l--text-align--center">

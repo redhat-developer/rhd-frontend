@@ -68,7 +68,7 @@ $gutter: 30px;
 .rh-universal-header {
     background-color: $soft-dark;
     background-color: var(--rhd--theme--color--ui--soft-dark, $soft-dark);
- 
+
 }
 
 .rh-header-logo {
@@ -103,6 +103,7 @@ a {
 @import "2019/colors/grayscale";
 @import "2019/colors/link";
 @import "2019/colors/product";
+@import "2019/colors/text";
 @import "2019/rh-universal-nav";
 @import "2019/navigation";
 
@@ -147,11 +148,11 @@ body { margin: 0; padding: 0; color: $grey-7; }
 //     }
 // }
 
-// p a:not(.button):hover { 
-//   border-bottom: 1px solid $grey-3-5; 
+// p a:not(.button):hover {
+//   border-bottom: 1px solid $grey-3-5;
 // }
 
-// p a.external-link:after { 
+// p a.external-link:after {
 //   display: none;
 // }
 
@@ -181,8 +182,14 @@ body { margin: 0; padding: 0; color: $grey-7; }
 // @import "patterns/patterns";
 // @import "assembly/assembly";
 // @import "foundation/foundation";
+@import "2019/spacing";
 @import "2019/navigation";
 @import "2019/rhd-footer";
+@import "2019/background";
+@import "2019/link-type";
+@import "2019/spacing";
+@import "2019/comments";
+@import "2019/buttons";
 @import "2019/slick";
 @import "2019/learning-paths";
 @import "2019/rhd-accordion";
