@@ -46,7 +46,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                   Build here
                 </h2>
                 <div class="pfe-l-grid pfe-m-gutters pfe-l-grid-fill-height pfe-m-all-3-col">
-                  <pfe-card pfe-color="lighter">
+                  <pfe-card pfe-color="lightest">
                     <a pfe-overflow="top right left" href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-developer-cheat-sheet/">
                       <img src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/dce8036d40e0b11dd1c1d0620e8ebe59.png?itok=092K5PjH">
                     </a>
@@ -61,7 +61,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                       </a>
                     </div>
                   </pfe-card>
-                  <pfe-card pfe-color="lighter">
+                  <pfe-card pfe-color="lightest">
                     <a pfe-overflow="top right left" href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/"><img src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/e82397e71d7ae42dd48a946b0a9a3e1f.png?itok=J7cA6g6b"></a>
                     <h3 class="tile-title">
                     <a href="https://developers.redhat.com/blog/2019/05/07/red-hat-enterprise-linux-8-now-generally-available/">Red Hat Enterprise Linux 8 now generally available</a>
@@ -74,7 +74,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                     </a>
                     </div>
                   </pfe-card>
-                  <pfe-card pfe-color="lighter">
+                  <pfe-card pfe-color="lightest">
                     <a pfe-overflow="top right left" href="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/"><img src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/86fa8b876def478a861853d96654f01d.png?itok=tk2vh1wo"></a>
                     <h3 class="tile-title">
                     <a href="https://developers.redhat.com/blog/2019/04/25/podman-basics-cheat-sheet/">Podman basics cheat sheet</a>
@@ -87,7 +87,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                       </a>
                     </div>
                   </pfe-card>
-                  <pfe-card pfe-color="lighter">
+                  <pfe-card pfe-color="lightest">
                     <a pfe-overflow="top right left" href="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/"><img src="https://developers.redhat.com/sites/default/files/styles/static_item/public/externals/e684ea8849af25532d2f2c5ad1c6dab4.png?itok=x5vFfjEH"></a>
                     <h3 class="tile-title">
                     <a href="https://developers.redhat.com/blog/2019/04/19/not-all-openjdk-12-builds-include-shenandoah-heres-why/">Not all OpenJDK 12 builds include Shenandoah: Here’s why</a>
@@ -107,6 +107,46 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                   <h2 class="header field__item">Go Anywhere</h2>
                   <div class="pfe-l-grid pfe-m-gutters">
                     <div class="pfe-m-9-col">
+                      <pfe-band pfe-color="lightest" pfe-aside-desktop="left" pfe-aside-height="full">
+                        <header slot="pfe-band--header">
+                          <h3 class="rhd-list-entry--title"><a href="https://developers.redhat.com/blog/2019/05/14/bringing-iot-to-red-hat-amq-online/">Bringing IoT to Red Hat AMQ Online</a></h3>
+                          <div class="rhd-list-entry--date">May 14, 2019</div>
+                        </header>
+                        <img slot="pfe-band--aside" src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/e243d76bb39d5ac12184f0c855bf4e4c.png?itok=TaTJzkaz" alt="Bringing IoT to Red Hat AMQ Online" typeof="foaf:Image" class="image-style-teaser">
+                        <div class="rhd-list-entry--summary">
+                                <p>Red Hat AMQ Online 1.1 was recently announced, and I am excited about it because it contains a tech preview of our Internet of Things (IoT) support. AMQ Online is the “messaging as service solution” from Red Hat AMQ. Leveraging the work we did on Eclipse Hono&nbsp;allows us to integrate a scalable, cloud-native IoT personality […]</p>
+                              </div>
+                        <footer slot="pfe-band--footer">
+                        </footer>
+                      </pfe-band>
+                      <pfe-band pfe-color="lightest" pfe-aside-desktop="left" pfe-aside-height="full">
+                        <header slot="pfe-band--header">
+                          <h3 class="rhd-list-entry--title"><a href="https://developers.redhat.com/blog/2019/05/14/use-the-kubernetes-python-client-from-your-running-red-hat-openshift-pods/">Use the Kubernetes Python client from your running Red Hat OpenShift pods</a></h3>
+                              <div class="rhd-list-entry--date">May 14, 2019</div>
+                        </header>
+                        <img slot="pfe-band--aside" src=" class="image-style-teaser">
+                        <div class="rhd-list-entry--summary">
+                                
+                        </div>
+                      </pfe-band>
+                      <pfe-band pfe-color="lightest" pfe-aside-desktop="left" pfe-aside-height="full">
+                        <header slot="pfe-band--header">
+                          
+                        </header>
+                        <img slot="pfe-band--aside" src=" class="image-style-teaser">
+                        <div class="rhd-list-entry--summary">
+                                
+                        </div>
+                      </pfe-band>
+                      <pfe-band pfe-color="lightest" pfe-aside-desktop="left" pfe-aside-height="full">
+                        <header slot="pfe-band--header">
+                          
+                        </header>
+                        <img slot="pfe-band--aside" src=" class="image-style-teaser">
+                        <div class="rhd-list-entry--summary">
+                                
+                        </div>
+                      </pfe-band>
                       <ul class="content-teaser-list count-6">
                         <li>
                           <article class="rhd-list-entry">

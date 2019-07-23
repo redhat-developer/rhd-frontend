@@ -1,0 +1,256 @@
+/*doc
+---
+title: strip-unit
+category: Function
+---
+
+-   __$num:__ accepts the string number with unit and returns the raw number, no unit
+*/
+/*doc
+---
+title: pem
+category: Function
+---
+
+-   __$pxval:__ pixel value to return as em
+-   __$base:__ defaults to 18px, but optional context can be passed in
+
+```inline
+.class-name {
+    font-size: pem(36); // Returns 2em (or 36px)
+    padding: pem(18, 36) // pass in current font-size context to return 18px/1em padding
+}
+```
+*/
+:root {
+  --pfe-theme--color--ui-link: #0066cc;
+  --pfe-theme--color--ui-link--on-dark: #73bcf7;
+  --pfe-theme--color--ui-link--on-saturated: #ffffff;
+  --pfe-theme--color--ui-link--visited: #0066cc;
+  --pfe-theme--color--ui-link--on-dark--visited: #73bcf7;
+  --pfe-theme--color--ui-link--on-saturated--visited: #ffffff;
+  --pfe-theme--color--ui-link--hover: #004080;
+  --pfe-theme--color--ui-link--on-dark--hover: #2b9af3;
+  --pfe-theme--color--ui-link--on-saturated--hover: #d2d3d5;
+  --pfe-theme--color--ui-link--focus: #004080;
+  --pfe-theme--color--ui-link--on-dark--focus: #2b9af3;
+  --pfe-theme--color--ui-link--on-saturated--focus: #d2d3d5;
+  --pfe-theme--color--ui-base: #0076e0;
+  --pfe-theme--color--ui-base--text: #ffffff;
+  --pfe-theme--color--ui-base--hover: #004080;
+  --pfe-theme--color--ui-base--text--hover: #ffffff;
+  --pfe-theme--color--ui-complement: #464646;
+  --pfe-theme--color--ui-complement--text: #ffffff;
+  --pfe-theme--color--ui-complement--hover: #1e1e1e;
+  --pfe-theme--color--ui-complement--text--hover: #ffffff;
+  --pfe-theme--color--ui-accent: #ee0000;
+  --pfe-theme--color--ui-accent--text: #ffffff;
+  --pfe-theme--color--ui-accent--hover: #d40000;
+  --pfe-theme--color--ui-accent--text--hover: #ffffff;
+  --pfe-theme--color--ui-disabled: #d2d2d2;
+  --pfe-theme--color--ui-disabled--text: #aaaaaa;
+  --pfe-theme--color--ui-disabled--hover: #d2d2d2;
+  --pfe-theme--color--ui-disabled--text--hover: #aaaaaa;
+  --pfe-theme--color--surface--lightest: #ffffff;
+  --pfe-theme--color--surface--lightest--text: #333333;
+  --pfe-theme--color--surface--lightest--link: #0066cc;
+  --pfe-theme--color--surface--lightest--link--visited: #0066cc;
+  --pfe-theme--color--surface--lightest--link--hover: #004080;
+  --pfe-theme--color--surface--lightest--link--focus: #004080;
+  --pfe-theme--color--surface--lighter: #f0f0f0;
+  --pfe-theme--color--surface--lighter--text: #333333;
+  --pfe-theme--color--surface--lighter--link: #0066cc;
+  --pfe-theme--color--surface--lighter--link--visited: #0066cc;
+  --pfe-theme--color--surface--lighter--link--hover: #004080;
+  --pfe-theme--color--surface--lighter--link--focus: #004080;
+  --pfe-theme--color--surface--base: #dddddd;
+  --pfe-theme--color--surface--base--text: #333333;
+  --pfe-theme--color--surface--base--link: #0066cc;
+  --pfe-theme--color--surface--base--link--visited: #0066cc;
+  --pfe-theme--color--surface--base--link--hover: #004080;
+  --pfe-theme--color--surface--base--link--focus: #004080;
+  --pfe-theme--color--surface--darker: #444444;
+  --pfe-theme--color--surface--darker--text: #ffffff;
+  --pfe-theme--color--surface--darker--link: #73bcf7;
+  --pfe-theme--color--surface--darker--link--visited: #73bcf7;
+  --pfe-theme--color--surface--darker--link--hover: #2b9af3;
+  --pfe-theme--color--surface--darker--link--focus: #2b9af3;
+  --pfe-theme--color--surface--darkest: #1a1a1a;
+  --pfe-theme--color--surface--darkest--text: #ffffff;
+  --pfe-theme--color--surface--darkest--link: #73bcf7;
+  --pfe-theme--color--surface--darkest--link--visited: #73bcf7;
+  --pfe-theme--color--surface--darkest--link--hover: #2b9af3;
+  --pfe-theme--color--surface--darkest--link--focus: #2b9af3;
+  --pfe-theme--color--surface--complement: #10565c;
+  --pfe-theme--color--surface--complement--text: #ffffff;
+  --pfe-theme--color--surface--complement--link: #ffffff;
+  --pfe-theme--color--surface--complement--link--visited: #ffffff;
+  --pfe-theme--color--surface--complement--link--hover: #d2d3d5;
+  --pfe-theme--color--surface--complement--link--focus: #d2d3d5;
+  --pfe-theme--color--surface--accent: #ee0000;
+  --pfe-theme--color--surface--accent--text: #ffffff;
+  --pfe-theme--color--surface--accent--link: #ffffff;
+  --pfe-theme--color--surface--accent--link--visited: #ffffff;
+  --pfe-theme--color--surface--accent--link--hover: #d2d3d5;
+  --pfe-theme--color--surface--accent--link--focus: #d2d3d5;
+  --pfe-theme--ui--border-width: 1px;
+  --pfe-theme--ui--border-style: solid;
+  --pfe-theme--ui--border-radius: 3px;
+  --pfe-theme--surface--border-width: 1px;
+  --pfe-theme--surface--border-style: solid;
+  --pfe-theme--surface--border-radius: 0;
+  --pfe-theme--surface--border: #d2d2d2;
+  --pfe-theme--surface--border-lightest: #ededed;
+  --pfe-theme--surface--border-darkest: #333333;
+  --pfe-theme--logo--favicon: url(https://static.redhat.com/libs/redhat/brand-assets/2/corp/favicon.png);
+  --pfe-theme--logo--svg: url(https://static.redhat.com/libs/redhat/brand-assets/2/corp/logo.svg);
+  --pfe-theme--logo--svg--on-dark: url(https://static.redhat.com/libs/redhat/brand-assets/2/corp/logo--on-dark.svg);
+  --pfe-theme--logo--png: url(https://static.redhat.com/libs/redhat/brand-assets/2/corp/logo.png);
+  --pfe-theme--logo--png--on-dark: url(https://static.redhat.com/libs/redhat/brand-assets/2/corp/logo--on-dark.png);
+  --pfe-theme--container-spacer: 16px;
+  --pfe-theme--container-padding: 16px;
+  --pfe-theme--content-spacer: 30px;
+  --pfe-theme--animation-timing: 0.2s ease-in 0s;
+  --pfe-theme--box-shadow--sm: 0 0.0625rem 0.125rem 0 rgba(37, 37, 39, 0.1);
+  --pfe-theme--box-shadow--md: 0 0.125rem 0.0625rem 0.0625rem rgba(37, 37, 39, 0.1), 0 0.25rem 0.6875rem 0.375rem rgba(37, 37, 39, 0.1);
+  --pfe-theme--box-shadow--lg: 0 0.1875rem 0.4375rem 0.1875rem rgba(37, 37, 39, 0.1), 0 0.6875rem 1.5rem 1rem rgba(37, 37, 39, 0.1);
+  --pfe-theme--box-shadow--inset: inset 0 0 0.625rem 0 rgba(37, 37, 39, 0.1);
+  --pfe-theme--font-size--xxl: 48px;
+  --pfe-theme--font-size--xl: 40px;
+  --pfe-theme--font-size--alpha: 36px;
+  --pfe-theme--font-size--beta: 28px;
+  --pfe-theme--font-size--gamma: 24px;
+  --pfe-theme--font-size--delta: 20px;
+  --pfe-theme--font-size--epsilon: 18px;
+  --pfe-theme--font-size--zeta: 16px;
+  --pfe-theme--font-size: 18px;
+  --pfe-theme--line-height--xxl: 1.2;
+  --pfe-theme--line-height--xl: 1.2;
+  --pfe-theme--line-height--alpha: 1.3;
+  --pfe-theme--line-height--beta: 1.3;
+  --pfe-theme--line-height--gamma: 1.3;
+  --pfe-theme--line-height--delta: 1.5;
+  --pfe-theme--line-height--epsilon: 1.5;
+  --pfe-theme--line-height--zeta: 1.5;
+  --pfe-theme--line-height: 1.5;
+  --pfe-theme--font-weight--xxl: 300;
+  --pfe-theme--font-weight--xl: 300;
+  --pfe-theme--font-weight--alpha: 400;
+  --pfe-theme--font-weight--beta: 400;
+  --pfe-theme--font-weight--gamma: 400;
+  --pfe-theme--font-weight--delta: 400;
+  --pfe-theme--font-weight--epsilon: 400;
+  --pfe-theme--font-weight--zeta: 400;
+  --pfe-theme--font-weight: 400;
+  --pfe-theme--font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  --pfe-theme--font-family--heading: "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  --pfe-theme--font-family--code: "Overpass Mono", Consolas, Monaco, Andale Mono, monospace;
+  --pfe-theme--link--text-decoration: underline;
+  --pfe-theme--link--text-decoration--hover: underline;
+  --pfe-theme--color--text: #151515;
+  --pfe-theme--color--text--on-dark: #fff;
+  --pfe-theme--color--text--on-saturated: #eee; }
+
+/*doc
+---
+title: strip-unit
+category: Function
+---
+
+-   __$num:__ accepts the string number with unit and returns the raw number, no unit
+*/
+/*doc
+---
+title: pem
+category: Function
+---
+
+-   __$pxval:__ pixel value to return as em
+-   __$base:__ defaults to 18px, but optional context can be passed in
+
+```inline
+.class-name {
+    font-size: pem(36); // Returns 2em (or 36px)
+    padding: pem(18, 36) // pass in current font-size context to return 18px/1em padding
+}
+```
+*/
+.pfe-headline-xxl {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  font-size: var(--pfe-theme--font-size--xxl, 48px);
+  line-height: var(--pfe-theme--line-height--xxl, 1.2);
+  font-weight: var(--pfe-theme--font-weight--xxl, 300); }
+
+.pfe-headline-xl {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  font-size: var(--pfe-theme--font-size--xl, 40px);
+  line-height: var(--pfe-theme--line-height--xl, 1.2);
+  font-weight: var(--pfe-theme--font-weight--xl, 300); }
+
+.pfe-headline-1, .PFElement h1 {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  font-size: var(--pfe-theme--font-size--alpha, 36px);
+  line-height: var(--pfe-theme--line-height--alpha, 1.3);
+  font-weight: var(--pfe-theme--font-weight--alpha, 400); }
+
+.pfe-headline-2, .PFElement h2 {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  font-size: var(--pfe-theme--font-size--beta, 28px);
+  line-height: var(--pfe-theme--line-height--beta, 1.3);
+  font-weight: var(--pfe-theme--font-weight--beta, 400); }
+
+.pfe-headline-3, .PFElement h3 {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  font-size: var(--pfe-theme--font-size--gamma, 24px);
+  line-height: var(--pfe-theme--line-height--gamma, 1.3);
+  font-weight: var(--pfe-theme--font-weight--gamma, 400); }
+
+.pfe-headline-4, .PFElement h4 {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  font-size: var(--pfe-theme--font-size--delta, 20px);
+  line-height: var(--pfe-theme--line-height--delta, 1.5);
+  font-weight: var(--pfe-theme--font-weight--delta, 400); }
+
+.pfe-headline-5, .PFElement h5 {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  font-size: var(--pfe-theme--font-size--epsilon, 18px);
+  line-height: var(--pfe-theme--line-height--epsilon, 1.5);
+  font-weight: var(--pfe-theme--font-weight--epsilon, 400); }
+
+.pfe-headline-6, .PFElement h6 {
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  font-size: var(--pfe-theme--font-size--zeta, 16px);
+  line-height: var(--pfe-theme--line-height--zeta, 1.5);
+  font-weight: var(--pfe-theme--font-weight--zeta, 400); }
+
+.pfe-text, .PFElement p {
+  font-family: var(--pfe-theme--font-family, "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  font-size: var(--pfe-theme--font-size, 18px);
+  line-height: var(--pfe-theme--line-height, 1.5);
+  font-weight: var(--pfe-theme--font-weight, 400); }
+
+.PFElement {
+  font-family: var(--pfe-theme--font-family);
+  color: var(--pfe-broadcasted--color--text); }
+  .PFElement a {
+    color: var(--pfe-broadcasted--color--ui-link); }
+    .PFElement a:hover {
+      color: var(--pfe-broadcasted--color--ui-link--hover); }
+    .PFElement a:focus {
+      color: var(--pfe-broadcasted--color--ui-link--focus); }
+  .PFElement > *:first-child {
+    margin-top: 0; }
+  .PFElement pre, .PFElement code {
+    font-family: var(--pfe-theme--font-family--code, "Overpass Mono", Consolas, Monaco, Andale Mono, monospace); }
+
+/* COMPONENT SPECIFIC STYLES */
+pfe-cta[priority="primary"] a,
+pfe-cta[priority="secondary"] a {
+  font-size: 1em; }
+
+pfe-cta:not([priority="primary"]) a,
+pfe-cta:not([priority="secondary"]) a {
+  text-decoration: none; }
+  pfe-cta:not([priority="primary"]) a:after,
+  pfe-cta:not([priority="secondary"]) a:after {
+    margin-bottom: .25em; }

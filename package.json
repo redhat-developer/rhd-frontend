@@ -24,7 +24,7 @@
     "scripts:cpnpm": "copyfiles -u 1 \"node_modules/@fortawesome/**/*\" src/docs/static/js && copyfiles -u 1 \"node_modules/@patternfly/**/*\" src/docs/static/js",
     "styles": "npm run del:styles && npm run styles:sass && npm run styles:copy",
     "styles:sass": "node-sass src/styles/ -o dist/styles/ && node-sass src/styles/ -o dist/styles-min/ --output-style compressed && postcss -o dist/styles-min/rhd.min.css dist/styles-min/rhd.css",
-    "styles:copy": "copyfiles -f \"dist/styles**/*.css\" src/docs/static/css && copyfiles -f \"node_modules/@patternfly/pfe-layouts/pfe-*.css\" src/docs/static/css",
+    "styles:copy": "copyfiles -f \"dist/styles/**/*.css\" src/docs/static/css && copyfiles -f \"node_modules/@patternfly/pfe-layouts/pfe-*.css\" src/docs/static/css",
     "docs": "hugo -D -s src/docs --config src/docs/config.toml && npm run docs:front",
     "docs:dev": "hugo -D -s src/docs --config src/docs/config.dev.toml && npm run docs:front",
     "docs:front": "npm run docs:styles && npm run docs:scripts",
@@ -76,5 +76,8 @@
     "typescript": "^3.4.5",
     "typescript-json-schema": "^0.36.0",
     "uglifyjs-folder": "^1.5.1"
+  },
+  "dependencies": {
+    "@wordpress/a11y": "^2.4.0"
   }
 }
