@@ -1,37 +1,32 @@
 {
-  "_args": [
-    [
-      "@patternfly/pfe-card@1.0.0-prerelease.16",
-      "/home/ldary/Projects/rh/rhd-frontend"
-    ]
-  ],
-  "_development": true,
-  "_from": "@patternfly/pfe-card@1.0.0-prerelease.16",
-  "_id": "@patternfly/pfe-card@1.0.0-prerelease.16",
+  "_from": "@patternfly/pfe-card@^1.0.0-prerelease.17",
+  "_id": "@patternfly/pfe-card@1.0.0-prerelease.17",
   "_inBundle": false,
-  "_integrity": "sha512-buOp2aEWII9S2yLM/5Ok8N5dtzoBXRL1S4MHcZ5ELOeXWmNt08sY150oyFIJoULK8F3flpPqgqr+o/Ze40aLzg==",
+  "_integrity": "sha512-BX7WuqSL0tcZzcz6fnh1dtFj1B9lu0XoSyuJSm1Rn/bKUn5F7uGDGRKrFmY2XJopzzjdeGuedfU+byeUDDzGKg==",
   "_location": "/@patternfly/pfe-card",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "@patternfly/pfe-card@1.0.0-prerelease.16",
+    "raw": "@patternfly/pfe-card@^1.0.0-prerelease.17",
     "name": "@patternfly/pfe-card",
     "escapedName": "@patternfly%2fpfe-card",
     "scope": "@patternfly",
-    "rawSpec": "1.0.0-prerelease.16",
+    "rawSpec": "^1.0.0-prerelease.17",
     "saveSpec": null,
-    "fetchSpec": "1.0.0-prerelease.16"
+    "fetchSpec": "^1.0.0-prerelease.17"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
-  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-card/-/pfe-card-1.0.0-prerelease.16.tgz",
-  "_spec": "1.0.0-prerelease.16",
-  "_where": "/home/ldary/Projects/rh/rhd-frontend",
+  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-card/-/pfe-card-1.0.0-prerelease.17.tgz",
+  "_shasum": "ed14023f54dd7b175bcf8ad4e6638b61757be789",
+  "_spec": "@patternfly/pfe-card@^1.0.0-prerelease.17",
+  "_where": "/Users/ajolicoe/dev/rhdp/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-elements/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Mark Caron",
@@ -40,12 +35,13 @@
     }
   ],
   "dependencies": {
-    "@patternfly/pfe-sass": "^1.0.0-prerelease.16",
-    "@patternfly/pfelement": "^1.0.0-prerelease.16"
+    "@patternfly/pfe-sass": "^1.0.0-prerelease.17",
+    "@patternfly/pfelement": "^1.0.0-prerelease.17"
   },
+  "deprecated": false,
   "description": "Cards for PatternFly Elements",
   "generator-pfelement-version": "0.5.0",
-  "gitHead": "6ee18e0fe929f7d8161b22114882716b8bcdeff4",
+  "gitHead": "4382b491b97b4b6b154a35d2c9db47c065eff081",
   "homepage": "https://github.com/patternfly/patternfly-elements#readme",
   "keywords": [
     "web-components",
@@ -71,5 +67,5 @@
     "dev": "../../node_modules/.bin/gulp dev",
     "test": "../../node_modules/.bin/wct --configFile ../../wct.conf.json elements/pfe-card/test/"
   },
-  "version": "1.0.0-prerelease.16"
+  "version": "1.0.0-prerelease.17"
 }

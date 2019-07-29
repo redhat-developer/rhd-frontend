@@ -1,37 +1,32 @@
 {
-  "_args": [
-    [
-      "@patternfly/pfe-band@1.0.0-prerelease.16",
-      "/home/ldary/Projects/rh/rhd-frontend"
-    ]
-  ],
-  "_development": true,
-  "_from": "@patternfly/pfe-band@1.0.0-prerelease.16",
-  "_id": "@patternfly/pfe-band@1.0.0-prerelease.16",
+  "_from": "@patternfly/pfe-band@^1.0.0-prerelease.17",
+  "_id": "@patternfly/pfe-band@1.0.0-prerelease.17",
   "_inBundle": false,
-  "_integrity": "sha512-uK7rw0stcdYTkDW1bx3ZS3MXCmVaX5kcmZyOAPnQyc6ypLRKaClGH7azUx9FiVKYVSvvOIECDyLHh5mlBGxO4A==",
+  "_integrity": "sha512-M68wWp8Z+sjRQspKvSrVrKdItn4rMOSoptnpTSXqIkyQrTj7GK8bih7h7pwVKKsK9gbc3d69sB+YrWB9ofAh5Q==",
   "_location": "/@patternfly/pfe-band",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "@patternfly/pfe-band@1.0.0-prerelease.16",
+    "raw": "@patternfly/pfe-band@^1.0.0-prerelease.17",
     "name": "@patternfly/pfe-band",
     "escapedName": "@patternfly%2fpfe-band",
     "scope": "@patternfly",
-    "rawSpec": "1.0.0-prerelease.16",
+    "rawSpec": "^1.0.0-prerelease.17",
     "saveSpec": null,
-    "fetchSpec": "1.0.0-prerelease.16"
+    "fetchSpec": "^1.0.0-prerelease.17"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
-  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-band/-/pfe-band-1.0.0-prerelease.16.tgz",
-  "_spec": "1.0.0-prerelease.16",
-  "_where": "/home/ldary/Projects/rh/rhd-frontend",
+  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-band/-/pfe-band-1.0.0-prerelease.17.tgz",
+  "_shasum": "4cd17299a96372f42d1bc93961e3bcf2c1995765",
+  "_spec": "@patternfly/pfe-band@^1.0.0-prerelease.17",
+  "_where": "/Users/ajolicoe/dev/rhdp/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-elements/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "castastrophe",
@@ -39,12 +34,13 @@
     }
   ],
   "dependencies": {
-    "@patternfly/pfe-sass": "^1.0.0-prerelease.16",
-    "@patternfly/pfelement": "^1.0.0-prerelease.16"
+    "@patternfly/pfe-sass": "^1.0.0-prerelease.17",
+    "@patternfly/pfelement": "^1.0.0-prerelease.17"
   },
+  "deprecated": false,
   "description": "Band container for PatternFly Elements",
   "generator-rhelement-version": "0.6.8",
-  "gitHead": "6ee18e0fe929f7d8161b22114882716b8bcdeff4",
+  "gitHead": "4382b491b97b4b6b154a35d2c9db47c065eff081",
   "homepage": "https://github.com/patternfly/patternfly-elements#readme",
   "keywords": [
     "web-components",
@@ -75,5 +71,5 @@
     "dev": "../../node_modules/.bin/gulp dev",
     "test": "../../node_modules/.bin/wct --configFile ../../wct.conf.json elements/pfe-band/test/"
   },
-  "version": "1.0.0-prerelease.16"
+  "version": "1.0.0-prerelease.17"
 }

@@ -1,0 +1,138 @@
+.rhd-l-grid__list {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+}
+
+.rhd-c-card {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  padding: 0;
+  border: 2px solid var(--pfe-theme--surface--border-lightest);
+  img {
+    min-height: 130px;
+    max-height: 200px;
+  }
+  hr {
+    border-top: 2px solid #ededed;
+    margin: var(--pf-global--spacer--sm) var(--pf-global--spacer--md); // 8px 16px
+  }
+}
+
+.rhd-m-card__no-border {
+  border: 2px solid transparent;
+}
+
+.rhd-c-card__tag {
+  position: absolute;
+  top: var(--pf-global--spacer--sm); // 8px;
+  left: 0;
+  background-color: #fff;
+  padding: var(--pf-global--spacer--sm) var(--pf-global--spacer--md);
+  box-shadow: rgba(0, 0, 0, .28) 0px 2px 4px;
+}
+
+.rhd-c-card__image {
+  margin-left: 0 !important;
+}
+
+.rhd-m-image__contained {
+  padding-left: var(--pf-global--spacer--md); // 16px
+  padding-right: var(--pf-global--spacer--md); // 16px
+}
+
+.rhd-c-card__title {
+  font-family: "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  font-size: 18px !important;
+  font-weight: var(--pfe-theme--font-weight--gamma, 400);
+  padding-left: var(--pf-global--spacer--md); // 16px
+  padding-right: var(--pf-global--spacer--md); // 16px
+  padding-top: var(--pf-global--spacer--sm); // 8px
+  padding-bottom: var(--pf-global--spacer--sm); // 8px
+  margin-top: 0 !important;
+  max-height: 55px;
+  overflow: hidden;
+  a {
+    color: var(--pfe-theme--color--ui-link);
+    text-decoration: none;
+  }
+}
+
+.rhd-m-card-title__no-image {
+  margin-top: 60px !important;
+}
+
+.rhd-c-card__subtitle {
+  font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  font-family: var(--pfe-theme--font-family, "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  margin-bottom: 0;
+  padding-top: var(--pf-global--spacer--sm); // 8px
+  padding-right: var(--pf-global--spacer--md); // 16px
+  padding-bottom: var(--pf-global--spacer--sm); // 8px
+  padding-left: var(--pf-global--spacer--md); // 16px
+  font-size: 14px !important;
+  color: #656565;
+}
+
+.rhd-c-card__body {
+  font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  font-family: var(--pfe-theme--font-family, "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  padding-top: var(--pf-global--spacer--sm); // 8px
+  padding-right: var(--pf-global--spacer--md); // 16px
+  padding-bottom: var(--pf-global--spacer--sm); // 8px
+  padding-left: var(--pf-global--spacer--md); // 16px
+  font-size: 16px !important;
+}
+.rhd-m-text-truncate-3 {
+  max-height: 85px;
+  overflow: hidden;
+}
+.rhd-c-card__footer {
+  font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  font-family: var(--pfe-theme--font-family, "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: var(--pf-global--spacer--sm); // 8px
+  padding-right: var(--pf-global--spacer--md); // 16px
+  padding-bottom: var(--pf-global--spacer--sm); // 8px
+  padding-left: var(--pf-global--spacer--md); // 16px
+  font-size: 16px !important;
+}
+.rhd-m-list__comment {
+  font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  font-family: var(--pfe-theme--font-family, "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  margin-bottom: 0;
+  background-color: #fff;
+  font-size: 12px;
+}
+
+.rhd-c-card__footer--author {
+  font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  font-family: var(--pfe-theme--font-family, "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  background-color: #f9f9f9;
+  padding: var(--pf-global--spacer--xs) var(--pf-global--spacer--sm); // 4px 8px
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.rhd-c-card__footer--download {
+  font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  font-family: var(--pfe-theme--font-family, "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  font-weight: 700;
+  padding: var(--pf-global--spacer--sm) 0;
+  margin-bottom: 0;
+}
+
+.rhd-m-link {
+  color: var(--pfe-theme--color--ui-link);
+  text-decoration: none;
+  &:visited {
+    color: var(--pfe-theme--color--ui-link--visited);
+  }
+}

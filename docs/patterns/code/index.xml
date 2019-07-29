@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Code on RHD Front-end Code and Documentation</title>
-    <link>https://redhat-developer.github.io/rhd-frontend/patterns/code/</link>
+    <link>http://0.0.0.0:8080/patterns/code/</link>
     <description>Recent content in Code on RHD Front-end Code and Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Apr 2018 14:39:40 -0400</lastBuildDate>
     
-	<atom:link href="https://redhat-developer.github.io/rhd-frontend/patterns/code/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://0.0.0.0:8080/patterns/code/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>TS - TypeScript</title>
-      <link>https://redhat-developer.github.io/rhd-frontend/patterns/code/ts/</link>
+      <link>http://0.0.0.0:8080/patterns/code/ts/</link>
       <pubDate>Fri, 18 Aug 2017 15:15:45 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/code/ts/</guid>
+      <guid>http://0.0.0.0:8080/patterns/code/ts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTML - Hypertext Markup Language</title>
-      <link>https://redhat-developer.github.io/rhd-frontend/patterns/code/html/</link>
+      <link>http://0.0.0.0:8080/patterns/code/html/</link>
       <pubDate>Thu, 03 Aug 2017 15:06:55 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/code/html/</guid>
+      <guid>http://0.0.0.0:8080/patterns/code/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSS - Cascading Stylesheets</title>
-      <link>https://redhat-developer.github.io/rhd-frontend/patterns/code/css/</link>
+      <link>http://0.0.0.0:8080/patterns/code/css/</link>
       <pubDate>Thu, 03 Aug 2017 15:06:49 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/code/css/</guid>
+      <guid>http://0.0.0.0:8080/patterns/code/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JS - JavaScript</title>
-      <link>https://redhat-developer.github.io/rhd-frontend/patterns/code/js/</link>
+      <link>http://0.0.0.0:8080/patterns/code/js/</link>
       <pubDate>Thu, 03 Aug 2017 15:06:41 -0400</pubDate>
       
-      <guid>https://redhat-developer.github.io/rhd-frontend/patterns/code/js/</guid>
+      <guid>http://0.0.0.0:8080/patterns/code/js/</guid>
       <description></description>
     </item>
     
