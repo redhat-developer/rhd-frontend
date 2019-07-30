@@ -1,14 +1,13 @@
 ---
 title: "Home Page"
 date: 2018-04-17T14:39:40-04:00
-description: ""
+description: "A new Home page layout using PFE components"
 draft: true
 tags: ["page"]
 weight: 4
 scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd", "@patternfly/pfe-band/pfe-band.umd", "@rhd/dp-alert"]
 ---
 
-{{< code >}}
 <main role="main">
   <a id="main-content" tabindex="-1"></a>
   <div id="block-rhdp-content" data-block-plugin-id="system_main_block">
@@ -188,8 +187,8 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                   <a href="https://developers.redhat.com/blog/page/2/">More Articles</a>
                 </pfe-cta>
               </div>
-              <aside  class="pfe-m-3-col rhd-m-background-comments rhd-u-mt-2xl">
-                <div class="disqus">
+              <aside  class="pfe-m-3-col rhd-u-p-md rhd-u-mt-2xl">
+                <div class="disqus rhd-m-background-white rhd-u-p-md">
                   <h5 class="header">
                     <span class="fa fa-comment"></span> Latest Comments
                   </h5>
@@ -388,7 +387,7 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
                   </div>
                 </div>
               </section>
-              <section class="rhd-m-background-blue rhd-u-content-spacer">
+              <section class="rhd-e-section-blue rhd-u-content-spacer">
                 <div class="container">
                   <div class="pfe-l-bullseye">
                     <div class="pfe-l-bullseye__item pfe-l--text-align--center">
@@ -422,4 +421,3 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
     </article>
   </div>
 </main>
-{{</ code >}}
