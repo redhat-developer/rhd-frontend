@@ -1,11 +1,12 @@
 /*!
- * Font Awesome Pro 5.9.0 by @fontawesome - https://fontawesome.com
+ * Font Awesome Pro 5.10.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license (Commercial License)
  */
 .fa,
 .fas,
 .far,
 .fal,
+.fad,
 .fab {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -850,6 +851,12 @@ readers do not read off random characters that represent icons */
 
 .fa-border-bottom:before {
   content: "\f84d"; }
+
+.fa-border-center-h:before {
+  content: "\f89c"; }
+
+.fa-border-center-v:before {
+  content: "\f89d"; }
 
 .fa-border-inner:before {
   content: "\f84e"; }
@@ -1708,6 +1715,9 @@ readers do not read off random characters that represent icons */
 
 .fa-corn:before {
   content: "\f6c7"; }
+
+.fa-cotton-bureau:before {
+  content: "\f89e"; }
 
 .fa-couch:before {
   content: "\f4b8"; }

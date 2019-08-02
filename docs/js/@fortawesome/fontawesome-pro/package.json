@@ -1,32 +1,28 @@
 {
-  "_args": [
-    [
-      "@fortawesome/fontawesome-pro@5.9.0",
-      "/Users/ajolicoe/dev/rhdp/rhd-frontend"
-    ]
-  ],
-  "_from": "@fortawesome/fontawesome-pro@5.9.0",
-  "_id": "@fortawesome/fontawesome-pro@5.9.0",
+  "_from": "@fortawesome/fontawesome-pro@^5.9.0",
+  "_id": "@fortawesome/fontawesome-pro@5.10.0",
   "_inBundle": false,
-  "_integrity": "sha512-vb7MJ0S+4FWZajv+iWKikG3QzX0oIAI+tYtlMBVwAyUmddESL/w5/2LCzbc81Vs4esGz0gr+bIem6BeMkIg+Mw==",
+  "_integrity": "sha512-y0dJxyrlp00XIUquKmd1qECQe5bc2RO3LKpof2n4amIua5qjhLOESfyIQCRFfDBbGaFvlpU/h+9jOyVejvebZQ==",
   "_location": "/@fortawesome/fontawesome-pro",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "@fortawesome/fontawesome-pro@5.9.0",
+    "raw": "@fortawesome/fontawesome-pro@^5.9.0",
     "name": "@fortawesome/fontawesome-pro",
     "escapedName": "@fortawesome%2ffontawesome-pro",
     "scope": "@fortawesome",
-    "rawSpec": "5.9.0",
+    "rawSpec": "^5.9.0",
     "saveSpec": null,
-    "fetchSpec": "5.9.0"
+    "fetchSpec": "^5.9.0"
   },
   "_requiredBy": [
-    "/"
+    "#DEV:/",
+    "#USER"
   ],
-  "_resolved": "https://npm.fontawesome.com/@fortawesome/fontawesome-pro/-/fontawesome-pro-5.9.0.tgz",
-  "_spec": "5.9.0",
+  "_resolved": "https://npm.fontawesome.com/@fortawesome/fontawesome-pro/-/fontawesome-pro-5.10.0.tgz",
+  "_shasum": "f39183d75ed6b4f63fa790f13dc85401c15121db",
+  "_spec": "@fortawesome/fontawesome-pro@^5.9.0",
   "_where": "/Users/ajolicoe/dev/rhdp/rhd-frontend",
   "author": {
     "name": "Dave Gandy",
@@ -36,6 +32,7 @@
   "bugs": {
     "url": "http://github.com/FortAwesome/Font-Awesome/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Brian Talbot",
@@ -59,6 +56,7 @@
     }
   ],
   "dependencies": {},
+  "deprecated": false,
   "description": "The iconic font, CSS, and SVG framework",
   "engines": {
     "node": ">=6"
@@ -80,5 +78,5 @@
     "url": "git+https://github.com/FortAwesome/Font-Awesome.git"
   },
   "style": "css/fontawesome.css",
-  "version": "5.9.0"
+  "version": "5.10.0"
 }

@@ -106,98 +106,15 @@ Card – RHD Front-end Code and Documentation
 </aside>
 <section>
 
-<p><strong>Articles and Blogs</strong>
-<div class="pfe-l-grid">
-<pre class="pfe-m-10-col pfe-m-startat-2-col" style="max-height: 10em;">
-<code class="language-html">
-  &lt;div class=&#34;pfe-l-grid pfe-m-gutters&#34;&gt;
-    &lt;div class=&#34;pfe-m-2-col pfe-m-startat-2-col-on-md&#34;&gt;
-      &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card&#34;&gt;
-        &lt;div class=&#34;rhd-c-card__tag&#34;&gt;
-          &lt;span class=&#34;fa fa-newspaper&#34;&gt;&lt;/span&gt;
-          OPINION
-        &lt;/div&gt;
-        &lt;img src=&#34;https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&amp;dl=altitude-clouds-cold-417173.jpg&amp;fm=jpg&#34; class=&#34;rhd-c-card__image&#34;/&gt;
-        &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Title of the article that can go to two lines only and then must truncate after it passes two lines.&lt;/a&gt;&lt;/h3&gt;
-        &lt;p class=&#34;rhd-c-card__body rhd-m-text-truncate-3&#34;&gt;This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.&lt;/p&gt;
-        &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-          &lt;div class=&#34;rhd-c-card__footer--author&#34;&gt;
-            &lt;a href=&#34;#&#34; class=&#34;rhd-m-link&#34;&gt;Author Name&lt;/a&gt;
-          &lt;/div&gt;
-          &lt;div&gt;
-            &lt;span class=&#34;fa fa-comment&#34;&gt;&lt;/span&gt; 2
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/pfe-card&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;pfe-m-2-col&#34;&gt;
-      &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card&#34;&gt;
-        &lt;div class=&#34;rhd-c-card__tag&#34;&gt;
-          &lt;span class=&#34;fa fa-newspaper&#34;&gt;&lt;/span&gt;
-          QUICKSTART
-        &lt;/div&gt;
-        &lt;h3 class=&#34;rhd-c-card__title rhd-m-card-title__no-image&#34;&gt;&lt;a href=&#34;#&#34;&gt;Title of the article&lt;/a&gt;&lt;/h3&gt;
-        &lt;p class=&#34;rhd-c-card__body rhd-m-text-truncate-3&#34;&gt;This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.&lt;/p&gt;
-        &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-          &lt;div class=&#34;rhd-c-card__footer--author&#34;&gt;
-            &lt;a href=&#34;#&#34; class=&#34;rhd-m-link&#34;&gt;Author Name&lt;/a&gt;
-          &lt;/div&gt;
-          &lt;div&gt;
-            &lt;span class=&#34;fa fa-comment&#34;&gt;&lt;/span&gt; 2
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/pfe-card&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;pfe-m-2-col&#34;&gt;
-      &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card&#34;&gt;
-        &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Title of the article&lt;/a&gt;&lt;/h3&gt;
-        &lt;p class=&#34;rhd-c-card__body rhd-m-text-truncate-3&#34;&gt;This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.&lt;/p&gt;
-        &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-          &lt;div class=&#34;rhd-c-card__footer--author&#34;&gt;
-            &lt;a href=&#34;#&#34; class=&#34;rhd-m-link&#34;&gt;Author Name&lt;/a&gt;
-          &lt;/div&gt;
-          &lt;div&gt;
-            &lt;span class=&#34;fa fa-comment&#34;&gt;&lt;/span&gt; 2
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/pfe-card&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&#34;pfe-l-grid pfe-m-gutters&#34; style=&#34;margin-top: 40px;&#34;&gt;
-    &lt;div class=&#34;pfe-m-2-col pfe-m-startat-2-col-on-md&#34;&gt;
-      &lt;div class=&#34;rhd-l-grid__list&#34;&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Title of the article&lt;/a&gt;&lt;/h3&gt;
-          &lt;p class=&#34;rhd-c-card__body rhd-m-text-truncate-3&#34;&gt;This is the article description that can go to three lines and will be followed by a footer. &lt;div class=&#34;rhd-m-list__comment&#34;&gt;&lt;span class=&#34;fas fa-comment&#34;&gt;&lt;/span&gt; 2&lt;/div&gt;&lt;/p&gt;
-        &lt;/pfe-card&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Title of the article&lt;/a&gt;&lt;/h3&gt;
-          &lt;p class=&#34;rhd-c-card__body rhd-m-text-truncate-3&#34;&gt;This is the article description that can go to three lines and will be followed by a footer. &lt;div class=&#34;rhd-m-list__comment&#34;&gt;&lt;span class=&#34;fas fa-comment&#34;&gt;&lt;/span&gt; 2&lt;/div&gt;&lt;/p&gt;
-        &lt;/pfe-card&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;pfe-m-2-col&#34;&gt;
-      &lt;div class=&#34;rhd-l-grid__list&#34;&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Title of the article that can be two li...&lt;a/&gt; &lt;div class=&#34;rhd-m-list__comment&#34;&gt;&lt;span class=&#34;fas fa-comment&#34;&gt;&lt;/span&gt; 2&lt;/div&gt;&lt;/h3&gt;
-        &lt;/pfe-card&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Title of the article&lt;/a&gt; &lt;div class=&#34;rhd-m-list__comment&#34;&gt;&lt;span class=&#34;fas fa-comment&#34;&gt;&lt;/span&gt; 2&lt;/div&gt;&lt;/h3&gt;
-        &lt;/pfe-card&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-</code>
-</pre>
-</div>
-<div class="code-sample">
+<p><strong>Articles and Blogs</strong></p>
 
-  <div class="pfe-l-grid pfe-m-gutters">
+<p><div class="pfe-l-grid pfe-m-gutters">
     <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
+      <h3>Card with image</h3>
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <div class="rhd-c-card__tag">
           <span class="fa fa-newspaper"></span>
-          OPINION
+          Opinion
         </div>
         <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
         <h3 class="rhd-c-card__title"><a href="#">Title of the article that can go to two lines only and then must truncate after it passes two lines.</a></h3>
@@ -206,17 +123,18 @@ Card – RHD Front-end Code and Documentation
           <div class="rhd-c-card__footer--author">
             <a href="#" class="rhd-m-link">Author Name</a>
           </div>
-          <div>
+          <div class="rhd-c-comment">
             <span class="fa fa-comment"></span> 2
           </div>
         </div>
       </pfe-card>
     </div>
     <div class="pfe-m-2-col">
+      <h3>Card with flag</h3>
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <div class="rhd-c-card__tag">
           <span class="fa fa-newspaper"></span>
-          QUICKSTART
+          Quickstart
         </div>
         <h3 class="rhd-c-card__title rhd-m-card-title__no-image"><a href="#">Title of the article</a></h3>
         <p class="rhd-c-card__body rhd-m-text-truncate-3">This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
@@ -224,13 +142,14 @@ Card – RHD Front-end Code and Documentation
           <div class="rhd-c-card__footer--author">
             <a href="#" class="rhd-m-link">Author Name</a>
           </div>
-          <div>
+          <div class="rhd-c-comment">
             <span class="fa fa-comment"></span> 2
           </div>
         </div>
       </pfe-card>
     </div>
     <div class="pfe-m-2-col">
+      <h3>Card</h3>
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <h3 class="rhd-c-card__title"><a href="#">Title of the article</a></h3>
         <p class="rhd-c-card__body rhd-m-text-truncate-3">This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
@@ -238,15 +157,14 @@ Card – RHD Front-end Code and Documentation
           <div class="rhd-c-card__footer--author">
             <a href="#" class="rhd-m-link">Author Name</a>
           </div>
-          <div>
+          <div class="rhd-c-comment">
             <span class="fa fa-comment"></span> 2
           </div>
         </div>
       </pfe-card>
     </div>
-  </div>
-  <div class="pfe-l-grid pfe-m-gutters" style="margin-top: 40px;">
-    <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
+    <div class="pfe-m-2-col">
+      <h3>List with description</h3>
       <div class="rhd-l-grid__list">
         <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
           <h3 class="rhd-c-card__title"><a href="#">Title of the article</a></h3>
@@ -259,156 +177,26 @@ Card – RHD Front-end Code and Documentation
       </div>
     </div>
     <div class="pfe-m-2-col">
+      <h3>List</h3>
       <div class="rhd-l-grid__list">
         <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Title of the article that can be two li...<a/> <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div></h3>
+          <h3 class="rhd-c-card__title"><a href="#">Title of the article that can be two li&hellip;</a> <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div>
         </pfe-card>
         <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
           <h3 class="rhd-c-card__title"><a href="#">Title of the article</a> <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div></h3>
         </pfe-card>
       </div>
     </div>
-  </div>
-
-</div></p>
+  </div></p>
 
 <p><strong>Series</strong></p>
 
-<div class="pfe-l-grid">
-<pre class="pfe-m-10-col pfe-m-startat-2-col" style="max-height: 10em;">
-<code class="language-html">
-  &lt;div class=&#34;pfe-l-grid pfe-m-gutters&#34;&gt;
-    &lt;div class=&#34;pfe-m-2-col pfe-m-startat-2-col-on-md&#34;&gt;
-      &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card&#34;&gt;
-        &lt;div class=&#34;rhd-c-card__tag&#34;&gt;
-          &lt;span class=&#34;fa fa-newspaper&#34;&gt;&lt;/span&gt;
-          SERIES
-        &lt;/div&gt;
-        &lt;img src=&#34;https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?cs=srgb&amp;dl=adventure-calm-clouds-414171.jpg&amp;fm=jpg&#34; class=&#34;rhd-c-card__image&#34;/&gt;
-        &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Series title that can go to two lines only and then must truncate after it passes two lines.&lt;/a&gt;&lt;/h3&gt;
-        &lt;div class=&#34;rhd-c-card__subtitle&#34;&gt;3 articles&lt;/div&gt;
-        &lt;p class=&#34;rhd-c-card__body rhd-m-text-truncate-3&#34;&gt;This is the series description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.&lt;/p&gt;
-        &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-          &lt;div class=&#34;rhd-c-card__footer--author&#34;&gt;
-            &lt;a href=&#34;#&#34; class=&#34;rhd-m-link&#34;&gt;Author Name&lt;/a&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/pfe-card&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;pfe-m-2-col&#34;&gt;
-      &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card&#34;&gt;
-        &lt;div class=&#34;rhd-c-card__tag&#34;&gt;
-          &lt;span class=&#34;fa fa-newspaper&#34;&gt;&lt;/span&gt;
-          SERIES
-        &lt;/div&gt;
-        &lt;h3 class=&#34;rhd-c-card__title rhd-m-card-title__no-image&#34;&gt;&lt;a href=&#34;#&#34;&gt;Series title&lt;/a&gt;&lt;/h3&gt;
-        &lt;div class=&#34;rhd-c-card__subtitle&#34;&gt;3 articles&lt;/div&gt;
-        &lt;p class=&#34;rhd-c-card__body rhd-m-text-truncate-3&#34;&gt;This is the series description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.&lt;/p&gt;
-        &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-          &lt;div class=&#34;rhd-c-card__footer--author&#34;&gt;
-            &lt;a href=&#34;#&#34; class=&#34;rhd-m-link&#34;&gt;Author Name&lt;/a&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/pfe-card&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;pfe-m-2-col&#34;&gt;
-      &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card&#34;&gt;
-        &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Series title&lt;/a&gt;&lt;/h3&gt;
-        &lt;div class=&#34;rhd-c-card__subtitle&#34;&gt;3 articles&lt;/div&gt;
-        &lt;p class=&#34;rhd-c-card__body rhd-m-text-truncate-3&#34;&gt;This is the series description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.&lt;/p&gt;
-        &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-          &lt;div class=&#34;rhd-c-card__footer--author&#34;&gt;
-            &lt;a href=&#34;#&#34; class=&#34;rhd-m-link&#34;&gt;Author Name&lt;/a&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/pfe-card&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&#34;pfe-l-grid pfe-m-gutters&#34; style=&#34;margin-top: 40px;&#34;&gt;
-    &lt;div class=&#34;pfe-m-2-col pfe-m-startat-2-col-on-md&#34;&gt;
-      &lt;div class=&#34;rhd-l-grid__list&#34;&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Series title&lt;/a&gt;&lt;/h3&gt;
-          &lt;p class=&#34;rhd-c-card__body rhd-m-text-truncate-3&#34;&gt;This is the series description that can go to three lines and will be followed by a footer. &lt;div class=&#34;rhd-m-list__comment&#34;&gt;&lt;span class=&#34;fas fa-comment&#34;&gt;&lt;/span&gt; 2&lt;/div&gt;&lt;/p&gt;
-        &lt;/pfe-card&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Series title&lt;/a&gt;&lt;/h3&gt;
-          &lt;p class=&#34;rhd-c-card__body rhd-m-text-truncate-3&#34;&gt;This is the series description that can go to three lines and will be followed by a footer. &lt;div class=&#34;rhd-m-list__comment&#34;&gt;&lt;span class=&#34;fas fa-comment&#34;&gt;&lt;/span&gt; 2&lt;/div&gt;&lt;/p&gt;
-        &lt;/pfe-card&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;pfe-m-2-col&#34;&gt;
-      &lt;div class=&#34;rhd-l-grid__list&#34;&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Title of the series that can be two li...&lt;/a&gt; &lt;div class=&#34;rhd-m-list__comment&#34;&gt;&lt;span class=&#34;fas fa-comment&#34;&gt;&lt;/span&gt; 2&lt;/div&gt;&lt;/h3&gt;
-        &lt;/pfe-card&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Title of the series&lt;/a&gt; &lt;div class=&#34;rhd-m-list__comment&#34;&gt;&lt;span class=&#34;fas fa-comment&#34;&gt;&lt;/span&gt; 2&lt;/div&gt;&lt;/h3&gt;
-        &lt;/pfe-card&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&#34;pfe-l-grid pfe-m-gutters&#34; style=&#34;margin-top: 40px;&#34;&gt;
-    &lt;div class=&#34;pfe-m-2-col pfe-m-startat-2-col-on-md&#34;&gt;
-      &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card&#34;&gt;
-        &lt;div class=&#34;rhd-c-card__tag&#34;&gt;
-          &lt;span class=&#34;fa fa-newspaper&#34;&gt;&lt;/span&gt;
-          MORE IN THIS SERIES
-        &lt;/div&gt;
-        &lt;img src=&#34;https://images.pexels.com/photos/714258/pexels-photo-714258.jpeg?cs=srgb&amp;dl=adventure-alpine-alps-714258.jpg&amp;fm=jpg&#34; class=&#34;rhd-c-card__image&#34;/&gt;
-        &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;This is the article title&lt;/a&gt;&lt;/h3&gt;
-        &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-          &lt;div class=&#34;rhd-c-card__footer--author&#34;&gt;
-            Author Name
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;hr&gt;
-        &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;This is the article title&lt;/a&gt;&lt;/h3&gt;
-        &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-          &lt;div class=&#34;rhd-c-card__footer--author&#34;&gt;
-            Author Name
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;hr&gt;
-        &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;This is the article title&lt;/a&gt;&lt;/h3&gt;
-        &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-          &lt;div class=&#34;rhd-c-card__footer--author&#34;&gt;
-            Author Name
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/pfe-card&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;pfe-m-2-col&#34;&gt;
-      &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card&#34;&gt;
-        &lt;div class=&#34;rhd-c-card__tag&#34;&gt;
-          &lt;span class=&#34;fa fa-newspaper&#34;&gt;&lt;/span&gt;
-          MORE IN THIS SERIES
-        &lt;/div&gt;
-        &lt;img src=&#34;https://images.pexels.com/photos/462149/pexels-photo-462149.jpeg?cs=srgb&amp;dl=alpine-clouds-daylight-462149.jpg&amp;fm=jpg&#34; class=&#34;rhd-c-card__image&#34;/&gt;
-        &lt;div class=&#34;pf-u-display-flex pf-u-justify-content-center&#34;&gt;
-          &lt;div class=&#34;rhd-c-card__footer--author&#34;&gt;
-            Author Name
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;This is the article title&lt;/a&gt;&lt;/h3&gt;
-        &lt;hr&gt;
-        &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;This is the article title&lt;/a&gt;&lt;/h3&gt;
-        &lt;hr&gt;
-        &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;This is the article title&lt;/a&gt;&lt;/h3&gt;
-      &lt;/pfe-card&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-</code>
-</pre>
-</div>
-<div class="code-sample">
-
-  <div class="pfe-l-grid pfe-m-gutters">
+<p><div class="pfe-l-grid pfe-m-gutters">
     <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <div class="rhd-c-card__tag">
-          <span class="fa fa-newspaper"></span>
-          SERIES
+          <span class="far fa-clone"></span>
+          Series
         </div>
         <img src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?cs=srgb&dl=adventure-calm-clouds-414171.jpg&fm=jpg" class="rhd-c-card__image"/>
         <h3 class="rhd-c-card__title"><a href="#">Series title that can go to two lines only and then must truncate after it passes two lines.</a></h3>
@@ -424,8 +212,8 @@ Card – RHD Front-end Code and Documentation
     <div class="pfe-m-2-col">
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <div class="rhd-c-card__tag">
-          <span class="fa fa-newspaper"></span>
-          SERIES
+          <span class="far fa-clone"></span>
+          Series
         </div>
         <h3 class="rhd-c-card__title rhd-m-card-title__no-image"><a href="#">Series title</a></h3>
         <div class="rhd-c-card__subtitle">3 articles</div>
@@ -449,9 +237,7 @@ Card – RHD Front-end Code and Documentation
         </div>
       </pfe-card>
     </div>
-  </div>
-  <div class="pfe-l-grid pfe-m-gutters" style="margin-top: 40px;">
-    <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
+    <div class="pfe-m-2-col">
       <div class="rhd-l-grid__list">
         <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
           <h3 class="rhd-c-card__title"><a href="#">Series title</a></h3>
@@ -466,7 +252,7 @@ Card – RHD Front-end Code and Documentation
     <div class="pfe-m-2-col">
       <div class="rhd-l-grid__list">
         <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Title of the series that can be two li...</a> <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div></h3>
+          <h3 class="rhd-c-card__title"><a href="#">Title of the series that can be two li&hellip;</a> <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div></h3>
         </pfe-card>
         <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
           <h3 class="rhd-c-card__title"><a href="#">Title of the series</a> <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div></h3>
@@ -478,8 +264,8 @@ Card – RHD Front-end Code and Documentation
     <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <div class="rhd-c-card__tag">
-          <span class="fa fa-newspaper"></span>
-          MORE IN THIS SERIES
+          <span class="far fa-clone"></span>
+          More in this series
         </div>
         <img src="https://images.pexels.com/photos/714258/pexels-photo-714258.jpeg?cs=srgb&dl=adventure-alpine-alps-714258.jpg&fm=jpg" class="rhd-c-card__image"/>
         <h3 class="rhd-c-card__title"><a href="#">This is the article title</a></h3>
@@ -507,8 +293,8 @@ Card – RHD Front-end Code and Documentation
     <div class="pfe-m-2-col">
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <div class="rhd-c-card__tag">
-          <span class="fa fa-newspaper"></span>
-          MORE IN THIS SERIES
+          <span class="far fa-clone"></span>
+          More in this series
         </div>
         <img src="https://images.pexels.com/photos/462149/pexels-photo-462149.jpeg?cs=srgb&dl=alpine-clouds-daylight-462149.jpg&fm=jpg" class="rhd-c-card__image"/>
         <div class="pf-u-display-flex pf-u-justify-content-center">
@@ -523,103 +309,11 @@ Card – RHD Front-end Code and Documentation
         <h3 class="rhd-c-card__title"><a href="#">This is the article title</a></h3>
       </pfe-card>
     </div>
-  </div>
-
-</div>
+  </div></p>
 
 <h2 id="products"><strong>Products</strong></h2>
 
-<div class="pfe-l-grid">
-<pre class="pfe-m-10-col pfe-m-startat-2-col" style="max-height: 10em;">
-<code class="language-html">
-  // First three cards
-  &lt;div class=&#34;pfe-l-grid pfe-m-gutters&#34;&gt;
-    &lt;div class=&#34;pfe-m-2-col pfe-m-startat-2-col-on-md&#34;&gt;
-      &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card&#34;&gt;
-        &lt;img src=&#34;https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/fc954fdb2506fde810a74701776127e6.png?itok=y5At3nm0&#34; class=&#34;rhd-c-card__image&#34;/&gt;
-        &lt;p class=&#34;rhd-c-card__body&#34;&gt;A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.&lt;/p&gt;
-        &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-          &lt;div class=&#34;rhd-c-card__footer--download&#34;&gt;
-            &lt;a href=&#34;#&#34; class=&#34;rhd-m-link&#34;&gt;Download &lt;span class=&#34;fa fa-arrow-right&#34;&gt;&lt;/span&gt;&lt;/a&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/pfe-card&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;pfe-m-2-col&#34;&gt;
-      &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card&#34;&gt;
-        &lt;div class=&#34;rhd-c-card__tag&#34;&gt;
-          &lt;span class=&#34;fa fa-newspaper&#34;&gt;&lt;/span&gt;
-          TRY IT
-        &lt;/div&gt;
-        &lt;h3 class=&#34;rhd-c-card__title rhd-m-card-title__no-image&#34;&gt;Red Hat Enterprise Linux&lt;/h3&gt;
-        &lt;p class=&#34;rhd-c-card__body&#34;&gt;A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.&lt;/p&gt;
-        &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-          &lt;div class=&#34;rhd-c-card__footer--download&#34;&gt;
-            &lt;a href=&#34;#&#34; class=&#34;rhd-m-link&#34;&gt;Download &lt;span class=&#34;fa fa-arrow-right&#34;&gt;&lt;/span&gt;&lt;/a&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/pfe-card&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;pfe-m-2-col&#34;&gt;
-      &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card&#34;&gt;
-        &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;Red Hat Enterprise Linux&lt;/h3&gt;
-        &lt;p class=&#34;rhd-c-card__body&#34;&gt;A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.&lt;/p&gt;
-        &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-          &lt;div class=&#34;rhd-c-card__footer--download&#34;&gt;
-            &lt;a href=&#34;#&#34; class=&#34;rhd-m-link&#34;&gt;Download &lt;span class=&#34;fa fa-arrow-right&#34;&gt;&lt;/span&gt;&lt;/a&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/pfe-card&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  // Cards w/o borders
-  &lt;div class=&#34;pfe-l-grid pfe-m-gutters&#34; style=&#34;margin-top: 40px;&#34;&gt;
-    &lt;div class=&#34;pfe-m-2-col pfe-m-startat-2-col-on-md&#34;&gt;
-      &lt;div class=&#34;rhd-l-grid__list&#34;&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Red Hat Enterprise Linux&lt;/a&gt;&lt;/h3&gt;
-          &lt;p class=&#34;rhd-c-card__body&#34;&gt;A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.&lt;/p&gt;
-          &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-            &lt;div class=&#34;rhd-c-card__footer--download&#34;&gt;
-              &lt;a href=&#34;#&#34; class=&#34;rhd-m-link&#34;&gt;Download &lt;span class=&#34;fa fa-arrow-right&#34;&gt;&lt;/span&gt;&lt;/a&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/pfe-card&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Red Hat Enterprise Linux&lt;/a&gt;&lt;/h3&gt;
-          &lt;p class=&#34;rhd-c-card__body&#34;&gt;A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.&lt;/p&gt;
-          &lt;div class=&#34;rhd-c-card__footer&#34;&gt;
-            &lt;div class=&#34;rhd-c-card__footer--download&#34;&gt;
-              &lt;a href=&#34;#&#34; class=&#34;rhd-m-link&#34;&gt;Download &lt;span class=&#34;fa fa-arrow-right&#34;&gt;&lt;/span&gt;&lt;/a&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/pfe-card&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;pfe-m-2-col&#34;&gt;
-      &lt;div class=&#34;rhd-l-grid__list&#34;&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Red Hat Enterprise Linux&lt;/a&gt;&lt;/h3&gt;
-        &lt;/pfe-card&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Red Hat Enterprise Linux&lt;/a&gt;&lt;/h3&gt;
-        &lt;/pfe-card&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Red Hat Enterprise Linux&lt;/a&gt;&lt;/h3&gt;
-        &lt;/pfe-card&gt;
-        &lt;pfe-card color=&#34;lightest&#34; size-&#34;small&#34; class=&#34;rhd-c-card rhd-m-card__no-border&#34;&gt;
-          &lt;h3 class=&#34;rhd-c-card__title&#34;&gt;&lt;a href=&#34;#&#34;&gt;Red Hat Enterprise Linux&lt;/a&gt;&lt;/h3&gt;
-        &lt;/pfe-card&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-</code>
-</pre>
-</div>
-<div class="code-sample">
-
-  // First three cards
-  <div class="pfe-l-grid pfe-m-gutters">
+<p><div class="pfe-l-grid pfe-m-gutters">
     <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/fc954fdb2506fde810a74701776127e6.png?itok=y5At3nm0" class="rhd-c-card__image"/>
@@ -634,8 +328,8 @@ Card – RHD Front-end Code and Documentation
     <div class="pfe-m-2-col">
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <div class="rhd-c-card__tag">
-          <span class="fa fa-newspaper"></span>
-          TRY IT
+          <span class="fa fa-paper-plane"></span>
+          Try it
         </div>
         <h3 class="rhd-c-card__title rhd-m-card-title__no-image">Red Hat Enterprise Linux</h3>
         <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
@@ -657,10 +351,7 @@ Card – RHD Front-end Code and Documentation
         </div>
       </pfe-card>
     </div>
-  </div>
-  // Cards w/o borders
-  <div class="pfe-l-grid pfe-m-gutters" style="margin-top: 40px;">
-    <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
+    <div class="pfe-m-2-col">
       <div class="rhd-l-grid__list">
         <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
           <h3 class="rhd-c-card__title"><a href="#">Red Hat Enterprise Linux</a></h3>
@@ -698,35 +389,196 @@ Card – RHD Front-end Code and Documentation
         </pfe-card>
       </div>
     </div>
-  </div>
-
-</div>
+  </div></p>
 
 <p><strong>Katacoda Courses</strong></p>
 
-<div class="pfe-l-grid">
-<pre class="pfe-m-10-col pfe-m-startat-2-col" style="max-height: 10em;">
-<code class="language-html">
-</code>
-</pre>
-</div>
-<div class="code-sample">
-
-
-</div>
+<p><div class="pfe-l-grid pfe-m-gutters">
+    <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <span class="fa fa-terminal"></span>
+          Istio service mesh workshop
+        </div>
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
+        <h3 class="rhd-c-card__title">
+          Course title
+        </h3>
+        <div class="rhd-c-card__subtitle">3 articles</div>
+        <p class="rhd-c-card__body rhd-m-text-truncate-3">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
+        <div class="rhd-c-card__footer">
+          <div class="rhd-c-card__subtitle pf-u-p-0">
+            370 minutes
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-2-col">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <span class="fa fa-terminal"></span>
+          Istio service mesh workshop
+        </div>
+        <h3 class="rhd-c-card__title rhd-m-card-title__no-image">
+          Course title
+        </h3>
+        <div class="rhd-c-card__subtitle">3 articles</div>
+        <p class="rhd-c-card__body rhd-m-text-truncate-3">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
+        <div class="rhd-c-card__footer">
+          <div class="rhd-c-card__subtitle pf-u-p-0">
+            370 minutes
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-2-col">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <h3 class="rhd-c-card__title">
+          Istio service mesh workshop
+        </h3>
+        <div class="rhd-c-card__subtitle">3 articles</div>
+        <p class="rhd-c-card__body rhd-m-text-truncate-3">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
+        <div class="rhd-c-card__footer">
+          <div class="rhd-c-card__subtitle pf-u-p-0">
+            370 minutes
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-2-col">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
+          <h3 class="rhd-c-card__title"><a href="#">Istio service mesh workshop</a></h3>
+          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+          <p class="rhd-c-card__body">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
+          <h3 class="rhd-c-card__title"><a href="#">Istio service mesh workshop</a></h3>
+          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+          <p class="rhd-c-card__body">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-2-col">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
+          <h3 class="rhd-c-card__title"><a href="#">Istio service mesh workshop</a></h3>
+          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
+          <h3 class="rhd-c-card__title"><a href="#">Istio service mesh workshop</a></h3>
+          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
+          <h3 class="rhd-c-card__title"><a href="#">Istio service mesh workshop</a></h3>
+          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
+          <h3 class="rhd-c-card__title"><a href="#">Istio service mesh workshop</a></h3>
+          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+        </pfe-card>
+      </div>
+    </div>
+  </div></p>
 
 <p><strong>Katacoda Lessons</strong></p>
 
-<div class="pfe-l-grid">
-<pre class="pfe-m-10-col pfe-m-startat-2-col" style="max-height: 10em;">
-<code class="language-html">
-</code>
-</pre>
-</div>
-<div class="code-sample">
-
-
-</div>
+<div class="pfe-l-grid pfe-m-gutters">
+    <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <span class="fa fa-terminal"></span>
+          Lesson
+        </div>
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
+        <h3 class="rhd-c-card__title">
+          Getting started with OpenShift
+        </h3>
+        <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+        <p class="rhd-c-card__body rhd-m-text-truncate-3">Use the OpenShift Container Platform to build and deploy applications using both...</p>
+        <div class="rhd-c-card__subtitle">
+          Published 24 Apr 2019 by Graham Dumpleton
+        </div>
+        <div class="rhd-c-card__footer">
+          <div class="rhd-c-card__footer--download">
+            <a href="#" class="rhd-m-link">Start <span class="fa fa-arrow-right"></span></a>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-2-col">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <span class="fa fa-terminal"></span>
+          Lesson
+        </div>
+        <h3 class="rhd-c-card__title rhd-m-card-title__no-image">
+          Getting started with OpenShift
+        </h3>
+        <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+        <p class="rhd-c-card__body rhd-m-text-truncate-3">Use the OpenShift Container Platform to build and deploy applications using both...</p>
+        <div class="rhd-c-card__subtitle">
+          Published 24 Apr 2019 by Graham Dumpleton
+        </div>
+        <div class="rhd-c-card__footer">
+          <div class="rhd-c-card__footer--download">
+            <a href="#" class="rhd-m-link">Start <span class="fa fa-arrow-right"></span></a>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-2-col">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <h3 class="rhd-c-card__title">
+          Getting started with OpenShift
+        </h3>
+        <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+        <p class="rhd-c-card__body rhd-m-text-truncate-3">Use the OpenShift Container Platform to build and deploy applications using both...</p>
+        <div class="rhd-c-card__subtitle">
+          Published 24 Apr 2019 by Graham Dumpleton
+        </div>
+        <div class="rhd-c-card__footer">
+          <div class="rhd-c-card__footer--download">
+            <a href="#" class="rhd-m-link">Start <span class="fa fa-arrow-right"></span></a>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-2-col">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
+          <h3 class="rhd-c-card__title"><a href="#">Getting started with OpenShift</a></h3>
+          <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+          <p class="rhd-c-card__body">Use the OpenShift Container Platform to build and deploy applications using both containers and orchestration.</p>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
+          <h3 class="rhd-c-card__title"><a href="#">Getting started with OpenShift</a></h3>
+          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+          <p class="rhd-c-card__body">Use the OpenShift Container Platform to build and deploy applications using both containers and orchestration.</p>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-2-col">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
+          <h3 class="rhd-c-card__title"><a href="#">Getting started with OpenShift</a></h3>
+          <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
+          <h3 class="rhd-c-card__title"><a href="#">Getting started with OpenShift</a></h3>
+          <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
+          <h3 class="rhd-c-card__title"><a href="#">Getting started with OpenShift</a></h3>
+          <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
+          <h3 class="rhd-c-card__title"><a href="#">Getting started with OpenShift</a></h3>
+          <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+        </pfe-card>
+      </div>
+    </div>
+  </div>
 </section>
 
               </div>

@@ -53,7 +53,9 @@
       <pubDate>Sun, 22 Jul 2018 11:15:00 -0400</pubDate>
       
       <guid>https://redhat-developer.github.io/rhd-frontend/components/cards/</guid>
-      <description>Articles and Blogs &amp;lt;div class=&amp;#34;pfe-l-grid pfe-m-gutters&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;pfe-m-2-col pfe-m-startat-2-col-on-md&amp;#34;&amp;gt; &amp;lt;pfe-card color=&amp;#34;lightest&amp;#34; size-&amp;#34;small&amp;#34; class=&amp;#34;rhd-c-card&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;rhd-c-card__tag&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;fa fa-newspaper&amp;#34;&amp;gt;&amp;lt;/span&amp;gt; OPINION &amp;lt;/div&amp;gt; &amp;lt;img src=&amp;#34;https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&amp;amp;dl=altitude-clouds-cold-417173.jpg&amp;amp;fm=jpg&amp;#34; class=&amp;#34;rhd-c-card__image&amp;#34;/&amp;gt; &amp;lt;h3 class=&amp;#34;rhd-c-card__title&amp;#34;&amp;gt;&amp;lt;a href=&amp;#34;#&amp;#34;&amp;gt;Title of the article that can go to two lines only and then must truncate after it passes two lines.&amp;lt;/a&amp;gt;&amp;lt;/h3&amp;gt; &amp;lt;p class=&amp;#34;rhd-c-card__body rhd-m-text-truncate-3&amp;#34;&amp;gt;This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</description>
+      <description>Articles and Blogs
+Card with image  Opinion  Title of the article that can go to two lines only and then must truncate after it passes two lines. This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.
+Author Name   2     Card with flag  Quickstart  Title of the article This is the article description that can go to three lines and will be followed by a footer.</description>
     </item>
     
     <item>
