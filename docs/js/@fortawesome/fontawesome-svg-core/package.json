@@ -2,7 +2,7 @@
   "_args": [
     [
       "@fortawesome/fontawesome-svg-core@1.2.18",
-      "/home/ldary/Projects/rh/rhd-frontend"
+      "/Users/ajolicoe/dev/rhdp/rhd-frontend"
     ]
   ],
   "_development": true,
@@ -28,7 +28,7 @@
   ],
   "_resolved": "https://npm.fontawesome.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.18.tgz",
   "_spec": "1.2.18",
-  "_where": "/home/ldary/Projects/rh/rhd-frontend",
+  "_where": "/Users/ajolicoe/dev/rhdp/rhd-frontend",
   "author": {
     "name": "Dave Gandy",
     "email": "dave@fontawesome.com",

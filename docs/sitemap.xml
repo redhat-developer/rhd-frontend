@@ -23,6 +23,11 @@
   </url>
   
   <url>
+    <loc>https://redhat-developer.github.io/rhd-frontend/components/cards/</loc>
+    <lastmod>2018-07-22T11:15:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://redhat-developer.github.io/rhd-frontend/components/alerts/</loc>
     <lastmod>2018-04-17T14:39:40-04:00</lastmod>
   </url>

@@ -39,6 +39,17 @@
     </item>
     
     <item>
+      <title>Card</title>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/cards/</link>
+      <pubDate>Sun, 22 Jul 2018 11:15:00 -0400</pubDate>
+      
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/cards/</guid>
+      <description>Articles and Blogs
+Card with image  Opinion  Title of the article that can go to two lines only and then must truncate after it passes two lines. This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.
+Author Name   2     Card with flag  Quickstart  Title of the article This is the article description that can go to three lines and will be followed by a footer.</description>
+    </item>
+    
+    <item>
       <title>Alerts</title>
       <link>https://redhat-developer.github.io/rhd-frontend/components/alerts/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>

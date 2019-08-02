@@ -1,34 +1,34 @@
 {
   "_args": [
     [
-      "@patternfly/pfe-tabs@1.0.0-prerelease.16",
-      "/home/ldary/Projects/rh/rhd-frontend"
+      "@patternfly/pfe-tabs@1.0.0-prerelease.17",
+      "/Users/ajolicoe/dev/rhdp/rhd-frontend"
     ]
   ],
   "_development": true,
-  "_from": "@patternfly/pfe-tabs@1.0.0-prerelease.16",
-  "_id": "@patternfly/pfe-tabs@1.0.0-prerelease.16",
+  "_from": "@patternfly/pfe-tabs@1.0.0-prerelease.17",
+  "_id": "@patternfly/pfe-tabs@1.0.0-prerelease.17",
   "_inBundle": false,
-  "_integrity": "sha512-st4+Jolo8twHnowqj3myEm9jhj7nYP5hwWEZpMmMC/2AIgOGdWiNciAbxJjXmV0y3SRBXKdOmG3lXG1wxT8hEw==",
+  "_integrity": "sha512-bjhiBXow3gIOi/ZnPq6uWdLpiQH80WcYYQ/UbE0XMZzLtnubzvy0GNioR4NQOLV1hWs4aOHL+ypjhRzH9/fJeA==",
   "_location": "/@patternfly/pfe-tabs",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "@patternfly/pfe-tabs@1.0.0-prerelease.16",
+    "raw": "@patternfly/pfe-tabs@1.0.0-prerelease.17",
     "name": "@patternfly/pfe-tabs",
     "escapedName": "@patternfly%2fpfe-tabs",
     "scope": "@patternfly",
-    "rawSpec": "1.0.0-prerelease.16",
+    "rawSpec": "1.0.0-prerelease.17",
     "saveSpec": null,
-    "fetchSpec": "1.0.0-prerelease.16"
+    "fetchSpec": "1.0.0-prerelease.17"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
-  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-tabs/-/pfe-tabs-1.0.0-prerelease.16.tgz",
-  "_spec": "1.0.0-prerelease.16",
-  "_where": "/home/ldary/Projects/rh/rhd-frontend",
+  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-tabs/-/pfe-tabs-1.0.0-prerelease.17.tgz",
+  "_spec": "1.0.0-prerelease.17",
+  "_where": "/Users/ajolicoe/dev/rhdp/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-elements/issues"
   },
@@ -43,12 +43,12 @@
     }
   ],
   "dependencies": {
-    "@patternfly/pfe-sass": "^1.0.0-prerelease.16",
-    "@patternfly/pfelement": "^1.0.0-prerelease.16"
+    "@patternfly/pfe-sass": "^1.0.0-prerelease.17",
+    "@patternfly/pfelement": "^1.0.0-prerelease.17"
   },
   "description": "Tabs for PatternFly Elements",
   "generator-pfelement-version": "0.5.4",
-  "gitHead": "6ee18e0fe929f7d8161b22114882716b8bcdeff4",
+  "gitHead": "4382b491b97b4b6b154a35d2c9db47c065eff081",
   "homepage": "https://github.com/patternfly/patternfly-elements#readme",
   "keywords": [
     "web-components",
@@ -74,5 +74,5 @@
     "dev": "../../node_modules/.bin/gulp dev",
     "test": "../../node_modules/.bin/wct --configFile ../../wct.conf.json elements/pfe-tabs/test/"
   },
-  "version": "1.0.0-prerelease.16"
+  "version": "1.0.0-prerelease.17"
 }

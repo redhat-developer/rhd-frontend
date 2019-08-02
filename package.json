@@ -36,18 +36,16 @@
   "author": "<ldary@redhat.com>",
   "license": "MIT",
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.18",
-    "@fortawesome/pro-light-svg-icons": "^5.8.1",
-    "@fortawesome/pro-regular-svg-icons": "^5.8.1",
-    "@fortawesome/pro-solid-svg-icons": "^5.8.2",
-    "@patternfly/pfe-band": "^1.0.0-prerelease.16",
-    "@patternfly/pfe-card": "^1.0.0-prerelease.16",
-    "@patternfly/pfe-cta": "^1.0.0-prerelease.16",
-    "@patternfly/pfe-datetime": "^1.0.0-prerelease.16",
-    "@patternfly/pfe-layouts": "^1.0.0-prerelease.16",
-    "@patternfly/pfe-sass": "^1.0.0-prerelease.16",
-    "@patternfly/pfe-tabs": "^1.0.0-prerelease.16",
-    "@patternfly/pfelement": "^1.0.0-prerelease.16",
+    "@fortawesome/fontawesome-free": "5.10.0",
+    "@patternfly/patternfly": "2.21.5",
+    "@patternfly/pfe-band": "^1.0.0-prerelease.17",
+    "@patternfly/pfe-card": "^1.0.0-prerelease.17",
+    "@patternfly/pfe-cta": "^1.0.0-prerelease.17",
+    "@patternfly/pfe-datetime": "^1.0.0-prerelease.17",
+    "@patternfly/pfe-layouts": "^1.0.0-prerelease.17",
+    "@patternfly/pfe-sass": "^1.0.0-prerelease.17",
+    "@patternfly/pfe-tabs": "^1.0.0-prerelease.17",
+    "@patternfly/pfelement": "^1.0.0-prerelease.17",
     "browser-sync": "^2.26.5",
     "cli-foreachfile": "^1.0.5",
     "copyfiles": "^2.1.0",
@@ -76,5 +74,6 @@
     "typescript": "^3.4.5",
     "typescript-json-schema": "^0.36.0",
     "uglifyjs-folder": "^1.5.1"
-  }
+  },
+  "dependencies": {}
 }
