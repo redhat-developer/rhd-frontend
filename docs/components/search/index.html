@@ -10,8 +10,8 @@ Search – RHD Front-end Code and Documentation
     
     
     <link rel="stylesheet" href="https://redhat-developer.github.io/rhd-frontend/css/advanced-theme.css">
-    <link rel="stylesheet" href="https://redhat-developer.github.io/rhd-frontend/css/pfe-layouts.min.css">
-    <link rel="stylesheet" href="https://redhat-developer.github.io/rhd-frontend/css/rhd.min.css">
+    <link rel="stylesheet" href="https://redhat-developer.github.io/rhd-frontend/css/pfe-layouts.css">
+    <link rel="stylesheet" href="https://redhat-developer.github.io/rhd-frontend/css/rhd.css">
     
     <link rel="stylesheet" href="https://redhat-developer.github.io/rhd-frontend/css/prism-ghcolors.css">
     <script src="https://redhat-developer.github.io/rhd-frontend/js/base.js"></script>
@@ -110,19 +110,19 @@ Search – RHD Front-end Code and Documentation
 &lt;dp-search-filters title=&#34;Filter By&#34; slot=&#34;filters&#34;&gt;
     &lt;dp-search-filter-group name=&#34;CONTENT TYPE&#34; name=&#34;type&#34;&gt;
         &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;topic_page&#34; value=&#34;topic_page&#34; name=&#34;Topic&#34;&gt;Topic&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;article&#34; value=&#34;article&#34; name=&#34;Article&#34;&gt;Article&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;article,webpage,coding_resource,page&#34; value=&#34;article&#34; name=&#34;Article&#34;&gt;Article&lt;/dp-search-filter-item&gt;
         &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;product&#34; value=&#34;product&#34; name=&#34;Product&#34;&gt;Product&lt;/dp-search-filter-item&gt;
         &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;books&#34; value=&#34;books&#34; name=&#34;Books&#34;&gt;Books&lt;/dp-search-filter-item&gt;
         &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;video_resource&#34; value=&#34;video_resource&#34; name=&#34;Video&#34;&gt;Video&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;katacoda_course&#34; value=&#34;katacoda_course&#34; name=&#34;Katacoda Course&#34;&gt;Katacoda Course&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;katacoda_individual_lesson&#34; value=&#34;katacoda_individual_lesson&#34; name=&#34;Katacoda Individual Lesson&#34;&gt;Katacoda Individual Lesson&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;cheat_sheet&#34; value=&#34;cheat_sheet&#34; name=&#34;Cheat Sheet&#34;&gt;Cheat Sheet&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;coding_resource&#34; value=&#34;coding_resource&#34; name=&#34;Coding Resource&#34;&gt;Coding Resource&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;webpage&#34; value=&#34;webpage&#34; name=&#34;Webpage&#34;&gt;Webpage&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;katacoda_course&#34; value=&#34;katacoda_course,katacoda_individual_lesson&#34; name=&#34;Katacoda Course&#34;&gt;Katacoda Course&lt;/dp-search-filter-item&gt;
+        &lt;!-- &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;katacoda_individual_lesson&#34; value=&#34;katacoda_individual_lesson&#34; name=&#34;Katacoda Individual Lesson&#34;&gt;Katacoda Individual Lesson&lt;/dp-search-filter-item&gt; --&gt;
+        &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;cheat_sheet&#34; value=&#34;cheat_sheet&#34; name=&#34;Cheat Sheet&#34;&gt;Cheat Sheet&lt;/dp-search-filter-item&gt;
+        &lt;!-- &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;coding_resource&#34; value=&#34;coding_resource&#34; name=&#34;Coding Resource&#34;&gt;Coding Resource&lt;/dp-search-filter-item&gt; --&gt;
+        &lt;!-- &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;webpage&#34; value=&#34;webpage&#34; name=&#34;Webpage&#34;&gt;Webpage&lt;/dp-search-filter-item&gt; --&gt;
         &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;assembly_page&#34; value=&#34;assembly_page&#34; name=&#34;New Assembly Page&#34;&gt;New Assembly Page&lt;/dp-search-filter-item&gt;
         &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;author&#34; value=&#34;author&#34; name=&#34;Author&#34;&gt;Author&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;learning_path&#34; value=&#34;learning_path&#34; name=&#34;Learning Path&#34;&gt;Learning Path&lt;/dp-search-filter-item&gt;
-        &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;page&#34; value=&#34;page&#34; name=&#34;Old Drupal Page&#34;&gt;Old Drupal Page&lt;/dp-search-filter-item&gt;
+        &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;learning_path&#34; value=&#34;learning_path&#34; name=&#34;Learning Guides&#34;&gt;Learning Guides&lt;/dp-search-filter-item&gt;
+        &lt;!-- &lt;dp-search-filter-item slot=&#34;secondary&#34; group=&#34;type&#34; key=&#34;page&#34; value=&#34;page&#34; name=&#34;Old Drupal Page&#34;&gt;Old Drupal Page&lt;/dp-search-filter-item&gt; --&gt;
         &lt;!-- &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;promotion_card&#34; value=&#34;promotion_card&#34; name=&#34;promotion_card&#34;&gt;Promotion_card&lt;/dp-search-filter-item&gt; --&gt;
         &lt;!-- &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;promotion_page&#34; value=&#34;promotion_page&#34; name=&#34;promotion_page&#34;&gt;promotion_page&lt;/dp-search-filter-item&gt; --&gt;
         &lt;!-- &lt;dp-search-filter-item group=&#34;type&#34; key=&#34;rhd_microsite&#34; value=&#34;rhd_microsite&#34; name=&#34;rhd_microsite&#34;&gt;rhd_microsite&lt;/dp-search-filter-item&gt; --&gt;
@@ -241,19 +241,19 @@ Search – RHD Front-end Code and Documentation
 <dp-search-filters title="Filter By" slot="filters">
     <dp-search-filter-group name="CONTENT TYPE" name="type">
         <dp-search-filter-item group="type" key="topic_page" value="topic_page" name="Topic">Topic</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="article" value="article" name="Article">Article</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="article,webpage,coding_resource,page" value="article" name="Article">Article</dp-search-filter-item>
         <dp-search-filter-item group="type" key="product" value="product" name="Product">Product</dp-search-filter-item>
         <dp-search-filter-item group="type" key="books" value="books" name="Books">Books</dp-search-filter-item>
         <dp-search-filter-item group="type" key="video_resource" value="video_resource" name="Video">Video</dp-search-filter-item>
-        <dp-search-filter-item slot="secondary" group="type" key="katacoda_course" value="katacoda_course" name="Katacoda Course">Katacoda Course</dp-search-filter-item>
-        <dp-search-filter-item slot="secondary" group="type" key="katacoda_individual_lesson" value="katacoda_individual_lesson" name="Katacoda Individual Lesson">Katacoda Individual Lesson</dp-search-filter-item>
-        <dp-search-filter-item slot="secondary" group="type" key="cheat_sheet" value="cheat_sheet" name="Cheat Sheet">Cheat Sheet</dp-search-filter-item>
-        <dp-search-filter-item slot="secondary" group="type" key="coding_resource" value="coding_resource" name="Coding Resource">Coding Resource</dp-search-filter-item>
-        <dp-search-filter-item slot="secondary" group="type" key="webpage" value="webpage" name="Webpage">Webpage</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="katacoda_course" value="katacoda_course,katacoda_individual_lesson" name="Katacoda Course">Katacoda Course</dp-search-filter-item>
+        <!-- <dp-search-filter-item slot="secondary" group="type" key="katacoda_individual_lesson" value="katacoda_individual_lesson" name="Katacoda Individual Lesson">Katacoda Individual Lesson</dp-search-filter-item> -->
+        <dp-search-filter-item group="type" key="cheat_sheet" value="cheat_sheet" name="Cheat Sheet">Cheat Sheet</dp-search-filter-item>
+        <!-- <dp-search-filter-item slot="secondary" group="type" key="coding_resource" value="coding_resource" name="Coding Resource">Coding Resource</dp-search-filter-item> -->
+        <!-- <dp-search-filter-item slot="secondary" group="type" key="webpage" value="webpage" name="Webpage">Webpage</dp-search-filter-item> -->
         <dp-search-filter-item slot="secondary" group="type" key="assembly_page" value="assembly_page" name="New Assembly Page">New Assembly Page</dp-search-filter-item>
         <dp-search-filter-item slot="secondary" group="type" key="author" value="author" name="Author">Author</dp-search-filter-item>
-        <dp-search-filter-item slot="secondary" group="type" key="learning_path" value="learning_path" name="Learning Path">Learning Path</dp-search-filter-item>
-        <dp-search-filter-item slot="secondary" group="type" key="page" value="page" name="Old Drupal Page">Old Drupal Page</dp-search-filter-item>
+        <dp-search-filter-item slot="secondary" group="type" key="learning_path" value="learning_path" name="Learning Guides">Learning Guides</dp-search-filter-item>
+        <!-- <dp-search-filter-item slot="secondary" group="type" key="page" value="page" name="Old Drupal Page">Old Drupal Page</dp-search-filter-item> -->
         <!-- <dp-search-filter-item group="type" key="promotion_card" value="promotion_card" name="promotion_card">Promotion_card</dp-search-filter-item> -->
         <!-- <dp-search-filter-item group="type" key="promotion_page" value="promotion_page" name="promotion_page">promotion_page</dp-search-filter-item> -->
         <!-- <dp-search-filter-item group="type" key="rhd_microsite" value="rhd_microsite" name="rhd_microsite">rhd_microsite</dp-search-filter-item> -->

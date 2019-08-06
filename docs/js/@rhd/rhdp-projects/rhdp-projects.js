@@ -15,9 +15,20 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
 };
-define(["require", "exports", "./rhdp-project-query", "./rhdp-project-url", "./rhdp-project-item"], function (require, exports, rhdp_project_query_1, rhdp_project_url_1, rhdp_project_item_1) {
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports", "./rhdp-project-query", "./rhdp-project-url", "./rhdp-project-item"], factory);
+    }
+})(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    var rhdp_project_query_1 = require("./rhdp-project-query");
+    var rhdp_project_url_1 = require("./rhdp-project-url");
+    var rhdp_project_item_1 = require("./rhdp-project-item");
     var RHDPProjects = (function (_super) {
         __extends(RHDPProjects, _super);
         function RHDPProjects() {

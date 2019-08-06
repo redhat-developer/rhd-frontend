@@ -14,12 +14,20 @@ var __extends = (this && this.__extends) || (function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-define(["require", "exports", "@patternfly/pfelement/pfelement.umd", "./dp-search-url", "./dp-search-modal-filters"], function (require, exports, pfelement_umd_1, dp_search_url_1, dp_search_modal_filters_1) {
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports", "@patternfly/pfelement/pfelement.umd", "./dp-search-url", "./dp-search-modal-filters"], factory);
+    }
+})(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    pfelement_umd_1 = __importDefault(pfelement_umd_1);
-    dp_search_url_1 = __importDefault(dp_search_url_1);
-    dp_search_modal_filters_1 = __importDefault(dp_search_modal_filters_1);
+    var pfelement_umd_1 = __importDefault(require("@patternfly/pfelement/pfelement.umd"));
+    var dp_search_url_1 = __importDefault(require("./dp-search-url"));
+    var dp_search_modal_filters_1 = __importDefault(require("./dp-search-modal-filters"));
     var DPSearchApp = (function (_super) {
         __extends(DPSearchApp, _super);
         function DPSearchApp() {
