@@ -1,33 +1,27 @@
 {
-  "_args": [
-    [
-      "@fortawesome/pro-solid-svg-icons@5.8.2",
-      "/home/ldary/Projects/rh/rhd-frontend"
-    ]
-  ],
-  "_development": true,
-  "_from": "@fortawesome/pro-solid-svg-icons@5.8.2",
-  "_id": "@fortawesome/pro-solid-svg-icons@5.8.2",
+  "_from": "@fortawesome/pro-solid-svg-icons@^5.8.2",
+  "_id": "@fortawesome/pro-solid-svg-icons@5.10.1",
   "_inBundle": false,
-  "_integrity": "sha512-raU7P+5OJ4MXJmsnssFfoT8SCiwS68ce8HocIin2qS7/0NEV0ETenLOIGPD5+5CKCrM/dLnf0S7fdAWlrlYYLw==",
+  "_integrity": "sha512-MdHMBSE40zKMHSPEwmU2nSwZRQUO1an9f+mENHqFi6apUS4q4WwrxHABsmOfk/2e+GSIEJchOVMiljqpUqbbUQ==",
   "_location": "/@fortawesome/pro-solid-svg-icons",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "@fortawesome/pro-solid-svg-icons@5.8.2",
+    "raw": "@fortawesome/pro-solid-svg-icons@^5.8.2",
     "name": "@fortawesome/pro-solid-svg-icons",
     "escapedName": "@fortawesome%2fpro-solid-svg-icons",
     "scope": "@fortawesome",
-    "rawSpec": "5.8.2",
+    "rawSpec": "^5.8.2",
     "saveSpec": null,
-    "fetchSpec": "5.8.2"
+    "fetchSpec": "^5.8.2"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
-  "_resolved": "https://npm.fontawesome.com/@fortawesome/pro-solid-svg-icons/-/pro-solid-svg-icons-5.8.2.tgz",
-  "_spec": "5.8.2",
+  "_resolved": "https://npm.fontawesome.com/@fortawesome/pro-solid-svg-icons/-/pro-solid-svg-icons-5.10.1.tgz",
+  "_shasum": "37d9641baa96a76216dc72af9136f2952eb2a5f0",
+  "_spec": "@fortawesome/pro-solid-svg-icons@^5.8.2",
   "_where": "/home/ldary/Projects/rh/rhd-frontend",
   "author": {
     "name": "Dave Gandy",
@@ -37,6 +31,7 @@
   "bugs": {
     "url": "http://github.com/FortAwesome/Font-Awesome/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Brian Talbot",
@@ -60,8 +55,9 @@
     }
   ],
   "dependencies": {
-    "@fortawesome/fontawesome-common-types": "^0.2.18"
+    "@fortawesome/fontawesome-common-types": "^0.2.21"
   },
+  "deprecated": false,
   "description": "The iconic font, CSS, and SVG framework",
   "engines": {
     "node": ">=6"
@@ -85,5 +81,5 @@
     "url": "git+https://github.com/FortAwesome/Font-Awesome.git"
   },
   "types": "./index.d.ts",
-  "version": "5.8.2"
+  "version": "5.10.1"
 }

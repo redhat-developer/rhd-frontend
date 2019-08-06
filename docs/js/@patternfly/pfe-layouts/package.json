@@ -1,37 +1,32 @@
 {
-  "_args": [
-    [
-      "@patternfly/pfe-layouts@1.0.0-prerelease.16",
-      "/home/ldary/Projects/rh/rhd-frontend"
-    ]
-  ],
-  "_development": true,
-  "_from": "@patternfly/pfe-layouts@1.0.0-prerelease.16",
-  "_id": "@patternfly/pfe-layouts@1.0.0-prerelease.16",
+  "_from": "@patternfly/pfe-layouts@^1.0.0-prerelease.19",
+  "_id": "@patternfly/pfe-layouts@1.0.0-prerelease.19",
   "_inBundle": false,
-  "_integrity": "sha512-v8gpOr7RFjZiSw9HJluLl4pakPFnVLkVQYhB9suUVY+2djULY8WXd0PLecXUjuk2P3plrVKARzqt5Dog+BNiTw==",
+  "_integrity": "sha512-CIJxOWQsMIES6jWVauRlu8u6t/rt2yLbvuWUI30OjddziEZ1w3dLu61eI6LzfsZ58zyysyKDAfAO/6BizvyoIw==",
   "_location": "/@patternfly/pfe-layouts",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "@patternfly/pfe-layouts@1.0.0-prerelease.16",
+    "raw": "@patternfly/pfe-layouts@^1.0.0-prerelease.19",
     "name": "@patternfly/pfe-layouts",
     "escapedName": "@patternfly%2fpfe-layouts",
     "scope": "@patternfly",
-    "rawSpec": "1.0.0-prerelease.16",
+    "rawSpec": "^1.0.0-prerelease.19",
     "saveSpec": null,
-    "fetchSpec": "1.0.0-prerelease.16"
+    "fetchSpec": "^1.0.0-prerelease.19"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
-  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-layouts/-/pfe-layouts-1.0.0-prerelease.16.tgz",
-  "_spec": "1.0.0-prerelease.16",
+  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-layouts/-/pfe-layouts-1.0.0-prerelease.19.tgz",
+  "_shasum": "4c6b62cf073b25501bf4a57b4a557dc97728e3fe",
+  "_spec": "@patternfly/pfe-layouts@^1.0.0-prerelease.19",
   "_where": "/home/ldary/Projects/rh/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-elements/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Mark Caron",
@@ -40,10 +35,11 @@
     }
   ],
   "dependencies": {
-    "@patternfly/pfe-sass": "^1.0.0-prerelease.16"
+    "@patternfly/pfe-sass": "^1.0.0-prerelease.19"
   },
+  "deprecated": false,
   "description": "Layouts helper classes for PatternFly Elements",
-  "gitHead": "6ee18e0fe929f7d8161b22114882716b8bcdeff4",
+  "gitHead": "e1809862816e1446067feece891620c30d026433",
   "homepage": "https://github.com/patternfly/patternfly-elements#readme",
   "keywords": [
     "web-components",
@@ -67,5 +63,5 @@
     "build": "../../node_modules/.bin/gulp",
     "dev": "../../node_modules/.bin/gulp dev"
   },
-  "version": "1.0.0-prerelease.16"
+  "version": "1.0.0-prerelease.19"
 }

@@ -1,27 +1,20 @@
 {
-  "_args": [
-    [
-      "@patternfly/pfe-sass@1.0.0-prerelease.16",
-      "/home/ldary/Projects/rh/rhd-frontend"
-    ]
-  ],
-  "_development": true,
-  "_from": "@patternfly/pfe-sass@1.0.0-prerelease.16",
-  "_id": "@patternfly/pfe-sass@1.0.0-prerelease.16",
+  "_from": "@patternfly/pfe-sass@^1.0.0-prerelease.19",
+  "_id": "@patternfly/pfe-sass@1.0.0-prerelease.19",
   "_inBundle": false,
-  "_integrity": "sha512-Da+d48kgddRW221rG3IFJRikuDj4Rcc29EcsQOMiZt6r4OAT7v9rBbD+Ggdfv9xamqmYiA2bqdQOKmbze3N2EQ==",
+  "_integrity": "sha512-U5UHk7AneaD6f7BMw94mBV8VS5XRGvqHEiCxlD6kdc/6Uva1+mndP6Cq436BQsZmEUJDjqdoJ8WguImma+2PTQ==",
   "_location": "/@patternfly/pfe-sass",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "@patternfly/pfe-sass@1.0.0-prerelease.16",
+    "raw": "@patternfly/pfe-sass@^1.0.0-prerelease.19",
     "name": "@patternfly/pfe-sass",
     "escapedName": "@patternfly%2fpfe-sass",
     "scope": "@patternfly",
-    "rawSpec": "1.0.0-prerelease.16",
+    "rawSpec": "^1.0.0-prerelease.19",
     "saveSpec": null,
-    "fetchSpec": "1.0.0-prerelease.16"
+    "fetchSpec": "^1.0.0-prerelease.19"
   },
   "_requiredBy": [
     "#DEV:/",
@@ -31,12 +24,14 @@
     "/@patternfly/pfe-layouts",
     "/@patternfly/pfe-tabs"
   ],
-  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-sass/-/pfe-sass-1.0.0-prerelease.16.tgz",
-  "_spec": "1.0.0-prerelease.16",
+  "_resolved": "https://registry.npmjs.org/@patternfly/pfe-sass/-/pfe-sass-1.0.0-prerelease.19.tgz",
+  "_shasum": "6004f42ae03a59001076dfe6eb925898537ec9e2",
+  "_spec": "@patternfly/pfe-sass@^1.0.0-prerelease.19",
   "_where": "/home/ldary/Projects/rh/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-elements/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Kyle Buchanan",
@@ -59,8 +54,9 @@
       "name": "cd"
     }
   ],
+  "deprecated": false,
   "description": "Sass variables and mixins for PatternFly Elements",
-  "gitHead": "6ee18e0fe929f7d8161b22114882716b8bcdeff4",
+  "gitHead": "e1809862816e1446067feece891620c30d026433",
   "homepage": "https://github.com/patternfly/patternfly-elements#readme",
   "keywords": [
     "web-components",
@@ -80,5 +76,5 @@
     "url": "git+https://github.com/patternfly/patternfly-elements.git",
     "directory": "elements/pfe-sass"
   },
-  "version": "1.0.0-prerelease.16"
+  "version": "1.0.0-prerelease.19"
 }

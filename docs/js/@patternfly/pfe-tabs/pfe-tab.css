@@ -87,10 +87,10 @@
 }
 
 :host([pfe-variant="earth"][aria-selected="false"]) {
-  border-left: 1px solid #d2d2d2;
-  border-left: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #d2d2d2);
-  border-bottom: 1px solid #d2d2d2;
-  border-bottom: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #d2d2d2);
+  border-left: 1px solid #dfdfdf;
+  border-left: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #dfdfdf);
+  border-bottom: 1px solid #dfdfdf;
+  border-bottom: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #dfdfdf);
   border-top: 3px solid #ececec;
   border-top: var(--pfe-theme--surface--border-width--heavy, 3px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--lighter, #ececec);
   --pfe-tabs--main: var(--pfe-theme--color--surface--lighter, #ececec);
@@ -101,40 +101,40 @@
   border-top: 3px solid var(--pfe-tabs--highlight);
   border-top: var(--pfe-theme--surface--border-width--heavy, 3px) var(--pfe-theme--surface--border-style, solid) var(--pfe-tabs--highlight);
   border-bottom: 0;
-  border-left: 1px solid #d2d2d2;
-  border-left: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #d2d2d2);
+  border-left: 1px solid #dfdfdf;
+  border-left: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #dfdfdf);
 }
 
 :host([pfe-variant="earth"][aria-selected="true"]:last-of-type) {
-  border-right: 1px solid #d2d2d2;
-  border-right: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #d2d2d2);
+  border-right: 1px solid #dfdfdf;
+  border-right: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #dfdfdf);
 }
 
 @media screen and (min-width: 768px) {
   :host([vertical][pfe-variant="earth"]) {
-    border-top: 1px solid #d2d2d2;
-    border-top: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #d2d2d2);
+    border-top: 1px solid #dfdfdf;
+    border-top: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #dfdfdf);
   }
   :host([vertical][pfe-variant="earth"]:first-of-type) {
     border-top: 0;
   }
   :host([vertical][pfe-variant="earth"][aria-selected="true"]) {
-    border-top: 1px solid #d2d2d2;
-    border-top: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #d2d2d2);
+    border-top: 1px solid #dfdfdf;
+    border-top: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #dfdfdf);
     border-right: 0;
     border-left: 3px solid var(--pfe-tabs--highlight);
     border-left: var(--pfe-theme--surface--border-width--heavy, 3px) var(--pfe-theme--surface--border-style, solid) var(--pfe-tabs--highlight);
   }
   :host([vertical][pfe-variant="earth"][aria-selected="false"]) {
-    border-right: 1px solid #d2d2d2;
-    border-right: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #d2d2d2);
+    border-right: 1px solid #dfdfdf;
+    border-right: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #dfdfdf);
     border-bottom: 0;
     border-left: 3px solid #ececec;
     border-left: var(--pfe-theme--surface--border-width--heavy, 3px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--lighter, #ececec);
   }
   :host([vertical][pfe-variant="earth"][aria-selected="true"]:last-of-type) {
-    border-bottom: 1px solid #d2d2d2;
-    border-bottom: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #d2d2d2);
+    border-bottom: 1px solid #dfdfdf;
+    border-bottom: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #dfdfdf);
   }
 }
 

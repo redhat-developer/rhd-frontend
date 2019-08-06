@@ -1,4 +1,6 @@
-/*
+/*!
+ * PatternFly Elements: PFElement 1.0.0-prerelease.19
+ * @license
  * Copyright 2019 Red Hat, Inc.
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,7 +52,9 @@ function handleWebComponentsReady() {
   reveal();
 }
 
-/*
+/*!
+ * PatternFly Elements: PFElement 1.0.0-prerelease.19
+ * @license
  * Copyright 2019 Red Hat, Inc.
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -98,6 +102,14 @@ class PFElement extends HTMLElement {
       Content: "content",
       Combo: "combo"
     };
+  }
+
+  static get version() {
+    return "1.0.0-prerelease.19";
+  }
+
+  get version() {
+    return this._pfeClass.version;
   }
 
   get pfeType() {

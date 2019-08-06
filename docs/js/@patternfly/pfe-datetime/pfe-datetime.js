@@ -1,6 +1,7 @@
 import PFElement from '../pfelement/pfelement.js';
 
-/*
+/*!
+ * PatternFly Elements: PfeDatetime 1.0.0-prerelease.19
  * @license
  * Copyright 2019 Red Hat, Inc.
  * 
@@ -25,6 +26,9 @@ import PFElement from '../pfelement/pfelement.js';
 */
 
 class PfeDatetime extends PFElement {
+  static get version() {
+    return "1.0.0-prerelease.19";
+  }
 
   get html() {
     return `<style>:host{display:inline}</style><span></span>`;

@@ -2,7 +2,7 @@
   "_args": [
     [
       "@patternfly/patternfly@2.21.5",
-      "/Users/ajolicoe/dev/rhdp/rhd-frontend"
+      "/home/ldary/Projects/rh/rhd-frontend"
     ]
   ],
   "_development": true,
@@ -28,7 +28,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/@patternfly/patternfly/-/patternfly-2.21.5.tgz",
   "_spec": "2.21.5",
-  "_where": "/Users/ajolicoe/dev/rhdp/rhd-frontend",
+  "_where": "/home/ldary/Projects/rh/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-next/issues"
   },

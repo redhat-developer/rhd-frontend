@@ -61,8 +61,8 @@
   padding: var(--pfe-theme--container-spacer, 1rem) 0;
   padding: calc(1rem * 2);
   padding: calc(var(--pfe-theme--container-spacer, 1rem) * 2);
-  border: 1px solid #d2d2d2;
-  border: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #d2d2d2);
+  border: 1px solid #dfdfdf;
+  border: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #dfdfdf);
   border-top: none;
 }
 
@@ -85,8 +85,8 @@
     padding-left: calc(var(--pfe-theme--container-spacer, 1rem) * 2);
     padding: calc(1rem * 2);
     padding: calc(var(--pfe-theme--container-spacer, 1rem) * 2);
-    border: 1px solid #d2d2d2;
-    border: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #d2d2d2);
+    border: 1px solid #dfdfdf;
+    border: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-theme--color--surface--border, #dfdfdf);
     border-left: none;
   }
 }

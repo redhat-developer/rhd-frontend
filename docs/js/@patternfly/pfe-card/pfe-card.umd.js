@@ -79,17 +79,8 @@
     return call && (typeof call === "object" || typeof call === "function") ? call : self;
   };
 
-  var toConsumableArray = function (arr) {
-    if (Array.isArray(arr)) {
-      for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
-
-      return arr2;
-    } else {
-      return Array.from(arr);
-    }
-  };
-
-  /*
+  /*!
+   * PatternFly Elements: PfeCard 1.0.0-prerelease.19
    * @license
    * Copyright 2019 Red Hat, Inc.
    * 
@@ -215,6 +206,11 @@
         return this.getAttribute("pfe-color") || this.getAttribute("color") || "base";
       }
     }], [{
+      key: 'version',
+      get: function get$$1() {
+        return "1.0.0-prerelease.19";
+      }
+    }, {
       key: 'properties',
       get: function get$$1() {
         return { "color": { "title": "Background color", "type": "string", "enum": ["lightest", "lighter", "base", "darker", "darkest", "complement", "accent"], "default": "base", "observer": "_colorChanged" }, "img-src": { "title": "Background image", "type": "string", "observer": "_imgSrcChanged" }, "size": { "title": "Padding size", "type": "string", "enum": ["small"], "observer": "_basicAttributeChanged" } };
@@ -264,10 +260,6 @@
         if (this.imageSrc) {
           this._imgSrcChanged("pfe-img-src", "", this.imageSrc);
         }
-        // Initialize the context setting for the children elements
-        if (this.backgroundColor) {
-          this._updateContext(this.backgroundColor);
-        }
 
         this._observer.observe(this, { childList: true });
       }
@@ -302,8 +294,6 @@
       key: '_colorChanged',
       value: function _colorChanged(attr, oldValue, newValue) {
         this[attr].value = newValue;
-        // If the new value has a dark background, update children elements
-        this._updateContext(newValue);
       }
 
       // Update the background image
@@ -313,26 +303,6 @@
       value: function _imgSrcChanged(attr, oldValue, newValue) {
         // Set the image as the background image
         this.style.backgroundImage = newValue ? 'url(\'' + newValue + '\')' : '';
-      }
-
-      // Set the children's context if parent background is dark
-
-    }, {
-      key: '_updateContext',
-      value: function _updateContext(context) {
-        var _this2 = this;
-
-        if (["darkest", "darker", "dark", "complement", "accent"].includes(context)) {
-          ["pfe-cta"].forEach(function (elementName) {
-            var els = [].concat(toConsumableArray(_this2.querySelectorAll('' + elementName)));
-            els.forEach(function (el) {
-              var myContainer = el.closest("[pfe-type=container]");
-              if (myContainer === _this2 || myContainer === null) {
-                el.setAttribute("on", "dark");
-              }
-            });
-          });
-        }
       }
     }]);
     return PfeCard;

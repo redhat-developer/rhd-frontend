@@ -1,4 +1,3 @@
-/// <reference path="index.d.ts" />
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -69,7 +68,9 @@
     }
   };
 
-  /*
+  /*!
+   * PatternFly Elements: PFElement 1.0.0-prerelease.19
+   * @license
    * Copyright 2019 Red Hat, Inc.
    * 
    * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -123,7 +124,9 @@
     reveal();
   }
 
-  /*
+  /*!
+   * PatternFly Elements: PFElement 1.0.0-prerelease.19
+   * @license
    * Copyright 2019 Red Hat, Inc.
    * 
    * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -166,6 +169,11 @@
         return [].concat(toConsumableArray(this.querySelectorAll("[slot='" + name + "']")));
       }
     }, {
+      key: "version",
+      get: function get$$1() {
+        return this._pfeClass.version;
+      }
+    }, {
       key: "pfeType",
       get: function get$$1() {
         return this.getAttribute(prefix + "type");
@@ -205,6 +213,11 @@
           Content: "content",
           Combo: "combo"
         };
+      }
+    }, {
+      key: "version",
+      get: function get$$1() {
+        return "1.0.0-prerelease.19";
       }
     }]);
 

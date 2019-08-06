@@ -30,7 +30,7 @@
 }
 
 .tabs {
-  --pfe-tabs--BorderColor: var(--pfe-theme--color--surface--border, #d2d2d2);
+  --pfe-tabs--BorderColor: var(--pfe-theme--color--surface--border, #dfdfdf);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -38,6 +38,13 @@
   border: 0;
   border-bottom: 1px solid var(--pfe-tabs--BorderColor);
   border-bottom: var(--pfe-theme--ui--border-width, 1px) var(--pfe-theme--ui--border-style, solid) var(--pfe-tabs--BorderColor);
+}
+
+:host(:not([vertical])[pfe-tab-align="center"]) .tabs {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media screen and (min-width: 768px) {

@@ -54,7 +54,8 @@
     return call && (typeof call === "object" || typeof call === "function") ? call : self;
   };
 
-  /*
+  /*!
+   * PatternFly Elements: PfeDatetime 1.0.0-prerelease.19
    * @license
    * Copyright 2019 Red Hat, Inc.
    * 
@@ -96,6 +97,11 @@
         return "pfe-datetime.html";
       }
     }], [{
+      key: "version",
+      get: function get$$1() {
+        return "1.0.0-prerelease.19";
+      }
+    }, {
       key: "tag",
       get: function get$$1() {
         return "pfe-datetime";

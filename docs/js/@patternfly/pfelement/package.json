@@ -1,33 +1,32 @@
 {
-  "_from": "@patternfly/pfelement",
-  "_id": "@patternfly/pfelement@1.0.0-prerelease.16",
+  "_from": "@patternfly/pfelement@^1.0.0-prerelease.19",
+  "_id": "@patternfly/pfelement@1.0.0-prerelease.19",
   "_inBundle": false,
-  "_integrity": "sha512-sDfikxxtkuiCITB6f0QXpnIBIlWvu3e8dwdbteGJXg6N9anOJzUMyXCf3A/AW/F1F07eP2zp+H1e34c5yhWEMQ==",
+  "_integrity": "sha512-INBcRq8GGE3HXilgBoTvvT0qIdP8/TIVyaWDdQ5MdEjN8D4VbK3RyY/3bu4/hEzL4vMFu3W1BE+oqgq6mlkeKw==",
   "_location": "/@patternfly/pfelement",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "range",
     "registry": true,
-    "raw": "@patternfly/pfelement",
+    "raw": "@patternfly/pfelement@^1.0.0-prerelease.19",
     "name": "@patternfly/pfelement",
     "escapedName": "@patternfly%2fpfelement",
     "scope": "@patternfly",
-    "rawSpec": "",
+    "rawSpec": "^1.0.0-prerelease.19",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "^1.0.0-prerelease.19"
   },
   "_requiredBy": [
-    "#USER",
-    "/",
+    "#DEV:/",
     "/@patternfly/pfe-band",
     "/@patternfly/pfe-card",
     "/@patternfly/pfe-cta",
     "/@patternfly/pfe-datetime",
     "/@patternfly/pfe-tabs"
   ],
-  "_resolved": "https://registry.npmjs.org/@patternfly/pfelement/-/pfelement-1.0.0-prerelease.16.tgz",
-  "_shasum": "4644f08209df9ac1aef73f3905cb178982459600",
-  "_spec": "@patternfly/pfelement",
+  "_resolved": "https://registry.npmjs.org/@patternfly/pfelement/-/pfelement-1.0.0-prerelease.19.tgz",
+  "_shasum": "dd52b193feb8248d2c2bb56c6dcb86aaea275439",
+  "_spec": "@patternfly/pfelement@^1.0.0-prerelease.19",
   "_where": "/home/ldary/Projects/rh/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-elements/issues"
@@ -50,7 +49,7 @@
   "deprecated": false,
   "description": "Base class for PatternFly Elements",
   "generator-pfelement-version": "0.3.4",
-  "gitHead": "6ee18e0fe929f7d8161b22114882716b8bcdeff4",
+  "gitHead": "e1809862816e1446067feece891620c30d026433",
   "homepage": "https://github.com/patternfly/patternfly-elements#readme",
   "keywords": [
     "web-components",
@@ -76,6 +75,5 @@
     "dev": "../../node_modules/.bin/gulp dev",
     "test": "../../node_modules/.bin/wct --configFile ../../wct.conf.json elements/pfelement/test/"
   },
-  "types": "./index.d.ts",
-  "version": "1.0.0-prerelease.16"
+  "version": "1.0.0-prerelease.19"
 }
