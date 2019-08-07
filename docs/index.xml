@@ -53,9 +53,8 @@
       <pubDate>Sun, 22 Jul 2018 11:15:00 -0400</pubDate>
       
       <guid>https://redhat-developer.github.io/rhd-frontend/components/cards/</guid>
-      <description>Articles and Blogs
-Card with image  Opinion  Title of the article that can go to two lines only and then must truncate after it passes two lines. This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.
-Author Name   2     Card with flag  Quickstart  Title of the article This is the article description that can go to three lines and will be followed by a footer.</description>
+      <description>Card Examples Articles and Blogs Title of the article that can be two li...&amp;nbsp;  2     Title of the article&amp;nbsp;  2       Title of the article This is the article description that can go to three lines and will be followed by a footer.  2
+  Title of the article This is the article description that can go to three lines and will be followed by a footer.</description>
     </item>
     
     <item>
