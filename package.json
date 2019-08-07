@@ -36,16 +36,11 @@
   "author": "<ldary@redhat.com>",
   "license": "MIT",
   "devDependencies": {
-<<<<<<< HEAD
-    "@fortawesome/fontawesome-free": "5.10.0",
+    "@fortawesome/fontawesome-pro": "^5.10.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/pro-light-svg-icons": "^5.8.1",
     "@fortawesome/pro-regular-svg-icons": "^5.8.1",
     "@fortawesome/pro-solid-svg-icons": "^5.8.2",
-=======
-    "@fortawesome/fontawesome-pro": "^5.10.1",
-    "@fortawesome/fontawesome-svg-core": "^1.2.21",
->>>>>>> Card style update
     "@patternfly/patternfly": "2.21.5",
     "@patternfly/pfe-band": "^1.0.0-prerelease.19",
     "@patternfly/pfe-card": "^1.0.0-prerelease.19",
