@@ -235,6 +235,12 @@
   </url>
   
   <url>
+    <loc>https://redhat-developer.github.io/rhd-frontend/tags/cards/</loc>
+    <lastmod>2018-07-22T11:15:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://redhat-developer.github.io/rhd-frontend/categories/</loc>
     <priority>0</priority>
   </url>
