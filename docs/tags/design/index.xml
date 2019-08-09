@@ -62,7 +62,8 @@
       <pubDate>Thu, 03 Aug 2017 10:56:11 -0400</pubDate>
       
       <guid>https://redhat-developer.github.io/rhd-frontend/patterns/design/typography/</guid>
-      <description> Headings  H1 &amp;lt;h1&amp;gt;Heading 1&amp;lt;/h1&amp;gt;   Heading 1  H2 &amp;lt;h2&amp;gt;Heading 2&amp;lt;/h2&amp;gt;   Heading 2  H3 &amp;lt;h3&amp;gt;Heading 3&amp;lt;/h3&amp;gt;   Heading 3  H4 &amp;lt;h4&amp;gt;Heading 4&amp;lt;/h4&amp;gt;   Heading 4  H5 &amp;lt;h5&amp;gt;Heading 5&amp;lt;/h5&amp;gt;   Heading 5   </description>
+      <description>table { width: 100%; background-color: #fff; } table thead tr th { text-align: left; } tr { border-bottom: 1px solid #d7d7d7; } table tbody tr { background-color: #fff; } table thead tr th, table tbody tr td { padding: 16px 0 16px 16px; }  Our font family We use the open source Red Hat Text and Red Hat Display fonts.
+Heading XL    Font family Font size Line height     RedHatDisplay 40px 53    This is heading XL for the developer site</description>
     </item>
     
   </channel>

@@ -98,7 +98,7 @@ category: Function
   --pfe-theme--ui--border-radius: 3px;
   --pfe-theme--surface--border-width: 1px;
   --pfe-theme--surface--border-style: solid;
-  --pfe-theme--surface--border-radius: 0;
+  --pfe-theme--surface--border-radius: 3px;
   --pfe-theme--surface--border: #d2d2d2;
   --pfe-theme--surface--border-lightest: #ededed;
   --pfe-theme--surface--border-darkest: #333333;

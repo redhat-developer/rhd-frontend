@@ -130,8 +130,15 @@ a {
 
 * {
   box-sizing: border-box;
-  font-family: "Overpass", "Open Sans", Arial, Helvetica, sans-serif;
+  font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  font-family: var(--pfe-theme--font-family, "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif);
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+}
+
 body { margin: 0; padding: 0; color: $grey-7; }
 
 @import "2019/container";
