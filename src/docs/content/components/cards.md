@@ -10,7 +10,18 @@ scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"
 
 __Articles and Blogs__
 
+  {{< code >}}{{</ code >}}
+
   <div class="pfe-l-grid pfe-m-gutters">
+    <pfe-card pfe-color="lighter" class="pfe-m-2-col pfe-m-startat-2-col-on-md">
+      <img slot="pfe-card--header" pfe-overflow="top right left" src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
+      <div class="rhd-c-card__tag">
+        <span class="fa fa-newspaper"></span>
+          Opinion
+      </div>
+        <h3 class="rhd-c-card__title"><a href="#">Title of the article that can go to two lines only and then must truncate after it passes two lines.</a></h3>
+    <div>Fonts, sizes, spacing, etc.</div>
+    </pfe-card>
     <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
       <h3>Card with image</h3>
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
