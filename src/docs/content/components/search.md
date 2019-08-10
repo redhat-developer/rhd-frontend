@@ -16,13 +16,13 @@ scripts: ["@rhd/dp-search/dp-search-app","@rhd/dp-search/dp-search-box","@rhd/dp
 <dp-search-box slot="query"></dp-search-box>
 <dp-search-filters title="Filter By" slot="filters">
     <dp-search-filter-group name="CONTENT TYPE" name="type">
-        <dp-search-filter-item group="type" key="topic_page" value="topic_page" name="Topic">Topic</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="article" value="article" name="Article">Article</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="product" value="product" name="Product">Product</dp-search-filter-item>
+        <!-- <dp-search-filter-item group="type" key="topic_page" value="topic_page" name="Topic">Topic</dp-search-filter-item> -->
+        <dp-search-filter-item group="type" key="article" value="article" name="Articles">Articles</dp-search-filter-item>
+        <!-- <dp-search-filter-item group="type" key="product" value="product" name="Product">Product</dp-search-filter-item> -->
         <dp-search-filter-item group="type" key="books" value="books" name="Books">Books</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="video_resource" value="video_resource" name="Video">Video</dp-search-filter-item>
-        <dp-search-filter-item slot="secondary" group="type" key="katacoda_course" value="katacoda_course" name="Katacoda Course">Katacoda Course</dp-search-filter-item>
-        <dp-search-filter-item slot="secondary" group="type" key="katacoda_individual_lesson" value="katacoda_individual_lesson" name="Katacoda Individual Lesson">Katacoda Individual Lesson</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="video_resource" value="video_resource" name="Videos">Videos</dp-search-filter-item>
+        <dp-search-filter-item group="type" key="katacoda" value="katacoda_course,katacoda_individual_lesson" name="Interactive Tutorials">Interactive Tutorials</dp-search-filter-item>
+        <!-- <dp-search-filter-item slot="secondary" group="type" key="katacoda_individual_lesson" value="katacoda_individual_lesson" name="Katacoda Individual Lesson">Katacoda Individual Lesson</dp-search-filter-item> -->
         <dp-search-filter-item slot="secondary" group="type" key="cheat_sheet" value="cheat_sheet" name="Cheat Sheet">Cheat Sheet</dp-search-filter-item>
         <dp-search-filter-item slot="secondary" group="type" key="coding_resource" value="coding_resource" name="Coding Resource">Coding Resource</dp-search-filter-item>
         <dp-search-filter-item slot="secondary" group="type" key="webpage" value="webpage" name="Webpage">Webpage</dp-search-filter-item>

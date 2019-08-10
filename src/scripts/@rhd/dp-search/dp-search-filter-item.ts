@@ -95,7 +95,7 @@ export default class DPSearchFilterItem extends PFElement {
         }
         </style>
         <div class="list">
-            <span>${this.name}</span>
+            <span>${this.name} ${this.count.length ? `(${this.count})` : ''}</span>
             <input type="checkbox" ${this.active ? 'checked' : ''} id="filter-item-${this.key}" value="${this.key}">
             <label for="filter-item-${this.key}"><slot></slot></label>
         </div>`;
@@ -105,6 +105,7 @@ export default class DPSearchFilterItem extends PFElement {
 
     _key;
     _name;
+    _count;
     _active = false;
     _value;
     _inline = false;
@@ -152,6 +153,15 @@ export default class DPSearchFilterItem extends PFElement {
         if (this._group === val) return;
         this._group = val;
         this.setAttribute('group', this._group);
+    }
+
+    get count() {
+        return this._count;
+    }
+    set count(val) {
+        if (this._count === val) return;
+        this._count = val;
+        this.setAttribute('count', this._count);
     }
 
     get bounce() {
@@ -226,7 +236,7 @@ export default class DPSearchFilterItem extends PFElement {
     }
 
     static get observedAttributes() { 
-        return ['name', 'active', 'value', 'inline', 'key', 'group', 'facet']; 
+        return ['name', 'active', 'value', 'inline', 'key', 'group', 'facet','count']; 
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
