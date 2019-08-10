@@ -27,35 +27,9 @@ Card – RHD Front-end Code and Documentation
     <header role="banner" class="pfe-l-grid pfe-m-all-12-col">
     <div class="rh-universal-header">
         <nav class="rh-nav-universal" aria-label="Red Hat Global Navigation">
-            <a class="rh-logo-wrapper" id="home-link" href="https://www.redhat.com/" title="Red Hat Home page">
+            
                 <img class="rh-header-logo" alt="Red Hat Logo" src="https://developers.redhat.com/themes/custom/rhdp/images/branding/RHLogo_white.svg">
-            </a>            
-            <ul class="rh-nav-universal-list">
-                <li class="rh-nav-universal-list-item">
-                    <a class="rh-nav-universal-list-link" href="https://access.redhat.com/" title="Red Hat Customer Portal">Customer Portal</a>
-                </li>
-                <li class="rh-nav-universal-link">
-                    <a class="rh-nav-universal-list-link" href="https://redhat-developer.github.io/rhd-frontend/" title="Red Hat Developer" data-drupal-link-system-path="<front>">Developer</a>
-                </li>
-                <li class="rh-nav-universal-link">
-                    <a class="rh-nav-universal-list-link" href="https://www.openshift.com/" title="Red Hat OpenShift Container Platform">OpenShift</a>
-                </li>
-                <li class="rh-nav-universal-link">
-                    <a class="rh-nav-universal-list-link" href="https://openshift.io/" title="Red Hat OpenShift.io Development Environment">OpenShift.io</a>
-                </li>
-                <li class="rh-nav-universal-link">
-                    <a class="rh-nav-universal-list-link" href="https://www.redhat.com/en/partners" title="Partner with Red Hat">Partners</a>
-                </li>
-                <li class="rh-nav-universal-link">
-                    <a class="rh-nav-universal-list-link" href="https://www.redhat.com/en/store" title="Red Hat Store">Store</a>
-                </li>
-            </ul>
-            <ul class="rh-universal-login">
-                <li class="rh-nav-universal-logged-in-link">
-                    <ul class="rh-user-menu">
-                        <li class="rh-user-menu-item" data-auth-required="true"><a class="account-info" href="#">Account Info</a></li>
-                    </ul>
-                </li>
+            
                 
             </ul>
         </nav>
@@ -98,7 +72,7 @@ Card – RHD Front-end Code and Documentation
 <header class="pfe-l-grid"><h1 class="pfe-m-10-col pfe-m-startat-2-col">Card</h1></header>
 <aside class="pfe-l-grid">
     
-        <a class="previous pfe-m-5-col pfe-m-startat-2-col" href="https://redhat-developer.github.io/rhd-frontend/components/alerts/"> Alerts</a>
+        <a class="previous pfe-m-5-col pfe-m-startat-2-col" href="https://redhat-developer.github.io/rhd-frontend/components/cards/"> Card</a>
     
     
         <a class="next pfe-m-5-col pfe-l--text-align--right" href="https://redhat-developer.github.io/rhd-frontend/components/expandable-groups/"> Expandable Groups</a>
@@ -106,480 +80,1003 @@ Card – RHD Front-end Code and Documentation
     
 </aside>
 <section>
+<div class="pf-l-grid pf-u-p-lg pf-u-m-lg">
 
-<p><strong>Articles and Blogs</strong></p>
+  <h1 style="font-size: 2.25rem;">Card Examples</h1>
 
-<p><div class="pfe-l-grid pfe-m-gutters">
-    <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
-      <h3>Card with image</h3>
-      <pfe-card color="lightest" size-"small" class="rhd-c-card">
-        <div class="rhd-c-card__tag">
-          <span class="fa fa-newspaper"></span>
-          Opinion
-        </div>
-        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
-        <h3 class="rhd-c-card__title"><a href="#">Title of the article that can go to two lines only and then must truncate after it passes two lines.</a></h3>
-        <p class="rhd-c-card__body rhd-m-text-truncate-3">This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--author">
-            <a href="#" class="rhd-m-link">Author Name</a>
+  <div class="pfe-l-grid pfe-m-gutters">
+    <h2 style="font-size: 1.75rem; margin: 1rem 0;">Articles and Blogs</h2>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg pfe-m-startat-1-col-on-md">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title">
+              <a href="#" class="rhd-m-link">Title of the article that can be two li...</a>&nbsp;
+              <span class="rhd-m-list__comment">
+                <i class="fas fa-comment"></i> 2
+              </span>
+            </h3>
           </div>
-          <div class="rhd-c-comment">
-            <span class="fa fa-comment"></span> 2
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title">
+              <a href="#" class="rhd-m-link">Title of the article</a>&nbsp;
+              <span class="rhd-m-list__comment">
+                <i class="fas fa-comment"></i> 2
+              </span>
+            </h3>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Title of the article</a></h3>
+            <p class="rhd-c-card__body ">This is the article description that can go to three lines and will be followed by a footer. <span class="rhd-m-list__comment"><i class="fas fa-comment"></i> 2</span></p>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Title of the article</a></h3>
+            <p class="rhd-c-card__body ">This is the article description that can go to three lines and will be followed by a footer. <span class="rhd-m-list__comment"><i class="fas fa-comment"></i> 2</span></p>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Title of the article</a></h3>
+          <p class="rhd-c-card__body ">This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              <a href="#" class="rhd-m-link">Author Name</a>
+            </div>
+            <div class="rhd-c-comment">
+              <i class="fas fa-comment"></i> 2
+            </div>
           </div>
         </div>
       </pfe-card>
     </div>
-    <div class="pfe-m-2-col">
-      <h3>Card with flag</h3>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <div class="rhd-c-card__tag">
-          <span class="fa fa-newspaper"></span>
+          <i class="fas fa-newspaper"></i>
           Quickstart
         </div>
-        <h3 class="rhd-c-card__title rhd-m-card-title__no-image"><a href="#">Title of the article</a></h3>
-        <p class="rhd-c-card__body rhd-m-text-truncate-3">This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--author">
-            <a href="#" class="rhd-m-link">Author Name</a>
-          </div>
-          <div class="rhd-c-comment">
-            <span class="fa fa-comment"></span> 2
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title rhd-m-card-title__no-image"><a href="#" class="rhd-m-link">Title of the article</a></h3>
+          <p class="rhd-c-card__body ">This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              <a href="#" class="rhd-m-link">Author Name</a>
+            </div>
+            <div class="rhd-c-comment">
+              <i class="fas fa-comment"></i> 2
+            </div>
           </div>
         </div>
       </pfe-card>
     </div>
-    <div class="pfe-m-2-col">
-      <h3>Card</h3>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
-        <h3 class="rhd-c-card__title"><a href="#">Title of the article</a></h3>
-        <p class="rhd-c-card__body rhd-m-text-truncate-3">This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--author">
-            <a href="#" class="rhd-m-link">Author Name</a>
-          </div>
-          <div class="rhd-c-comment">
-            <span class="fa fa-comment"></span> 2
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
+        <div class="rhd-c-card__tag">
+          <i class="fas fa-newspaper"></i>
+          Opinion
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Title of the article that can go to two lines only and then must truncate after it passes two lines.</a></h3>
+          <p class="rhd-c-card__body ">This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              <a href="#" class="rhd-m-link">Author Name</a>
+            </div>
+            <div class="rhd-c-comment">
+              <i class="fas fa-comment"></i> 2
+            </div>
           </div>
         </div>
       </pfe-card>
     </div>
-    <div class="pfe-m-2-col">
-      <h3>List with description</h3>
+  </div>
+
+  <div class="pfe-l-grid pfe-m-gutters">
+      <h2 style="font-size: 1.75rem; margin: 1rem 0;">Series</h2>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg pfe-m-startat-1-col-on-md">
       <div class="rhd-l-grid__list">
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Title of the article</a></h3>
-          <p class="rhd-c-card__body rhd-m-text-truncate-3">This is the article description that can go to three lines and will be followed by a footer. <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div></p>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title">
+              <a href="#" class="rhd-m-link">Title of the series that can be two lines</a>&nbsp;
+              <span class="rhd-m-list__comment">
+                <i class="fas fa-newspaper"></i> 2
+              </span>
+            </h3>
+          </div>
         </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Title of the article</a></h3>
-          <p class="rhd-c-card__body rhd-m-text-truncate-3">This is the article description that can go to three lines and will be followed by a footer. <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div></p>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title">
+              <a href="#" class="rhd-m-link">Title of the series</a>&nbsp;
+              <span class="rhd-m-list__comment">
+                <i class="fas fa-newspaper"></i> 2
+              </span>
+            </h3>
+          </div>
         </pfe-card>
       </div>
     </div>
-    <div class="pfe-m-2-col">
-      <h3>List</h3>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
       <div class="rhd-l-grid__list">
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Title of the article that can be two li&hellip;</a> <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Series title</a></h3>
+            <p class="rhd-c-card__body">
+              This is the series description that can go to three lines and will be followed by a footer.&nbsp;
+              <span class="rhd-m-list__comment">
+                <i class="fas fa-newspaper rhd-m-list__comment"></i> 2
+              </span>
+            </p>
+          </div>
         </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Title of the article</a> <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div></h3>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Series title</a></h3>
+            <p class="rhd-c-card__body">
+              This is the series description that can go to three lines and will be followed by a footer.&nbsp;
+              <span class="rhd-m-list__comment">
+                <i class="fas fa-newspaper rhd-m-list__comment"></i> 2
+              </span>
+            </p>
+          </div>
         </pfe-card>
       </div>
     </div>
-  </div></p>
-
-<p><strong>Series</strong></p>
-
-<p><div class="pfe-l-grid pfe-m-gutters">
-    <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Series title</a></h3>
+          <div class="rhd-c-card__subtitle">3 articles</div>
+          <p class="rhd-c-card__body ">This is the series description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              <a href="#" class="rhd-m-link">Author Name</a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <div class="rhd-c-card__tag">
-          <span class="far fa-clone"></span>
+          <i class="far fa-clone"></i>
           Series
         </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title rhd-m-card-title__no-image"><a href="#" class="rhd-m-link">Series title</a></h3>
+          <div class="rhd-c-card__subtitle">3 articles</div>
+          <p class="rhd-c-card__body ">This is the series description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              <a href="#" class="rhd-m-link">Author Name</a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <img src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?cs=srgb&dl=adventure-calm-clouds-414171.jpg&fm=jpg" class="rhd-c-card__image"/>
-        <h3 class="rhd-c-card__title"><a href="#">Series title that can go to two lines only and then must truncate after it passes two lines.</a></h3>
-        <div class="rhd-c-card__subtitle">3 articles</div>
-        <p class="rhd-c-card__body rhd-m-text-truncate-3">This is the series description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--author">
-            <a href="#" class="rhd-m-link">Author Name</a>
-          </div>
-        </div>
-      </pfe-card>
-    </div>
-    <div class="pfe-m-2-col">
-      <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <div class="rhd-c-card__tag">
-          <span class="far fa-clone"></span>
+          <i class="far fa-clone"></i>
           Series
         </div>
-        <h3 class="rhd-c-card__title rhd-m-card-title__no-image"><a href="#">Series title</a></h3>
-        <div class="rhd-c-card__subtitle">3 articles</div>
-        <p class="rhd-c-card__body rhd-m-text-truncate-3">This is the series description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--author">
-            <a href="#" class="rhd-m-link">Author Name</a>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Series title that can go to two lines only and then must truncate after it passes two lines.</a></h3>
+          <div class="rhd-c-card__subtitle">3 articles</div>
+          <p class="rhd-c-card__body ">This is the series description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              <a href="#" class="rhd-m-link">Author Name</a>
+            </div>
           </div>
         </div>
       </pfe-card>
-    </div>
-    <div class="pfe-m-2-col">
-      <pfe-card color="lightest" size-"small" class="rhd-c-card">
-        <h3 class="rhd-c-card__title"><a href="#">Series title</a></h3>
-        <div class="rhd-c-card__subtitle">3 articles</div>
-        <p class="rhd-c-card__body rhd-m-text-truncate-3">This is the series description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--author">
-            <a href="#" class="rhd-m-link">Author Name</a>
-          </div>
-        </div>
-      </pfe-card>
-    </div>
-    <div class="pfe-m-2-col">
-      <div class="rhd-l-grid__list">
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Series title</a></h3>
-          <p class="rhd-c-card__body rhd-m-text-truncate-3">This is the series description that can go to three lines and will be followed by a footer. <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div></p>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Series title</a></h3>
-          <p class="rhd-c-card__body rhd-m-text-truncate-3">This is the series description that can go to three lines and will be followed by a footer. <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div></p>
-        </pfe-card>
-      </div>
-    </div>
-    <div class="pfe-m-2-col">
-      <div class="rhd-l-grid__list">
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Title of the series that can be two li&hellip;</a> <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div></h3>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Title of the series</a> <div class="rhd-m-list__comment"><span class="fas fa-comment"></span> 2</div></h3>
-        </pfe-card>
-      </div>
     </div>
   </div>
   <div class="pfe-l-grid pfe-m-gutters" style="margin-top: 40px;">
-    <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
       <pfe-card color="lightest" size-"small" class="rhd-c-card">
-        <div class="rhd-c-card__tag">
-          <span class="far fa-clone"></span>
-          More in this series
-        </div>
-        <img src="https://images.pexels.com/photos/714258/pexels-photo-714258.jpeg?cs=srgb&dl=adventure-alpine-alps-714258.jpg&fm=jpg" class="rhd-c-card__image"/>
-        <h3 class="rhd-c-card__title"><a href="#">This is the article title</a></h3>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--author">
-            Author Name
-          </div>
-        </div>
-        <hr>
-        <h3 class="rhd-c-card__title"><a href="#">This is the article title</a></h3>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--author">
-            Author Name
-          </div>
-        </div>
-        <hr>
-        <h3 class="rhd-c-card__title"><a href="#">This is the article title</a></h3>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--author">
-            Author Name
-          </div>
-        </div>
-      </pfe-card>
-    </div>
-    <div class="pfe-m-2-col">
-      <pfe-card color="lightest" size-"small" class="rhd-c-card">
-        <div class="rhd-c-card__tag">
-          <span class="far fa-clone"></span>
-          More in this series
-        </div>
         <img src="https://images.pexels.com/photos/462149/pexels-photo-462149.jpeg?cs=srgb&dl=alpine-clouds-daylight-462149.jpg&fm=jpg" class="rhd-c-card__image"/>
-        <div class="pf-u-display-flex pf-u-justify-content-center">
-          <div class="rhd-c-card__footer--author">
-            Author Name
-          </div>
-        </div>
-        <h3 class="rhd-c-card__title"><a href="#">This is the article title</a></h3>
-        <hr>
-        <h3 class="rhd-c-card__title"><a href="#">This is the article title</a></h3>
-        <hr>
-        <h3 class="rhd-c-card__title"><a href="#">This is the article title</a></h3>
-      </pfe-card>
-    </div>
-  </div></p>
-
-<h2 id="products"><strong>Products</strong></h2>
-
-<p><div class="pfe-l-grid pfe-m-gutters">
-    <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
-      <pfe-card color="lightest" size-"small" class="rhd-c-card">
-        <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/fc954fdb2506fde810a74701776127e6.png?itok=y5At3nm0" class="rhd-c-card__image"/>
-        <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--download">
-            <a href="#" class="rhd-m-link">Download <span class="fa fa-arrow-right"></span></a>
-          </div>
-        </div>
-      </pfe-card>
-    </div>
-    <div class="pfe-m-2-col">
-      <pfe-card color="lightest" size-"small" class="rhd-c-card">
         <div class="rhd-c-card__tag">
-          <span class="fa fa-paper-plane"></span>
-          Try it
+          <i class="far fa-clone"></i>
+          More in this series
         </div>
-        <h3 class="rhd-c-card__title rhd-m-card-title__no-image">Red Hat Enterprise Linux</h3>
-        <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--download">
-            <a href="#" class="rhd-m-link">Download <span class="fa fa-arrow-right"></span></a>
-          </div>
-        </div>
-      </pfe-card>
-    </div>
-    <div class="pfe-m-2-col">
-      <pfe-card color="lightest" size-"small" class="rhd-c-card">
-        <h3 class="rhd-c-card__title">Red Hat Enterprise Linux</h3>
-        <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--download">
-            <a href="#" class="rhd-m-link">Download <span class="fa fa-arrow-right"></span></a>
-          </div>
-        </div>
-      </pfe-card>
-    </div>
-    <div class="pfe-m-2-col">
-      <div class="rhd-l-grid__list">
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Red Hat Enterprise Linux</a></h3>
-          <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
+        <div class="rhd-c-card-content rhd-c-card-content--multi-title">
           <div class="rhd-c-card__footer">
-            <div class="rhd-c-card__footer--download">
-              <a href="#" class="rhd-m-link">Download <span class="fa fa-arrow-right"></span></a>
+            <div class="rhd-c-card__footer--author">
+              Author Name
             </div>
           </div>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Red Hat Enterprise Linux</a></h3>
-          <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">This is the article title</a></h3>
+          <hr>
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">This is the article title</a></h3>
+          <hr>
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">This is the article title</a></h3>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg pfe-m-startat-1-col-on-md">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <img src="https://images.pexels.com/photos/714258/pexels-photo-714258.jpeg?cs=srgb&dl=adventure-alpine-alps-714258.jpg&fm=jpg" class="rhd-c-card__image"/>
+        <div class="rhd-c-card__tag">
+          <i class="far fa-clone"></i>
+          More in this series
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">This is the article title</a></h3>
           <div class="rhd-c-card__footer">
-            <div class="rhd-c-card__footer--download">
-              <a href="#" class="rhd-m-link">Download <span class="fa fa-arrow-right"></span></a>
+            <div class="rhd-c-card__footer--author">
+              Author Name
             </div>
           </div>
-        </pfe-card>
-      </div>
-    </div>
-    <div class="pfe-m-2-col">
-      <div class="rhd-l-grid__list">
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Red Hat Enterprise Linux</a></h3>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Red Hat Enterprise Linux</a></h3>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Red Hat Enterprise Linux</a></h3>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Red Hat Enterprise Linux</a></h3>
-        </pfe-card>
-      </div>
-    </div>
-  </div></p>
-
-<p><strong>Katacoda Courses</strong></p>
-
-<p><div class="pfe-l-grid pfe-m-gutters">
-    <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
-      <pfe-card color="lightest" size-"small" class="rhd-c-card">
-        <div class="rhd-c-card__tag">
-          <span class="fa fa-terminal"></span>
-          Istio service mesh workshop
+          <hr>
         </div>
-        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
-        <h3 class="rhd-c-card__title">
-          Course title
-        </h3>
-        <div class="rhd-c-card__subtitle">3 articles</div>
-        <p class="rhd-c-card__body rhd-m-text-truncate-3">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__subtitle pf-u-p-0">
-            370 minutes
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">This is the article title</a></h3>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              Author Name
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">This is the article title</a></h3>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              Author Name
+            </div>
           </div>
         </div>
       </pfe-card>
-    </div>
-    <div class="pfe-m-2-col">
-      <pfe-card color="lightest" size-"small" class="rhd-c-card">
-        <div class="rhd-c-card__tag">
-          <span class="fa fa-terminal"></span>
-          Istio service mesh workshop
-        </div>
-        <h3 class="rhd-c-card__title rhd-m-card-title__no-image">
-          Course title
-        </h3>
-        <div class="rhd-c-card__subtitle">3 articles</div>
-        <p class="rhd-c-card__body rhd-m-text-truncate-3">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__subtitle pf-u-p-0">
-            370 minutes
-          </div>
-        </div>
-      </pfe-card>
-    </div>
-    <div class="pfe-m-2-col">
-      <pfe-card color="lightest" size-"small" class="rhd-c-card">
-        <h3 class="rhd-c-card__title">
-          Istio service mesh workshop
-        </h3>
-        <div class="rhd-c-card__subtitle">3 articles</div>
-        <p class="rhd-c-card__body rhd-m-text-truncate-3">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__subtitle pf-u-p-0">
-            370 minutes
-          </div>
-        </div>
-      </pfe-card>
-    </div>
-    <div class="pfe-m-2-col">
-      <div class="rhd-l-grid__list">
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Istio service mesh workshop</a></h3>
-          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
-          <p class="rhd-c-card__body">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Istio service mesh workshop</a></h3>
-          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
-          <p class="rhd-c-card__body">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
-        </pfe-card>
-      </div>
-    </div>
-    <div class="pfe-m-2-col">
-      <div class="rhd-l-grid__list">
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Istio service mesh workshop</a></h3>
-          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Istio service mesh workshop</a></h3>
-          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Istio service mesh workshop</a></h3>
-          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Istio service mesh workshop</a></h3>
-          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
-        </pfe-card>
-      </div>
-    </div>
-  </div></p>
-
-<p><strong>Katacoda Lessons</strong></p>
-
-<div class="pfe-l-grid pfe-m-gutters">
-    <div class="pfe-m-2-col pfe-m-startat-2-col-on-md">
-      <pfe-card color="lightest" size-"small" class="rhd-c-card">
-        <div class="rhd-c-card__tag">
-          <span class="fa fa-terminal"></span>
-          Lesson
-        </div>
-        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
-        <h3 class="rhd-c-card__title">
-          Getting started with OpenShift
-        </h3>
-        <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
-        <p class="rhd-c-card__body rhd-m-text-truncate-3">Use the OpenShift Container Platform to build and deploy applications using both...</p>
-        <div class="rhd-c-card__subtitle">
-          Published 24 Apr 2019 by Graham Dumpleton
-        </div>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--download">
-            <a href="#" class="rhd-m-link">Start <span class="fa fa-arrow-right"></span></a>
-          </div>
-        </div>
-      </pfe-card>
-    </div>
-    <div class="pfe-m-2-col">
-      <pfe-card color="lightest" size-"small" class="rhd-c-card">
-        <div class="rhd-c-card__tag">
-          <span class="fa fa-terminal"></span>
-          Lesson
-        </div>
-        <h3 class="rhd-c-card__title rhd-m-card-title__no-image">
-          Getting started with OpenShift
-        </h3>
-        <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
-        <p class="rhd-c-card__body rhd-m-text-truncate-3">Use the OpenShift Container Platform to build and deploy applications using both...</p>
-        <div class="rhd-c-card__subtitle">
-          Published 24 Apr 2019 by Graham Dumpleton
-        </div>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--download">
-            <a href="#" class="rhd-m-link">Start <span class="fa fa-arrow-right"></span></a>
-          </div>
-        </div>
-      </pfe-card>
-    </div>
-    <div class="pfe-m-2-col">
-      <pfe-card color="lightest" size-"small" class="rhd-c-card">
-        <h3 class="rhd-c-card__title">
-          Getting started with OpenShift
-        </h3>
-        <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
-        <p class="rhd-c-card__body rhd-m-text-truncate-3">Use the OpenShift Container Platform to build and deploy applications using both...</p>
-        <div class="rhd-c-card__subtitle">
-          Published 24 Apr 2019 by Graham Dumpleton
-        </div>
-        <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--download">
-            <a href="#" class="rhd-m-link">Start <span class="fa fa-arrow-right"></span></a>
-          </div>
-        </div>
-      </pfe-card>
-    </div>
-    <div class="pfe-m-2-col">
-      <div class="rhd-l-grid__list">
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Getting started with OpenShift</a></h3>
-          <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
-          <p class="rhd-c-card__body">Use the OpenShift Container Platform to build and deploy applications using both containers and orchestration.</p>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Getting started with OpenShift</a></h3>
-          <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
-          <p class="rhd-c-card__body">Use the OpenShift Container Platform to build and deploy applications using both containers and orchestration.</p>
-        </pfe-card>
-      </div>
-    </div>
-    <div class="pfe-m-2-col">
-      <div class="rhd-l-grid__list">
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Getting started with OpenShift</a></h3>
-          <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Getting started with OpenShift</a></h3>
-          <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Getting started with OpenShift</a></h3>
-          <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
-        </pfe-card>
-        <pfe-card color="lightest" size-"small" class="rhd-c-card rhd-m-card__no-border">
-          <h3 class="rhd-c-card__title"><a href="#">Getting started with OpenShift</a></h3>
-          <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
-        </pfe-card>
-      </div>
     </div>
   </div>
+
+  <div class="pfe-l-grid pfe-m-gutters">
+      <h2 style="font-size: 1.75rem; margin: 1rem 0;">Products</h2>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg pfe-m-startat-1-col-on-md">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Red Hat Enterprise Linux</a></h3>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Red Hat Enterprise Linux</a></h3>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Red Hat Enterprise Linux</a></h3>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Red Hat Enterprise Linux</a></h3>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Red Hat Enterprise Linux</a></h3>
+            <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
+            <div class="rhd-c-card__footer">
+              <div class="rhd-c-card__footer--download">
+                <a href="#" class="rhd-m-link">Download <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Red Hat Enterprise Linux</a></h3>
+            <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
+            <div class="rhd-c-card__footer">
+              <div class="rhd-c-card__footer--download">
+                <a href="#" class="rhd-m-link">Download <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title">Red Hat Enterprise Linux</h3>
+          <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--download">
+              <a href="#" class="rhd-m-link">Download <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <i class="fas fa-paper-plane"></i>
+          Try it
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title rhd-m-card-title__no-image">Red Hat Enterprise Linux</h3>
+          <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--download">
+              <a href="#" class="rhd-m-link">Download <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/fc954fdb2506fde810a74701776127e6.png?itok=y5At3nm0" class="rhd-c-card__image"/>
+        <div class="rhd-c-card-content">
+          <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--download">
+              <a href="#" class="rhd-m-link">Download <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+  </div>
+
+  <div class="pfe-l-grid pfe-m-gutters">
+      <h2 style="font-size: 1.75rem; margin: 1rem 0;">Katacoda Courses</h2>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg pfe-m-startat-1-col-on-md">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Istio service mesh workshop</a></h3>
+            <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Istio service mesh workshop</a></h3>
+            <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Istio service mesh workshop</a></h3>
+            <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Istio service mesh workshop</a></h3>
+            <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Istio service mesh workshop</a></h3>
+            <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+            <p class="rhd-c-card__body">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Istio service mesh workshop</a></h3>
+            <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+            <p class="rhd-c-card__body">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title">
+            Istio service mesh workshop
+          </h3>
+          <div class="rhd-c-card__subtitle">3 articles</div>
+          <p class="rhd-c-card__body ">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__subtitle pf-u-p-0">
+              370 minutes
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <i class="fas fa-terminal"></i>
+          Istio service mesh workshop
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title rhd-m-card-title__no-image">
+            Course title
+          </h3>
+          <div class="rhd-c-card__subtitle">3 articles</div>
+          <p class="rhd-c-card__body ">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__subtitle pf-u-p-0">
+              370 minutes
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <i class="fas fa-terminal"></i>
+          Istio service mesh workshop
+        </div>
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title">
+            Course title
+          </h3>
+          <div class="rhd-c-card__subtitle">3 articles</div>
+          <p class="rhd-c-card__body ">Install Istio on a Kubernetes cluster and deploy three microservices.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__subtitle pf-u-p-0">
+              370 minutes
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+  </div>
+
+  <div class="pfe-l-grid pfe-m-gutters">
+      <h2 style="font-size: 1.75rem; margin: 1rem 0;">Katacoda Lessons</h2>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg pfe-m-startat-1-col-on-md">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Getting started with OpenShift</a></h3>
+            <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Getting started with OpenShift</a></h3>
+            <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Getting started with OpenShift</a></h3>
+            <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Getting started with OpenShift</a></h3>
+            <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Getting started with OpenShift</a></h3>
+            <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+            <p class="rhd-c-card__body">Use the OpenShift Container Platform to build and deploy applications using both containers and orchestration.</p>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Getting started with OpenShift</a></h3>
+            <div class="rhd-c-card__subtitle">6 lessons | 370 minutes</div>
+            <p class="rhd-c-card__body">Use the OpenShift Container Platform to build and deploy applications using both containers and orchestration.</p>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title">
+            Getting started with OpenShift
+          </h3>
+          <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+          <p class="rhd-c-card__body ">Use the OpenShift Container Platform to build and deploy applications using both...</p>
+          <div class="rhd-c-card__subtitle">
+            Published 24 Apr 2019 by Graham Dumpleton
+          </div>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--download">
+              <a href="#" class="rhd-m-link">Start <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <i class="fas fa-terminal"></i>
+          Lesson
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title rhd-m-card-title__no-image">
+            Getting started with OpenShift
+          </h3>
+          <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+          <p class="rhd-c-card__body ">Use the OpenShift Container Platform to build and deploy applications using both...</p>
+          <div class="rhd-c-card__subtitle">
+            Published 24 Apr 2019 by Graham Dumpleton
+          </div>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--download">
+              <a href="#" class="rhd-m-link">Start <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <i class="fas fa-terminal"></i>
+          Lesson
+        </div>
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title">
+            Getting started with OpenShift
+          </h3>
+          <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
+          <p class="rhd-c-card__body ">Use the OpenShift Container Platform to build and deploy applications using both...</p>
+          <div class="rhd-c-card__subtitle">
+            Published 24 Apr 2019 by Graham Dumpleton
+          </div>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--download">
+              <a href="#" class="rhd-m-link">Start <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+  </div>
+
+  <div class="pfe-l-grid pfe-m-gutters">
+      <h2 style="font-size: 1.75rem; margin: 1rem 0;">eBooks</h2>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg pfe-m-startat-1-col-on-md">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title">
+              <a href="#" class="rhd-m-link">
+                <i class="fas fa-book"></i>
+                Introducing Istio Service
+              </a>
+            </h3>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title">
+              <a href="#" class="rhd-m-link">
+                <i class="fas fa-book"></i>
+                Introducing Istio Service
+              </a>
+            </h3>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title">
+              <a href="#" class="rhd-m-link">
+                <i class="fas fa-book"></i>
+                Introducing Istio Service
+              </a>
+            </h3>
+            <div class="rhd-c-card__footer">
+              <div class="rhd-c-card__footer--author">
+                Author Name
+              </div>
+            </div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title">
+              <a href="#" class="rhd-m-link">
+                <i class="fas fa-book"></i>
+                Introducing Istio Service
+              </a>
+            </h3>
+            <div class="rhd-c-card__footer">
+              <div class="rhd-c-card__footer--author">
+                Author Name
+              </div>
+            </div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title">
+              <a href="#" class="rhd-m-link">
+                <i class="fas fa-book"></i>
+                Introducing Istio Service
+              </a>
+            </h3>
+            <div class="rhd-c-card__footer">
+              <div class="rhd-c-card__footer--author">
+                Author Name
+              </div>
+            </div>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title">
+            <i class="fas fa-book"></i>
+            Introducing Istio Service
+          </h3>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              Author Name & Author Name
+            </div>
+          </div>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--download">
+              <a href="#" class="rhd-m-link">Download <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <i class="fas fa-book"></i>
+          eBook
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title rhd-m-card-title__no-image">
+            Introducing Istio Service
+          </h3>
+          <div class="rhd-c-card__footer rhd-m-multi-author">
+            <div class="rhd-c-card__footer--author">
+              Author Name & Author Name
+            </div>
+          </div>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--download">
+              <a href="#" class="rhd-m-link">Download <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <i class="fas fa-book"></i>
+          eBook
+        </div>
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title">
+            eBook title that can go to two lines, but will then hide until hovered
+          </h3>
+          <div class="rhd-c-card__footer rhd-m-multi-author">
+            <div class="rhd-c-card__footer--author">
+              Author Name & Author Name
+            </div>
+          </div>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--download">
+              <a href="#" class="rhd-m-link">Download <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+  </div>
+
+  <div class="pfe-l-grid pfe-m-gutters">
+      <h2 style="font-size: 1.75rem; margin: 1rem 0;">Videos</h2>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg pfe-m-startat-1-col-on-md">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title rhd-m-card-title__no-max-height">
+              <a href="#" class="rhd-m-link">
+                <i class="far fa-play-circle"></i>
+                Title of the video that can go as many lines as needed, when there is only the Title and Body.
+              </a>
+            </h3>
+            <div class="rhd-c-card__subtitle">2 minutes</div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title rhd-m-card-title__no-max-height">
+              <a href="#" class="rhd-m-link">
+                <i class="far fa-play-circle"></i>
+                Title of the video that can go as many lines as needed, when there is only the Title and Body.
+              </a>
+            </h3>
+            <div class="rhd-c-card__subtitle">2 minutes</div>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title rhd-m-card-title__no-max-height">
+              <a href="#" class="rhd-m-link">
+                <i class="far fa-play-circle"></i>
+                Title of the video that can go as many lines as needed, when there is only the Title and Body.
+              </a>
+            </h3>
+            <p class="rhd-c-card__body">This is the video description that can go to three lines, as needed.</p>
+            <div class="rhd-c-card__subtitle">2 minutes</div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title rhd-m-card-title__no-max-height">
+              <a href="#" class="rhd-m-link">
+                <i class="far fa-play-circle"></i>
+                Title of the video that can go as many lines as needed, when there is only the Title and Body.
+              </a>
+            </h3>
+            <p class="rhd-c-card__body">This is the video description that can go to three lines, as needed.</p>
+            <div class="rhd-c-card__subtitle">2 minutes</div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title rhd-m-card-title__no-max-height">
+              <a href="#" class="rhd-m-link">
+                <i class="far fa-play-circle"></i>
+                Title of the video that can go as many lines as needed, when there is only the Title and Body.
+              </a>
+            </h3>
+            <p class="rhd-c-card__body">This is the video description that can go to three lines, as needed.</p>
+            <div class="rhd-c-card__subtitle">2 minutes</div>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__video">
+          <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title">
+            Title of the video that can go to two lines, but will then hide until hovered
+          </h3>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__video">
+          <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title">
+            Title of the video that can go to two lines, but will then hide until hovered
+          </h3>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              Author Name
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__video">
+          <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title">
+            Title of the video that can go to two lines, but will then hide until hovered
+          </h3>
+          <p class="rhd-c-card__body">
+            This is the video description that can go to three lines, as needed.
+          </p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              Author Name
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+  </div>
+
+  <div class="pfe-l-grid pfe-m-gutters">
+      <h2 style="font-size: 1.75rem; margin: 1rem 0;">Cheat sheet</h2>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg pfe-m-startat-1-col-on-md">
+      <div class="rhd-l-grid__list">
+          <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+            <div class="rhd-c-card-content">
+              <h3 class="rhd-c-card__title">
+                <a href="#" class="rhd-m-link">
+                  <i class="far fa-file-code"></i>
+                  Kubernetes Cheat Sheet
+                </a>
+              </h3>
+            </div>
+          </pfe-card>
+      </div>
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title">
+              <a href="#" class="rhd-m-link">
+                <i class="far fa-file-code"></i>
+                Kubernetes Cheat Sheet title that can go multiple lines
+              </a>
+            </h3>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <div class="rhd-l-grid__list">
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title">
+              <a href="#" class="rhd-m-link">
+                <i class="far fa-file-code"></i>
+                Kubernetes Cheat Sheet
+              </a>
+            </h3>
+            <div class="rhd-c-card__footer">
+              <div class="rhd-c-card__footer--author">
+                Author Name & Author Name
+              </div>
+            </div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title">
+              <a href="#" class="rhd-m-link">
+                <i class="far fa-file-code"></i>
+                Kubernetes Cheat Sheet
+              </a>
+            </h3>
+            <div class="rhd-c-card__footer">
+              <div class="rhd-c-card__footer--author">
+                Author Name & Author Name
+              </div>
+            </div>
+          </div>
+        </pfe-card>
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title">
+              <a href="#" class="rhd-m-link">
+                <i class="far fa-file-code"></i>
+                Kubernetes Cheat Sheet
+              </a>
+            </h3>
+            <div class="rhd-c-card__footer">
+              <div class="rhd-c-card__footer--author">
+                Author Name & Author Name
+              </div>
+            </div>
+          </div>
+        </pfe-card>
+      </div>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title">
+            <i class="far fa-file-code"></i>
+            Kubernetes Cheat Sheet
+          </h3>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              Author Name & Author Name
+            </div>
+          </div>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--download">
+              <a href="#" class="rhd-m-link">Download <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <i class="far fa-file-code"></i>
+          Cheat sheet
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title rhd-m-card-title__no-image">
+            Cheat sheet title that can go to two lines only and then must truncate after it passes two lines.
+          </h3>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              Author Name & Author Name
+            </div>
+          </div>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--download">
+              <a href="#" class="rhd-m-link">Download <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+    <div class="pfe-m-5-col-on-sm pfe-m-3-col-on-md pfe-m-2-col-on-lg">
+      <pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <i class="far fa-file-code"></i>
+          Cheat sheet
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title rhd-m-card-title__no-image">
+            Cheat sheet title that can go to two lines only and then must truncate after it passes two lines.
+          </h3>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              Author Name & Author Name
+            </div>
+          </div>
+          <img src="https://developers.redhat.com/sites/default/files/styles/card_small/public/kubernetes-cheat-sheet-cover.png?itok=io1KFs4d" class="rhd-c-card__image-body"/>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--download">
+              <a href="#" class="rhd-m-link">Download <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+    </div>
+  </div>
+</div>
 </section>
 
               </div>
@@ -593,117 +1090,9 @@ Card – RHD Front-end Code and Documentation
     
     <footer role="contentinfo">
     <div class="region region-rhd-footer">
-        <div id="block-rhdfooter" data-block-plugin-id="system_menu_block:rhd-footer" class="rhd-footer">
-            <nav class="rhd-footer-nav" aria-label="Secondary Navigation" role="navigation">
-                <ul class="rhd-menu">
-                    <li class="menu-item menu-item--expanded">
-                        <h3 class="section-toggle">Featured Topics</h3>
-                        <ul class="rhd-menu">
-                            <li class="menu-item">
-                                <a href="https://redhat-developer.github.io/rhd-frontend/topics/devops/" title="DevOps involves the combination of cultural change, process automation, and tools to improve your time-to-market." data-drupal-link-system-path="node/204635">DevOps</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="https://redhat-developer.github.io/rhd-frontend/topics/kubernetes/" title="Learn how Kubernetes, a powerful open-source tool, helps you manage components across containers in any environment." data-drupal-link-system-path="node/204675">Kubernetes</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="https://redhat-developer.github.io/rhd-frontend/topics/linux/" title="Enterprise Linux Tutorials &amp; Training." data-drupal-link-system-path="node/204685">Linux</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="https://redhat-developer.github.io/rhd-frontend/topics/microservices/" title="Microservices and microservice architecture is the new standard approach to building applications as independent services." data-drupal-link-system-path="node/204665">Microservices</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="https://redhat-developer.github.io/rhd-frontend/topics/service-mesh/" title="Istio coordinates microservices on Kubernetes in a service mesh with the powerful monitoring and management tool." data-drupal-link-system-path="node/204655">Istio</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="https://redhat-developer.github.io/rhd-frontend/topics/enterprise-java/" title="Java enterprise scale." data-drupal-link-system-path="node/205245">Enterprise Java</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="https://redhat-developer.github.io/rhd-frontend/topics/serverless-architecture/" title="Build and deliver functionality with serverless architecture using Back-end as a Service and Function as a Service." data-drupal-link-system-path="node/205255">Serverless</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="https://redhat-developer.github.io/rhd-frontend/topics/knative/" title="Kubernetes platform used to build, deploy, and manage serverless workloads." data-drupal-link-system-path="node/206365">Knative</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item menu-item--expanded">
-                        <h3 class="section-toggle">Quicklinks</h3>
-                            <ul class="rhd-menu">
-                                <li class="menu-item">
-                                    <a href="https://redhat-developer.github.io/rhd-frontend/blog/">Blog Articles</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="https://developers.redhat.com/search/?s=most-recent&amp;f=type~book">Books</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="https://developers.redhat.com/search/?s=most-recent&amp;f=type~cheatsheet">Cheat Sheets</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="https://developers.redhat.com/search/?s=most-recent&amp;f=type~video">Videos</a>
-                                </li>
-                            </ul>
-                    </li>
-                    <li class="menu-item menu-item--expanded">
-                        <h3 class="section-toggle">Communicate</h3>
-                            <ul class="rhd-menu">
-                                <li class="menu-item">
-                                    <a href="" class="report-an-issue is-active" id="rhdCustomTrigger" data-drupal-link-system-path="<front>">Report a website issue</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="https://access.redhat.com/security/team/contact/">Report a security problem</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="https://redhat-developer.github.io/rhd-frontend/about/" data-drupal-link-system-path="node/204885">About us</a>
-                                </li>
-                            </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="rhd-footer-sidebar">
-                <p class="rhd-footer-sidebar-title">Red Hat Developer</p>
-                <p class="rhd-footer-sidebar-subtitle">Build here. Go anywhere.</p>
-                <p class="rhd-footer-sidebar-content">We serve the builders. The problem solvers who create careers with code.<br><br><a href="https://redhat-developer.github.io/rhd-frontend/register">Join us</a> if you’re a developer, software engineer, web designer, front-end designer, UX designer, computer scientist, architect, tester, product manager, project manager or team lead.</p>
-                <ul class="rhd-footer-sidebar-social">
-                    <li>
-                        <a href="https://www.youtube.com/channel/UC7noUdfWp-ukXUlAsJnSm-Q" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/RedHatDeveloperProgram" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"> </i></a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/rhdevelopers" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"> </i></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/redhat-developer" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"> </i></a>
-                    </li>
-                </ul>
-                <a class="rhd-footer-sidebar-signup" href="https://redhat-developer.github.io/rhd-frontend/register">Sign me up ▸</a>
-            </div>
-        </div>
-        <div id="block-universalfooter" data-block-plugin-id="system_menu_block:universal-footer" class="rh-universal-footer">
-            <a class="rh-universal-footer-rh-logo" href="https://redhat.com/">
-                <img alt="Red Hat Logo" src="https://redhat-developer.github.io/rhd-frontend/themes/custom/rhdp/images/branding/RHLogo_white.svg">
-            </a>
-            <ul class="rh-universal-footer-legal">
-                <li>
-                    <a class="copyright">Copyright © 2019 Red Hat Inc.</a>
-                </li>
-                <li>
-                    <ul class="rhd-menu">
-                        <li class="menu-item">
-                            <a href="http://www.redhat.com/en/about/privacy-policy" title="Red Hat Privacy Policy">Privacy Statement</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="http://www.redhat.com/en/about/terms-use" title="Red Hat Terms of Use">Terms of Use</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="http://www.redhat.com/en/about/all-policies-guidelines" title="Red Hat Policies and Guidelines">All policies and guidelines</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <a class="rh-universal-footer-summit-logo" href="http://www.redhat.com/summit/" target="_blank" rel="noopener noreferrer">
-                <img src="https://redhat-developer.github.io/rhd-frontend/themes/custom/rhdp/images/design/logo-summit.png" alt="Red Hat Summit">
-            </a>
+        
+        <div id="block-universalfooter" class="rh-universal-footer">
+            <img alt="Red Hat Logo" src="https://developers.redhat.com/themes/custom/rhdp/images/branding/RHLogo_white.svg">
         </div>
     </div>
 </footer>

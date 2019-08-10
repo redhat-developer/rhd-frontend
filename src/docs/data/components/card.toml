@@ -1,0 +1,35 @@
+tag = "pfe-card"
+template = """
+    <img slot="pfe-card--header" pfe-overflow="top right left" src="https://picsum.photos/200" class="rhd-c-card__image"/>
+    <div class="rhd-c-card__tag">
+        <span class="fa fa-newspaper"></span>
+        Opinion
+    </div>
+    <h3 class="rhd-c-card__title"><a href="#">Title of the article that can go to two lines only and then must truncate after it passes two lines.</a></h3>
+    <div>Fonts, sizes, spacing, etc.</div>
+    <p>Attribute: {{ $attr }}</p>
+    <p>Value: {{ . }}</p></p>"""
+
+[[attributes]]
+name = "pfe-color"
+values = [
+    "base",
+    "lightest",
+    "lighter",
+    "darker",
+    "darkest",
+    "complement",
+    "accent"
+    ]
+
+[[attributes]]
+name = "pfe-img-src"
+values = [
+    "https://picsum.photos/200"
+    ]
+
+[[attributes]]
+name = "pfe-size"
+values = [
+    "small"
+    ]

@@ -1,0 +1,17 @@
+{{ $tag := .tag }}
+{{ .attributes }}
+{{ $defaults := .defaults }}
+<div class="pfe-l-grid pfe-m-gutters pfe-m-all-3-col">
+{{ range .attributes }}
+    {{ $attr := .name }}
+    {{ range .values }}
+        {{ $val := delimit (slice $attr "=" `"` . `"`) "" }}
+        {{ delimit (slice "<" $tag " " $val ">" ) "" }}
+            {{ replace (replace (delimit $defaults "") "{{ $attr }}" $attr) "{{ . }}" . | safeHTML }}
+            
+            <!-- <p>Attribute: {{ $attr }}</p>
+            <p>Value: {{ . }}</p> -->
+        {{ delimit (slice "</" $tag ">") "" }}
+    {{ end }}
+{{ end }}
+</div>

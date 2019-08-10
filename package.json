@@ -9,6 +9,7 @@
     "serve": "spandx -c spandx.config.dev.js",
     "test": "karma start",
     "build": "npm run scripts && npm run styles && npm run docs",
+    "build:dev": "npm run scripts && npm run styles && npm run docs:dev",
     "del": "npm run del:scripts && npm run del:styles",
     "del:scripts": "del \"node_modules/@rhd/**\" && del src/docs/static/js && del docs/js && del dist/js",
     "del:styles": "del \"dist/styles**\" && del src/docs/static/css",
@@ -36,7 +37,7 @@
   "author": "<ldary@redhat.com>",
   "license": "MIT",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "5.10.0",
+    "@fortawesome/fontawesome-pro": "^5.10.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/pro-light-svg-icons": "^5.8.1",
     "@fortawesome/pro-regular-svg-icons": "^5.8.1",

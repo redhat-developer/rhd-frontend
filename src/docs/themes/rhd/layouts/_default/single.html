@@ -13,6 +13,11 @@
     
 </aside>
 <section>{{ .Content }}</section>
+{{ with .Param "component" }}
+    {{ with (index $.Site.Data.components .) }}
+    {{ partial "component.html" .  }}
+    {{ end }}
+{{ end}}
 {{ end }}
 
 {{ define "scripts"}}
