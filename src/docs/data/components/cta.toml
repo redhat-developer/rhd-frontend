@@ -1,0 +1,24 @@
+tag = "section"
+templates = [{name = "Default", html= """
+    <div class="container">
+      <div class="clearfix text-formatted field field--name-field-cta-content field--type-text-long field--label-hidden field__items">
+                <div class="field__item">
+        <div data-embed-button="media_browser" data-entity-embed-display="media_image" data-entity-type="media" data-entity-uuid="b1622c62-5418-4207-9429-d6caab192a0f" data-langcode="en" class="embedded-entity">  <img src="/sites/default/files/Logo-Red_Hat-OpenShift_4-A-Reverse-RGB_0.png" alt="OpenShift4_Logo" title="OpenShift4_Logo" typeof="foaf:Image"></div>
+<p class="text-align-center">The Kubernetes platform for big ideas</p>
+            </div>
+          </div>
+            <a href="https://developers.redhat.com/openshift/" class="button heavy-cta">Download</a>
+        </div>"""}]
+
+attributes = [{ name = "class", values = [
+        "assembly-type-call_to_action",
+        "assembly-type-call_to_action has-background"
+        ]}, 
+        { name = "style", values = [
+        "",
+        "--rhd-theme--cta--background: url(https://picsum.photos/1000/350);"
+        ]},
+        { name = "pfe-size", values = [
+            "small"
+        ]}
+]

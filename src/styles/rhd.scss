@@ -9,6 +9,8 @@ $white: white;
 $gutter: 30px;
 $fa-font-path: "../webfonts";
 
+.PFElement { position: relative; }
+
 %link {
     text-decoration: var(--pfe-theme--link--text-decoration, "underline");
     color: var(--pfe-theme--color--ui-link, #0066cc);
@@ -252,10 +254,10 @@ body { margin: 0; padding: 0; color: $grey-7; }
     margin-top: 35px;
   }
 }
-img {
-  max-width: 100%;
-  height: auto;
-}
+// img {
+//   max-width: 100%;
+//   height: auto;
+// }
 
 .rhd-search-wrapper {
   .user-search {
