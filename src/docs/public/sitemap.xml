@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>/components/cards/</loc>
-    <lastmod>2018-07-22T11:15:00-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/pages/home/</loc>
     <lastmod>2018-04-17T14:39:40-04:00</lastmod>
   </url>
@@ -36,12 +31,6 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-07-22T11:15:00-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/cards/</loc>
     <lastmod>2018-07-22T11:15:00-04:00</lastmod>
     <priority>0</priority>
   </url>

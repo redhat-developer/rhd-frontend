@@ -1,7 +1,7 @@
 ---
 title: "Typography"
 date: 2017-08-03T10:56:11-04:00
-draft: true
+draft: false
 tags: ["design"]
 ---
 

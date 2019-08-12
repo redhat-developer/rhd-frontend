@@ -2,7 +2,7 @@
 title: "Community"
 date: 2018-04-17T14:39:40-04:00
 description: ""
-draft: true
+draft: false
 tags: ["component"]
 weight: 7
 scripts: ["@rhd/rhdp-projects/rhdp-project-filter-box","@rhd/rhdp-projects/rhdp-project-item","@rhd/rhdp-projects/rhdp-project-query","@rhd/rhdp-projects/rhdp-project-url",
