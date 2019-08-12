@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Subpage on RHD Front-end Code and Documentation</title>
+    <title>subpage on RHD Front-end Code and Documentation</title>
     <link>https://redhat-developer.github.io/rhd-frontend/categories/subpage/</link>
-    <description>Recent content in Subpage on RHD Front-end Code and Documentation</description>
+    <description>Recent content in subpage on RHD Front-end Code and Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Apr 2018 14:39:40 -0400</lastBuildDate>

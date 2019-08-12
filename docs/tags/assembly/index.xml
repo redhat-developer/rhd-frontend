@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Assembly on RHD Front-end Code and Documentation</title>
+    <title>assembly on RHD Front-end Code and Documentation</title>
     <link>https://redhat-developer.github.io/rhd-frontend/tags/assembly/</link>
-    <description>Recent content in Assembly on RHD Front-end Code and Documentation</description>
+    <description>Recent content in assembly on RHD Front-end Code and Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 13 Apr 2018 02:45:06 -0400</lastBuildDate>

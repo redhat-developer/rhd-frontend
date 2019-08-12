@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Components on </title>
+    <link>/components/</link>
+    <description>Recent content in Components on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 17 Apr 2018 14:39:40 -0400</lastBuildDate>
+    
+	<atom:link href="/components/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Card</title>
+      <link>/components/card/</link>
+      <pubDate>Sun, 22 Jul 2018 11:15:00 -0400</pubDate>
+      
+      <guid>/components/card/</guid>
+      <description>Articles and Blogs
+Card Variations</description>
+    </item>
+    
+    <item>
+      <title>Example Component</title>
+      <link>/components/template/</link>
+      <pubDate>Sun, 22 Jul 2018 11:15:00 -0400</pubDate>
+      
+      <guid>/components/template/</guid>
+      <description>TEMPLATE COMPONENT
+Sample Variations</description>
+    </item>
+    
+  </channel>
+</rss>

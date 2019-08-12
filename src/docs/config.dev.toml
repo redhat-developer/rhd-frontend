@@ -1,12 +1,30 @@
-baseURL = "https://redhat-developer.github.io/rhd-frontend/"
+baseURL = "/"
 bind = "0.0.0.0"
 port = "8080"
 languageCode = "en-us"
 title = "RHD Front-end Code and Documentation"
-theme = "rhd"
+theme = "rhd-docs"
 publishDir = "../../docs"
 canonifyURLs = true
 disableFastRender = true
 
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
 [params]
     Minify = false
+
+[module]
+
+    [[module.mounts]]
+        source = "../data"
+        target = "data"
+
+    [[module.mounts]]
+        source = "../styles"
+        target = "assets/sass"
+    
+    [[module.mounts]]
+        source = "../../dist/js"
+        target = "assets/js"

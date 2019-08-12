@@ -1,13 +1,23 @@
 ---
 title: "Home"
 date: 2017-08-03T10:56:11-04:00
-draft: true
+draft: false
+scripts: ["@patternfly/pfe-card/pfe-card.umd"]
 ---
 
 # RHDP Documentation
 
 
 ## Patterns
+
+<pfe-card pfe-color="dark" class="rhd-m-link--type-manuals">
+    <h3 slot="pfe-card__header">
+        <a href="patterns/design/typography">Typography</a>
+    </h3>
+    <div slot="pfe-card__body">
+    Fonts, sizes, spacing, etc.
+    </div>
+</pfe-card>
 
 [Typography](patterns/design/typography/)
 
@@ -17,9 +27,9 @@ draft: true
 
 ## Components
 
-* {{<fa "fas fa-search">}} [Search](components/search)
-* {{<fa "fas fa-film">}} [DevNationLive](components/devnationlive)
-* {{<fa "far fa-address-card">}} [OneBox](components/onebox)
+* {{< fa "fas fa-search">}} [Search](components/search)
+* {{< fa "fas fa-film">}} [DevNationLive](components/devnationlive)
+* {{< fa "far fa-address-card">}} [OneBox](components/onebox)
 
 
 ## Code

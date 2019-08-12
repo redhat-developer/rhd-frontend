@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Layout on RHD Front-end Code and Documentation</title>
+    <title>layout on RHD Front-end Code and Documentation</title>
     <link>https://redhat-developer.github.io/rhd-frontend/tags/layout/</link>
-    <description>Recent content in Layout on RHD Front-end Code and Documentation</description>
+    <description>Recent content in layout on RHD Front-end Code and Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 04 Oct 2017 08:06:49 -0400</lastBuildDate>

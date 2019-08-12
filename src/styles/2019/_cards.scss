@@ -133,6 +133,7 @@
 
 .rhd-c-card__tag {
   position: absolute;
+  color: var(--rhd-theme--color-text, #151515);
   top: var(--pf-global--spacer--md); // 16px;
   left: 0;
   background-color: var(--pfe-theme--color--surface--lightest); // #fff
@@ -141,6 +142,7 @@
   max-height: 40px;
   max-width: 90%;
   overflow: hidden;
+  z-index: 1;
   box-shadow: rgba(0, 0, 0, .28) 0px 2px 4px;
   i {
     margin-right: var(--pf-global--spacer--sm); //8px

@@ -2,7 +2,7 @@
 title: "Search"
 date: 2017-08-23T22:25:45-04:00
 description: ""
-draft: true
+draft: false
 tags: ["component"]
 weight: 1
 scripts: ["@rhd/dp-search/dp-search-app","@rhd/dp-search/dp-search-box","@rhd/dp-search/dp-search-filter-group",

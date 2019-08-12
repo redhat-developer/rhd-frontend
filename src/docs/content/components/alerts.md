@@ -2,7 +2,7 @@
 title: "Alerts"
 date: 2018-04-17T14:39:40-04:00
 description: ""
-draft: true
+draft: false
 tags: ["component"]
 weight: 4
 scripts: ["@rhd/dp-alert"]

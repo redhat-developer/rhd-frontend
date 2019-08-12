@@ -6,12 +6,13 @@
     <description>Recent content in Categories on RHD Front-end Code and Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 17 Apr 2018 14:39:40 -0400</lastBuildDate>
     
 	<atom:link href="https://redhat-developer.github.io/rhd-frontend/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Page</title>
+      <title>page</title>
       <link>https://redhat-developer.github.io/rhd-frontend/categories/page/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
@@ -20,7 +21,7 @@
     </item>
     
     <item>
-      <title>Subpage</title>
+      <title>subpage</title>
       <link>https://redhat-developer.github.io/rhd-frontend/categories/subpage/</link>
       <pubDate>Tue, 17 Apr 2018 14:39:40 -0400</pubDate>
       
