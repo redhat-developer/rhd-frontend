@@ -1,0 +1,22 @@
+{{ $variants := sort .variants.variant "order" }}
+{{ $contexts := .context }}
+<div class="pfe-l-grid pfe-m-gutters pfe-m-all-5-col-on-sm pfe-m-all-3-col-on-md pfe-m-all-2-col-on-lg">
+{{ range $context := $contexts }}
+    <h2 class="pfe-m-12-col-on-sm pfe-m-12-col-on-md pfe-m-12-col-on-lg">{{ .details.name }}</h2>
+    <!-- <div class="pfe-m-2-col"></div> -->
+    {{ range $variants }}
+    {{if index $context .id}} 
+    <div>
+        <h4>{{ .name }}</h4>
+        {{with (index $context .id "templates")}}
+        {{ range . }}
+            {{ . | safeHTML }}
+        {{ end }}
+        {{ end}}
+    </div>
+    {{ else }}
+    <div></div>
+    {{ end }}
+    {{ end }}
+{{ end }}
+</div>

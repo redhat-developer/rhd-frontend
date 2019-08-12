@@ -14,18 +14,10 @@ var __extends = (this && this.__extends) || (function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./rhdp-downloads-popular-product"], factory);
-    }
-})(function (require, exports) {
+define(["require", "exports", "./rhdp-downloads-popular-product"], function (require, exports, rhdp_downloads_popular_product_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var rhdp_downloads_popular_product_1 = __importDefault(require("./rhdp-downloads-popular-product"));
+    rhdp_downloads_popular_product_1 = __importDefault(rhdp_downloads_popular_product_1);
     var RHDPDownloadsPopularProducts = (function (_super) {
         __extends(RHDPDownloadsPopularProducts, _super);
         function RHDPDownloadsPopularProducts() {

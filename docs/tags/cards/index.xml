@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cards on RHD Front-end Code and Documentation</title>
+    <title>cards on RHD Front-end Code and Documentation</title>
     <link>https://redhat-developer.github.io/rhd-frontend/tags/cards/</link>
-    <description>Recent content in Cards on RHD Front-end Code and Documentation</description>
+    <description>Recent content in cards on RHD Front-end Code and Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 22 Jul 2018 11:15:00 -0400</lastBuildDate>
@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Card</title>
+      <title>Cards</title>
       <link>https://redhat-developer.github.io/rhd-frontend/components/cards/</link>
       <pubDate>Sun, 22 Jul 2018 11:15:00 -0400</pubDate>
       

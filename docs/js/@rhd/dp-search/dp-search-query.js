@@ -14,18 +14,10 @@ var __extends = (this && this.__extends) || (function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@patternfly/pfelement/pfelement.umd"], factory);
-    }
-})(function (require, exports) {
+define(["require", "exports", "@patternfly/pfelement/pfelement.umd"], function (require, exports, pfelement_umd_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_umd_1 = __importDefault(require("@patternfly/pfelement/pfelement.umd"));
+    pfelement_umd_1 = __importDefault(pfelement_umd_1);
     var DPSearchQuery = (function (_super) {
         __extends(DPSearchQuery, _super);
         function DPSearchQuery() {

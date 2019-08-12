@@ -14,19 +14,11 @@ var __extends = (this && this.__extends) || (function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@patternfly/pfelement/pfelement.umd", "./dp-search-filter-active-item"], factory);
-    }
-})(function (require, exports) {
+define(["require", "exports", "@patternfly/pfelement/pfelement.umd", "./dp-search-filter-active-item"], function (require, exports, pfelement_umd_1, dp_search_filter_active_item_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_umd_1 = __importDefault(require("@patternfly/pfelement/pfelement.umd"));
-    var dp_search_filter_active_item_1 = __importDefault(require("./dp-search-filter-active-item"));
+    pfelement_umd_1 = __importDefault(pfelement_umd_1);
+    dp_search_filter_active_item_1 = __importDefault(dp_search_filter_active_item_1);
     var DPSearchActiveFilters = (function (_super) {
         __extends(DPSearchActiveFilters, _super);
         function DPSearchActiveFilters() {

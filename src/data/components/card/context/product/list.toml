@@ -1,0 +1,21 @@
+templates = [
+    """<pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Red Hat Enterprise Linux</a></h3>
+          </div>
+        </pfe-card>""","""
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Red Hat Enterprise Linux</a></h3>
+          </div>
+        </pfe-card>""","""
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Red Hat Enterprise Linux</a></h3>
+          </div>
+        </pfe-card>""","""
+        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+          <div class="rhd-c-card-content">
+            <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Red Hat Enterprise Linux</a></h3>
+          </div>
+        </pfe-card>"""]

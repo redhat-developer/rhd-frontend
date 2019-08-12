@@ -2,7 +2,7 @@
   "_args": [
     [
       "@fortawesome/fontawesome-pro@5.10.1",
-      "/home/ldary/Projects/rh/rhd-frontend"
+      "/home/ldary/rh/rhd-frontend"
     ]
   ],
   "_development": true,
@@ -28,7 +28,7 @@
   ],
   "_resolved": "https://npm.fontawesome.com/@fortawesome/fontawesome-pro/-/fontawesome-pro-5.10.1.tgz",
   "_spec": "5.10.1",
-  "_where": "/home/ldary/Projects/rh/rhd-frontend",
+  "_where": "/home/ldary/rh/rhd-frontend",
   "author": {
     "name": "Dave Gandy",
     "email": "dave@fontawesome.com",

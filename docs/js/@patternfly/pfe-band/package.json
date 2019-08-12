@@ -1,32 +1,37 @@
 {
-  "_from": "@patternfly/pfe-band@^1.0.0-prerelease.19",
+  "_args": [
+    [
+      "@patternfly/pfe-band@1.0.0-prerelease.19",
+      "/home/ldary/rh/rhd-frontend"
+    ]
+  ],
+  "_development": true,
+  "_from": "@patternfly/pfe-band@1.0.0-prerelease.19",
   "_id": "@patternfly/pfe-band@1.0.0-prerelease.19",
   "_inBundle": false,
   "_integrity": "sha512-jjUT078vat2r4EqVe4GmD1XRmmibI1TFmhzf9e3uJlM0eQRYlHH7pU2vNm08ynpia0vQAWvTn8boO4uxZdNkVw==",
   "_location": "/@patternfly/pfe-band",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "@patternfly/pfe-band@^1.0.0-prerelease.19",
+    "raw": "@patternfly/pfe-band@1.0.0-prerelease.19",
     "name": "@patternfly/pfe-band",
     "escapedName": "@patternfly%2fpfe-band",
     "scope": "@patternfly",
-    "rawSpec": "^1.0.0-prerelease.19",
+    "rawSpec": "1.0.0-prerelease.19",
     "saveSpec": null,
-    "fetchSpec": "^1.0.0-prerelease.19"
+    "fetchSpec": "1.0.0-prerelease.19"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
   "_resolved": "https://registry.npmjs.org/@patternfly/pfe-band/-/pfe-band-1.0.0-prerelease.19.tgz",
-  "_shasum": "b32215b47fe2140c08c876ef9d51fbbefef5f3d1",
-  "_spec": "@patternfly/pfe-band@^1.0.0-prerelease.19",
-  "_where": "/home/ldary/Projects/rh/rhd-frontend",
+  "_spec": "1.0.0-prerelease.19",
+  "_where": "/home/ldary/rh/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-elements/issues"
   },
-  "bundleDependencies": false,
   "contributors": [
     {
       "name": "castastrophe",
@@ -37,7 +42,6 @@
     "@patternfly/pfe-sass": "^1.0.0-prerelease.19",
     "@patternfly/pfelement": "^1.0.0-prerelease.19"
   },
-  "deprecated": false,
   "description": "Band container for PatternFly Elements",
   "generator-rhelement-version": "0.6.8",
   "gitHead": "e1809862816e1446067feece891620c30d026433",

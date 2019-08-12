@@ -4990,6 +4990,9 @@ pfe-cta {
   font-weight: 700;
   text-decoration: none; }
 
+.PFElement {
+  position: relative; }
+
 a {
   text-decoration: var(--pfe-theme--link--text-decoration, "underline");
   color: var(--pfe-theme--color--ui-link, #0066cc); }
@@ -19554,6 +19557,7 @@ ul.rhd-accordion {
 
 .rhd-c-card__tag {
   position: absolute;
+  color: var(--rhd-theme--color-text, #151515);
   top: var(--pf-global--spacer--md);
   left: 0;
   background-color: var(--pfe-theme--color--surface--lightest);
@@ -19562,6 +19566,7 @@ ul.rhd-accordion {
   max-height: 40px;
   max-width: 90%;
   overflow: hidden;
+  z-index: 1;
   box-shadow: rgba(0, 0, 0, 0.28) 0px 2px 4px; }
   .rhd-c-card__tag i {
     margin-right: var(--pf-global--spacer--sm); }
@@ -19800,10 +19805,6 @@ ul.rhd-accordion {
   @media (min-width: 768px) {
     .page-title {
       margin-top: 35px; } }
-
-img {
-  max-width: 100%;
-  height: auto; }
 
 .rhd-search-wrapper .user-search {
   color: #000;

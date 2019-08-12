@@ -18,18 +18,10 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./rhdp-downloads-all-item"], factory);
-    }
-})(function (require, exports) {
+define(["require", "exports", "./rhdp-downloads-all-item"], function (require, exports, rhdp_downloads_all_item_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var rhdp_downloads_all_item_1 = __importDefault(require("./rhdp-downloads-all-item"));
+    rhdp_downloads_all_item_1 = __importDefault(rhdp_downloads_all_item_1);
     var RHDPDownloadsAll = (function (_super) {
         __extends(RHDPDownloadsAll, _super);
         function RHDPDownloadsAll() {

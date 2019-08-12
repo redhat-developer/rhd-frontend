@@ -17,4 +17,4 @@ scripts: ["@rhd/rhdp-projects/rhdp-project-filter-box","@rhd/rhdp-projects/rhdp-
     <rhdp-project-query></rhdp-project-query>
     <rhdp-project-url></rhdp-project-url>
 </rhdp-projects>
-</div>{{</ code >}}
+</div>{{< /code >}}

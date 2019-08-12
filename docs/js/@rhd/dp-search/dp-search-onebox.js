@@ -18,18 +18,10 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@patternfly/pfelement/pfelement.umd"], factory);
-    }
-})(function (require, exports) {
+define(["require", "exports", "@patternfly/pfelement/pfelement.umd"], function (require, exports, pfelement_umd_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_umd_1 = __importDefault(require("@patternfly/pfelement/pfelement.umd"));
+    pfelement_umd_1 = __importDefault(pfelement_umd_1);
     var DPSearchOneBox = (function (_super) {
         __extends(DPSearchOneBox, _super);
         function DPSearchOneBox() {

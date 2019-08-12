@@ -14,18 +14,10 @@ var __extends = (this && this.__extends) || (function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./rhdp-search-result"], factory);
-    }
-})(function (require, exports) {
+define(["require", "exports", "./rhdp-search-result"], function (require, exports, rhdp_search_result_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var rhdp_search_result_1 = __importDefault(require("./rhdp-search-result"));
+    rhdp_search_result_1 = __importDefault(rhdp_search_result_1);
     var RHDPSearchResults = (function (_super) {
         __extends(RHDPSearchResults, _super);
         function RHDPSearchResults() {

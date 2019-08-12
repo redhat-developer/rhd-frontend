@@ -57,7 +57,7 @@
     "cssnano": "^4.1.10",
     "del-cli": "^1.1.0",
     "eslint": "^5.16.0",
-    "hugo-cli": "^0.10.0",
+    "hugo-cli": "^0.11.0",
     "jasmine-core": "^3.4.0",
     "jsdoc": "^3.6.3",
     "karma": "^4.1.0",

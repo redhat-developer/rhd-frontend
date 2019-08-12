@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Component on RHD Front-end Code and Documentation</title>
+    <title>component on RHD Front-end Code and Documentation</title>
     <link>https://redhat-developer.github.io/rhd-frontend/tags/component/</link>
-    <description>Recent content in Component on RHD Front-end Code and Documentation</description>
+    <description>Recent content in component on RHD Front-end Code and Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Aug 2017 22:25:45 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 22 Jul 2018 11:15:00 -0400</lastBuildDate>
     
 	<atom:link href="https://redhat-developer.github.io/rhd-frontend/tags/component/index.xml" rel="self" type="application/rss+xml" />
     
@@ -40,22 +40,32 @@
     
     <item>
       <title>Card</title>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/card/</link>
+      <pubDate>Sun, 22 Jul 2018 11:15:00 -0400</pubDate>
+      
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/card/</guid>
+      <description>Articles and Blogs
+Card Variations</description>
+    </item>
+    
+    <item>
+      <title>Cardish</title>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/cardish/</link>
+      <pubDate>Sun, 22 Jul 2018 11:15:00 -0400</pubDate>
+      
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/cardish/</guid>
+      <description>Articles and Blogs
+     Opinion  Title of the article that can go to two lines only and then must truncate after it passes two lines. Fonts, sizes, spacing, etc.  Card with image  Opinion  Title of the article that can go to two lines only and then must truncate after it passes two lines. This is the article description that can go to three lines and will be followed by a footer.</description>
+    </item>
+    
+    <item>
+      <title>Cards</title>
       <link>https://redhat-developer.github.io/rhd-frontend/components/cards/</link>
       <pubDate>Sun, 22 Jul 2018 11:15:00 -0400</pubDate>
       
       <guid>https://redhat-developer.github.io/rhd-frontend/components/cards/</guid>
       <description>Card Examples Articles and Blogs Title of the article that can be two li...&amp;nbsp;  2     Title of the article&amp;nbsp;  2       Title of the article This is the article description that can go to three lines and will be followed by a footer.  2
   Title of the article This is the article description that can go to three lines and will be followed by a footer.</description>
-    </item>
-    
-    <item>
-      <title>Card</title>
-      <link>https://redhat-developer.github.io/rhd-frontend/components/cards/</link>
-      <pubDate>Sun, 22 Jul 2018 11:15:00 -0400</pubDate>
-      
-      <guid>https://redhat-developer.github.io/rhd-frontend/components/cards/</guid>
-      <description>Articles and Blogs
-     Opinion  Title of the article that can go to two lines only and then must truncate after it passes two lines. Fonts, sizes, spacing, etc.  Card with image  Opinion  Title of the article that can go to two lines only and then must truncate after it passes two lines. This is the article description that can go to three lines and will be followed by a footer.</description>
     </item>
     
     <item>
@@ -93,6 +103,16 @@
       
       <guid>https://redhat-developer.github.io/rhd-frontend/components/community/</guid>
       <description>&amp;lt;div data-product-id=&amp;#34;fuse&amp;#34;&amp;gt; &amp;lt;rhdp-projects dcp-url=&amp;#34;https://dcp2.jboss.org/v2/rest/search/suggest_project_name_ngram_more_fields?sort=sys_title&amp;amp;amp;query=&amp;#34; upstream-product-id=&amp;#34;fuse&amp;#34;&amp;gt; &amp;lt;rhdp-project-query&amp;gt;&amp;lt;/rhdp-project-query&amp;gt; &amp;lt;rhdp-project-url&amp;gt;&amp;lt;/rhdp-project-url&amp;gt; &amp;lt;/rhdp-projects&amp;gt; &amp;lt;/div&amp;gt;        </description>
+    </item>
+    
+    <item>
+      <title>Example Component</title>
+      <link>https://redhat-developer.github.io/rhd-frontend/components/template/</link>
+      <pubDate>Sun, 22 Jul 2018 11:15:00 -0400</pubDate>
+      
+      <guid>https://redhat-developer.github.io/rhd-frontend/components/template/</guid>
+      <description>TEMPLATE COMPONENT
+Sample Variations</description>
     </item>
     
     <item>

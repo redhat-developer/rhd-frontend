@@ -14,20 +14,10 @@ var __extends = (this && this.__extends) || (function () {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@patternfly/pfelement/pfelement.umd", "@fortawesome/fontawesome-svg-core/index", "@fortawesome/pro-solid-svg-icons/index"], factory);
-    }
-})(function (require, exports) {
+define(["require", "exports", "@patternfly/pfelement/pfelement.umd", "@fortawesome/fontawesome-svg-core/index", "@fortawesome/pro-solid-svg-icons/index"], function (require, exports, pfelement_umd_1, index_1, index_2) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var pfelement_umd_1 = __importDefault(require("@patternfly/pfelement/pfelement.umd"));
-    var index_1 = require("@fortawesome/fontawesome-svg-core/index");
-    var index_2 = require("@fortawesome/pro-solid-svg-icons/index");
+    pfelement_umd_1 = __importDefault(pfelement_umd_1);
     index_1.library.add(index_2.faTimes);
     var DPAlert = (function (_super) {
         __extends(DPAlert, _super);
