@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/components/card/</loc>
+    <lastmod>2018-07-22T11:15:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/components/cards/</loc>
+    <lastmod>2018-07-22T11:15:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pages/home/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/components/template/</loc>
+    <lastmod>2018-07-22T11:15:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2018-07-22T11:15:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2018-07-22T11:15:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2018-07-22T11:15:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/cards/</loc>
+    <lastmod>2018-07-22T11:15:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/component/</loc>
+    <lastmod>2018-07-22T11:15:00-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/patterns/assemblies/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/patterns/code/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/components/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/content/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/design/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/layout/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/misc/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pages/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/page/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/page/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/subpage/</loc>
+    <lastmod>2018-04-17T14:39:40-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/patterns/code/ts/</loc>
+    <lastmod>2017-08-18T15:15:45-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/code/</loc>
+    <lastmod>2017-08-18T15:15:45-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/patterns/code/html/</loc>
+    <lastmod>2017-08-03T15:06:55-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/code/css/</loc>
+    <lastmod>2017-08-03T15:06:49-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/code/js/</loc>
+    <lastmod>2017-08-03T15:06:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/misc/a11y/</loc>
+    <lastmod>2017-08-03T15:05:58-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/misc/</loc>
+    <lastmod>2017-08-03T15:05:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/patterns/misc/interactive/</loc>
+    <lastmod>2017-08-03T15:05:26-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/content/style/</loc>
+    <lastmod>2017-08-03T15:04:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/content/</loc>
+    <lastmod>2017-08-03T15:04:33-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/patterns/misc/handoffs/</loc>
+    <lastmod>2017-08-03T15:03:56-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/misc/links/</loc>
+    <lastmod>2017-08-03T15:03:17-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/design/graphics/</loc>
+    <lastmod>2017-08-03T14:57:35-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/design/</loc>
+    <lastmod>2017-08-03T14:57:35-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/patterns/layout/grid/</loc>
+    <lastmod>2017-08-03T14:22:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/layout/</loc>
+    <lastmod>2017-08-03T14:22:23-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/patterns/design/logos/</loc>
+    <lastmod>2017-08-03T14:11:29-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/design/background/</loc>
+    <lastmod>2017-08-03T14:11:21-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/design/color/</loc>
+    <lastmod>2017-08-03T14:11:06-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/layout/boxmodel/</loc>
+    <lastmod>2017-08-03T14:10:42-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/patterns/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
