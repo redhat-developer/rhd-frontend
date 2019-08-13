@@ -1,27 +1,20 @@
 {
-  "_args": [
-    [
-      "@patternfly/pfelement@1.0.0-prerelease.19",
-      "/home/ldary/rh/rhd-frontend"
-    ]
-  ],
-  "_development": true,
-  "_from": "@patternfly/pfelement@1.0.0-prerelease.19",
+  "_from": "@patternfly/pfelement@^1.0.0-prerelease.19",
   "_id": "@patternfly/pfelement@1.0.0-prerelease.19",
   "_inBundle": false,
   "_integrity": "sha512-INBcRq8GGE3HXilgBoTvvT0qIdP8/TIVyaWDdQ5MdEjN8D4VbK3RyY/3bu4/hEzL4vMFu3W1BE+oqgq6mlkeKw==",
   "_location": "/@patternfly/pfelement",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "@patternfly/pfelement@1.0.0-prerelease.19",
+    "raw": "@patternfly/pfelement@^1.0.0-prerelease.19",
     "name": "@patternfly/pfelement",
     "escapedName": "@patternfly%2fpfelement",
     "scope": "@patternfly",
-    "rawSpec": "1.0.0-prerelease.19",
+    "rawSpec": "^1.0.0-prerelease.19",
     "saveSpec": null,
-    "fetchSpec": "1.0.0-prerelease.19"
+    "fetchSpec": "^1.0.0-prerelease.19"
   },
   "_requiredBy": [
     "#DEV:/",
@@ -32,11 +25,13 @@
     "/@patternfly/pfe-tabs"
   ],
   "_resolved": "https://registry.npmjs.org/@patternfly/pfelement/-/pfelement-1.0.0-prerelease.19.tgz",
-  "_spec": "1.0.0-prerelease.19",
-  "_where": "/home/ldary/rh/rhd-frontend",
+  "_shasum": "dd52b193feb8248d2c2bb56c6dcb86aaea275439",
+  "_spec": "@patternfly/pfelement@^1.0.0-prerelease.19",
+  "_where": "/home/ldary/Projects/rh/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-elements/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Kyle Buchanan",
@@ -51,6 +46,7 @@
       "url": "https://github.com/castastrophe"
     }
   ],
+  "deprecated": false,
   "description": "Base class for PatternFly Elements",
   "generator-pfelement-version": "0.3.4",
   "gitHead": "e1809862816e1446067feece891620c30d026433",

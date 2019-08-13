@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "module": "umd",
-        "watch": true,
+        "watch": false,
         "moduleResolution": "node",
         "target": "es5",
         "noImplicitAny": false,
