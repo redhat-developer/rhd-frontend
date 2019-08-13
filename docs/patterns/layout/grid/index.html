@@ -9,11 +9,12 @@ Responsive Grid – RHD Front-end Code and Documentation
 </title>
     
     
+
     
         
     
     
-    <link rel="stylesheet" href="https://redhat-developer.github.io/rhd-frontend/css/advanced-theme.css">
+    
     <link rel="stylesheet" href="https://redhat-developer.github.io/rhd-frontend/css/pfe-layouts.min.css">
     <link rel="stylesheet" href="https://redhat-developer.github.io/rhd-frontend/css/advanced-theme.min.css">
     <link rel="stylesheet" href="https://redhat-developer.github.io/rhd-frontend/css/rhd.min.css">
@@ -84,7 +85,175 @@ Responsive Grid – RHD Front-end Code and Documentation
     
     
 </aside>
-<section></section>
+<section><p><div class="pfe-l-grid">
+<pre class="pfe-m-10-col pfe-m-startat-2-col" style="max-height: 10em;">
+<code class="language-html">&lt;section class=&#34;pfe-l-grid pfe-m-gutters&#34;&gt;
+    &lt;div class=&#34;&#34; style=&#34;padding: 1em; background-color:orange; height: 50px;&#34;&gt;
+        No Column Width
+    &lt;/div&gt;
+&lt;/section&gt;</code>
+</pre>
+</div>
+<div class="code-sample">
+<section class="pfe-l-grid pfe-m-gutters">
+    <div class="" style="padding: 1em; background-color:orange; height: 50px;">
+        No Column Width
+    </div>
+</section>
+</div>
+<div class="pfe-l-grid">
+<pre class="pfe-m-10-col pfe-m-startat-2-col" style="max-height: 10em;">
+<code class="language-html">&lt;section class=&#34;pfe-l-grid pfe-m-gutters&#34;&gt;
+    &lt;div class=&#34;pfe-m-6-col pfe-m-startat-4-col&#34; style=&#34;padding: 1em; background-color:orange; height: 50px;&#34;&gt;
+        Static Column Width: 6
+    &lt;/div&gt;
+&lt;/section&gt;</code>
+</pre>
+</div>
+<div class="code-sample">
+<section class="pfe-l-grid pfe-m-gutters">
+    <div class="pfe-m-6-col pfe-m-startat-4-col" style="padding: 1em; background-color:orange; height: 50px;">
+        Static Column Width: 6
+    </div>
+</section>
+</div>
+<div class="pfe-l-grid">
+<pre class="pfe-m-10-col pfe-m-startat-2-col" style="max-height: 10em;">
+<code class="language-html">&lt;section class=&#34;pfe-l-grid pfe-m-gutters&#34;&gt;
+    &lt;div class=&#34;pfe-m-10-col-on-lg pfe-m-startat-2-col-on-lg&#34; style=&#34;padding: 1em; background-color:red; height: 50px;&#34;&gt;
+        Dynamic Column Width: 10
+    &lt;/div&gt;
+&lt;/section&gt;</code>
+</pre>
+</div>
+<div class="code-sample">
+<section class="pfe-l-grid pfe-m-gutters">
+    <div class="pfe-m-10-col-on-lg pfe-m-startat-2-col-on-lg" style="padding: 1em; background-color:red; height: 50px;">
+        Dynamic Column Width: 10
+    </div>
+</section>
+</div>
+<div class="pfe-l-grid">
+<pre class="pfe-m-10-col pfe-m-startat-2-col" style="max-height: 10em;">
+<code class="language-html">&lt;section class=&#34;pfe-l-grid pfe-m-gutters&#34;&gt;
+    &lt;div class=&#34;pfe-m-8-col-on-lg pfe-m-startat-3-col-on-lg&#34; style=&#34;padding: 1em; background-color:green; height: 50px;&#34;&gt;
+        Dynamic Column Width: 8
+    &lt;/div&gt;
+&lt;/section&gt;</code>
+</pre>
+</div>
+<div class="code-sample">
+<section class="pfe-l-grid pfe-m-gutters">
+    <div class="pfe-m-8-col-on-lg pfe-m-startat-3-col-on-lg" style="padding: 1em; background-color:green; height: 50px;">
+        Dynamic Column Width: 8
+    </div>
+</section>
+</div>
+<div class="pfe-l-grid">
+<pre class="pfe-m-10-col pfe-m-startat-2-col" style="max-height: 10em;">
+<code class="language-html">&lt;section class=&#34;pfe-l-grid pfe-m-gutters&#34;&gt;
+    &lt;div class=&#34;pfe-m-6-col-on-lg pfe-m-startat-4-col-on-lg&#34; style=&#34;padding: 1em; background-color:blue; height: 50px;&#34;&gt;
+        Dynamic Column Width: 6
+    &lt;/div&gt;
+&lt;/section&gt;</code>
+</pre>
+</div>
+<div class="code-sample">
+<section class="pfe-l-grid pfe-m-gutters">
+    <div class="pfe-m-6-col-on-lg pfe-m-startat-4-col-on-lg" style="padding: 1em; background-color:blue; height: 50px;">
+        Dynamic Column Width: 6
+    </div>
+</section>
+</div>
+<div class="pfe-l-grid">
+<pre class="pfe-m-10-col pfe-m-startat-2-col" style="max-height: 10em;">
+<code class="language-html">&lt;section class=&#34;pfe-l-grid pfe-m-gutters&#34;&gt;
+    &lt;div class=&#34;pfe-l-grid pfe-m-gutters pfe-m-all-6-col&#34; style=&#34;padding:var(--pfe-theme--container-spacer);&#34;&gt;
+        &lt;div&gt;
+            &lt;div style=&#34;background: #EEE;&#34;&gt;
+                &lt;div style=&#34;padding:var(--pfe-theme--container-spacer);&#34;&gt;No Column Width&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;div style=&#34;background: #EEE;&#34;&gt;
+                &lt;div style=&#34;padding: 16px;&#34;&gt;No Column Width&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;div style=&#34;background: #EEE;&#34;&gt;
+                &lt;div style=&#34;padding: 16px;&#34;&gt;No Column Width&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code>
+</pre>
+</div>
+<div class="code-sample">
+<section class="pfe-l-grid pfe-m-gutters">
+    <div class="pfe-l-grid pfe-m-gutters pfe-m-all-6-col" style="padding:var(--pfe-theme--container-spacer);">
+        <div>
+            <div style="background: #EEE;">
+                <div style="padding:var(--pfe-theme--container-spacer);">No Column Width</div>
+            </div>
+        </div>
+        <div>
+            <div style="background: #EEE;">
+                <div style="padding: 16px;">No Column Width</div>
+            </div>
+        </div>
+        <div>
+            <div style="background: #EEE;">
+                <div style="padding: 16px;">No Column Width</div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<div class="pfe-l-grid">
+<pre class="pfe-m-10-col pfe-m-startat-2-col" style="max-height: 10em;">
+<code class="language-html">&lt;section class=&#34;pfe-l-grid pfe-m-gutters&#34;&gt;
+    &lt;div class=&#34;pfe-l-grid pfe-m-gutters pfe-m-all-4-col&#34; style=&#34;background-color:orange;padding:var(--pfe-theme--container-spacer);&#34;&gt;
+        &lt;div&gt;
+            &lt;div style=&#34;background: #EEE;&#34;&gt;
+                &lt;div style=&#34;padding: 16px;&#34;&gt;No Column Width&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;div style=&#34;background: #EEE;&#34;&gt;
+                &lt;div style=&#34;padding: 16px;&#34;&gt;No Column Width&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;div style=&#34;background: #EEE;&#34;&gt;
+                &lt;div style=&#34;padding: 16px;&#34;&gt;No Column Width&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code>
+</pre>
+</div>
+<div class="code-sample">
+<section class="pfe-l-grid pfe-m-gutters">
+    <div class="pfe-l-grid pfe-m-gutters pfe-m-all-4-col" style="background-color:orange;padding:var(--pfe-theme--container-spacer);">
+        <div>
+            <div style="background: #EEE;">
+                <div style="padding: 16px;">No Column Width</div>
+            </div>
+        </div>
+        <div>
+            <div style="background: #EEE;">
+                <div style="padding: 16px;">No Column Width</div>
+            </div>
+        </div>
+        <div>
+            <div style="background: #EEE;">
+                <div style="padding: 16px;">No Column Width</div>
+            </div>
+        </div>
+    </div>
+</section>
+</div></p>
+</section>
 
 
               </div>

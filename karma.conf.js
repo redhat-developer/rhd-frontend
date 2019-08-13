@@ -35,7 +35,7 @@ module.exports = function (config) {
         singleRun: true,
         colors: true,
         frameworks: ['jasmine-ajax', 'jasmine'],
-        reporters: ['progress', 'html','junit'],
+        reporters: ['progress', 'html', 'junit'],
         htmlReporter: {
             outputFile: 'src/tests/unit/report/unit-test-report.html',
             pageTitle: 'RHD frontend unit-test results'
@@ -64,7 +64,7 @@ module.exports = function (config) {
             'src/tests/unit/config/system.min.js', // 'https://cdnjs.cloudflare.com/ajax/libs/systemjs/2.1.1/system.min.js',
             'src/tests/unit/config/custom-elements-es5-adapter.js', // 'https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.1/custom-elements-es5-adapter.js',
             'src/tests/unit/config/webcomponents-bundle.js', // 'https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.1/webcomponents-bundle.js',
-            {pattern: 'src/docs/static/js/**/*.js', included: false, watched: true},
+            {pattern: 'dist/js/**/*.js', included: false, watched: true},
             {pattern: 'src/tests/unit/**/*search*_spec.js', included: true, watched: true}
         ]
     })

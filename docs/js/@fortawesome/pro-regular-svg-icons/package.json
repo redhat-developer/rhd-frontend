@@ -1,34 +1,28 @@
 {
-  "_args": [
-    [
-      "@fortawesome/pro-regular-svg-icons@5.10.1",
-      "/home/ldary/rh/rhd-frontend"
-    ]
-  ],
-  "_development": true,
-  "_from": "@fortawesome/pro-regular-svg-icons@5.10.1",
+  "_from": "@fortawesome/pro-regular-svg-icons@^5.8.1",
   "_id": "@fortawesome/pro-regular-svg-icons@5.10.1",
   "_inBundle": false,
   "_integrity": "sha512-CMOLekemx3f1FVdr50TFo7AB8sMsQTCmAyyHc3Jd3dIDSpd+rtEP+j6uYD0r4aTAPUF08ktvxHuu4Howh3cqCA==",
   "_location": "/@fortawesome/pro-regular-svg-icons",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "@fortawesome/pro-regular-svg-icons@5.10.1",
+    "raw": "@fortawesome/pro-regular-svg-icons@^5.8.1",
     "name": "@fortawesome/pro-regular-svg-icons",
     "escapedName": "@fortawesome%2fpro-regular-svg-icons",
     "scope": "@fortawesome",
-    "rawSpec": "5.10.1",
+    "rawSpec": "^5.8.1",
     "saveSpec": null,
-    "fetchSpec": "5.10.1"
+    "fetchSpec": "^5.8.1"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
   "_resolved": "https://npm.fontawesome.com/@fortawesome/pro-regular-svg-icons/-/pro-regular-svg-icons-5.10.1.tgz",
-  "_spec": "5.10.1",
-  "_where": "/home/ldary/rh/rhd-frontend",
+  "_shasum": "914c50520ed8991bd6aa59b52a03ef5fc6d65454",
+  "_spec": "@fortawesome/pro-regular-svg-icons@^5.8.1",
+  "_where": "/home/ldary/Projects/rh/rhd-frontend",
   "author": {
     "name": "Dave Gandy",
     "email": "dave@fontawesome.com",
@@ -37,6 +31,7 @@
   "bugs": {
     "url": "http://github.com/FortAwesome/Font-Awesome/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Brian Talbot",
@@ -62,6 +57,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-common-types": "^0.2.21"
   },
+  "deprecated": false,
   "description": "The iconic font, CSS, and SVG framework",
   "engines": {
     "node": ">=6"

@@ -1,37 +1,32 @@
 {
-  "_args": [
-    [
-      "@patternfly/pfe-cta@1.0.0-prerelease.19",
-      "/home/ldary/rh/rhd-frontend"
-    ]
-  ],
-  "_development": true,
-  "_from": "@patternfly/pfe-cta@1.0.0-prerelease.19",
+  "_from": "@patternfly/pfe-cta@^1.0.0-prerelease.19",
   "_id": "@patternfly/pfe-cta@1.0.0-prerelease.19",
   "_inBundle": false,
   "_integrity": "sha512-YyvsetfpsAjbNIAqg0a3piaVhiLBYqPCnp3fAN303LgGQNEFFYxHoeebDA+gl6iAoEOWkn34k+H7trFYAN0XSQ==",
   "_location": "/@patternfly/pfe-cta",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "@patternfly/pfe-cta@1.0.0-prerelease.19",
+    "raw": "@patternfly/pfe-cta@^1.0.0-prerelease.19",
     "name": "@patternfly/pfe-cta",
     "escapedName": "@patternfly%2fpfe-cta",
     "scope": "@patternfly",
-    "rawSpec": "1.0.0-prerelease.19",
+    "rawSpec": "^1.0.0-prerelease.19",
     "saveSpec": null,
-    "fetchSpec": "1.0.0-prerelease.19"
+    "fetchSpec": "^1.0.0-prerelease.19"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
   "_resolved": "https://registry.npmjs.org/@patternfly/pfe-cta/-/pfe-cta-1.0.0-prerelease.19.tgz",
-  "_spec": "1.0.0-prerelease.19",
-  "_where": "/home/ldary/rh/rhd-frontend",
+  "_shasum": "e4a90234cefe1d3204fd204ff3c32ba5e80ae573",
+  "_spec": "@patternfly/pfe-cta@^1.0.0-prerelease.19",
+  "_where": "/home/ldary/Projects/rh/rhd-frontend",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-elements/issues"
   },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Mark Caron",
@@ -43,6 +38,7 @@
     "@patternfly/pfe-sass": "^1.0.0-prerelease.19",
     "@patternfly/pfelement": "^1.0.0-prerelease.19"
   },
+  "deprecated": false,
   "description": "Call-to-actions for PatternFly Elements",
   "generator-pfelement-version": "0.5.0",
   "gitHead": "e1809862816e1446067feece891620c30d026433",
