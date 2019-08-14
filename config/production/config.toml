@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "RHD Front-end Code and Documentation"
 themesDir = "src/docs/themes"
 theme = "rhd-docs"
-publishDir = "docs"
+publishDir = "public"
 canonifyURLs = true
 disableFastRender = true
 
