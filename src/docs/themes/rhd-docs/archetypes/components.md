@@ -1,5 +1,5 @@
 ---
-title: "{{ title }}"
+title: "{{ .Name }}"
 date: {{ .Date }}
 draft: false
 type: component
