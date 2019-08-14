@@ -1,7 +1,12 @@
 ---
 title: "{{ title }}"
 date: {{ .Date }}
-type: "component"
+draft: false
+type: component
+tags: ["component"]
+weight: 99
 description: ""
 draft: true
+scripts: []
 ---
+

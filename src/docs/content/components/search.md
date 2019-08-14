@@ -271,7 +271,7 @@ scripts: ["@rhd/dp-search/dp-search-app","@rhd/dp-search/dp-search-box","@rhd/dp
 <a href="#top" id="scroll-to-top"></a>
 <script>
 var inject = document.createElement('script')
-inject.innerText = "System.import('/themes/custom/rhdp/js/@patternfly/pfelement/pfelement.umd.js');\n"+
+inject.innerText = "System.import('/themes/custom/rhdp//@patternfly/pfelement/pfelement.umd.js');\n"+
 "System.import('/themes/custom/rhdp/js/@fortawesome/fontawesome-svg-core/index.js');\n"+
 "System.import('/themes/custom/rhdp/js/@fortawesome/pro-solid-svg-icons/index.js');\n"+
 "System.import('/themes/custom/rhdp/js/@rhd/dp-search/dp-search-app.js');\n"+
@@ -289,7 +289,7 @@ inject.innerText = "System.import('/themes/custom/rhdp/js/@patternfly/pfelement/
 "System.import('/themes/custom/rhdp/js/@rhd/dp-search/dp-search-modal-filters.js');\n"+
 "System.import('/themes/custom/rhdp/js/@rhd/dp-search/dp-search-active-filters.js');\n"+
 "System.import('/themes/custom/rhdp/js/@rhd/dp-search/dp-search-filter-active-item.js');\n"+
-"System.import('/themes/custom/rhdp/js/@patternfly/pfe-datetime/pfe-datetime.min.js');"
+"System.import('/themes/custom/rhdp//@patternfly/pfe-datetime/pfe-datetime.min.js');"
 setTimeout(function() {document.body.appendChild(inject); }, 5000);
 </script>
 -->
