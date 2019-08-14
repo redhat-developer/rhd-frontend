@@ -4,6 +4,9 @@
 @import "typography/sizes";
 @import "layout/spacing";
 
+// PatternFly Core
+@import "../../../node_modules/@patternfly/patternfly/components/Table/table.scss";
+
 // Components
 @import "components/buttons";
 @import "components/component_base";
