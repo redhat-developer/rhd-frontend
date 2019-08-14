@@ -160,8 +160,8 @@
   max-height: 45px;
   overflow: hidden;
   &:hover {
-    height: 100%;
-    min-height: 100%;
+    height: auto;
+    min-height: auto;
     max-height: none;
   }
 }
@@ -230,8 +230,8 @@
 .rhd-c-card__title:first-child {
   max-height: 60px;
   &:hover {
-    height: 100%;
-    min-height: 100%;
+    height: auto;
+    min-height: auto;
     max-height: none;
   }
 }
