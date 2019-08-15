@@ -1,0 +1,23 @@
+templates = ["""
+  <pfe-band pfe-color="lightest" pfe-aside-desktop="right" pfe-aside-mobile="bottom" pfe-aside-height="body">
+    <pfe-band pfe-aside-desktop="left" pfe-aside-mobile="top" pfe-aside-height="full">
+      <p>Culpa cillum nostrud cillum aute minim cillum mollit veniam labore id cillum. Dolor irure culpa dolore non mollit dolor. Dolor veniam laborum consequat non aliqua occaecat non. Aliqua commodo proident do velit. Enim culpa officia pariatur quis ullamco in esse amet nostrud labore nulla dolore eu.</p>
+      <p>Aliqua cillum aliqua sunt nostrud enim deserunt ullamco aute exercitation. Mollit mollit elit quis tempor ad. Lorem reprehenderit consequat excepteur ex. Exercitation incididunt veniam ex eiusmod deserunt duis est amet. Enim cupidatat laborum nulla officia mollit.</p>
+      <pfe-cta slot="pfe-band--footer" priority="primary">
+        <a href="#">Learn more</a>
+      </pfe-cta>
+    </pfe-band>
+    
+    <pfe-card slot="pfe-band--aside" color="complement">
+        <h3 slot="header">Aside</h3>
+        <p>Consectetur laboris minim proident irure. Irure magna duis enim enim. Reprehenderit officia nostrud nulla ex.</p>
+        <pfe-cta priority="tertiary">
+            <a href="#">Learn more</a>
+        </pfe-cta>
+    </pfe-card>
+</pfe-band>
+"""]
+
+[wrapper]
+open = ''
+close = ""
