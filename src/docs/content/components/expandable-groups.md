@@ -5,7 +5,7 @@ description: ""
 draft: false
 tags: ["component"]
 weight: 3
-scripts: ["@rhd/dp-category-list/dp-category","@rhd/dp-category-list/dp-category-list",
+scripts: ["@patternfly/pfelement/pfelement.umd","@rhd/dp-category-list/dp-category","@rhd/dp-category-list/dp-category-list",
 "@rhd/dp-category-list/dp-category-item","@rhd/dp-category-list/dp-category-item-list","@rhd/dp-category-list/dp-product-short-teaser"]
 ---
 
