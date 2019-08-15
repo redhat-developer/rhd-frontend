@@ -6,7 +6,7 @@ type: component
 tags: ["component"]
 weight: 99
 description: ""
-draft: true
+component: "{{ .Name }}"
 scripts: []
 ---
 

@@ -31,6 +31,81 @@
     * ```build``` - builds scripts but does not watch for changes
     * ```scripts``` - builds scripts and keeps watching for changes
 
+## Adding and Updating Components
+
+* Create a new component page
+    * **Run** `hugo new components/yourcomponent.md`
+    * **Edit** the new component file in `src/docs/content/components`
+    * **Update** the `title`, `description`, and `scripts`
+    * **Add** markdown content to appear above the render
+* Create the data structure for the component
+    * **Add** a data folder for your component in `/src/data/components/yourcomponent`
+    * **Add** a `variant` file in the component's data folder
+        * TOML
+        ```toml
+        [[variant]]
+        id = "default"
+        name = "Default Variant"
+        order = 1
+
+        [[variant]]
+        id = "default2"
+        name = "Default Variant 2"
+        order = 2
+        ```
+        * JSON
+        ```js
+        { 
+            "variant": [ 
+                {
+                    "id": "variant1", 
+                    "name": "Variation 1", 
+                    "order": 1
+                },
+                {
+                    "id": "variant2", 
+                    "name": "Variation 2", 
+                    "order": 2
+                }
+            ]
+        }
+        ```
+        * YAML
+        ```
+        YAML EXAMPLE
+        ```
+    * **Add** a `context` folder in your component's data folder for each different context you want to express for your component
+    * **Add** a `details` file (JSON, YAML, or TOML) to the context folder
+        * TOML
+        ```toml
+        name = "DEFAULT CONTEXT"
+        ```
+        * JSON
+        ```js
+        {
+            "name": "New Component Name"
+        }
+        ```
+    * **Add** a `{{variantname}}` file (JSON, YAML, or TOML) to the context folder with the context's template(s) for that variant
+        * TOML
+        ```toml
+        templates = ["""
+        <span>Variant Template 1</span>
+        ""","""
+        <span>Variant Template 2</span>
+        """]
+        ```
+        * JSON
+        ```js
+        {
+            "templates": [
+                "<span>Variant Template 1</span>",
+                "<span>Variant Template 2</span>"
+            ]
+        }
+        ```
+* **View** your new component page `/components/newcomponent`
+
 ## Using Clamp styles
 
 to apply a cross browser line clamp to a item apply the class "line-clamp-*" where the "*" is the numebr of lines you want to clamp e.g. "line-clamp-2" will only display 2 lines before adding ... to the end of the text valid numebrs are intergers "1 to 10".
