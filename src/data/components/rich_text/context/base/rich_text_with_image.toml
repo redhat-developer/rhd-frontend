@@ -1,24 +1,23 @@
 templates = ["""
-  <div>
-<h1>HTML Ipsum Presents</h1>
-
-<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-
-<h2>Header Level 2</h2>
-
-<ol>
-<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-<li>Aliquam tincidunt mauris eu risus.</li>
-</ol>
-
-<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-
-<h3>Header Level 3</h3>
-
-<ul>
-<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-<li>Aliquam tincidunt mauris eu risus.</li>
-</ul>
-
+<div class="pfe-m-12-col-on-sm pfe-m-12-col-on-md pfe-m-12-col-on-lg">
+<pfe-band pfe-color="lightest" pfe-aside-desktop="right" pfe-aside-mobile="bottom" pfe-aside-height="body">
+    <header slot="pfe-band--header">
+        <h1>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h1>
+    </header>
+    <article>
+        <p>Ex id voluptate incididunt mollit fugiat nulla labore enim irure aliquip esse voluptate laboris. Laborum eiusmod in consequat exercitation nisi ipsum adipisicing. Cillum laborum non quis et pariatur. In sit duis dolore ullamco adipisicing culpa adipisicing excepteur veniam exercitation velit aute. Pariatur duis adipisicing nulla ullamco consequat qui ullamco proident laboris non est laboris tempor. Ipsum laboris consequat commodo ut nulla enim occaecat ad. Nisi ullamco anim consequat deserunt quis ea.</p>
+        <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
+        <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
+    </article>
+    <pfe-cta slot="pfe-band--footer" priority="primary">
+        <a href="#">Learn more</a>
+    </pfe-cta>
+    <picture slot="pfe-band--aside" class="pfe-rich-text--image">
+        <source media="(min-width: 576px)" srcset="">
+        <source media="(min-width: 768px)" srcset="">
+        <source media="(min-width: 992px)" srcset="">
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" alt="" class=""/>
+    </picture>
+</pfe-band>
 </div>
 """]
