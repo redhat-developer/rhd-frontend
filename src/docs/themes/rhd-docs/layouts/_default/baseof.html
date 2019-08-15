@@ -7,6 +7,9 @@
     <title>{{ block "title" . }}
         {{ .Site.Title }}
     {{ end }}</title>
+
+    {{ $pfelayouts := resources.Get "@patternfly/pfe-layouts/pfe-layouts.min.css" }}
+    {{ $fontawesome := resources.Get "@fortawesome/fontawesome-pro/js/all.min.js" }}
     {{ $rhdoptions := (dict "targetPath" "/css/rhd.min.css" "outputStyle" "compressed" "enableSourceMap" true ) }}
     {{ $rhdstyle := resources.Get "sass/rhd.scss" | resources.ToCSS $rhdoptions }}
 
@@ -15,17 +18,18 @@
     
     {{ if .Site.Params.minify }}
     <!-- <link rel="stylesheet" href="/css/pfe-base.min.css"> -->
-    <link rel="stylesheet" href="/css/pfe-layouts.min.css">
+    <link rel="stylesheet" href="{{ $pfelayouts.Permalink }}">
     <link rel="stylesheet" href="{{ $rhstyle.Permalink }}">
     <link rel="stylesheet" href="{{ $rhdstyle.Permalink }}">
     {{ else }}
     <!-- <link rel="stylesheet" href="/css/pfe-base.css"> -->
-    <link rel="stylesheet" href="/css/pfe-layouts.css">
+    <link rel="stylesheet" href="{{ $pfelayouts.Permalink }}">
     <link rel="stylesheet" href="{{ $rhstyle.Permalink }}">
     <link rel="stylesheet" href="{{ $rhdstyle.Permalink }}">
     {{ end }}
     <link rel="stylesheet" href="/css/prism-ghcolors.css">
     <script src="/js/base.js"></script>
+    <script src="{{ $fontawesome.Permalink }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.5/es6-shim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js"></script>

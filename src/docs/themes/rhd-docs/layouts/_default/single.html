@@ -24,9 +24,9 @@
     {{ with .Param "scripts" }}
     <script>
         var require = {
-            baseUrl: '{{ "js/" | absURL }}',
-            deps: [{{ range . }}{{ with . }}
-                "{{ . }}",
+            baseUrl: "{{ "/" | absURL | safeHTML }}",
+            deps: [{{ range . }}{{ with resources.Get (delimit (slice . "js") ".") }}
+           "{{ strings.TrimLeft "/" (strings.TrimRight ".js" .RelPermalink) }}",
             {{ end }}{{ end }}]
         };
     </script>

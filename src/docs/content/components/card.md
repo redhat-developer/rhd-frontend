@@ -6,7 +6,7 @@ draft: false
 tags: ["component"]
 weight: 4
 component: "card"
-scripts: ["@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"]
+scripts: ["@patternfly/pfelement/pfelement.umd","@patternfly/pfe-cta/pfe-cta.umd", "@patternfly/pfe-card/pfe-card.umd"]
 ---
 
 __Articles and Blogs__
