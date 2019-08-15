@@ -5,7 +5,7 @@ description: ""
 draft: false
 tags: ["component"]
 weight: 2
-scripts: ["@rhd/dp-search/dp-search-onebox"]
+scripts: ["@patternfly/pfelement/pfelement.umd", "@rhd/dp-search/dp-search-onebox"]
 ---
 
 {{< code >}}<dp-search-onebox url="../../json/onebox.json" term="fuse"></dp-search-onebox>{{< /code >}}
