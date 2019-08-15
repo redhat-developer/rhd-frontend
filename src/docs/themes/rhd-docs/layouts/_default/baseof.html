@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ block "title" . }}
+        {{ .Site.Title }}
+    {{ end }}</title>
+
+    {{ $pfelayouts := resources.Get "@patternfly/pfe-layouts/pfe-layouts.min.css" }}
+    {{ $fontawesome := resources.Get "@fortawesome/fontawesome-pro/js/all.min.js" }}
+    {{ $rhdoptions := (dict "targetPath" "/css/rhd.min.css" "outputStyle" "compressed" "enableSourceMap" true ) }}
+    {{ $rhdstyle := resources.Get "sass/rhd.scss" | resources.ToCSS $rhdoptions }}
+
+    {{ $rhoptions := (dict "targetPath" "/css/advanced-theme.min.css" "outputStyle" "compressed" "enableSourceMap" true ) }}
+    {{ $rhstyle := resources.Get "sass/redhat-theme/src/advanced-theme.scss" | resources.ToCSS $rhoptions }}    
+    
+    {{ if .Site.Params.minify }}
+    <!-- <link rel="stylesheet" href="/css/pfe-base.min.css"> -->
+    <link rel="stylesheet" href="{{ $pfelayouts.Permalink }}">
+    <link rel="stylesheet" href="{{ $rhstyle.Permalink }}">
+    <link rel="stylesheet" href="{{ $rhdstyle.Permalink }}">
+    {{ else }}
+    <!-- <link rel="stylesheet" href="/css/pfe-base.css"> -->
+    <link rel="stylesheet" href="{{ $pfelayouts.Permalink }}">
+    <link rel="stylesheet" href="{{ $rhstyle.Permalink }}">
+    <link rel="stylesheet" href="{{ $rhdstyle.Permalink }}">
+    {{ end }}
+    <link rel="stylesheet" href="/css/prism-ghcolors.css">
+    <script src="/js/base.js"></script>
+    <script src="{{ $fontawesome.Permalink }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.5/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/webcomponents-bundle.js"></script>  
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/3.1.6/system.min.js"></script> -->
+    <!-- <script src="/js/require1k.min.js"></script> -->
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    <main role="main">
+      <div class="layout-content">
+        <div id="block-rhdp-content" class="block block-system">
+          <article role="article" class="node">
+            <div class="node__content">
+              <div class="field">
+    {{ block "main" . }}
+      <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+    {{ block "footer" . }}
+    <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
+    {{ end }}
+    {{ partial "footer.html" . }}
+    {{ block "scripts" . }}{{ end }}
+  </body>
+</html>

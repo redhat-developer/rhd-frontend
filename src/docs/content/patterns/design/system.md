@@ -1,7 +1,7 @@
 ---
 title: "System"
 date: 2017-08-03T14:11:29-04:00
-draft: true
+draft: false
 tags: ["design"]
 ---
 

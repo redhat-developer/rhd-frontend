@@ -1,0 +1,22 @@
+templates = ["""<pfe-card color="lightest" size-"small" class="rhd-c-card">
+        <div class="rhd-c-card__tag">
+          <i class="fas fa-book"></i>
+          eBook
+        </div>
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title">
+            eBook title that can go to two lines, but will then hide until hovered
+          </h3>
+          <div class="rhd-c-card__footer rhd-m-multi-author">
+            <div class="rhd-c-card__footer--author">
+              Author Name & Author Name
+            </div>
+          </div>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--download">
+              <a href="#" class="rhd-m-link">Download <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </pfe-card>"""]

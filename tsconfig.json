@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "module": "umd",
+        "watch": true,
         "moduleResolution": "node",
         "target": "es5",
         "noImplicitAny": false,
@@ -18,7 +19,7 @@
           "dom", "es5", "dom.iterable", "es6"
         ],
         //"outFile": "dist/js/rhd.js",
-        "outDir": "src/docs/static/js/@rhd/",
+        "outDir": "dist/js/@rhd/",
         "paths": {
             "@patternfly/pfelement/pfelement.umd": [
                 "@types/patternfly__pfelement"

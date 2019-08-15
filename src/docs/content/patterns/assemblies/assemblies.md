@@ -1,7 +1,7 @@
 ---
 title: "Assemblies"
 date: 2017-08-03T14:58:26-04:00
-draft: true
+draft: false
 tags: ["2019summit"]
 weight: 2
 scripts: [""]

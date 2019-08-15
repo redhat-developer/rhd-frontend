@@ -2,7 +2,7 @@
 title: "RHDP Downloads Component"
 date: 2018-04-19T13:22:06-04:00
 description: ""
-draft: true
+draft: false
 tags: ["component"]
 weight: 6
 scripts: ["@rhd/rhdp-downloads/rhdp-downloads-all-item","@rhd/rhdp-downloads/rhdp-downloads-all",

@@ -1,0 +1,35 @@
+{{ define "title" }}
+{{ .Title }} – {{ .Site.Title }}
+{{ end }}
+{{ define "main" }}
+<header class="pfe-l-grid"><h1 class="pfe-m-10-col pfe-m-startat-2-col">{{ .Title }}</h1></header>
+<aside class="pfe-l-grid">
+    {{ with .PrevInSection }}
+        <a class="previous pfe-m-5-col pfe-m-startat-2-col" href="{{.Permalink}}"> {{.Title}}</a>
+    {{ end }}
+    {{ with .NextInSection }}
+        <a class="next pfe-m-5-col pfe-l--text-align--right" href="{{.Permalink}}"> {{.Title}}</a>
+    {{ end }}
+    
+</aside>
+<section>{{ .Content }}</section>
+{{ with .Param "component" }}
+    {{ with (index $.Site.Data.components .) }}
+    {{ partial "component.html" .  }}
+    {{ end }}
+{{ end}}
+{{ end }}
+
+{{ define "scripts"}}
+    {{ with .Param "scripts" }}
+    <script>
+        var require = {
+            baseUrl: "{{ "/" | absURL | safeHTML }}",
+            deps: [{{ range . }}{{ with resources.Get (delimit (slice . "js") ".") }}
+           "{{ strings.TrimPrefix "/" (strings.TrimSuffix ".js" .RelPermalink) }}",
+            {{ end }}{{ end }}]
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    {{ end }}
+{{ end }}

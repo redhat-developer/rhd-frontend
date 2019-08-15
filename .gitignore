@@ -7,3 +7,5 @@ src/tests/unit/report
 dist
 .npmrc
 .idea
+resources
+public

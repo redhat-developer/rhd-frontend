@@ -2,10 +2,10 @@
 title: "Expandable Groups"
 date: 2018-04-13T03:00:54-04:00
 description: ""
-draft: true
+draft: false
 tags: ["component"]
 weight: 3
-scripts: ["@rhd/dp-category-list/dp-category","@rhd/dp-category-list/dp-category-list",
+scripts: ["@patternfly/pfelement/pfelement.umd","@rhd/dp-category-list/dp-category","@rhd/dp-category-list/dp-category-list",
 "@rhd/dp-category-list/dp-category-item","@rhd/dp-category-list/dp-category-item-list","@rhd/dp-category-list/dp-product-short-teaser"]
 ---
 
