@@ -1,9 +1,9 @@
 ---
-title: "{{ title }}"
+title: "{{ .Name }}"
 date: {{ .Date }}
 draft: false
-type: component
-tags: ["component"]
+type: variable
+tags: []
 weight: 99
 description: ""
 draft: true

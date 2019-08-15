@@ -5,7 +5,7 @@ description: ""
 draft: false
 tags: ["component"]
 weight: 5
-scripts: ["@rhd/dp-referrer"]
+scripts: ["@patternfly/pfelement/pfelement.umd","@rhd/dp-referrer"]
 ---
 [Add JBD Referrer](?referrer=jbd)
 
