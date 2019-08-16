@@ -1,0 +1,8 @@
+.pfe-rich-text {
+  [slot=pfe-band--aside] {
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+}
