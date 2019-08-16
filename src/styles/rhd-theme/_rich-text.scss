@@ -1,4 +1,6 @@
 .pfe-rich-text {
+  --pfe-band--Width__aside--lg: 40%;
+  --pfe-band--Width__aside--sm: 40%;
   [slot=pfe-band--aside] {
     img {
       max-width: 100%;
