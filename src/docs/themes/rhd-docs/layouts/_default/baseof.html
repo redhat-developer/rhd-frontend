@@ -1,3 +1,9 @@
+{{ $pfelayouts := resources.Get "@patternfly/pfe-layouts/pfe-layouts.min.css" }}
+{{ $fontawesome := resources.Get "@fortawesome/fontawesome-pro/js/all.min.js" }}
+{{ $rhdoptions := (dict "targetPath" "/css/rhd.css" ) }}
+{{ $rhoptions := (dict "targetPath" "/css/advanced-theme.min.css" "outputStyle" "compressed" "enableSourceMap" true ) }}
+{{ $rhdstyle := resources.Get "sass/rhd.scss" | resources.ToCSS $rhdoptions }}
+{{ $rhstyle := resources.Get "sass/redhat-theme/src/advanced-theme.scss" | resources.ToCSS $rhoptions }}      
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,26 +13,9 @@
     <title>{{ block "title" . }}
         {{ .Site.Title }}
     {{ end }}</title>
-
-    {{ $pfelayouts := resources.Get "@patternfly/pfe-layouts/pfe-layouts.min.css" }}
-    {{ $fontawesome := resources.Get "@fortawesome/fontawesome-pro/js/all.min.js" }}
-    {{ $rhdoptions := (dict "targetPath" "/css/rhd.min.css" "outputStyle" "compressed" "enableSourceMap" true ) }}
-    {{ $rhdstyle := resources.Get "sass/rhd.scss" | resources.ToCSS $rhdoptions }}
-
-    {{ $rhoptions := (dict "targetPath" "/css/advanced-theme.min.css" "outputStyle" "compressed" "enableSourceMap" true ) }}
-    {{ $rhstyle := resources.Get "sass/redhat-theme/src/advanced-theme.scss" | resources.ToCSS $rhoptions }}    
-    
-    {{ if .Site.Params.minify }}
-    <!-- <link rel="stylesheet" href="/css/pfe-base.min.css"> -->
     <link rel="stylesheet" href="{{ $pfelayouts.Permalink }}">
     <link rel="stylesheet" href="{{ $rhstyle.Permalink }}">
     <link rel="stylesheet" href="{{ $rhdstyle.Permalink }}">
-    {{ else }}
-    <!-- <link rel="stylesheet" href="/css/pfe-base.css"> -->
-    <link rel="stylesheet" href="{{ $pfelayouts.Permalink }}">
-    <link rel="stylesheet" href="{{ $rhstyle.Permalink }}">
-    <link rel="stylesheet" href="{{ $rhdstyle.Permalink }}">
-    {{ end }}
     <link rel="stylesheet" href="/css/prism-ghcolors.css">
     <script src="/js/base.js"></script>
     <script src="{{ $fontawesome.Permalink }}"></script>
