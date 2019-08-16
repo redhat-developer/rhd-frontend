@@ -21,3 +21,7 @@ templates = ["""
 </pfe-band>
 </div>
 """]
+
+[wrapper]
+open = ''
+close = ""
