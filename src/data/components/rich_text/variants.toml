@@ -3,8 +3,4 @@ id = "rich_text"
 name = "rich_text"
 order = 1
 
-[[variant]]
-id = "rich_text_with_image"
-name = "rich_text_with_image"
-order = 2
 
