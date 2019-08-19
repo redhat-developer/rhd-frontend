@@ -1,20 +1,36 @@
 templates = ["""
 <pfe-band pfe-color="lightest" pfe-aside-desktop="left" pfe-aside-mobile="top" pfe-aside-height="full" class="pfe-rich-text" class="pfe-rich-text">
     <header slot="pfe-band--header">
-        <h1>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h1>
+        <h2>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h2>
     </header>
-    <div>
+    <div class="pfe-rich-text-body">
         <p>Ex id voluptate incididunt mollit fugiat nulla labore enim irure aliquip esse voluptate laboris. Laborum eiusmod in consequat exercitation nisi ipsum adipisicing. Cillum laborum non quis et pariatur. In sit duis dolore ullamco adipisicing culpa adipisicing excepteur veniam exercitation velit aute. Pariatur duis adipisicing nulla ullamco consequat qui ullamco proident laboris non est laboris tempor. Ipsum laboris consequat commodo ut nulla enim occaecat ad. Nisi ullamco anim consequat deserunt quis ea.</p>
-        <h2>Header Level 2</h2>
-        <ul>
-        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-        <li>Aliquam tincidunt mauris eu risus.</li>
-        </ul>
-        <h3>Header Level 3</h3>
-        <ul>
-        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-        <li>Aliquam tincidunt mauris eu risus.</li>
-        </ul>
+    </div>
+    <pfe-cta slot="pfe-band--footer" priority="primary">
+        <a href="#">Learn more</a>
+    </pfe-cta>
+</pfe-band>
+""","""
+<pfe-band pfe-color="lightest" pfe-img-src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" pfe-aside-desktop="right" pfe-aside-mobile="top" pfe-aside-height="full" class="pfe-rich-text" class="pfe-rich-text">
+    <header slot="pfe-band--header">
+        <h2>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h2>
+    </header>
+    <div class="pfe-rich-text-body">
+        <p>Ex id voluptate incididunt mollit fugiat nulla labore enim irure aliquip esse voluptate laboris. Laborum eiusmod in consequat exercitation nisi ipsum adipisicing. Cillum laborum non quis et pariatur. In sit duis dolore ullamco adipisicing culpa adipisicing excepteur veniam exercitation velit aute. Pariatur duis adipisicing nulla ullamco consequat qui ullamco proident laboris non est laboris tempor. Ipsum laboris consequat commodo ut nulla enim occaecat ad. Nisi ullamco anim consequat deserunt quis ea.</p>
+    </div>
+    <pfe-cta slot="pfe-band--footer" priority="primary">
+        <a href="#">Learn more</a>
+    </pfe-cta>
+</pfe-band>
+""","""
+<pfe-band pfe-color="light" pfe-aside-desktop="right" pfe-aside-mobile="top" pfe-aside-height="full" class="pfe-rich-text-with-image">
+    <header slot="pfe-band--header">
+        <h2>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h2>
+    </header>
+    <div class="pfe-rich-text-body">
+        <p>Ex id voluptate incididunt mollit fugiat nulla labore enim irure aliquip esse voluptate laboris. Laborum eiusmod in consequat exercitation nisi ipsum adipisicing. Cillum laborum non quis et pariatur. In sit duis dolore ullamco adipisicing culpa adipisicing excepteur veniam exercitation velit aute. Pariatur duis adipisicing nulla ullamco consequat qui ullamco proident laboris non est laboris tempor. Ipsum laboris consequat commodo ut nulla enim occaecat ad. Nisi ullamco anim consequat deserunt quis ea.</p>
+        <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
+        <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
     </div>
     <pfe-cta slot="pfe-band--footer" priority="primary">
         <a href="#">Learn more</a>
@@ -27,22 +43,14 @@ templates = ["""
     </picture>
 </pfe-band>
 ""","""
-<pfe-band pfe-color="lightest" pfe-aside-desktop="right" pfe-aside-mobile="top" pfe-aside-height="full" class="pfe-rich-text" class="pfe-rich-text">
+<pfe-band pfe-color="lightest" pfe-aside-desktop="left" pfe-aside-mobile="top" pfe-aside-height="full" class="pfe-rich-text-with-image">
     <header slot="pfe-band--header">
-        <h1>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h1>
+        <h2>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h2>
     </header>
-    <div>
+    <div class="pfe-rich-text-body">
         <p>Ex id voluptate incididunt mollit fugiat nulla labore enim irure aliquip esse voluptate laboris. Laborum eiusmod in consequat exercitation nisi ipsum adipisicing. Cillum laborum non quis et pariatur. In sit duis dolore ullamco adipisicing culpa adipisicing excepteur veniam exercitation velit aute. Pariatur duis adipisicing nulla ullamco consequat qui ullamco proident laboris non est laboris tempor. Ipsum laboris consequat commodo ut nulla enim occaecat ad. Nisi ullamco anim consequat deserunt quis ea.</p>
-        <h2>Header Level 2</h2>
-        <ul>
-        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-        <li>Aliquam tincidunt mauris eu risus.</li>
-        </ul>
-        <h3>Header Level 3</h3>
-        <ul>
-        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-        <li>Aliquam tincidunt mauris eu risus.</li>
-        </ul>
+        <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
+        <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
     </div>
     <pfe-cta slot="pfe-band--footer" priority="primary">
         <a href="#">Learn more</a>
@@ -53,13 +61,119 @@ templates = ["""
         <source media="(min-width: 992px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
         <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" alt="" class=""/>
     </picture>
+</pfe-band>
+""","""
+<pfe-band pfe-color="light" pfe-aside-desktop="right" pfe-aside-mobile="top" pfe-aside-height="body" class="pfe-rich-text-with-image">
+    <header slot="pfe-band--header">
+        <h2>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h2>
+    </header>
+    <div class="pfe-rich-text-body">
+        <p>Ex id voluptate incididunt mollit fugiat nulla labore enim irure aliquip esse voluptate laboris. Laborum eiusmod in consequat exercitation nisi ipsum adipisicing. Cillum laborum non quis et pariatur. In sit duis dolore ullamco adipisicing culpa adipisicing excepteur veniam exercitation velit aute. Pariatur duis adipisicing nulla ullamco consequat qui ullamco proident laboris non est laboris tempor. Ipsum laboris consequat commodo ut nulla enim occaecat ad. Nisi ullamco anim consequat deserunt quis ea.</p>
+        <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
+        <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
+    </div>
+    <pfe-cta slot="pfe-band--footer" priority="primary">
+        <a href="#">Learn more</a>
+    </pfe-cta>
+    <picture slot="pfe-band--aside">
+        <source media="(min-width: 576px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
+        <source media="(min-width: 768px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
+        <source media="(min-width: 992px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" alt="" class=""/>
+    </picture>
+</pfe-band>
+""","""
+<pfe-band pfe-color="lightest" pfe-aside-desktop="left" pfe-aside-mobile="top" pfe-aside-height="body" class="pfe-rich-text-with-image">
+    <header slot="pfe-band--header">
+        <h2>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h2>
+    </header>
+    <div class="pfe-rich-text-body">
+        <p>Ex id voluptate incididunt mollit fugiat nulla labore enim irure aliquip esse voluptate laboris. Laborum eiusmod in consequat exercitation nisi ipsum adipisicing. Cillum laborum non quis et pariatur. In sit duis dolore ullamco adipisicing culpa adipisicing excepteur veniam exercitation velit aute. Pariatur duis adipisicing nulla ullamco consequat qui ullamco proident laboris non est laboris tempor. Ipsum laboris consequat commodo ut nulla enim occaecat ad. Nisi ullamco anim consequat deserunt quis ea.</p>
+        <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
+        <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
+    </div>
+    <pfe-cta slot="pfe-band--footer" priority="primary">
+        <a href="#">Learn more</a>
+    </pfe-cta>
+    <picture slot="pfe-band--aside">
+        <source media="(min-width: 576px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
+        <source media="(min-width: 768px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
+        <source media="(min-width: 992px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" alt="" class=""/>
+    </picture>
+</pfe-band>
+""","""
+<pfe-band pfe-color="lightest" pfe-aside-desktop="right" pfe-aside-mobile="top" pfe-aside-height="full" class="pfe-rich-text">
+    <header slot="pfe-band--header">
+        <h2>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h2>
+    </header>
+    <div class="pfe-rich-text-body">
+        <p>Ex id voluptate incididunt mollit fugiat nulla labore enim irure aliquip esse voluptate laboris. Laborum eiusmod in consequat exercitation nisi ipsum adipisicing. Cillum laborum non quis et pariatur. In sit duis dolore ullamco adipisicing culpa adipisicing excepteur veniam exercitation velit aute. Pariatur duis adipisicing nulla ullamco consequat qui ullamco proident laboris non est laboris tempor. Ipsum laboris consequat commodo ut nulla enim occaecat ad. Nisi ullamco anim consequat deserunt quis ea.</p>
+        <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
+        <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
+    </div>
+    <pfe-cta slot="pfe-band--footer" priority="primary">
+        <a href="#">Learn more</a>
+    </pfe-cta>
+    <pfe-card color="lightest" size-"small" class="rhd-c-card" slot="pfe-band--aside">
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
+        <div class="rhd-c-card__tag">
+          <i class="fas fa-newspaper"></i>
+          Opinion
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Title of the article that can go to two lines only and then must truncate after it passes two lines.</a></h3>
+          <p class="rhd-c-card__body ">This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              <a href="#" class="rhd-m-link">Author Name</a>
+            </div>
+            <div class="rhd-c-comment">
+              <i class="fas fa-comment"></i> 2
+            </div>
+          </div>
+        </div>
+      </pfe-card>
+</pfe-band>
+""","""
+<pfe-band pfe-color="lightest" pfe-aside-desktop="left" pfe-aside-mobile="top" pfe-aside-height="full" class="pfe-rich-text">
+    <header slot="pfe-band--header">
+        <h2>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h2>
+    </header>
+    <div class="pfe-rich-text-body">
+        <p>Ex id voluptate incididunt mollit fugiat nulla labore enim irure aliquip esse voluptate laboris. Laborum eiusmod in consequat exercitation nisi ipsum adipisicing. Cillum laborum non quis et pariatur. In sit duis dolore ullamco adipisicing culpa adipisicing excepteur veniam exercitation velit aute. Pariatur duis adipisicing nulla ullamco consequat qui ullamco proident laboris non est laboris tempor. Ipsum laboris consequat commodo ut nulla enim occaecat ad. Nisi ullamco anim consequat deserunt quis ea.</p>
+        <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
+        <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
+    </div>
+    <pfe-cta slot="pfe-band--footer" priority="primary">
+        <a href="#">Learn more</a>
+    </pfe-cta>
+    <pfe-card color="lightest" size-"small" class="rhd-c-card" slot="pfe-band--aside">
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
+        <div class="rhd-c-card__tag">
+          <i class="fas fa-newspaper"></i>
+          Opinion
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Title of the article that can go to two lines only and then must truncate after it passes two lines.</a></h3>
+          <p class="rhd-c-card__body ">This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              <a href="#" class="rhd-m-link">Author Name</a>
+            </div>
+            <div class="rhd-c-comment">
+              <i class="fas fa-comment"></i> 2
+            </div>
+          </div>
+        </div>
+      </pfe-card>
 </pfe-band>
 ""","""
 <pfe-band pfe-color="lightest" pfe-aside-desktop="right" pfe-aside-mobile="top" pfe-aside-height="body" class="pfe-rich-text">
     <header slot="pfe-band--header">
-        <h1>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h1>
+        <h2>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h2>
     </header>
-    <div>
+    <div class="pfe-rich-text-body">
         <p>Ex id voluptate incididunt mollit fugiat nulla labore enim irure aliquip esse voluptate laboris. Laborum eiusmod in consequat exercitation nisi ipsum adipisicing. Cillum laborum non quis et pariatur. In sit duis dolore ullamco adipisicing culpa adipisicing excepteur veniam exercitation velit aute. Pariatur duis adipisicing nulla ullamco consequat qui ullamco proident laboris non est laboris tempor. Ipsum laboris consequat commodo ut nulla enim occaecat ad. Nisi ullamco anim consequat deserunt quis ea.</p>
         <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
         <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
@@ -67,19 +181,32 @@ templates = ["""
     <pfe-cta slot="pfe-band--footer" priority="primary">
         <a href="#">Learn more</a>
     </pfe-cta>
-    <picture slot="pfe-band--aside">
-        <source media="(min-width: 576px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
-        <source media="(min-width: 768px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
-        <source media="(min-width: 992px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
-        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" alt="" class=""/>
-    </picture>
+    <pfe-card color="lightest" size-"small" class="rhd-c-card" slot="pfe-band--aside">
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
+        <div class="rhd-c-card__tag">
+          <i class="fas fa-newspaper"></i>
+          Opinion
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Title of the article that can go to two lines only and then must truncate after it passes two lines.</a></h3>
+          <p class="rhd-c-card__body ">This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              <a href="#" class="rhd-m-link">Author Name</a>
+            </div>
+            <div class="rhd-c-comment">
+              <i class="fas fa-comment"></i> 2
+            </div>
+          </div>
+        </div>
+      </pfe-card>
 </pfe-band>
 ""","""
 <pfe-band pfe-color="lightest" pfe-aside-desktop="left" pfe-aside-mobile="top" pfe-aside-height="body" class="pfe-rich-text">
     <header slot="pfe-band--header">
-        <h1>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h1>
+        <h2>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h2>
     </header>
-    <div>
+    <div class="pfe-rich-text-body">
         <p>Ex id voluptate incididunt mollit fugiat nulla labore enim irure aliquip esse voluptate laboris. Laborum eiusmod in consequat exercitation nisi ipsum adipisicing. Cillum laborum non quis et pariatur. In sit duis dolore ullamco adipisicing culpa adipisicing excepteur veniam exercitation velit aute. Pariatur duis adipisicing nulla ullamco consequat qui ullamco proident laboris non est laboris tempor. Ipsum laboris consequat commodo ut nulla enim occaecat ad. Nisi ullamco anim consequat deserunt quis ea.</p>
         <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
         <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
@@ -87,12 +214,25 @@ templates = ["""
     <pfe-cta slot="pfe-band--footer" priority="primary">
         <a href="#">Learn more</a>
     </pfe-cta>
-    <picture slot="pfe-band--aside">
-        <source media="(min-width: 576px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
-        <source media="(min-width: 768px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
-        <source media="(min-width: 992px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
-        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" alt="" class=""/>
-    </picture>
+    <pfe-card color="lightest" size-"small" class="rhd-c-card" slot="pfe-band--aside">
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
+        <div class="rhd-c-card__tag">
+          <i class="fas fa-newspaper"></i>
+          Opinion
+        </div>
+        <div class="rhd-c-card-content">
+          <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Title of the article that can go to two lines only and then must truncate after it passes two lines.</a></h3>
+          <p class="rhd-c-card__body ">This is the article description that can go to three lines and will be followed by a footer. Must truncate after 3 lines.</p>
+          <div class="rhd-c-card__footer">
+            <div class="rhd-c-card__footer--author">
+              <a href="#" class="rhd-m-link">Author Name</a>
+            </div>
+            <div class="rhd-c-comment">
+              <i class="fas fa-comment"></i> 2
+            </div>
+          </div>
+        </div>
+      </pfe-card>
 </pfe-band>
 """]
 
