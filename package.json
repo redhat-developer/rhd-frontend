@@ -22,6 +22,9 @@
     "styles:sass": "node-sass src/styles/ -o dist/styles/ && node-sass src/styles/ -o dist/styles-min/ --output-style compressed && postcss -o dist/styles-min/rhd.min.css dist/styles-min/rhd.css",
     "styles:copy": "copyfiles -f \"dist/styles/**/*.css\" src/docs/static/css && copyfiles -f \"node_modules/@patternfly/pfe-layouts/pfe-*.css\" src/docs/static/css"
   },
+  "sass": {
+    "includePaths": ["./node_modules"]
+  },
   "repository": "https://github.com/redhat-developer/rhd-frontend.git",
   "author": "<ldary@redhat.com>",
   "license": "MIT",

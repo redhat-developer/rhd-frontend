@@ -13,13 +13,13 @@ templates = ["""
     </article>
   </pfe-band>
   <pfe-band pfe-aside-desktop="left" pfe-color="lightest" pfe-aside-mobile="top" pfe-aside-height="full">
-    <pfe-card slot="pfe-band--aside">
+    <pfe-card pfe-color="lightest" slot="pfe-band--aside">
       <img pfe-overflow="top left right" src="https://picsum.photos/600/400">
     </pfe-card>
     <article>
     <header>
-    <h1><a href="#">Lorem Ipsum Dolar Saweet</a></h1>
-    <h2>July 19, 2019</h2>
+      <h1><a href="#">Lorem Ipsum Dolar Saweet</a></h1>
+      <h2>July 19, 2019</h2>
     </header>
     <p>Culpa cillum nostrud cillum aute minim cillum mollit veniam labore id cillum. Dolor irure culpa dolore non mollit dolor. Dolor veniam laborum consequat non aliqua occaecat non. Aliqua commodo proident do velit. Enim culpa officia pariatur quis ullamco in esse amet nostrud labore nulla dolore eu.</p>
       <pfe-cta slot="pfe-band--footer" priority="primary">
