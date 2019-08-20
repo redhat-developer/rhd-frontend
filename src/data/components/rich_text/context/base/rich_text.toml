@@ -6,21 +6,25 @@ templates = ["""
     <div class="pfe-rich-text-body">
         <p>Ex id voluptate incididunt mollit fugiat nulla labore enim irure aliquip esse voluptate laboris. Laborum eiusmod in consequat exercitation nisi ipsum adipisicing. Cillum laborum non quis et pariatur. In sit duis dolore ullamco adipisicing culpa adipisicing excepteur veniam exercitation velit aute. Pariatur duis adipisicing nulla ullamco consequat qui ullamco proident laboris non est laboris tempor. Ipsum laboris consequat commodo ut nulla enim occaecat ad. Nisi ullamco anim consequat deserunt quis ea.</p>
     </div>
-    <pfe-cta slot="pfe-band--footer" priority="primary">
-        <a href="#">Learn more</a>
-    </pfe-cta>
+    <div slot="pfe-band--footer">
+        <pfe-cta pfe-priority="primary">
+            <a href="#">Learn more</a>
+        </pfe-cta>
+    </div>
 </pfe-band>
 ""","""
-<pfe-band pfe-color="lightest" pfe-img-src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" pfe-aside-desktop="right" pfe-aside-mobile="top" pfe-aside-height="full" class="pfe-rich-text" class="pfe-rich-text">
+<pfe-band pfe-color="lightest" pfe-img-src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" pfe-aside-desktop="right" pfe-aside-mobile="top" pfe-aside-height="full" class="pfe-rich-text">
     <header slot="pfe-band--header">
         <h2>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h2>
     </header>
     <div class="pfe-rich-text-body">
         <p>Ex id voluptate incididunt mollit fugiat nulla labore enim irure aliquip esse voluptate laboris. Laborum eiusmod in consequat exercitation nisi ipsum adipisicing. Cillum laborum non quis et pariatur. In sit duis dolore ullamco adipisicing culpa adipisicing excepteur veniam exercitation velit aute. Pariatur duis adipisicing nulla ullamco consequat qui ullamco proident laboris non est laboris tempor. Ipsum laboris consequat commodo ut nulla enim occaecat ad. Nisi ullamco anim consequat deserunt quis ea.</p>
     </div>
-    <pfe-cta slot="pfe-band--footer" priority="primary">
-        <a href="#">Learn more</a>
-    </pfe-cta>
+    <div slot="pfe-band--footer">
+        <pfe-cta pfe-priority="primary">
+            <a href="#">Learn more</a>
+        </pfe-cta>
+    </div>
 </pfe-band>
 ""","""
 <pfe-band pfe-color="light" pfe-aside-desktop="right" pfe-aside-mobile="top" pfe-aside-height="full" class="pfe-rich-text-with-image">
@@ -32,9 +36,11 @@ templates = ["""
         <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
         <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
     </div>
-    <pfe-cta slot="pfe-band--footer" priority="primary">
-        <a href="#">Learn more</a>
-    </pfe-cta>
+    <div slot="pfe-band--footer">
+        <pfe-cta pfe-priority="primary">
+            <a href="#">Learn more</a>
+        </pfe-cta>
+    </div>
     <picture slot="pfe-band--aside">
         <source media="(min-width: 576px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
         <source media="(min-width: 768px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
@@ -52,9 +58,11 @@ templates = ["""
         <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
         <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
     </div>
-    <pfe-cta slot="pfe-band--footer" priority="primary">
-        <a href="#">Learn more</a>
-    </pfe-cta>
+    <div slot="pfe-band--footer">
+        <pfe-cta pfe-priority="primary">
+            <a href="#">Learn more</a>
+        </pfe-cta>
+    </div>
     <picture slot="pfe-band--aside">
         <source media="(min-width: 576px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
         <source media="(min-width: 768px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
@@ -72,9 +80,11 @@ templates = ["""
         <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
         <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
     </div>
-    <pfe-cta slot="pfe-band--footer" priority="primary">
-        <a href="#">Learn more</a>
-    </pfe-cta>
+    <div slot="pfe-band--footer">
+        <pfe-cta pfe-priority="primary">
+            <a href="#">Learn more</a>
+        </pfe-cta>
+    </div>
     <picture slot="pfe-band--aside">
         <source media="(min-width: 576px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
         <source media="(min-width: 768px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
@@ -92,9 +102,11 @@ templates = ["""
         <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
         <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
     </div>
-    <pfe-cta slot="pfe-band--footer" priority="primary">
-        <a href="#">Learn more</a>
-    </pfe-cta>
+    <div slot="pfe-band--footer">
+        <pfe-cta pfe-priority="primary">
+            <a href="#">Learn more</a>
+        </pfe-cta>
+    </div>
     <picture slot="pfe-band--aside">
         <source media="(min-width: 576px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
         <source media="(min-width: 768px)" srcset="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
@@ -112,9 +124,11 @@ templates = ["""
         <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
         <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
     </div>
-    <pfe-cta slot="pfe-band--footer" priority="primary">
-        <a href="#">Learn more</a>
-    </pfe-cta>
+    <div slot="pfe-band--footer">
+        <pfe-cta pfe-priority="primary">
+            <a href="#">Learn more</a>
+        </pfe-cta>
+    </div>
     <pfe-card color="lightest" size-"small" class="rhd-c-card" slot="pfe-band--aside">
         <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
         <div class="rhd-c-card__tag">
@@ -145,9 +159,11 @@ templates = ["""
         <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
         <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
     </div>
-    <pfe-cta slot="pfe-band--footer" priority="primary">
-        <a href="#">Learn more</a>
-    </pfe-cta>
+    <div slot="pfe-band--footer">
+        <pfe-cta pfe-priority="primary">
+            <a href="#">Learn more</a>
+        </pfe-cta>
+    </div>
     <pfe-card color="lightest" size-"small" class="rhd-c-card" slot="pfe-band--aside">
         <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
         <div class="rhd-c-card__tag">
@@ -178,9 +194,11 @@ templates = ["""
         <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
         <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
     </div>
-    <pfe-cta slot="pfe-band--footer" priority="primary">
-        <a href="#">Learn more</a>
-    </pfe-cta>
+    <div slot="pfe-band--footer">
+        <pfe-cta pfe-priority="primary">
+            <a href="#">Learn more</a>
+        </pfe-cta>
+    </div>
     <pfe-card color="lightest" size-"small" class="rhd-c-card" slot="pfe-band--aside">
         <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
         <div class="rhd-c-card__tag">
@@ -211,9 +229,11 @@ templates = ["""
         <p>Exercitation reprehenderit consequat ipsum irure cillum minim. Ut reprehenderit nisi dolor magna et qui magna sit non. Ipsum est adipisicing esse ullamco occaecat fugiat do ipsum deserunt.</p>
         <p>Sit reprehenderit elit ad aliquip dolore. Voluptate aliquip ex sit officia aute aliquip qui. Minim adipisicing voluptate eu est officia esse aliqua sint. Laborum laborum est exercitation commodo laborum officia magna.</p>
     </div>
-    <pfe-cta slot="pfe-band--footer" priority="primary">
-        <a href="#">Learn more</a>
-    </pfe-cta>
+    <div slot="pfe-band--footer">
+        <pfe-cta pfe-priority="primary">
+            <a href="#">Learn more</a>
+        </pfe-cta>
+    </div>
     <pfe-card color="lightest" size-"small" class="rhd-c-card" slot="pfe-band--aside">
         <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg" class="rhd-c-card__image"/>
         <div class="rhd-c-card__tag">
