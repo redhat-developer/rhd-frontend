@@ -10,7 +10,7 @@
     "serve": "spandx -c spandx.config.dev.js",
     "test": "karma start",
     "del": "del \"node_modules/@rhd/**\" && del dist/js",
-    "del:styles": "del \"dist/styles**\" && del src/docs/static/css",
+    "del:styles": "del \"dist/styles**\" && del node_modules/@rhd**",
     "fix:fa": "rename -n \"node_modules/@fortawesome/!(fontawesome-common-types)/index.d.ts\" index.es.d.ts",
     "scripts": "npm run del && npm run scripts:old && tsc",
     "scripts:build": "npm run del && npm run scripts:old && tsc -p tsconfig.prod.json",
@@ -18,9 +18,9 @@
     "scripts:old": "uglifyjs-folder src/scripts/js -c -o dist/js/@rhd/rhd.old.min.js --source-map",
     "scripts:umd": "cd node_modules/@rhd && each '**/*.js' -- rollup -f umd -n RHD -o ../../dist/js/@rhd/%p $PWD/%p",
     "semantic-release": "semantic-release",
-    "styles": "npm run del:styles && npm run styles:sass && npm run styles:copy",
-    "styles:sass": "node-sass src/styles/ -o dist/styles/ && node-sass src/styles/ -o dist/styles-min/ --output-style compressed && postcss -o dist/styles-min/rhd.min.css dist/styles-min/rhd.css",
-    "styles:copy": "copyfiles -f \"dist/styles/**/*.css\" src/docs/static/css && copyfiles -f \"node_modules/@patternfly/pfe-layouts/pfe-*.css\" src/docs/static/css"
+    "styles": "npm run del:styles && npm run styles:copy && npm run styles:sass",
+    "styles:sass": "node-sass node_modules/@rhd/ -o dist/styles/ && node-sass node_modules/@rhd/ -o dist/styles-min/ --output-style compressed && postcss -o dist/styles-min/rhd.min.css dist/styles-min/rhd.css",
+    "styles:copy": "copyfiles -u 2 \"src/styles/**/*\" node_modules/@rhd"
   },
   "sass": {
     "includePaths": ["./node_modules"]
