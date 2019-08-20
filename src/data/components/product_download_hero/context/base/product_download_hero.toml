@@ -12,10 +12,12 @@ templates = ["""
         <source media="(min-width: 992px)" srcset="https://developers.redhat.com/sites/default/files/styles/large/public/kubernetes-native-ide.png">
         <img src="https://developers.redhat.com/sites/default/files/styles/large/public/kubernetes-native-ide.png" alt="" class=""/>
     </picture>
-    <pfe-cta slot="pfe-band--footer" priority="primary">
-        <a href="#">Download</a>
+    <div slot="pfe-band--footer">
+        <pfe-cta pfe-priority="primary">
+            <a href="#">Download</a>
+        </pfe-cta>
         <p class="pfe-product-download-hero-version">Version 1.0.0</p>
-    </pfe-cta>
+    </div>
 </pfe-band>
 ""","""
 <pfe-band pfe-color="light" pfe-img-src="https://developers.redhat.com/images/design/product-hero-light.png" pfe-aside-desktop="left" pfe-aside-mobile="top" pfe-aside-height="full" class="pfe-product-download-hero">
@@ -31,10 +33,12 @@ templates = ["""
         <source media="(min-width: 992px)" srcset="https://developers.redhat.com/sites/default/files/styles/large/public/kubernetes-native-ide.png">
         <img src="https://developers.redhat.com/sites/default/files/styles/large/public/kubernetes-native-ide.png" alt="" class=""/>
     </picture>
-    <pfe-cta slot="pfe-band--footer" priority="primary">
-        <a href="#">Download</a>
+    <div slot="pfe-band--footer">
+        <pfe-cta pfe-priority="primary">
+            <a href="#">Download</a>
+        </pfe-cta>
         <p class="pfe-product-download-hero-version">Version 1.0.0</p>
-    </pfe-cta>
+    </div>
 </pfe-band>
 ""","""
 <pfe-band pfe-color="light" pfe-img-src="https://developers.redhat.com/images/design/product-hero-light.png" pfe-aside-height="full" class="pfe-product-download-hero">
@@ -44,10 +48,12 @@ templates = ["""
     <div class="pfe-product-download-hero-body">
         <p>A collaborative Kubernetes-native development solution that delivers OpenShift workspaces and in-browser IDE for rapid cloud application development.</p>
     </div>
-    <pfe-cta slot="pfe-band--footer" priority="primary">
-        <a href="#">Download</a>
+    <div slot="pfe-band--footer">
+        <pfe-cta pfe-priority="primary">
+            <a href="#">Download</a>
+        </pfe-cta>
         <p class="pfe-product-download-hero-version">Version 1.0.0</p>
-    </pfe-cta>
+    </div>
 </pfe-band>
 """]
 
