@@ -1,5 +1,5 @@
 templates = ["""
-<pfe-band pfe-color="lightest" pfe-aside-desktop="left" pfe-aside-mobile="top" pfe-aside-height="full" class="pfe-rich-text" class="pfe-rich-text">
+<pfe-band pfe-color="lightest" pfe-aside-desktop="left" pfe-aside-mobile="top" pfe-aside-height="full" class="pfe-rich-text">
     <header slot="pfe-band--header">
         <h2>Velit exercitation anim fugiat consectetur magna Lorem consequat amet velit occaecat aliqua magna</h2>
     </header>
