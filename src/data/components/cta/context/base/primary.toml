@@ -1,0 +1,3 @@
+templates = ["""
+  <pfe-cta pfe-priority="primary"><a href="#">Primary</a></pfe-cta>
+"""]
