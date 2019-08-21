@@ -21,10 +21,11 @@
 {{ end }}
 
 {{ define "scripts"}}
+    {{ $baseUrl := .Site.BaseURL }}
     {{ with .Param "scripts" }}
     <script>
         var require = {
-            baseUrl: "{{ "/" | absURL | safeHTML }}",
+            baseUrl: "{{ $baseUrl }}",
             deps: [{{ range . }}{{ with resources.Get (delimit (slice . "js") ".") }}
            "{{ strings.TrimPrefix "/" (strings.TrimSuffix ".js" .RelPermalink) }}",
             {{ end }}{{ end }}]
