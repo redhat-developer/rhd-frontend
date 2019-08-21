@@ -1,0 +1,15 @@
+[[variant]]
+id = "primary"
+name = "Primary"
+order = 1
+
+[[variant]]
+id = "secondary"
+name = "Secondary"
+order = 2
+
+[[variant]]
+id = "default"
+name = "Default"
+order = 3
+
