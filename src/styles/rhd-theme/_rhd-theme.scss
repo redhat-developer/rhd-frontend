@@ -2,8 +2,12 @@
 @import "typography/sizes";
 @import "layout/spacing";
 
+// PatternFly Core
+@import "../../../@patternfly/patternfly/components/Button/button.scss";
+
 // Components
 @import "components/cards";
+@import "components/buttons";
 @import "components/dynamic-list";
 pfe-cta {
   border-radius: 3px;
