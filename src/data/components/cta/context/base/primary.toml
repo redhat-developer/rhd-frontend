@@ -1,3 +1,7 @@
 templates = ["""
   <pfe-cta pfe-priority="primary"><a href="#">Primary</a></pfe-cta>
+  <pfe-cta pfe-priority="primary" pfe-color="base"><a href="#">Primary</a></pfe-cta>
+  <pfe-cta pfe-priority="primary" pfe-color="accent"><a href="#">Primary</a></pfe-cta>
+  <pfe-cta pfe-priority="primary" pfe-color="complement"><a href="#">Primary</a></pfe-cta>
+  <pfe-cta pfe-priority="primary" pfe-color="lightest"><a href="#">Primary</a></pfe-cta>
 """]
