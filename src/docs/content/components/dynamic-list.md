@@ -7,7 +7,7 @@ tags: ["component"]
 weight: 99
 description: ""
 component: "dynamic-list"
-scripts: ["@patternfly/pfelement/pfelement.umd", "@patternfly/pfe-cta/pfe-cta.umd","@patternfly/pfe-band/pfe-band.umd"]
+scripts: ["@patternfly/pfelement/pfelement.umd", "@patternfly/pfe-cta/pfe-cta.umd","@patternfly/pfe-band/pfe-band.umd", "@patternfly/pfe-card/pfe-card.umd"]
 ---
 
 # Dynamic Content List

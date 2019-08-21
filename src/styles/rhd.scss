@@ -1,3 +1,4 @@
+@charset 'utf-8';
 @import "../@patternfly/patternfly/patternfly-addons.scss";
 @import "../@patternfly/patternfly/variables.scss";
 @import "redhat-theme/src/advanced-theme";
@@ -97,11 +98,11 @@ $fa-font-path: "../webfonts";
 a {
     @extend %link;
 }
-
+/// Post-2018 redesign styles
 @import "2019/mixins";
 @import "2019/mq-mixins";
 // @import "fonts/fonts";
-@import url('https://fonts.googleapis.com/css?family=Overpass:100,100i,200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext');
+// @import url('https://fonts.googleapis.com/css?family=Overpass:100,100i,200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext');
 // @import "../@fortawesome/fontawesome-pro/scss/fontawesome.scss";
 // @import "../@fortawesome/fontawesome-pro/scss/regular.scss";
 // @import "../@fortawesome/fontawesome-pro/scss/light.scss";
@@ -132,13 +133,15 @@ a {
 
 * {
   box-sizing: border-box;
-  font-family: "Overpass", "Open Sans", Arial, Helvetica, sans-serif;
-  font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
-  font-family: var(--pfe-theme--font-family, "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  // font-family: "Overpass", "Open Sans", Arial, Helvetica, sans-serif;
+  font-family: $rhd-font-stack-text;
+  --pfe-theme--font-family: $rhd-font-stack-text;
+  font-family: var(--pfe-theme--font-family, $rhd-font-stack-text);
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif;
-  font-family: var(--pfe-theme--font-family--heading, "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif);
+  font-family: $rhd-font-stack-display;
+  --pfe-theme--font-family--heading: $rhd-font-stack-display;
+  font-family: var(--pfe-theme--font-family--heading, $rhd-font-stack-display);
 }
 
 
@@ -211,8 +214,11 @@ h1, h2, h3, h4, h5, h6 {
 @import "2019/slick";
 @import "2019/learning-paths";
 @import "2019/rhd-accordion";
+<<<<<<< HEAD
 @import "2019/cards";
 @import "rhd-theme/rich-text";
+=======
+>>>>>>> master
 
 //drupal admin override
 @import "2019/drupal-user-login-form";
