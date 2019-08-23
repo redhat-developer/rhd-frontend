@@ -1,25 +1,35 @@
-pfe-band {
-    &.pfe-product-download-hero {
-      --pfe-band--Width__aside--lg: 40%;
-      --pfe-band--Width__aside--sm: 40%;
-      --pfe-band--gutter--horizontal: var(--rhd-theme--container-spacer-lg);
-      background-size: cover;
-      header {
-        h1, h2, h3, h4, h5, h6 {
-          margin: 0;
-          margin-bottom: var(--rhd-theme--container-spacer-md);
-        }
-      }
-      div.pfe-product-download-hero-body {
-        p {
-          margin: 0;
-          margin-bottom: var(--rhd-theme--container-spacer-md);
-        }
-      }
-      [slot=pfe-band--aside] {
-        img {
-          max-width: 100%;
-        }
-      }
+.product-download-hero {
+  .pf-l-level__item {
+    &:nth-child(1) {
+      width: calc(60% - var(--pf-l-level--m-gutter--MarginRight));
     }
-  } 
+
+    &:nth-child(2) {
+      width: 40%;
+    }
+  }
+
+  background-size: cover;
+
+  .product-download-hero-header {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      margin-bottom: var(--rhd-theme--container-spacer-md);
+    }
+  }
+
+  .product-download-hero-body {
+    p {
+      margin: 0;
+      margin-bottom: var(--rhd-theme--container-spacer-md);
+    }
+  }
+
+  .product-download-hero-footer {}
+}
