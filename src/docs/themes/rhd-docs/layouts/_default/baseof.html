@@ -27,7 +27,9 @@
     <!-- <script src="/js/require1k.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
-
+    <script src="{{ (resources.Get "@rhd/rhd.old.min.js").Permalink }}"></script>
+    <script src="{{ (resources.Get "@rhd/rhd.microsites.min.js").Permalink }}"></script>
+    <script src="{{ (resources.Get "@rhd/rhd.min.js").Permalink }}"></script>
   </head>
   <body>
     {{ partial "header.html" . }}
