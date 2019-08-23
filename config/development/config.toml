@@ -59,3 +59,7 @@ disableFastRender = true
     [[module.mounts]]
         source = "dist/js/@rhd"
         target = "assets/@rhd"
+    
+    [[module.mounts]]
+        source = "node_modules/@patternfly/assets"
+        target = "static/css/assets"
