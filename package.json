@@ -3,7 +3,9 @@
   "version": "1.2.0",
   "description": "Front-end assets and documentation for Red Hat Developer site",
   "main": "index.js",
-  "engines": { "node": ">=10.16.2"},
+  "engines": {
+    "node": ">=10.16.2"
+  },
   "scripts": {
     "start": "npm run scripts",
     "build": "npm run scripts:build",
@@ -25,7 +27,9 @@
     "styles:copy": "copyfiles -u 2 \"src/styles/**/*\" node_modules/@rhd"
   },
   "sass": {
-    "includePaths": ["./node_modules"]
+    "includePaths": [
+      "./node_modules"
+    ]
   },
   "repository": "https://github.com/redhat-developer/rhd-frontend.git",
   "author": "<ldary@redhat.com>",
