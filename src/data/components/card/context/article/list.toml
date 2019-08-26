@@ -1,5 +1,5 @@
 templates = [
-    """<pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+    """<div class="pf-c-card rhd-c-card__list">
           <div class="rhd-c-card-content">
             <h3 class="rhd-c-card__title">
               <a href="#" class="rhd-m-link">Title of the article that can be two li...</a>&nbsp;
@@ -8,8 +8,8 @@ templates = [
               </span>
             </h3>
           </div>
-        </pfe-card>""",
-    """<pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+        </div>""",
+    """<div class="pf-c-card rhd-c-card__list">
           <div class="rhd-c-card-content">
             <h3 class="rhd-c-card__title">
               <a href="#" class="rhd-m-link">Title of the article</a>&nbsp;
@@ -18,5 +18,5 @@ templates = [
               </span>
             </h3>
           </div>
-        </pfe-card>"""
+        </div>"""
 ]

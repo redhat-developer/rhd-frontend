@@ -1,4 +1,4 @@
-templates = ["""<pfe-card color="lightest" size-"small" class="rhd-c-card">
+templates = ["""<div class="pf-c-card rhd-c-card">
         <div class="rhd-c-card__video">
           <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=altitude-clouds-cold-417173.jpg&fm=jpg">
         </div>
@@ -7,4 +7,4 @@ templates = ["""<pfe-card color="lightest" size-"small" class="rhd-c-card">
             Title of the video that can go to two lines, but will then hide until hovered
           </h3>
         </div>
-      </pfe-card>"""]
+      </div>"""]
