@@ -230,7 +230,7 @@ __Series__
         <img src="https://developers.redhat.com/sites/default/files/styles/teaser/public/externals/fc954fdb2506fde810a74701776127e6.png?itok=y5At3nm0" class="rhd-c-card__image"/>
         <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
         <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--download">
+          <div class="rhd-c-card__footer--cta">
             <a href="#" class="rhd-m-link">Download <span class="fa fa-arrow-right"></span></a>
           </div>
         </div>
@@ -245,7 +245,7 @@ __Series__
         <h3 class="rhd-c-card__title rhd-m-card-title__no-image">Red Hat Enterprise Linux</h3>
         <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
         <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--download">
+          <div class="rhd-c-card__footer--cta">
             <a href="#" class="rhd-m-link">Download <span class="fa fa-arrow-right"></span></a>
           </div>
         </div>
@@ -256,7 +256,7 @@ __Series__
         <h3 class="rhd-c-card__title">Red Hat Enterprise Linux</h3>
         <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
         <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--download">
+          <div class="rhd-c-card__footer--cta">
             <a href="#" class="rhd-m-link">Download <span class="fa fa-arrow-right"></span></a>
           </div>
         </div>
@@ -268,7 +268,7 @@ __Series__
           <h3 class="rhd-c-card__title"><a href="#">Red Hat Enterprise Linux</a></h3>
           <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
           <div class="rhd-c-card__footer">
-            <div class="rhd-c-card__footer--download">
+            <div class="rhd-c-card__footer--cta">
               <a href="#" class="rhd-m-link">Download <span class="fa fa-arrow-right"></span></a>
             </div>
           </div>
@@ -277,7 +277,7 @@ __Series__
           <h3 class="rhd-c-card__title"><a href="#">Red Hat Enterprise Linux</a></h3>
           <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
           <div class="rhd-c-card__footer">
-            <div class="rhd-c-card__footer--download">
+            <div class="rhd-c-card__footer--cta">
               <a href="#" class="rhd-m-link">Download <span class="fa fa-arrow-right"></span></a>
             </div>
           </div>
@@ -411,7 +411,7 @@ __Katacoda Lessons__
           Published 24 Apr 2019 by Graham Dumpleton
         </div>
         <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--download">
+          <div class="rhd-c-card__footer--cta">
             <a href="#" class="rhd-m-link">Start <span class="fa fa-arrow-right"></span></a>
           </div>
         </div>
@@ -432,7 +432,7 @@ __Katacoda Lessons__
           Published 24 Apr 2019 by Graham Dumpleton
         </div>
         <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--download">
+          <div class="rhd-c-card__footer--cta">
             <a href="#" class="rhd-m-link">Start <span class="fa fa-arrow-right"></span></a>
           </div>
         </div>
@@ -449,7 +449,7 @@ __Katacoda Lessons__
           Published 24 Apr 2019 by Graham Dumpleton
         </div>
         <div class="rhd-c-card__footer">
-          <div class="rhd-c-card__footer--download">
+          <div class="rhd-c-card__footer--cta">
             <a href="#" class="rhd-m-link">Start <span class="fa fa-arrow-right"></span></a>
           </div>
         </div>

@@ -3,7 +3,7 @@ templates = ["""<pfe-card color="lightest" size-"small" class="rhd-c-card">
         <div class="rhd-c-card-content">
           <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
           <div class="rhd-c-card__footer">
-            <div class="rhd-c-card__footer--download">
+            <div class="rhd-c-card__footer--cta">
               <a href="#" class="rhd-m-link">Download <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
