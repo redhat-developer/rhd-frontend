@@ -2,20 +2,19 @@
 {{ $contexts := .context }}
 <div class="pf-l-grid pf-m-gutter">
 {{ range $context := $contexts }}
-    <div class="pf-l-grid__item pf-m-12-col">
+    <div class="pf-l-grid__item pf-m-10-col pf-m-offset-1-col">
         <h2>{{ .details.name }}</h2>
     </div>
-    <!-- <div class="pfe-m-2-col"></div> -->
     {{ range $variants }}
-    {{if index $context .id}} 
+    {{if index $context .id}}
         {{if index $context .id "wrapper"}}
             {{ with index $context .id "wrapper" }}
                 {{.open | safeHTML }}
             {{end}}
         {{ else }}
-        <div class="pf-l-grid__item pf-m-5-col-on-sm pf-m-3-col-on-md pf-m-2-col-on-lg">
+        <div class="pf-l-grid__item pf-m-10-col pf-m-offset-1-col">
         {{ end }}
-            <h4>{{ .name }}</h4>
+            <h4 class="pf-c-title pf-m-lg">{{ .name }}</h4>
             {{with (index $context .id "templates")}}
             {{ range . }}
                 {{ . | safeHTML }}

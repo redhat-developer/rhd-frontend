@@ -1,0 +1,15 @@
+[[variant]]
+id = "main_navigation"
+name = "Main Navigation"
+
+[[variant]]
+id = "topic_navigation"
+name = "Topic Navigation"
+
+[[variant]]
+id = "main_navigation_mobile"
+name = "Main Navigation - Mobile"
+
+[[variant]]
+id = "topic_navigation_mobile"
+name = "Topic Navigation - Mobile"
