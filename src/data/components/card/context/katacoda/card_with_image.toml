@@ -14,7 +14,7 @@ templates = ["""<pfe-card color="lightest" size-"small" class="rhd-c-card">
             Published 24 Apr 2019 by Graham Dumpleton
           </div>
           <div class="rhd-c-card__footer">
-            <div class="rhd-c-card__footer--download">
+            <div class="rhd-c-card__footer--cta">
               <a href="#" class="rhd-m-link">Start <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
