@@ -8,7 +8,7 @@ templates = ["""
             <img src="https://developers.redhat.com/sites/default/files/styles/large/public/kubernetes-native-ide.png" alt="" class=""/>
         </picture>
     </div>
-    <div class="pf-l-grid__item pf-m-8-col-on-lg pf-m-7-col-on-md pf-m-6-col-on-sm pf-u-display-flex pf-u-justify-content-center pf-u-flex-direction-column">
+    <div class="pf-l-grid__item pf-m-8-col-on-lg pf-m-7-col-on-md pf-m-6-col-on-sm pf-u-display-flex pf-u-justify-content-center pf-u-flex-direction-column pf-u-pt-2xl pf-u-pb-2xl">
         <div class="product-download-hero-header pf-c-content">
             <h1 class="pf-c-title pf-m-4xl">Red Hat CodeReady Workspaces</h1>
         </div>
