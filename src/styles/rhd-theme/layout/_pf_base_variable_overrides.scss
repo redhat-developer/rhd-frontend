@@ -1,0 +1,19 @@
+@import "breakpoints";
+
+// Grid breakpoints
+$pf-global--breakpoint--xs: map-get($rhd-breakpoints, xsmall);
+$pf-global--breakpoint--sm: map-get($rhd-breakpoints, small);
+$pf-global--breakpoint--md: map-get($rhd-breakpoints, medium);
+$pf-global--breakpoint--lg: map-get($rhd-breakpoints, large);
+$pf-global--breakpoint--xl: map-get($rhd-breakpoints, xlarge);
+$pf-global--breakpoint--2xl: map-get($rhd-breakpoints, xxlarge);
+
+:root {
+    --global--breakpoint--xs: 0;
+    --global--breakpoint--sm: 480px;
+    --global--breakpoint--md: 768px;
+    --global--breakpoint--lg: 1024px;
+    --global--breakpoint--xl: 1440px;
+    --global--breakpoint--2xl: 1600px;
+}
+
