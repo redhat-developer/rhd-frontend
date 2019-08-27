@@ -1,28 +1,32 @@
 templates = ["""
-<div class="pf-l-level pf-l-grid pf-m-gutter Documentation-container-tall product-download-hero">
-    <div class="pf-l-level__item pf-m--col">
-        <div class="product-download-hero-header pf-c-content">
-            <h1>Red Hat CodeReady Workspaces</h1>
-        </div>
-        <div class="product-download-hero-body pf-c-content">
-            <p>A collaborative Kubernetes-native development solution that delivers OpenShift workspaces and in-browser IDE for rapid cloud application development.</p>
-        </div>
-        <div class="product-download-hero-footer pf-c-content">
-            <div class="product-download-hero-cta pf-u-text-align-center">
-                <a class="pf-c-button pf-m-primary" href="#">Download</a>
-                <p class="pfe-product-download-hero-version">Version 1.0.0</p>
-            </div>
-           
+<div class="pf-l-grid Documentation-container-tall product-download-hero pf-u-pt-lg pf-u-pb-lg" style="background-image: url(https://developers.redhat.com/images/design/product-hero-light.png);">
+    <div class="pf-l-grid__item pf-m-8-col-on-lg pf-m-7-col-on-md pf-m-6-col-on-sm product-download-hero-header">
+        <div class="pf-c-content pf-u-mb-md pf-u-mr-md">
+            <h1 class="pf-c-title pf-m-4xl">Red Hat CodeReady Workspaces</h1>
         </div>
     </div>
-    <div class="pf-l-level__item">
-        <picture class="product-download-hero-aside">
+    <div class="pf-l-grid__item pf-m-4-col-on-lg pf-m-5-col-on-md pf-m-6-col-on-sm pf-m-3-row product-download-hero-aside ">
+        <picture class="pf-u-mr-md">
             <source media="(min-width: 576px)" srcset="https://developers.redhat.com/sites/default/files/styles/large/public/kubernetes-native-ide.png">
             <source media="(min-width: 768px)" srcset="https://developers.redhat.com/sites/default/files/styles/large/public/kubernetes-native-ide.png">
             <source media="(min-width: 992px)" srcset="https://developers.redhat.com/sites/default/files/styles/large/public/kubernetes-native-ide.png">
             <img src="https://developers.redhat.com/sites/default/files/styles/large/public/kubernetes-native-ide.png" alt="" class=""/>
         </picture>
     </div>
+    <div class="pf-l-grid__item pf-m-8-col-on-lg pf-m-7-col-on-md pf-m-6-col-on-sm pf-u-mr-md product-download-hero-body">    
+        <div class="pf-c-content">
+            <p>A collaborative Kubernetes-native development solution that delivers OpenShift workspaces and in-browser IDE for rapid cloud application development.</p>
+        </div>
+    </div>
+    <div class="pf-l-grid__item pf-m-8-col-on-lg pf-m-7-col-on-md pf-m-6-col-on-sm pf-u-mr-md product-download-hero-footer">    
+        <div class="pf-c-content pf-u-pb-xl">
+            <div class="product-download-hero-cta pf-u-text-align-center">
+                <a class="pf-c-button pf-m-primary" href="#">Download</a>
+                <p class="pfe-product-download-hero-version">Version 1.0.0</p>
+            </div>
+        </div>
+    </div>
+
 </div>
 """]
 

@@ -1,18 +1,17 @@
 .product-download-hero {
-  .pf-l-level__item {
+  .pf-l-grid__item {
     &:nth-child(1) {
-      width: calc(60% - var(--pf-l-level--m-gutter--MarginRight));
+      align-self: end;
     }
-
     &:nth-child(2) {
-      width: 40%;
+      align-self: center;
     }
   }
-
   background-size: cover;
+  background-position: center center;
 
   .product-download-hero-header {
-
+    
     h1,
     h2,
     h3,
@@ -32,8 +31,18 @@
   }
 
   .product-download-hero-footer {
-
+    margin-bottom: var(--rhd-theme--container-spacer-xxl);
   }
+
+  .product-download-hero-aside {
+    display: block;
+    margin: auto 0;
+    img {
+      width: -fill-available;
+      width: -webkit-fill-available;
+    }
+  }
+
   .product-download-hero-cta {
     display: inline-block;
   }
