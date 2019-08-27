@@ -1,17 +1,18 @@
 templates = ["""
-<div class="pf-l-level pf-m-gutter Documentation-container-tall product-download-hero">
-    <div class="pf-l-level__item">
-        <div class="product-download-hero-header">
+<div class="pf-l-level pf-l-grid pf-m-gutter Documentation-container-tall product-download-hero">
+    <div class="pf-l-level__item pf-m--col">
+        <div class="product-download-hero-header pf-c-content">
             <h1>Red Hat CodeReady Workspaces</h1>
         </div>
-        <div class="product-download-hero-body">
+        <div class="product-download-hero-body pf-c-content">
             <p>A collaborative Kubernetes-native development solution that delivers OpenShift workspaces and in-browser IDE for rapid cloud application development.</p>
         </div>
-        <div class="product-download-hero-footer">
-            <pfe-cta pfe-priority="primary">
-                <a href="#">Download</a>
-            </pfe-cta>
-            <p class="pfe-product-download-hero-version">Version 1.0.0</p>
+        <div class="product-download-hero-footer pf-c-content">
+            <div class="product-download-hero-cta pf-u-text-align-center">
+                <a class="pf-c-button pf-m-primary" href="#">Download</a>
+                <p class="pfe-product-download-hero-version">Version 1.0.0</p>
+            </div>
+           
         </div>
     </div>
     <div class="pf-l-level__item">
