@@ -6,7 +6,7 @@ draft: false
 tags: ["component"]
 weight: 4
 component: "rich_text"
-scripts: ["@patternfly/pfelement/pfelement.umd","@patternfly/pfe-band/pfe-band.umd"]
+scripts: [""]
 ---
 
 __Articles and Blogs__
