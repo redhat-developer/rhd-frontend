@@ -2,7 +2,7 @@
     padding: 0 var(--rhd-theme--container-spacer-3xl);
     .pf-l-grid,
     .pf-l-level {
-        max-width: var(--pf-global--breakpoint--2xl);
+        max-width: map-get($rhd-breakpoints, xlarge);
         margin: 0 auto;
     }
     @media screen and (max-width: $pf-global--breakpoint--lg) {
