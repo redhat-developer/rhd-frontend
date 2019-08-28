@@ -2,7 +2,7 @@
   .pf-l-grid__item {
     &:nth-child(1) {
       order: 1;
-      @media screen and (max-width: $pf-global--breakpoint--sm) {
+      @media screen and (max-width: 576px) {
         order: 0;
       }
     }
