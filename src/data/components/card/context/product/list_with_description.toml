@@ -1,5 +1,5 @@
 templates = [
-    """<pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+    """<div class="pf-c-card rhd-c-card__list">
           <div class="rhd-c-card-content">
             <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Red Hat Enterprise Linux</a></h3>
             <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
@@ -9,8 +9,8 @@ templates = [
               </div>
             </div>
           </div>
-        </pfe-card>""","""
-        <pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+        </div>""","""
+        <div class="pf-c-card rhd-c-card__list">
           <div class="rhd-c-card-content">
             <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Red Hat Enterprise Linux</a></h3>
             <p class="rhd-c-card__body">A stable, proven foundation that’s versatile enough for rolling out new applications, virtualizing environments, and creating a secure hybrid cloud.</p>
@@ -20,4 +20,4 @@ templates = [
               </div>
             </div>
           </div>
-        </pfe-card>"""]
+        </div>"""]

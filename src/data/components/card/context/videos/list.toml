@@ -1,5 +1,6 @@
 templates = [
-    """<pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+    """<div class="rhd-l-grid__list">
+        <div class="pf-c-card rhd-c-card__list rhd-m-card__courses">
           <div class="rhd-c-card-content">
             <h3 class="rhd-c-card__title rhd-m-card-title__no-max-height">
               <a href="#" class="rhd-m-link">
@@ -9,8 +10,10 @@ templates = [
             </h3>
             <div class="rhd-c-card__subtitle">2 minutes</div>
           </div>
-        </pfe-card>""","""
-        <pfe-card color="lightest" size-"small" class="rhd-c-card__list rhd-m-card__courses">
+        </div>
+      </div>""","""
+      <div class="rhd-l-grid__list">
+        <div class="pf-c-card rhd-c-card__list rhd-m-card__courses">
           <div class="rhd-c-card-content">
             <h3 class="rhd-c-card__title rhd-m-card-title__no-max-height">
               <a href="#" class="rhd-m-link">
@@ -20,4 +23,5 @@ templates = [
             </h3>
             <div class="rhd-c-card__subtitle">2 minutes</div>
           </div>
-        </pfe-card>"""]
+        </div>
+      </div>"""]
