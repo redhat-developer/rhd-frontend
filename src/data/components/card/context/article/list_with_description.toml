@@ -1,14 +1,14 @@
 templates = [
-    """<pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+    """<div class="pf-c-card rhd-c-card__list">
           <div class="rhd-c-card-content">
             <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Title of the article</a></h3>
             <p class="rhd-c-card__body ">This is the article description that can go to three lines and will be followed by a footer. <span class="rhd-m-list__comment"><i class="fas fa-comment"></i> 2</span></p>
           </div>
-        </pfe-card>""",
-        """<pfe-card color="lightest" size-"small" class="rhd-c-card__list">
+        </div>""",
+        """<div class="pf-c-card rhd-c-card__list">
           <div class="rhd-c-card-content">
             <h3 class="rhd-c-card__title"><a href="#" class="rhd-m-link">Title of the article</a></h3>
             <p class="rhd-c-card__body ">This is the article description that can go to three lines and will be followed by a footer. <span class="rhd-m-list__comment"><i class="fas fa-comment"></i> 2</span></p>
           </div>
-        </pfe-card>"""
+        </div>"""
 ]
