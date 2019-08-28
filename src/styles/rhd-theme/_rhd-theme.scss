@@ -1,10 +1,16 @@
+//Base PF variable overrides
+@import "layout/_pf_base_variable_overrides";
+
 @import "typography/fonts";
 @import "typography/sizes";
 @import "layout/spacing";
 
 // Components
+@import "components/component_base";
 @import "components/cards";
 @import "components/dynamic-list";
+@import "components/product-download-hero";
+
 pfe-cta {
   border-radius: 3px;
   a {
