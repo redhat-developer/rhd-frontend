@@ -17,28 +17,19 @@
   background-size: cover;
   background-position: center center;
 
-  .rich-text-header {
+  .rich-text-content {
     h1,h2,h3,h4,h5,h6 {
       margin: 0;
       margin-bottom: var(--rhd-theme--container-spacer-md);
     }
-  }
-
-  .rich-text-body {
     p {
       margin: 0;
-      margin-bottom: var(--rhd-theme--container-spacer-md);
+      margin-bottom: var(--rhd-theme--container-spacer-sm);
     }
-  }
 
-  .rich-text-footer {
     margin-bottom: var(--rhd-theme--container-spacer-xxl);
-     &--version {
-      padding: var(--pf-global--spacer--xs) var(--pf-global--spacer--sm); // 4px 8px
-      margin-bottom: 0;
-      font-size: var(--pf-global--FontSize--xs) !important;
-    }
     &--cta {
+      margin: var(--pf-global--spacer--sm) 0;
       display: inline-block;
     }
   }
