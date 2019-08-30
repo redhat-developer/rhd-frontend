@@ -1,7 +1,10 @@
-.product-download-hero {
+.rich-text {
   .pf-l-grid__item {
     &:nth-child(1) {
       order: 1;
+      @media screen and (max-width: $pf-global--breakpoint--lg) {
+        order: 0;
+      }
     }
   }
   &.image-first {
@@ -14,35 +17,26 @@
   background-size: cover;
   background-position: center center;
 
-  .product-download-hero-header {
+  .rich-text-content {
     h1,h2,h3,h4,h5,h6 {
       margin: 0;
       margin-bottom: var(--rhd-theme--container-spacer-md);
     }
-  }
-
-  .product-download-hero-body {
     p {
       margin: 0;
-      margin-bottom: var(--rhd-theme--container-spacer-md);
+      margin-bottom: var(--rhd-theme--container-spacer-sm);
     }
-  }
 
-  .product-download-hero-footer {
     margin-bottom: var(--rhd-theme--container-spacer-xxl);
-     &--version {
-      padding: var(--pf-global--spacer--xs) var(--pf-global--spacer--sm); // 4px 8px
-      margin-bottom: 0;
-      font-size: var(--pf-global--FontSize--xs) !important;
-    }
     &--cta {
+      margin: var(--pf-global--spacer--sm) 0;
       display: inline-block;
     }
   }
 
-  .product-download-hero-aside {
+  .rich-text-aside {
     display: block;
-    margin: auto 0;
+    margin: 0;
     img {
       width: -fill-available;
       width: -webkit-fill-available;

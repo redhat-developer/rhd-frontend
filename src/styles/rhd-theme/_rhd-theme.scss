@@ -1,6 +1,5 @@
-//Base PF variable overrides
-@import "layout/_pf_base_variable_overrides";
-
+@import "pf4-import";
+@import "layout/breakpoints";
 @import "typography/fonts";
 @import "typography/sizes";
 @import "layout/spacing";
@@ -9,6 +8,7 @@
 @import "components/component_base";
 @import "components/cards";
 @import "components/dynamic-list";
+@import "components/rich-text";
 @import "components/video-hero";
 @import "components/product-download-hero";
 
