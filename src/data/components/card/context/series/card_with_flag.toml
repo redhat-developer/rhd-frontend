@@ -1,4 +1,4 @@
-templates = ["""<pfe-card color="lightest" size-"small" class="rhd-c-card">
+templates = ["""<div class="pf-c-card rhd-c-card">
         <div class="rhd-c-card__tag">
           <i class="far fa-clone"></i>
           Series
@@ -13,4 +13,4 @@ templates = ["""<pfe-card color="lightest" size-"small" class="rhd-c-card">
             </div>
           </div>
         </div>
-      </pfe-card>"""]
+      </div>"""]
