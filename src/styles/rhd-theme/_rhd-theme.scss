@@ -1,6 +1,5 @@
-//Base PF variable overrides
-@import "layout/_pf_base_variable_overrides";
-
+@import "pf4-import";
+@import "layout/breakpoints";
 @import "typography/fonts";
 @import "typography/sizes";
 @import "layout/spacing";
