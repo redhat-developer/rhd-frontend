@@ -4,6 +4,9 @@
 // If desired, individual components can be commented out and not included in the application.
 //
 
+$pf-global--enable-font-overpass-cdn: true !default;
+$pf-global--disable-fontawesome: true !default;
+
 //custom rhd theme overrides
 @import "pf4-base-variable-overrides";
 @import "../../../node_modules/@patternfly/patternfly/patternfly.scss";
