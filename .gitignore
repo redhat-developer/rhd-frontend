@@ -1,4 +1,5 @@
 node_modules
+package-lock.json
 !vendor
 rhd-frontend/**
 !rhd-frontend/package.json
@@ -9,4 +10,3 @@ dist
 .idea
 resources
 public
-package-lock.json
