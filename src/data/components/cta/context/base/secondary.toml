@@ -1,7 +1,0 @@
-templates = ["""
-  <pfe-cta pfe-priority="secondary"><a href="#">Secondary</a></pfe-cta>
-  <pfe-cta pfe-priority="secondary" pfe-color="base"><a href="#">Secondary</a></pfe-cta>
-  <pfe-cta pfe-priority="secondary" pfe-color="accent"><a href="#">Secondary</a></pfe-cta>
-  <pfe-cta pfe-priority="secondary" pfe-color="complement"><a href="#">Secondary</a></pfe-cta>
-  <pfe-cta pfe-priority="secondary" pfe-color="lightest"><a href="#">Secondary</a></pfe-cta>
-"""]
