@@ -12,18 +12,48 @@
     - **Add** the go `/bin` to PATH (find by running `go env` and it would be `$GOPATH/bin`)
     - **_Alternatively_** you can just run `hugo` commands with `~/go/bin/hugo`
 - **Run** `go get github.com/gohugoio/hugo` (gets and builds the latest Hugo release)
+- Mac users **Run** `cd ~/go/src/github.com/gohugoio/hugo && go install --tags extended` to ensure you have the extended release
 - **Run** `hugo version` or `~/go/bin/hugo version` (_currently v0.56.3_; also look for `/extended` as that is necessary for Sass pipelines)
 - If missing dependencies, either `go get ...` them or install for your OS. Have seen the following needed:
     - `go get github.com/hashicorp/go-immutable-radix`
     - `go get github.com/wellington/go-libsass`
     - gcc / g++
-- In root of repo **Run** `git submodule update --init` (to get the redhat-theme files; VPN required)
+- Mac users: Increase max file limit so that you can run the Hugo server
+    - **Create** a `limit.maxfiles.plist` file
+
+        ```xml
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+            "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+            <plist version="1.0">
+              <dict>
+                <key>Label</key>
+                <string>limit.maxfiles</string>
+                <key>ProgramArguments</key>
+                <array>
+                  <string>launchctl</string>
+                  <string>limit</string>
+                  <string>maxfiles</string>
+                  <string>262144</string>
+                  <string>524288</string>
+                </array>
+                <key>RunAtLoad</key>
+                <true/>
+                <key>ServiceIPC</key>
+                <false/>
+              </dict>
+            </plist>
+        ```
+
+    - **Run** `chown root:wheel /Library/LaunchDaemons/limit.maxfiles.plist` to properly set the owner
+    - **Run** `chmod 0644 /Library/LaunchDaemons/limit.maxfiles.plist` to properly set the file permissions
+    - **Run** `launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist` to load the `limit.maxfiles.plist` to the LaunchAgent
+    - **Restart** you Mac so that the LaunchAgent can run and increase you max file limit
 - Run the Hugo server
     - **Run** default dev server `hugo serve` (pulls from `config/development/config.toml)`)
     - **Run** bound dev server `hugo serve --bind=0.0.0.0 --port=8080` (for VMs or other sandbox environments)
 - **Enjoy** live reload for Sass and Templates
 - JS will live reload after running `npm run scripts` to build production script files
-
 
 * NPM Scripts (```npm start```, ```npm test```, ```npm run {name}```)
     * ```start``` - builds scripts and keeps watching for changes
