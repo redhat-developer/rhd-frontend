@@ -12,6 +12,7 @@
 - **Install** [Go](https://golang.org)
 - Make Go-built executables accessible
     - **Add** the go `/bin` to PATH (find by running `go env` and it would be `$GOPATH/bin`)
+        - This is a **necessary step** to successfully execute `publish_gh_pages.sh` or `review_gh_pages.sh`
     - **_Alternatively_** you can just run `hugo` commands with `~/go/bin/hugo`
 - **Run** `go get github.com/gohugoio/hugo` (gets and builds the latest Hugo release)
 - Mac users **Run** `cd ~/go/src/github.com/gohugoio/hugo && go install --tags extended` to ensure you have the extended release
