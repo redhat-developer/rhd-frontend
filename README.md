@@ -5,9 +5,11 @@
 ## Installation, Scripts, and Contributing
 
 - **Clone** the repository
-- **Ask** for the fontawesome license text for the `.npmrc` file
+- **Ask** for the Font Awesome license text for the `.npmrc` file
+- **Ask** for the alternate registry information for the `.npmrc` file, if building the repo inside of Red Hat.
+    - If running the alternate registry and Font Awesome, you will need to set npm `config set strict-ssl`  to `false` (`npm config set strict-ssl false`). Without that, Font Awesome will try to use the alternate registry for installation, which will not work.`
 - **Run** ```npm install``` to install npm-tracked dependencies locally
-- **Install** [Go](https://golang.org) 
+- **Install** [Go](https://golang.org)
 - Make Go-built executables accessible
     - **Add** the go `/bin` to PATH (find by running `go env` and it would be `$GOPATH/bin`)
     - **_Alternatively_** you can just run `hugo` commands with `~/go/bin/hugo`
@@ -85,16 +87,16 @@
         ```
         * JSON
         ```js
-        { 
-            "variant": [ 
+        {
+            "variant": [
                 {
-                    "id": "variant1", 
-                    "name": "Variation 1", 
+                    "id": "variant1",
+                    "name": "Variation 1",
                     "order": 1
                 },
                 {
-                    "id": "variant2", 
-                    "name": "Variation 2", 
+                    "id": "variant2",
+                    "name": "Variation 2",
                     "order": 2
                 }
             ]
