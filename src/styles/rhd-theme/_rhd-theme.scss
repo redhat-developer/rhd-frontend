@@ -17,7 +17,9 @@
 @import "components/divider";
 @import "components/curated-links";
 @import "components/dynamic-list";
+@import "components/icons";
 @import "components/rich-text";
+@import "components/tables";
 @import "components/video-hero";
 @import "components/product-download-hero";
 @import "components/navigation";
@@ -38,4 +40,14 @@ pfe-cta {
 .pfe-headline-link {
   font-weight: 700;
   text-decoration: none;
+}
+
+.rhd-m-dark {
+  background-color: #212121;
+  color: #fff;
+  thead tr,
+  tbody tr * {
+    background-color: #212121 !important;
+  }
+
 }
