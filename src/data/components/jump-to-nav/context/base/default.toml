@@ -1,0 +1,13 @@
+templates = ["""
+<div class="rhd-jump-to-nav">
+    <a href='#'>Item2</a>
+    <a href='#'>Item3</a>
+    <a href='#'>Item4</a>
+    <a href='#'>Item5</a>
+    <a href='#'>Item6</a>
+</div>
+"""]
+
+[wrapper]
+open = ''
+close = ""

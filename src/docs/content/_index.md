@@ -21,7 +21,7 @@ scripts: ["@patternfly/pfe-card/pfe-card.umd"]
 
 [Typography](patterns/design/typography/)
 
-[Buttons and CTAs](patterns/misc/btn-cta/)
+[Buttons and CTAs](components/btn-cta/)
 
 [Alerts and Notifications](patterns/content/notifications/)
 
