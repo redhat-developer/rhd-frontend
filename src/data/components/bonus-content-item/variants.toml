@@ -1,0 +1,9 @@
+[[variant]]
+id = "default"
+name = "Bonus content item with icon"
+order = 1
+
+[[variant]]
+id = "default2"
+name = "Bonus content item with image"
+order = 2
