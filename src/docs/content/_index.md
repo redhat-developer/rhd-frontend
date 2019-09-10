@@ -20,8 +20,15 @@ draft: false
 
 <h2 class="pf-c-title pf-m-2xl pf-u-mt-lg pf-u-mb-sm">Code</h2>
 
-1. [SASS](styling "SASS Styling")
-1. [JavaScript](scripting "JavaScript")
+## Code
+[CSS Variables](patterns/code/css-variables)
+[SASS](styling)
+[JavaScript](scripting)
+
+
+## Helpful Links
+
+[Official Red Hat Unified Web Style Guide](https://docs.google.com/document/d/1bAb9MkrLW34wtk4RtrYvqLylXnvWhS81aDHAjhSzxMQ/edit)
 
 <h2 class="pf-c-title pf-m-2xl pf-u-mt-lg pf-u-mb-sm">Helpful Links</h2>
 
