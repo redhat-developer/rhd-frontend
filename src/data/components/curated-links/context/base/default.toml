@@ -1,0 +1,16 @@
+templates = ["""
+  <h2 class="pf-c-title pf-m-2xl pf-u-pt-lg">This is the curated links heading</h2>
+  <hr class="rhd-c-divider">
+  <div class="pf-l-flex pf-m-column rhd-c-curated-links">
+    <div class="pf-l-flex__item">
+      <i class="fal fa-arrow-circle-right"></i> <a href="#" class="pf-m-link">This is the first link in the list</a>
+    </div>
+    <div class="pf-l-flex__item">
+      <i class="fal fa-arrow-circle-right"></i> <a href="#" class="pf-m-link">This is the second link in the list</a>
+    </div>
+    <div class="pf-l-flex__item">
+      <i class="fal fa-arrow-circle-right"></i> <a href="#" class="pf-m-link">This is the third link in the list</a>
+    </div>
+  </div>
+  <hr class="rhd-c-divider">
+"""]
