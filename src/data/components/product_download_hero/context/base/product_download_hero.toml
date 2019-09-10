@@ -16,10 +16,16 @@ templates = ["""
             <div class="product-download-hero-body pf-c-content">
                 <p>A collaborative Kubernetes-native development solution that delivers OpenShift workspaces and in-browser IDE for rapid cloud application development.</p>
             </div>
-            <div class="product-download-hero-footer pf-c-content">
+            <div class="product-download-hero-footer pf-u-display-inline-flex pf-c-content">
                 <div class="product-download-hero-footer--cta pf-u-text-align-center">
-                    <a class="pf-c-button pf-m-primary" href="#">Download</a>
+                    <a class="pf-c-button pf-m-heavy" href="#">Download</a>
                     <p class="product-download-hero-footer--version">Version 1.0.0</p>
+                </div>
+                <div class="product-download-hero-footer--learn-more">
+                    <button class="pf-c-button pf-m-link pf-u-pl-lg">
+                        Learn more
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -43,10 +49,16 @@ templates = ["""
             <div class="product-download-hero-body pf-c-content">
                 <p>A collaborative Kubernetes-native development solution that delivers OpenShift workspaces and in-browser IDE for rapid cloud application development.</p>
             </div>
-            <div class="product-download-hero-footer pf-c-content">
+            <div class="product-download-hero-footer pf-u-display-inline-flex pf-c-content">
                 <div class="product-download-hero-footer--cta pf-u-text-align-center">
-                    <a class="pf-c-button pf-m-primary" href="#">Download</a>
+                    <a class="pf-c-button pf-m-heavy" href="#">Download</a>
                     <p class="product-download-hero-footer--version">Version 1.0.0</p>
+                </div>
+                <div class="product-download-hero-footer--learn-more">
+                    <button class="pf-c-button pf-m-link pf-u-pl-lg">
+                        Learn more
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -62,10 +74,16 @@ templates = ["""
             <div class="product-download-hero-body pf-c-content">
                 <p>A collaborative Kubernetes-native development solution that delivers OpenShift workspaces and in-browser IDE for rapid cloud application development.</p>
             </div>
-            <div class="product-download-hero-footer pf-c-content">
+            <div class="product-download-hero-footer pf-u-display-inline-flex pf-c-content">
                 <div class="product-download-hero-footer--cta pf-u-text-align-center">
-                    <a class="pf-c-button pf-m-primary" href="#">Download</a>
+                    <a class="pf-c-button pf-m-heavy" href="#">Download</a>
                     <p class="product-download-hero-footer--version">Version 1.0.0</p>
+                </div>
+                <div class="product-download-hero-footer--learn-more">
+                    <button class="pf-c-button pf-m-link pf-u-pl-lg">
+                        Learn more
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
