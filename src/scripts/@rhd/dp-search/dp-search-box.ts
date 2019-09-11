@@ -1,13 +1,13 @@
 // import {PFElement} from '../../@pfelements/pfelement.umd.js';
-import { library, icon, dom } from '@fortawesome/fontawesome-svg-core/index'
-import {faSearch} from '@fortawesome/pro-solid-svg-icons/index';
+// import { library, icon, dom } from '@fortawesome/fontawesome-svg-core/index'
+// import {faSearch} from '@fortawesome/pro-solid-svg-icons/index';
 import PFElement from '@patternfly/pfelement/pfelement.umd';
 
-library.add(faSearch);
+// library.add(faSearch);
 
-const searchIcon = icon(faSearch,{ transform: {
-    size: 18
-    }}).html;
+// const searchIcon = icon(faSearch,{ transform: {
+//     size: 18
+//     }}).html;
 
 export default class DPSearchBox extends PFElement {
     get html() {
@@ -16,6 +16,7 @@ export default class DPSearchBox extends PFElement {
             * {
                 font-family: Overpass,Open Sans,Arial,Helvetica,sans-serif;
             }
+            .fa-search { font-size: 18px; }
 
             :host {
                 flex: 0 0 auto;
@@ -96,14 +97,12 @@ export default class DPSearchBox extends PFElement {
                 button svg.svg-inline--fa { display: inline-block; }
                 button span { display: none; }
             }
-            
-            ${dom.css()}
         </style>
 <form class="search-bar" role="search">
     <div class="input-cont">
         <input value="${this.term}" class="user-success user-search" type="search" id="query" placeholder="Enter your search term">
     </div>
-    <button id="search-btn"><span>SEARCH</span>${searchIcon}</button>
+    <button id="search-btn"><span>SEARCH</span><i class="fas fa-search"></i></button>
 </form>`;
     }
     _term = '';

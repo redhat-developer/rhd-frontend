@@ -1,11 +1,11 @@
 //import {PFElement} from '../../@pfelements/pfelement.umd.js';
-import { library, icon, dom } from '@fortawesome/fontawesome-svg-core/index'
-import {faChevronRight} from '@fortawesome/pro-solid-svg-icons/index';
+// import { library, icon, dom } from '@fortawesome/fontawesome-svg-core/index'
+// import {faChevronRight} from '@fortawesome/pro-solid-svg-icons/index';
 import PFElement from '@patternfly/pfelement/pfelement.umd';
 import DPSearchFilterItem from './dp-search-filter-item';
 
-library.add(faChevronRight);
-const chevronRightIcon = icon(faChevronRight).html;
+// library.add(faChevronRight);
+// const chevronRightIcon = icon(faChevronRight).html;
 
 export default class DPSearchFilterGroup extends PFElement {
     get html() {
@@ -57,11 +57,8 @@ export default class DPSearchFilterGroup extends PFElement {
             .hide, a.more.hide, [data-hide] {
                 display: none;
             }
-
-            ${dom.css()}
-
         </style>
-        <h6 class="showFilters heading"><span class="group-name">${this.name}</span><span class="toggle">${chevronRightIcon}</span></h6>
+        <h6 class="showFilters heading"><span class="group-name">${this.name}</span><span class="toggle"><i class="fas fa-chevron-right-icon"></i></span></h6>
         <div class="group">
             <div class="primary">
                 <slot></slot>
