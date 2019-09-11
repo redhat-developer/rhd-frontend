@@ -61,6 +61,17 @@
     color: #2A99F1;
   }
 }
+.pf-m-link-white,
+.pf-m-link-white > i,
+.pf-m-link-white > .svg-inline--fa {
+  color: #fff !important;
+  &:hover,
+  &:focus,
+  &.pf-m-active,
+  &.pf-m-focus {
+    color: #d1d1d1 !important;
+  }
+}
 
 // Heavy CTA
 .pf-c-button.pf-m-heavy {

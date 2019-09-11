@@ -33,6 +33,9 @@
   }
   &__product-hero-dark {
     background-image: var(--rhd-theme--ui-background-image__product-hero-dark);
+    & > * {
+      color: var(--pf-global--Color--light-100) !important;
+    }
   }
 }
 
