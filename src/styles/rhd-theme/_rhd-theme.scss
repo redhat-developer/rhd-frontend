@@ -8,9 +8,12 @@
 @import "../../../node_modules/@patternfly/patternfly/components/Table/table.scss";
 
 // Components
+@import "components/avatar";
+@import "components/bonus-content-item";
 @import "components/buttons";
 @import "components/component_base";
 @import "components/cards";
+@import "components/divider";
 @import "components/curated-links";
 @import "components/dynamic-list";
 @import "components/rich-text";
