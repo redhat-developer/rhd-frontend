@@ -2,7 +2,7 @@
 {{ $contexts := .context }}
 <div class="pf-l-grid pf-m-gutter">
 {{ range $context := $contexts }}
-    <div class="pf-l-grid__item pf-m-10-col pf-m-offset-1-col">
+    <div class="pf-l-grid__item pf-m-offset-1-col">
         <h2>{{ .details.name }}</h2>
     </div>
     {{ range $variants }}
@@ -12,7 +12,7 @@
                 {{.open | safeHTML }}
             {{end}}
         {{ else }}
-        <div class="pf-l-grid__item pf-m-10-col pf-m-offset-1-col">
+        <div class="pf-l-grid__item pf-m-offset-1-col">
         {{ end }}
             <h4 class="pf-c-title pf-m-lg">{{ .name }}</h4>
             {{with (index $context .id "templates")}}

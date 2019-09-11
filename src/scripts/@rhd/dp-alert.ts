@@ -1,8 +1,8 @@
 import PFElement from '@patternfly/pfelement/pfelement.umd';
-import {library, icon} from '@fortawesome/fontawesome-svg-core/index';
-import {faTimes} from '@fortawesome/pro-solid-svg-icons/index';
+// import {library, icon} from '@fortawesome/fontawesome-svg-core/index';
+// import {faTimes} from '@fortawesome/pro-solid-svg-icons/index';
 
-library.add(faTimes);
+// library.add(faTimes);
 
 export class DPAlert extends PFElement {
     get html() {
@@ -98,7 +98,7 @@ export class DPAlert extends PFElement {
         ${this.heading ? `<strong>${this.heading}</strong>` : ''}
         ${this.size === 'xl' ? '</h3>' : ''}
         <p><slot>${this.text}</slot></p>
-        ${this.size === 'xl' ? `<a class="close" href="#">${icon(faTimes, { attributes: {'pointer-events': 'none'} }).html}</a>` : ''}`;
+        ${this.size === 'xl' ? `<a class="close" href="#"><i class="fas fa-times"></i></a>` : ''}`;
     }
 
     static get tag() { return 'dp-alert'; }

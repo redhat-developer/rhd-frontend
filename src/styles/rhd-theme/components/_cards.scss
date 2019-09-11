@@ -80,6 +80,11 @@
   }
 }
 
+// Sets all cards the same height for all cards
+.rhd-m-full-height {
+  height: 100%;
+  justify-content: space-evenly;
+}
 
 .rhd-c-card__image {
   min-height: 130px;

@@ -2,38 +2,26 @@
 title: "Home"
 date: 2017-08-03T10:56:11-04:00
 draft: false
-scripts: ["@patternfly/pfe-card/pfe-card.umd"]
 ---
 
-# RHDP Documentation
+<h1 class="pf-c-title pf-m-3xl pf-u-mt-lg pf-u-mb-sm">RHDP Documentation</h1>
 
+<h2 class="pf-c-title pf-m-2xl pf-u-mt-lg pf-u-mb-sm">Patterns</h2>
 
-## Patterns
+- [Typography](patterns/design/typography/ "Typography Patterns")
+- [Buttons and CTAs](patterns/misc/btn-cta/ "Buttons and CTA Patterns")
+- [Alerts and Notifications](patterns/content/notifications/ "Alert and Notification Patterns")
 
-<pfe-card pfe-color="dark" class="rhd-m-link--type-manuals">
-    <h3 slot="pfe-card__header">
-        <a href="patterns/design/typography">Typography</a>
-    </h3>
-    <div slot="pfe-card__body">
-    Fonts, sizes, spacing, etc.
-    </div>
-</pfe-card>
-
-[Typography](patterns/design/typography/)
-
-[Buttons and CTAs](components/btn-cta/)
-
-[Alerts and Notifications](patterns/content/notifications/)
-
-## Components
+<h2 class="pf-c-title pf-m-2xl pf-u-mt-lg pf-u-mb-sm">Components</h2>
 
 * {{< fa "fas fa-search">}} [Search](components/search)
 * {{< fa "fas fa-film">}} [DevNationLive](components/devnationlive)
 * {{< fa "far fa-address-card">}} [OneBox](components/onebox)
 
+<h2 class="pf-c-title pf-m-2xl pf-u-mt-lg pf-u-mb-sm">Code</h2>
 
 ## Code
-
+[CSS Variables](patterns/code/css-variables)
 [SASS](styling)
 [JavaScript](scripting)
 
@@ -42,6 +30,16 @@ scripts: ["@patternfly/pfe-card/pfe-card.umd"]
 
 [Official Red Hat Unified Web Style Guide](https://docs.google.com/document/d/1bAb9MkrLW34wtk4RtrYvqLylXnvWhS81aDHAjhSzxMQ/edit)
 
-[Customer Portal UX: Pattern Library Game Plan](https://docs.google.com/document/d/1VoHKCKPKLLNZC7N8i3KlsMSfZYpfFdRRWl3t01Sg2IA/edit#heading=h.he2yza8x0ytw)
+<h2 class="pf-c-title pf-m-2xl pf-u-mt-lg pf-u-mb-sm">Helpful Links</h2>
 
-[Maintainable & Modular CSS](http://bit.ly/mod-css)
+<ul class="pf-c-list">
+  <li>
+    <a href="https://docs.google.com/document/d/1bAb9MkrLW34wtk4RtrYvqLylXnvWhS81aDHAjhSzxMQ/edit" class="pf-m-link">Official Red Hat Unified Web Style Guide</a> <i class="fas fa-external-link"></i> <span class="pf-c-label pf-m-compact">Requires Red Hat ID</span>
+  </li>
+  <li>
+    <a href="https://docs.google.com/document/d/1VoHKCKPKLLNZC7N8i3KlsMSfZYpfFdRRWl3t01Sg2IA/edit#heading=h.he2yza8x0ytw" class="pf-m-link">Customer Portal UX: Pattern Library Game Plan</a> <i class="fas fa-external-link"></i> <span class="pf-c-label pf-m-compact">Requires Red Hat ID</span>
+  </li>
+  <li>
+    <a href="http://bit.ly/mod-css" class="pf-m-link">Maintainable & Modular CSS</a> <i class="fas fa-external-link"></i>
+  </li>
+</ul>
