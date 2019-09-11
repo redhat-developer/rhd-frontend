@@ -69,6 +69,16 @@ templates = ["""
         <td data-label="Icon name">Comment</td>
         <td data-label="Icon type">Solid</td>
       </tr>
+      <tr>
+        <td data-label="icon"><i class="fa fa-arrow-right"></i></td></td>
+        <td data-label="Icon name">Arrow (right)</td>
+        <td data-label="Icon type">Regular</td>
+      </tr>
+      <tr>
+        <td data-label="icon"><i class="fas fa-code"></i></td></td>
+        <td data-label="Icon name">Code</td>
+        <td data-label="Icon type">Solid</td>
+      </tr>
     </tbody>
   </table>
 """]
