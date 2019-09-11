@@ -1,5 +1,4 @@
 {{ $patternfly := resources.Get "@patternfly/patternfly/patternfly.scss" | resources.ToCSS (dict "targetPath" "/css/patternfly.css" ) }}
-{{ $fontawesome := resources.Get "@fortawesome/fontawesome-pro/js/all.min.js" }}
 {{ $rhdoptions := (dict "targetPath" "/css/rhd.css" ) }}
 {{ $rhdstyle := resources.Get "sass/rhd.scss" | resources.ToCSS $rhdoptions }}
 <!DOCTYPE html>
@@ -11,11 +10,11 @@
     <title>{{ block "title" . }}
         {{ .Site.Title }}
     {{ end }}</title>
-    <link rel="stylesheet" href="{{ $patternfly.Permalink }}">
+    <!-- <link rel="stylesheet" href="{{ $patternfly.Permalink }}"> -->
     <link rel="stylesheet" href="{{ $rhdstyle.Permalink }}">
     <link rel="stylesheet" href="/css/prism-ghcolors.css">
     <script src="/js/base.js"></script>
-    <script src="{{ $fontawesome.Permalink }}"></script>
+    <script src="https://kit.fontawesome.com/3f83b4c6d2.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.5/es6-shim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.js"></script>
