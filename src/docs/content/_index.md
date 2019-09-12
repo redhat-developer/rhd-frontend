@@ -6,29 +6,36 @@ draft: false
 
 <h1 class="pf-c-title pf-m-3xl pf-u-mt-lg pf-u-mb-sm">RHDP Documentation</h1>
 
-<h2 class="pf-c-title pf-m-2xl pf-u-mt-lg pf-u-mb-sm">Patterns</h2>
-
-- [Typography](patterns/design/typography/ "Typography Patterns")
-- [Buttons and CTAs](patterns/misc/btn-cta/ "Buttons and CTA Patterns")
-- [Alerts and Notifications](patterns/content/notifications/ "Alert and Notification Patterns")
-
 <h2 class="pf-c-title pf-m-2xl pf-u-mt-lg pf-u-mb-sm">Components</h2>
 
-* {{< fa "fas fa-search">}} [Search](components/search)
-* {{< fa "fas fa-film">}} [DevNationLive](components/devnationlive)
-* {{< fa "far fa-address-card">}} [OneBox](components/onebox)
+* [Alerts](components/alerts)
+* [Bonus Content Item](components/bonus-content-item)
+* [CTA Button](components/btn-cta)
+* [Card HTML](components/card-html)
+* [Card](components/card)
+* [Code Snippet](components/code-snippet)
+* [Community](components/community)
+* [Curated Links](components/curated-links)
+* [DevNationLive](components/devnationlive)
+* [Dynamic List](components/dynamic-list)
+* [Expandable Groups](components/expandable-groups)
+* [Footer](components/footer)
+* [Jump to Nav](components/jump-to-nav)
+* [Navigation](components/navigation)
+* [OneBox](components/onebox)
+* [Product Download Hero](components/product-download-hero)
+* [Referrer](components/referrer)
+* [RHDP Downloads](components/rhdp-downloads)
+* [Rich Text](components/rich_text)
+* [Search](components/search)
+* [Stack Overflow](components/stack-overflow)
+* [Template](components/template)
+* [Video Hero](components/video-hero)
 
-<h2 class="pf-c-title pf-m-2xl pf-u-mt-lg pf-u-mb-sm">Code</h2>
+<h2 class="pf-c-title pf-m-2xl pf-u-mt-lg pf-u-mb-sm">Documentation</h2>
 
-## Code
-[CSS Variables](patterns/code/css-variables)
-[SASS](styling)
-[JavaScript](scripting)
-
-
-## Helpful Links
-
-[Official Red Hat Unified Web Style Guide](https://docs.google.com/document/d/1bAb9MkrLW34wtk4RtrYvqLylXnvWhS81aDHAjhSzxMQ/edit)
+* [CSS Variables](patterns/code/css-variables)
+* [Typography](patterns/design/typography/ "Typography Patterns")
 
 <h2 class="pf-c-title pf-m-2xl pf-u-mt-lg pf-u-mb-sm">Helpful Links</h2>
 
