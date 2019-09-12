@@ -100,6 +100,17 @@
   padding: 0 48px var(--pf-global--spacer--md) 48px;
 }
 
+.rhd-c-card__dynamic-content--image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a80;
+  margin-bottom: 0;
+  img {
+    max-height: 125px;
+  }
+}
+
 .rhd-c-card__video {
   display: flex;
   justify-content: center;
