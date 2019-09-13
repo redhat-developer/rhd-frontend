@@ -16,6 +16,7 @@ draft: false
 * [Code Snippet](components/code-snippet)
 * [Community](components/community)
 * [Curated Links](components/curated-links)
+* [Curated Products](components/curated-products)
 * [DevNationLive](components/devnationlive)
 * [Dynamic List](components/dynamic-list)
 * [Expandable Groups](components/expandable-groups)
