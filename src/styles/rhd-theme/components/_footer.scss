@@ -17,7 +17,7 @@
     grid-template-columns: repeat(4,1fr);
     grid-gap: 1.5rem;
   }
-  
+
   .rhd-menu > .menu-item.menu-item--expanded {
     list-style: none;
   }
@@ -91,6 +91,26 @@
       &:first-child { margin-left: 0; }
       a {
         font-size: 1.5rem;
+        &:hover,
+        &:active,
+        &:focus {
+          font-size: 1.5rem;
+          & > i,
+          & > .svg-inline--fa,
+          & > .svg-inline--fa > * {
+            color: #fff !important;
+          }
+        }
+        & > i,
+        & > .svg-inline--fa {
+          color: #fff !important;
+          &:hover,
+          &:active,
+          &:focus,
+          &:visited {
+            color: #fff !important;
+          }
+        }
       }
     }
   }
@@ -133,7 +153,7 @@
         grid-column-end: 3;
         img {
             width: 140px;
-        }  
+        }
     }
     &-legal {
         grid-column-start: 3;
@@ -171,12 +191,12 @@
             &:last-child:after {
               display: none;
             }
-        } 
+        }
     }
     &-summit-logo {
         grid-column-start: 11;
         grid-column-end: 12;
-        justify-self: end;  
+        justify-self: end;
     }
 }
 
@@ -203,7 +223,7 @@
         position: relative;
       }
     }
-    .menu-item--expanded .section-toggle:before { 
+    .menu-item--expanded .section-toggle:before {
       content: "\203A";
       display: inline-block;
       top: 10px;
@@ -213,7 +233,7 @@
       -ms-transform: rotate(90deg);
       transform: rotate(90deg);
     }
-    .menu-item--expanded.collapsed .section-toggle:before { 
+    .menu-item--expanded.collapsed .section-toggle:before {
       content: "\203A";
       display: inline-block;
       top: 2px;
@@ -258,7 +278,7 @@
 
   .rh-c-universal-footer {
     padding: 1em;
-  
+
     &-legal {
       margin-left: 0;
     }
