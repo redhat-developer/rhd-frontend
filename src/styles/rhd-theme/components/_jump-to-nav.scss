@@ -24,7 +24,9 @@
   &:hover,
   &:focus,
   &:active {
-    color: var(--pf-global--link--Color--light--hover);
+    color: var(--pf-global--Color--light-100);
+    text-decoration: underline;
+    font-weight: var(--pf-global--FontWeight--bold);
   }
 
   @media screen and (max-width: $pf-global--breakpoint--lg) {
