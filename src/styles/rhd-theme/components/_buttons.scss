@@ -34,21 +34,80 @@
 }
 
 .pf-c-button.pf-m-link {
+  color: var(--rhd-c-button--m-secondary--Color);
   background-color: transparent;
+  &:hover,
+  &:focus,
+  &.pf-m-active,
+  &.pf-m-focus {
+    color: var(--rhd-c-button--m-secondary--hover--Color);
+    & > .pf-c-button__icon > i,
+    & > .pf-c-button__icon > .svg-inline--fa {
+      color: var(--rhd-c-button--m-secondary--hover--Color) !important;
+    }
+  }
+  & > .pf-c-button__icon > i,
+  & > .pf-c-button__icon > .svg-inline--fa,
+  & > i,
+  & > .svg-inline--fa {
+    color: var(--rhd-c-button--m-secondary--Color) !important;
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      color: var(--rhd-c-button--m-secondary--hover--Color) !important;
+    }
+  }
 }
 
-.pf-m-link--secondary {
+.pf-c-button.pf-m-link--secondary {
   @extend .pf-m-link;
   color: var(--rhd-c-button--m-tertiary--Color) !important;
+  &:hover,
+  &:focus,
+  &.pf-m-active,
+  &.pf-m-focus {
+    color: var(--rhd-c-button--m-tertiary--Color) !important;
+    & > .pf-c-button__icon > i,
+    & > .pf-c-button__icon > .svg-inline--fa {
+      color: var(--rhd-c-button--m-tertiary--Color) !important;
+    }
+  }
+  & > .pf-c-button__icon > i,
+  & > .pf-c-button__icon > .svg-inline--fa {
+    color: var(--rhd-c-button--m-tertiary--Color) !important;
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      color: var(--rhd-c-button--m-tertiary--Color) !important;
+    }
+  }
 
   &-on-dark {
     color: var(--rhd-c-button--m-secondary-dark--Color);
-      &:hover,
-      &:focus,
-      &.pf-m-active,
-      &.pf-m-focus {
-        color: #9D9D9D;
+    &:hover,
+    &:focus,
+    &.pf-m-active,
+    &.pf-m-focus {
+      color: #9D9D9D;
+      & > .pf-c-button__icon > i,
+      & > .pf-c-button__icon > .svg-inline--fa {
+        color: #9D9D9D !important;
       }
+    }
+    & > .pf-c-button__icon > i,
+    & > .pf-c-button__icon > .svg-inline--fa,
+    & > i,
+    & > .svg-inline--fa {
+      color: var(--rhd-c-button--m-secondary-dark--Color) !important;
+      &:hover,
+      &:active,
+      &:focus,
+      &:visited {
+        color: #9D9D9D !important;
+      }
+    }
   }
 }
 
@@ -59,6 +118,20 @@
   &.pf-m-active,
   &.pf-m-focus {
     color: #2A99F1;
+    & > .pf-c-button__icon > i,
+    & > .pf-c-button__icon > .svg-inline--fa {
+      color: #2A99F1 !important;
+    }
+  }
+  & > .pf-c-button__icon > i,
+  & > .pf-c-button__icon > .svg-inline--fa {
+    color: #73BCF7;
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      color: #2A99F1;
+    }
   }
 }
 
