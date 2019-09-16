@@ -10,7 +10,8 @@ draft: false
 
 * [Alerts](components/alerts)
 * [Bonus Content Item](components/bonus-content-item)
-* [CTA Button](components/btn-cta)
+* [Buttons](components/btn-cta)
+* [CTA](components/cta)
 * [Card HTML](components/card-html)
 * [Card](components/card)
 * [Code Snippet](components/code-snippet)

@@ -45,8 +45,25 @@
 .rhd-m-link {
   color: #06c;
   text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus,
   &:visited {
+    color: #004080;
+    & > i,
+    & > .svg-inline--fa {
+      color: #004080 !important;
+    }
+  }
+  & > i,
+  & > .svg-inline--fa {
     color: #06c;
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      color: #004080;
+    }
   }
 }
 
