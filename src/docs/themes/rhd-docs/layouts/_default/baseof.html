@@ -36,11 +36,9 @@
         <div id="block-rhdp-content" class="block block-system">
           <article role="article" class="node">
             <div class="node__content">
-              <div class="container">
-    {{ block "main" . }}
-      <!-- The part of the page that begins to differ between templates -->
-    {{ end }}
-              </div>
+              {{ block "main" . }}
+                <!-- The part of the page that begins to differ between templates -->
+              {{ end }}
             </div>
           </article>
         </div>
