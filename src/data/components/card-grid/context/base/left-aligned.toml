@@ -1,6 +1,8 @@
 templates = ["""
-<div class="rhd-c-card-grid pf-c-content">
-  <h2 class="pf-c-title pf-m-lg">Title for Assembly with Card Grid</h2>
+<div class="component rhd-c-card-grid pf-c-content">
+  <div class="pf-l-flex">
+    <h2 class="pf-c-title pf-m-lg">Title for Assembly with Card Grid</h2>
+  </div>
   <div class="pf-l-flex rhd-c-card-grid__wrapper">
     <!-- ======== CARD COMPONENTS START HERE ========= -->
     <div class="pf-c-card rhd-c-card">

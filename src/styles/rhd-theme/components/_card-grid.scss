@@ -1,4 +1,10 @@
 .rhd-c-card-grid {
+    @extend .pf-u-pt-lg;
+    @extend .pf-u-pb-lg;
+
+    h2.pf-c-title {
+        @extend .pf-u-w-100;
+    }
     .rhd-c-card {
         --pf-l-flex--spacer: var(--pf-l-flex--spacer--none);
         margin-bottom: var(--pf-l-flex--spacer--lg);
