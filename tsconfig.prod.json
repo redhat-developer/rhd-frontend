@@ -5,7 +5,6 @@
         "moduleResolution": "node",
         "target": "es5",
         "noImplicitAny": false,
-        "allowUmdGlobalAccess": true,
         "allowSyntheticDefaultImports": true,
         "sourceMap": false,
         "removeComments": true,
@@ -31,6 +30,6 @@
         }
     },
     "include": [
-        "src/scripts/@rhd/**/*.ts"       
+        "src/scripts/@rhd/**/*.ts"
     ]
 }

@@ -1,0 +1,40 @@
+templates = ["""
+<div class="pf-l-flex pf-u-align-items-center pf-u-mt-lg pf-u-px-2xl">
+  <div class="pf-l-flex pf-m-grow">
+    <div>
+      <img class="pf-c-brand" src="https://developers.redhat.com/themes/custom/rhdp/logo.svg" alt="Red Hat Developer logo" width="240px">
+    </div>
+  </div>
+  <div class="pf-l-flex">
+    <nav class="pf-c-nav rhd-c-nav" aria-label="Local">
+      <ul class="pf-c-nav__tertiary-list">
+        <li class="pf-c-nav__item">
+          <a href="#" class="pf-c-nav__link pf-m-current" aria-current="page">
+            Events
+          </a>
+        </li>
+        <li class="pf-c-nav__item">
+          <a href="#" class="pf-c-nav__link">
+            Training
+          </a>
+        </li>
+        <li class="pf-c-nav__item">
+          <a href="#" class="pf-c-nav__link">
+            Help
+          </a>
+        </li>
+        <li class="pf-c-nav__item">
+          <a href="#" class="pf-c-nav__link">
+            Products
+          </a>
+        </li>
+        <li class="pf-c-nav__item pf-u-mr-0">
+          <a href="#" class="pf-u-display-inline-block pf-u-pt-md pf-u-pb-sm">
+            <i class="fas fa-search"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+"""]

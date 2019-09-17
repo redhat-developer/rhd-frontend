@@ -1,15 +1,14 @@
 [[variant]]
-id = "primary"
-name = "Primary"
+id = "ctaDefault"
+name = "No visual style set"
 order = 1
 
 [[variant]]
-id = "secondary"
-name = "Secondary"
+id = "ctaLeft"
+name = "Aligned left"
 order = 2
 
 [[variant]]
-id = "default"
-name = "Default"
+id = "ctaDark"
+name = "Dark background, light text"
 order = 3
-

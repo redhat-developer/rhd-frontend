@@ -45,8 +45,25 @@
 .rhd-m-link {
   color: #06c;
   text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus,
   &:visited {
+    color: #004080;
+    & > i,
+    & > .svg-inline--fa {
+      color: #004080 !important;
+    }
+  }
+  & > i,
+  & > .svg-inline--fa {
     color: #06c;
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      color: #004080;
+    }
   }
 }
 
@@ -80,6 +97,11 @@
   }
 }
 
+// Sets all cards the same height for all cards
+.rhd-m-full-height {
+  height: 100%;
+  justify-content: space-evenly;
+}
 
 .rhd-c-card__image {
   min-height: 130px;
@@ -93,6 +115,17 @@
   margin: 0 auto;
   max-height: 200px;
   padding: 0 48px var(--pf-global--spacer--md) 48px;
+}
+
+.rhd-c-card__dynamic-content--image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a80;
+  margin-bottom: 0;
+  img {
+    max-height: 125px;
+  }
 }
 
 .rhd-c-card__video {

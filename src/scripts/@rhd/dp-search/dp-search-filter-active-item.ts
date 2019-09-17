@@ -1,10 +1,10 @@
 // import {PFElement} from '../../@pfelements/pfelement.umd.js';
-import { library, icon, dom } from '@fortawesome/fontawesome-svg-core/index'
-import {faTimes} from '@fortawesome/pro-solid-svg-icons/index';
+// import { library, icon, dom } from '@fortawesome/fontawesome-svg-core/index'
+// import {faTimes} from '@fortawesome/pro-solid-svg-icons/index';
 import PFElement from '@patternfly/pfelement/pfelement.umd';
 
-library.add(faTimes);
-const timesIcon = icon(faTimes).html;
+// library.add(faTimes);
+// const timesIcon = icon(faTimes).html;
 
 export default class DPSearchFilterActiveItem extends PFElement {
     get html() {
@@ -26,14 +26,12 @@ export default class DPSearchFilterActiveItem extends PFElement {
                 margin-right: .5em;
                 padding: .5em .7em;
             }
-            
-            ${dom.css()}
 
             svg.svg-inline--fa { 
                 margin-left: .25em;
             }
         </style>
-        <slot></slot>${timesIcon}` : ''}`;
+        <slot></slot><i class="fas fa-times"></i>` : ''}`;
     }
 
     static get tag() { return 'dp-search-filter-active-item'; }

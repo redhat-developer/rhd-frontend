@@ -1,0 +1,56 @@
+templates = ["""
+<div class="pf-l-flex pf-u-align-items-center pf-u-mt-lg pf-u-px-2xl" style="max-width: 768px;">
+  <div class="pf-l-flex">
+    <div>
+      <img class="pf-c-brand" src="https://developers.redhat.com/themes/custom/rhdp/logo.svg" alt="Red Hat Developer logo" width="240px">
+    </div>
+  </div>
+  <div class="pf-l-flex pf-m-grow">
+    <div class="pf-c-dropdown pf-m-align-left pf-m-align-right-on-sm rhd-c-nav-dropdown rhd-m-expanded pf-m-expanded">
+      <button class="pf-c-dropdown__toggle" id="dropdown-basic-example-expanded-button" aria-expanded="true">
+        <span class="pf-c-dropdown__toggle-text">
+          Menu
+        </span>
+        <i class="fas fa-bars pf-c-dropdown__toggle-icon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>
+""",
+"""
+<h1 class="pf-c-title pf-m-lg pf-u-my-md">Main Navigation - Mobile: Expanded</h1>
+<div class="pf-l-flex pf-u-align-items-center pf-u-mt-lg pf-u-px-2xl" style="max-width: 768px;">
+  <div style="float: right">
+    <div class="pf-c-dropdown pf-m-align-left pf-m-align-right-on-sm rhd-c-nav-dropdown rhd-m-expanded pf-m-expanded">
+      <button class="pf-c-dropdown__toggle" id="dropdown-basic-example-expanded-button" aria-expanded="true">
+        <span class="pf-c-dropdown__toggle-text">
+          Menu
+        </span>
+        <i class="fas fa-bars pf-c-dropdown__toggle-icon" aria-hidden="true"></i>
+      </button>
+      <ul class="pf-c-dropdown__menu pf-m-align-right" aria-labelledby="dropdown-navigation-menu" style="position: relative; top: -47px;">
+        <li class="pf-u-display-flex pf-u-justify-content-space-between pf-u-px-md">
+          <div>
+            <i class="fas fa-user"></i> Login
+          </div>
+          <div>
+            Close <i class="fal fa-times-circle"></i>
+          </div>
+        </li>
+        <li>
+          <div class="pf-c-input-group">
+            <input class="pf-c-form-control" type="search" id="textInput11" name="textInput11" aria-label="search input example">
+            <button class="pf-c-button pf-m-tertiary" type="button" aria-label="search button for search input">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+        </li>
+        <li><a href="#"><span>Events</span><span class="rhd-m-nav-description">Link to Red Hat Developer Events</span></a></li>
+        <li><a href="#"><span>Training</span><span class="rhd-m-nav-description">Link to Red Hat Developer Events</span></a></li>
+        <li><a href="#"><span>Help</span><span class="rhd-m-nav-description">Link to Red Hat Developer Events</span></a></li>
+        <li><a href="#"><span>Products</span><span class="rhd-m-nav-description">Link to Red Hat Developer Events</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+"""]

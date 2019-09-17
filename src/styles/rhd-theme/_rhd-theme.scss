@@ -1,16 +1,34 @@
-//Base PF variable overrides
-@import "layout/_pf_base_variable_overrides";
-
+@import "pf4-import";
+@import "layout/breakpoints";
 @import "typography/fonts";
 @import "typography/sizes";
 @import "layout/spacing";
 
+// PatternFly Core
+@import "../../../node_modules/@patternfly/patternfly/components/Table/table.scss";
+
 // Components
+@import "components/avatar";
+@import "components/bonus-content-item";
+@import "components/buttons";
+@import "components/cta";
 @import "components/component_base";
+@import "components/bands";
+@import "components/buttons";
 @import "components/cards";
+@import "components/code-snippet";
+@import "components/divider";
+@import "components/curated-links";
 @import "components/dynamic-list";
+@import "components/icons";
+@import "components/rich-text";
+@import "components/tables";
 @import "components/video-hero";
 @import "components/product-download-hero";
+@import "components/navigation";
+@import "components/footer";
+@import "components/jump-to-nav";
+@import "components/featured-resources";
 
 pfe-cta {
   border-radius: 3px;
@@ -26,4 +44,14 @@ pfe-cta {
 .pfe-headline-link {
   font-weight: 700;
   text-decoration: none;
+}
+
+.rhd-m-dark {
+  background-color: #212121;
+  color: #fff;
+  thead tr,
+  tbody tr * {
+    background-color: #212121 !important;
+  }
+
 }

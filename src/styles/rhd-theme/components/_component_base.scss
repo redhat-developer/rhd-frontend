@@ -1,13 +1,15 @@
 .component {
     padding: 0 var(--rhd-theme--container-spacer-3xl);
     .pf-l-grid,
-    .pf-l-level {
+    .pf-l-level,
+    .pf-l-gallery,
+    .pf-l-flex {
         max-width: map-get($rhd-breakpoints, xlarge);
         margin: 0 auto;
     }
     @media screen and (max-width: $pf-global--breakpoint--lg) {
         padding: 0 var(--rhd-theme--container-spacer-xl);
-   }    
+   }
     @media screen and (max-width: $pf-global--breakpoint--md) {
          padding: 0 var(--rhd-theme--container-spacer-xl);
     }

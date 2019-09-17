@@ -1,13 +1,12 @@
 ---
-title: "Call To Action"
-date: 2019-08-21T09:28:14-04:00
+title: "CTA"
+date: 2019-09-12T15:32:54-07:00
 draft: false
 type: component
 tags: ["component"]
 weight: 99
-description: ""
+description: "Call to action banner"
 component: "cta"
-scripts: ["@patternfly/pfelement/pfelement.umd", "@patternfly/pfe-cta/pfe-cta.umd"]
+scripts: []
 ---
-
 

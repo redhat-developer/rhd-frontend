@@ -32,6 +32,10 @@
   background-color: #fff;
 }
 
+.rhd-m-background-grey {
+  background-color: var(--rhd-theme--ui-background-lighter);
+}
+
 .rhd-m-background-comments > div {
   padding: var(--rhd-theme--container-spacer-md);
   background-color: #fff;

@@ -10,14 +10,14 @@ scripts: ["@patternfly/pfelement/pfelement.umd",
 "@fortawesome/fontawesome-svg-core/index",
 "@rhd/dp-search/dp-search-app",
 "@rhd/dp-search/dp-search-box",
-"@rhd/dp-search/dp-search-filter-group", 
+"@rhd/dp-search/dp-search-filter-group",
 "@rhd/dp-search/dp-search-filter-item",
 "@rhd/dp-search/dp-search-filters",
 "@rhd/dp-search/dp-search-onebox",
 "@rhd/dp-search/dp-search-query",
 "@rhd/dp-search/dp-search-result-count",
 "@rhd/dp-search/dp-search-result",
-"@rhd/dp-search/dp-search-results", 
+"@rhd/dp-search/dp-search-results",
 "@rhd/dp-search/dp-search-sort-page",
 "@rhd/dp-search/dp-search-url",
 "@rhd/dp-search/dp-search-modal-filters",
@@ -29,7 +29,6 @@ scripts: ["@patternfly/pfelement/pfelement.umd",
 <dp-search-box slot="query"></dp-search-box>
 <dp-search-filters title="Filter By" slot="filters">
     <dp-search-filter-group name="CONTENT TYPE" name="type">
-<<<<<<< HEAD
         <!-- <dp-search-filter-item group="type" key="topic_page" value="topic_page" name="Topic">Topic</dp-search-filter-item> -->
         <dp-search-filter-item group="type" key="article" value="article" name="Articles">Articles</dp-search-filter-item>
         <!-- <dp-search-filter-item group="type" key="product" value="product" name="Product">Product</dp-search-filter-item> -->
@@ -40,18 +39,6 @@ scripts: ["@patternfly/pfelement/pfelement.umd",
         <dp-search-filter-item slot="secondary" group="type" key="cheat_sheet" value="cheat_sheet" name="Cheat Sheet">Cheat Sheet</dp-search-filter-item>
         <dp-search-filter-item slot="secondary" group="type" key="coding_resource" value="coding_resource" name="Coding Resource">Coding Resource</dp-search-filter-item>
         <dp-search-filter-item slot="secondary" group="type" key="webpage" value="webpage" name="Webpage">Webpage</dp-search-filter-item>
-=======
-        <dp-search-filter-item group="type" key="topic_page" value="topic_page" name="Topic">Topic</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="article,webpage,coding_resource,page" value="article" name="Article">Article</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="product" value="product" name="Product">Product</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="books" value="books" name="Books">Books</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="video_resource" value="video_resource" name="Video">Video</dp-search-filter-item>
-        <dp-search-filter-item group="type" key="katacoda_course" value="katacoda_course,katacoda_individual_lesson" name="Katacoda Course">Katacoda Course</dp-search-filter-item>
-        <!-- <dp-search-filter-item slot="secondary" group="type" key="katacoda_individual_lesson" value="katacoda_individual_lesson" name="Katacoda Individual Lesson">Katacoda Individual Lesson</dp-search-filter-item> -->
-        <dp-search-filter-item group="type" key="cheat_sheet" value="cheat_sheet" name="Cheat Sheet">Cheat Sheet</dp-search-filter-item>
-        <!-- <dp-search-filter-item slot="secondary" group="type" key="coding_resource" value="coding_resource" name="Coding Resource">Coding Resource</dp-search-filter-item> -->
-        <!-- <dp-search-filter-item slot="secondary" group="type" key="webpage" value="webpage" name="Webpage">Webpage</dp-search-filter-item> -->
->>>>>>> 78d0de2e08710d624c087a63337ce71758dfa9fc
         <dp-search-filter-item slot="secondary" group="type" key="assembly_page" value="assembly_page" name="New Assembly Page">New Assembly Page</dp-search-filter-item>
         <dp-search-filter-item slot="secondary" group="type" key="author" value="author" name="Author">Author</dp-search-filter-item>
         <dp-search-filter-item slot="secondary" group="type" key="learning_path" value="learning_path" name="Learning Guides">Learning Guides</dp-search-filter-item>
