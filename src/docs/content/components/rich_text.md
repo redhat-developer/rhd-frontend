@@ -4,7 +4,8 @@ date: 2018-08-14T16:12:00-04:00
 description: ""
 draft: false
 tags: ["component"]
-weight: 4
+categories: ["component"]
+weight: 99
 component: "rich_text"
 scripts: [""]
 ---

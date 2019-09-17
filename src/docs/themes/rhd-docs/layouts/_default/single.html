@@ -2,35 +2,53 @@
 {{ .Title }} – {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-<header class="pf-l-grid"><h1 class="pf-m-10-col pf-m-offset-1-col">{{ .Title }}</h1></header>
-<aside class="pf-l-grid">
-    {{ with .PrevInSection }}
-        <a class="previous pf-m-5-col pf-m-offset-1-col" href="{{.Permalink}}"> {{.Title}}</a>
-    {{ end }}
-    {{ with .NextInSection }}
-        <a class="next pf-m-5-col pf-u-text-align--right" href="{{.Permalink}}"> {{.Title}}</a>
-    {{ end }}
 
-</aside>
-<section>{{ .Content }}</section>
+<section class="pf-c-page__main-breadcrumb">
+  <nav class="pf-c-nav" aria-label="Local">
+    <ul class="pf-c-nav__tertiary-list">
+      {{ with .PrevInSection }}
+      <li class="pf-c-nav__item">
+        <a href="{{.Permalink}}" class="pf-c-nav__link">
+          <i class="fad fa-arrow-left"></i>
+          {{.Title}}
+        </a>
+      </li>
+      {{ end }}
+      <li class="pf-c-nav__item">
+        <a href="{{.Permalink}}" class="pf-c-nav__link pf-m-current" aria-current="page">
+          {{.Title}}
+        </a>
+      </li>
+      {{ with .NextInSection }}
+      <li class="pf-c-nav__item">
+        <a href="{{.Permalink}}" class="pf-c-nav__link">
+          {{.Title}}
+          <i class="fad fa-arrow-right"></i>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+</section>
+<section class="pf-c-page__main-section">{{ .Content }}</section>
 {{ with .Param "component" }}
-    {{ with (index $.Site.Data.components .) }}
-    {{ partial "component.html" .  }}
-    {{ end }}
+{{ with (index $.Site.Data.components .) }}
+{{ partial "component.html" .  }}
+{{ end }}
 {{ end}}
 {{ end }}
 
 {{ define "scripts"}}
-    {{ $baseUrl := .Site.BaseURL }}
-    {{ with .Param "scripts" }}
-    <script>
-        var require = {
-            baseUrl: "{{ $baseUrl }}",
-            deps: [{{ range . }}{{ with resources.Get (delimit (slice . "js") ".") }}
-           "{{ strings.TrimPrefix "/" (strings.TrimSuffix ".js" .RelPermalink) }}",
-            {{ end }}{{ end }}]
-        };
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
-    {{ end }}
+{{ $baseUrl := .Site.BaseURL }}
+{{ with .Param "scripts" }}
+<script>
+  var require = {
+    baseUrl: "{{ $baseUrl }}",
+    deps: [{{ range . }}{{ with resources.Get (delimit (slice . "js") ".") }}
+    "{{ strings.TrimPrefix "/" (strings.TrimSuffix ".js" .RelPermalink) }}",
+    {{ end }}{{ end }}]
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+{{ end }}
 {{ end }}

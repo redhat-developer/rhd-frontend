@@ -3,6 +3,7 @@ title: "Stack Overflow"
 date: 2018-04-30T13:12:43-04:00
 description: ""
 tags: ["component"]
+categories: ["component"]
 weight: 99
 draft: false
 ---

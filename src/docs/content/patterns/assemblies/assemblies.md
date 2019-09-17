@@ -3,6 +3,7 @@ title: "Assemblies"
 date: 2017-08-03T14:58:26-04:00
 draft: false
 tags: ["2019summit"]
+categories: ["assembly"]
 weight: 2
 scripts: [""]
 ---
@@ -106,7 +107,7 @@ Has a background
                             <a href="https://developers.redhat.com/blog/2019/04/16/introduction-to-kubernetes-from-container-to-containers/"></a>
                             <a href="https://developers.redhat.com/blog/2019/04/16/introduction-to-kubernetes-from-container-to-containers/#disqus_thread">
                                 <span class="fa fa-comment"></span>
-                                <span class="comment-number" data-disqus-comment-count-number=""></span> 
+                                <span class="comment-number" data-disqus-comment-count-number=""></span>
                                 <span class="count-verbage" data-disqus-comment-count-verbage="">Comments</span>
                             </a>
                         </div>
@@ -128,7 +129,7 @@ Has a background
                             <a href="https://developers.redhat.com/blog/2019/04/12/migrating-java-applications-to-quarkus-lessons-learned/"></a>
                             <a href="https://developers.redhat.com/blog/2019/04/12/migrating-java-applications-to-quarkus-lessons-learned/#disqus_thread">
                                 <span class="fa fa-comment"></span>
-                                <span class="comment-number" data-disqus-comment-count-number=""></span> 
+                                <span class="comment-number" data-disqus-comment-count-number=""></span>
                                 <span class="count-verbage" data-disqus-comment-count-verbage="">Comments</span>
                             </a>
                         </div>

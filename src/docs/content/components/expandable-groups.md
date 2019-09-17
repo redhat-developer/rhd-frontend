@@ -4,7 +4,8 @@ date: 2018-04-13T03:00:54-04:00
 description: ""
 draft: false
 tags: ["component"]
-weight: 3
+categories: ["component"]
+weight: 99
 scripts: ["@patternfly/pfelement/pfelement.umd","@rhd/dp-category-list/dp-category","@rhd/dp-category-list/dp-category-list",
 "@rhd/dp-category-list/dp-category-item","@rhd/dp-category-list/dp-category-item-list","@rhd/dp-category-list/dp-product-short-teaser"]
 ---
@@ -86,7 +87,7 @@ scripts: ["@patternfly/pfelement/pfelement.umd","@rhd/dp-category-list/dp-catego
         </dp-category-item>
         <dp-category-item >
             <dp-product-short-teaser name="Red Hat Container Development Kit" link="/products/cdk" download-link="/products/cdk/download" >
-                Red Hat Container Development Kit provides Red Hat OpenShift Container Platform running on Red Hat Enterprise Linux to help you develop container-based applications quickly. 
+                Red Hat Container Development Kit provides Red Hat OpenShift Container Platform running on Red Hat Enterprise Linux to help you develop container-based applications quickly.
             </dp-product-short-teaser>
         </dp-category-item>
         <dp-category-item >
@@ -134,7 +135,7 @@ scripts: ["@patternfly/pfelement/pfelement.umd","@rhd/dp-category-list/dp-catego
         </dp-category-item>
         <dp-category-item >
             <dp-product-short-teaser name="OpenJDK" link="/products/openjdk" download-link="/products/openjdk/download" >
-                OpenJDK 8 (Open Java Development Kit) is a free and open source implementation of the Java Platform, Standard Edition (Java SE). 
+                OpenJDK 8 (Open Java Development Kit) is a free and open source implementation of the Java Platform, Standard Edition (Java SE).
             </dp-product-short-teaser>
         </dp-category-item>
         <dp-category-item >

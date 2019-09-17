@@ -4,6 +4,7 @@ date: 2019-08-14T11:19:07-04:00
 draft: false
 type: component
 tags: ["component"]
+categories: ["component"]
 weight: 99
 description: ""
 component: "cta"

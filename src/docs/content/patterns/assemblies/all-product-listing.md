@@ -4,6 +4,7 @@ date: 2018-04-13T02:45:06-04:00
 type: "pattern"
 description: ""
 tags: ["assembly"]
+categories: ["assembly"]
 draft: false
 ---
 
