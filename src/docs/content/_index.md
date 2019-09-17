@@ -25,6 +25,7 @@ draft: false
 * [Navigation](components/navigation)
 * [OneBox](components/onebox)
 * [Product Download Hero](components/product-download-hero)
+* [Product Try-it](components/product-try-it)
 * [Referrer](components/referrer)
 * [RHDP Downloads](components/rhdp-downloads)
 * [Rich Text](components/rich_text)
