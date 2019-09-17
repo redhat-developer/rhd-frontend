@@ -31,56 +31,85 @@ scripts: []
   }
 </style>
 
-## Our font family
+<h1 class="pf-c-title pf-m-4xl">Our font family</h1>
 We use the open source Red Hat Text and Red Hat Display fonts.
 
-## Heading XL (992px and above)
+<h1 class="pf-c-title pf-m-2xl pf-u-mt-lg">Header XL</h1>
 
-| Font family | Font size | Font weight | Line height |
-| --- | --- | --- | --- |
-| RedHatDisplay | 40px | 300 | 53 |
+| Font family | Font size | Font weight | Line height | Class + Modifier |
+| --- | --- | --- | --- | --- |
+| RedHatDisplay | 36px | 400 | 46.8 | `.pf-c-title .pf-m-4xl` |
 
-<blockquote><h1 style="font-family: var(--pfe-theme--font-family--heading); font-size: 40px; font-weight: 300;">This is heading XL (992px and above) for the developer site</h1></blockquote>
+{{< code >}}
+<h1 class="pf-c-title pf-m-4xl">"Design is where science and art break even."</h1>
+{{< /code >}}
 
-## Heading 1
+<hr class="rhd-c-divider">
 
-| Font family | Font size | Font weight | Line height |
-| --- | --- | --- | --- |
-| RedHatDisplay | 32px | 400 | 42 |
+<h1 class="pf-c-title pf-m-2xl pf-u-mt-lg">Header 1</h1>
 
-<blockquote><span style="font-family: var(--pfe-theme--font-family--heading); font-size: 32px; font-weight: 400;">This is heading 1 for the developer site</span></blockquote>
+| Font family | Font size | Font weight | Line height | Class + Modifier or Element |
+| --- | --- | --- | --- | --- |
+| RedHatDisplay | 28px | 400 | 36.4 | `.pf-c-title .pf-m-3xl` |
 
-## Heading 2
+{{< code >}}
+<h1 class="pf-c-title pf-m-3xl">"Design is where science and art break even."</h1>
+{{< /code >}}
 
-| Font family | Font size | Font weight | Line height |
-| --- | --- | --- | --- |
-| RedHatDisplay | 28px | 400 | 37 |
+<hr class="rhd-c-divider">
 
-<blockquote><span style="font-family: var(--pfe-theme--font-family--heading); font-size: 28px; font-weight: 400;">This is heading 2 for the developer site</span></blockquote>
+<h1 class="pf-c-title pf-m-2xl pf-u-mt-lg">Header 2</h1>
 
-## Heading 3
+| Font family | Font size | Font weight | Line height | Class + Modifier or Element |
+| --- | --- | --- | --- | --- |
+| RedHatDisplay | 24px | 400 | 31.2 | `.pf-c-title .pf-m-2xl` or `<h1>` |
 
-| Font family | Font size | Font weight | Line height |
-| --- | --- | --- | --- |
-| RedHatDisplay | 24px | 400 | 31 |
+{{< code >}}
+<h1 class="pf-c-title pf-m-2xl">"Design is where science and art break even."</h1>
+<div class="pf-c-content">
+  <h1>"Design is where science and art break even."</h1>
+</div>
+{{< /code >}}
 
-<blockquote><span style="font-family: var(--pfe-theme--font-family--heading); font-size: 24px; font-weight: 400;">This is heading 3 for the developer site</span></blockquote>
+<hr class="rhd-c-divider">
 
-## Heading 4
+<h1 class="pf-c-title pf-m-2xl pf-u-mt-lg">Header 3</h1>
 
-| Font family | Font size | Font weight | Line height |
-| --- | --- | --- | --- |
-| RedHatDisplay | 20px | 400 | 26 |
+| Font family | Font size | Font weight | Line height | Class + Modifier or Element |
+| --- | --- | --- | --- | --- |
+| RedHatDisplay | 20px | 400 | 30 | `.pf-c-title .pf-m-xl` or `<h2>` |
 
-<blockquote><span style="font-family: var(--pfe-theme--font-family--heading); font-size: 20px; font-weight: 400;">This is heading 4 for the developer site</span></blockquote>
+{{< code >}}
+<h1 class="pf-c-title pf-m-xl">"Design is where science and art break even."</h1>
+<div class="pf-c-content">
+  <h2>"Design is where science and art break even."</h2>
+</div>
+{{< /code >}}
 
-## Standard text / Link text / Line text + hover
+<hr class="rhd-c-divider">
 
-| Font family | Font size | Font weight | Line height | Color | Text decoration |
-| --- | --- | --- | --- | --- | --- |
-| RedHatText | 16px | 400 | 24 | #333 | none |
-| RedHatText | 16px | 400 | 24 | <span style="color: #0066CC">#0066cc</span> | none |
-| RedHatText | 16px | 400 | 24 | <span style="color: #004080; text-decoration: underline;">#004080</span> | underline |
+<h1 class="pf-c-title pf-m-2xl pf-u-mt-lg">Header 4</h1>
+
+| Font family | Font size | Font weight | Line height | Class + Modifier or Element |
+| --- | --- | --- | --- | --- |
+| RedHatDisplay | 18px | 400 | 27 | `.pf-c-title .pf-m-lg` or `<h3>` |
+
+{{< code >}}
+<h1 class="pf-c-title pf-m-lg">"Design is where science and art break even."</h1>
+<div class="pf-c-content">
+  <h3>"Design is where science and art break even."</h3>
+</div>
+{{< /code >}}
+
+<hr class="rhd-c-divider">
+
+<h1 class="pf-c-title pf-m-2xl pf-u-mt-lg">Standard text / Link text / Line text + hover</h1>
+
+| Font family | Font size | Font weight | Line height | Color | Text decoration | Class or Element |
+| --- | --- | --- | --- | --- | --- | --- |
+| RedHatText | 16px | 400 | 24 | #333 | none | `<p>` |
+| RedHatText | 16px | 400 | 24 | <span style="color: #0066CC">#0066cc</span> | none | `.pf-m-link` or `<a>` |
+| RedHatText | 16px | 400 | 24 | <span style="color: #004080; text-decoration: underline;">#004080</span> | underline | `.pf-m-link` or `<a>` |
 
 <blockquote>
   <p style="font-family: var(--pfe-theme--font-family); font-size: 16px; font-weight: 400;">This is standard text for the developer site</p>
@@ -88,98 +117,108 @@ We use the open source Red Hat Text and Red Hat Display fonts.
   <p style="font-family: var(--pfe-theme--font-family); font-size: 16px; font-weight: 400; color: #004080; text-decoration: underline;">This is hovered link text for the developer site</p>
 </blockquote>
 
-# Light CTAs (light - pfe-theme)
+<hr class="rhd-c-divider">
 
-| Font family | Font size | Font weight | Line height |  Color | Variation |
-| --- | --- | --- | --- | --- | --- |
-| RedHatDisplay | 16px | 700 | 23 | #151515 | base |
-| RedHatDisplay | 16px | 700 | 23 | <span style="color: #0066CC">#0066cc</span> | hover |
-| RedHatDisplay | 16px | 700 | 23 | <span style="color: #004080;">#004080</span> | dark |
+<h1 class="pf-c-title pf-m-3xl pf-u-mt-lg">Dark typography - on dark background</h1>
+<p>To properly use the dark theme, either the content wrapper <code>.pf-content</code> or the individual element must have <code>pf-m-dark</code> included.</p>
+<p>
+<b>example:</b>
+{{< code >}}
+<div class="pf-c-content pf-m-dark"><p>White text on dark background</p></div>
+<h1 class="pf-c-title pf-m-lg pf-m-dark">Title text on dark background</h1>
+{{< /code >}}
+</p>
 
-<blockquote>
-<p style="font-family: var(--pfe-theme--font-family--heading); font-size: 16px; font-weight: 700; display: flex; align-items: center;">This is a light CTA for the developer site <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-w-14" style="width: 14px; margin-left: 6px;" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></p>
-<p style="font-family: var(--pfe-theme--font-family--heading); font-size: 16px; font-weight: 700; color: #0066CC; display: flex; align-items: center;">This is a light CTA for the developer site<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-w-14" style="width: 14px; margin-left: 6px;" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></p>
-<p style="font-family: var(--pfe-theme--font-family--heading); font-size: 16px; font-weight: 700; color: #004080; display: flex; align-items: center;">This is a light CTA for the developer site<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-w-14" style="width: 14px; margin-left: 6px;" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></p>
-</blockquote>
+<h1 class="pf-c-title pf-m-2xl pf-u-mt-lg">Header XL</h1>
 
-<div style="margin: 32px 0;">
-  <hr>
+| Font family | Font size | Font weight | Line height | Class + Modifier |
+| --- | --- | --- | --- | --- |
+| RedHatDisplay | 36px | 400 | 46.8 | `.pf-c-title .pf-m-4xl` |
+
+{{< code >}}
+<h1 class="pf-c-title pf-m-4xl pf-m-dark">"Design is where science and art break even."</h1>
+{{< /code >}}
+
+<hr class="rhd-c-divider">
+
+<h1 class="pf-c-title pf-m-2xl pf-u-mt-lg">Header 1</h1>
+
+| Font family | Font size | Font weight | Line height | Class + Modifier or Element |
+| --- | --- | --- | --- | --- |
+| RedHatDisplay | 28px | 400 | 36.4 | `.pf-c-title .pf-m-3xl` |
+
+{{< code >}}
+<h1 class="pf-c-title pf-m-3xl pf-m-dark">"Design is where science and art break even."</h1>
+{{< /code >}}
+
+<hr class="rhd-c-divider">
+
+<h1 class="pf-c-title pf-m-2xl pf-u-mt-lg">Header 2</h1>
+
+| Font family | Font size | Font weight | Line height | Class + Modifier or Element |
+| --- | --- | --- | --- | --- |
+| RedHatDisplay | 24px | 400 | 31.2 | `.pf-c-title .pf-m-2xl` or `<h1>` |
+
+{{< code >}}
+<h1 class="pf-c-title pf-m-2xl pf-m-dark">"Design is where science and art break even."</h1>
+<div class="pf-c-content pf-m-dark">
+  <h1>"Design is where science and art break even."</h1>
 </div>
+{{< /code >}}
 
-# Dark typography - on dark background (pfe-theme)
+<hr class="rhd-c-divider">
 
-## Heading XL (992px and above)
+<h1 class="pf-c-title pf-m-2xl pf-u-mt-lg">Header 3</h1>
 
-| Font family | Font size | Font weight | Line height |
-| --- | --- | --- | --- |
-| RedHatDisplay | 40px | 300 | 53 |
+| Font family | Font size | Font weight | Line height | Class + Modifier or Element |
+| --- | --- | --- | --- | --- |
+| RedHatDisplay | 20px | 400 | 30 | `.pf-c-title .pf-m-xl` or `<h2>` |
 
-<blockquote>
-  <div style="background-color: #000; padding: 16px;">
-    <span style="font-family: var(--pfe-theme--font-family--heading); font-size: 40px; font-weight: 300; color: #fff;">This is heading XL (992px and above) for the developer site</span>
-  </div>
-</blockquote>
+{{< code >}}
+<h1 class="pf-c-title pf-m-xl pf-m-dark">"Design is where science and art break even."</h1>
+<div class="pf-c-content pf-m-dark">
+  <h2>"Design is where science and art break even."</h2>
+</div>
+{{< /code >}}
 
-## Heading 1
+<hr class="rhd-c-divider">
 
-| Font family | Font size | Font weight | Line height |
-| --- | --- | --- | --- |
-| RedHatDisplay | 32px | 400 | 42 |
+<h1 class="pf-c-title pf-m-2xl pf-u-mt-lg">Header 4</h1>
 
-<blockquote>
-  <div style="background-color: #000; padding: 16px;">
-    <span style="font-family: var(--pfe-theme--font-family--heading); font-size: 32px; font-weight: 400; color: #fff;">This is heading 1 for the developer site</span>
-  </div>
-</blockquote>
+| Font family | Font size | Font weight | Line height | Class + Modifier or Element |
+| --- | --- | --- | --- | --- |
+| RedHatDisplay | 18px | 400 | 27 | `.pf-c-title .pf-m-lg` or `<h3>` |
 
-## Heading 2
+{{< code >}}
+<h1 class="pf-c-title pf-m-lg pf-m-dark">"Design is where science and art break even."</h1>
+<div class="pf-c-content pf-m-dark">
+  <h3>"Design is where science and art break even."</h3>
+</div>
+{{< /code >}}
 
-| Font family | Font size | Font weight | Line height |
-| --- | --- | --- | --- |
-| RedHatDisplay | 28px | 400 | 37 |
+<hr class="rhd-c-divider">
 
-<blockquote>
-  <div style="background-color: #000; padding: 16px;">
-    <span style="font-family: var(--pfe-theme--font-family--heading); font-size: 28px; font-weight: 400; color: #fff;">This is heading 2 for the developer site</span>
-  </div>
-</blockquote>
+<h1 class="pf-c-title pf-m-2xl pf-u-mt-lg">Standard text / Link text / Line text + hover</h1>
 
-## Heading 3
+| Font family | Font size | Font weight | Line height | Color | Text decoration | Class |
+| --- | --- | --- | --- | --- | --- | --- |
+| RedHatText | 16px | 400 | 24 | #fff | none | |
+| RedHatText | 16px | 400 | 24 | <span style="color: #0066CC">#0066cc</span> | none | `.pf-m-link` or `.pf-m-link.pf-m-dark` |
+| RedHatText | 16px | 400 | 24 | <span style="color: #004080; text-decoration: underline;">#004080</span> | underline | |
+| RedHatText | 16px | 400 | 24 | #fff | none | `.pf-m-link--secondary-on-dark` |
+| RedHatText | 16px | 400 | 24 | <span style="color: #d2d2d2; text-decoration: underline;">#d2d2d2</span> | underline | |
 
-| Font family | Font size | Font weight | Line height |
-| --- | --- | --- | --- |
-| RedHatDisplay | 24px | 400 | 31 |
-
-<blockquote>
-  <div style="background-color: #000; padding: 16px;">
-    <span style="font-family: var(--pfe-theme--font-family--heading); font-size: 24px; font-weight: 400; color: #fff;">This is heading 3 for the developer site</span>
-  </div>
-</blockquote>
-
-## Heading 4
-
-| Font family | Font size | Font weight | Line height |
-| --- | --- | --- | --- |
-| RedHatDisplay | 20px | 400 | 26 |
+{{< code >}}
+<div class="pf-c-content pf-m-dark">
+  <p>White text</p>
+  <p><a href="#" class="pf-m-link">Link on dark</a></p>
+  <p><a href="#" class="pf-m-link--secondary-on-dark">Secondary link on dark</a></p>
+</div>
+<a href="#" class="pf-m-link pf-m-dark">Link on dark background without wrapper</a>
+{{< /code >}}
 
 <blockquote>
-  <div style="background-color: #000; padding: 16px;">
-    <span style="font-family: var(--pfe-theme--font-family--heading); font-size: 20px; font-weight: 400; color: #fff;">This is heading 4 for the developer site</span>
-  </div>
-</blockquote>
-
-## Standard text / Link text / Line text + hover
-
-| Font family | Font size | Font weight | Line height | Color | Text decoration |
-| --- | --- | --- | --- | --- | --- |
-| RedHatText | 16px | 400 | 24 | #fff | none |
-| RedHatText | 16px | 400 | 24 | <span style="color: #0066CC">#0066cc</span> | none |
-| RedHatText | 16px | 400 | 24 | <span style="color: #004080; text-decoration: underline;">#004080</span> | underline |
-| RedHatText | 16px | 400 | 24 | #fff | none |
-| RedHatText | 16px | 400 | 24 | <span style="color: #d2d2d2; text-decoration: underline;">#d2d2d2</span> | underline |
-
-<blockquote>
-<div style="background-color: #000; padding: 16px;">
+<div style="background-color: #151515; padding: 16px;">
   <p style="font-family: var(--pfe-theme--font-family); font-size: 16px; font-weight: 400; color: #fff;">This is standard text for the developer site</p>
   <p style="font-family: var(--pfe-theme--font-family); font-size: 16px; font-weight: 400; color: #73bcf7">This is link text for the developer site</p>
   <p style="font-family: var(--pfe-theme--font-family); font-size: 16px; font-weight: 400; color: #2b9af3; text-decoration: underline;">This is hovered link text for the developer site</p>
@@ -188,11 +227,9 @@ We use the open source Red Hat Text and Red Hat Display fonts.
 </div>
 </blockquote>
 
-<div style="margin: 32px 0;">
-  <hr>
-</div>
+<hr class="rhd-c-divider">
 
-# Light CTAs (dark - pfe-theme)
+<h1 class="pf-c-title pf-m-2xl pf-u-mt-lg">Light CTAs (dark - pfe-theme)</h1>
 
 | Font family | Font size | Font weight | Line height | Color | Variation |
 | --- | --- | --- | --- | --- | --- |
@@ -202,7 +239,7 @@ We use the open source Red Hat Text and Red Hat Display fonts.
 | RedHatDisplay | 16px | 700 | 23 | <span style="color: #2b9af3">#2b9af3</span> | hover |
 
 <blockquote>
-<div style="background-color: #000; padding: 16px;">
+<div style="background-color: #151515; padding: 16px;">
   <p style="font-family: var(--pfe-theme--font-family--heading); font-size: 16px; font-weight: 700; display: flex; align-items: center; color: #fff;">This is a light CTA for the developer site <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-w-14" style="width: 14px; margin-left: 6px;" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></p>
   <p style="font-family: var(--pfe-theme--font-family--heading); font-size: 16px; font-weight: 700; color: #d2d2d2; display: flex; align-items: center;">This is a light CTA for the developer site<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-w-14" style="width: 14px; margin-left: 6px;" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></p>
   <p style="font-family: var(--pfe-theme--font-family--heading); font-size: 16px; font-weight: 700; color: #73bcf7; display: flex; align-items: center;">This is a light CTA for the developer site<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-w-14" style="width: 14px; margin-left: 6px;" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></p>
