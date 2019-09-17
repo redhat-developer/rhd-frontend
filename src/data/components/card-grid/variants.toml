@@ -1,0 +1,9 @@
+[[variant]]
+id = "left-aligned"
+name = "Left Aligned"
+order = 1
+
+[[variant]]
+id = "center-aligned"
+name = "Center Aligned"
+order = 2
