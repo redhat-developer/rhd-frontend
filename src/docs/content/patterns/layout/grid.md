@@ -3,6 +3,7 @@ title: "Responsive Grid"
 date: 2017-08-03T14:22:23-04:00
 draft: false
 tags: ["layout"]
+categories: ["layout"]
 ---
 
 {{< code >}}<section class="pf-l-grid pf-m-gutter">

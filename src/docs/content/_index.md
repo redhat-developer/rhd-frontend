@@ -2,6 +2,8 @@
 title: "Home"
 date: 2017-08-03T10:56:11-04:00
 draft: false
+categories: ["page"]
+weight: 1
 ---
 
 <h1 class="pf-c-title pf-m-3xl pf-u-mt-lg pf-u-mb-sm">RHDP Documentation</h1>

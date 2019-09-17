@@ -4,6 +4,7 @@ date: 2019-08-22T08:39:15-04:00
 description: ""
 draft: false
 tags: ["page"]
+categories: ["page_example"]
 ---
 
 <section class="pf-c-content">

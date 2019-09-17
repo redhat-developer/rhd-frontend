@@ -4,6 +4,7 @@ date: 2018-04-17T14:39:40-04:00
 description: "A new Home page layout using PFE components"
 draft: false
 tags: ["page"]
+categories: ["page_example"]
 weight: 4
 ---
 

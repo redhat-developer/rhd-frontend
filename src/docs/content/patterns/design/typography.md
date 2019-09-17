@@ -3,6 +3,7 @@ title: "Typography"
 date: 2019-08-15T16:18:01-04:00
 draft: false
 tags: ["design"]
+categories: ["design"]
 description: "Typography examples"
 scripts: []
 ---
