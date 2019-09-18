@@ -1,0 +1,14 @@
+[[variant]]
+id = "tryitSimple"
+name = "Dark visual style / No image set / Learn More link set"
+order = 1
+
+[[variant]]
+id = "tryitDark"
+name = "Dark visual style / No image set / Learn More link set"
+order = 2
+
+[[variant]]
+id = "tryitLight"
+name = "Light visual style / No 'Learn More' link set / Image set"
+order = 3

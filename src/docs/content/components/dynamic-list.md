@@ -4,6 +4,7 @@ date: 2019-08-15T14:30:10-04:00
 draft: false
 type: component
 tags: ["component"]
+categories: ["component"]
 weight: 99
 description: ""
 component: "dynamic-list"

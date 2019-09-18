@@ -4,7 +4,8 @@ date: 2018-04-19T13:22:06-04:00
 description: ""
 draft: false
 tags: ["component"]
-weight: 6
+categories: ["component"]
+weight: 99
 scripts: ["@rhd/rhdp-downloads/rhdp-downloads-all-item","@rhd/rhdp-downloads/rhdp-downloads-all",
 "@rhd/rhdp-downloads/rhdp-downloads-app","@rhd/rhdp-downloads/rhdp-downloads-popular-product",
 "@rhd/rhdp-downloads/rhdp-downloads-popular-products","@rhd/rhdp-downloads/rhdp-downloads-products",
