@@ -120,12 +120,13 @@ We use the open source Red Hat Text and Red Hat Display fonts.
 <hr class="rhd-c-divider">
 
 <h1 class="pf-c-title pf-m-3xl pf-u-mt-lg">Dark typography - on dark background</h1>
-<p>To properly use the dark theme, either the content wrapper <code>.pf-content</code> or the individual element must have <code>pf-m-dark</code> included.</p>
+<p>To properly use the dark theme, you can either place the content in a dark <code>< section ></code> with <code>class="pf-c-page__main-section pf-m-dark-100"</code>, wrap the content with <code>.pf-content</code> or add <code>pf-m-dark</code> to your element.</p>
 <p>
 <b>example:</b>
 {{< code >}}
-<div class="pf-c-content pf-m-dark"><p>White text on dark background</p></div>
-<h1 class="pf-c-title pf-m-lg pf-m-dark">Title text on dark background</h1>
+<section class="pf-c-page__main-section pf-m-dark-100"><p>"Design is where science and art break even."</p></section>
+<div class="pf-c-content pf-m-dark"><p>"Design is where science and art break even."</p></div>
+<h1 class="pf-c-title pf-m-lg pf-m-dark">"Design is where science and art break even."</h1>
 {{< /code >}}
 </p>
 
@@ -137,6 +138,7 @@ We use the open source Red Hat Text and Red Hat Display fonts.
 
 {{< code >}}
 <h1 class="pf-c-title pf-m-4xl pf-m-dark">"Design is where science and art break even."</h1>
+<section class="pf-c-page__main-section pf-m-dark-100"><h1 class="pf-c-title pf-m-4xl">"Design is where science and art break even."</h1></section>
 {{< /code >}}
 
 <hr class="rhd-c-divider">
@@ -149,6 +151,7 @@ We use the open source Red Hat Text and Red Hat Display fonts.
 
 {{< code >}}
 <h1 class="pf-c-title pf-m-3xl pf-m-dark">"Design is where science and art break even."</h1>
+<section class="pf-c-page__main-section pf-m-dark-100"><h1 class="pf-c-title pf-m-3xl">"Design is where science and art break even."</h1></section>
 {{< /code >}}
 
 <hr class="rhd-c-divider">
@@ -164,6 +167,7 @@ We use the open source Red Hat Text and Red Hat Display fonts.
 <div class="pf-c-content pf-m-dark">
   <h1>"Design is where science and art break even."</h1>
 </div>
+<section class="pf-c-page__main-section pf-m-dark-100"><h1 class="pf-c-title pf-m-2xl">"Design is where science and art break even."</h1></section>
 {{< /code >}}
 
 <hr class="rhd-c-divider">
@@ -179,6 +183,7 @@ We use the open source Red Hat Text and Red Hat Display fonts.
 <div class="pf-c-content pf-m-dark">
   <h2>"Design is where science and art break even."</h2>
 </div>
+<section class="pf-c-page__main-section pf-m-dark-100"><h1 class="pf-c-title pf-m-xl">"Design is where science and art break even."</h1></section>
 {{< /code >}}
 
 <hr class="rhd-c-divider">
@@ -194,6 +199,7 @@ We use the open source Red Hat Text and Red Hat Display fonts.
 <div class="pf-c-content pf-m-dark">
   <h3>"Design is where science and art break even."</h3>
 </div>
+<section class="pf-c-page__main-section pf-m-dark-100"><h1 class="pf-c-title pf-m-lg">"Design is where science and art break even."</h1></section>
 {{< /code >}}
 
 <hr class="rhd-c-divider">
@@ -215,6 +221,7 @@ We use the open source Red Hat Text and Red Hat Display fonts.
   <p><a href="#" class="pf-m-link--secondary-on-dark">Secondary link on dark</a></p>
 </div>
 <a href="#" class="pf-m-link pf-m-dark">Link on dark background without wrapper</a>
+<section class="pf-c-page__main-section pf-m-dark-100"><a href="#" class="pf-m-link pf-m-dark">"Design is where science and art break even."</a></section>
 {{< /code >}}
 
 <blockquote>
