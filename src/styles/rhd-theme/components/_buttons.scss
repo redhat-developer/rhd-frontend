@@ -60,6 +60,18 @@
         color: var(--rhd-c-button--m-secondary--hover--Color) !important;
       }
     }
+  }
+}
+
+.pf-c-button.pf-m-link--secondary,
+.pf-m-link--secondary {
+  @extend .pf-m-link;
+  color: var(--rhd-c-button--m-tertiary--Color) !important;
+  &:hover,
+  &:focus,
+  &.pf-m-active,
+  &.pf-m-focus {
+    color: var(--rhd-c-button--m-tertiary--Color) !important;
     & > .pf-c-button__icon > i,
     & > .pf-c-button__icon > .svg-inline--fa,
     & > i,
