@@ -63,6 +63,44 @@
   }
 }
 
+// Link on dark background
+.pf-m-link-on-dark {
+  color: #73BCF7;
+  &:hover,
+  &:focus,
+  &.pf-m-active,
+  &.pf-m-focus {
+    color: #2A99F1;
+    & > .pf-c-button__icon > i,
+    & > .pf-c-button__icon > .svg-inline--fa {
+      color: #2A99F1 !important;
+    }
+  }
+  & > .pf-c-button__icon > i,
+  & > .pf-c-button__icon > .svg-inline--fa {
+    color: #73BCF7;
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      color: #2A99F1;
+    }
+  }
+}
+
+// White link color
+.pf-m-link-white,
+.pf-m-link-white > i,
+.pf-m-link-white > .svg-inline--fa {
+  color: #fff !important;
+  &:hover,
+  &:focus,
+  &.pf-m-active,
+  &.pf-m-focus {
+    color: #d1d1d1 !important;
+  }
+}
+
 .pf-c-button.pf-m-link--secondary,
 .pf-m-link--secondary {
   @extend .pf-m-link;
