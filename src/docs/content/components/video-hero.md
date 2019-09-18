@@ -4,6 +4,7 @@ date: 2019-08-16T08:22:26-04:00
 draft: false
 type: component
 tags: ["component"]
+categories: ["component"]
 weight: 99
 description: ""
 component: "video-hero"

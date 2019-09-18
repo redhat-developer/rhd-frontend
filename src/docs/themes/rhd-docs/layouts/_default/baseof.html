@@ -30,24 +30,25 @@
 
   </head>
   <body class="pf-m-redhat-font">
-    {{ partial "header.html" . }}
-    <main role="main">
-      <div class="layout-content">
-        <div id="block-rhdp-content" class="block block-system">
-          <article role="article" class="node">
-            <div class="node__content">
-              {{ block "main" . }}
-                <!-- The part of the page that begins to differ between templates -->
-              {{ end }}
+    <div class="pf-c-page" id="page-layout-grouped-nav">
+      {{ partial "header.html" . }}
+      <main role="main" class="pf-c-page__main" tabindex="-1" id="main-content-page-layout">
+        <section class="pf-c-page__main-section pf-m-light">
+          <div class="layout-content">
+            <div id="block-rhdp-content" class="block block-system">
+              <article role="article" class="node">
+                <div class="node__content">
+                  {{ block "main" . }}
+                    <!-- The part of the page that begins to differ between templates -->
+                  {{ end }}
+                </div>
+              </article>
             </div>
-          </article>
-        </div>
-      </div>
-    </main>
-    {{ block "footer" . }}
-    <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
-    {{ end }}
-    {{ partial "footer.html" . }}
-    {{ block "scripts" . }}{{ end }}
+          </div>
+        </section>
+        {{ partial "footer.html" . }}
+      </main>
+      {{ block "scripts" . }}{{ end }}
+    </div>
   </body>
 </html>

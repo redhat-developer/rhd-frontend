@@ -4,7 +4,8 @@ date: 2017-08-23T22:25:45-04:00
 description: ""
 draft: false
 tags: ["component"]
-weight: 1
+categories: ["component"]
+weight: 99
 scripts: ["@patternfly/pfelement/pfelement.umd",
 "@fortawesome/pro-solid-svg-icons/index",
 "@fortawesome/fontawesome-svg-core/index",

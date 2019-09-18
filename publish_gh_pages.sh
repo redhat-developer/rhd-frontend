@@ -7,6 +7,7 @@ then
 fi
 
 command -v hugo >/dev/null 2>&1 || { echo >&2 "I require hugo but it's not available in the PATH. Aborting."; exit 1; }
+git config remote.upstream.url > /dev/null 2>&1 || { echo >&2 "I require an upstream remote for this repository to publish to gh-pages. Aborting."; exit 1;}
 
 echo "Deleting old publication"
 rm -rf public
@@ -26,5 +27,5 @@ hugo
 echo "Updating gh-pages branch"
 cd public && git add --all && git commit -m "Publishing to gh-pages (publish.sh)"
 
-echo "Pushing to gh-pages branch to upstream remote"
+echo "Pushing gh-pages branch to upstream remote"
 git push upstream gh-pages
