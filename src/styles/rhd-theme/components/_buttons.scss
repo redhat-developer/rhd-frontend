@@ -216,6 +216,7 @@
         border-color: var(--rhd-c-button--m-secondary-dark--hover--BorderColor);
         background-color: var(--rhd-c-button--m-secondary-dark--hover--BackgroundColor);
       }
+      &:disabled,
       &.pf-m-disabled {
         color: var(--pf-c-button--disabled--Color);
       }
@@ -228,6 +229,9 @@
     --pf-c-button--m-secondary--BorderColor: var(--rhd-c-button--m-secondary-alt--BorderColor);
     --pf-c-button--m-secondary--hover--BorderColor: var(--rhd-c-button--m-secondary-alt--hover--BorderColor);
     --pf-c-button--m-secondary--hover--BackgroundColor: var(--rhd-c-button--m-secondary-alt--hover--BackgroundColor);
+    --pf-c-button--m-secondary--active--BorderColor: var(--rhd-c-button--m-secondary-alt--hover--BorderColor);
+    --pf-c-button--m-secondary--focus--BorderColor: var(--rhd-c-button--m-secondary-alt--hover--BorderColor);
+
     color: var(--rhd-c-button--m-secondary-alt--Color);
     &:hover,
     &:active,
@@ -256,6 +260,7 @@
         border-color: var(--rhd-c-button--m-secondary-alt-dark--hover--BorderColor);
         background-color: var(--rhd-c-button--m-secondary-alt-dark--hover--BackgroundColor);
       }
+      &:disabled,
       &.pf-m-disabled {
         color: var(--pf-c-button--disabled--Color);
       }
@@ -306,6 +311,7 @@
         border-color: var(--rhd-c-button--m-secondary-dark--hover--BorderColor);
         background-color: var(--rhd-c-button--m-secondary-dark--hover--BackgroundColor);
       }
+      &:disabled,
       &.pf-m-disabled {
         color: var(--pf-c-button--disabled--Color);
       }
