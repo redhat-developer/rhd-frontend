@@ -12,8 +12,9 @@ templates = ["""
               <a class="pf-c-button pf-m-heavy" href="#">Download</a>
             </div>
             <div class="product-download-hero-footer--learn-more">
-              <a href="#" class="pf-c-button pf-m-link-white">
-                Getting started with Fuse <i class="far fa-arrow-right"></i>
+              <a href="#" class="pf-c-button pf-m-link--secondary-on-dark">
+                Getting started with Fuse 
+                <span class="pf-c-button__icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
               </a>
             </div>
           </div>
