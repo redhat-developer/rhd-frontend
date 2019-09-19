@@ -7,3 +7,8 @@ order = 1
 id = "default2"
 name = "Bonus content item with image"
 order = 2
+
+[[variant]]
+id = "default3"
+name = "Bonus content items in a list"
+order = 3
