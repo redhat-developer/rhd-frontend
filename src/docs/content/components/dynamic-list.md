@@ -1,5 +1,5 @@
 ---
-title: "Dynamic Content List"
+title: "Deprecated Dynamic Content List"
 date: 2019-08-15T14:30:10-04:00
 draft: false
 type: component
