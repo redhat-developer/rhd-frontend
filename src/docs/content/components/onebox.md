@@ -4,7 +4,8 @@ date: 2017-08-23T22:56:37-04:00
 description: ""
 draft: false
 tags: ["component"]
-weight: 2
+categories: ["component"]
+weight: 99
 scripts: ["@patternfly/pfelement/pfelement.umd", "@rhd/dp-search/dp-search-onebox"]
 ---
 

@@ -30,21 +30,25 @@
   <!-- <script src="/js/require1k.min.js"></script> -->
 </head>
 
-<body>
+<body class="pf-m-redhat-font">
+  <div class="pf-c-page" id="page-layout-grouped-nav">
   {{ partial "header.html" . }}
-
-  <main role="main">
-    <div class="layout-content">
-      <div id="block-rhdp-content" class="block block-system">
-        <article role="article" class="node">
-          <div class="node__content">
-            <div class="field">
-              {{ partial "cssvariables.html" . }}
+  <main role="main" class="pf-c-page__main" tabindex="-1" id="main-content-page-layout">
+    <section class="pf-c-page__main-section pf-m-light">
+      <div class="layout-content">
+        <div id="block-rhdp-content" class="block block-system">
+          <article role="article" class="node">
+            <div class="node__content">
+              <div class="field">
+                <section class="pf-c-page__main-section pf-c-content">
+                {{ partial "cssvariables.html" . }}
+                </section>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
   {{ block "footer" . }}
   <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->

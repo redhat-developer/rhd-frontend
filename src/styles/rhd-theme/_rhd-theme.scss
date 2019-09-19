@@ -2,6 +2,7 @@
 @import "layout/breakpoints";
 @import "typography/fonts";
 @import "typography/sizes";
+@import "typography/dark";
 @import "layout/spacing";
 
 // PatternFly Core
@@ -30,6 +31,10 @@
 @import "components/footer";
 @import "components/jump-to-nav";
 @import "components/featured-resources";
+@import "components/card-grid";
+@import "components/product-download-list";
+@import "components/dynamic-content-list";
+@import "components/comment-list-card";
 
 pfe-cta {
   border-radius: 3px;
