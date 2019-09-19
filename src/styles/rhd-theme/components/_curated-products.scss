@@ -1,6 +1,10 @@
 .assembly-type-featured_products {
   background-color: var(--rhd-gray-2);
 
+  & .rhd-c-card > img {
+    padding: var(--pf-global--spacer--md) var(--pf-global--spacer--md) var(--pf-global--spacer--sm) var(--pf-global--spacer--md);
+  }
+
   .featured_products__title {
     margin-bottom: var(--rhd-theme--container-spacer-lg);
   }
