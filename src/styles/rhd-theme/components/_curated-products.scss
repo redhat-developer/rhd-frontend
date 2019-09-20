@@ -1,0 +1,36 @@
+.assembly-type-featured_products {
+  background-color: var(--rhd-gray-2);
+
+  & .rhd-c-card > img {
+    padding: var(--pf-global--spacer--md) var(--pf-global--spacer--md) var(--pf-global--spacer--sm) var(--pf-global--spacer--md);
+  }
+
+  .featured_products__title {
+    margin-bottom: var(--rhd-theme--container-spacer-lg);
+  }
+
+  &.rhd-c-card-grid .rhd-c-card {
+    margin-bottom: 0;
+  }
+
+  /* Variants / visual styles */
+  &.no-padding-top {
+    padding-top: 0 !important;
+  }
+  &.no-padding-bottom {
+    padding-bottom: 0 !important;
+  }
+  &.featured .rhd-c-card {
+    border-top: 6px solid var(--rhd-theme--color--ui-accent);
+  }
+  &.basic .rhd-c-card {
+    border-top: none;
+  }
+  &.dark {
+    background: #242424;
+    
+    & .featured_products__title {
+      color: var(--pf-global--Color--light-100);
+    }
+  }
+}
