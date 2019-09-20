@@ -18,6 +18,7 @@
 @import "components/buttons";
 @import "components/cards";
 @import "components/code-snippet";
+@import "components/curated-products";
 @import "components/divider";
 @import "components/curated-links";
 @import "components/dynamic-list";
@@ -32,7 +33,8 @@
 @import "components/featured-resources";
 @import "components/card-grid";
 @import "components/product-download-list";
-@import "components/featured-article";
+@import "components/dynamic-content-list";
+@import "components/comment-list-card";
 
 pfe-cta {
   border-radius: 3px;

@@ -68,8 +68,6 @@
 }
 
 .rhd-c-card {
-  display: flex;
-  flex-flow: column;
   position: relative;
   padding: 0;
   hr {
@@ -90,6 +88,9 @@
 }
 
 .rhd-c-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
   padding: 0 var(--pf-global--spacer--md); // 0 16px
   margin-bottom: 0;
   & > .rhd-c-card__title:first-child {
@@ -202,6 +203,7 @@
 .rhd-c-card__body {
   font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
   font-size: var(--pf-global--FontSize--md) !important;
+  flex: 1 1 auto;
 }
 
 .rhd-c-card__footer {
@@ -285,4 +287,8 @@
 .rhd-c-card__footer:last-child {
   padding-bottom: var(--pf-global--spacer--md); // 16px
   margin-bottom: 0 !important; // override `::slotted(:not([slot]))` from PFElements
+}
+
+.pf-c-card {
+  height: 100%;
 }
