@@ -1,7 +1,7 @@
 templates = ["""
 <div class="rhd-c-featured-resources pf-c-content">
   <div class="pf-l-flex rhd-c-featured-resources-title">
-    <h2 class="pf-c-title pf-m-2xl">Sample Featured Resources Title</h2>
+    <h2 class="pf-c-title pf-m-3xl">Sample Featured Resources Title</h2>
   </div>
   <div class="pf-l-grid pf-m-gutter pf-m-all-3-col rhd-c-featured-resources-cards">
     <!-- ======== CARD COMPONENTS START HERE ========= -->
