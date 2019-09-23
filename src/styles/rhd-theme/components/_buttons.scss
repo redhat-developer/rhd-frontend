@@ -16,6 +16,12 @@
   --rhd-c-button--m-secondary--hover--BackgroundColor: #0087ce;
   --rhd-c-button--m-secondary--hover--Color: #0087ce;
 
+  --rhd-c-button--m-link--Color: #0066cc;
+  --rhd-c-button--m-link--hover--Color: #004080;
+
+  --rhd-c-button--m-link-dark--Color: #73BCF7;
+  --rhd-c-button--m-link-dark--hover--Color: #2A99F1;
+
   --rhd-c-button--m-secondary-dark--BackgroundColor: transparent;
   --rhd-c-button--m-secondary-dark--BorderColor: #fff;
   --rhd-c-button--m-secondary-dark--Color: #fff;
@@ -51,18 +57,18 @@
 .pf-c-button {
   //link button
   &.pf-m-link {
-    color: var(--rhd-c-button--m-secondary--Color);
+    color: var(--rhd-c-button--m-link--Color);
     background-color: transparent;
 
     &:hover,
     &:focus,
     &.pf-m-active,
     &.pf-m-focus {
-      color: var(--rhd-c-button--m-secondary--hover--Color);
+      color: var(--rhd-c-button--m-link--hover--Color);
 
       &>.pf-c-button__icon>i,
       &>.pf-c-button__icon>.svg-inline--fa {
-        color: var(--rhd-c-button--m-secondary--hover--Color) !important;
+        color: var(--rhd-c-button--m-link--hover--Color) !important;
       }
     }
 
@@ -70,40 +76,40 @@
     &>.pf-c-button__icon>.svg-inline--fa,
     &>i,
     &>.svg-inline--fa {
-      color: var(--rhd-c-button--m-secondary--Color) !important;
+      color: var(--rhd-c-button--m-link--Color) !important;
 
       &:hover,
       &:active,
       &:focus,
       &:visited {
-        color: var(--rhd-c-button--m-secondary--hover--Color) !important;
+        color: var(--rhd-c-button--m-link--hover--Color) !important;
       }
     }
     // Link on dark background
     &-on-dark {
-      color: #73BCF7;
+      color: var(--rhd-c-button--m-link-dark--Color);
 
       &:hover,
       &:focus,
       &.pf-m-active,
       &.pf-m-focus {
-        color: #2A99F1;
+        color: var(--rhd-c-button--m-link-dark--hover--Color);
 
         &>.pf-c-button__icon>i,
         &>.pf-c-button__icon>.svg-inline--fa {
-          color: #2A99F1 !important;
+          color: var(--rhd-c-button--m-link-dark--hover--Color) !important;
         }
       }
 
       &>.pf-c-button__icon>i,
       &>.pf-c-button__icon>.svg-inline--fa {
-        color: #73BCF7;
+        color: var(--rhd-c-button--m-link-dark--Color);
 
         &:hover,
         &:active,
         &:focus,
         &:visited {
-          color: #2A99F1;
+          color: var(--rhd-c-button--m-link-dark--hover--Color);
         }
       }
     }
