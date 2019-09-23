@@ -4,6 +4,7 @@
 
     h2.pf-c-title {
         @extend .pf-u-w-100;
+        margin-bottom: var(--pf-l-flex--spacer--lg) !important;
     }
     .rhd-c-card {
         --pf-l-flex--spacer: var(--pf-l-flex--spacer--none);
