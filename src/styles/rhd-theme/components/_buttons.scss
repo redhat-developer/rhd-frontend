@@ -26,7 +26,7 @@
 
   --rhd-c-button--m-secondary-alt--BorderColor: #ee0000;
   --rhd-c-button--m-secondary-alt--Color: #ee0000;
-  --rhd-c-button--m-secondary-alt--hover--BorderColor: #ee0000;
+  --rhd-c-button--m-secondary-alt--hover--BorderColor: #cf0000;
   --rhd-c-button--m-secondary-alt--hover--BackgroundColor: #cf0000;
   --rhd-c-button--m-secondary-alt--hover--Color: #fff;
 
@@ -221,6 +221,10 @@
 
   // Secondary CTA - blue outline
   &.pf-m-secondary {
+    --pf-c-button--m-secondary--hover--BackgroundColor: var(--rhd-c-button--m-secondary--hover--BackgroundColor);
+    --pf-c-button--m-secondary--hover--BorderColor: var(--rhd-c-button--m-secondary--hover--BorderColor);
+    --pf-c-button--m-secondary--focus--BorderColor: var(--rhd-c-button--m-secondary--hover--BorderColor);
+    --pf-c-button--m-secondary--active--BorderColor: var(--rhd-c-button--m-secondary--hover--BorderColor);
     color: var(--rhd-c-button--m-secondary--Color);
     border-color: var(--rhd-c-button--m-secondary--BorderColor);
 
