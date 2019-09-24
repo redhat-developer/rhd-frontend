@@ -13,12 +13,4 @@
   &__item-title {
     @extend .pf-u-mb-0;
   }
-
-  &.no-padding-top {
-    @extend .pf-u-pt-0;
-  }
-
-  &.no-padding-bottom {
-    @extend .pf-u-pb-0;
-  }
 }
