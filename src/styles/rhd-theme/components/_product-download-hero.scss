@@ -82,6 +82,13 @@
       display: inline-block;
       text-align: center;
     }
+    @media screen and (max-width: $pf-global--breakpoint--md) {
+      flex-wrap: wrap;
+      .rhd-c-product-download-hero-footer--learn-more button {
+        padding-left: var(--pf-global--spacer--sm) !important;
+      }
+
+    }
   }
 }
 
