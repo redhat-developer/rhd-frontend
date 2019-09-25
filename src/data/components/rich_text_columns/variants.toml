@@ -1,0 +1,14 @@
+[[variant]]
+id = "rich_text_columns"
+name = "Four Across - Dark"
+order = 1
+
+[[variant]]
+id = "rich_text_columns_three"
+name = "Three Across - Light"
+order = 2
+
+[[variant]]
+id = "rich_text_columns_featured"
+name = "Featured Topics - Cards"
+order = 3
