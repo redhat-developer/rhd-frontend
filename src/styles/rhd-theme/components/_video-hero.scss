@@ -135,32 +135,3 @@
 .rhd-c-video--content-wrapper {
   max-width: 647px;
 }
-
-.rhd-c-video--author {
-  display: flex;
-  align-items: center;
-  &-hero {
-    img {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-    }
-  }
-  &-info {
-    margin-left: var(--pf-global--spacer--sm); // 8px
-    .rhd-c-video--author-name {
-      display: inline-block;  
-    }
-  }
-  &-name {
-    @extend .rhd-c-card__footer--author;
-    a {
-      text-decoration: none;
-    }
-  }
-  &-title {
-    font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
-    margin-top: var(--pf-global--spacer--sm);
-    font-size: var(--pf-global--FontSize--xs) !important; // 12px
-  }
-}
