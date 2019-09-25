@@ -4,7 +4,7 @@
       Components
     </h2>
     <ul class="pf-c-nav__simple-list">
-      {{ range $.Site.Taxonomies.categories.component }}
+      {{ range sort $.Site.Taxonomies.categories.component "Title" "ascending" }}
       <li class="pf-c-nav__item">
         <a href="{{.Permalink}}" class="pf-c-nav__link">
           {{.Title}}
@@ -18,7 +18,7 @@
       Pages
     </h2>
     <ul class="pf-c-nav__simple-list">
-      {{ range $.Site.Taxonomies.categories.page_example }}
+      {{ range sort $.Site.Taxonomies.categories.page_example "Title" "ascending" }}
       <li class="pf-c-nav__item">
         <a href="{{.Permalink}}" class="pf-c-nav__link">
           {{.Title}}
@@ -32,7 +32,7 @@
       Patterns - Assemblies
     </h2>
     <ul class="pf-c-nav__simple-list">
-      {{ range $.Site.Taxonomies.categories.assembly }}
+      {{ range sort $.Site.Taxonomies.categories.assembly "Title" "ascending" }}
       <li class="pf-c-nav__item">
         <a href="{{.Permalink}}" class="pf-c-nav__link">
           {{.Title}}
@@ -46,7 +46,7 @@
       Patterns - Code
     </h2>
     <ul class="pf-c-nav__simple-list">
-      {{ range $.Site.Taxonomies.categories.code }}
+      {{ range sort $.Site.Taxonomies.categories.code "Title" "ascending" }}
       <li class="pf-c-nav__item">
         <a href="{{.Permalink}}" class="pf-c-nav__link">
           {{.Title}}
@@ -60,7 +60,7 @@
       Patterns - Content
     </h2>
     <ul class="pf-c-nav__simple-list">
-      {{ range $.Site.Taxonomies.categories.content }}
+      {{ range sort $.Site.Taxonomies.categories.content "Title" "ascending" }}
       <li class="pf-c-nav__item">
         <a href="{{.Permalink}}" class="pf-c-nav__link">
           {{.Title}}
@@ -74,7 +74,7 @@
       Patterns - Design
     </h2>
     <ul class="pf-c-nav__simple-list">
-      {{ range $.Site.Taxonomies.categories.design }}
+      {{ range sort $.Site.Taxonomies.categories.design "Title" "ascending" }}
       <li class="pf-c-nav__item">
         <a href="{{.Permalink}}" class="pf-c-nav__link">
           {{.Title}}
@@ -88,7 +88,7 @@
       Patterns - Layout
     </h2>
     <ul class="pf-c-nav__simple-list">
-      {{ range $.Site.Taxonomies.categories.layout }}
+      {{ range sort $.Site.Taxonomies.categories.layout "Title" "ascending" }}
       <li class="pf-c-nav__item">
         <a href="{{.Permalink}}" class="pf-c-nav__link">
           {{.Title}}
@@ -102,7 +102,7 @@
       Patterns - Misc
     </h2>
     <ul class="pf-c-nav__simple-list">
-      {{ range $.Site.Taxonomies.categories.misc }}
+      {{ range sort $.Site.Taxonomies.categories.misc "Title" "ascending" }}
       <li class="pf-c-nav__item">
         <a href="{{.Permalink}}" class="pf-c-nav__link">
           {{.Title}}
