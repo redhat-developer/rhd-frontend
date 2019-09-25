@@ -257,6 +257,18 @@
       background-color: var(--pf-c-button--disabled--BackgroundColor);
       color: var(--pf-c-button--disabled--Color);
     }
+
+    .dark & {
+      color: var(--rhd-c-button--m-secondary-dark--Color);
+
+      &:hover,
+      &:focus,
+      &.pf-m-active,
+      &.pf-m-focus {
+        background-color: var(--rhd-c-button--m-heavy--active--BackgroundColor);
+        color: var(--pf-global--Color--light-100);
+      }
+    }
   }
 }
 
