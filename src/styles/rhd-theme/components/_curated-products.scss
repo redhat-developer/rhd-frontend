@@ -9,17 +9,7 @@
     margin-bottom: var(--rhd-theme--container-spacer-lg);
   }
 
-  &.rhd-c-card-grid .rhd-c-card {
-    margin-bottom: 0;
-  }
-
   /* Variants / visual styles */
-  &.no-padding-top {
-    padding-top: 0 !important;
-  }
-  &.no-padding-bottom {
-    padding-bottom: 0 !important;
-  }
   &.featured .rhd-c-card {
     border-top: 6px solid var(--rhd-theme--color--ui-accent);
   }
