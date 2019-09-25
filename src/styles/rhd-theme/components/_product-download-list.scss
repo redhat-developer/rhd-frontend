@@ -14,10 +14,10 @@
       @extend .pf-m-12-col;
       @extend .pf-m-3-col-on-lg;
       @extend .pf-m-2-col-on-xl;
-
       align-self: center;
-      padding-right: 20px;
+
       @media screen and (min-width: $pf-global--breakpoint--lg) {
+        padding-right: 20px;
         border-right: 1px solid #d5d5d5;
       }
     }
