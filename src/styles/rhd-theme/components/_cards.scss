@@ -1,6 +1,8 @@
 :root {
   font-size: 16px;
   --rhd-theme--border-width-md: 2px;
+  --curated-content-background-color: rgb(21, 21, 21);
+  --curated-content-blend-mode__luminosity: luminosity;
 }
 
 .rhd-l-grid__list {
@@ -159,6 +161,27 @@
     font-size: calc(16px - 4px); // 12px
   }
 }
+
+.rhd-l-grid__curated-content {
+  .rhd-c-card__curated-content--image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    max-height: 125px;
+    height: 125px;
+    width: auto;
+    background: inherit;
+    background: rgba(21, 21, 21, .95);
+    img {
+      max-height: 125px;
+    }
+  }
+
+  .rhd-c-card-content {
+    min-height: 90px;
+  }
+}
+
 
 .rhd-c-card__tag {
   position: absolute;
