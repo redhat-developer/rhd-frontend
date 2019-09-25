@@ -1,6 +1,6 @@
 [[variant]]
 id = "curatedProductsDefault"
-name = "No visual style"
+name = "No visual style (Left Aligned)"
 order = 1
 
 [[variant]]
@@ -19,8 +19,8 @@ name = "Dark"
 order = 4
 
 [[variant]]
-id = "curatedProductsLeft"
-name = "Left aligned"
+id = "curatedProductsCenter"
+name = "Center aligned"
 order = 5
 
 [[variant]]

@@ -35,8 +35,10 @@
 .rhd-c-card-grid {
 
     &.center {
-        h2.pf-c-title {
-            text-align: center;
+        h1, h2, h3, h4, h5, h6 {
+            &.pf-c-title {
+                text-align: center;
+            }
         }
 
         .rhd-c-card-grid__wrapper {
