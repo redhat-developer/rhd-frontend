@@ -3,7 +3,7 @@
   <h1>{{.Title}}</h1>
   <ul>
     <!-- Ranges through content/post/*.md -->
-    {{ range .Data.Pages }}
+    {{ range sort .Data.Pages "Title" "ascending" }}
     <li>
       <a href="{{.Permalink}}">{{.Title}}</a>
     </li>
