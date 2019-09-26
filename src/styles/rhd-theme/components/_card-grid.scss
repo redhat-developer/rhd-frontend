@@ -4,6 +4,7 @@
 
     h2.pf-c-title {
         @extend .pf-u-w-100;
+        font-size: var(--pf-c-title--m-3xl--FontSize);
         margin-bottom: var(--pf-l-flex--spacer--lg) !important;
     }
     &__wrapper {
@@ -34,8 +35,10 @@
 .rhd-c-card-grid {
 
     &.center {
-        h2.pf-c-title {
-            text-align: center;
+        h1, h2, h3, h4, h5, h6 {
+            &.pf-c-title {
+                text-align: center;
+            }
         }
 
         .rhd-c-card-grid__wrapper {
@@ -64,14 +67,6 @@
                 border: 1px solid var(--rhd-c-button--m-secondary-alt-dark--BorderColor);
             }
         }
-    }
-
-    &.no-padding-top {
-        @extend .pf-u-pt-0;
-    }
-
-    &.no-padding-bottom {
-        @extend .pf-u-pb-0;
     }
 
 }

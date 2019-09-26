@@ -26,4 +26,9 @@ order = 5
 [[variant]]
 id = "no-padding-bottom"
 name = "No Padding Bottom Visual Style Variant"
-order = 5
+order = 6
+
+[[variant]]
+id = "gray"
+name = "Gray Visual Style Variant"
+order = 7

@@ -14,6 +14,7 @@
 @import "components/buttons";
 @import "components/cta";
 @import "components/component_base";
+@import "components/visual-styles";
 @import "components/bands";
 @import "components/buttons";
 @import "components/cards";
@@ -30,11 +31,13 @@
 @import "components/navigation";
 @import "components/footer";
 @import "components/jump-to-nav";
-@import "components/featured-resources";
 @import "components/card-grid";
 @import "components/product-download-list";
 @import "components/dynamic-content-list";
 @import "components/comment-list-card";
+@import "components/author-tile";
+@import "components/curated-events";
+@import "components/all-products-listing";
 
 pfe-cta {
   border-radius: 3px;
@@ -60,4 +63,14 @@ pfe-cta {
     background-color: #212121 !important;
   }
 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  &.header-link > a {
+    color: inherit;
+    &:hover, &:focus, &:active {
+        color: inherit;
+        text-decoration: var(--pf-global--link--TextDecoration);
+    }
+  }
 }

@@ -1,0 +1,33 @@
+// The two .rhd-c-video--author classes should be removed once all
+// instances are renamed .rhd-c-author--tile.
+.rhd-c-author--tile,
+.rhd-c-video--author {
+  display: flex;
+  align-items: center;
+  padding: var(--pf-global--spacer--xs);
+  &-hero {
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+  }
+  &-info {
+    margin-left: var(--pf-global--spacer--sm); // 8px
+    .rhd-c-video--author-name,
+    .rhd-c-author--tile-name {
+      display: inline-block;  
+    }
+  }
+  &-name {
+    @extend .rhd-c-card__footer--author;
+    a {
+      text-decoration: none;
+    }
+  }
+  &-title {
+    font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+    margin-top: var(--pf-global--spacer--sm);
+    font-size: var(--pf-global--FontSize--xs) !important; // 12px
+  }
+}
