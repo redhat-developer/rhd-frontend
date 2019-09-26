@@ -28,3 +28,7 @@ id = "dark-centered"
 name = "Dark and Center Visual Styles Variant"
 order = 6
 
+[[variant]]
+id = "center-aligned-logos"
+name = "Center Aligned with logos"
+order = 7
