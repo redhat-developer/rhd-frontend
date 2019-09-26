@@ -107,13 +107,18 @@
 }
 
 .rhd-c-card__image {
-  height: 200px;
+  height: 150px;
   object-fit: cover;
   background-color: transparent;
   margin-bottom: 0;
   object-position: 50% 50%;
   max-width: 100%;
-  margin-left: 0 !important;
+  margin-left: 0;
+  .rhd-c-card-logo &{
+    height: 100px;
+    object-fit: contain;
+    margin: var(--pf-global--spacer--md);
+  }
 }
 
 .rhd-c-card__image-body {
