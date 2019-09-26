@@ -213,9 +213,9 @@
 }
 
 .rhd-c-card__title {
-  font-family: "RedHatDisplay", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  font-family: $rhd-font-stack-display;
   font-size: var(--pf-global--FontSize--lg) !important;
-  font-weight: 400;
+  font-weight: var(--rhd-global--FontWeight-Display--medium);
   padding-bottom: 0 !important;
   margin-top: 0;
   margin-bottom: var(--pf-global--spacer--sm); // 8px;
@@ -229,20 +229,20 @@
 }
 
 .rhd-c-card__subtitle {
-  font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  font-family: $rhd-font-stack-text;
   margin-bottom: 0;
   font-size: var(--pf-global--FontSize--sm) !important;
   color: var(--pf-global--Color--200); // #72767b
 }
 
 .rhd-c-card__body {
-  font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  font-family: $rhd-font-stack-text;
   font-size: var(--pf-global--FontSize--md) !important;
   flex: 1 1 auto;
 }
 
 .rhd-c-card__footer {
-  font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+  font-family: $rhd-font-stack-text;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -252,7 +252,7 @@
     font-size: var(--pf-global--FontSize--xs) !important;
   }
   &--author {
-    font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
+    font-family: $rhd-font-stack-text;
     background-color: #f9f9f9;
     padding: var(--pf-global--spacer--xs) var(--pf-global--spacer--sm); // 4px 8px
     margin-bottom: 0;
@@ -272,8 +272,8 @@
 }
 
 .rhd-c-card__footer--cta {
-  font-family: "RedHatText", "Overpass", Overpass, Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-family: $rhd-font-stack-text;
+  font-weight: var(--rhd-global--FontWeight-Text--medium);
   padding: 0;
   margin-top: var(--pf-global--spacer--sm); // 8px
   margin-bottom: 0;
