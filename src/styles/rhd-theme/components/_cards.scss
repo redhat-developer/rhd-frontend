@@ -106,10 +106,11 @@
 
 .rhd-c-card__image {
   height: 200px;
-  object-fit: contain;
+  object-fit: cover;
   background-color: transparent;
   margin-bottom: 0;
-  object-position: 0 0;
+  object-position: 50% 50%;
+  max-width: 100%;
   margin-left: 0 !important;
 }
 
