@@ -1,5 +1,5 @@
 templates = ["""
-<div class="component rhd-c-curated-links pf-c-content">
+<div class="component rhd-c-curated-links pf-c-content no-padding-bottom">
   <h2 class="pf-c-title pf-m-2xl">This is the curated links heading</h2>
   <hr class="rhd-c-divider">
   <div class="pf-l-flex pf-m-column">

@@ -1,18 +1,24 @@
 // Visual Styles used in multiple components
 .component {
+  padding: var(--rhd-theme--container-spacer-xl) var(--rhd-theme--container-spacer-3xl);
+
   &.no-padding-top {
-      @extend .pf-u-pt-0;
+    @extend .pf-u-pt-0;
   }
 
   &.no-padding-bottom {
-      @extend .pf-u-pb-0;
+    @extend .pf-u-pb-0;
   }
 
   &.gray {
-      background-color: #D4D4D4;
+    background-color: var(--rhd-theme--component-background--color-light);
   }
 
   &.dark {
-    background: #252525;
+    background-color: var(--rhd-theme--component-background--color-dark);
+    color: var(--rhd-theme--component-font--color-light);
+    .pf-c-title {
+      color: var(--rhd-theme--component-font--color-light);
+    }
   }
 }
