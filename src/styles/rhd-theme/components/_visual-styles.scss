@@ -1,5 +1,7 @@
 // Visual Styles used in multiple components
 .component {
+  padding: var(--rhd-theme--container-spacer-xl) var(--rhd-theme--container-spacer-3xl);
+
   &.no-padding-top {
     @extend .pf-u-pt-0;
   }
