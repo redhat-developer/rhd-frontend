@@ -10,9 +10,6 @@ templates = ["""<div class="pf-c-card rhd-c-card">
           </h3>
           <div class="rhd-c-card__subtitle">25 minutes | Beginner</div>
           <p class="rhd-c-card__body ">Use the OpenShift Container Platform to build and deploy applications using both...</p>
-          <div class="rhd-c-card__subtitle">
-            Published 24 Apr 2019 by Graham Dumpleton
-          </div>
           <div class="rhd-c-card__footer">
             <div class="rhd-c-card__footer--cta">
               <a href="#" class="rhd-m-link">Start <i class="fas fa-arrow-right"></i></a>

@@ -287,9 +287,10 @@
 
 .rhd-c-card__title:first-child {
   max-height: 70px;
+  min-height: 70px;
   &:hover {
-    height: auto;
-    min-height: auto;
+    //height: auto;
+    //min-height: auto;
     max-height: none;
   }
 }
@@ -309,7 +310,7 @@
 }
 
 .rhd-c-card__footer:not(:last-child) {
-  padding-bottom: var(--pf-global--spacer--sm); // 8px
+  padding-bottom: var(--pf-global--spacer--md); // 8px
   margin-bottom: 0;
 }
 
