@@ -1,4 +1,4 @@
-baseURL = "http://redhat.alt-media.dyndns.tv/rhd-frontend/278/"
+baseURL = "https://redhat-developer.github.io/rhd-frontend/"
 languageCode = "en-us"
 title = "RHD Front-end Code and Documentation"
 themesDir = "src/docs/themes"
