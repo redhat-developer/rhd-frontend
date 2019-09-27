@@ -10,7 +10,8 @@
   flex-direction: column;
   max-width: 20rem;
   .rhd-c-card__title {
-    max-height: 81px !important;
+    max-height: 70px;
+    min-height: 0;
     padding-bottom: 0;
   }
   .rhd-c-card__subtitle {
