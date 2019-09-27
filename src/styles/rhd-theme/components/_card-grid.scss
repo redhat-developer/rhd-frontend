@@ -29,6 +29,14 @@
             --pf-l-flex--spacer: var(--pf-l-flex--spacer--lg);
         }
     }
+
+    .rhd-c-card-grid__wrapper {
+        margin-bottom: 8px;
+    }
+
+    .rhd-c-card-grid__cta .pf-c-button:not(:last-of-type) {
+        margin-right: 24px;
+    }
 }
 
 // OTHER VISUAL STYLES
