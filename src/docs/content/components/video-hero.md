@@ -22,16 +22,46 @@ scripts: []
     <div class="rhd-c-video--content-wrapper">
       <h3>Advanced Microservices Tracing with Jaeger</h3>
       <p>One of the greatest challenges of moving from traditional monolithic application design to a microservices architecture is being able to monitor your business transaction flow—the flow of events via micro service calls throughout your entire system. Business transaction flow—the flow of events via micro service calls throughout your entire system.</p>
-      <div class="rhd-c-author--tile">
-        <span class="rhd-c-author--tile-hero">
-          <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
-        </span>
-        <div class="rhd-c-author--tile-info">
-          <div class="rhd-c-author--tile-name">
-            <a href="#">Burr Sutter</a>
+      <div class="rhd-c-video--presenters">
+        <!-- Start of Author tile -->
+        <div class="rhd-c-author--tile">
+          <span class="rhd-c-author--tile-hero">
+            <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
+          </span>
+          <div class="rhd-c-author--tile-info">
+            <div class="rhd-c-author--tile-name">
+              <a href="#">Burr Sutter</a>
+            </div>
+            <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
           </div>
-          <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
         </div>
+        <!-- End of Author tile -->
+        <!-- Start of Author tile -->
+        <div class="rhd-c-author--tile">
+          <span class="rhd-c-author--tile-hero">
+            <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
+          </span>
+          <div class="rhd-c-author--tile-info">
+            <div class="rhd-c-author--tile-name">
+              <a href="#">Burr Sutter</a>
+            </div>
+            <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
+          </div>
+        </div>
+        <!-- End of Author tile -->
+        <!-- Start of Author tile -->
+        <div class="rhd-c-author--tile">
+          <span class="rhd-c-author--tile-hero">
+            <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
+          </span>
+          <div class="rhd-c-author--tile-info">
+            <div class="rhd-c-author--tile-name">
+              <a href="#">Burr Sutter</a>
+            </div>
+            <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
+          </div>
+        </div>
+        <!-- End of Author tile -->
       </div>
     </div>
   </div>
@@ -48,16 +78,20 @@ scripts: []
     <div class="rhd-c-video--content-wrapper">
       <h3>Advanced Microservices Tracing with Jaeger</h3>
       <p>One of the greatest challenges of moving from traditional monolithic application design to a microservices architecture is being able to monitor your business transaction flow—the flow of events via micro service calls throughout your entire system. Business transaction flow—the flow of events via micro service calls throughout your entire system.</p>
-      <div class="rhd-c-author--tile">
-        <span class="rhd-c-author--tile-hero">
-          <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
-        </span>
-        <div class="rhd-c-author--tile-info">
-          <div class="rhd-c-author--tile-name">
-            <a href="#">Burr Sutter</a>
+      <div class="rhd-c-video--presenters">
+        <!-- Start of Author tile -->
+        <div class="rhd-c-author--tile">
+          <span class="rhd-c-author--tile-hero">
+            <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
+          </span>
+          <div class="rhd-c-author--tile-info">
+            <div class="rhd-c-author--tile-name">
+              <a href="#">Burr Sutter</a>
+            </div>
+            <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
           </div>
-          <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
         </div>
+        <!-- End of Author tile -->
       </div>
     </div>
   </div>
@@ -67,16 +101,20 @@ scripts: []
     <div class="rhd-c-video--content-wrapper">
       <h3>Advanced Microservices Tracing with Jaeger</h3>
       <p>One of the greatest challenges of moving from traditional monolithic application design to a microservices architecture is being able to monitor your business transaction flow—the flow of events via micro service calls throughout your entire system. Business transaction flow—the flow of events via micro service calls throughout your entire system.</p>
-      <div class="rhd-c-author--tile">
-        <span class="rhd-c-author--tile-hero">
-          <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
-        </span>
-        <div class="rhd-c-author--tile-info">
-          <div class="rhd-c-author--tile-name">
-            <a href="#">Burr Sutter</a>
+      <div class="rhd-c-video--presenters">
+        <!-- Start of Author tile -->
+        <div class="rhd-c-author--tile">
+          <span class="rhd-c-author--tile-hero">
+            <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
+          </span>
+          <div class="rhd-c-author--tile-info">
+            <div class="rhd-c-author--tile-name">
+              <a href="#">Burr Sutter</a>
+            </div>
+            <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
           </div>
-          <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
         </div>
+        <!-- End of Author tile -->
       </div>
     </div>
   </div>
