@@ -2,3 +2,13 @@
 id = "default"
 name = "Code snippet"
 order = 1
+
+[[variant]]
+id = "no_padding_bottom"
+name = "No padding bottom"
+order = 2
+
+[[variant]]
+id = "no_padding_top"
+name = "No padding top"
+order = 3
