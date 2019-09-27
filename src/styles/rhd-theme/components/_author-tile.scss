@@ -1,7 +1,4 @@
-// The two .rhd-c-video--author classes should be removed once all
-// instances are renamed .rhd-c-author--tile.
-.rhd-c-author--tile,
-.rhd-c-video--author {
+.rhd-c-author--tile{
   display: flex;
   align-items: center;
   padding: var(--pf-global--spacer--xs);
