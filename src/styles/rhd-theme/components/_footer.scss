@@ -60,7 +60,7 @@
 
   &-title {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: var(--rhd-global--FontWeight-Text--regular);
     color: var(--pf-global--Color--light-100);
     margin: 0 0 .5rem 0;
   }

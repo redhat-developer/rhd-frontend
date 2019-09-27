@@ -1,7 +1,11 @@
 @import "pf4-import";
+@import "colors/base";
+@import "colors/_rhd-brand";
 @import "layout/breakpoints";
 @import "typography/fonts";
 @import "typography/sizes";
+@import "typography/weights";
+@import "typography/typography";
 @import "typography/dark";
 @import "layout/spacing";
 
@@ -38,6 +42,9 @@
 @import "components/author-tile";
 @import "components/curated-events";
 @import "components/all-products-listing";
+@import "components/collection";
+@import "components/pager";
+@import "components/topic-page";
 
 pfe-cta {
   border-radius: 3px;
