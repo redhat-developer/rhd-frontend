@@ -6,14 +6,30 @@
   border: 0;
 }
 .rhd-c-curated-links {
-  i,
-  .svg-inline--fa {
-    color: #72767b;
+  i,.svg-inline--fa {
+    color: $rolling-stone;
   }
+  .pf-c-button {
+    &.pf-m-link {
+      padding: 0;
+    }
+  }
+  
   div {
     margin-bottom: var(--pf-global--spacer--sm) !important;
     &:last-child {
       margin-bottom: 0 !important;
     }
+  }
+  &.dark {
+    i,.svg-inline--fa {
+      color: $white;
+    }
+  }
+  &.no-padding-top {
+
+  }
+  &.no-padding-bottom {
+    
   }
 }
