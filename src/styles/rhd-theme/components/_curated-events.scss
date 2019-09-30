@@ -13,11 +13,12 @@
   }
 
   &__item-presenters {
-    @extend .pf-l-grid;
-    @extend .pf-m-gutter;
-    @extend .pf-m-all-12-col;
-    @extend .pf-m-all-6-col-on-lg;
-    @extend .pf-m-all-4-col-on-xl;
+    @extend .pf-l-flex;
+
+    & > * {
+      margin-right: var(--pf-l-flex--spacer--lg);
+      margin-bottom: var(--pf-l-flex--spacer--md);
+    }
 
     img {
       width: 50px;

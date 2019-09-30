@@ -128,7 +128,21 @@
   }
   p {
     margin-top: 0;
-    margin-bottom: var(--pf-global--spacer--sm); // 8px
+    margin-bottom: var(--pf-global--spacer--md); // 16px
+  }
+  .rhd-c-video--presenters {
+    @extend .pf-l-flex;
+
+    & > * {
+      margin-right: var(--pf-l-flex--spacer--lg);
+      margin-bottom: var(--pf-l-flex--spacer--md);
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
   }
 }
 
