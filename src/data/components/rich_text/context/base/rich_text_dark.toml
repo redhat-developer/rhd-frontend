@@ -1,5 +1,5 @@
 templates = ["""
-<div class="component rich-text" style="background-image: url(https://developers.redhat.com/images/design/product-hero-light.png);">
+<div class="component rich-text assembly-dark" style="background-image: url(https://developers.redhat.com/images/design/product-hero-dark.png);">
     <div class="pf-l-grid pf-m-gutter">
         <div class="pf-l-grid__item">
             <div class="rich-text-content pf-c-content">

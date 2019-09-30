@@ -32,3 +32,13 @@ order = 6
 id = "center-aligned-logos"
 name = "Center Aligned with logos"
 order = 7
+
+[[variant]]
+id = "cta"
+name = "With CTA"
+order = 8
+
+[[variant]]
+id = "ctas"
+name = "With multiple CTAs"
+order = 9
