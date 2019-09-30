@@ -78,8 +78,8 @@
   box-shadow: none;
   border: 2px solid $light-gray;
   hr {
-    border-top: var(--rhd-theme--border-width-md) solid #ededed; // #ededed
-    margin: var(--pf-global--spacer--sm) 0; // 8px 16px 0 16px
+    border-top: var(--rhd-theme--border-width-md) solid #ededed;
+    margin: var(--pf-global--spacer--sm) 0; // 8px 0
   }
   .rhd-c-card__title + hr {
     margin-top: 0 !important; 
@@ -331,8 +331,6 @@
   max-height: 70px;
   min-height: 70px;
   &:hover {
-    //height: auto;
-    //min-height: auto;
     max-height: none;
   }
 }
@@ -352,7 +350,7 @@
 }
 
 .rhd-c-card__footer:not(:last-child) {
-  padding-bottom: var(--pf-global--spacer--md); // 8px
+  padding-bottom: var(--pf-global--spacer--md); // 16px
   margin-bottom: 0;
 }
 
