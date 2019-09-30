@@ -29,8 +29,21 @@ weight: 5
             <h2>Round image example</h2>
             <p>simple round image example</p>
             <pre>
-                <code>&lt;img class="rhd-c-round-image" src="https://developers.redhat.com/sites/default/files/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg" alt="Burr Sutter"&gt;</code>
+<code>
+as a container class
+
+&lt;div class="rhd-c-round-image"&gt;
+    &lt;img src="https://developers.redhat.com/sites/default/files/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg" alt="Burr Sutter"&gt;
+&lt;/div&gt;
+
+or as an image class
+
+&lt;img class="rhd-c-round-image" src="https://developers.redhat.com/sites/default/files/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg" alt="Burr Sutter"&gt;
+</code>
             </pre>
+            <div class="rhd-c-round-image">
+                <img src="https://developers.redhat.com/sites/default/files/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg" alt="Burr Sutter">
+            </div>
             <img class="rhd-c-round-image" src="https://developers.redhat.com/sites/default/files/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg" alt="Burr Sutter">
         </div>
     </div>
