@@ -75,6 +75,8 @@
 .rhd-c-card {
   position: relative;
   padding: 0;
+  box-shadow: none;
+  border: 2px solid $light-gray;
   hr {
     border-top: var(--rhd-theme--border-width-md) solid #ededed; // #ededed
     margin: var(--pf-global--spacer--sm) 0; // 8px 16px 0 16px
@@ -93,6 +95,7 @@
 .rhd-c-card__list {
   padding: 0;
   box-shadow: none;
+  border: none;
   & > .rhd-c-card-content {
     padding: 0;
     & > .rhd-c-card__title:first-child {
