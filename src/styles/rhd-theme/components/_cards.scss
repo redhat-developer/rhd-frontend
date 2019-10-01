@@ -149,27 +149,24 @@
   align-items: center;
   background-color: #1a1a1a; // ##1a1a1a
   margin-bottom: 0;
-  img {
-    max-height: 125px;
-  }
-  &:before {
-    font-family: 'Font Awesome 5 Pro';
-    font-weight: 400;
-    font-size: 3rem;
-    content: "\f144";
-    position: absolute;
-    z-index: 5;
-    color: #fff; // #fff;
-  }
-  &:after {
+  position: inherit;
+  .rhd-c-card__video-time {
+    padding: var(--pf-global--spacer--xs) var(--pf-global--spacer--sm); // 4px 8px
+    margin: var(--pf-global--spacer--xs);
+    background-color: #1a1a1a; // #1a1a1a
+    color: #fff;
+    font-size: calc(16px - 4px); // 12px
     position: absolute;
     right: 0;
-    top: 90px;
-    padding: var(--pf-global--spacer--xs) var(--pf-global--spacer--sm); // 4px 8px
-    content: '2:00';
-    color: #fff; // #fff;
-    background-color: #1a1a1a; // ##1a1a1a
-    font-size: calc(16px - 4px); // 12px
+    bottom: 0;
+  }
+  svg {
+    position: absolute;
+    color: #fff;
+    font-size: 2em;
+  }
+  img {
+    max-height: 125px;
   }
 }
 
