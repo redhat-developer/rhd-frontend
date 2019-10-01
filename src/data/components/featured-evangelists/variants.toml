@@ -1,0 +1,9 @@
+[[variant]]
+id = "default"
+name = "Default Variant"
+order = 1
+
+[[variant]]
+id = "grid_view"
+name = "Grid View"
+order = 2
