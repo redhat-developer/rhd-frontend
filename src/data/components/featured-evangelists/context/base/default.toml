@@ -1,5 +1,6 @@
 templates = ["""
-  <div class="assembly-type-featured_evangelists">
+  <div class="assembly-type-featured_evangelists component">
+    <h2>The People Behind the Program</h2>
     <div class="rhd-c-featured-evangelists--tile">
       <img src="https://developers.redhat.com/sites/default/files/styles/large/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
       <div class="rhd-c-featured-evangelists--tile-info">

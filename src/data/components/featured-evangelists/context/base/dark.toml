@@ -1,5 +1,5 @@
 templates = ["""
-  <div class="assembly-type-featured_evangelists component">
+  <div class="assembly-type-featured_evangelists component dark">
     <h2>The People Behind the Program</h2>
     <div class="grid">
       <div class="content-list">

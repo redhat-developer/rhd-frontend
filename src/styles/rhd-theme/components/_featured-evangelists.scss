@@ -1,5 +1,8 @@
 
 .assembly-type-featured_evangelists {
+  h2 {
+    margin-bottom: var(--pf-global--spacer--md);
+  }
   .grid {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -13,6 +16,12 @@
     @media screen and (min-width: 1024px) {
       grid-template-columns: 1fr 1fr;
     }
+  }
+  &.no-padding-top {
+    @extend .pf-u-pt-0;
+  }
+  &.no-padding-bottom {
+    @extend .pf-u-pb-0;
   }
 }
 
