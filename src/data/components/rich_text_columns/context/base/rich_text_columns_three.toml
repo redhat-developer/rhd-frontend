@@ -1,9 +1,9 @@
 templates = ["""
-<section class="pf-c-content">
+<section class="assembly assembly-type-rich_text_columns three-up pf-c-content component">
   <h1>EAP integration and open source projects</h1>
   <p><b>EAP comes in two versions—one standalone, and one that runs in a variety of OpenShift implementations. This <a href="#">page shows the differences between the two versions.</a></b></p>
   <p>EAP also integrates code from the following open source projects:</p>
-  <div class="pf-l-grid pf-m-gutter">
+  <div class="rich-text__content pf-l-grid pf-m-gutter">
     <div class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-md">
       <ul>
         <li>Hibernate ORM (<a href="#">RH docs</a> / <a href="#">OS project</a>) a relational database persistence project</li>

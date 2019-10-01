@@ -1,0 +1,17 @@
+.assembly-type-rich_text_columns {
+  
+  /** Visual styles **/
+  &.dark {
+    .rich-text__content {
+      color: var(--rhd-theme--component-font--color-light);
+    }
+  }
+
+  &.no-padding-bottom {
+    padding-bottom: 0;
+  }
+
+  &.no-padding-top {
+    padding-top: 0;
+  }
+}
