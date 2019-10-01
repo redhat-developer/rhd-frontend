@@ -94,11 +94,11 @@
 
 // OTHER VISUAL STYLES
 .rhd-c-product-download-hero {
-  &.light {
+  &.light.component {
     background-image: var(--rhd-theme--ui-background-image__product-hero-light);
   }
 
-  &.dark {
+  &.dark.component {
     background-image: var(--rhd-theme--ui-background-image__product-hero-dark);
     & > *,
     .pf-c-title,
@@ -109,7 +109,7 @@
       color: var(--pf-global--Color--light-100) !important;
     }
   }
-  &.center {
+  &.centered {
     .rhd-c-product-download-hero-content,
     .rhd-c-product-download-hero-footer {
       text-align: center;
@@ -117,7 +117,7 @@
       justify-content: center;
     }
   }
-  &.slim {
+  &.assembly-slim {
     @extend .pf-u-pt-0;
     @extend .pf-u-pb-0;
   }

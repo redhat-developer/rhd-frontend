@@ -51,13 +51,13 @@
     }
   }
 
-  &.assembly-dark {
+  &.dark {
     .rich-text-content {
       color: var(--rhd-theme--component-font--color-light);
     }
   }
 
-  &.assembly-center {
+  &.centered {
     text-align: center;
   }
 

@@ -1,5 +1,5 @@
 templates = ["""
-<div class="component rhd-c-card-grid pf-c-content center">
+<div class="component rhd-c-card-grid pf-c-content centered">
   <div class="pf-l-flex">
     <h2 class="pf-c-title pf-m-lg">Title for Assembly with Card Grid</h2>
   </div>
