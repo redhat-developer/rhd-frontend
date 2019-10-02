@@ -1,8 +1,13 @@
-.assembly-type-rich_text_columns {
+.assembly.assembly-type-rich_text_columns {
   
   /** Visual styles **/
   &.dark {
-    .rich-text__content {
+    background: var(--rhd-theme--component-background--color-dark);
+    color: var(--rhd-theme--component-font--color-light);
+
+    .rich-text__content,
+    h1, h2, h3, h4, h5, h6,
+    p {
       color: var(--rhd-theme--component-font--color-light);
     }
   }
