@@ -14,7 +14,6 @@ templates = ["""
             <li class="menu-item"><a href="#" title="">Serverless</a></li>
             <li class="menu-item"><a href="#" title="">Knative</a></li>
           </ul>
-
         </li>
         <li class="menu-item menu-item--expanded">
           <h3 class="section-toggle">Start</h3>
@@ -42,7 +41,6 @@ templates = ["""
             <li class="menu-item"><a href="#">About us</a></li>
             <li class="menu-item"><a href="#">Contact Sales</a></li>
           </ul>
-
         </li>
       </ul>
     </div>
@@ -58,7 +56,7 @@ templates = ["""
         <li><a href="https://github.com/redhat-developer" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
       </ul>
       <a class="rhd-c-footer-sidebar-signup pf-c-button pf-m-link--secondary-on-dark" href="/register">
-      Sign me up 
+      Sign me up
       <span class="pf-c-button__icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
       </a>
     </div>
