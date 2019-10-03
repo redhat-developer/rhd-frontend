@@ -1,0 +1,216 @@
+templates = ["""
+<div class="rhd-c-navigation pf-c-content">
+  <div class="rhd-masthead front-nav">
+
+    <!-- START OF RED HAT UNIVERSAL HEADER -->
+    <div class="rh-universal-header">
+      <nav class="rh-nav-universal" aria-label="Red Hat Global Navigation">
+        <a class="rh-logo-wrapper" href="" title=""><img class="rh-header-logo" alt="Red Hat Logo" src="https://developers.redhat.com/themes/custom/rhdp/images/branding/RHLogo_white.svg"></a>
+
+        <ul class="rhd-menu rh-nav-universal-list">
+          <li><a href="" title="">Customer Portal</a></li>
+          <li><a href="" title="" data-drupal-link-system-path="<front>" class="is-active">Developer</a></li>
+          <li><a href="" title="">Hosted IDE</a></li>
+          <li><a href="" title="">OpenShift</a></li>
+          <li><a href="" title="">Partners</a></li>
+          <li><a href="" title="">Store</a></li>
+        </ul>
+        <ul class="rhd-menu rh-universal-login">
+          <li class="login"><a><span class="icon"><i class="fas fa-user"></i></span>Log In</a></li>
+          <li class="logged-in" style="display: none;">
+            <a class="dropdwn-trigger" href="#">
+              <span class="icon"><i class="fas fa-user"></i></span>
+              <span class="logged-in-name"></span>
+              <span class="icon"><i class="fal fa-angle-down"></i></span>
+            </a>
+            <ul class="dropdwn-menu rh-user-menu">
+              <li class="logged-in dropdwn-item" style="display: none;"><a class="account-info" href="#">Account Info</a></li>
+              <li class="logged-in dropdwn-item" style="display: none;"><a class="logout" href="#">Log Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- END OF RED HAT UNIVERSAL HEADER -->
+
+    <!-- START OF RHD NAV -->
+    <div class="rhd-masthead-inner">
+      <div class="rhd-header">
+        <a href="/" title="" rel="home" class="rhd-header-logo" id="home-link">
+          <img src="https://developers.redhat.com/themes/custom/rhdp/logo.svg" alt="Cloud Training for Developers and Developer Tools">
+        </a>
+        <nav role="navigation" aria-labelledby="block-rhdnavigation-menu" id="block-rhdnavigation" data-block-plugin-id="system_menu_block:rhd-navigation" class="rhd-nav-fixed block block-menu navigation menu--rhd-navigation">
+          <ul class="rhd-menu">
+            <li class="menu-item rhd-header-link">
+              <a href="">
+                <span class="title">Build</span>
+                <span class="description">Link to resources for building applications with open source software</span>
+              </a>
+            </li>
+            <li class="menu-item rhd-header-link">
+              <a href="">
+                <span class="title">Tools</span>
+                <span class="description">Link to developer tools for cloud development</span>
+              </a>
+            </li>
+            <li class="menu-item rhd-header-link">
+              <a href="">
+                <span class="title">Events</span>
+                <span class="description">Link to Red Hat Developer Events</span>
+              </a>
+            </li>
+            <li class="menu-item rhd-header-link">
+              <a href="">
+                <span class="title">Training</span>
+                <span class="description">Link to Red Hat Developer Training Content</span>
+              </a>
+            </li>
+            <li class="menu-item rhd-header-link">
+              <a href="">
+                <span class="title">Products</span>
+                <span class="description">Link to Red Hat Developer Products</span>
+              </a>
+            </li>
+            <li class="rhd-nav-search">
+              <div class="rhd-search-wrapper">
+                <form class="search-bar" accept-charset="utf-8" action="/search/" method="get" role="search" type="submit">
+                  <input class="user-search" type="text" placeholder="Search" id="search_list_text" name="t" maxlength="128" required="">
+                  <button type="submit" id="search-button"><i class="far fa-search"></i></button>
+                </form>
+              </div>
+              <button class="rhd-search-toggle rhd-search-toggle-open"><i class="far fa-search"></i></button>
+              <button class="rhd-search-toggle rhd-search-toggle-close"><i class="far fa-times"></i></button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="region region-mobile-tray rhd-mobile-tray">
+        <div class="rhd-mobile-tray-inner">
+          <button class="menu-toggle">Close <i class="far fa-times-circle"></i></button>
+          <ul class="rhd-menu rh-universal-login">
+            <li class="login"><a><span class="icon"><i class="fas fa-user"></i></span>Log In</a></li>
+            <li class="logged-in" style="display: none;">
+              <a class="dropdwn-trigger" href="#">
+                <span class="icon"><i class="fas fa-user"></i></span>
+                <span class="logged-in-name"></span>
+                <span class="icon"><i class="fal fa-angle-down"></i></span>
+              </a>
+              <ul class="dropdwn-menu rh-user-menu">
+                <li class="logged-in dropdwn-item" style="display: none;"><a class="account-info" href="#">Account Info</a></li>
+                <li class="logged-in dropdwn-item" style="display: none;"><a class="logout" href="#">Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div id="block-rhdsearchblock-mobile" data-block-plugin-id="rhd_search_block" class="block block-redhat-developers block-rhd-search-block">
+            <div class="rhd-search-wrapper">
+              <form class="search-bar" accept-charset="utf-8" action="/search/" method="get" role="search" type="submit">
+                <input class="user-search" type="text" placeholder="Enter your search term" id="search_list_text" name="t" maxlength="128" required="">
+                <button type="submit" id="search-button"><i class="far fa-search"></i></button>
+              </form>
+            </div>
+          </div>
+          <nav role="navigation" aria-labelledby="block-rhdnavigation-mobile-menu" id="block-rhdnavigation-mobile" data-block-plugin-id="system_menu_block:rhd-navigation" class="rhd-nav-mobile block block-menu navigation menu--rhd-navigation">
+
+            <ul class="rhd-menu">
+              <li class="menu-item rhd-header-link">
+                <a href="">
+                  <span class="title">Build</span>
+                  <span class="description">Link to resources for building applications with open source software</span>
+                </a>
+              </li>
+              <li class="menu-item rhd-header-link">
+                <a href="">
+                  <span class="title">Tools</span>
+                  <span class="description">Link to developer tools for cloud development</span>
+                </a>
+              </li>
+              <li class="menu-item rhd-header-link">
+                <a href="">
+                  <span class="title">Events</span>
+                  <span class="description">Link to Red Hat Developer Events</span>
+                </a>
+              </li>
+              <li class="menu-item rhd-header-link">
+                <a href="">
+                  <span class="title">Training</span>
+                  <span class="description">Link to Red Hat Developer Training Content</span>
+                </a>
+              </li>
+              <li class="menu-item rhd-header-link">
+                <a href="">
+                  <span class="title">Products</span>
+                  <span class="description">Link to Red Hat Developer Products</span>
+                </a>
+              </li>
+              <li class="rhd-nav-search">
+                <div class="rhd-search-wrapper">
+                  <form class="search-bar" accept-charset="utf-8" action="/search/" method="get" role="search" type="submit">
+                    <input class="user-search" type="text" placeholder="Search" id="search_list_text" name="t" maxlength="128" required="">
+                    <button type="submit" id="search-button"><i class="far fa-search"></i></button>
+                  </form>
+                </div>
+                <button class="rhd-search-toggle rhd-search-toggle-open"><i class="far fa-search"></i></button>
+                <button class="rhd-search-toggle rhd-search-toggle-close"><i class="far fa-times"></i></button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="menu-toggle-wrapper">
+        <button class="menu-toggle">Menu<span class="icon"><i class="far fa-bars"></i></button>
+      </div>
+    </div>
+    <!-- END OF RHD NAV -->
+
+    <!-- START OF RHD TOPIC NAV -->
+    <div class="region region-rhd-post-header">
+      <nav role="navigation" aria-labelledby="block-topicnavigation-menu" id="block-topicnavigation" data-block-plugin-id="system_menu_block:topics-menu" class="block block-menu navigation rhd-topic-header menu--topics-menu">
+        <div class="rhd-topic-header-inner">
+          <ul class="rhd-menu rhd-topic-nav slick-initialized slick-slider">
+            <div class="slick-list draggable">
+              <div class="slick-track" style="opacity: 1; width: 50000px; transform: translate3d(0px, 0px, 0px);">
+                <li class="menu-item slick-slide slick-current slick-active">
+                  <a href="" title="">Istio</a>
+                </li>
+                <li class="menu-item slick-slide slick-active">
+                  <a href="" title="">Kubernetes</a>
+                </li>
+                <li class="menu-item slick-slide slick-active">
+                  <a href="" title="">Microservices</a>
+                </li>
+                <li class="menu-item slick-slide slick-active">
+                  <a href="" title="">DevOps</a>
+                </li>
+                <li class="menu-item slick-slide">
+                  <a href="" title="">Serverless</a>
+                </li>
+                <li class="menu-item slick-slide">
+                  <a href="" title="">Linux</a>
+                </li>
+                <li class="menu-item slick-slide">
+                  <a href="" title="">Java</a>
+                </li>
+                <li class="menu-item slick-slide">
+                  <a href="" title="">Spring Boot</a>
+                </li>
+                <li class="menu-item slick-slide">
+                  <a href="" title="">Containers</a>
+                </li>
+                <li class="rhd-nav-all-topics slick-slide">
+                  <a href="">All Topics<i class="fas fa-caret-right"></i></a>
+                </li>
+              </div>
+            </div>
+          </ul>
+          <button class="previous-arrow slider-arrow slick-arrow slick-disabled" aria-disabled="true" style="display: none;"><i class="far fa-chevron-left"></i></button>
+          <button class="next-arrow slider-arrow slick-arrow" style="display: inline-block;" aria-disabled="false"><i class="far fa-chevron-right"></i></button>
+          <div class="rhd-nav-all-topics">
+            <a href="">All Topics<span class="icon"><i class="fas fa-caret-right"></i></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- END OF RHD TOPIC NAV -->
+  </div>
+</div>
+"""]
