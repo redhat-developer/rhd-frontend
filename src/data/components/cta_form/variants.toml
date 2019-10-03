@@ -1,4 +1,14 @@
 [[variant]]
-id = "cta_form"
-name = "CTA Form"
+id = "cta-form-single"
+name = "No visual style set, single column"
 order = 1
+
+[[variant]]
+id = "cta-form-dual"
+name = "No visual style set, two column"
+order = 2
+
+[[variant]]
+id = "cta-form-card"
+name = "No visual style set, used inside a card"
+order = 3
