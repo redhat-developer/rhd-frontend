@@ -1,7 +1,7 @@
 templates = ["""
-<div class="component cta_form_container">
+<div class="component rhd-c-cta-form pf-c-content">
     <div class="cta-content">
-        <h3>
+        <h3 class="pf-c-title pf-m-3xl">
             This is a heading 3 that can act as a title for the form and things
         </h3>
         <p>This is the body text that can be added to the form. This can go as long as necessary.</p>
@@ -110,10 +110,10 @@ templates = ["""
             </div>
              <div class="pf-c-form__group pf-m-action">
                 <div class="pf-c-form__actions">
-                <button class="pf-c-button pf-m-primary" type="submit">
+                <button class="pf-c-button pf-m-heavy" type="submit">
                     Submit form
                 </button>
-                <button class="pf-c-button pf-m-secondary" type="reset">
+                <button class="pf-c-button pf-m-tertiary" type="reset">
                     Reset form
                 </button>
                 </div>
@@ -121,12 +121,11 @@ templates = ["""
           </form>
     </div>
 </div>
-<br><br>
 <div class="pf-c-card rhd-c-card">
     <div class="rhd-c-card-content">
-        <div class="component cta_form_container">
+        <div class="component rhd-c-cta-form pf-c-content">
         <div class="cta-content">
-            <h3>
+            <h3 class="pf-c-title pf-m-3xl">
                 This is a heading 3 that can act as a title for the form and things
             </h3>
             <p>This is the body text that can be added to the form. This can go as long as necessary.</p>
@@ -235,10 +234,10 @@ templates = ["""
                 </div>
                 <div class="pf-c-form__group pf-m-action">
                     <div class="pf-c-form__actions">
-                    <button class="pf-c-button pf-m-primary" type="submit">
-                        Submit form
+                    <button class="pf-c-button pf-m-heavy" type="submit">
+                    Submit form
                     </button>
-                    <button class="pf-c-button pf-m-secondary" type="reset">
+                    <button class="pf-c-button pf-m-tertiary" type="reset">
                         Reset form
                     </button>
                     </div>
@@ -248,7 +247,4 @@ templates = ["""
     </div>
     </div>
 </div>
-
-
-
 """]
