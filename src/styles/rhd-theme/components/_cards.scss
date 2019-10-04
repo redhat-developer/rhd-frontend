@@ -90,6 +90,14 @@
     margin-top: 0 !important; 
     margin-bottom: 0 !important; 
   }
+  a {
+    .dark & {
+      color: var(--rhd-c-button--m-link--Color);
+      &:hover {
+        color: var(--rhd-c-button--m-link--hover--Color);
+      }
+    }
+  }
 }
 
 .rhd-c-card__list {
