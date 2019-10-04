@@ -1,5 +1,5 @@
 ---
-title: "Navigation References"
+title: "Deprecated Navigation References"
 date: 2019-08-26T17:14:15-04:00
 draft: false
 type: component
