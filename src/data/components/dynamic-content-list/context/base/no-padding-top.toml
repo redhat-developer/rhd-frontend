@@ -16,7 +16,7 @@ templates = ["""
           </div>
         </div>
         <!-- End of dynamic-content-list item -->
-        
+        <button class="pf-c-button pf-m-secondary">More Articles</button>
       </div>
       <!-- End of dynamic-content-list content container -->
 
