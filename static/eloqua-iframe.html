@@ -47,7 +47,6 @@
         color: #FFF !important;
         border-color: #ee0000 !important;
         border-radius: 3px !important;
-        border-width: 0px !important;
         box-sizing: border-box !important;
         margin-top: 1px !important;
         white-space: nowrap !important;
@@ -73,6 +72,49 @@
         background-color: #cf0000 !important;
         color: #FFF !important;
         border-color: #cf0000 !important;
+      }
+      #GatedFormContainer .form-content>.form-group:not(:empty):not(#FormSubmitButton-form-group)  {
+        display: flex !important;
+        flex-direction: column !important;
+        align-content: left !important;
+      }
+      #GatedFormContainer .form-content>.form-group .control-label {
+        align-self: flex-start !important;
+        font-size: 14px !important;
+        font-weight: bold !important;
+        color: black !important;
+        padding-left: 15px !important;
+        margin-bottom: 8px !important;
+        margin-right: 8px !important;
+      }
+      #GatedFormContainer .form-content>.form-group .control-label:before { 
+        display:none;
+      }
+      #GatedFormContainer .form-content>.form-group .control-label:after { 
+        color: #c00;
+        content: "*";
+        font-weight: 700;
+        font-size: 0.8em;
+        vertical-align: baseline;
+        padding-right: 3px;
+        margin-left: 8px;
+      }
+      #GatedFormContainer #FormSubmitButton-form-group .col-sm-10 {
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+      }
+      #GatedFormContainer .form-content>.form-group .form-control {
+        border: solid 1px rgb(237, 237, 237) !important;
+        border-bottom: 1px solid black !important;
+        font-size: 16px !important;
+        font-style: normal !important;
+        font-variant-caps: normal !important;
+        font-weight: normal !important;
+        height: 36px !important;
+      }
+      #GatedFormContainer .form-footer .col-sm-10{
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
       }
       .cta, .cta-stacked {
         font-size: 13px;
@@ -105,7 +147,6 @@
       }
       
       @media (min-width: 701px) {
-        
         .inline #GatedFormContainer .form-content {
           display: flex;
           flex-direction: column;
