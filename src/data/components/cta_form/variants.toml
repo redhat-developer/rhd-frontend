@@ -17,3 +17,13 @@ order = 3
 id = "cta-form-single-dark"
 name = "Dark visual style set, single column"
 order = 4
+
+[[variant]]
+id = "cta-form-legacy-drupal-form"
+name = "Default drupal form"
+order = 5
+
+[[variant]]
+id = "cta-form-legacy-iframe"
+name = "Default eloqua form"
+order = 6
