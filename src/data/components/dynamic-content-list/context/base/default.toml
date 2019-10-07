@@ -40,9 +40,9 @@ templates = ["""
           </div>
         </div>
         <!-- End of dynamic-content-list item -->
+        <button class="pf-c-button pf-m-secondary">More Articles</button>
       </div>
       <!-- End of dynamic-content-list content container -->
-
       <div class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-md">
         <!-- Start of Comment List Card Component -->
         <div class="pf-c-card rhd-c-card comment-list">

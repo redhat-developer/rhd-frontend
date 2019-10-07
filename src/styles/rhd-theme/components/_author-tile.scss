@@ -21,6 +21,12 @@
     a {
       font-weight: var(--rhd-global--FontWeight-Text--medium);
       text-decoration: none;
+      .dark & {
+        color: var(--rhd-c-button--m-link--Color);
+        &:hover {
+          color: var(--rhd-c-button--m-link--hover--Color);
+        }
+      }
     }
   }
   &-title {
