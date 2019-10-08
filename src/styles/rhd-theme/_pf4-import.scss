@@ -5,10 +5,15 @@
 //
 
 //Font related
-$pf-global--enable-font-overpass-cdn: true;
 $pf-global--disable-fontawesome: true;
+$pf-global--font-path: "/themes/custom/rhdp2/rhd-frontend/dist/js/@patternfly/patternfly/assets/fonts";
 
 //custom rhd theme overrides
-@import "pf4-base-variable-overrides";
 @import "../../../node_modules/@patternfly/patternfly/patternfly.scss";
 @import "../../../node_modules/@patternfly/patternfly/patternfly-addons.scss";
+
+
+
+
+
+
