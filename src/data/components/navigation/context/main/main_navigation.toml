@@ -48,12 +48,12 @@ templates = ["""
         <ul class="pf-c-nav__tertiary-list">
           <li class="pf-c-nav__item pf-u-mr-0 login" style="display:none;">
             <a href="#" class="pf-c-nav__link">
-              <i class="fas fa-user"></i>Log In
+              <span class="icon"><i class="fas fa-user"></i></span>Log In
             </a>
           </li>
           <li class="pf-c-nav__item pf-u-mr-0 logged-in">
             <a href="#" class="pf-c-nav__link">
-              <i class="fas fa-user"></i>John Smith<i class="fal fa-angle-down"></i>
+              <span class="icon"><i class="fas fa-user"></i></span>John Smith<span class="icon"><i class="fal fa-angle-down"></i></span>
             </a>
             <ul>
               <li>
