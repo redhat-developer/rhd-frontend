@@ -76,7 +76,7 @@ templates = ["""
           <!-- End of Author tile -->
         </div>
         <button class="pf-c-button pf-m-heavy pf-u-mr-lg">Sign up</button>
-        <button class="pf-c-button pf-m-link--secondary-on-dark pf-u-pl-0">This is the light CTA on dark <span class="pf-c-button__icon"><i class="fas fa-arrow-right"></i></span></button>
+        <button class="pf-c-button pf-m-link--secondary pf-u-pl-0">This is the light CTA on dark <span class="pf-c-button__icon"><i class="fas fa-arrow-right"></i></span></button>
       </div>
       <div class="pf-l-grid__item pf-m-12-col pf-m-5-col-on-md">
         <div class="pf-l-grid">
