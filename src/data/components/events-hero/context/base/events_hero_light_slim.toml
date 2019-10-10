@@ -4,7 +4,7 @@ templates = ["""
       <div class="pf-l-grid__item pf-m-12-col">
         <h2>Title of the event</h2>
       </div>
-      <div class="pf-l-grid__item pf-m-12-col">
+      <div class="pf-l-grid__item">
         <h3 class="header-link" rhd-c-events-hero__item-title"><a href="" class="pf-c-title pf-m-lg">Featured event title</a></h3>
         <small class="pf-u-mt-sm pf-u-mb-sm">October 4, 2019</small>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -66,7 +66,7 @@ templates = ["""
             </div>
           </div>
         </div>
-        <button class="pf-c-button pf-m-heavy">Sign up</button>
+        <button class="pf-c-button">Sign up</button>
       </div>
     </div>
   </section>
