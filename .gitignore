@@ -10,3 +10,4 @@ src/tests/unit/report
 .idea
 resources
 public
+/static/**

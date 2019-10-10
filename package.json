@@ -22,8 +22,10 @@
     "scripts:microsites": "uglifyjs-folder src/scripts/js/microsites -c -o dist/js/@rhd/rhd.microsites.min.js --source-map",
     "scripts:umd": "cd node_modules/@rhd && each '**/*.js' -- rollup -f umd -n RHD -o ../../dist/js/@rhd/%p $PWD/%p",
     "semantic-release": "semantic-release",
-    "styles": "npm run del:styles && npm run styles:copy && npm run styles:sass",
+    "styles": "npm run del:styles && npm run styles:copy && npm run styles:sass && npm run styles:fonts && npm run styles:fontsStatic",
     "styles:sass": "node-sass node_modules/@rhd/ -o dist/css/ && node-sass node_modules/@rhd/ -o dist/css-min/ --output-style compressed && postcss dist/css-min/rhd.css -o dist/css-min/rhd.min.css",
+    "styles:fonts": "copyfiles -u 5  \"node_modules/@patternfly/patternfly/assets/fonts/**/*\" dist/fonts/patternfly",
+    "styles:fontsStatic": "copyfiles -u 5  \"node_modules/@patternfly/patternfly/assets/fonts/**/*\" static/themes/custom/rhdp2/fonts/patternfly",
     "styles:copy": "copyfiles -u 2 \"src/styles/**/*\" node_modules/@rhd"
   },
   "sass": {
