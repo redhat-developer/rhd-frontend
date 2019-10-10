@@ -1,15 +1,15 @@
 [[variant]]
 id = "main_navigation"
-name = "Main Navigation"
+name = "Main RHD Navigation"
+order = 1
 
 [[variant]]
 id = "topic_navigation"
 name = "Topic Navigation"
+order = 2
 
 [[variant]]
-id = "main_navigation_mobile"
-name = "Main Navigation - Mobile"
+id = "rh-universal"
+name = "Red Hat Universal Navigation"
+order = 3
 
-[[variant]]
-id = "topic_navigation_mobile"
-name = "Topic Navigation - Mobile"
