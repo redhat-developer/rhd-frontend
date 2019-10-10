@@ -60,7 +60,7 @@
 // OTHER VISUAL STYLES
 .rhd-c-events-hero {
   >.pf-l-grid {
-    >.pf-l-grid__item:not(.pf-m-12-col) { 
+    >.pf-l-grid__item { 
       &:nth-child(2) {
         .pf-c-button {
           @extend .pf-m-heavy;
@@ -101,6 +101,11 @@
   }
 
   &.two-events {
+    .rhd-c-events-hero__item-presenters {
+      .pf-l-grid {
+        margin: 0;
+      }
+    }
     >.pf-l-grid {
       >.pf-l-grid__item:not(.pf-m-12-col) {
         &:not(.sidebar) {
@@ -117,6 +122,11 @@
   }
 
   &.three-events {
+    .rhd-c-events-hero__item-presenters {
+      .pf-l-grid {
+        margin: 0;
+      }
+    }
     >.pf-l-grid {
       >.pf-l-grid__item:not(.pf-m-12-col) {
         &:not(.sidebar) {
@@ -135,22 +145,6 @@
   &.assembly-slim {
     .pf-l-flex {
       --pf-l-grid__item--GridColumnEnd: span 12;
-    }
-  }
-
-  &.two-events {
-    .rhd-c-events-hero__item-presenters {
-      .pf-l-grid {
-        margin: 0;
-      }
-    }
-  }
-
-  &.three-events {
-    .rhd-c-events-hero__item-presenters {
-      .pf-l-grid {
-        margin: 0;
-      }
     }
   }
 }
