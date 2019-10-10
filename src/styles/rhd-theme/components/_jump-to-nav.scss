@@ -4,8 +4,8 @@
   @media screen and (max-width: $pf-global--breakpoint--lg) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 2em;
-    grid-row-gap: 1.5em;
+    grid-column-gap: var(--pf-global--spacer--lg);
+    grid-row-gap: var(--pf-global--spacer--lg);
     text-align: center;
   }
   @media screen and (max-width: $pf-global--breakpoint--md) {
@@ -31,13 +31,15 @@
 
   @media screen and (max-width: $pf-global--breakpoint--lg) {
     border: 1px solid var(--pf-global--active-color--300);
-    font-size: 16px;
+    font-size: var(--pf-global--FontSize--md);
     padding: .35em .7em;
     margin: 0;
     &:hover,
     &:focus,
     &:active {
       background-color: var(--pf-global--Color--light-100);
+      color: var(--rhd-c-button--m-secondary--Color);
+      text-decoration: none;
     }
   }
 }
