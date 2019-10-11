@@ -89,7 +89,7 @@ rhdp-search-box {
     }
 
     button svg {
-        @include tablet-landscape {
+        @include tablet-landscape-768-and-down {
             display: none !important;
         }
     }
