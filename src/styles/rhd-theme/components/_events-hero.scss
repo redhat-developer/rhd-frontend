@@ -40,6 +40,10 @@
     grid-gap: 24px;
   }
 
+  .rhd-c-author--tile {
+    min-width: 200px;
+  }
+
   &.dark.background {
     background: var(--rhd-theme--ui-background-image__events-hero) !important;
     background-position: 50% !important;
@@ -67,6 +71,9 @@
     
           &+.pf-c-button {
             @extend .pf-m-link--secondary;
+            &:hover {
+              background-color: transparent;
+            }
           }
         }
       }
@@ -181,11 +188,17 @@
         &:nth-child(3) {
           .pf-c-button {
             @extend .pf-m-tertiary-on-dark;
+            &:after {
+              display: none;
+            }
           }
         }
         &:nth-child(4) {
           .pf-c-button {
             @extend .pf-m-tertiary-on-dark;
+            &:after {
+              display: none;
+            }
           }
         }
       }
