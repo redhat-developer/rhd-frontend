@@ -9,8 +9,8 @@ templates = ["""
         <small class="pf-u-mt-sm pf-u-mb-sm">October 4, 2019</small>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <div class="rhd-c-events-hero__item-presenters pf-u-mb-md">
-          <div class="pf-l-grid pf-m-12-col">
-            <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-sm">
+          <div class="pf-l-flex">
+            <div class="pf-l-flex pf-m-grow">
               <!-- Start of Author tile -->
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
@@ -23,9 +23,9 @@ templates = ["""
                   <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
                 </div>
               </div>
-            </div>
+
               <!-- End of Author tile -->
-            <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-sm">
+
               <!-- Start of Author tile -->
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
@@ -38,9 +38,9 @@ templates = ["""
                   <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
                 </div>
               </div>
-            </div>
+
               <!-- End of Author tile -->
-            <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-sm">
+
               <!-- Start of Author tile -->
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
@@ -53,10 +53,10 @@ templates = ["""
                   <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
                 </div>
               </div>
-            </div>
+
               <!-- End of Author tile -->
               <!-- Start of Author tile -->
-            <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-sm">
+
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
                   <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
@@ -68,8 +68,9 @@ templates = ["""
                   <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
                 </div>
               </div>
-            </div>
+
               <!-- End of Author tile -->
+            </div>
           </div>
         </div>
         <button class="pf-c-button pf-u-mr-lg">Sign up</button>
@@ -80,8 +81,8 @@ templates = ["""
         <small class="pf-u-mt-sm pf-u-mb-sm">October 4, 2019</small>
         <p>This is a short description of the event.</p>
         <div class="rhd-c-events-hero__item-presenters pf-u-mb-md">
-          <div class="pf-l-grid pf-m-12-col">
-            <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-sm">
+          <div class="pf-l-flex">
+            <div class="pf-l-flex pf-m-grow">
               <!-- Start of Author tile -->
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
@@ -94,10 +95,10 @@ templates = ["""
                   <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
                 </div>
               </div>
-            </div>
+
               <!-- End of Author tile -->
               <!-- Start of Author tile -->
-            <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-sm">
+
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
                   <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
@@ -109,10 +110,10 @@ templates = ["""
                   <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
                 </div>
               </div>
-            </div>
+
               <!-- End of Author tile -->
               <!-- Start of Author tile -->
-            <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-sm">
+
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
                   <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
@@ -124,10 +125,10 @@ templates = ["""
                   <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
                 </div>
               </div>
-            </div>
+
               <!-- End of Author tile -->
               <!-- Start of Author tile -->
-            <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-sm">
+
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
                   <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
@@ -139,8 +140,9 @@ templates = ["""
                   <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
                 </div>
               </div>
-            </div>
+
               <!-- End of Author tile -->
+            </div>
           </div>
         </div>
         <button class="pf-c-button pf-u-mb-md">Sign up</button>
@@ -150,8 +152,8 @@ templates = ["""
         <small class="pf-u-mt-sm pf-u-mb-sm">October 4, 2019</small>
         <p>This is a short description of the event.</p>
         <div class="rhd-c-events-hero__item-presenters pf-u-mb-md">
-          <div class="pf-l-grid pf-m-12-col">
-            <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-sm">
+          <div class="pf-l-flex">
+            <div class="pf-l-flex pf-m-grow">
               <!-- Start of Author tile -->
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
@@ -164,10 +166,10 @@ templates = ["""
                   <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
                 </div>
               </div>
-            </div>
+
               <!-- End of Author tile -->
               <!-- Start of Author tile -->
-            <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-sm">
+
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
                   <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
@@ -179,10 +181,10 @@ templates = ["""
                   <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
                 </div>
               </div>
-            </div>
+
               <!-- End of Author tile -->
               <!-- Start of Author tile -->
-            <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-sm">
+
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
                   <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
@@ -194,10 +196,10 @@ templates = ["""
                   <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
                 </div>
               </div>
-            </div>
+
               <!-- End of Author tile -->
               <!-- Start of Author tile -->
-            <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-sm">
+
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
                   <img src="https://developers.redhat.com/sites/default/files/styles/square_small/public/080817_BURRSUTTER_6INX6IN_300DPI-min.jpg?itok=7ViRCOCR" alt="Burr Sutter" typeof="foaf:Image" width="200" height="200">
@@ -209,8 +211,9 @@ templates = ["""
                   <div class="rhd-c-author--tile-title">Chief Developer Evangelist</div>
                 </div>
               </div>
-            </div>
+
               <!-- End of Author tile -->
+            </div>
           </div>
         </div>
         <button class="pf-c-button pf-u-mb-md">Sign up</button>
