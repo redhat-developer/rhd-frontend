@@ -19,7 +19,7 @@
           "dom", "es5", "dom.iterable", "es6"
         ],
         //"outFile": "dist/js/rhd.js",
-        "outDir": "dist/js/",
+        "outDir": "node_modules/@rhd/",
         "paths": {
             "@patternfly/pfelement/pfelement.umd": [
                 "@types/patternfly__pfelement"
@@ -30,8 +30,6 @@
         }
     },
     "include": [
-        "node_modules/@patternfly/pfelement/pfelement.js",
-        "src/scripts/@rhd/**/*.ts"
-              
+        "src/scripts/@rhd/**/*.ts"      
     ]
 }

@@ -111,7 +111,7 @@ export class RHDPProjectQuery extends HTMLElement {
 
     }
     static get observedAttributes() {
-        return ['loading'];
+        return ['loading','filter'];
     }
 
     attributeChangedCallback(name, oldVal, newVal) {

@@ -41,14 +41,18 @@
 {{ define "scripts"}}
 {{ $baseUrl := .Site.BaseURL }}
 {{ with .Param "scripts" }}
-<script>
+[{{ range . }}{{ with resources.Get (delimit (slice . "js") ".") }}
+  <script src="{{ .RelPermalink }}"></script>
+{{ end }}{{ end }}
+
+<!-- <script>
   var require = {
     baseUrl: "{{ $baseUrl }}",
     deps: [{{ range . }}{{ with resources.Get (delimit (slice . "js") ".") }}
     "{{ strings.TrimPrefix "/" (strings.TrimSuffix ".js" .RelPermalink) }}",
     {{ end }}{{ end }}]
   };
-</script>
+</script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 {{ end }}
 {{ end }}
