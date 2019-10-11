@@ -10,7 +10,6 @@ templates = ["""
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <div class="rhd-c-events-hero__item-presenters pf-u-mb-md">
           <div class="pf-l-flex">
-            <div class="pf-l-flex pf-m-grow">
               <!-- Start of Author tile -->
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
@@ -70,7 +69,6 @@ templates = ["""
               </div>
 
               <!-- End of Author tile -->
-            </div>
           </div>
         </div>
         <button class="pf-c-button pf-u-mr-lg">Sign up</button>
@@ -82,7 +80,6 @@ templates = ["""
         <p>This is a short description of the event.</p>
         <div class="rhd-c-events-hero__item-presenters pf-u-mb-md">
           <div class="pf-l-flex">
-            <div class="pf-l-flex pf-m-grow">
               <!-- Start of Author tile -->
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
@@ -142,7 +139,6 @@ templates = ["""
               </div>
 
               <!-- End of Author tile -->
-            </div>
           </div>
         </div>
         <button class="pf-c-button pf-u-mb-md">Sign up</button>
@@ -153,7 +149,6 @@ templates = ["""
         <p>This is a short description of the event.</p>
         <div class="rhd-c-events-hero__item-presenters pf-u-mb-md">
           <div class="pf-l-flex">
-            <div class="pf-l-flex pf-m-grow">
               <!-- Start of Author tile -->
               <div class="rhd-c-author--tile">
                 <span class="rhd-c-author--tile-hero">
@@ -213,7 +208,6 @@ templates = ["""
               </div>
 
               <!-- End of Author tile -->
-            </div>
           </div>
         </div>
         <button class="pf-c-button pf-u-mb-md">Sign up</button>
