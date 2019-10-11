@@ -1,6 +1,4 @@
 .rhd-c-events-hero {
-  @extend .pf-u-pt-lg;
-  @extend .pf-u-pb-lg;
 
   &__item {
     @extend .pf-u-pt-lg;
@@ -38,14 +36,14 @@
     grid-template-columns: repeat(8, 1fr);
     grid-gap: 24px;
   }
-  &.dark.background {
+  &.dark.has-background {
     background: var(--rhd-theme--ui-background-image__events-hero) !important;
     background-position: 50% !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     z-index: 0;
   }
-  &.background {
+  &.has-background {
     background: var(--rhd-theme--ui-background-image__product-hero-light) !important;
     background-position: 50% !important;
     background-repeat: no-repeat !important;

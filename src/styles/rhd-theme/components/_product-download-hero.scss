@@ -1,4 +1,4 @@
-.rhd-c-product-download-hero {
+.assembly.rhd-c-product-download-hero {
   .pf-l-grid__item {
     &:nth-child(1) {
       order: 1;
@@ -13,8 +13,6 @@
   }
 
   @extend .pf-m-gutter;
-  @extend .pf-u-pt-lg;
-  @extend .pf-u-pb-lg;
 
   background-image: var(--rhd-theme--ui-background-image__product-hero-light);
   background-size: cover;
