@@ -4,8 +4,11 @@
 
   &__item {
     @extend .pf-u-pt-lg;
-    @extend .pf-u-pb-lg;
     border-top: 2px dotted #D2D3D4;
+
+    p {
+      margin-bottom: var(--pf-c-content--MarginBottom);
+    }
   }
   
   &__item-title {

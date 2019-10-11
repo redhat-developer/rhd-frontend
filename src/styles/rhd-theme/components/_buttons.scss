@@ -518,6 +518,9 @@
 //add legacy button style classes and extend.
 .button {
   @extend .pf-c-button;
+  &:hover {
+    text-decoration: none !important;
+  }
 
   &.heavy-cta {
     @extend .pf-m-heavy;
