@@ -122,10 +122,6 @@ export default class RHDPOSDownload extends HTMLElement {
         this.setAttribute('display-os', this._displayOS);
     }
 
-    constructor() {
-        super();
-    }
-
     template = (strings, product, downloadUrl, platform, version) => {
         return `<div class="large-8 columns download-link">
                     <a class="button heavy-cta" href="${downloadUrl}">

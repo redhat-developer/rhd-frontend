@@ -1,6 +1,8 @@
 {{ $patternfly := resources.Get "@patternfly/patternfly/patternfly.scss" | resources.ToCSS (dict "targetPath" "/css/patternfly.css" ) }}
 {{ $rhdoptions := (dict "targetPath" "/css/rhd.css" ) }}
 {{ $rhdstyle := resources.Get "sass/rhd.scss" | resources.ToCSS $rhdoptions }}
+{{ $rhdlegacyoptions := (dict "targetPath" "/css/rhd.legacy.css" ) }}
+{{ $rhdlegacystyle := resources.Get "sass/rhd.legacy.scss" | resources.ToCSS $rhdlegacyoptions }}
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,6 +13,7 @@
         {{ .Site.Title }}
     {{ end }}</title>
     <link rel="stylesheet" href="{{ $rhdstyle.Permalink }}">
+    <link rel="stylesheet" href="{{ $rhdlegacystyle.Permalink }}">
     <link rel="stylesheet" href="/css/prism-ghcolors.css">
     <script src="/js/base.js"></script>
     <script src="https://kit.fontawesome.com/3f83b4c6d2.js"></script>

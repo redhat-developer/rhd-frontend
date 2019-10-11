@@ -95,7 +95,7 @@ export default class DPSearchFilterItem extends PFElement {
         }
         </style>
         <div class="list">
-            <span>${this.name} ${this.count.length ? `(${this.count})` : ''}</span>
+            <span>${this.name} ${this.count && this.count.length ? `(${this.count})` : ''}</span>
             <input type="checkbox" ${this.active ? 'checked' : ''} id="filter-item-${this.key}" value="${this.key}">
             <label for="filter-item-${this.key}"><slot></slot></label>
         </div>`;

@@ -6,8 +6,7 @@ draft: false
 tags: ["component"]
 categories: ["component"]
 weight: 99
-scripts: ["@rhd/rhdp-projects/rhdp-project-filter-box","@rhd/rhdp-projects/rhdp-project-item","@rhd/rhdp-projects/rhdp-project-query","@rhd/rhdp-projects/rhdp-project-url",
-"@rhd/rhdp-projects/rhdp-projects"]
+scripts: ["@rhd/rhdp-projects/rhdp-project-wc"]
 
 ---
 
