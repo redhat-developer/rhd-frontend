@@ -49,7 +49,7 @@ export default [
     // {input: 'node_modules/@rhd/rhdp-search/rhdp-search-url.js', output: { file: 'dist/js/@rhd/rhdp-search/rhdp-search-url.js', format: 'umd', name: 'RHDPSearchURL' }},
     {input: 'node_modules/@rhd/dp-alert.js', output: { file: 'dist/js/@rhd/dp-alert.js', format: 'umd', name: 'DPAlert', moduleContext: 'window' }},
     {input: 'node_modules/@rhd/dp-referrer.js', output: { file: 'dist/js/@rhd/dp-referrer.js', format: 'umd', name: 'DPReferrer', exports: 'named', moduleContext: 'window' }},
-    // {input: 'node_modules/@rhd/rhdp-os-download.js', output: { file: 'dist/js/@rhd/rhdp-os-download.js', format: 'umd', name: 'RHDPOSDownload', exports: 'named', moduleContext: 'window' }},
+    {input: 'node_modules/@rhd/rhdp-os-download.js', output: { file: 'dist/js/@rhd/rhdp-os-download.js', format: 'umd', name: 'RHDPOSDownload', exports: 'named', moduleContext: 'window' }},
     {input: 'node_modules/@rhd/rhdp-thankyou-page.js', output: { file: 'dist/js/@rhd/rhdp-thankyou-page.js', format: 'umd', name: 'RHDPThankYou', exports: 'named', moduleContext: 'window' }},
     {input: 'node_modules/@rhd/rhdp-tryitnow.js', output: { file: 'dist/js/@rhd/rhdp-tryitnow.js', format: 'umd', name: 'RHDPTryItNow', exports: 'named', moduleContext: 'window' }}
 ]
