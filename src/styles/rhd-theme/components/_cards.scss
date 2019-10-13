@@ -267,7 +267,7 @@
   font-family: $rhd-font-stack-display;
   font-size: var(--pf-global--FontSize--lg) !important;
   font-weight: var(--rhd-global--FontWeight-Display--medium);
-  line-height: 27px;
+  line-height: 27px !important;
   padding-bottom: 0 !important;
   margin-top: 0;
   margin-bottom: var(--pf-global--spacer--sm); // 8px;
@@ -282,7 +282,7 @@
     font-family: $rhd-font-stack-display;
     font-size: var(--pf-global--FontSize--lg) !important;
     font-weight: var(--rhd-global--FontWeight-Display--medium);
-    line-height: 27px;
+    line-height: 27px !important;
   }
 }
 

@@ -89,7 +89,7 @@ rhdp-search-box {
     }
 
     button svg {
-        @include tablet-landscape {
+        @media only screen and (min-width: 768px) {
             display: none !important;
         }
     }
@@ -372,7 +372,7 @@ rhdp-search-filters {
                 padding-top: 100px;
                 background: rgba(0,0,0,.5);
                 border: none;
-                z-index: 99;
+                z-index: 999;
                 right: 100%;
                 position: absolute;
                 top: 0px;

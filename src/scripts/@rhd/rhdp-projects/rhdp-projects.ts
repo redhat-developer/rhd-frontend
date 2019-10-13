@@ -2,7 +2,7 @@ import {RHDPProjectQuery} from './rhdp-project-query';
 import {RHDPProjectURL} from './rhdp-project-url';
 import {RHDPProjectItem} from './rhdp-project-item';
 
-class RHDPProjects extends HTMLElement {
+export class RHDPProjects extends HTMLElement {
 
     private _loading = true;
     private _dcpUrl = '';
@@ -27,7 +27,10 @@ class RHDPProjects extends HTMLElement {
         if(this._productId === value) return;
         this._productId = value;
         this.setAttribute('upstream-product-id', this._productId);
-        this.querySelector('rhdp-project-query')['filter'] = this._productId;
+        if(this.querySelector('rhdp-project-query')) {
+            this.querySelector('rhdp-project-query').setAttribute('filter',this._productId);
+        }
+        
     }
 
     get loading() {
@@ -57,17 +60,16 @@ class RHDPProjects extends HTMLElement {
     }
 
     connectedCallback() {
-        this.innerHTML = this.template`${this}`;
-        this.addEventListener('data-results-complete', this._loadDataResult);
         let query = new RHDPProjectQuery();
+        let url = new RHDPProjectURL();
+        this.innerHTML = this.template`${this}`;
+        this.appendChild(query);
+        this.appendChild(url);
+        this.addEventListener('data-results-complete', this._loadDataResult);
         query.dcpUrl = this.dcpUrl;
         if(this.productId){
             query.filter = this.productId;
         }
-        let url = new RHDPProjectURL();
-        this.appendChild(query);
-        this.appendChild(url);
-
     }
 
     removeAllProjects(){
@@ -148,6 +150,4 @@ class RHDPProjects extends HTMLElement {
     }
 }
 
-window.addEventListener('WebComponentsReady', function() {
-    customElements.define('rhdp-projects', RHDPProjects);
-});
+window.customElements.define('rhdp-projects', RHDPProjects);

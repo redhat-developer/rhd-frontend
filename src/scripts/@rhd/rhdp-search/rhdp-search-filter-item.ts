@@ -141,7 +141,8 @@ export default class RHDPSearchFilterItem extends HTMLElement {
     _updateFacet(e) {
         this.bounce = true;
         if (this.inline) {
-            if (e.target['className'].indexOf('clearItem') >= 0) {
+            let cls = e.target.getAttribute('class');
+            if (cls && cls.indexOf('clearItem') >= 0) {
                 this.active = !this.active; 
             }
         } else {

@@ -98,7 +98,7 @@ export default class RHDPSearchResult extends HTMLElement {
             <h4>${url ? `<a href="${url}">${title}</a>` : title}</h4>
             <p ${premium ? 'class="result-info subscription-required" data-tooltip="" title="Subscription Required" data-options="disable-for-touch:true"' : 'class="result-info"'}>
                 <span class="caps">${kind}</span>
-                ${created ? `- <rh-datetime datetime="${created}" type="local" day="numeric" month="long" year="numeric">${created}</rh-datetime>` : ''}
+                ${created ? `- <pfe-datetime datetime="${created}" type="local" day="numeric" month="long" year="numeric">${created}</pfe-datetime>` : ''}
             </p>
             <p class="result-description">${description}</p>
         </div>

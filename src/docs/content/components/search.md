@@ -6,24 +6,7 @@ draft: false
 tags: ["component"]
 categories: ["component"]
 weight: 99
-scripts: ["@patternfly/pfelement/pfelement.umd",
-"@fortawesome/pro-solid-svg-icons/index",
-"@fortawesome/fontawesome-svg-core/index",
-"@rhd/dp-search/dp-search-app",
-"@rhd/dp-search/dp-search-box",
-"@rhd/dp-search/dp-search-filter-group",
-"@rhd/dp-search/dp-search-filter-item",
-"@rhd/dp-search/dp-search-filters",
-"@rhd/dp-search/dp-search-onebox",
-"@rhd/dp-search/dp-search-query",
-"@rhd/dp-search/dp-search-result-count",
-"@rhd/dp-search/dp-search-result",
-"@rhd/dp-search/dp-search-results",
-"@rhd/dp-search/dp-search-sort-page",
-"@rhd/dp-search/dp-search-url",
-"@rhd/dp-search/dp-search-modal-filters",
-"@rhd/dp-search/dp-search-active-filters",
-"@rhd/dp-search/dp-search-filter-active-item"]
+scripts: ["@patternfly/pfelement/pfelement.umd","@rhd/dp-search/dp-search"]
 ---
 
 {{< code >}}<dp-search-app url="https://dcp2.jboss.org/v2/rest/search/developer_materials">
