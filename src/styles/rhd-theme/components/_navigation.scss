@@ -1,4 +1,4 @@
-$max-nav-width: 1400px;
+$max-nav-width: map-get($rhd-breakpoints, xlarge);
 
 .rhd-c-nav {
   @extend .pf-u-align-items-center;
@@ -6,6 +6,9 @@ $max-nav-width: 1400px;
   margin: var(--pf-global--spacer--lg) auto 0 auto;
   justify-self: center;
   padding: 0 var(--rhd-theme--container-spacer-3xl);
+  @media screen and (min-width: $pf-global--breakpoint--xl) {
+    padding: 0;
+  }
   @media screen and (max-width: $pf-global--breakpoint--lg) {
     padding: 0 var(--rhd-theme--container-spacer-xl);
   }
@@ -151,6 +154,16 @@ $max-nav-width: 1400px;
     li.rhd-c-nav-dropdown__search {
       padding: var(--pf-global--spacer--md);
       background-color: var(--pf-global--Color--400) !important;
+      input {
+        height: inherit;
+        margin-bottom: 0;
+      }
+
+      button {
+        &::after {
+          border: 0;
+        }
+      }
     }
     li:nth-child(odd) {
       background-color: var(--pf-global--BackgroundColor--light-100);
@@ -174,6 +187,10 @@ $max-nav-width: 1400px;
   justify-self: center;
   margin-bottom: var(--pf-global--spacer--md);
   padding: 0 var(--rhd-theme--container-spacer-3xl);
+
+  @media screen and (min-width: $pf-global--breakpoint--xl) {
+    padding: 0;
+  }
 
   @media screen and (max-width: $pf-global--breakpoint--lg) {
     padding: 0;
@@ -244,6 +261,9 @@ $max-nav-width: 1400px;
   max-width: $max-nav-width;
   margin: 0 auto;
   padding: 0 var(--rhd-theme--container-spacer-3xl);
+  @media screen and (min-width: $pf-global--breakpoint--xl) {
+    padding: 0;
+  }
   @media screen and (max-width: $pf-global--breakpoint--lg) {
     padding: 0 var(--rhd-theme--container-spacer-xl);
   }
