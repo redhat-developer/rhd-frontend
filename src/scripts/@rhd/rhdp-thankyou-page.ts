@@ -128,7 +128,4 @@ export default class RHDPThankyou extends HTMLElement {
 
 }
 
-window.addEventListener('WebComponentsReady', function() {
-    customElements.define('rhdp-thankyou', RHDPThankyou);
-});
-
+customElements.define('rhdp-thankyou', RHDPThankyou);
