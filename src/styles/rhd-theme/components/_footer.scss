@@ -39,6 +39,7 @@
   .menu-item--expanded > a,
   .menu-item--expanded > h3.section-toggle{
     color: var(--pf-global--Color--light-100);
+    font-family: $rhd-font-stack-display;
     font-size: 16px;
     font-weight: 600;
     color: var(--pf-global--Color--light-100);
@@ -219,6 +220,7 @@
     }
     .menu-item--expanded > h3.section-toggle {
       pointer-events: all;
+      font-family: $rhd-font-stack-display;
       cursor: pointer;
       &:before {
         margin-right: 3px;

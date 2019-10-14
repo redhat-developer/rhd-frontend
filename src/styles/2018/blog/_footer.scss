@@ -32,6 +32,7 @@ footer[role="contentinfo"] {
                     &.menu-item--expanded {
 
                       h3.section-toggle {
+                        font-family: $rhd-font-stack-display;
                         margin-top:15px;
                         margin-bottom:20px;
                         font-weight:700;
@@ -83,7 +84,6 @@ footer[role="contentinfo"] {
                       &.collapsed {
                         @media (max-width:1170px) {
                           h3.section-toggle {
-
                             &:before {
                               content: "\203A";
                               display: inline-block;
