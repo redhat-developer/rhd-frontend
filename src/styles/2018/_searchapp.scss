@@ -14,6 +14,11 @@ rhdp-search-app {
     }
 }
 
+// Override PF form styles
+.region.region-content rhdp-search-box form.search-bar {
+    display: flex;
+} 
+
 rhdp-search-box {
     margin: 0 0 1em 0;
 
