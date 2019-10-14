@@ -24,7 +24,6 @@ export default class RHDPOSDownload extends HTMLElement {
         if (this._url === value) return;
         this._url = value;
         this.setAttribute('url', this._url);
-
     }
 
     get productCode() {
@@ -35,6 +34,7 @@ export default class RHDPOSDownload extends HTMLElement {
         if (this._productCode === value) return;
         this._productCode = value;
         this.setAttribute('product-code', this._productCode);
+        this.render();
     }
 
     get platformType() {
@@ -45,6 +45,7 @@ export default class RHDPOSDownload extends HTMLElement {
         if (this._platformType === value) return;
         this._platformType = value;
         this.setAttribute('platform-type', this._platformType)
+        this.render();
     }
 
     get downloadURL() {
@@ -86,8 +87,7 @@ export default class RHDPOSDownload extends HTMLElement {
         if (this._winURL === value) return;
         this._winURL = value;
         this.setAttribute('windows-download', this._winURL)
-
-
+        this.render();
     }
 
     get productName() {
@@ -98,7 +98,7 @@ export default class RHDPOSDownload extends HTMLElement {
         if (this._productName === value) return;
         this._productName = value;
         this.setAttribute('name', this._productName)
-
+        this.render();
     }
 
     get version() {
@@ -109,7 +109,7 @@ export default class RHDPOSDownload extends HTMLElement {
         if (this._version === value) return;
         this._version = value;
         this.setAttribute('version', this._version)
-
+        this.render();
     }
 
     get displayOS() {
@@ -120,13 +120,18 @@ export default class RHDPOSDownload extends HTMLElement {
         if (this._displayOS === value) return;
         this._displayOS = value;
         this.setAttribute('display-os', this._displayOS);
+        this.render();
     }
 
     template = (strings, product, downloadUrl, platform, version) => {
         return `<div class="large-8 columns download-link">
                     <a class="button heavy-cta" href="${downloadUrl}">
                         <i class="fa fa-download"></i> Download</a>
-                    <div class="version-name">${product} ${version} ${this.displayOS ? `for ${platform}` : ''}</div>
+                    <div class="version-name">
+                        <span id="rhdp-os-dl-product">${product}</span> 
+                        <span id="rhdp-os-dl-version">${version}</span> 
+                        <span id="rhdp-os-dl-os">${this.displayOS ? `for <span id="rhdp-os-dl-platform">${platform}</span></span>` : ''}
+                    </div>
                 </div>
                 `;
     };
@@ -134,7 +139,11 @@ export default class RHDPOSDownload extends HTMLElement {
         return `<div class="large-8 columns download-link">
                     <a class="button heavy-cta" href="${downloadUrl}">
                         <i class="fa fa-download"></i> Download</a>
-                    <div class="version-name">${product} ${version} ${this.displayOS ? `for ${platform}` : ''}</div>
+                    <div class="version-name">
+                        <span id="rhdp-os-dl-product">${product}</span> 
+                        <span id="rhdp-os-dl-version">${version}</span> 
+                        ${this.displayOS ? `for <span id="rhdp-os-dl-platform">${platform}</span>` : ''}
+                    </div>
                 </div>
                 `;
     };
@@ -142,17 +151,28 @@ export default class RHDPOSDownload extends HTMLElement {
     connectedCallback() {
         this.platformType = this.getUserAgent();
         this.setDownloadURLByPlatform();
-        this.innerHTML = this.template`${this.productName}${this.downloadURL}${this.platformType}${this.version}`;
-
+        this.render();
     }
 
     static get observedAttributes() {
-        return ['product-code','platform-type', 'download-url', 'name'];
+        return ['product-code','platform-type', 'download-url', 'name', 'version'];
     }
 
 
     attributeChangedCallback(name, oldVal, newVal) {
-        this[name] = newVal;
+        let m = {
+            'product-code': 'productCode',
+            'platform-type': 'platformType',
+            'download-url': 'downloadURL',
+            'name': 'productName',
+            'version':'version'
+        }
+
+        this[m[name]] = newVal;
+    }
+
+    render() {
+        this.innerHTML = this.template`${this.productName}${this.downloadURL}${this.platformType}${this.version}`;
     }
 
     getUserAgent(){
@@ -213,7 +233,4 @@ export default class RHDPOSDownload extends HTMLElement {
 
 }
 
-window.addEventListener('WebComponentsReady', function() {
-    customElements.define('rhdp-os-download', RHDPOSDownload);
-});
-
+customElements.define('rhdp-os-download', RHDPOSDownload);
