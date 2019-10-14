@@ -54,7 +54,7 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
   &-desktop {
     @media screen and (max-width: $pf-global--breakpoint--lg) {
       display: none;
-    }    
+    }
   }
 
   &-mobile {
@@ -107,7 +107,7 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
       color: var(--pf-global--Color--300);
       font-weight: var(--pf-global--FontWeight--bold);
       text-align: center;
-      
+
       > span,
       &:hover, &:focus, &:active {
         text-decoration: none;
@@ -180,7 +180,7 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
 
 .rhd-l-topics {
   @extend .pf-u-align-items-center;
-  @extend .pf-u-mt-lg;  
+  @extend .pf-u-mt-lg;
 
   max-width: 100%;
   margin: 0 auto;
@@ -374,4 +374,9 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
       }
     }
   }
+}
+
+// Needed for magical searchbox in main nav
+.rhd-main-menu {
+  position: relative;
 }
