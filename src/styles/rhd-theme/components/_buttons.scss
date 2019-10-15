@@ -98,7 +98,9 @@
     // Link on dark background
     &-on-dark {
       color: var(--rhd-c-button--m-link-dark--Color);
-
+      @media screen and (max-width: $pf-global--breakpoint--sm) {
+        text-align: left;
+      }
       &:hover,
       &:focus,
       &.pf-m-active,
@@ -188,7 +190,9 @@
 
     &-on-dark {
       color: var(--rhd-c-button--m-secondary-dark--Color);
-
+      @media screen and (max-width: $pf-global--breakpoint--sm) {
+        text-align: left;
+      }
       &:hover,
       &:focus,
       &.pf-m-active,
