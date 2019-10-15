@@ -23,7 +23,7 @@
           transform: $transforms;
 }
 
-//mixin for forcing word wrap 
+//mixin for forcing word wrap
 @mixin word-wrap() {
   overflow-wrap: break-word;
   word-wrap: break-word;

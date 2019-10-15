@@ -1,8 +1,10 @@
+@import "../mixins";
+
 .assembly-type-call_to_action {
   background: var(--rhd-theme--ui-background-dark--light-blue);
+  @include with-background-padding;
 
   .cta__container {
-    padding: var(--rhd-theme--container-spacer-lg) 0;
     text-align: center;
     color: #FFFFFF;
   }

@@ -12,12 +12,14 @@
 // PatternFly Core
 @import "../../../node_modules/@patternfly/patternfly/components/Table/table.scss";
 
+@import "mixins";
+
 // Components
+@import "components/component-base";
 @import "components/avatar";
 @import "components/bonus-content-item";
 @import "components/buttons";
 @import "components/cta";
-@import "components/component-base";
 @import "components/visual-styles";
 @import "components/bands";
 @import "components/buttons";
@@ -63,6 +65,7 @@ pfe-cta {
 
 .has-background {
   position: relative;
+  @include with-background-padding;
 }
 
 .pfe-headline-link {
@@ -88,19 +91,4 @@ h1, h2, h3, h4, h5, h6 {
         text-decoration: var(--pf-global--link--TextDecoration);
     }
   }
-}
-
-// Assembly spacing
-
-.assembly.component:first-of-type {
-  padding: var(--rhd-theme--container-spacer-xl) var(--rhd-theme--container-spacer-3xl);
-}
-.assembly.component {
-  padding: 0 var(--rhd-theme--container-spacer-3xl) var(--rhd-theme--container-spacer-xl) var(--rhd-theme--container-spacer-3xl);
-}
-.assembly.component.has-background {
-  padding: var(--rhd-theme--container-spacer-lg) var(--rhd-theme--container-spacer-3xl);
-}
-.assembly.component.has-background + .assembly.component:not(.has-background) {
-  padding: var(--rhd-theme--container-spacer-xl) var(--rhd-theme--container-spacer-3xl);
 }

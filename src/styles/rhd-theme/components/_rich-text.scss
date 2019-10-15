@@ -1,9 +1,4 @@
 .rich-text {
-  .pf-l-grid {
-    padding-bottom: var(--pf-global--spacer--lg);
-    padding-top: var(--pf-global--spacer--lg);
-  }
-
   .pf-l-grid__item {
     &:nth-child(1) {
       order: 1;

@@ -1,5 +1,7 @@
+@import "../mixins";
 .assembly-type-featured_products {
   background-color: var(--rhd-gray-2);
+  @include with-background-padding;
 
   .featured_products__title {
     margin-bottom: var(--rhd-theme--container-spacer-lg);
@@ -14,7 +16,7 @@
   }
   &.dark {
     background: #242424;
-    
+
     & .featured_products__title {
       color: var(--pf-global--Color--light-100);
     }
