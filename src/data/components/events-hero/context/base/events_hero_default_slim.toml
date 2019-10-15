@@ -37,7 +37,8 @@ templates = ["""
               </div>
             </div>
         </div>
-        <button class="pf-c-button">Sign up</button>
+        <button class="pf-c-button pf-u-mr-lg">Sign up</button>
+        <a class="pf-c-button pf-u-pl-0" href="#">This is the light CTA on dark <span class="pf-c-button__icon"><i class="fas fa-arrow-right"></i></span></a>
       </div>
     </div>
   </section>
