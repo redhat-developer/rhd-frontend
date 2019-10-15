@@ -12,7 +12,7 @@ templates = ["""
       <div class="thankyoupanels" style="display: block;">
         <div class="pf-l-grid">
           <div class="pf-l-grid__item pf-m-12-col">
-            <p style="display: block;"><i class="far fa-file-alt fa-2x"></i> By downloading this product you have agreed with our <a href="/terms-and-conditions/">terms and conditions </a>on <span id="tcWhenSigned">August 13, 2019</span>. You will be notified again in <span id="tcEndsIn">302 days </span> after your subscription ends. </p>
+            <p style="display: block;">By downloading this product you have agreed with our <a href="/terms-and-conditions/">terms and conditions </a>on <span id="tcWhenSigned">August 13, 2019</span>. You will be notified again in <span id="tcEndsIn">302 days </span> after your subscription ends. </p>
           </div>
         </div>
       </div>

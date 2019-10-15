@@ -73,7 +73,7 @@ app.termsAndConditions = {
             messageTemplate = messageTemplate + '<div class="thankyoupanels" style="display: none;">';
             messageTemplate = messageTemplate + '<div class="pf-l-grid">';
             messageTemplate = messageTemplate + '<div class="pf-l-grid__item pf-m-12-col">';
-            messageTemplate = messageTemplate + '<i class="far fa-file-alt fa-2x"></i><p style="display: none;">By downloading this product you have agreed with our <a href="/terms-and-conditions/">terms and conditions </a>on <span id="tcWhenSigned">' + tmpTcWhenSigned + '</span>. You will be notified again in <span id="tcEndsIn">'+ tmpTcEndsIn +'</span> after your subscription ends. </p>';
+            messageTemplate = messageTemplate + '<p style="display: none;">By downloading this product you have agreed with our <a href="/terms-and-conditions/">terms and conditions </a>on <span id="tcWhenSigned">' + tmpTcWhenSigned + '</span>. You will be notified again in <span id="tcEndsIn">'+ tmpTcEndsIn +'</span> after your subscription ends. </p>';
             messageTemplate = messageTemplate + '</div>';
             messageTemplate = messageTemplate + '</div>';
             messageTemplate = messageTemplate + '</div>';
