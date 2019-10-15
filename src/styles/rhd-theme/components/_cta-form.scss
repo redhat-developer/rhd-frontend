@@ -1,3 +1,7 @@
+@import "../mixins";
+.assembly-type-cta_form {
+    @include with-background-padding;
+}
 .rhd-c-cta-form {
     .pf-c-form__group {
         margin-top: var(--rhd-theme--container-spacer-lg);
@@ -48,8 +52,8 @@
             @extend .pf-c-button;
             @extend .pf-m-heavy;
         }
-        
-        
+
+
         .form-item {
             @extend .pf-c-form__group;
             margin: var(--rhd-theme--container-spacer-md) 0;

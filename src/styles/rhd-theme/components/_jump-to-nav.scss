@@ -1,6 +1,8 @@
+@import "../mixins";
+
 .rhd-jump-to-nav {
   background-color: var(--pf-global--primary-color--100);
-  padding:var(--rhd-theme--container-spacer-lg);
+  @include with-background-padding;
   @media screen and (max-width: $pf-global--breakpoint--lg) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

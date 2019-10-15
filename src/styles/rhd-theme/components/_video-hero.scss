@@ -1,18 +1,11 @@
+@import "../mixins";
+
 .assembly.component {
   &.assembly-type-video_hero {
-    padding-top: 0;
-    padding-bottom: 0;
-    &:first-of-type {
-      padding-top: 0;
-      padding-bottom: 0;
-    }
+    @include with-background-padding;
   }
   .rhd-c-video {
     grid-gap: var(--pf-global--spacer--lg); // 24px
-    padding: var(--pf-global--spacer--xl) 0; // 32px 0 ;
-    & + .rhd-c-video {
-      padding: 0 0 var(--pf-global--spacer--xl) 0; // 0 0 32px 0 ;
-    }
 
     .rhd-c-video--wrapper {
       @media only screen and (min-width: 576px) {
