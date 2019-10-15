@@ -9,6 +9,9 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
   @media screen and (min-width: $pf-global--breakpoint--xl) {
     padding: 0;
   }
+  @media screen and (min-width: $pf-global--breakpoint--xl) and (max-width: $pf-global--breakpoint--2xl) {
+    margin: var(--pf-global--spacer--lg) var(--rhd-theme--container-spacer-3xl) 0 var(--rhd-theme--container-spacer-3xl);
+  }
   @media screen and (max-width: $pf-global--breakpoint--lg) {
     padding: 0 var(--rhd-theme--container-spacer-xl);
   }
@@ -190,7 +193,9 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
   @media screen and (min-width: $pf-global--breakpoint--xl) {
     padding: 0;
   }
-
+  @media screen and (min-width: $pf-global--breakpoint--xl) and (max-width: $pf-global--breakpoint--2xl) {
+    margin: 0 var(--rhd-theme--container-spacer-3xl);
+  }
   @media screen and (max-width: $pf-global--breakpoint--lg) {
     padding: 0;
     margin: 0 var(--pf-global--spacer--lg);
@@ -262,6 +267,9 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
   padding: 0 var(--rhd-theme--container-spacer-3xl);
   @media screen and (min-width: $pf-global--breakpoint--xl) {
     padding: 0;
+  }
+  @media screen and (min-width: $pf-global--breakpoint--xl) and (max-width: $pf-global--breakpoint--2xl) {
+    margin: 0 var(--rhd-theme--container-spacer-3xl);
   }
   @media screen and (max-width: $pf-global--breakpoint--lg) {
     padding: 0 var(--rhd-theme--container-spacer-xl);
