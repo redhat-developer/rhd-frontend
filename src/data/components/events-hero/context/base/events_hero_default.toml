@@ -1,5 +1,5 @@
 templates = ["""
-  <section class="component pf-c-content rhd-c-events-hero dark background">
+  <section class="component pf-c-content rhd-c-events-hero dark has-background">
     <div class="pf-l-grid pf-m-gutter">
       <div class="pf-l-grid__item pf-m-12-col">
         <h2>Title of the event</h2>

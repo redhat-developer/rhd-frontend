@@ -172,7 +172,7 @@
     }
 
     >.pf-l-grid {
-      >.pf-l-grid__item:not(.pf-m-12-col) { 
+      >.pf-l-grid__item { 
         &:nth-child(2) {
           .pf-c-button {      
             &+.pf-c-button {

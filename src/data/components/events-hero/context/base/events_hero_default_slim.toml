@@ -1,5 +1,5 @@
 templates = ["""
-  <section class="component pf-c-content rhd-c-events-hero assembly-slim dark background">
+  <section class="component pf-c-content rhd-c-events-hero assembly-slim dark has-background">
     <div class="pf-l-grid pf-m-gutter">
       <div class="pf-l-grid__item pf-m-12-col">
         <h2>Title of the event</h2>
@@ -37,7 +37,8 @@ templates = ["""
               </div>
             </div>
         </div>
-        <button class="pf-c-button">Sign up</button>
+        <button class="pf-c-button pf-u-mr-lg">Sign up</button>
+        <a class="pf-c-button pf-u-pl-0" href="#">This is the light CTA on dark <span class="pf-c-button__icon"><i class="fas fa-arrow-right"></i></span></a>
       </div>
     </div>
   </section>
