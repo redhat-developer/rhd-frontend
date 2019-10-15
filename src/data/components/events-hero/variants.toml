@@ -19,21 +19,11 @@ name = "Events Hero (2 Events) - Light"
 order = 4
 
 [[variant]]
-id = "events_hero_3events_default"
-name = "Events Hero (3 Events) - Default"
-order = 5
-
-[[variant]]
-id = "events_hero_3events_light"
-name = "Events Hero (3 Events) - Light"
-order = 6
-
-[[variant]]
 id = "events_hero_default_slim"
 name = "Events Hero (Slim) - Default"
-order = 7
+order = 5
 
 [[variant]]
 id = "events_hero_light_slim"
 name = "Events Hero (Slim) - Light"
-order = 8
+order = 6
