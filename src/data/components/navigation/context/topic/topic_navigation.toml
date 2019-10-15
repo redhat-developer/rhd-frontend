@@ -5,7 +5,6 @@ templates = ["""
   </button>
   <div class="pf-l-flex rhd-c-nav--topics-wrapper">
     <div class="pf-l-flex pf-m-grow">
-
       <nav class="pf-m-start pf-m-end rhd-c-nav--topics" aria-label="Local">
         <ul class="pf-c-nav__tertiary-list">
           <li class="pf-c-nav__item">
@@ -48,20 +47,20 @@ templates = ["""
               Knative
             </a>
           </li>
-          <li class="pf-c-nav__item pf-u-mr-0 pf-u-display-flex pf-u-display-none-on-lg">
+          <li class="pf-c-nav__item all-topics-inner">
             <a href="#" class="pf-c-nav__link">
-              All topics <i class="fas fa-arrow-right"></i>
+              All topics <i class="fas fa-caret-right"></i>
             </a>
           </li>
         </ul>
       </nav>
     </div>
-    <div class="pf-l-flex pf-u-display-none pf-u-display-flex-on-lg">
+    <div class="pf-l-flex all-topics-outer">
       <nav class="pf-c-nav rhd-c-nav--topics" aria-label="Local">
         <ul class="pf-c-nav__tertiary-list">
           <li class="pf-c-nav__item pf-u-mr-0">
             <a href="#" class="pf-c-nav__link">
-              All topics <i class="fas fa-arrow-right"></i>
+              All topics <i class="fas fa-caret-right"></i>
             </a>
           </li>
         </ul>

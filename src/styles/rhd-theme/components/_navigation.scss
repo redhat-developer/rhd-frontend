@@ -1,4 +1,5 @@
 $max-nav-width: map-get($rhd-breakpoints, xlarge);
+$custom-nav-breakpoint: 1150px;
 
 .rhd-c-nav {
   @extend .pf-u-align-items-center;
@@ -206,7 +207,7 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
 
   .pf-c-nav__scroll-button {
     &:hover, &:focus, &:visited, {
-        color: var(--pf-global--Color--100);
+      color: var(--pf-global--Color--100);
     }
     @media screen and (max-width: $pf-global--breakpoint--lg) {
       display: block;
@@ -227,6 +228,20 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
   }
   @media screen and (max-width: $pf-global--breakpoint--sm) {
       padding: 0 var(--rhd-theme--container-spacer-md);
+  }
+
+  .all-topics-inner {
+    display: none;
+    @media screen and (max-width: $custom-nav-breakpoint) {
+      display: flex;
+    }
+  }
+
+  .all-topics-outer {
+    display: none;
+    @media screen and (min-width: $custom-nav-breakpoint) {
+      display: flex;
+    }
   }
 }
 .rhd-c-nav--topics {
@@ -279,7 +294,7 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
   }
 
   &-links {
-    @media screen and (max-width: 1150px) {
+    @media screen and (max-width: $custom-nav-breakpoint) {
       .pf-c-nav__tertiary-list .pf-c-nav__item:not(:first-of-type) {
         display: none;
       }
