@@ -20,9 +20,9 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
   }
 
   .pf-c-brand {
-    max-width: 180px;
+    width: 180px;
     @media screen and (max-width: $pf-global--breakpoint--sm) {
-      max-width: 100px;
+      width: 100px;
     }
   }
 
@@ -30,7 +30,6 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
   .pf-c-nav__tertiary-list a {
     color: var(--pf-global--Color--200);
     font-weight: var(--pf-global--FontWeight--bold);
-    text-transform: uppercase;
 
     &:hover,
     &:focus,
@@ -272,7 +271,7 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
   }
 
   &-links {
-    @media screen and (max-width: $pf-global--breakpoint--xl) {
+    @media screen and (max-width: 1150px) {
       .pf-c-nav__tertiary-list .pf-c-nav__item:not(:first-of-type) {
         display: none;
       }
@@ -293,7 +292,6 @@ $max-nav-width: map-get($rhd-breakpoints, xlarge);
   .pf-c-nav__tertiary-list .pf-c-nav__link,
   .pf-c-nav__tertiary-list a {
     color: #999;
-    text-transform: uppercase;
     font-size: var(--pf-global--FontSize--sm);
     padding: var(--pf-global--spacer--xs) 0;
 
