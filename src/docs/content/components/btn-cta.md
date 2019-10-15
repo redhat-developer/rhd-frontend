@@ -136,6 +136,9 @@ component: "cta"
     </button>
   </div>
   <div class="pf-l-grid__item pf-m-offset-1-col-on-md">
-    <p><a class="button heavy-cta" href="https://developers.redhat.com/register/?intcmp=701f2000001OMHaAAO">Join Red Hat Developer</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button medium-cta" href="/articles/red-hat-developer-program-benefits/">Learn more</a></p>
+    <p>
+      <a class="button heavy-cta" href="https://developers.redhat.com/register/?intcmp=701f2000001OMHaAAO">Join Red Hat Developer</a>
+      <a class="button medium-cta" href="/articles/red-hat-developer-program-benefits/">Learn more</a>
+    </p>
    </div>
 </div>
