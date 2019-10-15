@@ -52,14 +52,24 @@
 //base button class
 .pf-c-button {
   font-family: var(--pfe-theme--font-family);
+  margin-bottom: var(--rhd-theme--container-spacer-xs);
+  @media screen and (max-width: $pf-global--breakpoint--sm) {
+    display: block;
+    margin-bottom: var(--rhd-theme--container-spacer-md);
+    width: 100%;
+    white-space: normal;
+  }
 }
 
 .pf-c-button {
+  
   //link button
   &.pf-m-link {
     color: var(--rhd-c-button--m-link--Color);
     background-color: transparent;
-
+    @media screen and (max-width: $pf-global--breakpoint--sm) {
+      text-align: left;
+    }
     &:hover,
     &:focus,
     &.pf-m-active,
@@ -88,7 +98,9 @@
     // Link on dark background
     &-on-dark {
       color: var(--rhd-c-button--m-link-dark--Color);
-
+      @media screen and (max-width: $pf-global--breakpoint--sm) {
+        text-align: left;
+      }
       &:hover,
       &:focus,
       &.pf-m-active,
@@ -149,7 +161,9 @@
   &.pf-m-link--secondary {
     @extend .pf-m-link;
     color: var(--rhd-c-button--m-tertiary--Color);
-
+    @media screen and (max-width: $pf-global--breakpoint--sm) {
+      text-align: left;
+    }
     &:hover,
     &:focus,
     &.pf-m-active,
@@ -176,7 +190,9 @@
 
     &-on-dark {
       color: var(--rhd-c-button--m-secondary-dark--Color);
-
+      @media screen and (max-width: $pf-global--breakpoint--sm) {
+        text-align: left;
+      }
       &:hover,
       &:focus,
       &.pf-m-active,
@@ -518,6 +534,12 @@
 //add legacy button style classes and extend.
 .button {
   @extend .pf-c-button;
+  margin-bottom: var(--rhd-theme--container-spacer-xs);
+  @media screen and (max-width: $pf-global--breakpoint--sm) {
+    display: block;
+    margin-bottom: var(--rhd-theme--container-spacer-md);
+    white-space: normal;
+  }
   &:hover {
     text-decoration: none !important;
   }
