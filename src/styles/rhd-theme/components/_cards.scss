@@ -335,8 +335,10 @@
 .rhd-c-card__title:first-child {
   max-height: 70px;
   min-height: 70px;
+  transition: ease-in-out 0.70s max-height;
+  transition-delay: 0.1s;
   &:hover {
-    max-height: none;
+    max-height: 210px;
   }
 }
 
