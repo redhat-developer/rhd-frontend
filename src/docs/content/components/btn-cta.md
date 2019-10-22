@@ -29,8 +29,8 @@ component: "cta"
     </button>
   </div>
 </div>
-
-<h2 class="pf-c-title pf-m-lg">Button variations - dark background</h2>
+<br/>
+<h2 class="pf-c-title pf-m-lg">Button variations - dark background - -on-dark variants of buttons</h2>
 
 <div class="pf-l-grid pf-m-gutter">
   <div class="pf-l-grid__item pf-m-10-col pf-m-offset-1-col-on-md pf-u-p-md" style="background-color: #000;">
@@ -47,7 +47,25 @@ component: "cta"
     </button>
   </div>
 </div>
+<br/>
+<h2 class="pf-c-title pf-m-lg">Button variations - dark background - dark class on container</h2>
 
+<div class="pf-l-grid pf-m-gutter">
+  <div class="pf-l-grid__item pf-m-10-col pf-m-offset-1-col-on-md pf-u-p-md dark" style="background-color: #000;">
+    <button class="pf-c-button pf-m-secondary">Secondary blue (dark)</button>
+    <button class="pf-c-button pf-m-secondary-alt">Secondary red (dark)</button>
+    <button class="pf-c-button pf-m-tertiary">Secondary black (dark)</button>
+    <button class="pf-c-button pf-m-link">
+      Link button
+      <span class="pf-c-button__icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+    </button>
+    <button class="pf-c-button pf-m-link--secondary">
+      Link button
+      <span class="pf-c-button__icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+    </button>
+  </div>
+</div>
+<br/>
 <h2 class="pf-c-title pf-m-lg">Legacy Button Styles for existing rich text content</h2>
 <div class="pf-l-grid pf-m-gutter">
   <div class="pf-l-grid__item pf-m-10-col pf-m-offset-1-col-on-md pf-u-p-md" style="border: 1px dashed #ddd;">
@@ -58,7 +76,18 @@ component: "cta"
     <a href="#" title="" class="button medium-cta red">Secondary / Medium CTA Red</a>
   </div>
 </div>
-
+<br/>
+<h2 class="pf-c-title pf-m-lg">Legacy Button Styles for existing rich text content on dark</h2>
+<div class="pf-l-grid pf-m-gutter">
+  <div class="pf-l-grid__item pf-m-10-col pf-m-offset-1-col-on-md pf-u-p-md dark" style="border: 1px dashed #ddd; background-color: #000;">
+    <a href="#" title="" class="button heavy-cta">Primary / Heavy CTA</a>
+    <a href="#" title="" class="button heavy-cta blue">Primary / Heavy CTA Blue</a>
+    <a href="#" title="" class="button medium-cta">Secondary / Medium CTA</a>
+    <a href="#" title="" class="button medium-cta blue">Secondary / Medium CTA Blue</a>
+    <a href="#" title="" class="button medium-cta red">Secondary / Medium CTA Red</a>
+  </div>
+</div>
+<br/>
 <h2 class="pf-c-title pf-m-lg">Button states</h2>
 
 <div class="pf-l-grid pf-m-gutter">
@@ -135,10 +164,5 @@ component: "cta"
       <span class="pf-c-button__icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
     </button>
   </div>
-  <div class="pf-l-grid__item pf-m-offset-1-col-on-md">
-    <p>
-      <a class="button heavy-cta" href="https://developers.redhat.com/register/?intcmp=701f2000001OMHaAAO">Join Red Hat Developer</a>
-      <a class="button medium-cta" href="/articles/red-hat-developer-program-benefits/">Learn more</a>
-    </p>
-   </div>
 </div>
+

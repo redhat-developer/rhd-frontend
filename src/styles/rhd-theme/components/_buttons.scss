@@ -47,6 +47,18 @@
   --rhd-c-button--m-tertiary--Color: #151515;
   --rhd-c-button--m-tertiary--BorderColor: #151515;
   --rhd-c-button--m-tertiary--BackgroundColor: #151515;
+
+  --rhd-c-button--m-tertiary-hover--Color: #fff;
+  --rhd-c-button--m-tertiary-hover--BorderColor: #151515;
+  --rhd-c-button--m-tertiary-hover--BackgroundColor: #151515;
+
+  --rhd-c-button--m-tertiary-dark--Color: #fff;
+  --rhd-c-button--m-tertiary-dark--BorderColor: #fff;
+  --rhd-c-button--m-tertiary-dark--BackgroundColor: transparent;
+
+  --rhd-c-button--m-tertiary-dark--hover--Color: #151515;
+  --rhd-c-button--m-tertiary-dark--hover--BorderColor: #fff;
+  --rhd-c-button--m-tertiary-dark--hover--BackgroundColor: #fff;
 }
 
 //base button class
@@ -134,22 +146,22 @@
     &.pf-m-active,
     &.pf-m-focus {
       color: var(--rhd-c-button--m-link-dark--hover--Color);
-
       &>.pf-c-button__icon>i,
       &>.pf-c-button__icon>.svg-inline--fa {
         color: var(--rhd-c-button--m-link-dark--hover--Color) !important;
+        
       }
     }
 
     &>.pf-c-button__icon>i,
     &>.pf-c-button__icon>.svg-inline--fa {
-      color: var(--rhd-c-button--m-link-dark--Color);
+      color: var(--rhd-c-button--m-link-dark--Color) !important;
 
       &:hover,
       &:active,
       &:focus,
       &:visited {
-        color: var(--rhd-c-button--m-link-dark--hover--Color);
+        color: var(--rhd-c-button--m-link-dark--hover--Color) !important;
       }
     }
   }
@@ -222,7 +234,6 @@
 
     .dark & {
       color: var(--rhd-c-button--m-secondary-dark--Color);
-
       &:hover,
       &:focus,
       &.pf-m-active,
@@ -245,7 +256,7 @@
         &:active,
         &:focus,
         &:visited {
-          color: #9D9D9D;
+          color: #9D9D9D !important;
         }
       }
     }
@@ -337,8 +348,11 @@
     // Secondary CTA - dark background
     &-on-dark {
       color: var(--rhd-c-button--m-secondary-dark--Color);
-      border: 1px solid var(--rhd-c-button--m-secondary-dark--BorderColor);
-
+      //border: 1px solid var(--rhd-c-button--m-secondary-dark--BorderColor);
+      border: none;
+      &:after {
+        border-color: var(--rhd-c-button--m-secondary-dark--BorderColor);
+      }
       &:hover,
       &:active,
       &.pf-m-active,
@@ -357,15 +371,18 @@
 
     .dark & {
       color: var(--rhd-c-button--m-secondary-dark--Color);
-      border: 1px solid var(--rhd-c-button--m-secondary-dark--BorderColor);
-
+      //border: 1px solid var(--rhd-c-button--m-secondary-dark--BorderColor);
+      border: none;
+      &:after {
+        border-color: var(--rhd-c-button--m-secondary-dark--BorderColor);
+      }
       &:hover,
       &:active,
       &.pf-m-active,
       &:focus,
       &.pf-m-focus {
         color: var(--rhd-c-button--m-secondary-dark--hover--Color);
-        border-color: var(--rhd-c-button--m-secondary-dark--hover--BorderColor);
+        
         background-color: var(--rhd-c-button--m-secondary-dark--hover--BackgroundColor);
       }
 
@@ -407,9 +424,12 @@
 
     // Secondary CTA - dark background
     &-on-dark {
-      color: var(--rhd-c-button--m-secondary-alt-dark--Color);
-      border: 1px solid var(--rhd-c-button--m-secondary-alt-dark--BorderColor);
-
+      color: var(--rhd-c-button--m-secondary-dark--Color);
+      //border: 1px solid var(--rhd-c-button--m-secondary-dark--BorderColor);
+      border: none;
+      &:after {
+        border-color: var(--rhd-c-button--m-secondary-alt-dark--BorderColor);
+      }
       &:hover,
       &:active,
       &.pf-m-active,
@@ -427,8 +447,8 @@
     }
     .dark & {
       color: var(--rhd-c-button--m-secondary-alt-dark--Color);
-      border: 1px solid var(--rhd-c-button--m-secondary-alt-dark--BorderColor);
-
+      //border: 1px solid var(--rhd-c-button--m-secondary-alt-dark--BorderColor);
+      border: none;
       &:hover,
       &:active,
       &.pf-m-active,
@@ -481,21 +501,19 @@
     // Secondary CTA - dark background
     &-on-dark {
       color: var(--rhd-c-button--m-secondary-dark--Color);
-      border: 1px solid var(--rhd-c-button--m-secondary-dark--BorderColor);
-
-      &:hover {
-        color: var(--rhd-c-button--m-secondary-dark--hover--Color);
-        border-color: var(--rhd-c-button--m-secondary-dark--BorderColor);
-        background-color: var(--rhd-c-button--m-secondary-dark--BorderColor);
+      //border: 1px solid var(--rhd-c-button--m-secondary-dark--BorderColor);
+      border: none;
+      &:after {
+        border-color: var(--rhd-c-button--m-tertiary-dark--BorderColor);
       }
-
+      &:hover,
       &:active,
       &.pf-m-active,
       &:focus,
       &.pf-m-focus {
-        color: var(--rhd-c-button--m-secondary-dark--hover--Color);
-        border-color: var(--rhd-c-button--m-secondary-dark--hover--BorderColor);
-        background-color: var(--rhd-c-button--m-secondary-dark--hover--BackgroundColor);
+        color: var(--rhd-c-button--m-tertiary-dark--hover--Color);
+        border-color: var(--rhd-c-button--m-tertiary-dark--hover--BorderColor);
+        background-color: var(--rhd-c-button--m-tertiary-dark--hover--BackgroundColor);
       }
 
       &:disabled,
@@ -504,22 +522,25 @@
       }
     }
     .dark & {
-      color: var(--rhd-c-button--m-secondary-dark--Color);
-      border: 1px solid var(--rhd-c-button--m-secondary-dark--BorderColor);
-
+      color: var(--rhd-c-button--m-tertiary-dark--Color);
+      //border: 1px solid var(--rhd-c-button--m-tertiary-dark--BorderColor);
+      border: none;
+      &:after {
+        border-color: var(--rhd-c-button--m-tertiary-dark--BorderColor);
+      }
       &:hover {
-        color: var(--rhd-c-button--m-secondary-dark--hover--Color);
-        border-color: var(--rhd-c-button--m-secondary-dark--BorderColor);
-        background-color: var(--rhd-c-button--m-secondary-dark--BorderColor);
+        color: var(--rhd-c-button--m-tertiary-dark--hover--Color);
+        border-color: var(--rhd-c-button--m-tertiary-dark--BorderColor);
+        background-color: var(--rhd-c-button--m-tertiary-dark--BorderColor);
       }
 
       &:active,
       &.pf-m-active,
       &:focus,
       &.pf-m-focus {
-        color: var(--rhd-c-button--m-secondary-dark--hover--Color);
-        border-color: var(--rhd-c-button--m-secondary-dark--hover--BorderColor);
-        background-color: var(--rhd-c-button--m-secondary-dark--hover--BackgroundColor);
+        color: var(--rhd-c-button--m-tertiary-dark--hover--Color);
+        border-color: var(--rhd-c-button--m-tertiary-dark--hover--BorderColor);
+        background-color: var(--rhd-c-button--m-tertiary-dark--hover--BackgroundColor);
       }
 
       &:disabled,
@@ -540,13 +561,14 @@
     margin-bottom: var(--rhd-theme--container-spacer-md);
     white-space: normal;
   }
+  border:none;
+
   &:hover {
     text-decoration: none !important;
   }
 
   &.heavy-cta {
     @extend .pf-m-heavy;
-
     &.blue {
       @extend .pf-m-primary;
     }
@@ -554,7 +576,7 @@
 
   &.medium-cta {
     @extend .pf-m-secondary;
-
+    border:none;
     &.red {
       @extend .pf-m-secondary-alt;
     }
