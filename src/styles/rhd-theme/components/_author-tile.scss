@@ -20,6 +20,7 @@
   &-name {
     @extend .rhd-c-card__footer--author;
     a {
+      font-size: var(--pf-global--FontSize--xs); // 12px
       font-weight: var(--rhd-global--FontWeight-Text--medium);
       text-decoration: none;
       .dark & {
