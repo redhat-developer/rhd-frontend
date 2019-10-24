@@ -6,66 +6,246 @@ tags: ["layout"]
 categories: ["layout"]
 ---
 
-{{< code >}}<section class="pf-l-grid pf-m-gutter">
-    <div class="" style="padding: 1em; background-color:orange; height: 50px;">
-        No Column Width
+<style>
+  .pf-l-grid > * {
+    border: 1px dashed #000;
+    font-weight: 700;
+    padding: 1em;
+  }
+  hr {
+    margin: 3em 0;
+  }
+</style>
+
+<nav class="pf-c-nav" aria-label="Local">
+  <ul class="pf-c-nav__tertiary-list">
+    <li class="pf-c-nav__item">
+      <a href="#base-grid" class="pf-c-nav__link">
+        Base grid
+      </a>
+    </li>
+  </ul>
+</nav>
+
+## Base grid
+{{< code >}}
+<section class="pf-l-grid">
+  <div class="pf-l-grid__item pf-m-12-col">12 col</div>
+  <div class="pf-l-grid__item pf-m-11-col">11 col</div><div class="pf-l-grid__item pf-m-1-col">1 col</div>
+  <div class="pf-l-grid__item pf-m-10-col">10 col</div><div class="pf-l-grid__item pf-m-2-col">2 col</div>
+  <div class="pf-l-grid__item pf-m-9-col">9 col</div><div class="pf-l-grid__item pf-m-3-col">3 col</div>
+  <div class="pf-l-grid__item pf-m-8-col">8 col</div><div class="pf-l-grid__item pf-m-4-col">4 col</div>
+  <div class="pf-l-grid__item pf-m-7-col">7 col</div><div class="pf-l-grid__item pf-m-5-col">5 col</div>
+  <div class="pf-l-grid__item pf-m-6-col">6 col</div><div class="pf-l-grid__item pf-m-6-col">6 col</div>
+</section>
+{{< /code >}}
+
+<hr>
+
+## Base grid with gutters
+{{< code >}}
+<section class="pf-l-grid pf-m-gutter">
+  <div class="pf-l-grid__item pf-m-12-col">12 col</div>
+  <div class="pf-l-grid__item pf-m-11-col">11 col</div><div class="pf-l-grid__item pf-m-1-col">1 col</div>
+  <div class="pf-l-grid__item pf-m-10-col">10 col</div><div class="pf-l-grid__item pf-m-2-col">2 col</div>
+  <div class="pf-l-grid__item pf-m-9-col">9 col</div><div class="pf-l-grid__item pf-m-3-col">3 col</div>
+  <div class="pf-l-grid__item pf-m-8-col">8 col</div><div class="pf-l-grid__item pf-m-4-col">4 col</div>
+  <div class="pf-l-grid__item pf-m-7-col">7 col</div><div class="pf-l-grid__item pf-m-5-col">5 col</div>
+  <div class="pf-l-grid__item pf-m-6-col">6 col</div><div class="pf-l-grid__item pf-m-6-col">6 col</div>
+</section>
+{{< /code >}}
+
+<hr>
+
+## Smart grid
+{{< code >}}
+<div class="pf-l-grid pf-m-all-6-col-on-sm pf-m-all-4-col-on-md pf-m-all-2-col-on-lg pf-m-all-1-col-on-xl">
+  <div class="pf-l-grid__item">
+    item 1
+  </div>
+  <div class="pf-l-grid__item">
+    item 2
+  </div>
+  <div class="pf-l-grid__item">
+    item 3
+  </div>
+  <div class="pf-l-grid__item">
+    item 4
+  </div>
+  <div class="pf-l-grid__item">
+    item 5
+  </div>
+  <div class="pf-l-grid__item">
+    item 6
+  </div>
+  <div class="pf-l-grid__item">
+    item 7
+  </div>
+  <div class="pf-l-grid__item">
+    item 8
+  </div>
+  <div class="pf-l-grid__item">
+    item 9
+  </div>
+  <div class="pf-l-grid__item">
+    item 10
+  </div>
+  <div class="pf-l-grid__item">
+    item 11
+  </div>
+  <div class="pf-l-grid__item">
+    item 12
+  </div>
+</div>
+{{< /code >}}
+
+<hr>
+
+## Row span
+{{< code >}}
+<div class="pf-l-grid pf-m-gutter">
+  <div class="pf-l-grid__item pf-m-8-col">
+    8 col
+  </div>
+  <div class="pf-l-grid__item pf-m-4-col pf-m-2-row">
+    4 col, 2 row
+  </div>
+  <div class="pf-l-grid__item pf-m-2-col pf-m-3-row">
+    2 col, 3 row
+  </div>
+  <div class="pf-l-grid__item pf-m-2-col">
+    2 col
+  </div>
+  <div class="pf-l-grid__item pf-m-4-col">
+    4 col
+  </div>
+  <div class="pf-l-grid__item pf-m-2-col">
+    2 col
+  </div>
+  <div class="pf-l-grid__item pf-m-2-col">
+    2 col
+  </div>
+  <div class="pf-l-grid__item pf-m-2-col">
+    2 col
+  </div>
+  <div class="pf-l-grid__item pf-m-4-col">
+    4 col
+  </div>
+  <div class="pf-l-grid__item pf-m-2-col">
+    2 col
+  </div>
+  <div class="pf-l-grid__item pf-m-4-col">
+    4 col
+  </div>
+  <div class="pf-l-grid__item pf-m-4-col">
+    4 col
+  </div>
+</div>
+{{< /code >}}
+
+<hr>
+
+## Example
+{{< code >}}
+<div class="pf-l-grid">
+  <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-md">
+    <div class="pf-l-grid">
+      <div class="pf-l-grid__item pf-m-12-col pf-u-mx-auto pf-u-my-0">
+        <img src="https://via.placeholder.com/350x200.png?text=Red+Hat" alt="Red Hat">
+      </div>
+      <div class="pf-l-grid__item pf-m-12-col pf-u-text-align-center">
+        Learn about the Developer program
+      </div>
     </div>
-</section>{{< /code >}}
-{{< code >}}<section class="pf-l-grid pf-m-gutter">
-    <div class="pf-m-6-col pf-m-offset-6-col" style="padding: 1em; background-color:orange; height: 50px;">
-        Static Column Width: 6
+  </div>
+  <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-md">
+    <div class="pf-l-grid">
+      <div class="pf-l-grid__item pf-m-12-col pf-u-mx-auto pf-u-my-0">
+        <img src="https://via.placeholder.com/350x200.png?text=IBM" alt="IBM">
+      </div>
+      <div class="pf-l-grid__item pf-m-12-col pf-u-text-align-center">
+        Learn about the Red Hat and Communities
+      </div>
     </div>
-</section>{{< /code >}}
-{{< code >}}<section class="pf-l-grid pf-m-gutter">
-    <div class="pf-m-10-col-on-lg pf-m-offset-2-col-on-lg" style="padding: 1em; background-color:red; height: 50px;">
-        Dynamic Column Width: 10
+  </div>
+  <div class="pf-l-grid__item pf-m-12-col pf-m-3-col-on-md pf-m-3-row-on-md">
+    <h2>Latest articles on topic</h2>
+    article text
+  </div>
+  <div class="pf-l-grid__item pf-m-12-col pf-m-9-col-on-md">
+    <div class="pf-l-grid">
+      <div class="pf-l-grid__item">
+        <img src="https://via.placeholder.com/350x200?text=Hello+world" alt="Hello World">
+      </div>
+      <div class="pf-l-grid__item">
+        Body content
+      </div>
+      <div class="pf-l-grid__item">
+        Cards
+      </div>
     </div>
-</section>{{< /code >}}
-{{< code >}}<section class="pf-l-grid pf-m-gutter">
-    <div class="pf-m-8-col-on-lg pf-m-offset-4-col-on-lg" style="padding: 1em; background-color:green; height: 50px;">
-        Dynamic Column Width: 8
+  </div>
+  <div class="pf-l-grid__item pf-m-12-col">
+    <h2>Build here, go anywhere</h2>
+  </div>
+  <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-md">
+    <div class="pf-l-grid">
+      <div class="pf-l-grid__item pf-m-12-col">
+        Full width card
+      </div>
+      <div class="pf-l-grid__item pf-m-6-col">
+        Half width card
+      </div>
+      <div class="pf-l-grid__item pf-m-6-col">
+        Half width card
+      </div>
     </div>
-</section>{{< /code >}}
-{{< code >}}<section class="pf-l-grid pf-m-gutter">
-    <div class="pf-m-6-col-on-lg pf-m-offset-5-col-on-lg" style="padding: 1em; background-color:blue; height: 50px;">
-        Dynamic Column Width: 6
+  </div>
+  <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-md">
+    <div class="pf-l-grid">
+      <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-md pf-m-2-row-on-md">
+        Card that extends over two rows on medium, 1 row on small
+      </div>
+      <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-md">
+        Single row card
+      </div>
+      <div class="pf-l-grid__item pf-m-12-col pf-m-6-col-on-md">
+        Single row card
+      </div>
     </div>
-</section>{{< /code >}}
-{{< code >}}<section class="pf-l-grid pf-m-gutter">
-    <div class="pf-l-grid pf-m-gutter pf-m-all-6-col" style="padding:var(--pf-theme--container-spacer);">
-        <div>
-            <div style="background: #EEE;">
-                <div style="padding:var(--pf-theme--container-spacer);">No Column Width</div>
-            </div>
-        </div>
-        <div>
-            <div style="background: #EEE;">
-                <div style="padding: 16px;">No Column Width</div>
-            </div>
-        </div>
-        <div>
-            <div style="background: #EEE;">
-                <div style="padding: 16px;">No Column Width</div>
-            </div>
-        </div>
+  </div>
+  <div class="pf-l-grid__item pf-m-12-col">
+    <h2>Featured resources</h2>
+  </div>
+  <div class="pf-l-grid__item pf-m-12-col pf-m-3-col-on-md pf-m-2-row-on-md">
+    <div class="pf-l-grid">
+      <div class="pf-l-grid__item pf-m-12-col">
+        <h3>2 min videos to get started</h3>
+      </div>
     </div>
-</section>{{< /code >}}
-{{< code >}}<section class="pf-l-grid pf-m-gutter">
-    <div class="pf-l-grid pf-m-gutter pf-m-all-4-col" style="background-color:orange;padding:var(--pf-theme--container-spacer);">
-        <div>
-            <div style="background: #EEE;">
-                <div style="padding: 16px;">No Column Width</div>
-            </div>
-        </div>
-        <div>
-            <div style="background: #EEE;">
-                <div style="padding: 16px;">No Column Width</div>
-            </div>
-        </div>
-        <div>
-            <div style="background: #EEE;">
-                <div style="padding: 16px;">No Column Width</div>
-            </div>
-        </div>
+    <div class="pf-l-grid">
+      <div class="pf-l-grid__item">
+        Vertical card list
+      </div>
     </div>
-</section>{{< /code >}}
+  </div>
+  <div class="pf-l-grid__item pf-m-12-col pf-m-9-col-on-md">
+    <div class="pf-l-grid">
+      <div class="pf-l-grid__item pf-m-12-col">
+        <h3>eBooks and cheat sheets</h3>
+      </div>
+    </div>
+    <div class="pf-l-grid">
+      <div class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-md">
+        Card
+      </div>
+      <div class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-md">
+        Card
+      </div>
+      <div class="pf-l-grid__item pf-m-12-col pf-m-4-col-on-md">
+        Vertical card list
+      </div>
+    </div>
+  </div>
+</div>
+{{< /code >}}
