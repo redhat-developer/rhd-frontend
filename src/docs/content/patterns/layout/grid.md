@@ -7,6 +7,12 @@ categories: ["layout"]
 ---
 
 <style>
+  nav.pf-c-nav.jump-nav {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    margin-bottom: 25px;
+  }
   .pf-l-grid > * {
     border: 1px dashed #000;
     font-weight: 700;
@@ -17,11 +23,31 @@ categories: ["layout"]
   }
 </style>
 
-<nav class="pf-c-nav" aria-label="Local">
+<nav class="pf-c-nav jump-nav" aria-label="Local">
   <ul class="pf-c-nav__tertiary-list">
     <li class="pf-c-nav__item">
       <a href="#base-grid" class="pf-c-nav__link">
-        Base grid
+        <i class="fad fa-circle"></i> Base grid
+      </a>
+    </li>
+    <li class="pf-c-nav__item">
+      <a href="#base-grid-with-gutters" class="pf-c-nav__link">
+        <i class="fad fa-circle"></i> Base grid with gutters
+      </a>
+    </li>
+    <li class="pf-c-nav__item">
+      <a href="#smart-grid" class="pf-c-nav__link">
+        <i class="fad fa-circle"></i> Smart grid
+      </a>
+    </li>
+    <li class="pf-c-nav__item">
+      <a href="#row-span" class="pf-c-nav__link">
+        <i class="fad fa-circle"></i> Row span
+      </a>
+    </li>
+    <li class="pf-c-nav__item">
+      <a href="#example" class="pf-c-nav__link">
+        <i class="fad fa-circle"></i> Example
       </a>
     </li>
   </ul>
