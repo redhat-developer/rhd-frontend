@@ -158,8 +158,8 @@ app.sso = function () {
 
     var keycloak = Keycloak({
         url: app.ssoConfig.auth_url,
-        realm: 'rhd',
-        clientId: 'web'
+        realm: app.ssoConfig.realm,
+        clientId: app.ssoConfig.client_id
     });
     app.keycloak = keycloak;
 
