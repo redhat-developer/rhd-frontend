@@ -341,7 +341,8 @@ $custom-nav-breakpoint: 1150px;
     .pf-c-nav__tertiary-list {
       height: 50px;
       li {
-        padding: var(--pf-global--spacer--sm);
+        width: auto;
+        padding: var(--pf-global--spacer--sm) var(--pf-global--spacer--md);
         &:hover {
           background-color: #424242;
         }
@@ -358,7 +359,7 @@ $custom-nav-breakpoint: 1150px;
           }
           .icon, .icon path,
           .fa-user, .fa-angle-down {
-            margin: 0 var(--pf-global--spacer--sm);
+            margin: 0 var(--pf-global--spacer--xs);
             &:hover {
               color: var(--pf-global--Color--light-100);
             }
@@ -383,6 +384,9 @@ $custom-nav-breakpoint: 1150px;
         box-shadow: 2px 2px 3px 0 rgba(0,0,0,.25);
         font-size: var(--pf-global--FontSize--sm);
         z-index: 1;
+        li {
+          width: 100% !important;
+        }
         li:hover{
           background-color: darken(#E6E6E6, 5%);
         }
