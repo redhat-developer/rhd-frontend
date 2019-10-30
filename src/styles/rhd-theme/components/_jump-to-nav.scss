@@ -16,12 +16,7 @@
     grid-template-columns: repeat(3, auto);
   }
   @media screen and (max-width: $pf-global--breakpoint--sm) {
-    // display: none;
-    grid-template-columns: repeat(2, auto);
-  }
-  @media screen and (max-width: $pf-global--breakpoint--xs) {
-    // display: none;
-    grid-template-columns: repeat(1, auto);
+    display: none;
   }
 }
 
