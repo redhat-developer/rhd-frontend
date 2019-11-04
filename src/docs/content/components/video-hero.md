@@ -15,9 +15,11 @@ scripts: []
   <div class="pf-l-grid rhd-c-video">
     <div class="rhd-c-video--wrapper">
       <div class="rhd-c-video--video-embed">
-        <iframe allowfullscreen="allowfullscreen"
-          src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
-          id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+          <iframe allowfullscreen="allowfullscreen"
+            src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
+            id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        </div>
       </div>
     </div>
     <div class="rhd-c-video--content">
@@ -83,9 +85,11 @@ scripts: []
   <div class="pf-l-grid rhd-c-video">
     <div class="rhd-c-video--wrapper">
       <div class="rhd-c-video--video-embed">
-        <iframe allowfullscreen="allowfullscreen"
-          src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
-          id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+          <iframe allowfullscreen="allowfullscreen"
+            src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
+            id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        </div>
       </div>
     </div>
     <div class="rhd-c-video--content">
@@ -151,9 +155,11 @@ scripts: []
   <div class="pf-l-grid rhd-c-video">
     <div class="rhd-c-video--wrapper">
       <div class="rhd-c-video--video-embed">
-        <iframe allowfullscreen="allowfullscreen"
-          src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
-          id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+          <iframe allowfullscreen="allowfullscreen"
+            src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
+            id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        </div>
       </div>
     </div>
     <div class="rhd-c-video--content">
@@ -220,9 +226,11 @@ scripts: []
   <div class="pf-l-grid rhd-c-video">
     <div class="rhd-c-video--wrapper">
       <div class="rhd-c-video--video-embed">
-        <iframe allowfullscreen="allowfullscreen"
-          src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
-          id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+          <iframe allowfullscreen="allowfullscreen"
+            src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
+            id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        </div>
       </div>
     </div>
     <div class="rhd-c-video--content">
@@ -290,9 +298,11 @@ scripts: []
   <div class="pf-l-grid rhd-c-video">
     <div class="rhd-c-video--wrapper">
       <div class="rhd-c-video--video-embed">
-        <iframe allowfullscreen="allowfullscreen"
-          src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
-          id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+          <iframe allowfullscreen="allowfullscreen"
+            src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
+            id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        </div>
       </div>
     </div>
     <div class="rhd-c-video--content">
@@ -359,9 +369,11 @@ scripts: []
   <div class="pf-l-grid rhd-c-video">
     <div class="rhd-c-video--wrapper">
       <div class="rhd-c-video--video-embed">
-        <iframe allowfullscreen="allowfullscreen"
-          src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
-          id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+          <iframe allowfullscreen="allowfullscreen"
+            src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
+            id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        </div>
       </div>
     </div>
     <div class="rhd-c-video--content">
@@ -428,9 +440,11 @@ scripts: []
   <div class="pf-l-grid rhd-c-video">
     <div class="rhd-c-video--wrapper">
       <div class="rhd-c-video--video-embed">
-        <iframe allowfullscreen="allowfullscreen"
-          src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
-          id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+          <iframe allowfullscreen="allowfullscreen"
+            src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
+            id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        </div>
       </div>
     </div>
     <div class="rhd-c-video--content">
@@ -498,9 +512,11 @@ scripts: []
   <div class="pf-l-grid rhd-c-video">
     <div class="rhd-c-video--wrapper">
       <div class="rhd-c-video--video-embed">
-        <iframe allowfullscreen="allowfullscreen"
-          src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
-          id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+          <iframe allowfullscreen="allowfullscreen"
+            src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
+            id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        </div>
       </div>
     </div>
     <div class="rhd-c-video--content">
@@ -567,9 +583,11 @@ scripts: []
   <div class="pf-l-grid rhd-c-video">
     <div class="rhd-c-video--wrapper">
       <div class="rhd-c-video--video-embed">
-        <iframe allowfullscreen="allowfullscreen"
-          src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
-          id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+          <iframe allowfullscreen="allowfullscreen"
+            src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
+            id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        </div>
       </div>
     </div>
     <div class="rhd-c-video--content">
@@ -636,9 +654,11 @@ scripts: []
   <div class="pf-l-grid rhd-c-video">
     <div class="rhd-c-video--wrapper">
       <div class="rhd-c-video--video-embed">
-        <iframe allowfullscreen="allowfullscreen"
-          src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
-          id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+          <iframe allowfullscreen="allowfullscreen"
+            src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
+            id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        </div>
       </div>
     </div>
     <div class="rhd-c-video--content">
@@ -697,9 +717,11 @@ scripts: []
     </div>
     <div class="rhd-c-video--wrapper">
       <div class="rhd-c-video--video-embed">
-        <iframe allowfullscreen="allowfullscreen"
-          src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
-          id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+          <iframe allowfullscreen="allowfullscreen"
+            src="https://www.youtube.com/embed/YQLOcjvbo9s?autoplay=0&amp;start=0&amp;rel=0&amp;enablejsapi=1"
+            id="YQLOcjvbo9s0" data-sdiyt="true" width="854" height="480" frameborder="0"></iframe>
+        </div>
       </div>
     </div>
   </div>
