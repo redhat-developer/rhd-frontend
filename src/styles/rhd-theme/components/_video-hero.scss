@@ -93,7 +93,15 @@
       width: 100%;
       max-width: none;
       overflow: hidden;
-  
+
+      .video-embed-field-responsive-video, .video-embed-field-provider-youtube {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
       iframe, object, embed {
         max-height: none;
         max-width: none;
@@ -106,6 +114,7 @@
           max-height: 240px;
         }
       }
+
     }
 
     .rhd-c-video--wrapper {
