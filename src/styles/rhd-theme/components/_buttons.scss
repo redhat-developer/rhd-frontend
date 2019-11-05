@@ -559,6 +559,8 @@
   @media screen and (max-width: $pf-global--breakpoint--sm) {
     display: block;
     margin-bottom: var(--rhd-theme--container-spacer-md);
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     white-space: normal;
   }
   border:none;
