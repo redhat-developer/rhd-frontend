@@ -1,4 +1,4 @@
-baseURL = "/rhd-frontend/"
+baseURL = "/"
 languageCode = "en-us"
 title = "RHD Front-end Code and Documentation"
 themesDir = "src/docs/themes"
@@ -47,15 +47,15 @@ disableFastRender = true
     [[module.mounts]]
         source = "src/styles"
         target = "assets/sass"
-    
+
     [[module.mounts]]
         source = "node_modules/@patternfly"
         target = "assets/@patternfly"
-    
+
     [[module.mounts]]
         source = "node_modules/@fortawesome"
         target = "assets/@fortawesome"
-    
+
     [[module.mounts]]
         source = "dist/js/@rhd"
         target = "assets/@rhd"

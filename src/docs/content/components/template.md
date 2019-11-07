@@ -10,6 +10,6 @@ component: "template"
 scripts: [""]
 ---
 
-__TEMPLATE COMPONENT__
+## TEMPLATE COMPONENT
 
 Sample Variations

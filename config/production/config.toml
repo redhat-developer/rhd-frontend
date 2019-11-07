@@ -1,4 +1,4 @@
-baseURL = "https://redhat-developer.github.io/rhd-frontend/"
+baseURL = "https://rhd-frontend-demo.netlify.com/"
 languageCode = "en-us"
 title = "RHD Front-end Code and Documentation"
 themesDir = "src/docs/themes"
@@ -47,11 +47,11 @@ disableFastRender = true
     [[module.mounts]]
         source = "src/styles"
         target = "assets/sass"
-    
+
     [[module.mounts]]
         source = "node_modules/@patternfly"
         target = "assets/@patternfly"
-    
+
     [[module.mounts]]
         source = "dist/js/@rhd"
         target = "assets/@rhd"
