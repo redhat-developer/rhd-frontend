@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new tab</title>
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+
+body
+{
+	font-family: 'Roboto', sans-serif!important;
+	margin:0;
+    border-radius: 5px;
+	padding:5px,2px;
+    border: 5px solid black;
+	box-sizing: border-box;
+}
+.mainscreen
+{
+	min-height: 100vh;
+	width: 100%;
+    padding: 5px,5px;
+	display: flex;
+    flex-direction: column;
+    background-color: #DFDBE5;
+	background-image: url("https://storage.googleapis.com/afs-prod/media/afs:Medium:6906200015/775.jpeg");
+}
+
+
+
+.toppart
+{
+	display: flex;
+    flex-direction: column;
+    padding: 3rem 10rem 10rem;
+    background-color: #f54f63;
+	background-image: url("https://images.all-free-download.com/images/graphicthumb/red_shading_background_05_hd_pictures_169759.jpg");
+}
+.newtext
+{
+	background: #3a2f2f73;
+	border-radius: 1rem;
+	padding:5px 2px 3px;
+	margin-top: 1rem;
+}
+.toppart .logo
+{
+	width: 4rem;
+    border-radius: 100%;
+    vertical-align: middle;
+    margin-right: 1rem;
+}
+.toppart h1
+{
+	color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0 auto 2rem;
+}
+.toppart p
+{
+	margin: 0;
+    font-size: 1.3rem;
+    color: #eaeaea;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+
+
+.bottompart
+{
+	width: 60rem;
+    margin: 0 auto;
+    background: white;
+    position: relative;
+    top: -7rem;
+    border-radius: 1.5rem;
+    box-shadow: 4px 3px 20px #3535358c;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.imgpart
+{
+	background: #70a1ff;
+	width: 25rem;
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+.heroimg
+{
+	width: 18rem;
+    height: 18rem;
+    border-radius: 100%;
+}
+
+
+.informationpart
+{
+	width: 35rem;
+	border-bottom-right-radius: 3rem;
+    border-top-right-radius: 3rem;
+    padding: 3rem 3rem 3rem;
+}
+h2{
+	color: skyblue;
+    font-size: 1.9rem;
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+label
+{
+	font-size: 1.2rem;
+    color: grey;
+    font-weight: 400;
+    display: block;
+    margin: 0.5rem 0;
+}
+.inputbox
+{
+	width: 26rem;
+    padding: 0.5rem;
+    border: 2px solid #e41a1a9d;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    font-family: 'Roboto', sans-serif;
+    color: #e71b1bbd;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.options
+{
+	width: 25rem;
+	padding: 1rem;
+    border: 2px solid #222020;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+}
+.eachoption
+{
+	display: inline-block;
+    width: 49%;
+}
+.eachoption span
+{
+	vertical-align: top;
+    color: #e9e7e711;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+input[type=checkbox] {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+#view {
+    height:50%;
+    width:0%;
+    display:block;
+}
+#editor {
+    height:100%;
+    width:100%;
+    display:block;
+    padding-left:10rem;
+    padding-right:20rem;
+    border: 2px solid rgba(255, 0, 0, 0.623);
+    border-radius: 5px;
+
+}
+
+
+
+
+
+
+.submitbtn
+{
+	width: 13rem;
+    padding: 0.7rem;
+    font-size: 1.2rem;
+    color: white;
+    background: #df0d0d;
+    border: 0;
+    outline: 0;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.submitbtn:hover
+{
+	transform: scale(1.04) translateY(-2px);
+    box-shadow: 6px 6px 6px #1eca0e9f;
+    background-color: cornflowerblue;
+    color: black;
+}
+#Social-Media{
+    width: 5px;
+	padding: 1px 2px 3px;
+    border: 2px solid #f50b0bc9;
+    margin-bottom: 1rem;
+    border-radius: 2px;
+    font-weight: 400;
+    background-color: gray;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .toppart {
+    padding: 3rem 2rem 10rem;
+}
+.bottompart
+{
+	flex-direction: column;
+	width: auto;
+}
+.imgpart
+{
+	width: 100%;
+    border-top-right-radius: 1.5rem;
+    border-bottom-left-radius: 0;
+}
+.heroimg {
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem;
+    }
+    .informationpart {
+    width: auto;
+    }
+}
+@media only screen and (max-width: 600px) {
+	.inputbox {
+    width: 16rem;
+}
+.options {
+    width: 16rem;
+    }
+    .eachoption {
+    display: block;
+    width: 100%;
+}
+  .links
+  {
+    display:none;
+  }
+	}
+</style>
+<body>
+    <div class="mainscreen">
+
+		
+		<div class="toppart">
+			<div class="newtext">
+                <h1><img class="logo" src="https://www.redhat.com/profiles/rh/themes/redhatdotcom/img/red-hat-social-share.jpg" alt="Logo">RED-HAT <br>
+                Well-Come Page</h1>
+                <p> Open Source Organization For<br>
+                DEVELOPER
+                </p>
+
+			</div>
+		</div>
+
+
+		<div class="bottompart">
+	
+			<div class="imgpart">
+				<img src="https://www.whitesourcesoftware.com/wp-content/uploads/2018/02/10-github-to-follow.jpg" class="heroimg" alt="">
+			</div>
+
+			
+			<div class="informationpart">
+				<form>
+					<h2>SIGNUP</h2>
+					
+					<label for="name">Full Name</label>
+					<input class="inputbox" name="name" type="text" class="name" autocomplete="off" placeholder="your name">
+
+			
+					<label for="email">Email</label>
+					<input class="inputbox" type="email" class="email" name="email" autocomplete="off" placeholder="yourname@gmail.com">
+
+                    <label for="number">Number</label>
+                    <input class="inputbox" type=" " class="number" autocomplete="off" placeholder="0123456789">
+                    <div id="view">
+                        <label for="suggestion">suggestion</label>
+                <textarea id="editor"  > </textarea>
+                   
+                </div>
+                    <label for="YEAR">SELECT THE OPEN SOURCE CONTRIBUTION</label>
+                    
+					<div class="options">
+                        <label for="YEAR :-">YEAR</label>
+                        <hr>
+						<form action=" ">
+                            less than 1 year<input type="radio" value="less than 1 year" name="year"  >
+                            <br>
+                            
+                            
+                            
+                            2 year<input type="radio" value="2 year" name="year" >
+                            <br>
+                            3 year<input type="radio" value="3 year" name="year" >
+                        
+                            <br>
+                            
+                        4 year<input type="radio" value="4 year" name="year" >
+                        <br>
+                            more than 5 year<input type="radio" value="more than 5 year" name="year" >
+                        </form>
+         </div>
+         <fieldset>
+         <div id="social media">
+             
+            
+                        <label for="Social Media">Social Media</label>
+                        <hr>
+                        <label for="Provide links"> Provide Links</label>
+                        Github:<input type="url" value=" " name="Social Media"><br><hr>
+                        linkedin:<input type="url" value=" " name="Social Media"><br><hr>
+                        Instagram:<input type="url" value=" " name="Social Media"><br><hr>
+                        Facebook:<input type="url" value=" " name="Social Media"><br><hr>
+                    </div>
+         </fieldset>
+                    <hr>
+                        <button class="submitbtn">Submit</button>
+                        </div>
+                    
+                    </div>
+                    </form>
+			</div>
+		</div>
+	</div>
+    
+</body>
+</html>
